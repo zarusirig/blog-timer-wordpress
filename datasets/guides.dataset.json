@@ -1,0 +1,473 @@
+{
+    "guides": [
+        {
+            "id": "g_timer_accuracy",
+            "slug": "timer-accuracy",
+            "title": "How Accurate Are Online Timers?",
+            "cluster": "accuracy",
+            "primaryHub": "hub_minutes",
+            "excerpt": "What affects timer accuracy in browsers and how to get reliable countdowns.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 5
+                },
+                {
+                    "unit": "minutes",
+                    "value": 10
+                },
+                {
+                    "unit": "minutes",
+                    "value": 30
+                },
+                {
+                    "unit": "minutes",
+                    "value": 60
+                }
+            ],
+            "relatedGuides": [
+                "browser-timer-drift",
+                "timer-offline-after-load"
+            ],
+            "faqs": [
+                "faq_timer_01",
+                "faq_timer_02"
+            ]
+        },
+        {
+            "id": "g_browser_drift",
+            "slug": "browser-timer-drift",
+            "title": "Why Browser Timers Drift (and How We Prevent It)",
+            "cluster": "accuracy",
+            "primaryHub": "hub_minutes",
+            "excerpt": "Understanding why JavaScript timers lose sync and how modern implementations fix it.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 25
+                },
+                {
+                    "unit": "minutes",
+                    "value": 50
+                }
+            ],
+            "relatedGuides": [
+                "timer-accuracy",
+                "background-timers-mobile"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_offline_after_load",
+            "slug": "timer-offline-after-load",
+            "title": "Do Online Timers Work Offline?",
+            "cluster": "accuracy",
+            "primaryHub": "hub_minutes",
+            "excerpt": "Can you use this timer without an internet connection? Yes, here is how.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 20
+                },
+                {
+                    "unit": "minutes",
+                    "value": 40
+                }
+            ],
+            "relatedGuides": [
+                "timer-accuracy",
+                "background-timers-mobile"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_background_mobile",
+            "slug": "background-timers-mobile",
+            "title": "Why Timers Pause on Mobile (iOS/Android) + Workarounds",
+            "cluster": "accuracy",
+            "primaryHub": "hub_minutes",
+            "excerpt": "Mobile browsers often pause scripts to save battery. Learn how our timer handles this.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 5
+                },
+                {
+                    "unit": "minutes",
+                    "value": 15
+                }
+            ],
+            "relatedGuides": [
+                "browser-timer-drift",
+                "timer-accuracy"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_pomodoro_technique",
+            "slug": "pomodoro-technique",
+            "title": "Pomodoro Technique: How It Works",
+            "cluster": "pomodoro",
+            "primaryHub": "hub_pomodoro",
+            "excerpt": "A deep dive into the classic 25/5 productivity method.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 25
+                },
+                {
+                    "unit": "minutes",
+                    "value": 5
+                }
+            ],
+            "relatedGuides": [
+                "pomodoro-schedules",
+                "pomodoro-mistakes"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_pomodoro_schedules",
+            "slug": "pomodoro-schedules",
+            "title": "Best Pomodoro Schedules (25/5, 50/10, custom)",
+            "cluster": "pomodoro",
+            "primaryHub": "hub_pomodoro",
+            "excerpt": "Beyond the standard 25 minutes: exploring 50/10 and other intervals.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 50
+                },
+                {
+                    "unit": "minutes",
+                    "value": 10
+                }
+            ],
+            "relatedGuides": [
+                "pomodoro-technique",
+                "pomodoro-for-studying"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_pomodoro_studying",
+            "slug": "pomodoro-for-studying",
+            "title": "Pomodoro for Studying: Practical Setups",
+            "cluster": "pomodoro",
+            "primaryHub": "hub_pomodoro",
+            "excerpt": "How to adapt the Pomodoro technique specifically for long study sessions.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 45
+                },
+                {
+                    "unit": "minutes",
+                    "value": 15
+                }
+            ],
+            "relatedGuides": [
+                "study-timer-methods",
+                "pomodoro-schedules"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_pomodoro_mistakes",
+            "slug": "pomodoro-mistakes",
+            "title": "Common Pomodoro Mistakes (and fixes)",
+            "cluster": "pomodoro",
+            "primaryHub": "hub_pomodoro",
+            "excerpt": "Why Pomodoro fails for some people and how to avoid the pitfalls.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 25
+                },
+                {
+                    "unit": "minutes",
+                    "value": 5
+                }
+            ],
+            "relatedGuides": [
+                "pomodoro-technique",
+                "deep-work-timers"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_study_methods",
+            "slug": "study-timer-methods",
+            "title": "Study Timer Methods (time blocking, sprints)",
+            "cluster": "studying",
+            "primaryHub": "hub_usecases",
+            "excerpt": "Comparing different timing strategies for maximum academic retention.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 60
+                },
+                {
+                    "unit": "minutes",
+                    "value": 90
+                }
+            ],
+            "relatedGuides": [
+                "pomodoro-for-studying",
+                "deep-work-timers"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_deep_work",
+            "slug": "deep-work-timers",
+            "title": "Deep Work Timers: 45/15 and 60/10 patterns",
+            "cluster": "studying",
+            "primaryHub": "hub_usecases",
+            "excerpt": "Optimizing for flow state with longer focus intervals.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 45
+                },
+                {
+                    "unit": "minutes",
+                    "value": 90
+                }
+            ],
+            "relatedGuides": [
+                "study-timer-methods",
+                "focus-timer-music"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_break_timers",
+            "slug": "break-timers",
+            "title": "Break Timers: How Long Should Breaks Be?",
+            "cluster": "studying",
+            "primaryHub": "hub_usecases",
+            "excerpt": "The science of restoration: when to take 5, 10, or 30 minute breaks.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 10
+                },
+                {
+                    "unit": "minutes",
+                    "value": 30
+                }
+            ],
+            "relatedGuides": [
+                "pomodoro-schedules",
+                "study-timer-methods"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_focus_music",
+            "slug": "focus-timer-music",
+            "title": "Focus Timers + Sound: What Works Best",
+            "cluster": "studying",
+            "primaryHub": "hub_usecases",
+            "excerpt": "Combining timers with binaural beats, white noise, or silence.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 60
+                }
+            ],
+            "relatedGuides": [
+                "deep-work-timers",
+                "meditation-timers-beginners"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_hiit_intervals",
+            "slug": "hiit-interval-timers",
+            "title": "HIIT Interval Timers (common structures)",
+            "cluster": "exercise",
+            "primaryHub": "hub_seconds",
+            "excerpt": "Standard intervals for High Intensity Interval Training.",
+            "timers": [
+                {
+                    "unit": "seconds",
+                    "value": 30
+                },
+                {
+                    "unit": "seconds",
+                    "value": 60
+                }
+            ],
+            "relatedGuides": [
+                "tabata-timer-guide",
+                "rest-timers-strength"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_tabata",
+            "slug": "tabata-timer-guide",
+            "title": "Tabata Timer Guide (20/10)",
+            "cluster": "exercise",
+            "primaryHub": "hub_seconds",
+            "excerpt": "The specific 20-seconds-on, 10-seconds-off protocol explained.",
+            "timers": [
+                {
+                    "unit": "seconds",
+                    "value": 20
+                },
+                {
+                    "unit": "seconds",
+                    "value": 10
+                }
+            ],
+            "relatedGuides": [
+                "hiit-interval-timers",
+                "plank-timer-guide"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_rest_strength",
+            "slug": "rest-timers-strength",
+            "title": "Rest Timers for Strength Training",
+            "cluster": "exercise",
+            "primaryHub": "hub_minutes",
+            "excerpt": "Hypertrophy vs. Strength: how long to rest between sets.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 2
+                },
+                {
+                    "unit": "minutes",
+                    "value": 3
+                }
+            ],
+            "relatedGuides": [
+                "hiit-interval-timers",
+                "plank-timer-guide"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_plank",
+            "slug": "plank-timer-guide",
+            "title": "Plank Timers: Progressions + timing",
+            "cluster": "exercise",
+            "primaryHub": "hub_seconds",
+            "excerpt": "Building core strength with progressive plank holds.",
+            "timers": [
+                {
+                    "unit": "seconds",
+                    "value": 30
+                },
+                {
+                    "unit": "seconds",
+                    "value": 60
+                },
+                {
+                    "unit": "seconds",
+                    "value": 90
+                }
+            ],
+            "relatedGuides": [
+                "tabata-timer-guide",
+                "rest-timers-strength"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_cooking_common",
+            "slug": "cooking-timers-common",
+            "title": "Cooking Timers: Common Kitchen Timings",
+            "cluster": "cooking",
+            "primaryHub": "hub_minutes",
+            "excerpt": "Quick reference for eggs, pasta, rice, and more.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 8
+                },
+                {
+                    "unit": "minutes",
+                    "value": 12
+                }
+            ],
+            "relatedGuides": [
+                "tea-coffee-timers"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_tea_coffee",
+            "slug": "tea-coffee-timers",
+            "title": "Tea & Coffee Brew Timers (steep/bloom)",
+            "cluster": "cooking",
+            "primaryHub": "hub_minutes",
+            "excerpt": "Perfect extraction times for green tea, black tea, and french press.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 3
+                },
+                {
+                    "unit": "minutes",
+                    "value": 4
+                }
+            ],
+            "relatedGuides": [
+                "cooking-timers-common"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_meditation_beginners",
+            "slug": "meditation-timers-beginners",
+            "title": "Meditation Timers for Beginners",
+            "cluster": "meditation",
+            "primaryHub": "hub_minutes",
+            "excerpt": "Starting a practice: why 5 or 10 minutes is enough.",
+            "timers": [
+                {
+                    "unit": "minutes",
+                    "value": 5
+                },
+                {
+                    "unit": "minutes",
+                    "value": 10
+                }
+            ],
+            "relatedGuides": [
+                "breathing-timers",
+                "focus-timer-music"
+            ],
+            "faqs": []
+        },
+        {
+            "id": "g_breathing",
+            "slug": "breathing-timers",
+            "title": "Breathing Timers (box breathing, 4-7-8)",
+            "cluster": "meditation",
+            "primaryHub": "hub_seconds",
+            "excerpt": "Visual guides for controlled breathing exercises.",
+            "timers": [
+                {
+                    "unit": "seconds",
+                    "value": 30
+                },
+                {
+                    "unit": "minutes",
+                    "value": 2
+                }
+            ],
+            "relatedGuides": [
+                "meditation-timers-beginners",
+                "tabata-timer-guide"
+            ],
+            "faqs": []
+        }
+    ]
+}

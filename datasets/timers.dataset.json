@@ -1,0 +1,2841 @@
+{
+  "site": {
+    "brand": "The Blog Timer",
+    "defaultLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "canonicalDomain": "https://theblogtimer.com"
+  },
+  "taxonomies": {
+    "units": [
+      "minutes",
+      "seconds"
+    ],
+    "buckets": {
+      "minutes": [
+        {
+          "id": "short",
+          "label": "Short Timers",
+          "min": 1,
+          "max": 10,
+          "description": "Quick timers for brief tasks, short breaks, and rapid intervals."
+        },
+        {
+          "id": "medium",
+          "label": "Medium Timers",
+          "min": 11,
+          "max": 30,
+          "description": "Ideal timers for focused work sessions, cooking tasks, and exercise routines."
+        },
+        {
+          "id": "long",
+          "label": "Long Timers",
+          "min": 31,
+          "max": 60,
+          "description": "Extended timers for deep work, long cooking, and thorough workout sessions."
+        },
+        {
+          "id": "extended",
+          "label": "Extended Timers",
+          "min": 61,
+          "max": 161,
+          "description": "Extra-long timers for marathon study sessions, slow cooking, and extended activities."
+        }
+      ],
+      "seconds": [
+        {
+          "id": "seconds_short",
+          "label": "Short Second Timers",
+          "min": 1,
+          "max": 10,
+          "description": "Ultra-quick countdowns for intervals, reactions, and rapid timing needs."
+        },
+        {
+          "id": "seconds_medium",
+          "label": "Medium Second Timers",
+          "min": 11,
+          "max": 30,
+          "description": "Short countdowns for exercise reps, breathing exercises, and quick tasks."
+        },
+        {
+          "id": "seconds_long",
+          "label": "Long Second Timers",
+          "min": 31,
+          "max": 60,
+          "description": "Longer second-based timers for planks, intervals, and timed activities."
+        }
+      ]
+    },
+    "useCases": [
+      {
+        "id": "productivity",
+        "label": "Productivity",
+        "enabled": true,
+        "description": "Boost your focus and manage work intervals effectively."
+      },
+      {
+        "id": "cooking",
+        "label": "Cooking",
+        "enabled": true,
+        "description": "Time your recipes, brewing, and food preparation perfectly."
+      },
+      {
+        "id": "exercise",
+        "label": "Exercise",
+        "enabled": true,
+        "description": "Track workout intervals, rest periods, and fitness routines."
+      },
+      {
+        "id": "meditation",
+        "label": "Meditation",
+        "enabled": true,
+        "description": "Guide your meditation sessions and mindfulness practice."
+      },
+      {
+        "id": "studying",
+        "label": "Studying",
+        "enabled": true,
+        "description": "Structure your study sessions with timed focus and break intervals."
+      }
+    ]
+  },
+  "contentLibraries": {
+    "introVariants": {
+      "minutes": {
+        "short": [
+          "intro_m_short_01",
+          "intro_m_short_02",
+          "intro_m_short_03"
+        ],
+        "medium": [
+          "intro_m_med_01",
+          "intro_m_med_02",
+          "intro_m_med_03"
+        ],
+        "long": [
+          "intro_m_long_01",
+          "intro_m_long_02"
+        ],
+        "extended": [
+          "intro_m_ext_01",
+          "intro_m_ext_02"
+        ]
+      },
+      "seconds": {
+        "seconds_short": [
+          "intro_s_short_01",
+          "intro_s_short_02"
+        ],
+        "seconds_medium": [
+          "intro_s_med_01",
+          "intro_s_med_02"
+        ],
+        "seconds_long": [
+          "intro_s_long_01",
+          "intro_s_long_02"
+        ]
+      }
+    },
+    "faqSets": {
+      "timer_core": [
+        "faq_timer_01",
+        "faq_timer_02",
+        "faq_timer_03",
+        "faq_timer_04",
+        "faq_timer_05",
+        "faq_timer_06"
+      ],
+      "pomodoro": [
+        "faq_pomo_01",
+        "faq_pomo_02",
+        "faq_pomo_03",
+        "faq_pomo_04"
+      ]
+    },
+    "metaDescriptionVariants": {
+      "minutes": [
+        "meta_min_a",
+        "meta_min_b",
+        "meta_min_c"
+      ],
+      "seconds": [
+        "meta_sec_a",
+        "meta_sec_b",
+        "meta_sec_c"
+      ]
+    }
+  },
+  "globalPopulars": {
+    "minutes": [
+      5,
+      10,
+      15,
+      25,
+      30,
+      45,
+      60,
+      75,
+      90,
+      120,
+      150
+    ],
+    "seconds": [
+      10,
+      30,
+      60
+    ]
+  },
+  "hubs": [
+    {
+      "id": "hub_minutes",
+      "type": "page",
+      "slug": "minute-timers",
+      "template": "page-minute-timers.php",
+      "titleKey": "hub.minutes.title",
+      "descriptionKey": "hub.minutes.desc",
+      "unit": "minutes"
+    },
+    {
+      "id": "hub_seconds",
+      "type": "page",
+      "slug": "second-timers",
+      "template": "page-second-timers.php",
+      "titleKey": "hub.seconds.title",
+      "descriptionKey": "hub.seconds.desc",
+      "unit": "seconds"
+    },
+    {
+      "id": "hub_pomodoro",
+      "type": "page",
+      "slug": "pomodoro",
+      "template": "page-pomodoro.php",
+      "titleKey": "hub.pomodoro.title",
+      "descriptionKey": "hub.pomodoro.desc"
+    },
+    {
+      "id": "hub_usecases",
+      "type": "page",
+      "slug": "use-cases",
+      "template": "page-use-cases.php",
+      "titleKey": "hub.usecases.title",
+      "descriptionKey": "hub.usecases.desc"
+    }
+  ],
+  "timers": [
+    {
+      "id": "t_m_1",
+      "unit": "minutes",
+      "value": 1,
+      "slug": "set-timer-for-1-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_m_2",
+      "unit": "minutes",
+      "value": 2,
+      "slug": "set-timer-for-2-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking",
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_m_3",
+      "unit": "minutes",
+      "value": 3,
+      "slug": "set-timer-for-3-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking",
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_m_4",
+      "unit": "minutes",
+      "value": 4,
+      "slug": "set-timer-for-4-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking",
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_m_5",
+      "unit": "minutes",
+      "value": 5,
+      "slug": "set-timer-for-5-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "cooking",
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_m_6",
+      "unit": "minutes",
+      "value": 6,
+      "slug": "set-timer-for-6-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking",
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_m_7",
+      "unit": "minutes",
+      "value": 7,
+      "slug": "set-timer-for-7-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking",
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_m_8",
+      "unit": "minutes",
+      "value": 8,
+      "slug": "set-timer-for-8-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking",
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_m_9",
+      "unit": "minutes",
+      "value": 9,
+      "slug": "set-timer-for-9-minutes",
+      "isPopular": false,
+      "useCases": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_m_10",
+      "unit": "minutes",
+      "value": 10,
+      "slug": "set-timer-for-10-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "cooking",
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "id": "t_m_11",
+      "unit": "minutes",
+      "value": 11,
+      "slug": "set-timer-for-11-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_12",
+      "unit": "minutes",
+      "value": 12,
+      "slug": "set-timer-for-12-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking",
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_m_13",
+      "unit": "minutes",
+      "value": 13,
+      "slug": "set-timer-for-13-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_14",
+      "unit": "minutes",
+      "value": 14,
+      "slug": "set-timer-for-14-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_15",
+      "unit": "minutes",
+      "value": 15,
+      "slug": "set-timer-for-15-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "cooking",
+        "exercise",
+        "studying"
+      ]
+    },
+    {
+      "id": "t_m_16",
+      "unit": "minutes",
+      "value": 16,
+      "slug": "set-timer-for-16-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_17",
+      "unit": "minutes",
+      "value": 17,
+      "slug": "set-timer-for-17-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_18",
+      "unit": "minutes",
+      "value": 18,
+      "slug": "set-timer-for-18-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_19",
+      "unit": "minutes",
+      "value": 19,
+      "slug": "set-timer-for-19-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_20",
+      "unit": "minutes",
+      "value": 20,
+      "slug": "set-timer-for-20-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "cooking",
+        "exercise",
+        "studying"
+      ]
+    },
+    {
+      "id": "t_m_21",
+      "unit": "minutes",
+      "value": 21,
+      "slug": "set-timer-for-21-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_22",
+      "unit": "minutes",
+      "value": 22,
+      "slug": "set-timer-for-22-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_23",
+      "unit": "minutes",
+      "value": 23,
+      "slug": "set-timer-for-23-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_24",
+      "unit": "minutes",
+      "value": 24,
+      "slug": "set-timer-for-24-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_25",
+      "unit": "minutes",
+      "value": 25,
+      "slug": "set-timer-for-25-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "studying"
+      ]
+    },
+    {
+      "id": "t_m_26",
+      "unit": "minutes",
+      "value": 26,
+      "slug": "set-timer-for-26-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity"
+      ]
+    },
+    {
+      "id": "t_m_27",
+      "unit": "minutes",
+      "value": 27,
+      "slug": "set-timer-for-27-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_28",
+      "unit": "minutes",
+      "value": 28,
+      "slug": "set-timer-for-28-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_29",
+      "unit": "minutes",
+      "value": 29,
+      "slug": "set-timer-for-29-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_30",
+      "unit": "minutes",
+      "value": 30,
+      "slug": "set-timer-for-30-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "cooking",
+        "exercise",
+        "meditation",
+        "studying"
+      ]
+    },
+    {
+      "id": "t_m_31",
+      "unit": "minutes",
+      "value": 31,
+      "slug": "set-timer-for-31-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_32",
+      "unit": "minutes",
+      "value": 32,
+      "slug": "set-timer-for-32-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_33",
+      "unit": "minutes",
+      "value": 33,
+      "slug": "set-timer-for-33-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_34",
+      "unit": "minutes",
+      "value": 34,
+      "slug": "set-timer-for-34-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_35",
+      "unit": "minutes",
+      "value": 35,
+      "slug": "set-timer-for-35-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking",
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_m_36",
+      "unit": "minutes",
+      "value": 36,
+      "slug": "set-timer-for-36-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_37",
+      "unit": "minutes",
+      "value": 37,
+      "slug": "set-timer-for-37-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_38",
+      "unit": "minutes",
+      "value": 38,
+      "slug": "set-timer-for-38-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_39",
+      "unit": "minutes",
+      "value": 39,
+      "slug": "set-timer-for-39-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_40",
+      "unit": "minutes",
+      "value": 40,
+      "slug": "set-timer-for-40-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking",
+        "exercise",
+        "studying"
+      ]
+    },
+    {
+      "id": "t_m_41",
+      "unit": "minutes",
+      "value": 41,
+      "slug": "set-timer-for-41-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_42",
+      "unit": "minutes",
+      "value": 42,
+      "slug": "set-timer-for-42-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_43",
+      "unit": "minutes",
+      "value": 43,
+      "slug": "set-timer-for-43-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_44",
+      "unit": "minutes",
+      "value": 44,
+      "slug": "set-timer-for-44-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_45",
+      "unit": "minutes",
+      "value": 45,
+      "slug": "set-timer-for-45-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "cooking",
+        "exercise",
+        "studying"
+      ]
+    },
+    {
+      "id": "t_m_46",
+      "unit": "minutes",
+      "value": 46,
+      "slug": "set-timer-for-46-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_47",
+      "unit": "minutes",
+      "value": 47,
+      "slug": "set-timer-for-47-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_48",
+      "unit": "minutes",
+      "value": 48,
+      "slug": "set-timer-for-48-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_49",
+      "unit": "minutes",
+      "value": 49,
+      "slug": "set-timer-for-49-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_50",
+      "unit": "minutes",
+      "value": 50,
+      "slug": "set-timer-for-50-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying"
+      ]
+    },
+    {
+      "id": "t_m_51",
+      "unit": "minutes",
+      "value": 51,
+      "slug": "set-timer-for-51-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_52",
+      "unit": "minutes",
+      "value": 52,
+      "slug": "set-timer-for-52-minutes",
+      "isPopular": false,
+      "useCases": [
+        "studying"
+      ]
+    },
+    {
+      "id": "t_m_53",
+      "unit": "minutes",
+      "value": 53,
+      "slug": "set-timer-for-53-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_54",
+      "unit": "minutes",
+      "value": 54,
+      "slug": "set-timer-for-54-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_55",
+      "unit": "minutes",
+      "value": 55,
+      "slug": "set-timer-for-55-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_56",
+      "unit": "minutes",
+      "value": 56,
+      "slug": "set-timer-for-56-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_57",
+      "unit": "minutes",
+      "value": 57,
+      "slug": "set-timer-for-57-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_58",
+      "unit": "minutes",
+      "value": 58,
+      "slug": "set-timer-for-58-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_59",
+      "unit": "minutes",
+      "value": 59,
+      "slug": "set-timer-for-59-minutes",
+      "isPopular": false,
+      "useCases": [
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_60",
+      "unit": "minutes",
+      "value": 60,
+      "slug": "set-timer-for-60-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "cooking",
+        "exercise",
+        "meditation",
+        "studying"
+      ]
+    },
+    {
+      "id": "t_m_90",
+      "unit": "minutes",
+      "value": 90,
+      "slug": "set-timer-for-90-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "studying"
+      ]
+    },
+    {
+      "id": "t_m_61",
+      "unit": "minutes",
+      "value": 61,
+      "slug": "set-timer-for-61-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_62",
+      "unit": "minutes",
+      "value": 62,
+      "slug": "set-timer-for-62-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_63",
+      "unit": "minutes",
+      "value": 63,
+      "slug": "set-timer-for-63-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_64",
+      "unit": "minutes",
+      "value": 64,
+      "slug": "set-timer-for-64-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_65",
+      "unit": "minutes",
+      "value": 65,
+      "slug": "set-timer-for-65-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_66",
+      "unit": "minutes",
+      "value": 66,
+      "slug": "set-timer-for-66-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_67",
+      "unit": "minutes",
+      "value": 67,
+      "slug": "set-timer-for-67-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_68",
+      "unit": "minutes",
+      "value": 68,
+      "slug": "set-timer-for-68-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_69",
+      "unit": "minutes",
+      "value": 69,
+      "slug": "set-timer-for-69-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_70",
+      "unit": "minutes",
+      "value": 70,
+      "slug": "set-timer-for-70-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_71",
+      "unit": "minutes",
+      "value": 71,
+      "slug": "set-timer-for-71-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_72",
+      "unit": "minutes",
+      "value": 72,
+      "slug": "set-timer-for-72-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_73",
+      "unit": "minutes",
+      "value": 73,
+      "slug": "set-timer-for-73-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_74",
+      "unit": "minutes",
+      "value": 74,
+      "slug": "set-timer-for-74-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_75",
+      "unit": "minutes",
+      "value": 75,
+      "slug": "set-timer-for-75-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_76",
+      "unit": "minutes",
+      "value": 76,
+      "slug": "set-timer-for-76-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_77",
+      "unit": "minutes",
+      "value": 77,
+      "slug": "set-timer-for-77-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_78",
+      "unit": "minutes",
+      "value": 78,
+      "slug": "set-timer-for-78-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_79",
+      "unit": "minutes",
+      "value": 79,
+      "slug": "set-timer-for-79-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_80",
+      "unit": "minutes",
+      "value": 80,
+      "slug": "set-timer-for-80-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_81",
+      "unit": "minutes",
+      "value": 81,
+      "slug": "set-timer-for-81-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_82",
+      "unit": "minutes",
+      "value": 82,
+      "slug": "set-timer-for-82-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_83",
+      "unit": "minutes",
+      "value": 83,
+      "slug": "set-timer-for-83-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_84",
+      "unit": "minutes",
+      "value": 84,
+      "slug": "set-timer-for-84-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_85",
+      "unit": "minutes",
+      "value": 85,
+      "slug": "set-timer-for-85-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_86",
+      "unit": "minutes",
+      "value": 86,
+      "slug": "set-timer-for-86-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_87",
+      "unit": "minutes",
+      "value": 87,
+      "slug": "set-timer-for-87-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_88",
+      "unit": "minutes",
+      "value": 88,
+      "slug": "set-timer-for-88-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_89",
+      "unit": "minutes",
+      "value": 89,
+      "slug": "set-timer-for-89-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_91",
+      "unit": "minutes",
+      "value": 91,
+      "slug": "set-timer-for-91-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_92",
+      "unit": "minutes",
+      "value": 92,
+      "slug": "set-timer-for-92-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_93",
+      "unit": "minutes",
+      "value": 93,
+      "slug": "set-timer-for-93-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_94",
+      "unit": "minutes",
+      "value": 94,
+      "slug": "set-timer-for-94-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_95",
+      "unit": "minutes",
+      "value": 95,
+      "slug": "set-timer-for-95-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_96",
+      "unit": "minutes",
+      "value": 96,
+      "slug": "set-timer-for-96-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_97",
+      "unit": "minutes",
+      "value": 97,
+      "slug": "set-timer-for-97-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_98",
+      "unit": "minutes",
+      "value": 98,
+      "slug": "set-timer-for-98-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_99",
+      "unit": "minutes",
+      "value": 99,
+      "slug": "set-timer-for-99-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_100",
+      "unit": "minutes",
+      "value": 100,
+      "slug": "set-timer-for-100-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_101",
+      "unit": "minutes",
+      "value": 101,
+      "slug": "set-timer-for-101-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_102",
+      "unit": "minutes",
+      "value": 102,
+      "slug": "set-timer-for-102-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_103",
+      "unit": "minutes",
+      "value": 103,
+      "slug": "set-timer-for-103-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_104",
+      "unit": "minutes",
+      "value": 104,
+      "slug": "set-timer-for-104-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_105",
+      "unit": "minutes",
+      "value": 105,
+      "slug": "set-timer-for-105-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_106",
+      "unit": "minutes",
+      "value": 106,
+      "slug": "set-timer-for-106-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_107",
+      "unit": "minutes",
+      "value": 107,
+      "slug": "set-timer-for-107-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_108",
+      "unit": "minutes",
+      "value": 108,
+      "slug": "set-timer-for-108-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_109",
+      "unit": "minutes",
+      "value": 109,
+      "slug": "set-timer-for-109-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_110",
+      "unit": "minutes",
+      "value": 110,
+      "slug": "set-timer-for-110-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_111",
+      "unit": "minutes",
+      "value": 111,
+      "slug": "set-timer-for-111-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_112",
+      "unit": "minutes",
+      "value": 112,
+      "slug": "set-timer-for-112-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_113",
+      "unit": "minutes",
+      "value": 113,
+      "slug": "set-timer-for-113-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_114",
+      "unit": "minutes",
+      "value": 114,
+      "slug": "set-timer-for-114-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_115",
+      "unit": "minutes",
+      "value": 115,
+      "slug": "set-timer-for-115-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_116",
+      "unit": "minutes",
+      "value": 116,
+      "slug": "set-timer-for-116-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_117",
+      "unit": "minutes",
+      "value": 117,
+      "slug": "set-timer-for-117-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_118",
+      "unit": "minutes",
+      "value": 118,
+      "slug": "set-timer-for-118-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_119",
+      "unit": "minutes",
+      "value": 119,
+      "slug": "set-timer-for-119-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_120",
+      "unit": "minutes",
+      "value": 120,
+      "slug": "set-timer-for-120-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_121",
+      "unit": "minutes",
+      "value": 121,
+      "slug": "set-timer-for-121-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_122",
+      "unit": "minutes",
+      "value": 122,
+      "slug": "set-timer-for-122-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_123",
+      "unit": "minutes",
+      "value": 123,
+      "slug": "set-timer-for-123-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_124",
+      "unit": "minutes",
+      "value": 124,
+      "slug": "set-timer-for-124-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_125",
+      "unit": "minutes",
+      "value": 125,
+      "slug": "set-timer-for-125-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_126",
+      "unit": "minutes",
+      "value": 126,
+      "slug": "set-timer-for-126-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_127",
+      "unit": "minutes",
+      "value": 127,
+      "slug": "set-timer-for-127-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_128",
+      "unit": "minutes",
+      "value": 128,
+      "slug": "set-timer-for-128-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_129",
+      "unit": "minutes",
+      "value": 129,
+      "slug": "set-timer-for-129-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_130",
+      "unit": "minutes",
+      "value": 130,
+      "slug": "set-timer-for-130-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_131",
+      "unit": "minutes",
+      "value": 131,
+      "slug": "set-timer-for-131-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_132",
+      "unit": "minutes",
+      "value": 132,
+      "slug": "set-timer-for-132-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_133",
+      "unit": "minutes",
+      "value": 133,
+      "slug": "set-timer-for-133-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_134",
+      "unit": "minutes",
+      "value": 134,
+      "slug": "set-timer-for-134-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_135",
+      "unit": "minutes",
+      "value": 135,
+      "slug": "set-timer-for-135-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_136",
+      "unit": "minutes",
+      "value": 136,
+      "slug": "set-timer-for-136-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_137",
+      "unit": "minutes",
+      "value": 137,
+      "slug": "set-timer-for-137-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_138",
+      "unit": "minutes",
+      "value": 138,
+      "slug": "set-timer-for-138-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_139",
+      "unit": "minutes",
+      "value": 139,
+      "slug": "set-timer-for-139-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_140",
+      "unit": "minutes",
+      "value": 140,
+      "slug": "set-timer-for-140-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_141",
+      "unit": "minutes",
+      "value": 141,
+      "slug": "set-timer-for-141-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_142",
+      "unit": "minutes",
+      "value": 142,
+      "slug": "set-timer-for-142-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_143",
+      "unit": "minutes",
+      "value": 143,
+      "slug": "set-timer-for-143-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_144",
+      "unit": "minutes",
+      "value": 144,
+      "slug": "set-timer-for-144-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_145",
+      "unit": "minutes",
+      "value": 145,
+      "slug": "set-timer-for-145-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_146",
+      "unit": "minutes",
+      "value": 146,
+      "slug": "set-timer-for-146-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_147",
+      "unit": "minutes",
+      "value": 147,
+      "slug": "set-timer-for-147-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_148",
+      "unit": "minutes",
+      "value": 148,
+      "slug": "set-timer-for-148-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_149",
+      "unit": "minutes",
+      "value": 149,
+      "slug": "set-timer-for-149-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_150",
+      "unit": "minutes",
+      "value": 150,
+      "slug": "set-timer-for-150-minutes",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_151",
+      "unit": "minutes",
+      "value": 151,
+      "slug": "set-timer-for-151-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_152",
+      "unit": "minutes",
+      "value": 152,
+      "slug": "set-timer-for-152-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_153",
+      "unit": "minutes",
+      "value": 153,
+      "slug": "set-timer-for-153-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_154",
+      "unit": "minutes",
+      "value": 154,
+      "slug": "set-timer-for-154-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_155",
+      "unit": "minutes",
+      "value": 155,
+      "slug": "set-timer-for-155-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_156",
+      "unit": "minutes",
+      "value": 156,
+      "slug": "set-timer-for-156-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_157",
+      "unit": "minutes",
+      "value": 157,
+      "slug": "set-timer-for-157-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_158",
+      "unit": "minutes",
+      "value": 158,
+      "slug": "set-timer-for-158-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_159",
+      "unit": "minutes",
+      "value": 159,
+      "slug": "set-timer-for-159-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_160",
+      "unit": "minutes",
+      "value": 160,
+      "slug": "set-timer-for-160-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_m_161",
+      "unit": "minutes",
+      "value": 161,
+      "slug": "set-timer-for-161-minutes",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_s_1",
+      "unit": "seconds",
+      "value": 1,
+      "slug": "set-timer-for-1-seconds",
+      "isPopular": false,
+      "useCases": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_s_5",
+      "unit": "seconds",
+      "value": 5,
+      "slug": "set-timer-for-5-seconds",
+      "isPopular": false,
+      "useCases": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "t_s_10",
+      "unit": "seconds",
+      "value": 10,
+      "slug": "set-timer-for-10-seconds",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "id": "t_s_30",
+      "unit": "seconds",
+      "value": 30,
+      "slug": "set-timer-for-30-seconds",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "id": "t_s_60",
+      "unit": "seconds",
+      "value": 60,
+      "slug": "set-timer-for-60-seconds",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 2,
+      "unit": "seconds",
+      "slug": "set-timer-for-2-seconds",
+      "bucket": "short_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 3,
+      "unit": "seconds",
+      "slug": "set-timer-for-3-seconds",
+      "bucket": "short_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 4,
+      "unit": "seconds",
+      "slug": "set-timer-for-4-seconds",
+      "bucket": "short_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 6,
+      "unit": "seconds",
+      "slug": "set-timer-for-6-seconds",
+      "bucket": "short_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 7,
+      "unit": "seconds",
+      "slug": "set-timer-for-7-seconds",
+      "bucket": "short_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 8,
+      "unit": "seconds",
+      "slug": "set-timer-for-8-seconds",
+      "bucket": "short_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 9,
+      "unit": "seconds",
+      "slug": "set-timer-for-9-seconds",
+      "bucket": "short_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 11,
+      "unit": "seconds",
+      "slug": "set-timer-for-11-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 12,
+      "unit": "seconds",
+      "slug": "set-timer-for-12-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 13,
+      "unit": "seconds",
+      "slug": "set-timer-for-13-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 14,
+      "unit": "seconds",
+      "slug": "set-timer-for-14-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 15,
+      "unit": "seconds",
+      "slug": "set-timer-for-15-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 16,
+      "unit": "seconds",
+      "slug": "set-timer-for-16-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 17,
+      "unit": "seconds",
+      "slug": "set-timer-for-17-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 18,
+      "unit": "seconds",
+      "slug": "set-timer-for-18-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 19,
+      "unit": "seconds",
+      "slug": "set-timer-for-19-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 20,
+      "unit": "seconds",
+      "slug": "set-timer-for-20-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 21,
+      "unit": "seconds",
+      "slug": "set-timer-for-21-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 22,
+      "unit": "seconds",
+      "slug": "set-timer-for-22-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 23,
+      "unit": "seconds",
+      "slug": "set-timer-for-23-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 24,
+      "unit": "seconds",
+      "slug": "set-timer-for-24-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 25,
+      "unit": "seconds",
+      "slug": "set-timer-for-25-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 26,
+      "unit": "seconds",
+      "slug": "set-timer-for-26-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 27,
+      "unit": "seconds",
+      "slug": "set-timer-for-27-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 28,
+      "unit": "seconds",
+      "slug": "set-timer-for-28-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 29,
+      "unit": "seconds",
+      "slug": "set-timer-for-29-seconds",
+      "bucket": "medium_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 31,
+      "unit": "seconds",
+      "slug": "set-timer-for-31-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 32,
+      "unit": "seconds",
+      "slug": "set-timer-for-32-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 33,
+      "unit": "seconds",
+      "slug": "set-timer-for-33-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 34,
+      "unit": "seconds",
+      "slug": "set-timer-for-34-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 35,
+      "unit": "seconds",
+      "slug": "set-timer-for-35-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 36,
+      "unit": "seconds",
+      "slug": "set-timer-for-36-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 37,
+      "unit": "seconds",
+      "slug": "set-timer-for-37-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 38,
+      "unit": "seconds",
+      "slug": "set-timer-for-38-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 39,
+      "unit": "seconds",
+      "slug": "set-timer-for-39-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 40,
+      "unit": "seconds",
+      "slug": "set-timer-for-40-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 41,
+      "unit": "seconds",
+      "slug": "set-timer-for-41-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 42,
+      "unit": "seconds",
+      "slug": "set-timer-for-42-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 43,
+      "unit": "seconds",
+      "slug": "set-timer-for-43-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 44,
+      "unit": "seconds",
+      "slug": "set-timer-for-44-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 45,
+      "unit": "seconds",
+      "slug": "set-timer-for-45-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 46,
+      "unit": "seconds",
+      "slug": "set-timer-for-46-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 47,
+      "unit": "seconds",
+      "slug": "set-timer-for-47-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 48,
+      "unit": "seconds",
+      "slug": "set-timer-for-48-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 49,
+      "unit": "seconds",
+      "slug": "set-timer-for-49-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 50,
+      "unit": "seconds",
+      "slug": "set-timer-for-50-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 51,
+      "unit": "seconds",
+      "slug": "set-timer-for-51-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 52,
+      "unit": "seconds",
+      "slug": "set-timer-for-52-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 53,
+      "unit": "seconds",
+      "slug": "set-timer-for-53-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 54,
+      "unit": "seconds",
+      "slug": "set-timer-for-54-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 55,
+      "unit": "seconds",
+      "slug": "set-timer-for-55-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 56,
+      "unit": "seconds",
+      "slug": "set-timer-for-56-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 57,
+      "unit": "seconds",
+      "slug": "set-timer-for-57-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 58,
+      "unit": "seconds",
+      "slug": "set-timer-for-58-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    },
+    {
+      "value": 59,
+      "unit": "seconds",
+      "slug": "set-timer-for-59-seconds",
+      "bucket": "long_seconds",
+      "is_popular": false,
+      "id": "t_s_10",
+      "isPopular": true,
+      "useCases": [
+        "exercise",
+        "meditation"
+      ]
+    }
+  ]
+}

@@ -4,10 +4,11 @@
  */
 
 // Environment detection
-$is_local = (isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1'));
+$http_host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+$is_local = (strpos($http_host, 'localhost') !== false || strpos($http_host, '127.0.0.1') !== false || getenv('WORDPRESS_DB_HOST'));
 
 // Database settings - dynamically set based on environment
-if ($is_local || getenv('WORDPRESS_DB_HOST')) {
+if ($is_local) {
     // Docker/Local environment
     define('DB_NAME', getenv('WORDPRESS_DB_NAME') ?: 'wordpress');
     define('DB_USER', getenv('WORDPRESS_DB_USER') ?: 'wordpress');
@@ -25,14 +26,14 @@ define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 
 // Authentication keys and salts
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
+define('AUTH_KEY', 'put your unique phrase here');
+define('SECURE_AUTH_KEY', 'put your unique phrase here');
+define('LOGGED_IN_KEY', 'put your unique phrase here');
+define('NONCE_KEY', 'put your unique phrase here');
+define('AUTH_SALT', 'put your unique phrase here');
 define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('LOGGED_IN_SALT', 'put your unique phrase here');
+define('NONCE_SALT', 'put your unique phrase here');
 
 // WordPress Database Table prefix
 $table_prefix = 'wp_';
@@ -50,14 +51,15 @@ if ($is_local) {
 
 // URL settings for development
 if ($is_local) {
-    define('WP_HOME', 'http://localhost');
-    define('WP_SITEURL', 'http://localhost');
+    $local_host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'localhost';
+    define('WP_HOME', 'http://' . $local_host);
+    define('WP_SITEURL', 'http://' . $local_host);
 }
 
 // File permissions
 define('FS_METHOD', 'direct');
-define('FS_CHMOD_DIR', (0755 & ~ umask()));
-define('FS_CHMOD_FILE', (0644 & ~ umask()));
+define('FS_CHMOD_DIR', (0755 & ~umask()));
+define('FS_CHMOD_FILE', (0644 & ~umask()));
 
 // Increase memory limit
 define('WP_MEMORY_LIMIT', '256M');

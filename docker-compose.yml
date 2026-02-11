@@ -5,7 +5,7 @@ services:
     build: .
     container_name: wp-dev
     ports:
-      - "80:80"
+      - "8085:80"
     environment:
       WORDPRESS_DB_HOST: mysql:3306
       WORDPRESS_DB_NAME: wordpress
@@ -15,6 +15,7 @@ services:
       - ./wp-content:/var/www/html/wp-content
       - ./wp-config.php:/var/www/html/wp-config.php
       - ./.htaccess:/var/www/html/.htaccess
+      - ./datasets:/var/www/datasets
     depends_on:
       - mysql
     networks:
@@ -34,9 +35,7 @@ services:
     ports:
       - "3306:3306"
     command: >
-      --default-authentication-plugin=mysql_native_password
-      --character-set-server=utf8mb4
-      --collation-server=utf8mb4_unicode_ci
+      --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     networks:
       - wordpress-network
 
@@ -47,7 +46,7 @@ services:
       PMA_HOST: mysql
       UPLOAD_LIMIT: 64M
     ports:
-      - "8080:80"
+      - "8888:80"
     depends_on:
       - mysql
     networks:
@@ -55,6 +54,7 @@ services:
 
 volumes:
   mysql_data:
+
 
 networks:
   wordpress-network:

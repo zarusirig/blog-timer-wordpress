@@ -1,0 +1,181 @@
+{
+    "intros": {
+        "intro_m_short_01": {
+            "en": "Use this {value}-minute timer for quick focus bursts, short breaks, or simple tasks. Press Start and you'll get a clear sound alert when time's up."
+        },
+        "intro_m_short_02": {
+            "en": "Need a fast {value}-minute countdown? This timer is perfect for brief intervals, stretching breaks, or quick cooking tasks. Just hit Start and go."
+        },
+        "intro_m_short_03": {
+            "en": "Set this {value}-minute timer for rapid tasks that need precise timing. Great for HIIT rest periods, tea steeping, or timed drills."
+        },
+        "intro_m_med_01": {
+            "en": "This {value}-minute timer is ideal for focused work sessions, meal prep, or moderate exercise routines. Start your countdown with one click."
+        },
+        "intro_m_med_02": {
+            "en": "Set a {value}-minute countdown for your next task. Whether you're studying, cooking, or working out, this timer keeps you on track with a clear alert."
+        },
+        "intro_m_med_03": {
+            "en": "Use this {value}-minute timer to structure your day. It's great for Pomodoro-style sessions, baking intervals, or focused reading blocks."
+        },
+        "intro_m_long_01": {
+            "en": "A {value}-minute timer for extended tasks that need reliable tracking. Perfect for deep work sessions, slow-cooking recipes, or thorough workout routines."
+        },
+        "intro_m_long_02": {
+            "en": "Set this {value}-minute countdown for activities that need sustained focus. From long study sessions to braising and roasting, this timer has you covered."
+        },
+        "intro_m_ext_01": {
+            "en": "This {value}-minute extended timer is built for marathon sessions. Use it for lengthy study blocks, slow-cooker recipes, or extended meditation practice."
+        },
+        "intro_m_ext_02": {
+            "en": "Need a long countdown? This {value}-minute timer tracks extended activities with precision. Ideal for exam prep, long bakes, or deep focus work."
+        },
+        "intro_s_short_01": {
+            "en": "This {value}-second timer is built for rapid intervals. Perfect for reaction drills, quick transitions, or ultra-short rest periods between exercises."
+        },
+        "intro_s_short_02": {
+            "en": "Count down {value} seconds with precision. Use this quick timer for breathing cadences, rapid exercises, or any task that needs second-level accuracy."
+        },
+        "intro_s_med_01": {
+            "en": "A {value}-second countdown timer for short timed activities. Great for plank holds, breathing exercises, or quick interval training."
+        },
+        "intro_s_med_02": {
+            "en": "Set this {value}-second timer for exercise intervals, rest periods, or any activity that needs precise second-level timing."
+        },
+        "intro_s_long_01": {
+            "en": "This {value}-second timer is ideal for longer intervals, sustained holds, or timed challenges. Simple controls, clear alerts, no distractions."
+        },
+        "intro_s_long_02": {
+            "en": "Count down from {value} seconds for planks, wall sits, or any timed activity. You'll hear a clear alert the moment time is up."
+        }
+    },
+    "faqs": {
+        "faq_timer_01": {
+            "en": {
+                "q": "Is this timer accurate?",
+                "a": "Yes. This timer uses your device's internal clock and tracks the end timestamp, not individual ticks. This means it stays accurate even if your browser tab goes to sleep or your device briefly lags."
+            }
+        },
+        "faq_timer_02": {
+            "en": {
+                "q": "Does the timer work on mobile devices?",
+                "a": "Absolutely. This timer works on any device with a modern web browser—phones, tablets, laptops, and desktops. No app download required."
+            }
+        },
+        "faq_timer_03": {
+            "en": {
+                "q": "Will I hear an alert when the timer ends?",
+                "a": "Yes. When the countdown reaches zero, a clear audio alert plays automatically. Make sure your device volume is turned up. You can also replay the sound if you missed it."
+            }
+        },
+        "faq_timer_04": {
+            "en": {
+                "q": "Does the timer keep running if I switch tabs?",
+                "a": "Yes. The timer calculates remaining time based on timestamps, not counting intervals. So even if you switch to another tab or minimize your browser, the timer stays on track."
+            }
+        },
+        "faq_timer_05": {
+            "en": {
+                "q": "Can I name my timer?",
+                "a": "Yes. Use the timer name input to label your countdown with any name you like—'Focus session', 'Pasta boiling', or anything else. The name is saved for your session."
+            }
+        },
+        "faq_timer_06": {
+            "en": {
+                "q": "Do I need to create an account to use this timer?",
+                "a": "No. This timer is completely free and requires no sign-up, no login, and no personal information. Just open the page and start timing."
+            }
+        },
+        "faq_pomo_01": {
+            "en": {
+                "q": "What is the Pomodoro Technique?",
+                "a": "The Pomodoro Technique is a time management method where you work in focused intervals (traditionally 25 minutes) separated by short breaks (usually 5 minutes). After four work intervals, you take a longer break of 15–30 minutes."
+            }
+        },
+        "faq_pomo_02": {
+            "en": {
+                "q": "What are the standard Pomodoro intervals?",
+                "a": "The classic setup is 25 minutes of focused work followed by a 5-minute break. After completing four cycles, take a longer break of 15–30 minutes. Some people prefer 50/10 intervals for deeper work."
+            }
+        },
+        "faq_pomo_03": {
+            "en": {
+                "q": "Can I customize the Pomodoro intervals?",
+                "a": "Yes. While the traditional intervals are 25/5, you can set any work and break duration that fits your style. Some people find 50/10 or 45/15 more effective."
+            }
+        },
+        "faq_pomo_04": {
+            "en": {
+                "q": "How many Pomodoro sessions should I do per day?",
+                "a": "Most people aim for 8–12 Pomodoro sessions per day, which translates to roughly 4–6 hours of focused work. Start with fewer sessions and increase as the technique becomes a habit."
+            }
+        }
+    },
+    "quickUseIdeas": {
+        "minutes": {
+            "short": [
+                "Pomodoro break",
+                "Quick stretch",
+                "Tea steeping",
+                "Breathing exercise",
+                "Microwave cooking",
+                "Eye break from screen",
+                "Desk tidying",
+                "Speed journaling"
+            ],
+            "medium": [
+                "Pomodoro focus session",
+                "Meal prep timer",
+                "Yoga routine",
+                "Study block",
+                "Power nap",
+                "Baking interval",
+                "Reading block",
+                "Pasta cooking"
+            ],
+            "long": [
+                "Deep work session",
+                "Slow-cooking check",
+                "Full workout",
+                "Exam practice",
+                "Braising timer",
+                "Painting session",
+                "Music practice",
+                "Meditation session"
+            ],
+            "extended": [
+                "Marathon study block",
+                "Slow cooker check",
+                "Extended focus session",
+                "Lecture length timer",
+                "Roasting timer",
+                "Film length timer",
+                "Workshop timer",
+                "Exam simulation"
+            ]
+        },
+        "seconds": {
+            "seconds_short": [
+                "Reaction drill",
+                "Quick transition",
+                "Breathing pace",
+                "Speed test",
+                "Button press interval"
+            ],
+            "seconds_medium": [
+                "Plank hold",
+                "Wall sit",
+                "Breathing cycle",
+                "Rest between reps",
+                "Sprint interval"
+            ],
+            "seconds_long": [
+                "Full plank",
+                "Sustained hold",
+                "Cool-down interval",
+                "Mindful breathing",
+                "Timed challenge"
+            ]
+        }
+    }
+}
