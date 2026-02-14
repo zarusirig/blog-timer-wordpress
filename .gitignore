@@ -1,40 +1,70 @@
-# Environment variables
+# ==========================================
+# SECURITY: NEVER commit these files
+# ==========================================
+
+# Environment variables and secrets
 .env
-.env.local
+.env.*
+!.env.example
 
-# Credentials
+# Server credentials and instance info - CRITICAL
 .droplet_info
+.vultr_instance_info
 .ssh_key_id
+.ssh_key_id_*
+credentials.txt
 
+# SSH keys
+*.pem
+*.key
+id_rsa*
+wordpress_deploy*
+
+# ==========================================
 # WordPress files
+# ==========================================
 wp-content/uploads/*
 wp-content/cache/
 wp-content/upgrade/
 wp-content/backup*/
+wp-content/debug.log
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/db.php
 
 # Database
 *.sql
+*.sql.gz
+*.sql.bak
 mysql_data/
+mysql-init/
 
 # Docker volumes
 wordpress_data/
 db_data/
 
-# OS files
+# Compressed archives that may contain sensitive data
+datasets.tar.gz
+wp-content.tar.gz
+wordpress_backup.*
+
+# ==========================================
+# OS and editor files
+# ==========================================
 .DS_Store
 Thumbs.db
-
-# Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
-# Logs
+# ==========================================
+# Logs and temp files
+# ==========================================
 *.log
-wp-content/debug.log
-
-# Temporary files
 *.tmp
 *.bak
 *.backup
+error_log
+php_error.log

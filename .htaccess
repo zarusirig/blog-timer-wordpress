@@ -1,7 +1,4 @@
 # BEGIN WordPress
-# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
-# dynamically generated, and should only be modified via WordPress filters.
-# Any changes to the directives between these markers will be overwritten.
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -11,27 +8,121 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
-
 # END WordPress
 
-# Security Headers
-<IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
-</IfModule>
+# ==========================================
+# SECURITY HARDENING
+# ==========================================
+
+# Block XML-RPC completely (brute force and DDoS vector)
+<Files xmlrpc.php>
+    Order Deny,Allow
+    Deny from all
+</Files>
 
 # Protect wp-config.php
 <Files wp-config.php>
-    order allow,deny
-    deny from all
+    Order Allow,Deny
+    Deny from all
 </Files>
 
-# Disable directory browsing
-Options -Indexes
-
-# Protect .htaccess
+# Protect .htaccess itself
 <Files .htaccess>
-    order allow,deny
-    deny from all
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Block access to wp-includes (direct access not needed)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^wp-admin/includes/ - [F,L]
+    RewriteRule !^wp-includes/ - [S=3]
+    RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+    RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+    RewriteRule ^wp-includes/theme-compat/ - [F,L]
+</IfModule>
+
+# Block PHP execution in uploads directory (prevents uploaded backdoors)
+<IfModule mod_rewrite.c>
+    RewriteRule ^wp-content/uploads/.*\.php$ - [F,L]
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes +FollowSymLinks
+
+# Block author enumeration (used to discover admin usernames)
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} ^author=([0-9]*)
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# Block access to sensitive files
+<FilesMatch "(^\.htaccess|^\.htpasswd|^wp-config\.php|^readme\.html|^license\.txt|^error_log|^php_error\.log|^debug\.log)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Block access to hidden files (dot files) except .well-known for SSL
+<FilesMatch "^\.(htaccess|htpasswd|env|git|svn)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# ==========================================
+# SECURITY HEADERS
+# ==========================================
+<IfModule mod_headers.c>
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # XSS protection
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Referrer policy - don't leak full URLs to external sites
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions policy - restrict browser features
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # Content Security Policy - restrict where resources can load from
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://source.unsplash.com; connect-src 'self'; frame-ancestors 'self';"
+
+    # Strict Transport Security (HTTPS enforcement - 1 year)
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # Remove WordPress version from headers
+    Header unset X-Powered-By
+    Header unset Server
+</IfModule>
+
+# ==========================================
+# BLOCK COMMON ATTACK PATTERNS
+# ==========================================
+<IfModule mod_rewrite.c>
+    # Block SQL injection attempts
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule .* - [F,L]
+
+    # Block malicious user agents (known attack tools only)
+    RewriteCond %{HTTP_USER_AGENT} (nikto|sqlmap|nmap|masscan|dirbuster|gobuster|wpscan|havij|acunetix) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# Block access to install.php after WordPress is installed
+<Files install.php>
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Block wp-trackback.php (often abused for spam)
+<Files wp-trackback.php>
+    Order Deny,Allow
+    Deny from all
 </Files>

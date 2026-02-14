@@ -552,3 +552,315 @@ add_action('wp_footer', function () {
     </script>
     <?php
 }, 99);
+
+// ==========================================
+// SECURITY HARDENING
+// ==========================================
+
+/**
+ * Disable XML-RPC entirely (brute force and DDoS attack vector)
+ */
+add_filter('xmlrpc_enabled', '__return_false');
+add_filter('xmlrpc_methods', function () {
+    return [];
+});
+
+/**
+ * Remove WordPress version from HTML head, RSS feeds, and scripts
+ * Attackers use version info to find known vulnerabilities
+ */
+remove_action('wp_head', 'wp_generator');
+add_filter('the_generator', '__return_empty_string');
+add_filter('style_loader_src', 'blogtimer_remove_version_query', 9999);
+add_filter('script_loader_src', 'blogtimer_remove_version_query', 9999);
+function blogtimer_remove_version_query($src)
+{
+    if (strpos($src, 'ver=') !== false) {
+        $src = remove_query_arg('ver', $src);
+    }
+    return $src;
+}
+
+/**
+ * Disable user enumeration via REST API (prevents username discovery)
+ * Attackers use /?rest_route=/wp/v2/users to find admin usernames
+ */
+add_filter('rest_endpoints', function ($endpoints) {
+    if (isset($endpoints['/wp/v2/users'])) {
+        unset($endpoints['/wp/v2/users']);
+    }
+    if (isset($endpoints['/wp/v2/users/(?P<id>[\d]+)'])) {
+        unset($endpoints['/wp/v2/users/(?P<id>[\d]+)']);
+    }
+    return $endpoints;
+});
+
+/**
+ * Block author enumeration via ?author=N queries
+ */
+add_action('template_redirect', function () {
+    if (is_author() && !is_admin()) {
+        wp_safe_redirect(home_url(), 301);
+        exit;
+    }
+});
+
+/**
+ * Disable application passwords (added in WP 5.6 - often overlooked attack surface)
+ */
+add_filter('wp_is_application_passwords_available', '__return_false');
+
+/**
+ * Remove unnecessary header information
+ */
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'wp_shortlink_wp_head');
+remove_action('wp_head', 'rest_output_link_wp_head');
+remove_action('wp_head', 'wp_oembed_add_discovery_links');
+remove_action('wp_head', 'wp_oembed_add_host_js');
+remove_action('wp_head', 'feed_links_extra', 3);
+
+/**
+ * Limit login attempts - basic rate limiting
+ * Blocks IP after 5 failed attempts for 15 minutes
+ */
+add_filter('authenticate', function ($user, $username, $password) {
+    if (empty($username) || empty($password)) {
+        return $user;
+    }
+
+    $ip = sanitize_text_field($_SERVER['REMOTE_ADDR'] ?? '');
+    $transient_key = 'login_attempts_' . md5($ip);
+    $attempts = get_transient($transient_key);
+
+    if ($attempts !== false && (int) $attempts >= 5) {
+        return new WP_Error(
+            'too_many_attempts',
+            'Too many failed login attempts. Please try again in 15 minutes.'
+        );
+    }
+
+    return $user;
+}, 30, 3);
+
+add_action('wp_login_failed', function ($username) {
+    $ip = sanitize_text_field($_SERVER['REMOTE_ADDR'] ?? '');
+    $transient_key = 'login_attempts_' . md5($ip);
+    $attempts = get_transient($transient_key);
+
+    if ($attempts === false) {
+        set_transient($transient_key, 1, 15 * MINUTE_IN_SECONDS);
+    } else {
+        set_transient($transient_key, (int) $attempts + 1, 15 * MINUTE_IN_SECONDS);
+    }
+});
+
+/**
+ * Disable pingbacks entirely (used in DDoS amplification attacks)
+ */
+add_filter('pings_open', '__return_false', 9999);
+
+// ==========================================
+// SPAM DE-INDEXING & CRAWLER CONTROL
+// ==========================================
+
+/**
+ * Override WordPress default robots.txt with strict version
+ * This tells Google and all crawlers to ONLY index known-good URL patterns
+ */
+add_filter('robots_txt', function ($output, $public) {
+    // Build a strict robots.txt that whitelists only legitimate paths
+    $robots = "# robots.txt for The Blog Timer\n";
+    $robots .= "# Security hardened - blocks spam/injected pages from being indexed\n\n";
+
+    // Sitemap location
+    $robots .= "Sitemap: " . home_url('/wp-sitemap.xml') . "\n\n";
+
+    // Allow all legitimate bots to crawl whitelisted content
+    $robots .= "User-agent: *\n";
+
+    // Block sensitive WordPress paths
+    $robots .= "Disallow: /wp-admin/\n";
+    $robots .= "Allow: /wp-admin/admin-ajax.php\n";
+    $robots .= "Disallow: /wp-includes/\n";
+    $robots .= "Disallow: /wp-content/plugins/\n";
+    $robots .= "Disallow: /wp-content/cache/\n";
+    $robots .= "Disallow: /wp-json/\n";
+    $robots .= "Disallow: /xmlrpc.php\n";
+    $robots .= "Disallow: /wp-login.php\n";
+    $robots .= "Disallow: /wp-register.php\n";
+    $robots .= "Disallow: /wp-trackback.php\n";
+    $robots .= "Disallow: /wp-cron.php\n";
+    $robots .= "Disallow: /readme.html\n";
+    $robots .= "Disallow: /license.txt\n";
+
+    // Block query parameter abuse (common in Japanese keyword hacks)
+    $robots .= "Disallow: /*?\n";
+    $robots .= "Disallow: /*&\n";
+
+    // Block feed URLs (often abused to create spam pages)
+    $robots .= "Disallow: /feed/\n";
+    $robots .= "Disallow: /*/feed/\n";
+    $robots .= "Disallow: /comments/feed/\n";
+
+    // Block author pages (used in enumeration)
+    $robots .= "Disallow: /author/\n";
+
+    // Block tag and date archives (often spam vectors)
+    $robots .= "Disallow: /tag/\n";
+    $robots .= "Disallow: /category/\n";
+    $robots .= "Disallow: /20*/\n";
+
+    // Block trackback and comment pages
+    $robots .= "Disallow: /*/trackback/\n";
+    $robots .= "Disallow: /*/comment-page-*\n";
+
+    // Block attachment pages
+    $robots .= "Disallow: /attachment/\n";
+
+    // Crawl delay to prevent server overload
+    $robots .= "Crawl-delay: 2\n\n";
+
+    // Explicitly allow only legitimate content paths
+    $robots .= "# Allowed paths (legitimate content only)\n";
+    $robots .= "Allow: /set-timer-for-*\n";
+    $robots .= "Allow: /minute-timers\n";
+    $robots .= "Allow: /second-timers\n";
+    $robots .= "Allow: /pomodoro\n";
+    $robots .= "Allow: /use-cases\n";
+    $robots .= "Allow: /about\n";
+    $robots .= "Allow: /contact\n";
+    $robots .= "Allow: /faq\n";
+    $robots .= "Allow: /privacy-policy\n";
+    $robots .= "Allow: /terms-of-service\n";
+    $robots .= "Allow: /wp-content/uploads/\n";
+    $robots .= "Allow: /wp-content/themes/\n\n";
+
+    return $robots;
+}, 10, 2);
+
+/**
+ * Add meta noindex to non-legitimate pages
+ * This is the most authoritative way to tell Google to de-index a page
+ * Google treats meta robots as a DIRECTIVE (must obey), not a suggestion
+ */
+add_action('wp_head', function () {
+    // Known legitimate page slugs
+    $allowed_pages = [
+        'home', 'about', 'contact', 'faq',
+        'privacy-policy', 'terms-of-service',
+        'minute-timers', 'second-timers',
+        'pomodoro', 'use-cases',
+    ];
+
+    // Allow the front page
+    if (is_front_page() || is_home()) {
+        return;
+    }
+
+    // Allow legitimate timer posts
+    if (is_singular('timer')) {
+        return;
+    }
+
+    // Allow legitimate guide posts
+    if (is_singular('guide')) {
+        return;
+    }
+
+    // Allow known legitimate pages by slug
+    if (is_page($allowed_pages)) {
+        return;
+    }
+
+    // Everything else gets noindex, nofollow - this covers any injected spam
+    echo '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">' . "\n";
+}, 1);
+
+/**
+ * Send X-Robots-Tag HTTP header for noindex on non-legitimate pages
+ * Belt-and-suspenders approach: header + meta tag
+ */
+add_action('send_headers', function () {
+    $allowed_pages = [
+        'home', 'about', 'contact', 'faq',
+        'privacy-policy', 'terms-of-service',
+        'minute-timers', 'second-timers',
+        'pomodoro', 'use-cases',
+    ];
+
+    if (is_front_page() || is_home()) {
+        return;
+    }
+    if (is_singular('timer') || is_singular('guide')) {
+        return;
+    }
+    if (is_page($allowed_pages)) {
+        return;
+    }
+
+    header('X-Robots-Tag: noindex, nofollow, noarchive', true);
+}, 1);
+
+/**
+ * Remove spam pages from WordPress default sitemap
+ * Only include legitimate content types in the sitemap
+ */
+add_filter('wp_sitemaps_post_types', function ($post_types) {
+    // Only allow timer and guide post types in sitemap
+    $allowed = ['timer', 'guide', 'page'];
+    foreach ($post_types as $key => $value) {
+        if (!in_array($key, $allowed, true)) {
+            unset($post_types[$key]);
+        }
+    }
+    return $post_types;
+});
+
+/**
+ * Remove all taxonomy-based sitemaps (often contain spam)
+ */
+add_filter('wp_sitemaps_taxonomies', function ($taxonomies) {
+    // Remove all taxonomy sitemaps - they often contain injected spam terms
+    return [];
+});
+
+/**
+ * Remove author sitemaps
+ */
+add_filter('wp_sitemaps_add_provider', function ($provider, $name) {
+    if ($name === 'users') {
+        return false;
+    }
+    return $provider;
+}, 10, 2);
+
+/**
+ * Filter out any non-legitimate pages from the sitemap
+ */
+add_filter('wp_sitemaps_posts_query_args', function ($args, $post_type) {
+    if ($post_type === 'page') {
+        $allowed_pages = [
+            'home', 'about', 'contact', 'faq',
+            'privacy-policy', 'terms-of-service',
+            'minute-timers', 'second-timers',
+            'pomodoro', 'use-cases',
+        ];
+        $args['post_name__in'] = $allowed_pages;
+    }
+    return $args;
+}, 10, 2);
+
+/**
+ * Add security headers via PHP (backup for .htaccess headers)
+ */
+add_action('send_headers', function () {
+    if (!is_admin()) {
+        header('X-Content-Type-Options: nosniff');
+        header('X-Frame-Options: SAMEORIGIN');
+        header('X-XSS-Protection: 1; mode=block');
+        header('Referrer-Policy: strict-origin-when-cross-origin');
+        header('Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()');
+    }
+});

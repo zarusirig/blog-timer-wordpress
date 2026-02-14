@@ -159,8 +159,7 @@ systemctl restart apache2
 
 # Mark as ready
 touch /root/.wordpress_ready
-echo "MySQL Root: {mysql_root_pass}" > /root/credentials.txt
-echo "WP DB Pass: {wp_db_pass}" >> /root/credentials.txt
+# SECURITY: Credentials are in .vultr_instance_info locally - do NOT write to server filesystem
 """
     
     # Create instance

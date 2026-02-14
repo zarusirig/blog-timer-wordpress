@@ -32,25 +32,29 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
       - ./mysql-init:/docker-entrypoint-initdb.d
-    ports:
-      - "3306:3306"
+    # Port NOT exposed externally - only accessible via Docker network
+    # To access MySQL directly, use: docker exec -it wp-mysql mysql -u wordpress -p
     command: >
       --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     networks:
       - wordpress-network
 
-  phpmyadmin:
-    image: phpmyadmin:latest
-    container_name: wp-phpmyadmin
-    environment:
-      PMA_HOST: mysql
-      UPLOAD_LIMIT: 64M
-    ports:
-      - "8888:80"
-    depends_on:
-      - mysql
-    networks:
-      - wordpress-network
+  # phpMyAdmin REMOVED for security - direct database admin panels are attack vectors
+  # To manage the database, use WP-CLI or connect via:
+  #   docker exec -it wp-mysql mysql -u wordpress -pwordpress_password wordpress
+  # If you need phpMyAdmin temporarily for local dev only, uncomment below:
+  # phpmyadmin:
+  #   image: phpmyadmin:latest
+  #   container_name: wp-phpmyadmin
+  #   environment:
+  #     PMA_HOST: mysql
+  #     UPLOAD_LIMIT: 64M
+  #   ports:
+  #     - "127.0.0.1:8888:80"  # Bind to localhost ONLY
+  #   depends_on:
+  #     - mysql
+  #   networks:
+  #     - wordpress-network
 
 volumes:
   mysql_data:
