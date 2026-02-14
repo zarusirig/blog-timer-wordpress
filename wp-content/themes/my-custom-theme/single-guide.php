@@ -220,6 +220,9 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
             </section>
         <?php endif; ?>
 
+        <!-- SEE ALSO -->
+        <?php blogtimer_render_see_also('guide'); ?>
+
     </div>
 </main>
 

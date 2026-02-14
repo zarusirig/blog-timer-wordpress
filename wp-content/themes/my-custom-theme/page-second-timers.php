@@ -127,6 +127,29 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
             <?php blogtimer_render_howto(); ?>
         </section>
 
+        <!-- RELATED CATEGORIES -->
+        <?php blogtimer_render_related_categories('second-timers'); ?>
+
+        <!-- RELATED GUIDES -->
+        <section class="section">
+            <h2 class="section-title">Related Guides</h2>
+            <div class="usecase-grid">
+                <?php
+                $guide_slugs = ['hiit-interval-timers', 'timer-accuracy', 'browser-timer-drift'];
+                foreach ($guide_slugs as $gs) {
+                    $g = get_page_by_path($gs, OBJECT, 'guide');
+                    if ($g): ?>
+                        <a href="<?php echo esc_url(get_permalink($g->ID)); ?>" class="card usecase-card" style="text-decoration:none;">
+                            <div class="usecase-card-icon">G</div>
+                            <h3><?php echo esc_html($g->post_title); ?></h3>
+                            <p><?php echo esc_html(wp_trim_words($g->post_excerpt, 12)); ?></p>
+                        </a>
+                    <?php endif;
+                }
+                ?>
+            </div>
+        </section>
+
         <!-- CTA -->
         <div class="cta-banner">
             <h2>Ready to Time Your Next Interval?</h2>

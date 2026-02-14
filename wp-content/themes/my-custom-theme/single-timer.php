@@ -296,6 +296,9 @@ $usecase_terms = get_the_terms($post_id, 'timer_usecase');
 
         <?php blogtimer_render_ad_slot('single_timer_after_content'); ?>
 
+        <!-- SEE ALSO -->
+        <?php blogtimer_render_see_also('timer'); ?>
+
     </div>
 </main>
 

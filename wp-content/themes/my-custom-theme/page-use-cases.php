@@ -105,6 +105,9 @@ foreach (['productivity', 'cooking', 'exercise', 'meditation', 'studying'] as $u
             </section>
         <?php endforeach; ?>
 
+        <!-- RELATED CATEGORIES -->
+        <?php blogtimer_render_related_categories('use-cases'); ?>
+
         <!-- CTA -->
         <div class="cta-banner">
             <h2>Not Sure Which Timer to Use?</h2>

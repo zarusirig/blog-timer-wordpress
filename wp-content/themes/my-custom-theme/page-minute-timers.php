@@ -147,6 +147,29 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
             ?>
         </section>
 
+        <!-- RELATED CATEGORIES -->
+        <?php blogtimer_render_related_categories('minute-timers'); ?>
+
+        <!-- RELATED GUIDES -->
+        <section class="section">
+            <h2 class="section-title">Related Guides</h2>
+            <div class="usecase-grid">
+                <?php
+                $guide_slugs = ['pomodoro-technique', 'timer-accuracy', 'study-timer-methods', 'deep-work-timers'];
+                foreach ($guide_slugs as $gs) {
+                    $g = get_page_by_path($gs, OBJECT, 'guide');
+                    if ($g): ?>
+                        <a href="<?php echo esc_url(get_permalink($g->ID)); ?>" class="card usecase-card" style="text-decoration:none;">
+                            <div class="usecase-card-icon">G</div>
+                            <h3><?php echo esc_html($g->post_title); ?></h3>
+                            <p><?php echo esc_html(wp_trim_words($g->post_excerpt, 12)); ?></p>
+                        </a>
+                    <?php endif;
+                }
+                ?>
+            </div>
+        </section>
+
         <!-- CTA -->
         <div class="cta-banner">
             <h2>Need a Second-Based Timer?</h2>

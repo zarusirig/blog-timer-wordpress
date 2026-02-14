@@ -89,6 +89,7 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
                     <li><a href="<?php echo esc_url(home_url('/guides/')); ?>">Guides</a></li>
                     <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact</a></li>
                     <li><a href="<?php echo esc_url(home_url('/faq/')); ?>">FAQ</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial Policy</a></li>
                 </ul>
             </div>
         </div>
@@ -101,6 +102,9 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
             <div class="footer-bottom-links">
                 <a href="<?php echo esc_url($privacy_url); ?>">Privacy Policy</a>
                 <a href="<?php echo esc_url($terms_url); ?>">Terms of Service</a>
+                <a href="<?php echo esc_url(home_url('/disclaimer/')); ?>">Disclaimer</a>
+                <a href="<?php echo esc_url(home_url('/dmca/')); ?>">DMCA</a>
+                <a href="<?php echo esc_url(home_url('/accessibility/')); ?>">Accessibility</a>
             </div>
         </div>
     </div>

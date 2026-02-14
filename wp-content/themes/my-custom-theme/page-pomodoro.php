@@ -280,6 +280,35 @@ $loader = Timer_Content_Loader::get_instance();
         </div>
     </section>
 
+    <!-- RELATED CATEGORIES -->
+    <section class="section">
+        <div class="container">
+            <?php blogtimer_render_related_categories('pomodoro'); ?>
+        </div>
+    </section>
+
+    <!-- RELATED GUIDES -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Related Guides</h2>
+            <div class="usecase-grid">
+                <?php
+                $guide_slugs = ['pomodoro-technique', 'pomodoro-studying', 'study-timer-methods', 'deep-work-timers'];
+                foreach ($guide_slugs as $gs) {
+                    $g = get_page_by_path($gs, OBJECT, 'guide');
+                    if ($g): ?>
+                        <a href="<?php echo esc_url(get_permalink($g->ID)); ?>" class="card usecase-card" style="text-decoration:none;">
+                            <div class="usecase-card-icon">G</div>
+                            <h3><?php echo esc_html($g->post_title); ?></h3>
+                            <p><?php echo esc_html(wp_trim_words($g->post_excerpt, 12)); ?></p>
+                        </a>
+                    <?php endif;
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Banner -->
     <section class="section">
         <div class="container">

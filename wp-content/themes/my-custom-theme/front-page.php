@@ -116,20 +116,32 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
         </div>
     </section>
 
+    <!-- WHAT IS THE BLOG TIMER -->
+    <section class="section">
+        <div class="container container--narrow">
+            <div class="section-header">
+                <h2 class="section-title">What Is The Blog Timer?</h2>
+            </div>
+            <div class="content-page">
+                <p>The Blog Timer is a free, browser-based countdown timer built for people who value accuracy and simplicity. With over 220 preset timers covering every duration from 1 second to 100+ minutes, it replaces unreliable phone apps and ad-heavy timer websites with a single, focused tool that works instantly on any device.</p>
+
+                <p>Unlike basic timers that drift when you switch browser tabs, The Blog Timer uses timestamp-based calculations anchored to your system clock. Your countdown stays accurate whether you minimize the browser, switch to another application, or let your screen sleep. When time is up, a clear audio alert plays even from a background tab.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- WHY USE AN ONLINE TIMER -->
     <section class="section">
         <div class="container container--narrow">
             <div class="section-header">
-                <h2 class="section-title">Why Use an Online Timer?</h2>
+                <h2 class="section-title">Why Use an Online Timer Instead of Your Phone?</h2>
             </div>
             <div class="content-page">
-                <p>Online timers have become essential tools for productivity, cooking, exercise, studying, and meditation. Unlike physical timers or phone apps, a browser-based timer requires no installation, no sign-up, and works instantly on any device with a web browser. You open the page, press start, and get back to the task at hand.</p>
+                <p>Phone timer apps require unlocking your device, navigating to the app, and typing in a duration. Each of those steps creates an opportunity for distraction — you see a notification, check a message, and suddenly five minutes have passed before you even set the timer. A browser-based timer eliminates this friction entirely. You open the page, click start, and get back to your task.</p>
 
-                <p>The Blog Timer was built because most online timer tools fall short in critical ways. Many are overloaded with advertisements that interrupt your focus. Others require you to download an app or create an account before you can set a simple countdown. Some lose track of time when you switch browser tabs, giving you an inaccurate alert. We built a timer that solves every one of these problems.</p>
+                <p>Physical kitchen timers and phone apps also lack the precision that matters for cooking, exercise intervals, and professional Pomodoro sessions. The Blog Timer preserves your timer state in local storage, so an accidental page refresh will not lose your progress. Keyboard shortcuts let you start, pause, reset, and enter fullscreen without reaching for the mouse. And fullscreen mode makes the countdown visible from across the room — perfect for presentations, group workouts, and classroom activities.</p>
 
-                <p>Our timers use timestamp-based calculations rather than simple interval counters. This means even if you switch to another tab, minimize your browser, or let your screen go to sleep, the countdown remains perfectly accurate. When your timer ends, you receive a clear audio alert that works even if the tab is in the background. Your timer state is preserved in your browser's local storage, so an accidental page refresh will not lose your progress.</p>
-
-                <p>Whether you need a quick 30-second countdown for a plank exercise, a 5-minute break timer, a 25-minute Pomodoro work session, or a 90-minute deep focus block, The Blog Timer has a dedicated page for every duration. Each timer page loads instantly, starts with a single click, and gives you a distraction-free experience designed to keep you in flow.</p>
+                <p>Whether you need a quick 30-second countdown for a plank, a 5-minute break timer, a 25-minute Pomodoro work session, or a 90-minute deep focus block, The Blog Timer has a dedicated page for every duration. No sign-up. No ads interrupting your focus. No app to download. Just accurate, reliable timing.</p>
             </div>
         </div>
     </section>
@@ -441,6 +453,81 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
             }
             blogtimer_render_faq($home_faqs);
             ?>
+        </div>
+    </section>
+
+    <!-- QUICK ACCESS: TOP 10 TIMERS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quick Access: Most Popular Timers</h2>
+                <p class="section-subtitle">Jump straight to the timer you need. These are the ten most-used countdowns on The Blog Timer.</p>
+            </div>
+            <?php
+            $quick_values = [1, 2, 3, 5, 10, 15, 20, 25, 30, 60];
+            $quick_timers = [];
+            foreach ($quick_values as $qv) {
+                $q = new WP_Query([
+                    'post_type' => 'timer',
+                    'posts_per_page' => 1,
+                    'meta_query' => [
+                        'relation' => 'AND',
+                        ['key' => '_timer_value', 'value' => $qv, 'type' => 'NUMERIC'],
+                        ['key' => '_timer_unit', 'value' => 'minutes'],
+                    ],
+                    'no_found_rows' => true,
+                ]);
+                if ($q->have_posts()) {
+                    $quick_timers[] = [
+                        'value' => $qv,
+                        'unit' => 'minutes',
+                        'post' => $q->posts[0],
+                    ];
+                }
+            }
+            if (!empty($quick_timers)):
+            ?>
+            <div class="timer-grid">
+                <?php foreach ($quick_timers as $qt): blogtimer_render_timer_card($qt); endforeach; ?>
+            </div>
+            <?php endif; ?>
+        </div>
+    </section>
+
+    <!-- LATEST GUIDES -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Guides and Tips</h2>
+                <p class="section-subtitle">In-depth articles to help you get the most from timed work sessions, interval training, and focus techniques.</p>
+            </div>
+            <div class="usecase-grid">
+                <?php
+                $latest_guides = new WP_Query([
+                    'post_type' => 'guide',
+                    'posts_per_page' => 4,
+                    'post_status' => 'publish',
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                    'no_found_rows' => true,
+                ]);
+                if ($latest_guides->have_posts()):
+                    while ($latest_guides->have_posts()): $latest_guides->the_post();
+                ?>
+                    <a href="<?php the_permalink(); ?>" class="card usecase-card guide-card" style="text-decoration:none;">
+                        <div class="usecase-card-icon">G</div>
+                        <h3><?php the_title(); ?></h3>
+                        <p><?php echo esc_html(wp_trim_words(get_the_excerpt(), 15)); ?></p>
+                    </a>
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                endif;
+                ?>
+            </div>
+            <div class="hub-cta" style="margin-top: var(--space-5);">
+                <a href="<?php echo esc_url(home_url('/guides/')); ?>">View All Guides &rarr;</a>
+            </div>
         </div>
     </section>
 
