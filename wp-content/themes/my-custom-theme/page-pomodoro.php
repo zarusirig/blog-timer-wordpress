@@ -250,7 +250,7 @@ $loader = Timer_Content_Loader::get_instance();
     <section class="section">
         <div class="container container--narrow">
             <h2 class="section-title">Who invented the Pomodoro Technique?</h2>
-            <p>The Pomodoro Technique was invented in 1987 by <a href="https://en.wikipedia.org/wiki/Francesco_Cirillo" target="_blank" rel="noopener">Francesco Cirillo</a>, then an Italian university student at the Guido Carli International University in Rome. Cirillo was struggling to focus on his sociology coursework and challenged himself to commit to just ten uninterrupted minutes of study. He grabbed a tomato-shaped mechanical kitchen timer from his family's kitchen &mdash; <em>pomodoro</em> means tomato in Italian &mdash; and started winding it for short, defined intervals.</p>
+            <p>The Pomodoro Technique was invented in 1987 by <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank" rel="noopener">Francesco Cirillo</a>, then an Italian university student at the Guido Carli International University in Rome. Cirillo was struggling to focus on his sociology coursework and challenged himself to commit to just ten uninterrupted minutes of study. He grabbed a tomato-shaped mechanical kitchen timer from his family's kitchen &mdash; <em>pomodoro</em> means tomato in Italian &mdash; and started winding it for short, defined intervals.</p>
 
                 <p>What started as a self-experiment evolved into a formal methodology. Cirillo later refined the intervals to 25 minutes after observing that 30-minute slots felt psychologically heavier and 20-minute slots cut off momentum prematurely. He documented the system in his book <em><a href="https://francescocirillo.com/pages/pomodoro-technique" target="_blank" rel="noopener">The Pomodoro Technique</a></em>, originally circulated as a free PDF and later released commercially through Cirillo Consulting. The book remains the canonical reference for the method.</p>
 
@@ -362,7 +362,7 @@ $loader = Timer_Content_Loader::get_instance();
 
                 <li><strong>Stacking Pomodoros without a long break.</strong> After four 25-minute cycles, the longer 15&ndash;30 minute break is essential. Skipping it produces the same fatigue accumulation as marathon work sessions.</li>
 
-                <li><strong>Multitasking inside a Pomodoro.</strong> The technique assumes single-tasking. Research by <a href="https://en.wikipedia.org/wiki/Sophie_Leroy" target="_blank" rel="noopener">Sophie Leroy</a> on "attention residue" shows that switching between tasks leaves cognitive residue that impairs the new task for several minutes.</li>
+                <li><strong>Multitasking inside a Pomodoro.</strong> The technique assumes single-tasking. Research by <a href="https://en.wikipedia.org/wiki/Attention_residue" target="_blank" rel="noopener">Sophie Leroy</a> on "attention residue" shows that switching between tasks leaves cognitive residue that impairs the new task for several minutes.</li>
 
                 <li><strong>Expecting linear progress.</strong> Some Pomodoros are highly productive; others are not. Cirillo emphasizes that the value comes from the cumulative log, not individual sessions.</li>
             </ul>
@@ -401,7 +401,7 @@ $loader = Timer_Content_Loader::get_instance();
             <ul>
                 <li><strong>A reliable timer</strong> &mdash; whether the original tomato-shaped <a href="https://en.wikipedia.org/wiki/Kitchen_timer" target="_blank" rel="noopener">kitchen timer</a> or a browser-based timer like the one above. Reliability matters because trust in the timer eliminates time-checking, which itself is a distraction.</li>
 
-                <li><strong>Task list before the session</strong> &mdash; methodology authors from David Allen (<em><a href="https://en.wikipedia.org/wiki/Getting_Things_Done" target="_blank" rel="noopener">Getting Things Done</a></em>) to <a href="https://en.wikipedia.org/wiki/Tiago_Forte" target="_blank" rel="noopener">Tiago Forte</a> (<em>Building a Second Brain</em>) emphasize externalizing the task queue so the working brain does not carry it.</li>
+                <li><strong>Task list before the session</strong> &mdash; methodology authors from David Allen (<em><a href="https://en.wikipedia.org/wiki/Getting_Things_Done" target="_blank" rel="noopener">Getting Things Done</a></em>) to Tiago Forte (<em>Building a Second Brain</em>) emphasize externalizing the task queue so the working brain does not carry it.</li>
 
                 <li><strong>Distraction log</strong> &mdash; a small notepad to capture interrupting thoughts during a Pomodoro. The act of writing them defers the urgency without losing the thought.</li>
 

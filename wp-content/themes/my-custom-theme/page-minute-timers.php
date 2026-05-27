@@ -136,7 +136,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
 
                     <p>Most cognitive and physiological events of interest fall comfortably inside the minute range. A breath cycle takes a few seconds. A typical conversational turn takes 1&ndash;3 minutes. Focused attention can be sustained for 25&ndash;90 minutes. Sleep cycles repeat roughly every 90 minutes. The minute is small enough to be precise but large enough to feel meaningful, which is why it became the default unit for cooking, exercise, work scheduling, and timed examinations.</p>
 
-                    <p>This is why minute-based timers cover such a broad range of activities. A 5-minute timer is short enough for a stretch break or a meditation reset; a 90-minute timer aligns with the body's <strong>basic rest-activity cycle</strong>, first described by sleep researcher <a href="https://en.wikipedia.org/wiki/Nathaniel_Kleitman" target="_blank" rel="noopener">Nathaniel Kleitman</a> in the 1950s and later formalized into the ultradian rhythm framework popularized by <a href="https://en.wikipedia.org/wiki/Tony_Schwartz_(journalist)" target="_blank" rel="noopener">Tony Schwartz</a>.</p>
+                    <p>This is why minute-based timers cover such a broad range of activities. A 5-minute timer is short enough for a stretch break or a meditation reset; a 90-minute timer aligns with the body's <strong>basic rest-activity cycle</strong>, first described by sleep researcher <a href="https://en.wikipedia.org/wiki/Nathaniel_Kleitman" target="_blank" rel="noopener">Nathaniel Kleitman</a> in the 1950s and later formalized into the ultradian rhythm framework popularized by <a href="https://en.wikipedia.org/wiki/Tony_Schwartz_(author)" target="_blank" rel="noopener">Tony Schwartz</a>.</p>
                 </div>
             </div>
         </section>
@@ -307,7 +307,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                 <h2 class="section-title">What durations match which task types?</h2>
                 <div class="content-page">
                     <h3>5-minute timer &mdash; the universal break</h3>
-                    <p>Five minutes is the standard Pomodoro break and the most common stretching, mindfulness, and transition interval. Research on <a href="https://en.wikipedia.org/wiki/Microbreak" target="_blank" rel="noopener">microbreaks</a> in occupational health literature (e.g., Henning et al., 1997) shows measurable improvements in both wellbeing and accuracy with brief breaks every 25&ndash;30 minutes.</p>
+                    <p>Five minutes is the standard Pomodoro break and the most common stretching, mindfulness, and transition interval. Research on <a href="https://en.wikipedia.org/wiki/Rest_break" target="_blank" rel="noopener">microbreaks</a> in occupational health literature (e.g., Henning et al., 1997) shows measurable improvements in both wellbeing and accuracy with brief breaks every 25&ndash;30 minutes.</p>
 
                     <h3>15-minute timer &mdash; the cleanup window</h3>
                     <p>Fifteen minutes is the "FlyLady" cleaning interval popularized by Marla Cilley. It is short enough to feel approachable and long enough to make visible progress. The same duration is used in agile development for <em>focused spikes</em> &mdash; brief, single-purpose investigations.</p>

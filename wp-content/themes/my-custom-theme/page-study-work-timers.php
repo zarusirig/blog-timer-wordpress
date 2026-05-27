@@ -80,7 +80,7 @@ get_header();
                     <h3>Study Timer</h3>
                     <p>25, 50, and 90-minute presets with a local study log. Built on spaced practice (Cepeda 2006) and deliberate practice (Ericsson 1993).</p>
                 </a>
-                <a class="card usecase-card" href="/reading-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/study-timer/" style="text-decoration:none;">
                     <div class="usecase-card-icon">R</div>
                     <h3>Reading Timer</h3>
                     <p>Structured reading sessions with page-count tracking and comprehension-check breaks.</p>
@@ -109,7 +109,7 @@ get_header();
                     <tr><td>Pomodoro Long</td><td>50 minutes</td><td>10 minutes</td><td>Programming, analysis, writing</td><td><a href="/focus-timer/">Focus Timer</a></td></tr>
                     <tr><td>Active Learning</td><td>50 minutes</td><td>10 minutes</td><td>Studying new material</td><td><a href="/study-timer/">Study Timer</a></td></tr>
                     <tr><td>Deep Work</td><td>90 minutes</td><td>15&ndash;20 minutes</td><td>Novel problem-solving, deep synthesis</td><td><a href="/deep-work-timer/">Deep Work Timer</a></td></tr>
-                    <tr><td>Reading block</td><td>30&ndash;60 minutes</td><td>5&ndash;10 minutes</td><td>Long-form reading with comprehension</td><td><a href="/reading-timer/">Reading Timer</a></td></tr>
+                    <tr><td>Reading block</td><td>30&ndash;60 minutes</td><td>5&ndash;10 minutes</td><td>Long-form reading with comprehension</td><td><a href="/study-timer/">Reading Timer</a></td></tr>
                     <tr><td>52/17</td><td>52 minutes</td><td>17 minutes</td><td>Highest measured productivity ratio (DeskTime)</td><td><a href="/focus-timer/">Focus Timer</a></td></tr>
                 </tbody>
             </table>
@@ -127,7 +127,7 @@ get_header();
                 <li><strong>Studying new material:</strong> <a href="/study-timer/">50-minute study block</a>. Spaced practice across multiple sessions outperforms massed study.</li>
                 <li><strong>Writing a long-form piece:</strong> <a href="/focus-timer/">45-minute focus block</a> or <a href="/deep-work-timer/">90-minute deep work block</a>, depending on warm-up needs.</li>
                 <li><strong>Novel problem-solving, dissertation work, research:</strong> <a href="/deep-work-timer/">90-minute deep work block</a>. The ultradian-aligned ceiling for sustainable continuous focus.</li>
-                <li><strong>Reading a book:</strong> <a href="/reading-timer/">30 to 60-minute reading session</a> with brief comprehension breaks.</li>
+                <li><strong>Reading a book:</strong> <a href="/study-timer/">30 to 60-minute reading session</a> with brief comprehension breaks.</li>
             </ul>
             <p>If you are unsure, start with the Pomodoro. It is the most studied general-purpose focus interval in productivity literature for good reason.</p>
         </div>
