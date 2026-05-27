@@ -46,9 +46,76 @@ class Timer_Related
 
         if ($unit === 'minutes') {
             return $this->get_related_minutes($value, $post->ID);
+        } elseif ($unit === 'hours') {
+            return $this->get_related_hours($value, $post->ID);
         } else {
             return $this->get_related_seconds($value, $post->ID);
         }
+    }
+
+    /**
+     * Compute related timers for hour-based timers.
+     * Target: 6–10 links (neighbors + bucket populars + global populars + cross-link to minute timers)
+     */
+    private function get_related_hours($value, $exclude_post_id)
+    {
+        $loader = Timer_Content_Loader::get_instance();
+        $dataset = $loader->get_dataset();
+        $hour_populars = $dataset['globalPopulars']['hours'] ?? [];
+        $known_hour_values = array_map(fn($t) => (int) $t['value'], array_filter($dataset['timers'] ?? [], fn($t) => ($t['unit'] ?? '') === 'hours'));
+        $known_hour_values = array_values(array_unique($known_hour_values));
+        sort($known_hour_values);
+
+        $related_values = [];
+
+        // 1. Neighbors among known hour values
+        $idx = array_search($value, $known_hour_values, true);
+        if ($idx !== false) {
+            if ($idx > 0) {
+                $related_values[] = $known_hour_values[$idx - 1];
+            }
+            if ($idx < count($known_hour_values) - 1) {
+                $related_values[] = $known_hour_values[$idx + 1];
+            }
+        }
+
+        // 2. Hour populars
+        foreach ($hour_populars as $hp) {
+            if ($hp !== $value && !in_array($hp, $related_values, true)) {
+                $related_values[] = $hp;
+            }
+        }
+
+        // 3. Fill with remaining known hour values
+        foreach ($known_hour_values as $hv) {
+            if (count($related_values) >= 8) {
+                break;
+            }
+            if ($hv !== $value && !in_array($hv, $related_values, true)) {
+                $related_values[] = $hv;
+            }
+        }
+
+        $hour_results = $this->resolve_timer_posts($related_values, 'hours', $exclude_post_id);
+
+        // 4. Cross-link to popular minute timers (fill up to 10)
+        $minute_populars = $dataset['globalPopulars']['minutes'] ?? [];
+        foreach ($minute_populars as $mp) {
+            if (count($hour_results) >= 10) {
+                break;
+            }
+            $timer_post = $this->find_timer_post($mp, 'minutes');
+            if ($timer_post && $timer_post->ID !== $exclude_post_id) {
+                $hour_results[] = [
+                    'post' => $timer_post,
+                    'value' => $mp,
+                    'unit' => 'minutes',
+                    'slug' => $timer_post->post_name,
+                ];
+            }
+        }
+
+        return $hour_results;
     }
 
     /**

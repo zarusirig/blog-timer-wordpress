@@ -144,10 +144,19 @@ class Timer_Generator_Command
 
         // Get content from loader
         $loader = Timer_Content_Loader::get_instance();
-        $title_key = "timer.title.{$unit}";
+        // Use singular form for 1-hour (e.g., "Set Timer for 1 Hour")
+        if ($unit === 'hours' && (int) $value === 1) {
+            $title_key = 'timer.title.hours_singular';
+        } else {
+            $title_key = "timer.title.{$unit}";
+        }
         $title = $loader->get_string($title_key, ['value' => $value]);
         if (!$title) {
-            $title = "Set Timer for {$value} " . ucfirst($unit);
+            $unit_label = ucfirst($unit);
+            if ($unit === 'hours' && (int) $value === 1) {
+                $unit_label = 'Hour';
+            }
+            $title = "Set Timer for {$value} " . $unit_label;
         }
 
         // Determine bucket

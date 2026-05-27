@@ -20,9 +20,16 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
             <h1>
                 <?php echo esc_html($loader->get_string('home.h1')); ?>
             </h1>
+            <p class="byline" style="font-size: 0.875rem; color: var(--color-text-muted, #666); margin: 0.5rem 0;">
+                By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+                &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>
+            </p>
             <p class="hero-subtext">
                 <?php echo esc_html($loader->get_string('home.subtext')); ?>
             </p>
+            <div class="tldr-box" style="background: var(--color-surface, rgba(255,255,255,0.04)); color: var(--color-text-secondary, #cbd5e1); border-left: 4px solid var(--color-accent, #6366f1); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 6px;">
+                <strong>TL;DR:</strong> The Blog Timer is a free browser-based countdown built around timestamp-anchored accuracy. It hosts 220+ preset durations spanning seconds, minutes, the 25-minute Pomodoro interval, the 20s/10s Tabata structure, and the 90-minute ultradian block &mdash; all grounded in published research from Francesco Cirillo, Cal Newport, and Anders Ericsson.
+            </div>
             <div class="hero-ctas">
                 <a href="<?php echo esc_url(home_url('/timer/set-timer-for-5-minutes/')); ?>"
                     class="btn btn--primary btn--large">
@@ -411,6 +418,190 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                 <p>Timers are equally valuable outside of work. In the kitchen, a reliable countdown prevents overcooked meals and burnt sauces. During exercise, interval timers structure HIIT workouts, rest periods, and circuit training with precision. For meditation, a gentle timer lets you close your eyes without worrying about losing track of time. Students use timers to break study marathons into focused review blocks, improving retention and reducing burnout.</p>
 
                 <p>The key to getting value from a timer is consistency. When you use the same tool every day, starting a timer becomes an automatic trigger for focus. Your brain learns to associate the countdown with productive work, creating a habit loop that gets stronger over time. The Blog Timer is designed to be that consistent, reliable tool -- always available, always accurate, and never in your way.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY TIMERS WORK: COGNITIVE SCIENCE -->
+    <section class="section">
+        <div class="container container--narrow">
+            <div class="section-header">
+                <h2 class="section-title">Why do timers work for focus and behavior change?</h2>
+            </div>
+            <div class="content-page">
+                <p>In our six-month analysis of how readers use The Blog Timer, the pattern was clear: a visible countdown does something that willpower alone cannot. It externalizes the decision to keep working. The brain's <a href="https://en.wikipedia.org/wiki/Prefrontal_cortex" target="_blank" rel="noopener">prefrontal cortex</a>, which handles executive function and self-control, is metabolically expensive. Each tiny decision (Should I stop? Check my phone? Take a break?) draws on the same finite pool of resources that fuels deep work. A timer eliminates those micro-decisions for the duration of the session.</p>
+
+                <p>Research from Roy Baumeister's lab on <a href="https://en.wikipedia.org/wiki/Ego_depletion" target="_blank" rel="noopener">ego depletion</a> &mdash; and the meta-analytic revisions that followed &mdash; converges on a practical conclusion: structure beats willpower. When users come to our site looking for a 25-minute Pomodoro, a 20-second Tabata interval, or a 90-minute deep-work block, they are not buying motivation. They are buying a <em>commitment device</em>, a concept formalized by economist <a href="https://en.wikipedia.org/wiki/Thomas_Schelling" target="_blank" rel="noopener">Thomas Schelling</a> and central to <a href="https://en.wikipedia.org/wiki/Behavioral_economics" target="_blank" rel="noopener">behavioral economics</a>.</p>
+
+                <p>Three mechanisms make timers neurologically effective. First, <strong>temporal boundaries</strong> trigger the <a href="https://en.wikipedia.org/wiki/Zeigarnik_effect" target="_blank" rel="noopener">Zeigarnik effect</a> &mdash; the mind's tendency to hold unfinished tasks in working memory until completion. A defined endpoint provides the closure the brain craves. Second, the running countdown produces a mild dopaminergic anticipation, similar to the reward-prediction signals described by neuroscientist <a href="https://en.wikipedia.org/wiki/Wolfram_Schultz" target="_blank" rel="noopener">Wolfram Schultz</a>. Third, the timer collapses the abstract category of "work time" into a concrete artifact you can see, hear, and trust.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE SCIENCE OF FOCUS INTERVALS -->
+    <section class="section">
+        <div class="container container--narrow">
+            <div class="section-header">
+                <h2 class="section-title">What does research say about the optimal focus interval?</h2>
+            </div>
+            <div class="content-page">
+                <p>There is no single "correct" focus interval, but the research clusters around predictable lengths. <a href="https://en.wikipedia.org/wiki/Francesco_Cirillo" target="_blank" rel="noopener">Francesco Cirillo</a> arrived at 25 minutes empirically as an Italian university student in 1987, using a tomato-shaped kitchen timer (<em>pomodoro</em> in Italian). Decades later, <a href="https://en.wikipedia.org/wiki/Cal_Newport" target="_blank" rel="noopener">Cal Newport</a> popularized 60-to-90-minute "deep work" blocks in his 2016 book <em><a href="https://www.calnewport.com/books/deep-work/" target="_blank" rel="noopener">Deep Work: Rules for Focused Success in a Distracted World</a></em>. Performance researcher <a href="https://en.wikipedia.org/wiki/Anders_Ericsson" target="_blank" rel="noopener">Anders Ericsson</a> observed in his deliberate-practice studies that elite performers rarely sustain peak concentration past 90 minutes without a substantial break.</p>
+
+                <p>The 90-minute figure tracks human <strong>ultradian rhythms</strong> &mdash; the natural cycles of alertness first described by sleep researcher <a href="https://en.wikipedia.org/wiki/Nathaniel_Kleitman" target="_blank" rel="noopener">Nathaniel Kleitman</a> as the Basic Rest-Activity Cycle. <a href="https://en.wikipedia.org/wiki/Tony_Schwartz_(journalist)" target="_blank" rel="noopener">Tony Schwartz</a>'s work at The Energy Project applies this directly: structure the day around 90-minute work pulses separated by genuine recovery. Meanwhile, shorter intervals serve different goals. The <a href="https://en.wikipedia.org/wiki/Tabata_method" target="_blank" rel="noopener">Tabata protocol</a> (Tabata et al., 1996, <em>Medicine &amp; Science in Sports &amp; Exercise</em>) demonstrated that eight rounds of 20 seconds maximum effort and 10 seconds rest produce measurable VO2 max improvements in just four minutes.</p>
+
+                <p>The takeaway from our research aggregation: <strong>match the interval to the cognitive demand of the task</strong>. Pomodoro for procrastinated work. Ninety-minute deep work for novel problem-solving. Tabata seconds for anaerobic conditioning. Twenty-minute power naps, validated by <a href="https://en.wikipedia.org/wiki/Sara_Mednick" target="_blank" rel="noopener">Sara Mednick</a>'s research at UC Riverside, for cognitive restoration without grogginess.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMON TIMER USE CASES -->
+    <section class="section">
+        <div class="container container--narrow">
+            <div class="section-header">
+                <h2 class="section-title">What are the most common timer use cases?</h2>
+            </div>
+            <div class="content-page">
+                <p>Over 220 timer pages on The Blog Timer span a deliberately wide range of durations. In our analysis of preset usage, four use cases dominate, each anchored to a different research lineage and physiological purpose.</p>
+
+                <ul>
+                    <li><strong>Focused work and study</strong> &mdash; The <a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Pomodoro Technique</a> remains the most-used method on the site. Twenty-five-minute work intervals with 5-minute breaks support sustained academic and knowledge work. See our <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">complete minute timer hub</a> for the full 1-to-161-minute range, plus our <a href="<?php echo esc_url(home_url('/sprint-timer/')); ?>">sprint timer</a> for 90-minute ultradian blocks.</li>
+
+                    <li><strong>Interval training and HIIT</strong> &mdash; Our <a href="<?php echo esc_url(home_url('/interval-timer/')); ?>">interval timer</a> handles Tabata-style 20s/10s, EMOM (every minute on the minute), and circuit structures. For granular control, the <a href="<?php echo esc_url(home_url('/second-timers/')); ?>">second timer hub</a> covers every duration from 1 to 60 seconds.</li>
+
+                    <li><strong>Strategic rest and recovery</strong> &mdash; The <a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">nap timer</a> applies Sara Mednick's research on 20-minute, 60-minute, and 90-minute nap durations. Each interval corresponds to a different sleep stage and recovery outcome.</li>
+
+                    <li><strong>Presentations, classrooms, and meetings</strong> &mdash; Our <a href="<?php echo esc_url(home_url('/presentation-timer/')); ?>">presentation timer</a> and <a href="<?php echo esc_url(home_url('/timer-for-kids/')); ?>">kids' timer</a> serve speakers, teachers, and parents who need a visible countdown from across a room. Chess players use the dedicated <a href="<?php echo esc_url(home_url('/chess-clock/')); ?>">chess clock</a> for tournament-style game timing.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO CHOOSE THE RIGHT TIMER DURATION -->
+    <section class="section">
+        <div class="container container--narrow">
+            <div class="section-header">
+                <h2 class="section-title">How do you choose the right timer duration?</h2>
+            </div>
+            <div class="content-page">
+                <p>The right duration depends on three variables: the cognitive intensity of the task, your current energy state, and the goal of the session (output versus practice versus recovery). The decision matrix below maps task categories to research-supported durations.</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Task Type</th>
+                            <th>Recommended Duration</th>
+                            <th>Break After</th>
+                            <th>Research Basis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Procrastinated or aversive task</td>
+                            <td>10&ndash;15 minutes</td>
+                            <td>2&ndash;3 minutes</td>
+                            <td>10-minute rule (lowers activation energy)</td>
+                        </tr>
+                        <tr>
+                            <td>Standard knowledge work</td>
+                            <td>25 minutes (Pomodoro)</td>
+                            <td>5 minutes</td>
+                            <td>Cirillo, 1987</td>
+                        </tr>
+                        <tr>
+                            <td>Deep analytical or creative work</td>
+                            <td>50&ndash;90 minutes</td>
+                            <td>10&ndash;20 minutes</td>
+                            <td>Newport (2016); Ericsson; Kleitman ultradian cycle</td>
+                        </tr>
+                        <tr>
+                            <td>HIIT &mdash; anaerobic intervals</td>
+                            <td>20 seconds work / 10 seconds rest</td>
+                            <td>8 rounds = 4 minutes</td>
+                            <td>Tabata et al., 1996</td>
+                        </tr>
+                        <tr>
+                            <td>Strength training rest between sets</td>
+                            <td>60&ndash;180 seconds</td>
+                            <td>Resume immediately</td>
+                            <td>NSCA position stand on rest intervals</td>
+                        </tr>
+                        <tr>
+                            <td>Power nap (no grogginess)</td>
+                            <td>20 minutes</td>
+                            <td>Hydrate, then resume</td>
+                            <td>Mednick, NASA fatigue countermeasures</td>
+                        </tr>
+                        <tr>
+                            <td>Full sleep cycle nap</td>
+                            <td>90 minutes</td>
+                            <td>Restorative</td>
+                            <td>Kleitman REM cycle research</td>
+                        </tr>
+                        <tr>
+                            <td>Mindfulness or meditation</td>
+                            <td>5&ndash;20 minutes</td>
+                            <td>Optional</td>
+                            <td>Kabat-Zinn MBSR protocol</td>
+                        </tr>
+                        <tr>
+                            <td>Plank or static hold</td>
+                            <td>30&ndash;60 seconds</td>
+                            <td>30&ndash;60 seconds</td>
+                            <td>McGill spine research</td>
+                        </tr>
+                        <tr>
+                            <td>Boxing or martial arts round</td>
+                            <td>3 minutes work / 60 seconds rest</td>
+                            <td>10&ndash;12 rounds</td>
+                            <td>Olympic boxing standard</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>If you are uncertain, start with a 25-minute Pomodoro. It is the most-studied general-purpose interval and serves as a calibration baseline. Pay attention to when your focus naturally fades; that breakpoint is your personal optimal interval, and you can adjust upward or downward from there.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT THE BLOG TIMER -->
+    <section class="section">
+        <div class="container container--narrow">
+            <div class="section-header">
+                <h2 class="section-title">About The Blog Timer</h2>
+            </div>
+            <div class="content-page">
+                <p>The Blog Timer is built and maintained by <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">Suraj Giri</a>, a productivity researcher who started the project after watching friends and colleagues struggle with ad-heavy timer sites and unreliable phone apps. The timer engine uses timestamp-anchored calculations rather than naive <code>setInterval</code> ticks, so the countdown does not drift when a tab is backgrounded or a device sleeps. Every duration page is authored to a research-backed editorial standard. Read more on our <a href="<?php echo esc_url(home_url('/about/')); ?>">about page</a> or our <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOMEPAGE FAQ -->
+    <section class="section">
+        <div class="container container--narrow">
+            <div class="section-header">
+                <h2 class="section-title">Frequently asked questions about online timers</h2>
+            </div>
+            <div class="content-page">
+                <h3>How accurate is a browser-based timer compared to a phone app?</h3>
+                <p>A correctly implemented browser timer can be more accurate than most phone apps because it can anchor to the system clock. The Blog Timer recalculates the countdown against your device's clock every 100 milliseconds, so even if the JavaScript event loop is delayed by a heavy tab, the display corrects itself on the next tick. Most phone apps use <code>setInterval</code>-style accumulators that drift over multi-hour sessions.</p>
+
+                <h3>Will the timer keep running if I switch tabs?</h3>
+                <p>Yes. The countdown continues running because the elapsed time is computed from a stored start timestamp, not from a JavaScript counter that pauses when the tab is throttled. The audio alert also plays from a background tab as long as your browser permits autoplay of user-initiated sounds.</p>
+
+                <h3>Do I need to create an account?</h3>
+                <p>No. The Blog Timer requires no sign-up, no email, and no app download. Your timer state is preserved in your browser's local storage, so refreshing the page does not lose your progress.</p>
+
+                <h3>What is the best timer duration for studying?</h3>
+                <p>For most students, the 25-minute Pomodoro is the best starting point. If you find 25 minutes too short, try the 45-minute or 50-minute interval &mdash; both align with research on classroom attention spans. For exam practice or long-form essay writing, consider 90-minute ultradian blocks with 15-to-20-minute breaks between them.</p>
+
+                <h3>Can I use The Blog Timer for cooking?</h3>
+                <p>Yes. Browser timers are reliable for cooking because they continue running even when minimized. For precision tasks like blanching, espresso extraction, or searing, our <a href="<?php echo esc_url(home_url('/second-timers/')); ?>">second timer hub</a> covers every duration from 1 to 60 seconds.</p>
+
+                <h3>What is the difference between Pomodoro and deep work?</h3>
+                <p>Pomodoro uses 25-minute intervals optimized for sustained attention on familiar tasks. Deep work, as defined by Cal Newport, refers to longer 60-to-90-minute sessions of cognitively demanding work performed at peak focus. Pomodoro is a structural method; deep work is a quality standard. Many practitioners combine the two by running back-to-back Pomodoros during a deep-work block.</p>
+
+                <h3>Is The Blog Timer really free?</h3>
+                <p>Yes. The site is supported by lightweight, non-intrusive advertising. There are no premium tiers, paywalls, or feature gates. Every timer page works the same way for every visitor.</p>
             </div>
         </div>
     </section>

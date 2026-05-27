@@ -16,9 +16,16 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
         <h1 class="page-h1">
             <?php echo esc_html($loader->get_string('hub.minutes.h1')); ?>
         </h1>
+        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>
+        </p>
         <p class="page-intro">
             <?php echo esc_html($loader->get_string('hub.minutes.intro')); ?>
         </p>
+        <div class="tldr-box" style="background: var(--color-surface, rgba(255,255,255,0.04)); color: var(--color-text-secondary, #cbd5e1); border-left: 4px solid var(--color-accent, #6366f1); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 6px;">
+            <strong>TL;DR:</strong> Minute-based timers cover the durations most people use for focused work, study, exercise, meditation, and cooking. The Blog Timer hosts a complete library from 1 to 161 minutes, organized into four buckets: short (1&ndash;5), medium (6&ndash;30), long (31&ndash;60), and extended (61+). Each duration maps to specific research-backed use cases, from the 25-minute Pomodoro to the 90-minute ultradian deep-work block.
+        </div>
 
         <section class="section">
             <h2 class="section-title">Browse Minute Timer Archives</h2>
@@ -116,6 +123,223 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                     <h3>Tips for Choosing the Right Duration</h3>
                     <p>The right timer length depends on the task, your energy level, and your experience with timed work. If you are new to structured timing, start with shorter durations (10 to 15 minutes) and gradually increase as your focus stamina improves. For creative work, shorter intervals often produce better results because they prevent overthinking. For analytical or repetitive work, longer intervals allow you to build momentum and reduce the overhead of frequent context switches.</p>
                     <p>Experiment with different durations over several days and pay attention to when your concentration naturally starts to fade. That point is your personal optimal interval. The Blog Timer makes experimentation easy -- just click a different duration and start a new session.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY MINUTES ARE THE UNIVERSAL TIME UNIT -->
+        <section class="section">
+            <div class="container--narrow">
+                <h2 class="section-title">Why is the minute the universal time unit for human activity?</h2>
+                <div class="content-page">
+                    <p>The minute (from the Latin <em>pars minuta prima</em>, "first small part") was standardized as one-sixtieth of an hour by Arab and Persian astronomers in the medieval period, building on the sexagesimal arithmetic inherited from ancient Babylonia. The mathematical convenience of <a href="https://en.wikipedia.org/wiki/Sexagesimal" target="_blank" rel="noopener">base-60</a> is that it divides cleanly into 2, 3, 4, 5, 6, 10, 12, 15, 20, and 30 &mdash; making the minute the natural granularity for cooperative human work.</p>
+
+                    <p>Most cognitive and physiological events of interest fall comfortably inside the minute range. A breath cycle takes a few seconds. A typical conversational turn takes 1&ndash;3 minutes. Focused attention can be sustained for 25&ndash;90 minutes. Sleep cycles repeat roughly every 90 minutes. The minute is small enough to be precise but large enough to feel meaningful, which is why it became the default unit for cooking, exercise, work scheduling, and timed examinations.</p>
+
+                    <p>This is why minute-based timers cover such a broad range of activities. A 5-minute timer is short enough for a stretch break or a meditation reset; a 90-minute timer aligns with the body's <strong>basic rest-activity cycle</strong>, first described by sleep researcher <a href="https://en.wikipedia.org/wiki/Nathaniel_Kleitman" target="_blank" rel="noopener">Nathaniel Kleitman</a> in the 1950s and later formalized into the ultradian rhythm framework popularized by <a href="https://en.wikipedia.org/wiki/Tony_Schwartz_(journalist)" target="_blank" rel="noopener">Tony Schwartz</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BUCKET OVERVIEW -->
+        <section class="section">
+            <div class="container--narrow">
+                <h2 class="section-title">How are minute timers organized into buckets?</h2>
+                <div class="content-page">
+                    <p>The Blog Timer's 1-to-161-minute range is organized into four duration buckets. Each bucket maps to a different cognitive demand, energy state, and use case.</p>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Bucket</th>
+                                <th>Range</th>
+                                <th>Primary Use</th>
+                                <th>Common Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Short</strong></td>
+                                <td>1&ndash;5 min</td>
+                                <td>Micro-tasks, brief drills, transitions</td>
+                                <td>1-min plank, 2-min brew, 5-min break</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Medium</strong></td>
+                                <td>6&ndash;30 min</td>
+                                <td>Focused work, study, cooking</td>
+                                <td>15-min cleanup, 25-min Pomodoro, 20-min nap</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Long</strong></td>
+                                <td>31&ndash;60 min</td>
+                                <td>Deep work, full workouts, lectures</td>
+                                <td>45-min study, 60-min workout, 50-min class</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Extended</strong></td>
+                                <td>61&ndash;161 min</td>
+                                <td>Ultradian deep work, long projects, exams</td>
+                                <td>90-min flow block, 120-min exam, 161-min film</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMON MINUTE DURATIONS -->
+        <section class="section">
+            <div class="container--narrow">
+                <h2 class="section-title">What are the most common minute durations and what are they used for?</h2>
+                <div class="content-page">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Duration</th>
+                                <th>Primary Use Case</th>
+                                <th>Secondary Use Case</th>
+                                <th>Research Anchor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 min</td>
+                                <td>Plank, jumping jacks</td>
+                                <td>Speech intro</td>
+                                <td>Stuart McGill core protocols</td>
+                            </tr>
+                            <tr>
+                                <td>3 min</td>
+                                <td>Boxing round</td>
+                                <td>Brewed tea, presentation slot</td>
+                                <td>Olympic boxing standard</td>
+                            </tr>
+                            <tr>
+                                <td>5 min</td>
+                                <td>Short break, stretch</td>
+                                <td>Pomodoro break, meditation</td>
+                                <td>Cirillo Pomodoro</td>
+                            </tr>
+                            <tr>
+                                <td>10 min</td>
+                                <td>Procrastination breaker</td>
+                                <td>Warmup, mindfulness</td>
+                                <td>10-minute rule (Behavioral activation)</td>
+                            </tr>
+                            <tr>
+                                <td>15 min</td>
+                                <td>Quick cleanup, focused sprint</td>
+                                <td>Email triage</td>
+                                <td>FlyLady cleaning method</td>
+                            </tr>
+                            <tr>
+                                <td>20 min</td>
+                                <td>Power nap</td>
+                                <td>Walk break, vegetable roast</td>
+                                <td>Sara Mednick nap research</td>
+                            </tr>
+                            <tr>
+                                <td>25 min</td>
+                                <td>Classic Pomodoro</td>
+                                <td>Study session</td>
+                                <td>Cirillo, 1987</td>
+                            </tr>
+                            <tr>
+                                <td>30 min</td>
+                                <td>Yoga, study block</td>
+                                <td>TV episode, exercise circuit</td>
+                                <td>NIH physical activity guidelines</td>
+                            </tr>
+                            <tr>
+                                <td>45 min</td>
+                                <td>Classroom lecture</td>
+                                <td>Deep work entry block</td>
+                                <td>Standard educational interval</td>
+                            </tr>
+                            <tr>
+                                <td>50 min</td>
+                                <td>Extended Pomodoro</td>
+                                <td>Therapy session</td>
+                                <td>Newport (Deep Work)</td>
+                            </tr>
+                            <tr>
+                                <td>60 min</td>
+                                <td>Full workout</td>
+                                <td>Long-form writing</td>
+                                <td>ACSM exercise guidelines</td>
+                            </tr>
+                            <tr>
+                                <td>90 min</td>
+                                <td>Ultradian block</td>
+                                <td>Full sleep cycle nap</td>
+                                <td>Kleitman BRAC</td>
+                            </tr>
+                            <tr>
+                                <td>120 min</td>
+                                <td>Exam, long film, marathon</td>
+                                <td>Half-day deep work</td>
+                                <td>Standardized testing norms</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE MATH OF TIMERS -->
+        <section class="section">
+            <div class="container--narrow">
+                <h2 class="section-title">What is the math behind timer accuracy?</h2>
+                <div class="content-page">
+                    <p>Most timer apps drift. The mechanism is well-understood. Naive implementations use <code>setInterval</code> or <code>setTimeout</code> to fire a callback every N milliseconds, then decrement a stored counter. The problem is that these JavaScript scheduling primitives are <strong>not real-time guarantees</strong>. They are minimum delays. If the event loop is busy &mdash; another tab is consuming CPU, the device is throttling background tabs, garbage collection runs, or an animation frame is contested &mdash; the callback fires <em>late</em>. Over a 25-minute session, even a few milliseconds of drift per tick can accumulate into tens of seconds of error.</p>
+
+                    <p>The fix is straightforward: store an absolute end timestamp when the timer starts, then on each tick, compute remaining time as <code>endTime - Date.now()</code>. This is how The Blog Timer works. The visible countdown is always anchored to the system clock, so even if a callback fires late, the next callback corrects the display. This eliminates the rounding error that compounds in naive implementations.</p>
+
+                    <p>The second source of error is <strong>rounding direction</strong>. If a timer displays whole seconds but updates 10 times per second, rounding the remaining time consistently down can cause the display to flicker by a second at boundaries. Better implementations use <code>Math.ceil</code> for the displayed value (so 5.01 seconds shows as 6, not 5) which matches user intuition: a timer set for 5 minutes should display "5:00" the entire first second, not transition to "4:59" immediately.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECIFIC USE CASES BY DURATION -->
+        <section class="section">
+            <div class="container--narrow">
+                <h2 class="section-title">What durations match which task types?</h2>
+                <div class="content-page">
+                    <h3>5-minute timer &mdash; the universal break</h3>
+                    <p>Five minutes is the standard Pomodoro break and the most common stretching, mindfulness, and transition interval. Research on <a href="https://en.wikipedia.org/wiki/Microbreak" target="_blank" rel="noopener">microbreaks</a> in occupational health literature (e.g., Henning et al., 1997) shows measurable improvements in both wellbeing and accuracy with brief breaks every 25&ndash;30 minutes.</p>
+
+                    <h3>15-minute timer &mdash; the cleanup window</h3>
+                    <p>Fifteen minutes is the "FlyLady" cleaning interval popularized by Marla Cilley. It is short enough to feel approachable and long enough to make visible progress. The same duration is used in agile development for <em>focused spikes</em> &mdash; brief, single-purpose investigations.</p>
+
+                    <h3>25-minute timer &mdash; the Pomodoro standard</h3>
+                    <p>The classic Pomodoro interval from Francesco Cirillo's 1987 methodology. See our <a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Pomodoro Technique page</a> for complete protocol details.</p>
+
+                    <h3>45-minute timer &mdash; the deep-work entry block</h3>
+                    <p>Forty-five minutes is the standard classroom lecture length and a typical psychotherapy session duration. <a href="https://en.wikipedia.org/wiki/Cal_Newport" target="_blank" rel="noopener">Cal Newport</a> recommends 45-minute initial deep-work blocks for practitioners building focus stamina.</p>
+
+                    <h3>60-minute timer &mdash; the workout standard</h3>
+                    <p>The 60-minute timer maps to the American College of Sports Medicine's recommended single-session exercise duration for general fitness. It also aligns with the standard hour-long working meeting and the conventional fiction-writing session length.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DECISION FRAMEWORK -->
+        <section class="section">
+            <div class="container--narrow">
+                <h2 class="section-title">How do you choose a minute duration based on task type?</h2>
+                <div class="content-page">
+                    <p>Use this decision framework when the right duration is not obvious:</p>
+
+                    <ol>
+                        <li><strong>What is the cognitive demand?</strong> Procrastinated or aversive tasks &rarr; 10&ndash;15 min. Standard knowledge work &rarr; 25 min. Deep analytical work &rarr; 50&ndash;90 min.</li>
+                        <li><strong>Are you fresh or fatigued?</strong> Fresh mind &rarr; longer intervals. Fatigued &rarr; shorter intervals with explicit breaks.</li>
+                        <li><strong>Is the task creative or executional?</strong> Creative work tolerates flow-state extensions; executional work benefits from strict timeboxing.</li>
+                        <li><strong>What is the consequence of stopping mid-task?</strong> Tasks with high re-entry cost (complex debugging, novel writing) &rarr; longer blocks. Tasks with low re-entry cost (email, data entry) &rarr; standard Pomodoros.</li>
+                        <li><strong>Does the task have a hard deadline?</strong> Hard deadlines benefit from the visible-countdown urgency of shorter timers.</li>
+                    </ol>
+
+                    <p>If you are unsure, start with a 25-minute Pomodoro and adjust based on how you feel at the boundary. Specific timers we recommend: <a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Pomodoro</a>, <a href="<?php echo esc_url(home_url('/sprint-timer/')); ?>">Sprint timer</a>, <a href="<?php echo esc_url(home_url('/interval-timer/')); ?>">Interval timer</a>, <a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">Nap timer</a>, and the dedicated <a href="<?php echo esc_url(home_url('/presentation-timer/')); ?>">Presentation timer</a>.</p>
                 </div>
             </div>
         </section>

@@ -13,7 +13,8 @@ $post_id = get_the_ID();
 $value = Timer_Engine::get_timer_value($post_id);
 $unit = Timer_Engine::get_timer_unit($post_id);
 $duration = Timer_Engine::get_duration_seconds($post_id);
-$title = $loader->get_string("timer.title.{$unit}", ['value' => $value]);
+$title_key = ($unit === 'hours' && (int) $value === 1) ? 'timer.title.hours_singular' : "timer.title.{$unit}";
+$title = $loader->get_string($title_key, ['value' => $value]);
 $unit_terms = get_the_terms($post_id, 'timer_unit');
 $bucket_terms = get_the_terms($post_id, 'timer_bucket');
 $usecase_terms = get_the_terms($post_id, 'timer_usecase');
@@ -50,8 +51,14 @@ $usecase_terms = get_the_terms($post_id, 'timer_usecase');
                 placeholder="<?php echo esc_attr($loader->get_string('ui.timer_name')); ?>">
             <div class="timer-display" id="timer-display">
                 <?php
-                if ($unit === 'minutes') {
-                    printf('%02d:00', $value);
+                if ($unit === 'hours') {
+                    printf('%02d:00:00', $value);
+                } elseif ($unit === 'minutes') {
+                    if ($value >= 60) {
+                        printf('%02d:%02d:00', floor($value / 60), $value % 60);
+                    } else {
+                        printf('%02d:00', $value);
+                    }
                 } else {
                     if ($value >= 60) {
                         printf('%02d:%02d', floor($value / 60), $value % 60);
@@ -129,6 +136,10 @@ $usecase_terms = get_the_terms($post_id, 'timer_usecase');
             <?php if ($unit === 'minutes'): ?>
                 <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">
                     <?php echo esc_html($loader->get_string('cta.browse_minutes')); ?> →
+                </a>
+            <?php elseif ($unit === 'hours'): ?>
+                <a href="<?php echo esc_url(home_url('/hour-timers/')); ?>">
+                    <?php echo esc_html($loader->get_string('cta.browse_hours') ?: 'Browse All Hour Timers'); ?> →
                 </a>
             <?php else: ?>
                 <a href="<?php echo esc_url(home_url('/second-timers/')); ?>">
@@ -208,6 +219,9 @@ $usecase_terms = get_the_terms($post_id, 'timer_usecase');
     } elseif ($unit === 'seconds') {
         $potential_slugs[] = 'hiit-interval-timers';
         $potential_slugs[] = 'tabata-timer-guide';
+    } elseif ($unit === 'hours') {
+        $potential_slugs[] = 'deep-work-timers';
+        $potential_slugs[] = 'pomodoro-technique';
     }
 
     // Fetch objects
@@ -259,7 +273,23 @@ $usecase_terms = get_the_terms($post_id, 'timer_usecase');
         <!-- CONTEXTUAL CONTENT -->
         <section class="section">
             <div class="content-page">
-                <?php if ($unit === 'minutes'): ?>
+                <?php if ($unit === 'hours'):
+                    $hour_label = ((int) $value === 1) ? 'Hour' : 'Hours';
+                    ?>
+                    <h2>How to Use a <?php echo esc_html($value); ?>-<?php echo esc_html($hour_label === 'Hour' ? 'Hour' : 'Hour'); ?> Timer Effectively</h2>
+                    <p>A <?php echo esc_html($value); ?>-<?php echo esc_html(strtolower($hour_label)); ?> timer marks out a long, defined window of time — the kind that's right for sustained work blocks, sleep cycles, fasting windows, slow cooking, and full-day deadlines. Unlike short countdowns that create urgency, hour-long timers create a structured container for activities that need to run without you watching the clock.</p>
+                    <?php if ($value <= 3): ?>
+                        <p>Timers in the 1-to-3-hour range are ideal for deep work sessions, long study blocks, naps, and slow-cooked recipes. A <?php echo esc_html($value); ?>-<?php echo esc_html(strtolower($hour_label)); ?> countdown gives you enough runway to enter and sustain a flow state — research consistently shows that uninterrupted blocks of 60-to-180 minutes produce the highest-quality cognitive output.</p>
+                        <p>This duration also covers most slow-cooking techniques: braising tough cuts of meat, simmering stocks, baking bread, or letting dough rise. Setting a single <?php echo esc_html($value); ?>-<?php echo esc_html(strtolower($hour_label)); ?> timer is more reliable than checking the oven or stove repeatedly.</p>
+                    <?php elseif ($value <= 12): ?>
+                        <p>Timers in the 4-to-12-hour range cover work shifts, sleep cycles, study marathons, and extended fasting windows. A <?php echo esc_html($value); ?>-hour countdown helps you structure long-duration activities without constantly checking the time — the alert tells you exactly when the window closes.</p>
+                        <p>For intermittent fasting, <?php echo esc_html($value); ?> hours is a common eating-window or fasting-window length. For sleep, an 8-hour timer aligns with the recommended adult sleep duration. For deep work, 4-to-6-hour blocks are typical for high-output creative and analytical work when broken up with proper breaks.</p>
+                    <?php else: ?>
+                        <p>Extended timers from 13 to 24 hours track day-long activities. A <?php echo esc_html($value); ?>-hour countdown is built for full-day fasts, long-duration project deadlines, multi-day prep cycles, and overnight slow-cooking. The Blog Timer's timestamp-based engine keeps accurate time across browser sessions and background tabs, which matters most for long countdowns.</p>
+                        <p>A 24-hour timer is also useful for daily reset markers — tracking the time since you last did something, counting down to an appointment, or marking a daily ritual. Use the audio alert as a clear signal that your defined window has closed.</p>
+                    <?php endif; ?>
+                    <p>The Blog Timer's <?php echo esc_html($value); ?>-<?php echo esc_html(strtolower($hour_label)); ?> countdown uses timestamp-based accuracy, so it stays precise even if your browser tab goes to sleep or your device enters power-saving mode. The audio alert ensures you never miss the end of your session, and the fullscreen mode keeps the display visible from across the room.</p>
+                <?php elseif ($unit === 'minutes'): ?>
                     <h2>How to Use a <?php echo esc_html($value); ?>-Minute Timer Effectively</h2>
                     <p>A <?php echo esc_html($value); ?>-minute timer creates a defined window of time that helps you focus on a single task without distraction. Whether you are working, studying, cooking, or exercising, setting a clear time boundary transforms vague intentions into concrete action. The countdown creates a mild sense of urgency that keeps your mind engaged while the defined endpoint prevents burnout and mental fatigue.</p>
                     <?php if ($value <= 10): ?>

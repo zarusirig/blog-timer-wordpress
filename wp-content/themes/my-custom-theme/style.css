@@ -2245,3 +2245,23 @@ kbd {
     border-color: var(--color-accent);
     transform: translateY(-2px);
 }
+
+/* ============================================================
+ * TL;DR boxes — ensure dark-theme contrast on every page
+ * Added 2026-05-27 to fix invisible white-on-white text
+ * ============================================================ */
+.tldr-box {
+    background: var(--color-surface, rgba(255, 255, 255, 0.04)) !important;
+    color: var(--color-text-secondary, #cbd5e1) !important;
+    border-left: 4px solid var(--color-accent, #6366f1) !important;
+    padding: 1rem 1.25rem !important;
+    margin: 1rem 0 !important;
+    border-radius: 6px !important;
+    line-height: 1.6;
+}
+.tldr-box strong {
+    color: var(--color-text-primary, #f1f5f9);
+}
+.tldr-box a {
+    color: var(--color-accent, #6366f1);
+}

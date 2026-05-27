@@ -318,9 +318,23 @@
          */
         updateDisplay: function(totalSeconds) {
             if (!this.display) return;
-            var mins = Math.floor(totalSeconds / 60);
-            var secs = totalSeconds % 60;
-            this.display.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+            totalSeconds = Math.max(0, Math.floor(totalSeconds));
+            // Use HH:MM:SS when the original duration was an hour or longer,
+            // so display format stays stable as the countdown ticks toward zero.
+            var useHours = (this.durationSeconds >= 3600) || (totalSeconds >= 3600);
+            if (useHours) {
+                var hrs = Math.floor(totalSeconds / 3600);
+                var mins = Math.floor((totalSeconds % 3600) / 60);
+                var secs = totalSeconds % 60;
+                this.display.textContent =
+                    String(hrs).padStart(2, '0') + ':' +
+                    String(mins).padStart(2, '0') + ':' +
+                    String(secs).padStart(2, '0');
+            } else {
+                var mins2 = Math.floor(totalSeconds / 60);
+                var secs2 = totalSeconds % 60;
+                this.display.textContent = String(mins2).padStart(2, '0') + ':' + String(secs2).padStart(2, '0');
+            }
         },
 
         /**

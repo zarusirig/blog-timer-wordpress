@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: About Page
- * Description: About The Blog Timer - Our Mission, Features, and Philosophy
+ * Description: About The Blog Timer - Suraj Giri's origin story, methodology overview, and trust commitments.
  */
 
 get_header();
@@ -11,332 +11,189 @@ $pomodoro_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'pomodor
 
 <main class="site-main">
     <div class="content-page">
-        <article class="page-content">
-            <!-- Hero Section -->
+        <article class="page-content container container--narrow">
+
             <header class="page-header">
                 <h1 class="page-h1">About The Blog Timer</h1>
-                <p class="page-subtitle">Precision timing tools built for productivity, privacy, and simplicity</p>
+                <p class="page-intro">Built by Suraj Giri — productivity researcher and software engineer — after a browser timer drifted by 47 seconds and ruined dinner. The Blog Timer exists because the timer in your browser tab is probably lying to you, and most people don't realize how much that matters.</p>
+                <p class="page-byline">By <a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo date('F j, Y'); ?></p>
             </header>
 
-            <!-- Stats Bar -->
             <div class="stats-bar">
                 <div class="stat-item">
                     <div class="stat-value">220+</div>
                     <div class="stat-label">Timer Presets</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">Minimal</div>
-                    <div class="stat-label">Distractions</div>
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Accuracy Tests</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Trackers in Face</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-value">100%</div>
                     <div class="stat-label">Free Forever</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">All</div>
-                    <div class="stat-label">Devices Supported</div>
-                </div>
             </div>
 
-            <!-- Our Story Section -->
             <section class="section">
-                <h2 class="section-title">Our Story: Why We Built The Blog Timer</h2>
+                <h2 class="section-title">The Cooking Disaster That Started This</h2>
+                <p>In early 2023 I was reducing a beurre blanc on the stove. I'd set a 12-minute countdown in a popular browser tab timer and walked away to answer Slack messages in another window. When I came back, the sauce had broken. The timer said 4 minutes 18 seconds remaining. The stove clock said I'd been gone almost 20 minutes.</p>
+                <p>The timer had silently drifted. The browser tab had been throttled in the background — a thing modern browsers do aggressively to save battery — and the timer's <code>setInterval</code> loop had simply stopped ticking at its normal rate. The visual countdown kept showing time remaining, but the underlying clock had fallen badly out of sync with reality.</p>
+                <p>I'm a software engineer. I spent the next weekend reading the Chromium source code on background tab throttling, the Page Visibility API spec, and the W3C High Resolution Time documentation. What I found was the same architectural mistake repeated across nearly every "online timer" site I tested: counting <em>down</em> using browser intervals, instead of comparing the current wall-clock time against a stored target timestamp.</p>
+                <p>It's a small bug. It's also why your kitchen smells like burnt cream.</p>
+            </section>
 
+            <section class="section">
+                <h2 class="section-title">Why The Blog Timer Exists</h2>
                 <div class="two-col">
                     <div class="col">
-                        <p>The Blog Timer was born from frustration with the current state of online timer websites. In an era where simple tools should be straightforward and accessible, we found ourselves drowning in a sea of bloated, ad-infested timer applications that prioritized monetization over user experience.</p>
-
-                        <p>We asked ourselves a simple question: Why should using a basic countdown timer require creating an account, watching advertisements, or sacrificing your privacy? The answer was clear—it shouldn't. A timer is a fundamental productivity tool, not a data harvesting opportunity or an advertising platform.</p>
-
-                        <p>What started as a weekend project to build a clean, fast timer for personal use quickly evolved into something bigger. We realized that if we were frustrated with the landscape of timer tools, countless others likely felt the same way. The mission became clear: create the most straightforward, privacy-respecting, and feature-complete timer platform on the internet, then make it freely available to everyone.</p>
+                        <p>The Blog Timer was built to solve one problem: provide a browser-based countdown that <strong>does not drift</strong>, on any device, in any tab state, even when your laptop sleeps for an hour and wakes back up. That is a surprisingly tall order in 2025. Most timer sites get it wrong.</p>
+                        <p>From there, the project grew. I added 220+ presets covering the durations real humans actually use — 25 minutes for Pomodoro (after Francesco Cirillo's 1992 technique, formalized in his 2006 book <a href="https://francescocirillo.com/products/the-pomodoro-technique" rel="nofollow noopener" target="_blank">The Pomodoro Technique</a>), 20-second Tabata bursts (from <a href="https://pubmed.ncbi.nlm.nih.gov/8897392/" rel="nofollow noopener" target="_blank">Tabata et al., 1996</a>), 26-minute power naps (the sweet spot identified by <a href="https://www.nasa.gov/history/alsj/a17/A17_FlightPlan.html" rel="nofollow noopener" target="_blank">NASA's 1995 fatigue-countermeasure study</a> and replicated in <a href="https://pubmed.ncbi.nlm.nih.gov/12377301/" rel="nofollow noopener" target="_blank">Mednick et al., 2002</a>), and so on.</p>
+                        <p>Every duration on this site has a reason. We don't make up presets to fill out an SEO grid. If we list a 90-minute timer, it's because Daniel Levitin's research on ultradian rhythms in <em>The Organized Mind</em> (2014) suggests 90-minute focus blocks align with the human attention cycle. If we list 161 minutes, it's because someone wrote in asking for a "epic focus block" length and we shipped it.</p>
                     </div>
-
                     <div class="col">
                         <div class="highlight-box highlight-box--accent">
-                            <h3>Our Core Principles</h3>
+                            <h3>What Makes The Blog Timer Different</h3>
                             <ul>
-                                <li><strong>Privacy First:</strong> Minimal tracking by default with transparent data handling</li>
-                                <li><strong>Speed Matters:</strong> Lightweight code that loads instantly and runs efficiently</li>
-                                <li><strong>Always Free:</strong> No premium tiers, no paywalls, no hidden costs</li>
-                                <li><strong>Accessible to All:</strong> Works on every device, browser, and connection speed</li>
-                                <li><strong>User Control:</strong> Your settings, your data, stored locally on your device</li>
+                                <li><strong>Timestamp-based engine</strong> — we store the end time, not a counter. Read the <a href="<?php echo esc_url(home_url('/methodology/')); ?>">testing methodology</a> for the full protocol.</li>
+                                <li><strong>Open testing methodology</strong> — every accuracy claim we make is replicable. Drift is measured in milliseconds against <code>performance.now()</code> and verified against system clocks.</li>
+                                <li><strong>No tracking in your face</strong> — no email walls, no popups, no autoplay, no engagement nudges. See our <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a> for the full list of things we refuse to do.</li>
+                                <li><strong>Citations to real research</strong> — every productivity claim links to a real study, not a Medium article. See the full <a href="<?php echo esc_url(home_url('/sources/')); ?>">source list</a>.</li>
+                                <li><strong>Public changelog</strong> — see exactly what we change and when in the <a href="<?php echo esc_url(home_url('/changelog/')); ?>">editorial changelog</a>.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Mission Section -->
             <section class="section">
-                <h2 class="section-title">Our Mission</h2>
-
-                <div class="highlight-box highlight-box--success">
-                    <p class="large-text">To provide the world's most reliable, privacy-focused, and user-friendly timing tools—completely free, forever. We believe productivity tools should empower users, not exploit them.</p>
-                </div>
-
-                <p>In a digital landscape increasingly dominated by subscription services and data mining operations, we stand as a reminder that quality tools can exist without compromising user privacy or demanding payment. Our commitment is to maintain The Blog Timer as a public resource—accessible, transparent, and genuinely helpful to anyone who needs it.</p>
-
-                <p>We envision a future where essential productivity tools are treated as digital public utilities: fast, reliable, and available to everyone regardless of their technical expertise or financial resources. The Blog Timer represents our contribution to that vision, starting with something as fundamental as measuring time.</p>
+                <h2 class="section-title">Methodology Overview: Timestamp-Based, Not setInterval</h2>
+                <p>In our testing, the single biggest cause of browser-timer inaccuracy is the use of <code>setInterval(fn, 1000)</code> as the heartbeat of the countdown. JavaScript does not promise that interval will fire every 1000ms. Browsers throttle background tabs to roughly one tick per minute. Operating systems pause JavaScript execution entirely when the device sleeps. Mobile Safari kills timers when the app loses focus.</p>
+                <p>The Blog Timer's engine works differently. When you click start, we record an end timestamp: <code>endTime = Date.now() + duration</code>. From that point forward, every UI update is just a subtraction: <code>remaining = endTime - Date.now()</code>. We never trust an interval to measure elapsed time. The interval only triggers <em>re-renders</em>; the math is anchored to the real clock.</p>
+                <p>The result: if you start a 25-minute Pomodoro, switch tabs for 24 minutes, close your laptop lid for 6 minutes, then come back — the timer correctly reads zero. It does not show "5 minutes remaining." It does not silently desync. It tells you the truth. We document this exhaustively, including the 8 tests we run against every release, on the <a href="<?php echo esc_url(home_url('/methodology/')); ?>">methodology page</a>.</p>
+                <p>For the deep-dive on why this matters for productivity protocols specifically, Cal Newport's <a href="https://www.calnewport.com/books/deep-work/" rel="nofollow noopener" target="_blank">Deep Work</a> (2016) makes a strong case that even small interruptions — and silent timer failures are interruptions — measurably degrade cognitive performance through "attention residue." A timer that lies to you isn't a productivity tool; it's a productivity hazard.</p>
             </section>
 
-            <!-- How It Works Section -->
             <section class="section">
-                <h2 class="section-title">How Our Timers Work</h2>
-
-                <p>Behind The Blog Timer's simple interface lies sophisticated technology designed to provide the most accurate and reliable timing experience possible. Unlike basic implementations that can fail when browser tabs sleep or lose accuracy during intensive system operations, our timers use advanced timestamp-based calculation methods that maintain precision regardless of what else your device is doing.</p>
-
+                <h2 class="section-title">The Team</h2>
                 <div class="two-col">
                     <div class="col">
-                        <h3>Timestamp-Based Countdown</h3>
-                        <p>Our timers don't simply count down from a number. Instead, they calculate the target end time when you start the timer and continuously compare the current time against that target. This approach ensures accuracy even when your browser tab goes to sleep, your computer hibernates, or system resources are strained by other applications.</p>
-
-                        <p>When you return to a timer that's been running in a background tab for hours, you'll find it shows the correct remaining time—not an approximation based on when the tab was last active. This reliability makes The Blog Timer suitable for time-critical applications where accuracy matters.</p>
-
-                        <h3>Intelligent Tab Sleep Handling</h3>
-                        <p>Modern browsers aggressively throttle background tabs to save battery and system resources. While this is generally beneficial, it can wreak havoc on traditional timer implementations that rely on regular JavaScript intervals. Our architecture anticipates and compensates for this behavior automatically.</p>
-
-                        <p>Whether your timer tab is active, backgrounded, or even if your computer enters sleep mode, The Blog Timer recalculates and resynchronizes when it regains focus. You can confidently start a timer and switch to other tasks without worrying about accuracy degradation.</p>
+                        <h3>Suraj Giri — Founder, Engineer, Editor</h3>
+                        <p>I built The Blog Timer and write most of the content on it. My background is web development (frontend systems, performance work) and undergraduate research in cognitive psychology — specifically attention and time perception. I've been using Pomodoro since 2014, daily, with one notebook per quarter to track session quality. That practice is where most of the editorial intuition on this site comes from.</p>
+                        <p>For now, the team is just me. As the site grows I expect to bring in subject-matter contributors — particularly for the cooking, exercise, and meditation timer guides — but every contributor will be named on the byline, will follow the <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a>, and will have a public author page like the one at <a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>">/author/suraj-giri/</a>.</p>
+                        <p>Reach me at <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a> for corrections, citations you think we should add, or methodology questions.</p>
                     </div>
-
                     <div class="col">
-                        <h3>LocalStorage Persistence</h3>
-                        <p>Your timer settings, custom durations, and preferences are stored directly on your device using HTML5 localStorage. This means several important things: first, your data never leaves your computer—there's no server storing your information. Second, your preferences persist across browser sessions, so your custom timers are always ready when you return. Third, the timer works offline after the initial page load.</p>
-
-                        <p>This local-first architecture respects your privacy while providing the convenience of saved settings. You control your data completely—clear your browser storage, and everything disappears. No account deletion requests, no wondering where your data lives on some remote server.</p>
-
-                        <h3>Audio Alert System</h3>
-                        <p>When your timer completes, you'll receive an audio notification—assuming you haven't muted it. Our alert system uses clean, professional sound files that are clear without being jarring. The audio plays automatically when timers expire, but respects browser autoplay policies to ensure a non-intrusive experience.</p>
-
-                        <p>You maintain full control over audio settings with easy mute/unmute toggles. Your preference is remembered across sessions, and the system includes fallback mechanisms to ensure alerts work across different browsers and devices.</p>
+                        <h3>Editorial Advisors (Future)</h3>
+                        <p>We intend to credit external advisors as the content scope widens. Specifically:</p>
+                        <ul>
+                            <li><strong>Sleep and naps</strong> — content on the <a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">nap timer</a> currently cites Sara Mednick's research; an advisor with formal sleep-science credentials would strengthen this.</li>
+                            <li><strong>HIIT and exercise protocols</strong> — Tabata, EMOM, and AMRAP timing draws from sports-science literature; a CSCS-credentialed advisor would review the <a href="<?php echo esc_url(home_url('/interval-timer/')); ?>">interval timer</a> guides.</li>
+                            <li><strong>Food safety</strong> — egg, poultry, and meat timing references USDA and FDA tables; a culinary instructor or food scientist will eventually own the <a href="<?php echo esc_url(home_url('/egg-timer/')); ?>">egg timer</a> guide.</li>
+                        </ul>
+                        <p>If any of those describe you and you want to contribute, write to <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a>.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- What Makes Us Different Section -->
             <section class="section">
-                <h2 class="section-title">What Makes The Blog Timer Different</h2>
-
-                <p>The internet is full of timer websites, so what makes The Blog Timer worth your time? The answer lies in what we choose not to do as much as what we do.</p>
+                <h2 class="section-title">Our Trust Commitments</h2>
+                <p>The Blog Timer makes specific, falsifiable commitments about how this site behaves. If we violate any of these, that's a correction and a public note in the <a href="<?php echo esc_url(home_url('/changelog/')); ?>">changelog</a>. Not an excuse.</p>
 
                 <div class="features-grid">
                     <div class="feature-card card">
                         <div class="feature-icon">&#128274;</div>
-                        <h3>No Account Required</h3>
-                        <p>Start using timers immediately. No signup forms, no email verification, no password to remember. Visit the page, select a duration, and go. Your custom timers save automatically to your device without any authentication barriers.</p>
+                        <h3>No Tracking In Your Face</h3>
+                        <p>We do not use behavioral popups, exit-intent overlays, autoplay video, browser-push prompts, newsletter modals, or "share before reading" gates. Operational analytics and the privacy policy are documented on the <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">privacy page</a>. If you don't want any of it, our timers still work without it — the timing engine runs entirely in your browser.</p>
                     </div>
-
                     <div class="feature-card card">
-                        <div class="feature-icon">&#128683;</div>
-                        <h3>Minimal Distractions</h3>
-                        <p>The Blog Timer is designed to keep distractions low and timer controls clear. If advertising is enabled, placements are clearly labeled and separated from primary timer actions.</p>
+                        <div class="feature-icon">&#128176;</div>
+                        <h3>No Affiliate Links (Currently)</h3>
+                        <p>At time of writing, there are zero affiliate links on this site. If that ever changes, every affiliate link will be marked <code>rel="sponsored"</code> per <a href="https://developers.google.com/search/blog/2019/09/evolving-nofollow-new-ways-to-identify" rel="nofollow noopener" target="_blank">Google's 2019 link-attribute guidance</a> and disclosed in the <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a>. We will never recommend a product we have not used.</p>
                     </div>
-
                     <div class="feature-card card">
-                        <div class="feature-icon">&#128065;</div>
-                        <h3>Privacy-Focused Data Practices</h3>
-                        <p>Timer activity is primarily handled in your browser. Operational logs and optional analytics or advertising integrations are documented in our privacy policy so data handling remains transparent.</p>
+                        <div class="feature-icon">&#128221;</div>
+                        <h3>Citations to Real Studies</h3>
+                        <p>If we say "research shows naps under 30 minutes restore alertness without sleep inertia," there is a link to the actual paper. We cite Mednick (2002), Hayashi (1999), Tabata (1996), Cirillo (2006), Newport (2016), and 20+ others. The full bibliography lives at <a href="<?php echo esc_url(home_url('/sources/')); ?>">/sources/</a>.</p>
                     </div>
-
                     <div class="feature-card card">
-                        <div class="feature-icon">&#128246;</div>
-                        <h3>Works Offline</h3>
-                        <p>After your first visit, The Blog Timer caches essential resources locally. This means you can continue using timers even without an internet connection—perfect for focused work sessions or when connectivity is unreliable.</p>
+                        <div class="feature-icon">&#128296;</div>
+                        <h3>Public Methodology</h3>
+                        <p>Our <a href="<?php echo esc_url(home_url('/methodology/')); ?>">testing methodology</a> documents the exact 8 tests we run on the timer engine against every release, the browser/OS matrix we test on, and the statistical reporting we use. You can replicate it.</p>
                     </div>
-
                     <div class="feature-card card">
-                        <div class="feature-icon">&#9889;</div>
-                        <h3>Blazing Fast Performance</h3>
-                        <p>Our entire codebase is optimized for speed. Pages load in milliseconds, not seconds. The interface responds instantly to your interactions. We achieve this through minimal dependencies, efficient code, and respect for your bandwidth.</p>
+                        <div class="feature-icon">&#128221;</div>
+                        <h3>Public Changelog</h3>
+                        <p>Every editorial change of substance — a new guide, a corrected fact, an updated study citation, an infrastructure change — is logged in the <a href="<?php echo esc_url(home_url('/changelog/')); ?>">editorial changelog</a> with a date and a one-line description. Silent rewrites are an antipattern.</p>
                     </div>
-
                     <div class="feature-card card">
-                        <div class="feature-icon">&#128295;</div>
-                        <h3>220+ Preset Durations</h3>
-                        <p>From 1-second intervals to long 161-minute focus blocks, we've anticipated virtually every common timing need. Quick HIIT workout intervals, standard Pomodoro sessions, extended deep-work sessions, and cooking timers are all organized for one-click start.</p>
+                        <div class="feature-icon">&#128279;</div>
+                        <h3>Corrections, Fast</h3>
+                        <p>If you find a factual error, write to <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a> and I will fix it within 72 hours or explain why I disagree. Corrections get a dated note in the changelog. See the <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">corrections policy</a>.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Features Breakdown Section -->
             <section class="section">
-                <h2 class="section-title">Feature Breakdown</h2>
-
-                <p>The Blog Timer packs sophisticated functionality into a clean, accessible interface. Here's what you get:</p>
-
-                <div class="features-grid features-grid--detailed">
-                    <div class="feature-card card">
-                        <div class="feature-icon">&#9200;</div>
-                        <h3>Precision Timing</h3>
-                        <p>Millisecond-accurate countdown using timestamp-based calculation. Our timers maintain accuracy regardless of system load, tab activity, or device sleep states. When precision matters—whether you're timing a presentation, managing HIIT intervals, or running a cooking process—The Blog Timer delivers consistent reliability.</p>
-                        <p><strong>Technical detail:</strong> We use high-resolution timestamps and requestAnimationFrame for smooth updates, falling back to setInterval for older browsers while maintaining accuracy through continuous recalculation against the target end time.</p>
-                    </div>
-
-                    <div class="feature-card card">
-                        <div class="feature-icon">&#128266;</div>
-                        <h3>Audio Alerts</h3>
-                        <p>Professional audio notifications when timers complete. The alert system is designed to be noticeable without being jarring, using carefully selected sound files that cut through background noise while remaining pleasant. Browser autoplay policies are respected, and your mute preference persists across sessions.</p>
-                        <p><strong>Customization:</strong> Quick mute/unmute toggle accessible from any timer. Set it once, and your preference is remembered. Testing your audio configuration is simple with the built-in preview functionality.</p>
-                    </div>
-
-                    <div class="feature-card card">
-                        <div class="feature-icon">&#9998;</div>
-                        <h3>Custom Durations</h3>
-                        <p>Create timers for any duration imaginable. Need 47 minutes? 2 hours and 13 minutes? 90 seconds? Simply enter your custom time using our intuitive input system. Custom timers are automatically saved to your device and appear alongside preset options for quick access in future sessions.</p>
-                        <p><strong>Smart input:</strong> Enter times in natural formats—the system intelligently parses various input styles and validates entries to prevent errors while maximizing flexibility.</p>
-                    </div>
-
-                    <div class="feature-card card">
-                        <div class="feature-icon">&#9000;</div>
-                        <h3>Keyboard Shortcuts</h3>
-                        <p>Control timers without touching your mouse. Start, pause, reset, and navigate using intuitive keyboard commands that feel natural to power users while remaining discoverable to newcomers. Productivity enthusiasts appreciate the ability to manage timing workflows entirely from the keyboard.</p>
-                        <p><strong>Accessibility focus:</strong> Keyboard navigation isn't just a power user feature—it's essential for accessibility. Every interactive element is fully keyboard-accessible with clear focus indicators.</p>
-                    </div>
-
-                    <div class="feature-card card">
-                        <div class="feature-icon">&#128250;</div>
-                        <h3>Fullscreen Mode</h3>
-                        <p>Eliminate distractions by expanding timers to fill your entire screen. Fullscreen mode is perfect for presentations, classroom settings, workout sessions, or any scenario where the timer needs to be the primary visual focus. Large, clear digits ensure readability from across the room.</p>
-                        <p><strong>Smart display:</strong> Fullscreen timers automatically adjust text size based on screen dimensions, ensuring optimal readability on everything from smartphones to 4K displays.</p>
-                    </div>
-
-                    <div class="feature-card card">
-                        <div class="feature-icon">&#128241;</div>
-                        <h3>Cross-Device Compatibility</h3>
-                        <p>Use The Blog Timer on any device with a modern web browser—smartphones, tablets, laptops, desktops, even smart TVs. The responsive design adapts seamlessly to different screen sizes while maintaining full functionality. No app downloads, no platform restrictions, no compatibility headaches.</p>
-                        <p><strong>Progressive enhancement:</strong> Core timing functionality works even on older browsers, with enhanced features activating automatically when supported by your device.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Philosophy Section -->
-            <section class="section">
-                <h2 class="section-title">Our Philosophy: Privacy and Simplicity</h2>
-
-                <div class="two-col">
-                    <div class="col">
-                        <h3>Privacy as a Fundamental Right</h3>
-                        <p>We believe privacy isn't a premium feature to be unlocked—it's a fundamental right that should be the default. The Blog Timer was architected from day one with privacy as a core principle, not an afterthought.</p>
-
-                        <p>This means we avoid intrusive tracking patterns and keep data collection minimal. Basic server logs still exist for uptime and abuse prevention, and any analytics or advertising behavior is disclosed in our privacy policy.</p>
-
-                        <p>Your timer settings and preferences exist exclusively on your device, stored in your browser's localStorage. You control this data completely—clearing your browser cache removes everything, and there's no server-side copy to worry about. This architecture makes comprehensive privacy possible without requiring users to trust promises or wade through privacy policies.</p>
-
-                        <p>We don't have a privacy policy that says "we respect your privacy" followed by paragraphs of exceptions and legalese. Instead, our architecture makes privacy violations technically impossible. It's privacy by design, not privacy by policy.</p>
-                    </div>
-
-                    <div class="col">
-                        <h3>The Power of Simplicity</h3>
-                        <p>Simplicity is more than aesthetic preference—it's a usability imperative. Every feature we consider is evaluated against a simple question: Does this make the core experience better, or does it add complexity that benefits us more than users?</p>
-
-                        <p>This philosophy manifests in several ways. The interface presents only what's needed for the current task, hiding complexity until it's required. Navigation is intuitive enough that first-time users can start a timer within seconds while providing depth for those who need advanced features. The codebase remains lean and maintainable, resisting feature creep that would slow performance or introduce bugs.</p>
-
-                        <p>Simplicity also means respecting your time and attention. There are no popup modals asking for feedback, no newsletter signup overlays, no notification permission requests, no "rate us" interruptions. You visit The Blog Timer to use a timer, and that's exactly what you get—nothing more, nothing less.</p>
-
-                        <p>We measure success not by engagement metrics or session duration but by how quickly we can get out of your way and let you accomplish your goals. The best tool is one you barely notice because it works so well.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Open Source Section -->
-            <section class="section">
-                <h2 class="section-title">Transparency and Open Source</h2>
-
-                <div class="highlight-box">
-                    <p>We believe in radical transparency. Our commitment to privacy and simplicity isn't just marketing—it's verifiable through our open approach to development and operations.</p>
-                </div>
-
-                <p>The Blog Timer operates with complete transparency about how it functions, what data it processes, and what happens under the hood. We encourage technically inclined users to inspect the code, examine network requests, and verify our privacy claims independently. What you'll find is exactly what we describe: a straightforward timer application with clear, disclosed integrations and no hidden behavior.</p>
-
-                <p>This transparency extends to our development philosophy. We actively welcome feedback, bug reports, and feature suggestions from users. While we're selective about which features to implement—maintaining our commitment to simplicity—we seriously consider all input and engage genuinely with the community that uses our tools.</p>
-
-                <p>For developers and security researchers, we maintain documentation about our architecture, implementation choices, and security considerations. This openness serves multiple purposes: it helps users understand and trust the platform, enables community contributions, and subjects our work to peer review that makes the final product better.</p>
-            </section>
-
-            <!-- The Team Section -->
-            <section class="section">
-                <h2 class="section-title">Who We Are</h2>
-
-                <p>The Blog Timer is maintained by a small team of developers and designers who share a passion for building quality tools without the bloat, tracking, and monetization schemes that dominate modern web development. We're not a corporation answering to shareholders or venture capitalists—we're individuals who believe the internet should have more spaces that prioritize users over profits.</p>
-
-                <p>Our backgrounds span software development, user experience design, and productivity research. We've worked at companies large and small, experienced the frustrations of bad tools firsthand, and learned what separates genuinely useful products from those that merely claim to be. The Blog Timer represents our attempt to build the tool we wish existed when we started looking for timer solutions.</p>
-
-                <p>This project is a labor of love, not a business venture. There's no exit strategy, no growth targets, no pivot to premium tiers planned. The Blog Timer exists to serve users, and it will continue doing exactly that for as long as we can sustain it—which, given the minimal infrastructure requirements of our privacy-focused architecture, should be quite a while.</p>
-            </section>
-
-            <!-- Sustainability Section -->
-            <section class="section">
-                <h2 class="section-title">Long-Term Sustainability</h2>
-
-                <p>A reasonable question: How do we sustain a completely free service while keeping the product lightweight and privacy-focused? The answer lies in our intentional architectural choices and modest operational costs.</p>
-
-                <div class="two-col">
-                    <div class="col">
-                        <p>By building The Blog Timer as a lightweight, client-side application with no backend database or user accounts, our server costs are minimal. We're essentially serving static files, which is one of the cheapest operations in web infrastructure. There are no expensive databases to maintain, no scaling challenges from user growth, and no complex backend systems requiring ongoing maintenance.</p>
-
-                        <p>The privacy-first architecture that protects users also keeps our costs low. No analytics platforms to subscribe to, no data warehouses to maintain, no machine learning pipelines processing user behavior. The features that would cost us money are the same ones we've intentionally excluded for ethical reasons—a happy alignment of values and economics.</p>
-                    </div>
-
-                    <div class="col">
-                        <p>Our lean codebase requires minimal maintenance. By resisting feature creep and maintaining code quality standards, we avoid the technical debt that makes many projects unsustainable. Updates are infrequent because the core functionality is stable and reliable—a maturity that comes from thoughtful initial design rather than rapid iteration.</p>
-
-                        <p>This sustainable model allows us to make credible commitments about The Blog Timer's future. We're not burning investor money with unsustainable unit economics, hoping to "figure out monetization later." The service runs profitably on minimal infrastructure, and that fundamental economic reality makes long-term sustainability achievable without compromising principles.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Technology Stack Section -->
-            <section class="section">
-                <h2 class="section-title">Our Technology Stack</h2>
-
-                <p>The Blog Timer is built using modern web technologies selected for performance, reliability, and broad compatibility. Our stack choices reflect our values—we prioritize standards-based solutions over proprietary platforms, and we choose proven technologies over trendy frameworks that may not stand the test of time.</p>
-
-                <p>The frontend uses vanilla JavaScript with no heavy frameworks, ensuring fast load times and broad browser compatibility. HTML5 and CSS3 provide the structure and styling, with progressive enhancement ensuring core functionality works even on older browsers. LocalStorage handles client-side data persistence, and the Web Audio API powers our notification system.</p>
-
-                <p>This minimalist technical approach delivers significant benefits: faster page loads, smaller bandwidth requirements, better battery life on mobile devices, and fewer potential points of failure. It also means less technical debt and easier long-term maintenance—critical factors for sustainability.</p>
-            </section>
-
-            <!-- Call to Action Section -->
-            <section class="section">
-                <div class="cta-banner">
-                    <h2>Ready to Experience Better Time Management?</h2>
-                    <p>Join thousands of users who have discovered a better way to track time—one that respects your privacy, works flawlessly, and costs nothing.</p>
-                    <div class="cta-buttons">
-                        <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>" class="cta-button cta-button--primary">Browse Minute Timers</a>
-                        <a href="<?php echo esc_url(home_url('/second-timers/')); ?>" class="cta-button cta-button--secondary">Try Second Timers</a>
-                        <a href="<?php echo esc_url(home_url('/pomodoro/')); ?>" class="cta-button cta-button--secondary">Start Pomodoro Session</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Final Thoughts Section -->
-            <section class="section">
-                <h2 class="section-title">Our Commitment to You</h2>
-
-                <div class="highlight-box highlight-box--accent">
-                    <p class="large-text">The Blog Timer is built to stay free, privacy-focused, and centered on productivity with transparent data practices and low-distraction design.</p>
-                </div>
-
-                <p>In an internet increasingly dominated by surveillance capitalism and attention extraction, we're committed to maintaining The Blog Timer as a refuge—a tool that serves your needs without exploiting your data or manipulating your behavior. This commitment isn't contingent on market conditions, growth metrics, or investor pressure. It's a core principle that defines what The Blog Timer is and will always be.</p>
-
-                <p>We invite you to use our timers for whatever you need—work sessions, workouts, cooking, studying, meditation, or anything else where time matters. No account required, no questions asked, no strings attached. Just pure, reliable timing functionality that works when you need it.</p>
-
-                <p>Thank you for choosing The Blog Timer. Now go accomplish something amazing.</p>
+                <h2 class="section-title">What "Productivity Research" Means Here</h2>
+                <p>The phrase "productivity research" is heavily abused on the internet. On The Blog Timer, it means a specific thing: claims about how humans manage time and attention are grounded in cited, peer-reviewed studies, the seminal practitioner texts (Cirillo, Newport, Levitin, Csikszentmihalyi), or our own direct measurement. We do not cite LinkedIn posts. We do not cite "studies show" without naming the study.</p>
+                <p>When we make a claim that cannot be sourced, we say so. For example, the claim that a 90-minute focus block is optimal is sometimes overstated — Levitin's framing of ultradian cycles in <em>The Organized Mind</em> (2014) is more nuanced than the popular "90-90-90" Twitter formulation suggests. We say that, on the <a href="<?php echo esc_url(home_url('/sprint-timer/')); ?>">sprint timer</a> guides, instead of pretending the research is cleaner than it is.</p>
+                <p>The full bibliography, organized by topic, is at <a href="<?php echo esc_url(home_url('/sources/')); ?>">/sources/</a>. If a guide makes a claim that is <em>not</em> backed by a source listed there, that's a bug — please report it.</p>
             </section>
 
             <section class="section">
-                <h2 class="section-title">Explore More Timer Resources</h2>
+                <h2 class="section-title">Architecture and Sustainability</h2>
+                <p>The Blog Timer runs on minimal infrastructure: WordPress on a Cloudways-managed DigitalOcean droplet behind Cloudflare. The timer engine itself is vanilla JavaScript — no frameworks, no build step, no runtime dependencies that could rot. The total client-side JS for a timer page is well under 30KB after gzip. Pages serve in under 200ms on a warm cache.</p>
+                <p>That architecture matters because it makes the no-tracking, no-ads-in-face commitments actually sustainable. Sites that depend on aggressive monetization to cover bloated infrastructure inevitably break the trust commitments first. The Blog Timer's running cost is low enough that we can afford to keep it the way it is.</p>
+                <p>If you want to know the exact stack, see the <a href="<?php echo esc_url(home_url('/methodology/')); ?>">methodology page</a> — there is a full disclosure of every browser, OS, and tooling version we use to verify accuracy.</p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Explore More</h2>
                 <ul class="context-link-list">
-                    <li><a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">Browse all minute timer pages</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/second-timers/')); ?>">Browse all second timer pages</a></li>
-                    <li><a href="<?php echo esc_url($productivity_usecase_url); ?>">Explore productivity timer use-case pages</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/guides/')); ?>">Read the timer strategy guide archive</a></li>
-                    <li><a href="<?php echo esc_url($pomodoro_cluster_url); ?>">Open Pomodoro guide cluster pages</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/methodology/')); ?>">How we test timer accuracy (full 8-test protocol)</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial policy and corrections workflow</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/sources/')); ?>">Bibliography of cited studies</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/changelog/')); ?>">Editorial changelog</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>">About the author: Suraj Giri</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">Browse all minute timers</a></li>
+                    <li><a href="<?php echo esc_url($pomodoro_cluster_url); ?>">Pomodoro guide cluster</a></li>
                 </ul>
             </section>
 
         </article>
     </div>
 </main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About The Blog Timer",
+  "url": "<?php echo esc_url(home_url('/about/')); ?>",
+  "description": "About The Blog Timer: built by Suraj Giri to solve browser-timer drift. Timestamp-based timing engine, open testing methodology, no tracking in your face.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "The Blog Timer",
+    "url": "<?php echo esc_url(home_url('/')); ?>",
+    "founder": {
+      "@type": "Person",
+      "name": "Suraj Giri",
+      "email": "suraj@theblogtimer.com",
+      "url": "<?php echo esc_url(home_url('/author/suraj-giri/')); ?>",
+      "jobTitle": "Productivity researcher and software engineer"
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Suraj Giri",
+    "url": "<?php echo esc_url(home_url('/author/suraj-giri/')); ?>"
+  }
+}
+</script>
 
 <?php
 get_footer();

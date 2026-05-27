@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 define('TIMER_ENGINE_VERSION', '1.0.0');
 define('TIMER_ENGINE_PATH', plugin_dir_path(__FILE__));
 define('TIMER_ENGINE_URL', plugin_dir_url(__FILE__));
-define('TIMER_ENGINE_DATASETS', ABSPATH . '../datasets/');
+define('TIMER_ENGINE_DATASETS', file_exists(ABSPATH . '../datasets/') ? ABSPATH . '../datasets/' : ABSPATH . 'datasets/');
 
 // Include classes
 require_once TIMER_ENGINE_PATH . 'includes/class-content-loader.php';
@@ -304,7 +304,11 @@ class Timer_Engine
             $unit = get_post_meta($post->ID, '_timer_unit', true);
             if ($value && $unit) {
                 $loader = Timer_Content_Loader::get_instance();
-                $title_key = 'timer.seo_title.' . $unit;
+                if ($unit === 'hours' && (int) $value === 1) {
+                    $title_key = 'timer.seo_title.hours_singular';
+                } else {
+                    $title_key = 'timer.seo_title.' . $unit;
+                }
                 $seo_title = $loader->get_string($title_key, ['value' => $value]);
                 if ($seo_title) {
                     $title_parts['title'] = $seo_title;
@@ -386,6 +390,19 @@ class Timer_Engine
                 'privacy-policy' => 'Review The Blog Timer privacy policy, including local storage usage, essential cookies, and how we handle operational server logs.',
                 'privacy-policy-2' => 'Review The Blog Timer privacy policy, including local storage usage, essential cookies, and how we handle operational server logs.',
                 'terms-of-service' => 'Read The Blog Timer terms of service, usage rules, liability limitations, and legal conditions for accessing the website.',
+                'chess-clock' => 'Free online chess clock for two players. Set bullet, blitz, rapid, or classical time controls and switch turns with a single tap. Works for chess, board games, and debates.',
+                'egg-timer' => 'Free online egg timer with soft, medium, and hard-boiled presets. Get perfect eggs every time with science-backed boiling times and tips for foolproof results.',
+                'interval-timer' => 'Free interval timer for HIIT, Tabata, EMOM, and circuit training. Customizable work and rest periods with presets for every common interval protocol.',
+                'nap-timer' => 'Science-backed power nap timer with NASA, 10-minute, 20-minute, and 90-minute presets. Wake up refreshed, not groggy, with the right nap duration.',
+                'sprint-timer' => 'Free online sprint timer for focused work sessions. 15, 25, 45, and 90-minute work sprint presets to boost productivity and beat procrastination.',
+                'presentation-timer' => 'Free presentation timer for speakers. Time lightning talks, Pecha Kucha, TED-style talks, and conference sessions with simple visual countdowns.',
+                'timer-for' => 'Browse timers designed for specific audiences and use cases — students, remote workers, kids, fitness enthusiasts, and more.',
+                'kids' => 'Child-friendly timers for homework, chores, screen time, and calm-down moments. Age-appropriate durations and tips for managing kids time with visual countdowns.',
+                'remote-workers' => 'Productivity timers for remote work and work-from-home schedules. Structure your day with focus blocks, scheduled breaks, and hard-stop timers.',
+                'methodology' => 'How The Blog Timer tests countdown accuracy: the 8-test protocol, browser/OS matrix, statistical drift reporting, and an open methodology you can replicate.',
+                'sources' => 'Complete bibliography of primary sources cited across The Blog Timer: productivity research, sleep science, HIIT physiology, food safety, and cognitive psychology.',
+                'author-suraj-giri' => 'Suraj Giri is the founder and editor of The Blog Timer. Productivity researcher and software engineer writing on attention, timing, and tool design.',
+                'changelog' => 'Dated public log of editorial corrections, new guides, study-citation updates, infrastructure changes, and policy revisions on The Blog Timer.',
             ];
 
             if (isset($core_page_meta[$slug])) {
@@ -395,6 +412,7 @@ class Timer_Engine
             $hub_meta_map = [
                 'minute-timers' => 'hub.minutes.meta',
                 'second-timers' => 'hub.seconds.meta',
+                'hour-timers' => 'hub.hours.meta',
                 'pomodoro' => 'hub.pomodoro.meta',
                 'use-cases' => 'hub.usecases.meta',
             ];
@@ -582,12 +600,17 @@ class Timer_Engine
         }
 
         $loader = Timer_Content_Loader::get_instance();
-        $title = $loader->get_string("timer.title.{$unit}", ['value' => $value]);
+        $title_key = ($unit === 'hours' && (int) $value === 1) ? 'timer.title.hours_singular' : "timer.title.{$unit}";
+        $title = $loader->get_string($title_key, ['value' => $value]);
+        $unit_label = ucfirst($unit);
+        if ($unit === 'hours' && (int) $value === 1) {
+            $unit_label = 'Hour';
+        }
 
         $schema = [
             '@context' => 'https://schema.org',
             '@type' => 'WebApplication',
-            'name' => $title ?: "Set Timer for {$value} " . ucfirst($unit),
+            'name' => $title ?: "Set Timer for {$value} " . $unit_label,
             'url' => get_permalink($post->ID),
             'applicationCategory' => 'UtilityApplication',
             'operatingSystem' => 'Any',
@@ -622,6 +645,17 @@ class Timer_Engine
             $this->output_json_ld($faq_schema);
         }
 
+        if ($unit === 'minutes') {
+            $hub_name = 'Minute Timers';
+            $hub_url = home_url('/minute-timers/');
+        } elseif ($unit === 'hours') {
+            $hub_name = 'Hour Timers';
+            $hub_url = home_url('/hour-timers/');
+        } else {
+            $hub_name = 'Second Timers';
+            $hub_url = home_url('/second-timers/');
+        }
+
         $breadcrumbs = [
             '@context' => 'https://schema.org',
             '@type' => 'BreadcrumbList',
@@ -635,8 +669,8 @@ class Timer_Engine
                 [
                     '@type' => 'ListItem',
                     'position' => 2,
-                    'name' => $unit === 'minutes' ? 'Minute Timers' : 'Second Timers',
-                    'item' => $unit === 'minutes' ? home_url('/minute-timers/') : home_url('/second-timers/'),
+                    'name' => $hub_name,
+                    'item' => $hub_url,
                 ],
                 [
                     '@type' => 'ListItem',
@@ -846,7 +880,13 @@ class Timer_Engine
     {
         $value = self::get_timer_value($post_id);
         $unit = self::get_timer_unit($post_id);
-        return $unit === 'minutes' ? $value * 60 : $value;
+        if ($unit === 'hours') {
+            return $value * 3600;
+        }
+        if ($unit === 'minutes') {
+            return $value * 60;
+        }
+        return $value;
     }
 
     /**
@@ -865,12 +905,19 @@ class Timer_Engine
         if ($unit === 'minutes') {
             $hub_label = $loader->get_string('breadcrumb.minute_timers') ?: 'Minute Timers';
             $hub_url = home_url('/minute-timers/');
+        } elseif ($unit === 'hours') {
+            $hub_label = $loader->get_string('breadcrumb.hour_timers') ?: 'Hour Timers';
+            $hub_url = home_url('/hour-timers/');
         } else {
             $hub_label = $loader->get_string('breadcrumb.second_timers') ?: 'Second Timers';
             $hub_url = home_url('/second-timers/');
         }
 
-        $current_label = "{$value} " . ucfirst($unit);
+        $unit_label = ucfirst($unit);
+        if ($unit === 'hours' && (int) $value === 1) {
+            $unit_label = 'Hour';
+        }
+        $current_label = "{$value} " . $unit_label;
 
         echo '<nav class="breadcrumbs" aria-label="Breadcrumb">';
         echo '<ol>';

@@ -83,6 +83,7 @@ class Timer_Content_Loader
         $paths = [
             '/var/www/datasets/',                    // Docker volume mount
             ABSPATH . '../datasets/',                // Docker: relative to web root
+            ABSPATH . 'datasets/',                   // Cloudways: within public_html
             TIMER_ENGINE_PATH . '../../datasets/',   // relative from plugin
         ];
         foreach ($paths as $path) {

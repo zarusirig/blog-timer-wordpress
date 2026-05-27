@@ -47,6 +47,24 @@
         },
         "intro_s_long_02": {
             "en": "Count down from {value} seconds for planks, wall sits, or any timed activity. You'll hear a clear alert the moment time is up."
+        },
+        "intro_h_short_01": {
+            "en": "This {value}-hour timer is ideal for deep work blocks, long study sessions, and extended cooking. Press Start and let the countdown run quietly in the background."
+        },
+        "intro_h_short_02": {
+            "en": "Set a {value}-hour countdown for a focused work shift, a long nap, or a slow-cooked meal. The timer keeps accurate time even when your tab is in the background."
+        },
+        "intro_h_long_01": {
+            "en": "Use this {value}-hour timer for marathon study sessions, long shifts, or extended fasting windows. Reliable timing with a clear alert when your time is up."
+        },
+        "intro_h_long_02": {
+            "en": "A {value}-hour countdown for sleep cycles, all-day deep work, or slow-cooking projects. Set it once and let it run with confidence."
+        },
+        "intro_h_ext_01": {
+            "en": "This {value}-hour extended timer tracks day-long activities. Perfect for full-day fasting windows, long-duration deadlines, or extended overnight tasks."
+        },
+        "intro_h_ext_02": {
+            "en": "Need a long-running countdown? This {value}-hour timer is built for extended tracking — fasts, project deadlines, or anything that spans a full day."
         }
     },
     "faqs": {
@@ -175,6 +193,34 @@
                 "Cool-down interval",
                 "Mindful breathing",
                 "Timed challenge"
+            ]
+        },
+        "hours": {
+            "hours_short": [
+                "Deep work block",
+                "Power nap",
+                "Slow-cooked meal",
+                "Study session",
+                "Long workout",
+                "Movie watching",
+                "Focused reading"
+            ],
+            "hours_long": [
+                "Work shift",
+                "Sleep cycle",
+                "Study marathon",
+                "Long road trip leg",
+                "Slow roast",
+                "All-day project block",
+                "Extended fast"
+            ],
+            "hours_extended": [
+                "Full day fast",
+                "Overnight slow cook",
+                "Project deadline",
+                "Travel countdown",
+                "Multi-day fasting",
+                "Long deadline tracker"
             ]
         }
     }

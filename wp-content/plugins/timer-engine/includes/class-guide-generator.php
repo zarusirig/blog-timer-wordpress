@@ -102,11 +102,8 @@ class Guide_Generator_Command
             'post_excerpt' => $entry['excerpt'] ?? '',
         ];
 
-        // Content — normally we'd generate this or leave it to the template.
-        // For this task, the content is dynamic in the template, so we leave post_content empty or minimal.
-        // But to avoid "empty content" issues, we can set a placeholder or summary.
-        // Let's set the excerpt as content for now if empty.
-        $post_data['post_content'] = '<!-- Guide content rendered via template -->';
+        // Use dataset content if provided, otherwise use empty placeholder (template renders fallback)
+        $post_data['post_content'] = !empty($entry['content']) ? wp_kses_post($entry['content']) : '';
 
         if (!empty($existing)) {
             $post_id = $existing[0]->ID;

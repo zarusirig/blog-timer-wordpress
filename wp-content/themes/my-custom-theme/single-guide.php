@@ -68,7 +68,12 @@ if (!empty($related_guide_slugs) && is_array($related_guide_slugs)) {
 // Resolve FAQs
 $faqs = [];
 if (!empty($faq_keys) && is_array($faq_keys)) {
-    $copyblocks_path = ABSPATH . '../datasets/copyblocks.json';
+    $loader_cb = Timer_Content_Loader::get_instance();
+    $datasets_path = defined('TIMER_ENGINE_DATASETS') ? TIMER_ENGINE_DATASETS : (ABSPATH . 'datasets/');
+    $copyblocks_path = $datasets_path . 'copyblocks.json';
+    if (!file_exists($copyblocks_path)) {
+        $copyblocks_path = ABSPATH . '../datasets/copyblocks.json';
+    }
     if (file_exists($copyblocks_path)) {
         $cb = json_decode(file_get_contents($copyblocks_path), true);
         foreach ($faq_keys as $key) {

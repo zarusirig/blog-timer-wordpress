@@ -10,7 +10,8 @@
   "taxonomies": {
     "units": [
       "minutes",
-      "seconds"
+      "seconds",
+      "hours"
     ],
     "buckets": {
       "minutes": [
@@ -64,6 +65,29 @@
           "min": 31,
           "max": 60,
           "description": "Longer second-based timers for planks, intervals, and timed activities."
+        }
+      ],
+      "hours": [
+        {
+          "id": "hours_short",
+          "label": "Short Hour Timers",
+          "min": 1,
+          "max": 3,
+          "description": "Hour-long timers for focused work blocks, naps, and short cooking sessions."
+        },
+        {
+          "id": "hours_long",
+          "label": "Long Hour Timers",
+          "min": 4,
+          "max": 12,
+          "description": "Extended hour-based timers for work shifts, study marathons, slow cooking, and sleep cycles."
+        },
+        {
+          "id": "hours_extended",
+          "label": "Extended Hour Timers",
+          "min": 13,
+          "max": 24,
+          "description": "Day-length countdown timers for fasting, extended deadlines, and long-duration tracking."
         }
       ]
     },
@@ -135,6 +159,20 @@
           "intro_s_long_01",
           "intro_s_long_02"
         ]
+      },
+      "hours": {
+        "hours_short": [
+          "intro_h_short_01",
+          "intro_h_short_02"
+        ],
+        "hours_long": [
+          "intro_h_long_01",
+          "intro_h_long_02"
+        ],
+        "hours_extended": [
+          "intro_h_ext_01",
+          "intro_h_ext_02"
+        ]
       }
     },
     "faqSets": {
@@ -163,6 +201,11 @@
         "meta_sec_a",
         "meta_sec_b",
         "meta_sec_c"
+      ],
+      "hours": [
+        "meta_hours_a",
+        "meta_hours_b",
+        "meta_hours_c"
       ]
     }
   },
@@ -184,6 +227,12 @@
       10,
       30,
       60
+    ],
+    "hours": [
+      1,
+      2,
+      8,
+      24
     ]
   },
   "hubs": [
@@ -204,6 +253,15 @@
       "titleKey": "hub.seconds.title",
       "descriptionKey": "hub.seconds.desc",
       "unit": "seconds"
+    },
+    {
+      "id": "hub_hours",
+      "type": "page",
+      "slug": "hour-timers",
+      "template": "page-hour-timers.php",
+      "titleKey": "hub.hours.title",
+      "descriptionKey": "hub.hours.desc",
+      "unit": "hours"
     },
     {
       "id": "hub_pomodoro",
@@ -2128,7 +2186,7 @@
       "slug": "set-timer-for-2-seconds",
       "bucket": "short_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_2",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2141,7 +2199,7 @@
       "slug": "set-timer-for-3-seconds",
       "bucket": "short_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_3",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2154,7 +2212,7 @@
       "slug": "set-timer-for-4-seconds",
       "bucket": "short_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_4",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2167,7 +2225,7 @@
       "slug": "set-timer-for-6-seconds",
       "bucket": "short_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_6",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2180,7 +2238,7 @@
       "slug": "set-timer-for-7-seconds",
       "bucket": "short_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_7",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2193,7 +2251,7 @@
       "slug": "set-timer-for-8-seconds",
       "bucket": "short_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_8",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2206,7 +2264,7 @@
       "slug": "set-timer-for-9-seconds",
       "bucket": "short_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_9",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2219,7 +2277,7 @@
       "slug": "set-timer-for-11-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_11",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2232,7 +2290,7 @@
       "slug": "set-timer-for-12-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_12",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2245,7 +2303,7 @@
       "slug": "set-timer-for-13-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_13",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2258,7 +2316,7 @@
       "slug": "set-timer-for-14-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_14",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2271,7 +2329,7 @@
       "slug": "set-timer-for-15-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_15",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2284,7 +2342,7 @@
       "slug": "set-timer-for-16-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_16",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2297,7 +2355,7 @@
       "slug": "set-timer-for-17-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_17",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2310,7 +2368,7 @@
       "slug": "set-timer-for-18-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_18",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2323,7 +2381,7 @@
       "slug": "set-timer-for-19-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_19",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2336,7 +2394,7 @@
       "slug": "set-timer-for-20-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_20",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2349,7 +2407,7 @@
       "slug": "set-timer-for-21-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_21",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2362,7 +2420,7 @@
       "slug": "set-timer-for-22-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_22",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2375,7 +2433,7 @@
       "slug": "set-timer-for-23-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_23",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2388,7 +2446,7 @@
       "slug": "set-timer-for-24-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_24",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2401,7 +2459,7 @@
       "slug": "set-timer-for-25-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_25",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2414,7 +2472,7 @@
       "slug": "set-timer-for-26-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_26",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2427,7 +2485,7 @@
       "slug": "set-timer-for-27-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_27",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2440,7 +2498,7 @@
       "slug": "set-timer-for-28-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_28",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2453,7 +2511,7 @@
       "slug": "set-timer-for-29-seconds",
       "bucket": "medium_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_29",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2466,7 +2524,7 @@
       "slug": "set-timer-for-31-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_31",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2479,7 +2537,7 @@
       "slug": "set-timer-for-32-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_32",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2492,7 +2550,7 @@
       "slug": "set-timer-for-33-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_33",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2505,7 +2563,7 @@
       "slug": "set-timer-for-34-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_34",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2518,7 +2576,7 @@
       "slug": "set-timer-for-35-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_35",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2531,7 +2589,7 @@
       "slug": "set-timer-for-36-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_36",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2544,7 +2602,7 @@
       "slug": "set-timer-for-37-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_37",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2557,7 +2615,7 @@
       "slug": "set-timer-for-38-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_38",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2570,7 +2628,7 @@
       "slug": "set-timer-for-39-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_39",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2583,7 +2641,7 @@
       "slug": "set-timer-for-40-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_40",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2596,7 +2654,7 @@
       "slug": "set-timer-for-41-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_41",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2609,7 +2667,7 @@
       "slug": "set-timer-for-42-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_42",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2622,7 +2680,7 @@
       "slug": "set-timer-for-43-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_43",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2635,7 +2693,7 @@
       "slug": "set-timer-for-44-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_44",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2648,7 +2706,7 @@
       "slug": "set-timer-for-45-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_45",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2661,7 +2719,7 @@
       "slug": "set-timer-for-46-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_46",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2674,7 +2732,7 @@
       "slug": "set-timer-for-47-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_47",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2687,7 +2745,7 @@
       "slug": "set-timer-for-48-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_48",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2700,7 +2758,7 @@
       "slug": "set-timer-for-49-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_49",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2713,7 +2771,7 @@
       "slug": "set-timer-for-50-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_50",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2726,7 +2784,7 @@
       "slug": "set-timer-for-51-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_51",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2739,7 +2797,7 @@
       "slug": "set-timer-for-52-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_52",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2752,7 +2810,7 @@
       "slug": "set-timer-for-53-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_53",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2765,7 +2823,7 @@
       "slug": "set-timer-for-54-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_54",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2778,7 +2836,7 @@
       "slug": "set-timer-for-55-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_55",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2791,7 +2849,7 @@
       "slug": "set-timer-for-56-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_56",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2804,7 +2862,7 @@
       "slug": "set-timer-for-57-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_57",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2817,7 +2875,7 @@
       "slug": "set-timer-for-58-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_58",
       "isPopular": true,
       "useCases": [
         "exercise",
@@ -2830,11 +2888,123 @@
       "slug": "set-timer-for-59-seconds",
       "bucket": "long_seconds",
       "is_popular": false,
-      "id": "t_s_10",
+      "id": "t_s_59",
       "isPopular": true,
       "useCases": [
         "exercise",
         "meditation"
+      ]
+    },
+    {
+      "id": "t_h_1",
+      "unit": "hours",
+      "value": 1,
+      "slug": "set-timer-for-1-hour",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_h_2",
+      "unit": "hours",
+      "value": 2,
+      "slug": "set-timer-for-2-hours",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_h_3",
+      "unit": "hours",
+      "value": 3,
+      "slug": "set-timer-for-3-hours",
+      "isPopular": false,
+      "useCases": [
+        "productivity",
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_h_4",
+      "unit": "hours",
+      "value": 4,
+      "slug": "set-timer-for-4-hours",
+      "isPopular": false,
+      "useCases": [
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_h_5",
+      "unit": "hours",
+      "value": 5,
+      "slug": "set-timer-for-5-hours",
+      "isPopular": false,
+      "useCases": [
+        "studying",
+        "cooking"
+      ]
+    },
+    {
+      "id": "t_h_6",
+      "unit": "hours",
+      "value": 6,
+      "slug": "set-timer-for-6-hours",
+      "isPopular": false,
+      "useCases": [
+        "studying",
+        "cooking",
+        "meditation"
+      ]
+    },
+    {
+      "id": "t_h_8",
+      "unit": "hours",
+      "value": 8,
+      "slug": "set-timer-for-8-hours",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "studying"
+      ]
+    },
+    {
+      "id": "t_h_10",
+      "unit": "hours",
+      "value": 10,
+      "slug": "set-timer-for-10-hours",
+      "isPopular": false,
+      "useCases": [
+        "studying"
+      ]
+    },
+    {
+      "id": "t_h_12",
+      "unit": "hours",
+      "value": 12,
+      "slug": "set-timer-for-12-hours",
+      "isPopular": false,
+      "useCases": [
+        "studying"
+      ]
+    },
+    {
+      "id": "t_h_24",
+      "unit": "hours",
+      "value": 24,
+      "slug": "set-timer-for-24-hours",
+      "isPopular": true,
+      "useCases": [
+        "productivity",
+        "studying"
       ]
     }
   ]

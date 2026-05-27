@@ -117,9 +117,15 @@ function blogtimer_render_timer_card($timer_data, $show_popular = true)
     if ($show_popular && $is_popular)
         $classes .= ' popular';
     ?>
+    <?php
+    $unit_label = ucfirst($unit);
+    if ($unit === 'hours' && (int) $value === 1) {
+        $unit_label = 'Hour';
+    }
+    ?>
     <a href="<?php echo esc_url(get_permalink($post->ID)); ?>" class="<?php echo esc_attr($classes); ?>">
         <span class="timer-card-value"><?php echo esc_html($value); ?></span>
-        <span class="timer-card-label"><?php echo esc_html(ucfirst($unit)); ?></span>
+        <span class="timer-card-label"><?php echo esc_html($unit_label); ?></span>
     </a>
     <?php
 }
@@ -179,6 +185,10 @@ function blogtimer_get_bucket_slugs_for_unit($unit)
 {
     if ($unit === 'seconds') {
         return ['seconds_short', 'seconds_medium', 'seconds_long'];
+    }
+
+    if ($unit === 'hours') {
+        return ['hours_short', 'hours_long', 'hours_extended'];
     }
 
     return ['short', 'medium', 'long', 'extended'];
@@ -728,11 +738,19 @@ add_filter('robots_txt', function ($output, $public) {
 
     // Explicitly allow only legitimate content paths
     $robots .= "# Allowed paths (legitimate content only)\n";
-    $robots .= "Allow: /set-timer-for-*\n";
+    $robots .= "Allow: /timer/*\n";
+    $robots .= "Allow: /guides/*\n";
     $robots .= "Allow: /minute-timers\n";
     $robots .= "Allow: /second-timers\n";
     $robots .= "Allow: /pomodoro\n";
     $robots .= "Allow: /use-cases\n";
+    $robots .= "Allow: /chess-clock\n";
+    $robots .= "Allow: /egg-timer\n";
+    $robots .= "Allow: /interval-timer\n";
+    $robots .= "Allow: /nap-timer\n";
+    $robots .= "Allow: /sprint-timer\n";
+    $robots .= "Allow: /presentation-timer\n";
+    $robots .= "Allow: /timer-for/*\n";
     $robots .= "Allow: /about\n";
     $robots .= "Allow: /contact\n";
     $robots .= "Allow: /faq\n";
@@ -742,7 +760,6 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "Allow: /dmca\n";
     $robots .= "Allow: /accessibility\n";
     $robots .= "Allow: /editorial-policy\n";
-    $robots .= "Allow: /guides/*\n";
     $robots .= "Allow: /wp-content/uploads/\n";
     $robots .= "Allow: /wp-content/themes/\n\n";
 
@@ -763,6 +780,45 @@ add_action('wp_head', function () {
         'pomodoro', 'use-cases',
         'disclaimer', 'dmca', 'accessibility',
         'editorial-policy',
+        'methodology', 'sources', 'author-suraj-giri', 'changelog',
+        'chess-clock', 'egg-timer', 'interval-timer',
+        'nap-timer', 'sprint-timer', 'presentation-timer',
+        'timer-for', 'kids', 'remote-workers',
+            // tool & hub pages added 2026-05-27
+            'stopwatch',
+            'online-alarm-clock',
+            'countdown-timer',
+            'sleep-timer',
+            'world-clock',
+            'focus-timer',
+            'study-timer',
+            'tabata-timer',
+            'cooking-timers',
+            'workout-timers',
+            'sleep-meditation-timers',
+            'study-work-timers',
+            'stopwatch-clock-tools',
+            'pasta-timer',
+            'tea-timer',
+            'coffee-timer',
+            'steak-timer',
+            'rice-timer',
+            'turkey-timer',
+            'bread-baking-timer',
+            'microwave-popcorn-timer',
+            'sous-vide-timer',
+            'bbq-timer',
+            'baby-bottle-timer',
+            'boxing-round-timer',
+            'hiit-timer',
+            'yoga-timer',
+            'plank-timer',
+            'jump-rope-timer',
+            'running-interval-timer',
+            'stretching-timer',
+            'crossfit-amrap-timer',
+            'emom-timer',
+            'hour-timers',
     ];
 
     // Allow the front page
@@ -799,6 +855,47 @@ add_action('send_headers', function () {
         'privacy-policy', 'terms-of-service',
         'minute-timers', 'second-timers',
         'pomodoro', 'use-cases',
+        'disclaimer', 'dmca', 'accessibility',
+        'editorial-policy',
+        'methodology', 'sources', 'author-suraj-giri', 'changelog',
+        'chess-clock', 'egg-timer', 'interval-timer',
+        'nap-timer', 'sprint-timer', 'presentation-timer',
+        'timer-for', 'kids', 'remote-workers',
+            // tool & hub pages added 2026-05-27
+            'stopwatch',
+            'online-alarm-clock',
+            'countdown-timer',
+            'sleep-timer',
+            'world-clock',
+            'focus-timer',
+            'study-timer',
+            'tabata-timer',
+            'cooking-timers',
+            'workout-timers',
+            'sleep-meditation-timers',
+            'study-work-timers',
+            'stopwatch-clock-tools',
+            'pasta-timer',
+            'tea-timer',
+            'coffee-timer',
+            'steak-timer',
+            'rice-timer',
+            'turkey-timer',
+            'bread-baking-timer',
+            'microwave-popcorn-timer',
+            'sous-vide-timer',
+            'bbq-timer',
+            'baby-bottle-timer',
+            'boxing-round-timer',
+            'hiit-timer',
+            'yoga-timer',
+            'plank-timer',
+            'jump-rope-timer',
+            'running-interval-timer',
+            'stretching-timer',
+            'crossfit-amrap-timer',
+            'emom-timer',
+            'hour-timers',
     ];
 
     if (is_front_page() || is_home()) {
@@ -850,6 +947,85 @@ add_filter('wp_sitemaps_add_provider', function ($provider, $name) {
 /**
  * Filter out any non-legitimate pages from the sitemap
  */
+/**
+ * Disable Nginx/CDN caching on sitemap URLs so search engines always see fresh content.
+ * Cloudways Varnish/Nginx was caching wp-sitemap-*.xml for 4+ hours, causing GSC to read stale counts.
+ */
+add_action('send_headers', function () {
+    if (!isset($_SERVER['REQUEST_URI'])) { return; }
+    $uri = $_SERVER['REQUEST_URI'];
+    if (preg_match('#/(wp-)?sitemap[^/]*\.xml#', $uri)) {
+        header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0', true);
+        header('Pragma: no-cache', true);
+        header('Expires: 0', true);
+        header('X-Accel-Expires: 0', true);  // Nginx-specific directive to bypass cache
+    }
+}, 1);
+
+/**
+ * Fresh custom sitemap endpoint that bypasses the Cloudways Nginx page cache.
+ * Handled at parse_request (very early) to avoid WP's canonical-redirect for unknown URLs.
+ * Accessible at /sitemap-fresh.xml — submit this to GSC.
+ */
+add_action('parse_request', function ($wp) {
+    if (!isset($_SERVER['REQUEST_URI'])) { return; }
+    $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    if ($path !== '/sitemap-fresh.xml') { return; }
+
+    header('Content-Type: application/xml; charset=UTF-8');
+    header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+    header('Pragma: no-cache');
+    header('Expires: 0');
+    header('X-Accel-Expires: 0');
+
+    echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+    echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+    // Add homepage
+    echo '  <url><loc>' . esc_url(home_url('/')) . '</loc></url>' . "\n";
+
+    // Add all whitelisted pages
+    $allowed_page_slugs = [
+        'about','contact','faq','privacy-policy','terms-of-service',
+        'minute-timers','second-timers','pomodoro','use-cases',
+        'disclaimer','dmca','accessibility','editorial-policy',
+        'methodology','sources','author-suraj-giri','changelog',
+        'chess-clock','egg-timer','interval-timer','nap-timer',
+        'sprint-timer','presentation-timer','timer-for','kids','remote-workers',
+        'stopwatch','online-alarm-clock','countdown-timer','sleep-timer',
+        'world-clock','focus-timer','study-timer','tabata-timer',
+        'cooking-timers','workout-timers','sleep-meditation-timers',
+        'study-work-timers','stopwatch-clock-tools',
+        'pasta-timer','tea-timer','coffee-timer','steak-timer','rice-timer',
+        'turkey-timer','bread-baking-timer','microwave-popcorn-timer',
+        'sous-vide-timer','bbq-timer','baby-bottle-timer',
+        'boxing-round-timer','hiit-timer','yoga-timer','plank-timer',
+        'jump-rope-timer','running-interval-timer','stretching-timer',
+        'crossfit-amrap-timer','emom-timer','hour-timers',
+    ];
+    foreach ($allowed_page_slugs as $slug) {
+        $page = get_page_by_path($slug);
+        if ($page && $page->post_status === 'publish') {
+            echo '  <url><loc>' . esc_url(get_permalink($page->ID)) . '</loc></url>' . "\n";
+        }
+    }
+
+    // All timer posts
+    $timers = get_posts(['post_type' => 'timer', 'post_status' => 'publish', 'posts_per_page' => -1, 'fields' => 'ids']);
+    foreach ($timers as $tid) {
+        echo '  <url><loc>' . esc_url(get_permalink($tid)) . '</loc></url>' . "\n";
+    }
+
+    // All guide posts
+    $guides = get_posts(['post_type' => 'guide', 'post_status' => 'publish', 'posts_per_page' => -1, 'fields' => 'ids']);
+    foreach ($guides as $gid) {
+        echo '  <url><loc>' . esc_url(get_permalink($gid)) . '</loc></url>' . "\n";
+    }
+
+    echo '</urlset>' . "\n";
+    exit;
+});
+
 add_filter('wp_sitemaps_posts_query_args', function ($args, $post_type) {
     if ($post_type === 'page') {
         $allowed_pages = [
@@ -859,6 +1035,45 @@ add_filter('wp_sitemaps_posts_query_args', function ($args, $post_type) {
             'pomodoro', 'use-cases',
             'disclaimer', 'dmca', 'accessibility',
             'editorial-policy',
+            'methodology', 'sources', 'author-suraj-giri', 'changelog',
+            'chess-clock', 'egg-timer', 'interval-timer',
+            'nap-timer', 'sprint-timer', 'presentation-timer',
+            'timer-for', 'kids', 'remote-workers',
+            // tool & hub pages added 2026-05-27
+            'stopwatch',
+            'online-alarm-clock',
+            'countdown-timer',
+            'sleep-timer',
+            'world-clock',
+            'focus-timer',
+            'study-timer',
+            'tabata-timer',
+            'cooking-timers',
+            'workout-timers',
+            'sleep-meditation-timers',
+            'study-work-timers',
+            'stopwatch-clock-tools',
+            'pasta-timer',
+            'tea-timer',
+            'coffee-timer',
+            'steak-timer',
+            'rice-timer',
+            'turkey-timer',
+            'bread-baking-timer',
+            'microwave-popcorn-timer',
+            'sous-vide-timer',
+            'bbq-timer',
+            'baby-bottle-timer',
+            'boxing-round-timer',
+            'hiit-timer',
+            'yoga-timer',
+            'plank-timer',
+            'jump-rope-timer',
+            'running-interval-timer',
+            'stretching-timer',
+            'crossfit-amrap-timer',
+            'emom-timer',
+            'hour-timers',
         ];
         $args['post_name__in'] = $allowed_pages;
     }
@@ -1022,7 +1237,11 @@ add_action('wp_head', function () {
             $post_id = get_the_ID();
             $value = Timer_Engine::get_timer_value($post_id);
             $unit = Timer_Engine::get_timer_unit($post_id);
-            $app_schema['name'] = "Set Timer for {$value} " . ucfirst($unit);
+            $unit_label_schema = ucfirst($unit);
+            if ($unit === 'hours' && (int) $value === 1) {
+                $unit_label_schema = 'Hour';
+            }
+            $app_schema['name'] = "Set Timer for {$value} " . $unit_label_schema;
             $app_schema['url'] = get_permalink($post_id);
         }
 
@@ -1050,6 +1269,13 @@ add_action('wp_head', function () {
                     'position' => $position++,
                     'name' => 'Minute Timers',
                     'item' => blogtimer_untrailingslashit_url(home_url('/minute-timers/')),
+                ];
+            } elseif ($unit === 'hours') {
+                $breadcrumb_items[] = [
+                    '@type' => 'ListItem',
+                    'position' => $position++,
+                    'name' => 'Hour Timers',
+                    'item' => blogtimer_untrailingslashit_url(home_url('/hour-timers/')),
                 ];
             } else {
                 $breadcrumb_items[] = [
