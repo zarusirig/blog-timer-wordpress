@@ -16,7 +16,7 @@ $pomodoro_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'pomodor
             <header class="page-header">
                 <h1 class="page-h1">About The Blog Timer</h1>
                 <p class="page-intro">Built by Suraj Giri — productivity researcher and software engineer — after a browser timer drifted by 47 seconds and ruined dinner. The Blog Timer exists because the timer in your browser tab is probably lying to you, and most people don't realize how much that matters.</p>
-                <p class="page-byline">By <a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo date('F j, Y'); ?></p>
+                <p class="page-byline">By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
             </header>
 
             <div class="stats-bar">
@@ -83,7 +83,7 @@ $pomodoro_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'pomodor
                     <div class="col">
                         <h3>Suraj Giri — Founder, Engineer, Editor</h3>
                         <p>I built The Blog Timer and write most of the content on it. My background is web development (frontend systems, performance work) and undergraduate research in cognitive psychology — specifically attention and time perception. I've been using Pomodoro since 2014, daily, with one notebook per quarter to track session quality. That practice is where most of the editorial intuition on this site comes from.</p>
-                        <p>For now, the team is just me. As the site grows I expect to bring in subject-matter contributors — particularly for the cooking, exercise, and meditation timer guides — but every contributor will be named on the byline, will follow the <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a>, and will have a public author page like the one at <a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>">/author/suraj-giri/</a>.</p>
+                        <p>For now, the team is just me. As the site grows I expect to bring in subject-matter contributors — particularly for the cooking, exercise, and meditation timer guides — but every contributor will be named on the byline, will follow the <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a>, and will have a public author page like the one at <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">/author-suraj-giri/</a>.</p>
                         <p>Reach me at <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a> for corrections, citations you think we should add, or methodology questions.</p>
                     </div>
                     <div class="col">
@@ -158,7 +158,7 @@ $pomodoro_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'pomodor
                     <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial policy and corrections workflow</a></li>
                     <li><a href="<?php echo esc_url(home_url('/sources/')); ?>">Bibliography of cited studies</a></li>
                     <li><a href="<?php echo esc_url(home_url('/changelog/')); ?>">Editorial changelog</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>">About the author: Suraj Giri</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">About the author: Suraj Giri</a></li>
                     <li><a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">Browse all minute timers</a></li>
                     <li><a href="<?php echo esc_url($pomodoro_cluster_url); ?>">Pomodoro guide cluster</a></li>
                 </ul>
@@ -183,14 +183,14 @@ $pomodoro_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'pomodor
       "@type": "Person",
       "name": "Suraj Giri",
       "email": "suraj@theblogtimer.com",
-      "url": "<?php echo esc_url(home_url('/author/suraj-giri/')); ?>",
+      "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>",
       "jobTitle": "Productivity researcher and software engineer"
     }
   },
   "author": {
     "@type": "Person",
     "name": "Suraj Giri",
-    "url": "<?php echo esc_url(home_url('/author/suraj-giri/')); ?>"
+    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
   }
 }
 </script>

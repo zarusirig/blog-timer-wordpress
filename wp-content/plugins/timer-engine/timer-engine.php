@@ -316,8 +316,44 @@ class Timer_Engine
                     unset($title_parts['tagline']);
                 }
             }
+            return $title_parts;
         }
+
+        // Per-slug title overrides for the homepage and brand-heavy hub pages.
+        // Google appends the brand automatically, so we lead with the keyword/benefit
+        // and let the core "title" part carry the visible title (kept <= 60 chars).
+        $title_override = $this->get_title_override();
+        if (!empty($title_override)) {
+            $title_parts['title'] = $title_override;
+        }
+
         return $title_parts;
+    }
+
+    /**
+     * Resolve a per-slug document title override for the homepage and key hub pages.
+     */
+    private function get_title_override()
+    {
+        if (is_front_page()) {
+            return 'Free Online Timer — Countdown, Pomodoro & Stopwatch';
+        }
+
+        if (!is_page()) {
+            return '';
+        }
+
+        $slug = get_post_field('post_name', get_queried_object_id());
+
+        $page_title_overrides = [
+            'pomodoro' => 'Pomodoro Timer — 25/5 & 50/10 Presets',
+            'use-cases' => 'Timer Use Cases — Find the Right Timer for Any Task',
+            'hour-timers' => 'Hour Timers — 1 to 24-Hour Countdowns',
+            'world-clock' => 'World Clock — Current Time in Cities Worldwide',
+            'timer-for' => 'Timer For Every Task, Person & Activity',
+        ];
+
+        return $page_title_overrides[$slug] ?? '';
     }
 
     /**
@@ -403,6 +439,39 @@ class Timer_Engine
                 'sources' => 'Complete bibliography of primary sources cited across The Blog Timer: productivity research, sleep science, HIIT physiology, food safety, and cognitive psychology.',
                 'author-suraj-giri' => 'Suraj Giri is the founder and editor of The Blog Timer. Productivity researcher and software engineer writing on attention, timing, and tool design.',
                 'changelog' => 'Dated public log of editorial corrections, new guides, study-citation updates, infrastructure changes, and policy revisions on The Blog Timer.',
+                // Tool & hub pages — meta descriptions added for GSC snippet recovery (2026-06).
+                'stopwatch' => 'Free online stopwatch with lap times and split tracking. Start, stop, and reset with one click or the spacebar. Time workouts, races, and tasks precisely.',
+                'online-alarm-clock' => 'Free online alarm clock that rings on time, even in a background tab. Set wake-up alarms, reminders, and alerts with custom sounds. No app or download required.',
+                'countdown-timer' => 'Free online countdown timer to any time, date, or duration. Watch the seconds tick down with loud alerts when time is up — ideal for events and deadlines.',
+                'sleep-timer' => 'Free online sleep timer that fades out music and stops audio so you can drift off. Set 15 to 60-minute presets and fall asleep without your phone playing.',
+                'world-clock' => 'Free online world clock showing the current time in cities worldwide at a glance. Compare time zones instantly to schedule calls and coordinate across countries.',
+                'focus-timer' => 'Free online focus timer for deep work and distraction-free sessions. Pick 25, 45, or 90-minute blocks to enter flow, beat procrastination, and get more done.',
+                'study-timer' => 'Free online study timer built for focused revision and exam prep. Use Pomodoro and timed study blocks with breaks to retain more and study without burning out.',
+                'tabata-timer' => 'Free online Tabata timer with the classic 20s work / 10s rest x 8 protocol. Loud interval beeps keep you moving through every round of this 4-minute HIIT workout.',
+                'cooking-timers' => 'Free online cooking timers for every dish, from pasta to steak to bread. Science-backed times and one-click presets so nothing burns, overcooks, or comes out raw.',
+                'workout-timers' => 'Free online workout timers for HIIT, Tabata, EMOM, circuits, and rounds. Customizable work and rest intervals with loud beeps to keep your training on pace.',
+                'sleep-meditation-timers' => 'Free online sleep and meditation timers for rest, breathwork, and mindfulness. Gentle fade-outs and quiet bells help you unwind, meditate, and fall asleep.',
+                'study-work-timers' => 'Free online study and work timers for focused sessions. Pomodoro, deep work, and 52/17 presets help you concentrate, take real breaks, and beat distraction.',
+                'stopwatch-clock-tools' => 'Free online stopwatch, alarm clock, world clock, and countdown tools in one place. Measure, limit, or track time with the right timing tool for any task.',
+                'pasta-timer' => 'Free online pasta timer with al dente cooking times for every shape. From spaghetti to penne, get perfectly cooked pasta with a loud alert the moment it\'s ready.',
+                'tea-timer' => 'Free online tea timer with steeping times for green, black, oolong, and herbal tea. Brew the perfect cup every time and never over-steep into bitterness again.',
+                'coffee-timer' => 'Free online coffee timer for pour-over, French press, AeroPress, and espresso. Dial in the ideal brew time for a balanced, never-bitter cup with every method.',
+                'steak-timer' => 'Free online steak timer for rare to well-done, by thickness and cut. Get juicy, perfectly cooked steak with precise per-side times and a loud alert when to flip.',
+                'rice-timer' => 'Free online rice timer with cooking times for white, brown, basmati, and jasmine. Get fluffy, perfectly cooked rice every time with the right simmer and rest.',
+                'turkey-timer' => 'Free online turkey timer with roasting times by weight for a juicy, safe bird. Get your Thanksgiving turkey right with per-pound timing and temperature targets.',
+                'bread-baking-timer' => 'Free online bread baking timer for proofing, rising, and baking. Track bulk fermentation, proof, and bake times for perfect loaves, sourdough, and fresh bread.',
+                'microwave-popcorn-timer' => 'Free online popcorn timer to pop the perfect bag without burning. Listen for the right pops-per-second window and stop microwave popcorn at its peak every time.',
+                'sous-vide-timer' => 'Free online sous vide timer with time and temperature guides by food and thickness. Cook steak, chicken, and eggs to a precise, edge-to-edge perfect doneness.',
+                'bbq-timer' => 'Free online BBQ and grill timer for low-and-slow and hot-and-fast cooks. Track ribs, brisket, chicken, and burgers with per-cut times for tender, juicy results.',
+                'baby-bottle-timer' => 'Free online baby bottle timer to track feeds and warming times safely. Time each feeding, log intervals between bottles, and keep your newborn\'s schedule on track.',
+                'boxing-round-timer' => 'Free online boxing round timer with 3-minute rounds and 1-minute rests. Loud bells signal every round and break for boxing, MMA, and heavy-bag training.',
+                'hiit-timer' => 'Free online HIIT timer with customizable work and rest intervals. Set rounds, intervals, and rest with loud beeps to power through any high-intensity workout.',
+                'yoga-timer' => 'Free online yoga timer for holding poses and timing flows and meditation. Gentle interval chimes let you stay present on the mat without watching the clock.',
+                'plank-timer' => 'Free online plank timer to build core strength and beat your hold record. Track your time, follow progressive presets, and push past your plateau second by second.',
+                'jump-rope-timer' => 'Free online jump rope timer for interval skipping and conditioning rounds. Set work and rest intervals with beeps to structure cardio, boxing, and HIIT sessions.',
+                'running-interval-timer' => 'Free online running interval timer for sprints, intervals, and run-walk training. Set work and recovery splits with audio cues to nail every rep and pace.',
+                'stretching-timer' => 'Free online stretching timer with interval cues for each hold and side. Time your mobility routine, cool-down, and flexibility work to stretch evenly and safely.',
+                'crossfit-amrap-timer' => 'Free online CrossFit AMRAP timer to count down your WOD and track rounds. Set the clock, hear the buzzer, and push for as many rounds as possible, every workout.',
             ];
 
             if (isset($core_page_meta[$slug])) {
@@ -686,35 +755,60 @@ class Timer_Engine
 
     private function output_site_schema()
     {
-        $name = get_bloginfo('name');
-        $url = home_url('');
+        // Organization + WebSite are emitted as the SINGLE site-wide source of truth in
+        // the theme's functions.php (home_url('/#organization') and home_url('/#website')).
+        // Previously this method emitted duplicate, @id-less Organization and WebSite nodes,
+        // which created conflicting entity nodes for Google. Intentionally neutralized so
+        // exactly one Organization and one WebSite exist site-wide. Do NOT re-add them here.
+        return;
+    }
 
-        $website_schema = [
-            '@context' => 'https://schema.org',
-            '@type' => 'WebSite',
-            'name' => $name,
-            'url' => $url,
-            'potentialAction' => [
-                '@type' => 'SearchAction',
-                'target' => home_url('/?s={search_term_string}'),
-                'query-input' => 'required name=search_term_string',
-            ],
+    /**
+     * Resolve the guides dataset path, trying the same locations as the content loader.
+     */
+    private function get_guides_dataset_path()
+    {
+        $candidates = [
+            '/var/www/datasets/guides.dataset.json',      // Docker volume mount
+            ABSPATH . '../datasets/guides.dataset.json',  // Docker: relative to web root
+            ABSPATH . 'datasets/guides.dataset.json',     // Cloudways: within public_html
+            TIMER_ENGINE_PATH . '../../datasets/guides.dataset.json', // relative from plugin
         ];
-
-        $org_schema = [
-            '@context' => 'https://schema.org',
-            '@type' => 'Organization',
-            'name' => $name,
-            'url' => $url,
-        ];
-
-        $logo = get_site_icon_url(512);
-        if ($logo) {
-            $org_schema['logo'] = $logo;
+        if (defined('TIMER_ENGINE_DATASETS')) {
+            array_unshift($candidates, TIMER_ENGINE_DATASETS . 'guides.dataset.json');
         }
+        foreach ($candidates as $path) {
+            if (file_exists($path)) {
+                return $path;
+            }
+        }
+        return '';
+    }
 
-        $this->output_json_ld($website_schema);
-        $this->output_json_ld($org_schema);
+    /**
+     * Look up a guide dataset entry by post slug.
+     *
+     * The trust fields (author, datePublished, dateModified, sources) MAY NOT EXIST
+     * yet for every guide, so all callers must apply safe fallbacks. Returns [] on miss.
+     */
+    private function get_guide_dataset_entry($slug)
+    {
+        static $guides = null;
+        if ($guides === null) {
+            $guides = [];
+            $path = $this->get_guides_dataset_path();
+            if ($path !== '') {
+                $decoded = json_decode((string) file_get_contents($path), true);
+                if (is_array($decoded) && !empty($decoded['guides']) && is_array($decoded['guides'])) {
+                    foreach ($decoded['guides'] as $g) {
+                        if (!empty($g['slug'])) {
+                            $guides[$g['slug']] = $g;
+                        }
+                    }
+                }
+            }
+        }
+        return $guides[$slug] ?? [];
     }
 
     private function output_guide_schema()
@@ -725,31 +819,86 @@ class Timer_Engine
             return;
         }
 
+        // SHARED CONTRACT @ids — must match the theme's consolidated Organization/WebSite/Person nodes.
+        $org_id = home_url('/#organization');
+        $person_id = home_url('/author-suraj-giri/') . '#person';
+
+        // Pull optional trust fields from the guides dataset (may be absent — use safe fallbacks).
+        $slug = get_post_field('post_name', $post_id);
+        $entry = $slug ? $this->get_guide_dataset_entry($slug) : [];
+
+        // Dates: prefer dataset ISO fields, fall back to post dates so pages never break.
+        $date_published = !empty($entry['datePublished'])
+            ? (string) $entry['datePublished']
+            : get_the_date(DATE_W3C, $post_id);
+        $date_modified = !empty($entry['dateModified'])
+            ? (string) $entry['dateModified']
+            : get_the_modified_date(DATE_W3C, $post_id);
+
         $article = [
             '@context' => 'https://schema.org',
             '@type' => 'Article',
             'headline' => get_the_title($post_id),
             'description' => $this->get_post_fallback_description($post_id),
             'url' => get_permalink($post_id),
-            'datePublished' => get_the_date(DATE_W3C, $post_id),
-            'dateModified' => get_the_modified_date(DATE_W3C, $post_id),
+            'datePublished' => $date_published,
+            'dateModified' => $date_modified,
+            // Author is the Person entity (was Organization) — referenced by @id so Google
+            // consolidates it with the author-bio Person node.
             'author' => [
-                '@type' => 'Organization',
-                'name' => get_bloginfo('name'),
+                '@id' => $person_id,
             ],
+            // Publisher references the single consolidated Organization node by @id.
             'publisher' => [
-                '@type' => 'Organization',
-                'name' => get_bloginfo('name'),
+                '@id' => $org_id,
             ],
+            'mainEntityOfPage' => get_permalink($post_id),
         ];
+
+        // Citations from the dataset `sources` array, when present. Each source maps to a
+        // CreativeWork (or a bare URL string if only a URL is available).
+        if (!empty($entry['sources']) && is_array($entry['sources'])) {
+            $citations = [];
+            foreach ($entry['sources'] as $source) {
+                if (is_string($source)) {
+                    $citations[] = $source;
+                    continue;
+                }
+                if (!is_array($source)) {
+                    continue;
+                }
+                $name = trim((string) ($source['title'] ?? ''));
+                $url = trim((string) ($source['url'] ?? ''));
+                if ($name === '' && $url === '') {
+                    continue;
+                }
+                if ($name === '' && $url !== '') {
+                    $citations[] = $url;
+                    continue;
+                }
+                $work = [
+                    '@type' => 'CreativeWork',
+                    'name' => $name,
+                ];
+                if ($url !== '') {
+                    $work['url'] = $url;
+                }
+                if (!empty($source['author'])) {
+                    $work['author'] = (string) $source['author'];
+                }
+                if (!empty($source['year'])) {
+                    $work['datePublished'] = (string) $source['year'];
+                }
+                $citations[] = $work;
+            }
+            if (!empty($citations)) {
+                $article['citation'] = $citations;
+            }
+        }
 
         $image = get_site_icon_url(512);
         if ($image) {
             $article['image'] = [$image];
-            $article['publisher']['logo'] = [
-                '@type' => 'ImageObject',
-                'url' => $image,
-            ];
         }
 
         $this->output_json_ld($article);

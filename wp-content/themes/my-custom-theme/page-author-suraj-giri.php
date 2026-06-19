@@ -14,7 +14,7 @@ get_header();
             <header class="page-header">
                 <h1 class="page-h1">Suraj Giri</h1>
                 <p class="page-intro">Productivity researcher, software engineer, and founder of The Blog Timer. Writes about attention, timing, and the design of tools that don't get in your way.</p>
-                <p class="page-byline">Author profile &middot; Updated <?php echo date('F j, Y'); ?></p>
+                <p class="page-byline">Author profile &middot; Updated <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
             </header>
 
             <section class="section">
@@ -96,14 +96,16 @@ get_header();
 {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  "url": "<?php echo esc_url(home_url('/author/suraj-giri/')); ?>",
+  "@id": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>#profilepage",
+  "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>",
   "mainEntity": {
     "@type": "Person",
+    "@id": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>#person",
     "name": "Suraj Giri",
     "givenName": "Suraj",
     "familyName": "Giri",
     "email": "suraj@theblogtimer.com",
-    "url": "<?php echo esc_url(home_url('/author/suraj-giri/')); ?>",
+    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>",
     "jobTitle": "Productivity researcher and software engineer",
     "description": "Founder and editor of The Blog Timer. Background in web development and cognitive psychology research, focused on attention and time perception. Built The Blog Timer to solve browser timer accuracy issues.",
     "knowsAbout": [
@@ -116,9 +118,7 @@ get_header();
       "Productivity research"
     ],
     "worksFor": {
-      "@type": "Organization",
-      "name": "The Blog Timer",
-      "url": "<?php echo esc_url(home_url('/')); ?>"
+      "@id": "<?php echo esc_url(home_url('/')); ?>#organization"
     }
   }
 }

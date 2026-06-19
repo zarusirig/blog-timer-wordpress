@@ -4,7 +4,36 @@
  */
 get_header();
 
-$guide_clusters = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro', 'studying', 'exercise', 'cooking', 'meditation', 'accuracy']);
+// Render ALL guide clusters (was limited to 6, omitting fitness/productivity/study/
+// devices/comparisons and ~51 guides). Ordered productivity-first per source context.
+$guide_clusters = blogtimer_get_taxonomy_terms('guide_cluster', [
+    'pomodoro',
+    'productivity',
+    'study',
+    'studying',
+    'meditation',
+    'fitness',
+    'exercise',
+    'cooking',
+    'devices',
+    'comparisons',
+    'accuracy',
+]);
+
+// Human-readable section labels keyed by cluster slug (fallback to term name).
+$cluster_labels = [
+    'pomodoro'     => 'Pomodoro',
+    'productivity' => 'Productivity & Focus',
+    'study'        => 'Study',
+    'studying'     => 'Studying',
+    'meditation'   => 'Meditation & Sleep',
+    'fitness'      => 'Fitness & Training',
+    'exercise'     => 'Exercise',
+    'cooking'      => 'Cooking',
+    'devices'      => 'Device Timers',
+    'comparisons'  => 'Comparisons',
+    'accuracy'     => 'Timer Accuracy',
+];
 ?>
 
 <main class="site-main">
@@ -25,14 +54,14 @@ $guide_clusters = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro', 'st
         <?php if (!empty($guide_clusters)): ?>
             <section class="section">
                 <h2 class="section-title">Browse by Guide Topic</h2>
+                <p class="section-subtitle">Jump to any topic below &mdash; every guide is listed on this page.</p>
                 <div class="taxonomy-hub-grid">
                     <?php foreach ($guide_clusters as $cluster_term): ?>
-                        <?php $cluster_url = get_term_link($cluster_term); ?>
-                        <?php if (is_wp_error($cluster_url)) {
-                            continue;
-                        } ?>
+                        <?php
+                        $label = $cluster_labels[$cluster_term->slug] ?? $cluster_term->name;
+                        ?>
                         <article class="card taxonomy-link-card">
-                            <h3><a href="<?php echo esc_url($cluster_url); ?>"><?php echo esc_html($cluster_term->name); ?> Guides</a></h3>
+                            <h3><a href="#cluster-<?php echo esc_attr($cluster_term->slug); ?>"><?php echo esc_html($label); ?> Guides</a></h3>
                             <p><?php echo esc_html($cluster_term->description ?: 'Focused guide collection with implementation steps and linked timer pages.'); ?></p>
                         </article>
                     <?php endforeach; ?>
@@ -41,20 +70,49 @@ $guide_clusters = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro', 'st
         <?php endif; ?>
 
         <section class="section">
-            <h2 class="section-title">All Guides</h2>
-            <?php if (have_posts()): ?>
-                <div class="archive-grid">
-                    <?php while (have_posts()): the_post(); ?>
-                        <article class="card guide-archive-card">
-                            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <p><?php echo esc_html(get_the_excerpt() ?: wp_trim_words(wp_strip_all_tags(get_the_content()), 32)); ?></p>
-                            <a class="btn btn--secondary" href="<?php the_permalink(); ?>">Read Guide</a>
-                        </article>
-                    <?php endwhile; ?>
-                </div>
+            <h2 class="section-title">All Guides by Topic</h2>
+            <?php
+            $any_guides = false;
+            if (!empty($guide_clusters)):
+                foreach ($guide_clusters as $cluster_term):
+                    $cluster_query = new WP_Query([
+                        'post_type'      => 'guide',
+                        'post_status'    => 'publish',
+                        'posts_per_page' => -1,
+                        'orderby'        => 'title',
+                        'order'          => 'ASC',
+                        'no_found_rows'  => true,
+                        'tax_query'      => [[
+                            'taxonomy' => 'guide_cluster',
+                            'field'    => 'slug',
+                            'terms'    => [$cluster_term->slug],
+                        ]],
+                    ]);
+                    if (!$cluster_query->have_posts()) {
+                        wp_reset_postdata();
+                        continue;
+                    }
+                    $any_guides = true;
+                    $label = $cluster_labels[$cluster_term->slug] ?? $cluster_term->name;
+                    ?>
+                    <div class="guide-cluster-group" id="cluster-<?php echo esc_attr($cluster_term->slug); ?>">
+                        <h3 class="section-title"><?php echo esc_html($label); ?> Guides</h3>
+                        <div class="archive-grid">
+                            <?php while ($cluster_query->have_posts()): $cluster_query->the_post(); ?>
+                                <article class="card guide-archive-card">
+                                    <h4><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a></h4>
+                                    <p><?php echo esc_html(get_the_excerpt() ?: wp_trim_words(wp_strip_all_tags(get_the_content()), 32)); ?></p>
+                                    <a class="btn btn--secondary" href="<?php echo esc_url(get_permalink()); ?>">Read Guide</a>
+                                </article>
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
+                    <?php
+                    wp_reset_postdata();
+                endforeach;
+            endif;
 
-                <div class="archive-nav"><?php the_posts_navigation(); ?></div>
-            <?php else: ?>
+            if (!$any_guides): ?>
                 <p>No guides found.</p>
             <?php endif; ?>
         </section>

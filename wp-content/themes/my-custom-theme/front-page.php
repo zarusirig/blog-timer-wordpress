@@ -22,7 +22,7 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
             </h1>
             <p class="byline" style="font-size: 0.875rem; color: var(--color-text-muted, #666); margin: 0.5rem 0;">
                 By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
-                &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>
+                &middot; Productivity researcher &middot; <em>Last updated: <?php echo esc_html(get_the_modified_date('F j, Y')); ?></em>
             </p>
             <p class="hero-subtext">
                 <?php echo esc_html($loader->get_string('home.subtext')); ?>
@@ -269,10 +269,8 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                     <h3>Guide Clusters</h3>
                     <ul class="taxonomy-link-list">
                         <?php foreach ($guide_cluster_terms as $cluster_term): ?>
-                            <?php $cluster_url = get_term_link($cluster_term); ?>
-                            <?php if (is_wp_error($cluster_url)) {
-                                continue;
-                            } ?>
+                            <?php // /guide-cluster/ taxonomy archives 404 (301 -> /guides/); link the guides hub's on-page cluster anchor instead. ?>
+                            <?php $cluster_url = home_url('/guides/#cluster-' . $cluster_term->slug); ?>
                             <li><a href="<?php echo esc_url($cluster_url); ?>"><?php echo esc_html($cluster_term->name); ?> guide topic</a></li>
                         <?php endforeach; ?>
                     </ul>
@@ -381,7 +379,7 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                     'timer-accuracy',
                     'browser-timer-drift',
                     'pomodoro-technique',
-                    'pomodoro-studying',
+                    'pomodoro-for-studying',
                     'study-timer-methods',
                     'hiit-interval-timers'
                 ];

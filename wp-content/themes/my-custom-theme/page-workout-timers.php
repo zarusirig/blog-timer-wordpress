@@ -8,6 +8,10 @@ get_header();
 
 <main class="site-main content-page">
     <div class="container container--narrow">
+        <?php blogtimer_render_breadcrumb_nav([
+            ['label' => 'Home', 'url' => home_url('/')],
+            ['label' => 'Workout Timers', 'url' => null],
+        ]); ?>
         <h1 class="page-h1">Workout Timers &mdash; Every Fitness and Training Timer in One Place</h1>
         <p class="page-intro">Specialized timers for HIIT, Tabata, intervals, boxing rounds, yoga, plank holds, jump rope, running intervals, stretching, CrossFit AMRAPs, and EMOM workouts &mdash; with exercise-science context for picking the right protocol.</p>
 
@@ -184,6 +188,43 @@ get_header();
             </ul>
         </div>
     </section>
+
+    <!-- ALL RELATED GUIDES (clusters: fitness + exercise) -->
+    <?php
+    $cluster_guides = new WP_Query([
+        'post_type'      => 'guide',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+        'no_found_rows'  => true,
+        'tax_query'      => [[
+            'taxonomy' => 'guide_cluster',
+            'field'    => 'slug',
+            'terms'    => ['fitness', 'exercise'],
+        ]],
+    ]);
+    if ($cluster_guides->have_posts()): ?>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">All fitness and training guides</h2>
+                <p class="section-subtitle">Every evidence-based workout and exercise-timing guide on the site.</p>
+                <div class="usecase-grid">
+                    <?php while ($cluster_guides->have_posts()): $cluster_guides->the_post(); ?>
+                        <a class="card usecase-card guide-card" href="<?php echo esc_url(get_permalink()); ?>" style="text-decoration:none;">
+                            <div class="usecase-card-icon">G</div>
+                            <h3><?php the_title(); ?></h3>
+                            <?php $g_excerpt = get_the_excerpt(); if ($g_excerpt): ?>
+                                <p><?php echo esc_html(wp_trim_words($g_excerpt, 18)); ?></p>
+                            <?php endif; ?>
+                        </a>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif;
+    wp_reset_postdata();
+    ?>
 
     <!-- FAQ -->
     <section class="section">

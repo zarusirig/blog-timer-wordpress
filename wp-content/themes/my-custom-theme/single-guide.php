@@ -16,6 +16,23 @@ $related_guide_slugs = get_post_meta($post_id, 'guide_related', true);
 $faq_keys = get_post_meta($post_id, 'guide_faqs', true);
 $cluster_terms = get_the_terms($post_id, 'guide_cluster');
 
+// Trust signals (E-E-A-T): author, last-updated date, and sources.
+// Dataset entries supply 'author', 'dateModified', and 'sources' (see shared contract);
+// these are mapped to guide_* post meta by the guide generator. Fall back to native
+// WordPress values so the byline/date always render even before the meta is populated.
+$guide_author      = get_post_meta($post_id, 'guide_author', true) ?: 'Suraj Giri';
+$guide_author_url  = home_url('/author-suraj-giri/');
+$guide_date_meta   = get_post_meta($post_id, 'guide_date_modified', true);
+$guide_updated     = $guide_date_meta
+    ? date_i18n('F j, Y', strtotime($guide_date_meta))
+    : get_the_modified_date('F j, Y');
+
+// Resolve Sources (array of { author, year, title, url })
+$guide_sources = get_post_meta($post_id, 'guide_sources', true);
+if (!is_array($guide_sources)) {
+    $guide_sources = [];
+}
+
 // Resolve Hub Data
 $hubs = [
     'hub_minutes' => ['url' => '/minute-timers/', 'label' => 'Minute Timers'],
@@ -89,13 +106,21 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
     <div class="container container--narrow">
 
         <!-- BREADCRUMBS -->
+        <?php
+        // Home › Guides › {Cluster} › {This guide}. The cluster step is derived from
+        // the guide_cluster term; its /guide-cluster/{term}/ archive 404s and is
+        // redirected, so the cluster crumb links to the /guides/ hub instead.
+        $guide_cluster_crumb = function_exists('blogtimer_guide_cluster_crumb')
+            ? blogtimer_guide_cluster_crumb($post_id)
+            : null;
+        ?>
         <nav class="breadcrumbs" aria-label="Breadcrumb">
             <ol>
-                <li><a href="<?php echo esc_url(home_url('')); ?>">Home</a></li>
-                <li><a href="<?php echo esc_url(home_url($hub['url'])); ?>">
-                        <?php echo esc_html($hub['label']); ?>
-                    </a></li>
+                <li><a href="<?php echo esc_url(home_url('/')); ?>">Home</a></li>
                 <li><a href="<?php echo esc_url(home_url('/guides/')); ?>">Guides</a></li>
+                <?php if ($guide_cluster_crumb): ?>
+                    <li><a href="<?php echo esc_url($guide_cluster_crumb['url']); ?>"><?php echo esc_html($guide_cluster_crumb['label']); ?></a></li>
+                <?php endif; ?>
                 <li aria-current="page">
                     <?php the_title(); ?>
                 </li>
@@ -107,6 +132,10 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
             <h1 class="page-h1">
                 <?php the_title(); ?>
             </h1>
+            <p class="page-byline byline" style="font-size: 0.875rem; color: var(--color-text-muted, #666); margin: 0.5rem 0;">
+                By <a href="<?php echo esc_url($guide_author_url); ?>" rel="author"><?php echo esc_html($guide_author); ?></a>
+                &middot; <em>Last updated: <?php echo esc_html($guide_updated); ?></em>
+            </p>
             <?php if (has_excerpt()): ?>
                 <p class="page-intro">
                     <?php echo get_the_excerpt(); ?>
@@ -152,6 +181,40 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
             }
             ?>
         </div>
+
+        <!-- SOURCES -->
+        <?php if (!empty($guide_sources)): ?>
+            <section class="section guide-sources-section">
+                <h2 class="section-title">Sources</h2>
+                <ol class="sources-list">
+                    <?php foreach ($guide_sources as $src): ?>
+                        <?php
+                        $s_author = isset($src['author']) ? trim($src['author']) : '';
+                        $s_year   = isset($src['year']) ? trim((string) $src['year']) : '';
+                        $s_title  = isset($src['title']) ? trim($src['title']) : '';
+                        $s_url    = isset($src['url']) ? trim($src['url']) : '';
+                        if ($s_title === '' && $s_author === '') {
+                            continue;
+                        }
+                        ?>
+                        <li class="source-item">
+                            <?php if ($s_author !== ''): ?>
+                                <span class="source-author"><?php echo esc_html($s_author); ?></span><?php if ($s_year !== ''): ?> (<?php echo esc_html($s_year); ?>)<?php endif; ?>.
+                            <?php elseif ($s_year !== ''): ?>
+                                (<?php echo esc_html($s_year); ?>).
+                            <?php endif; ?>
+                            <?php if ($s_title !== ''): ?>
+                                <?php if ($s_url !== ''): ?>
+                                    <a class="source-title" href="<?php echo esc_url($s_url); ?>" target="_blank" rel="noopener nofollow"><?php echo esc_html($s_title); ?></a>
+                                <?php else: ?>
+                                    <span class="source-title"><?php echo esc_html($s_title); ?></span>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ol>
+            </section>
+        <?php endif; ?>
 
         <!-- RECOMMENDED TIMERS -->
         <?php if (!empty($recommended_timers)): ?>

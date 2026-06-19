@@ -139,6 +139,13 @@ class Guide_Generator_Command
         update_post_meta($post_id, 'guide_related', $entry['relatedGuides']);
         update_post_meta($post_id, 'guide_faqs', $entry['faqs'] ?? []);
 
+        // E-E-A-T trust fields from the dataset (consumed by single-guide.php byline,
+        // "Last updated" date, and Sources block; and by the guide Article schema).
+        update_post_meta($post_id, 'guide_author', $entry['author'] ?? 'Suraj Giri');
+        update_post_meta($post_id, 'guide_date_published', $entry['datePublished'] ?? '');
+        update_post_meta($post_id, 'guide_date_modified', $entry['dateModified'] ?? '');
+        update_post_meta($post_id, 'guide_sources', $entry['sources'] ?? []);
+
         // Set Cluster taxonomy
         if ($cluster) {
             wp_set_object_terms($post_id, ucfirst($cluster), 'guide_cluster');

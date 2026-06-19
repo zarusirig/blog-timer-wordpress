@@ -8,6 +8,10 @@ get_header();
 
 <main class="site-main content-page">
     <div class="container container--narrow">
+        <?php blogtimer_render_breadcrumb_nav([
+            ['label' => 'Home', 'url' => home_url('/')],
+            ['label' => 'Cooking Timers', 'url' => null],
+        ]); ?>
         <h1 class="page-h1">Cooking Timers &mdash; Every Kitchen and Food Timer in One Place</h1>
         <p class="page-intro">Specialized timers for eggs, pasta, tea, coffee, steak, rice, turkey, bread, popcorn, sous vide, BBQ, and baby bottles &mdash; plus the science of why timing matters so much in cooking.</p>
 
@@ -177,12 +181,49 @@ get_header();
             <ul>
                 <li><a href="/guides/how-long-to-boil-eggs/">How long to boil eggs</a> &mdash; the full reference, with egg size adjustments.</li>
                 <li><a href="/guides/how-long-to-cook-pasta/">How long to cook pasta</a> &mdash; shape-by-shape reference.</li>
-                <li><a href="/guides/how-long-to-roast-a-turkey/">How long to roast a turkey</a> &mdash; weight, oven temperature, and stuffed vs. unstuffed.</li>
+                <li><a href="/guides/how-long-to-roast-turkey/">How long to roast a turkey</a> &mdash; weight, oven temperature, and stuffed vs. unstuffed.</li>
                 <li><a href="/guides/how-long-to-cook-rice/">How long to cook rice</a> &mdash; absorption method and rice variety chart.</li>
-                <li><a href="/guides/how-long-to-cook-steak/">How long to cook steak</a> &mdash; thickness, doneness, and method comparison.</li>
+                <li><a href="/guides/how-long-to-grill-steak/">How long to cook steak</a> &mdash; thickness, doneness, and method comparison.</li>
             </ul>
         </div>
     </section>
+
+    <!-- ALL RELATED GUIDES (cluster: cooking) -->
+    <?php
+    $cluster_guides = new WP_Query([
+        'post_type'      => 'guide',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+        'no_found_rows'  => true,
+        'tax_query'      => [[
+            'taxonomy' => 'guide_cluster',
+            'field'    => 'slug',
+            'terms'    => ['cooking'],
+        ]],
+    ]);
+    if ($cluster_guides->have_posts()): ?>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">All cooking and food-timing guides</h2>
+                <p class="section-subtitle">Every evidence-based cooking guide on the site &mdash; the full reference library.</p>
+                <div class="usecase-grid">
+                    <?php while ($cluster_guides->have_posts()): $cluster_guides->the_post(); ?>
+                        <a class="card usecase-card guide-card" href="<?php echo esc_url(get_permalink()); ?>" style="text-decoration:none;">
+                            <div class="usecase-card-icon">G</div>
+                            <h3><?php the_title(); ?></h3>
+                            <?php $g_excerpt = get_the_excerpt(); if ($g_excerpt): ?>
+                                <p><?php echo esc_html(wp_trim_words($g_excerpt, 18)); ?></p>
+                            <?php endif; ?>
+                        </a>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif;
+    wp_reset_postdata();
+    ?>
 
     <!-- FAQ -->
     <section class="section">

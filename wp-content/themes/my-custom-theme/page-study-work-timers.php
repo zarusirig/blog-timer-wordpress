@@ -8,6 +8,10 @@ get_header();
 
 <main class="site-main content-page">
     <div class="container container--narrow">
+        <?php blogtimer_render_breadcrumb_nav([
+            ['label' => 'Home', 'url' => home_url('/')],
+            ['label' => 'Study & Work Timers', 'url' => null],
+        ]); ?>
         <h1 class="page-h1">Study &amp; Work Timers &mdash; Every Productivity Timer on the Site</h1>
         <p class="page-intro">Specialized timers for Pomodoro, focus blocks, study sessions, sprints, deep work, and reading &mdash; built around what cognitive science actually says about attention and learning.</p>
 
@@ -61,7 +65,7 @@ get_header();
                     <h3>Sprint Timer (15 min)</h3>
                     <p>Short, high-commitment bursts to break inertia and start hard tasks. The "if you only do 15 minutes" timer.</p>
                 </a>
-                <a class="card usecase-card" href="/deep-work-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/focus-timer/" style="text-decoration:none;">
                     <div class="usecase-card-icon">DW</div>
                     <h3>Deep Work Timer</h3>
                     <p>90-minute ultradian-aligned blocks for novel problem-solving, writing, and complex analysis.</p>
@@ -108,7 +112,7 @@ get_header();
                     <tr><td>Pomodoro</td><td>25 minutes</td><td>5 minutes</td><td>Procrastination, review, flashcards</td><td><a href="/pomodoro/">Pomodoro Timer</a></td></tr>
                     <tr><td>Pomodoro Long</td><td>50 minutes</td><td>10 minutes</td><td>Programming, analysis, writing</td><td><a href="/focus-timer/">Focus Timer</a></td></tr>
                     <tr><td>Active Learning</td><td>50 minutes</td><td>10 minutes</td><td>Studying new material</td><td><a href="/study-timer/">Study Timer</a></td></tr>
-                    <tr><td>Deep Work</td><td>90 minutes</td><td>15&ndash;20 minutes</td><td>Novel problem-solving, deep synthesis</td><td><a href="/deep-work-timer/">Deep Work Timer</a></td></tr>
+                    <tr><td>Deep Work</td><td>90 minutes</td><td>15&ndash;20 minutes</td><td>Novel problem-solving, deep synthesis</td><td><a href="/focus-timer/">Deep Work Timer</a></td></tr>
                     <tr><td>Reading block</td><td>30&ndash;60 minutes</td><td>5&ndash;10 minutes</td><td>Long-form reading with comprehension</td><td><a href="/study-timer/">Reading Timer</a></td></tr>
                     <tr><td>52/17</td><td>52 minutes</td><td>17 minutes</td><td>Highest measured productivity ratio (DeskTime)</td><td><a href="/focus-timer/">Focus Timer</a></td></tr>
                 </tbody>
@@ -125,8 +129,8 @@ get_header();
                 <li><strong>Reviewing flashcards or doing rote practice:</strong> <a href="/pomodoro/">25-minute Pomodoro</a>. The classic interval is well-suited to recall-heavy work.</li>
                 <li><strong>Programming, debugging, or analysis:</strong> <a href="/focus-timer/">45 to 50-minute focus block</a>. Long enough to enter flow; short enough to maintain quality.</li>
                 <li><strong>Studying new material:</strong> <a href="/study-timer/">50-minute study block</a>. Spaced practice across multiple sessions outperforms massed study.</li>
-                <li><strong>Writing a long-form piece:</strong> <a href="/focus-timer/">45-minute focus block</a> or <a href="/deep-work-timer/">90-minute deep work block</a>, depending on warm-up needs.</li>
-                <li><strong>Novel problem-solving, dissertation work, research:</strong> <a href="/deep-work-timer/">90-minute deep work block</a>. The ultradian-aligned ceiling for sustainable continuous focus.</li>
+                <li><strong>Writing a long-form piece:</strong> <a href="/focus-timer/">45-minute focus block</a> or <a href="/focus-timer/">90-minute deep work block</a>, depending on warm-up needs.</li>
+                <li><strong>Novel problem-solving, dissertation work, research:</strong> <a href="/focus-timer/">90-minute deep work block</a>. The ultradian-aligned ceiling for sustainable continuous focus.</li>
                 <li><strong>Reading a book:</strong> <a href="/study-timer/">30 to 60-minute reading session</a> with brief comprehension breaks.</li>
             </ul>
             <p>If you are unsure, start with the Pomodoro. It is the most studied general-purpose focus interval in productivity literature for good reason.</p>
@@ -147,6 +151,43 @@ get_header();
             </ul>
         </div>
     </section>
+
+    <!-- ALL RELATED GUIDES (clusters: productivity + study + studying) -->
+    <?php
+    $cluster_guides = new WP_Query([
+        'post_type'      => 'guide',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+        'no_found_rows'  => true,
+        'tax_query'      => [[
+            'taxonomy' => 'guide_cluster',
+            'field'    => 'slug',
+            'terms'    => ['productivity', 'study', 'studying'],
+        ]],
+    ]);
+    if ($cluster_guides->have_posts()): ?>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">All productivity and study guides</h2>
+                <p class="section-subtitle">Every evidence-based focus, productivity, and study-timing guide on the site.</p>
+                <div class="usecase-grid">
+                    <?php while ($cluster_guides->have_posts()): $cluster_guides->the_post(); ?>
+                        <a class="card usecase-card guide-card" href="<?php echo esc_url(get_permalink()); ?>" style="text-decoration:none;">
+                            <div class="usecase-card-icon">G</div>
+                            <h3><?php the_title(); ?></h3>
+                            <?php $g_excerpt = get_the_excerpt(); if ($g_excerpt): ?>
+                                <p><?php echo esc_html(wp_trim_words($g_excerpt, 18)); ?></p>
+                            <?php endif; ?>
+                        </a>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif;
+    wp_reset_postdata();
+    ?>
 
     <!-- FAQ -->
     <section class="section">

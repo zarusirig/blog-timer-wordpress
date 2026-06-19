@@ -8,6 +8,10 @@ get_header();
 
 <main class="site-main content-page">
     <div class="container container--narrow">
+        <?php blogtimer_render_breadcrumb_nav([
+            ['label' => 'Home', 'url' => home_url('/')],
+            ['label' => 'Stopwatch & Clock Tools', 'url' => null],
+        ]); ?>
         <h1 class="page-h1">Stopwatch &amp; Clock Tools &mdash; Stopwatches, Alarms, World Clocks, and Countdowns</h1>
         <p class="page-intro">Specialized timing tools beyond the standard timer: stopwatches for measuring elapsed time, alarm clocks for triggering events, world clocks for cross-timezone reference, and countdown timers for future-event tracking.</p>
 
@@ -132,6 +136,43 @@ get_header();
             <p>If you keep the browser tab open and your computer awake, the clock tools on this site stay accurate indefinitely. Backgrounded tabs may throttle JavaScript execution on some browsers, which can affect long countdowns; for critical events, the system clock is the authoritative source.</p>
         </div>
     </section>
+
+    <!-- ALL RELATED GUIDES (cluster: devices) -->
+    <?php
+    $cluster_guides = new WP_Query([
+        'post_type'      => 'guide',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+        'no_found_rows'  => true,
+        'tax_query'      => [[
+            'taxonomy' => 'guide_cluster',
+            'field'    => 'slug',
+            'terms'    => ['devices'],
+        ]],
+    ]);
+    if ($cluster_guides->have_posts()): ?>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Device timer guides</h2>
+                <p class="section-subtitle">How to set a timer, stopwatch, or alarm on every major device and platform.</p>
+                <div class="usecase-grid">
+                    <?php while ($cluster_guides->have_posts()): $cluster_guides->the_post(); ?>
+                        <a class="card usecase-card guide-card" href="<?php echo esc_url(get_permalink()); ?>" style="text-decoration:none;">
+                            <div class="usecase-card-icon">G</div>
+                            <h3><?php the_title(); ?></h3>
+                            <?php $g_excerpt = get_the_excerpt(); if ($g_excerpt): ?>
+                                <p><?php echo esc_html(wp_trim_words($g_excerpt, 18)); ?></p>
+                            <?php endif; ?>
+                        </a>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif;
+    wp_reset_postdata();
+    ?>
 
     <!-- FAQ -->
     <section class="section">

@@ -1,0 +1,61 @@
+# robots.txt for The Blog Timer
+# Security hardened - blocks spam/injected pages from being indexed
+#
+# NOTE: This is a STATIC file served directly by the web server (no PHP boot),
+# so it is always available and fast for Googlebot. It mirrors the dynamic
+# rules in the theme's `robots_txt` filter. Keep both in sync if you edit either.
+
+Sitemap: https://theblogtimer.com/wp-sitemap.xml
+
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/cache/
+Disallow: /wp-json/
+Disallow: /xmlrpc.php
+Disallow: /wp-login.php
+Disallow: /wp-register.php
+Disallow: /wp-trackback.php
+Disallow: /wp-cron.php
+Disallow: /readme.html
+Disallow: /license.txt
+Disallow: /*?
+Disallow: /*&
+Disallow: /feed/
+Disallow: /*/feed/
+Disallow: /comments/feed/
+Disallow: /author/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /20*/
+Disallow: /*/trackback/
+Disallow: /*/comment-page-*
+Disallow: /attachment/
+
+# Allowed paths (legitimate content only)
+Allow: /timer/*
+Allow: /guides/*
+Allow: /minute-timers
+Allow: /second-timers
+Allow: /pomodoro
+Allow: /use-cases
+Allow: /chess-clock
+Allow: /egg-timer
+Allow: /interval-timer
+Allow: /nap-timer
+Allow: /sprint-timer
+Allow: /presentation-timer
+Allow: /timer-for/*
+Allow: /about
+Allow: /contact
+Allow: /faq
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /disclaimer
+Allow: /dmca
+Allow: /accessibility
+Allow: /editorial-policy
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/

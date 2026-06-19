@@ -38,8 +38,9 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
                     <span>&#9201;</span>
                     <span><?php echo esc_html(Timer_Content_Loader::get_instance()->get_string('brand.name') ?: 'The Blog Timer'); ?></span>
                 </a>
-                <p>Free, precision online timers that work in any browser. No sign-ups and no downloads. Just accurate
-                    countdowns from 1 second to 161 minutes, built for real-world tasks.</p>
+                <p>Evidence-based timing for focus, deep work, study, cooking, and more. Free, precision online timers
+                    that run in any browser&mdash;no sign-ups, no downloads&mdash;plus research-backed guides on how long
+                    to do things. Accurate countdowns from 1 second to 161 minutes, built for real-world tasks.</p>
                 <div class="footer-stats">
                     <div class="footer-stat">
                         <span class="footer-stat-value">220+</span>
@@ -87,9 +88,26 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
                 <ul>
                     <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About Us</a></li>
                     <li><a href="<?php echo esc_url(home_url('/guides/')); ?>">Guides</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/faq/')); ?>">FAQ</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/focus-timer/')); ?>">Deep Work &amp; Focus Timer</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/study-timer/')); ?>">Study Timer</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/methodology/')); ?>">Methodology</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/sources/')); ?>">Sources</a></li>
                     <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial Policy</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/faq/')); ?>">FAQ</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Timer Categories</h4>
+                <ul>
+                    <li><a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Focus &amp; Productivity Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">Minute &amp; Second Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/hour-timers/')); ?>">Hour Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/cooking-timers/')); ?>">Cooking Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/workout-timers/')); ?>">Workout &amp; Interval Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/sleep-meditation-timers/')); ?>">Sleep &amp; Meditation Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/stopwatch-clock-tools/')); ?>">Stopwatch &amp; Clock Tools</a></li>
                 </ul>
             </div>
         </div>
@@ -100,6 +118,7 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
                 All rights reserved.
             </p>
             <div class="footer-bottom-links">
+                <a href="<?php echo esc_url(home_url('/site-index/')); ?>">Site Index</a>
                 <a href="<?php echo esc_url($privacy_url); ?>">Privacy Policy</a>
                 <a href="<?php echo esc_url($terms_url); ?>">Terms of Service</a>
                 <a href="<?php echo esc_url(home_url('/disclaimer/')); ?>">Disclaimer</a>

@@ -25,6 +25,25 @@ function blogtimer_setup()
 add_action('after_setup_theme', 'blogtimer_setup');
 
 /**
+ * Set a Timing-centric site tagline (blogdescription) when it is empty.
+ *
+ * The blogdescription is the fallback for OG/social/meta descriptions and the
+ * WebSite tagline. Leaving it blank means social shares carry no Central Entity
+ * signal. We only write it when empty so a manually-set tagline is never clobbered.
+ */
+function blogtimer_set_default_blogdescription()
+{
+    $current = trim((string) get_option('blogdescription'));
+    if ($current === '') {
+        update_option(
+            'blogdescription',
+            'Evidence-based timing — research-backed "how long should I…" guides and accurate online timers.'
+        );
+    }
+}
+add_action('after_setup_theme', 'blogtimer_set_default_blogdescription');
+
+/**
  * Enqueue scripts and styles
  */
 function blogtimer_enqueue_assets()
@@ -297,6 +316,85 @@ function blogtimer_redirect_trailing_slash_urls()
     exit;
 }
 add_action('template_redirect', 'blogtimer_redirect_trailing_slash_urls', 1);
+
+/**
+ * 301-redirect legacy migration URLs that Google still crawls.
+ *
+ * Two old patterns produce 404s in Search Console:
+ *   1. /item/{id}        - the OLD CPT permalink base. Posts still exist; their
+ *                          permalink is now /timer/... or /guides/..., so we
+ *                          redirect to the current permalink for that post ID.
+ *   2. /guide-cluster/*  - an OLD removed taxonomy. Redirect to the /guides/
+ *                          hub (or the homepage if no guides hub page exists).
+ *
+ * Only fires on these specific path patterns to stay cheap on every request.
+ */
+function blogtimer_redirect_legacy_migration_urls()
+{
+    if (is_admin() || wp_doing_ajax() || wp_doing_cron()) {
+        return;
+    }
+
+    $request_uri = isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '';
+    if ($request_uri === '') {
+        return;
+    }
+
+    $parts = wp_parse_url($request_uri);
+    if (!$parts) {
+        return;
+    }
+
+    $path = isset($parts['path']) ? (string) $parts['path'] : '';
+    if ($path === '') {
+        return;
+    }
+
+    // One-off guide consolidations: 301 a retired duplicate slug to its replacement.
+    $guide_redirects = [
+        '/guides/pomodoro-vs-52-17' => '/guides/52-17-rule-vs-pomodoro',
+    ];
+    $path_trimmed = rtrim($path, '/');
+    if (isset($guide_redirects[$path_trimmed])) {
+        wp_safe_redirect(home_url($guide_redirects[$path_trimmed]), 301);
+        exit;
+    }
+
+    // Pattern 1: /item/{numeric-id} -> current permalink for that post.
+    if (preg_match('#^/item/(\d+)#', $path, $m)) {
+        $post_id = (int) $m[1];
+        $permalink = $post_id > 0 ? get_permalink($post_id) : false;
+        // Only redirect to a published, public permalink; otherwise let it 404.
+        if ($permalink && get_post_status($post_id) === 'publish') {
+            wp_safe_redirect($permalink, 301);
+            exit;
+        }
+        return;
+    }
+
+    // Pattern 2: /guide-cluster/* -> /guides/ hub, or homepage as a fallback.
+    if (preg_match('#^/guide-cluster(/|$)#', $path)) {
+        $target = '';
+        // Prefer a real "guides" page if one exists.
+        $guides_hub = get_page_by_path('guides');
+        if ($guides_hub) {
+            $target = get_permalink($guides_hub);
+        }
+        // Otherwise use the guide CPT archive (/guides/), which is the real hub.
+        if (!$target) {
+            $archive = get_post_type_archive_link('guide');
+            if ($archive) {
+                $target = $archive;
+            }
+        }
+        if (!$target) {
+            $target = home_url('/');
+        }
+        wp_safe_redirect($target, 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'blogtimer_redirect_legacy_migration_urls', 1);
 
 /**
  * Helper: ad enablement flag.
@@ -731,10 +829,7 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "Disallow: /*/comment-page-*\n";
 
     // Block attachment pages
-    $robots .= "Disallow: /attachment/\n";
-
-    // Crawl delay to prevent server overload
-    $robots .= "Crawl-delay: 2\n\n";
+    $robots .= "Disallow: /attachment/\n\n";
 
     // Explicitly allow only legitimate content paths
     $robots .= "# Allowed paths (legitimate content only)\n";
@@ -819,20 +914,18 @@ add_action('wp_head', function () {
             'crossfit-amrap-timer',
             'emom-timer',
             'hour-timers',
+            'site-index',
     ];
+
+    // Timer (/timer/*) and guide (/guides/*) CPT pages must ALWAYS be indexable.
+    // This post-type check runs BEFORE any slug whitelist so a newly published
+    // timer/guide can never be accidentally noindexed by an out-of-date list.
+    if (is_singular(['timer', 'guide'])) {
+        return;
+    }
 
     // Allow the front page
     if (is_front_page() || is_home()) {
-        return;
-    }
-
-    // Allow legitimate timer posts
-    if (is_singular('timer')) {
-        return;
-    }
-
-    // Allow legitimate guide posts
-    if (is_singular('guide')) {
         return;
     }
 
@@ -896,12 +989,15 @@ add_action('send_headers', function () {
             'crossfit-amrap-timer',
             'emom-timer',
             'hour-timers',
+            'site-index',
     ];
 
-    if (is_front_page() || is_home()) {
+    // Timer (/timer/*) and guide (/guides/*) CPT pages must ALWAYS be indexable.
+    // Post-type check runs BEFORE the slug whitelist for the same reason as above.
+    if (is_singular(['timer', 'guide'])) {
         return;
     }
-    if (is_singular('timer') || is_singular('guide')) {
+    if (is_front_page() || is_home()) {
         return;
     }
     if (is_page($allowed_pages)) {
@@ -1002,6 +1098,7 @@ add_action('parse_request', function ($wp) {
         'boxing-round-timer','hiit-timer','yoga-timer','plank-timer',
         'jump-rope-timer','running-interval-timer','stretching-timer',
         'crossfit-amrap-timer','emom-timer','hour-timers',
+        'site-index',
     ];
     foreach ($allowed_page_slugs as $slug) {
         $page = get_page_by_path($slug);
@@ -1074,6 +1171,7 @@ add_filter('wp_sitemaps_posts_query_args', function ($args, $post_type) {
             'crossfit-amrap-timer',
             'emom-timer',
             'hour-timers',
+            'site-index',
         ];
         $args['post_name__in'] = $allowed_pages;
     }
@@ -1175,27 +1273,56 @@ add_action('wp_head', function () {
     $schemas = [];
     $site_url = home_url('/');
     $site_name = 'The Blog Timer';
-    $logo_url = get_template_directory_uri() . '/images/logo.png';
 
-    // Organization schema — every page
+    // ── Canonical entity @ids (SHARED CONTRACT — other agents/templates rely on these exact values) ──
+    // Single source of truth for the site-wide Organization, WebSite, and Person nodes.
+    // Person @id points at the canonical author URL (/author-suraj-giri/). The author-bio
+    // and methodology templates emit the full Person node; here we only reference it by @id
+    // so Google consolidates the entity instead of seeing competing/anonymous nodes.
+    $org_id = home_url('/#organization');
+    $website_id = home_url('/#website');
+    $person_id = home_url('/author-suraj-giri/') . '#person';
+
+    // ONE logo node. Only favicon.svg exists in the theme images dir today.
+    // TODO: replace with PNG logo ≥112px (Google requires a raster logo ≥112x112px for rich results).
+    $logo_url = get_theme_file_uri('images/favicon.svg');
+
+    // Organization schema — every page. SINGLE consolidated node (stable @id).
+    // This is the ONLY Organization output site-wide; the plugin's duplicate has been neutralized.
     $schemas[] = [
         '@context' => 'https://schema.org',
         '@type' => 'Organization',
+        '@id' => $org_id,
         'name' => $site_name,
         'url' => $site_url,
-        'logo' => $logo_url,
-        'description' => 'Free online timers for productivity, cooking, exercise, meditation, and studying. Accurate, distraction-free countdown timers that work on any device.',
+        // Source-Context "evidence-based timing" message — the E-E-A-T differentiator.
+        'description' => 'The most rigorously researched timing resource on the web — evidence-based "how long should I…" guides and accurate countdown tools, with every duration sourced to research.',
+        'logo' => [
+            '@type' => 'ImageObject',
+            'url' => $logo_url,
+        ],
+        // TODO: confirm founding year
+        'foundingDate' => '2025',
+        'founder' => [
+            '@id' => $person_id,
+        ],
+        // TODO: orchestrator populates real social/Wikidata/Crunchbase URLs — do NOT invent
         'sameAs' => [],
     ];
 
-    // WebSite schema with SearchAction — homepage only
+    // WebSite schema with SearchAction — homepage only. SINGLE consolidated node (stable @id).
+    // This is the ONLY WebSite output site-wide; the plugin's duplicate has been neutralized.
     if (is_front_page()) {
         $schemas[] = [
             '@context' => 'https://schema.org',
             '@type' => 'WebSite',
+            '@id' => $website_id,
             'name' => $site_name,
             'url' => $site_url,
-            'description' => 'Free online countdown timers with precision accuracy. Set timers from 1 second to 100 minutes for work, cooking, exercise, and more.',
+            'description' => 'Evidence-based timing: research-backed "how long should I…" guides and accurate online countdown, Pomodoro, and stopwatch tools.',
+            'publisher' => [
+                '@id' => $org_id,
+            ],
             'potentialAction' => [
                 '@type' => 'SearchAction',
                 'target' => [
@@ -1297,6 +1424,17 @@ add_action('wp_head', function () {
                 'name' => 'Guides',
                 'item' => blogtimer_untrailingslashit_url(home_url('/guides/')),
             ];
+            // Cluster level — the /guide-cluster/{term}/ archive 404s and is redirected,
+            // so the cluster crumb links to the /guides/ hub rather than the dead archive.
+            $guide_cluster_crumb = blogtimer_guide_cluster_crumb();
+            if ($guide_cluster_crumb) {
+                $breadcrumb_items[] = [
+                    '@type' => 'ListItem',
+                    'position' => $position++,
+                    'name' => $guide_cluster_crumb['label'],
+                    'item' => blogtimer_untrailingslashit_url(home_url('/guides/')),
+                ];
+            }
             $breadcrumb_items[] = [
                 '@type' => 'ListItem',
                 'position' => $position++,
@@ -1510,12 +1648,91 @@ function blogtimer_render_related_categories($current_page = '')
 }
 
 /**
+ * Resolve the breadcrumb cluster label/url for a single guide.
+ *
+ * Derives the cluster from the guide's `guide_cluster` term (term name as label).
+ * Because the /guide-cluster/{term}/ archive 404s and is redirected, the cluster
+ * crumb links to the /guides/ hub rather than the dead taxonomy archive.
+ *
+ * @param int|null $post_id Guide post ID (defaults to current post).
+ * @return array|null ['label' => string, 'url' => string] or null when no cluster.
+ */
+function blogtimer_guide_cluster_crumb($post_id = null)
+{
+    $post_id = $post_id ?: get_the_ID();
+    $cluster_terms = get_the_terms($post_id, 'guide_cluster');
+    if (empty($cluster_terms) || is_wp_error($cluster_terms)) {
+        return null;
+    }
+    $cluster_term = reset($cluster_terms);
+    return [
+        'label' => $cluster_term->name,
+        // Cluster archive 404s; point the labeled step at the guides hub instead.
+        'url'   => home_url('/guides/'),
+    ];
+}
+
+/**
+ * Build a sensible default breadcrumb trail for the current context.
+ *
+ * Used when blogtimer_render_breadcrumb_nav() is called bare (no $items),
+ * so any hub/page-*.php template can get a crawlable breadcrumb for free:
+ *   - timer  → Home › {unit hub} › {This timer}
+ *   - guide  → Home › Guides › {Cluster} › {This guide}
+ *   - page   → Home › {Page Title}
+ *
+ * @return array Array of ['label' => string, 'url' => string|null] items.
+ */
+function blogtimer_build_breadcrumb_items()
+{
+    $items = [
+        ['label' => 'Home', 'url' => home_url('/')],
+    ];
+
+    if (is_singular('timer')) {
+        $post_id = get_the_ID();
+        $unit = (class_exists('Timer_Engine') && method_exists('Timer_Engine', 'get_timer_unit'))
+            ? Timer_Engine::get_timer_unit($post_id)
+            : get_post_meta($post_id, '_timer_unit', true);
+        if ($unit === 'minutes') {
+            $items[] = ['label' => 'Minute Timers', 'url' => home_url('/minute-timers/')];
+        } elseif ($unit === 'hours') {
+            $items[] = ['label' => 'Hour Timers', 'url' => home_url('/hour-timers/')];
+        } else {
+            $items[] = ['label' => 'Second Timers', 'url' => home_url('/second-timers/')];
+        }
+        $items[] = ['label' => get_the_title(), 'url' => null];
+    } elseif (is_singular('guide')) {
+        $items[] = ['label' => 'Guides', 'url' => home_url('/guides/')];
+        $cluster_crumb = blogtimer_guide_cluster_crumb();
+        if ($cluster_crumb) {
+            $items[] = $cluster_crumb;
+        }
+        $items[] = ['label' => get_the_title(), 'url' => null];
+    } else {
+        // Generic page (hub, page-*.php, etc.): Home › {Page Title}
+        $title = is_singular() ? get_the_title() : wp_get_document_title();
+        $items[] = ['label' => $title, 'url' => null];
+    }
+
+    return $items;
+}
+
+/**
  * Render a breadcrumb navigation trail.
  *
- * @param array $items Array of ['label' => string, 'url' => string|null] items.
+ * Pass an explicit $items array of ['label' => string, 'url' => string|null]
+ * to render a custom trail. Call bare (no argument) on any hub/page/single
+ * template to auto-derive a sensible, crawlable breadcrumb from the current
+ * context via blogtimer_build_breadcrumb_items().
+ *
+ * @param array|null $items Optional. Breadcrumb items; auto-derived when omitted.
  */
-function blogtimer_render_breadcrumb_nav($items)
+function blogtimer_render_breadcrumb_nav($items = null)
 {
+    if ($items === null || $items === []) {
+        $items = blogtimer_build_breadcrumb_items();
+    }
     if (empty($items)) return;
     ?>
     <nav class="breadcrumbs" aria-label="Breadcrumb">

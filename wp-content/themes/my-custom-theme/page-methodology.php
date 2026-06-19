@@ -14,7 +14,7 @@ get_header();
             <header class="page-header">
                 <h1 class="page-h1">How We Test Timer Accuracy</h1>
                 <p class="page-intro">The 8-test protocol we run against every release of The Blog Timer's countdown engine — browser/OS matrix, tooling, statistical reporting, and how to replicate it yourself.</p>
-                <p class="page-byline">By <a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo date('F j, Y'); ?></p>
+                <p class="page-byline">By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
             </header>
 
             <section class="section">
@@ -192,7 +192,7 @@ get_header();
                     <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial policy</a></li>
                     <li><a href="<?php echo esc_url(home_url('/sources/')); ?>">Cited sources and bibliography</a></li>
                     <li><a href="<?php echo esc_url(home_url('/changelog/')); ?>">Editorial changelog</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>">Author: Suraj Giri</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">Author: Suraj Giri</a></li>
                 </ul>
             </section>
 
@@ -206,13 +206,13 @@ get_header();
   "@type": "TechArticle",
   "headline": "How We Test Timer Accuracy: The Blog Timer 8-Test Methodology",
   "url": "<?php echo esc_url(home_url('/methodology/')); ?>",
-  "datePublished": "2025-01-15",
-  "dateModified": "<?php echo date('Y-m-d'); ?>",
+  "datePublished": "<?php echo esc_js(get_post_time('c', true)); ?>",
+  "dateModified": "<?php echo esc_js(get_post_modified_time('c', true)); ?>",
   "author": {
     "@type": "Person",
     "name": "Suraj Giri",
     "email": "suraj@theblogtimer.com",
-    "url": "<?php echo esc_url(home_url('/author/suraj-giri/')); ?>",
+    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>",
     "jobTitle": "Productivity researcher and software engineer"
   },
   "publisher": {

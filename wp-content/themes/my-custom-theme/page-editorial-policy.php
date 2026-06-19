@@ -14,7 +14,7 @@ get_header();
             <header class="page-header">
                 <h1 class="page-h1">Editorial Policy</h1>
                 <p class="page-intro">How content gets made on The Blog Timer: who writes it, how it's fact-checked, when it gets updated, and what we refuse to do for money. Plain language, falsifiable claims, public corrections.</p>
-                <p class="page-byline">By <a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo date('F j, Y'); ?></p>
+                <p class="page-byline">By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
             </header>
 
             <section class="section">
@@ -92,10 +92,10 @@ get_header();
 
             <section class="section">
                 <h2 class="section-title">Author Requirements</h2>
-                <p>Currently the entire editorial team is one person (<a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>">Suraj Giri</a>). As the site grows we expect to bring in contributors. Any author who publishes on The Blog Timer must meet all of the following:</p>
+                <p>Currently the entire editorial team is one person (<a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">Suraj Giri</a>). As the site grows we expect to bring in contributors. Any author who publishes on The Blog Timer must meet all of the following:</p>
                 <ul>
                     <li><strong>Named on the byline.</strong> No ghostwriting. No "Editorial Team" mystery-meat bylines. Every article has a real person attached.</li>
-                    <li><strong>Public author page.</strong> The byline links to a bio page (like <a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>">/author/suraj-giri/</a>) documenting credentials and contact.</li>
+                    <li><strong>Public author page.</strong> The byline links to a bio page (like <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">/author-suraj-giri/</a>) documenting credentials and contact.</li>
                     <li><strong>Demonstrable expertise in the topic.</strong> A nap-timer guide should be written by someone with sleep-science credentials or substantial relevant experience &mdash; not a generalist freelancer. The bio page must make the expertise verifiable.</li>
                     <li><strong>Reachable for corrections.</strong> Every author publishes a working email. If a reader finds an error, the author is contactable.</li>
                     <li><strong>No conflicts of interest.</strong> If an author has a financial relationship with a product or technique they're writing about, it's disclosed at the top of the article.</li>
@@ -128,7 +128,7 @@ get_header();
                     <li><a href="<?php echo esc_url(home_url('/methodology/')); ?>">Testing methodology</a></li>
                     <li><a href="<?php echo esc_url(home_url('/sources/')); ?>">Cited sources and bibliography</a></li>
                     <li><a href="<?php echo esc_url(home_url('/changelog/')); ?>">Editorial changelog</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>">Author: Suraj Giri</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">Author: Suraj Giri</a></li>
                     <li><a href="<?php echo esc_url(home_url('/disclaimer/')); ?>">Full disclaimer</a></li>
                     <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy policy</a></li>
                 </ul>
@@ -144,13 +144,13 @@ get_header();
   "@type": "Article",
   "headline": "Editorial Policy",
   "url": "<?php echo esc_url(home_url('/editorial-policy/')); ?>",
-  "datePublished": "2025-01-15",
-  "dateModified": "<?php echo date('Y-m-d'); ?>",
+  "datePublished": "<?php echo esc_js(get_post_time('c', true)); ?>",
+  "dateModified": "<?php echo esc_js(get_post_modified_time('c', true)); ?>",
   "author": {
     "@type": "Person",
     "name": "Suraj Giri",
     "email": "suraj@theblogtimer.com",
-    "url": "<?php echo esc_url(home_url('/author/suraj-giri/')); ?>"
+    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
   },
   "publisher": {
     "@type": "Organization",

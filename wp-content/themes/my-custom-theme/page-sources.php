@@ -14,7 +14,7 @@ get_header();
             <header class="page-header">
                 <h1 class="page-h1">Sources and Bibliography</h1>
                 <p class="page-intro">The complete index of works cited across The Blog Timer &mdash; productivity research, sleep science, exercise and HIIT physiology, food safety guidance, and cognitive psychology. Every claim on this site traces back to one of these primary sources.</p>
-                <p class="page-byline">Maintained by <a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo date('F j, Y'); ?></p>
+                <p class="page-byline">Maintained by <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
             </header>
 
             <section class="section">
@@ -268,7 +268,7 @@ get_header();
                     <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial policy &mdash; how sources are vetted</a></li>
                     <li><a href="<?php echo esc_url(home_url('/methodology/')); ?>">Testing methodology &mdash; how technical claims are verified</a></li>
                     <li><a href="<?php echo esc_url(home_url('/changelog/')); ?>">Editorial changelog</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>">Author: Suraj Giri</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">Author: Suraj Giri</a></li>
                 </ul>
             </section>
 
@@ -282,13 +282,13 @@ get_header();
   "@type": "Article",
   "headline": "Sources and Bibliography",
   "url": "<?php echo esc_url(home_url('/sources/')); ?>",
-  "datePublished": "2025-01-15",
-  "dateModified": "<?php echo date('Y-m-d'); ?>",
+  "datePublished": "<?php echo esc_js(get_post_time('c', true)); ?>",
+  "dateModified": "<?php echo esc_js(get_post_modified_time('c', true)); ?>",
   "author": {
     "@type": "Person",
     "name": "Suraj Giri",
     "email": "suraj@theblogtimer.com",
-    "url": "<?php echo esc_url(home_url('/author/suraj-giri/')); ?>"
+    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
   },
   "publisher": {
     "@type": "Organization",

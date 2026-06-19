@@ -8,6 +8,10 @@ get_header();
 
 <main class="site-main content-page">
     <div class="container container--narrow">
+        <?php blogtimer_render_breadcrumb_nav([
+            ['label' => 'Home', 'url' => home_url('/')],
+            ['label' => 'Sleep & Meditation Timers', 'url' => null],
+        ]); ?>
         <h1 class="page-h1">Sleep &amp; Meditation Timers &mdash; Tools for Rest, Recovery, and Stillness</h1>
         <p class="page-intro">Specialized timers for sleep, naps, meditation, breathing, and white noise &mdash; built around sleep science and contemplative traditions.</p>
 
@@ -63,12 +67,12 @@ get_header();
         <div class="container">
             <h2 class="section-title">Meditation and breathing timers</h2>
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/meditation-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/guides/meditation-timers-beginners/" style="text-decoration:none;">
                     <div class="usecase-card-icon">M</div>
                     <h3>Meditation Timer</h3>
                     <p>Silent-session timer with optional Tibetan bowl bell at start, interval check-ins, and end. Non-intrusive.</p>
                 </a>
-                <a class="card usecase-card" href="/breathing-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/guides/breathing-timers/" style="text-decoration:none;">
                     <div class="usecase-card-icon">BR</div>
                     <h3>Breathing Timer</h3>
                     <p>Paced breathing: box breathing (4-4-4-4), 4-7-8, coherent breathing (5 in / 5 out), and Wim Hof breathwork.</p>
@@ -81,7 +85,7 @@ get_header();
         <div class="container">
             <h2 class="section-title">Environmental and recovery timers</h2>
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/white-noise-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/guides/white-noise-timer/" style="text-decoration:none;">
                     <div class="usecase-card-icon">W</div>
                     <h3>White Noise Timer</h3>
                     <p>White, pink, and brown noise generators with fade-out timing for sleep and focus.</p>
@@ -109,11 +113,11 @@ get_header();
                     <tr><td>NASA nap</td><td>26 minutes</td><td>Optional alarm</td><td>Pilots, shift workers</td><td><a href="/nap-timer/">Nap Timer</a></td></tr>
                     <tr><td>Full cycle nap</td><td>90 minutes</td><td>Optional alarm</td><td>Sleep-deprived recovery</td><td><a href="/nap-timer/">Nap Timer</a></td></tr>
                     <tr><td>Sleep fade-out</td><td>15&ndash;60 minutes</td><td>Gradual volume reduction</td><td>Falling asleep to audio</td><td><a href="/sleep-timer/">Sleep Timer</a></td></tr>
-                    <tr><td>Beginner meditation</td><td>10 minutes</td><td>Bell at start and end</td><td>New practitioners</td><td><a href="/meditation-timer/">Meditation Timer</a></td></tr>
-                    <tr><td>MBSR meditation</td><td>45 minutes</td><td>Bell at start, mid, end</td><td>Established practice</td><td><a href="/meditation-timer/">Meditation Timer</a></td></tr>
-                    <tr><td>Box breathing</td><td>3&ndash;5 minutes</td><td>Cue per phase (4-4-4-4)</td><td>Stress, focus reset</td><td><a href="/breathing-timer/">Breathing Timer</a></td></tr>
-                    <tr><td>4-7-8 breathing</td><td>1&ndash;4 minutes</td><td>Cue per phase</td><td>Sleep onset</td><td><a href="/breathing-timer/">Breathing Timer</a></td></tr>
-                    <tr><td>White noise</td><td>30&ndash;480 minutes</td><td>Continuous</td><td>Sleep, focus masking</td><td><a href="/white-noise-timer/">White Noise Timer</a></td></tr>
+                    <tr><td>Beginner meditation</td><td>10 minutes</td><td>Bell at start and end</td><td>New practitioners</td><td><a href="/guides/meditation-timers-beginners/">Meditation Timer</a></td></tr>
+                    <tr><td>MBSR meditation</td><td>45 minutes</td><td>Bell at start, mid, end</td><td>Established practice</td><td><a href="/guides/meditation-timers-beginners/">Meditation Timer</a></td></tr>
+                    <tr><td>Box breathing</td><td>3&ndash;5 minutes</td><td>Cue per phase (4-4-4-4)</td><td>Stress, focus reset</td><td><a href="/guides/breathing-timers/">Breathing Timer</a></td></tr>
+                    <tr><td>4-7-8 breathing</td><td>1&ndash;4 minutes</td><td>Cue per phase</td><td>Sleep onset</td><td><a href="/guides/breathing-timers/">Breathing Timer</a></td></tr>
+                    <tr><td>White noise</td><td>30&ndash;480 minutes</td><td>Continuous</td><td>Sleep, focus masking</td><td><a href="/guides/white-noise-timer/">White Noise Timer</a></td></tr>
                 </tbody>
             </table>
         </div>
@@ -132,6 +136,43 @@ get_header();
             <p>Each timer in this hub uses cues tuned to its purpose: gentle for nap and meditation, gradual for sleep, paced for breathing.</p>
         </div>
     </section>
+
+    <!-- ALL RELATED GUIDES (cluster: meditation) -->
+    <?php
+    $cluster_guides = new WP_Query([
+        'post_type'      => 'guide',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+        'no_found_rows'  => true,
+        'tax_query'      => [[
+            'taxonomy' => 'guide_cluster',
+            'field'    => 'slug',
+            'terms'    => ['meditation'],
+        ]],
+    ]);
+    if ($cluster_guides->have_posts()): ?>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">All meditation and rest guides</h2>
+                <p class="section-subtitle">Every evidence-based meditation, breathing, and sleep-timing guide on the site.</p>
+                <div class="usecase-grid">
+                    <?php while ($cluster_guides->have_posts()): $cluster_guides->the_post(); ?>
+                        <a class="card usecase-card guide-card" href="<?php echo esc_url(get_permalink()); ?>" style="text-decoration:none;">
+                            <div class="usecase-card-icon">G</div>
+                            <h3><?php the_title(); ?></h3>
+                            <?php $g_excerpt = get_the_excerpt(); if ($g_excerpt): ?>
+                                <p><?php echo esc_html(wp_trim_words($g_excerpt, 18)); ?></p>
+                            <?php endif; ?>
+                        </a>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif;
+    wp_reset_postdata();
+    ?>
 
     <!-- FAQ -->
     <section class="section">

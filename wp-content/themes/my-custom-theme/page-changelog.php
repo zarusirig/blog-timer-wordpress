@@ -14,7 +14,7 @@ get_header();
             <header class="page-header">
                 <h1 class="page-h1">Editorial Changelog</h1>
                 <p class="page-intro">A dated, plain-language log of every substantive change on The Blog Timer &mdash; new guides, corrected facts, updated study citations, infrastructure updates, and methodology revisions. Silent rewrites are not the standard here.</p>
-                <p class="page-byline">Maintained by <a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Last entry <?php echo date('F j, Y'); ?></p>
+                <p class="page-byline">Maintained by <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Last entry <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
             </header>
 
             <section class="section">
@@ -43,7 +43,7 @@ get_header();
 
                 <article class="source-entry">
                     <h3>2026-05-22 &mdash; Trust-infrastructure pages published</h3>
-                    <p>Published four new pages: <a href="<?php echo esc_url(home_url('/methodology/')); ?>">/methodology/</a> documenting our 8-test timer-accuracy protocol; <a href="<?php echo esc_url(home_url('/sources/')); ?>">/sources/</a> as the complete bibliography of cited research; <a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>">/author/suraj-giri/</a> as the author bio page for byline links; and <a href="<?php echo esc_url(home_url('/changelog/')); ?>">/changelog/</a> (this page). Substantially rewrote the existing <a href="<?php echo esc_url(home_url('/about/')); ?>">about</a> and <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a> pages to align with the new transparency standards.</p>
+                    <p>Published four new pages: <a href="<?php echo esc_url(home_url('/methodology/')); ?>">/methodology/</a> documenting our 8-test timer-accuracy protocol; <a href="<?php echo esc_url(home_url('/sources/')); ?>">/sources/</a> as the complete bibliography of cited research; <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">/author-suraj-giri/</a> as the author bio page for byline links; and <a href="<?php echo esc_url(home_url('/changelog/')); ?>">/changelog/</a> (this page). Substantially rewrote the existing <a href="<?php echo esc_url(home_url('/about/')); ?>">about</a> and <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a> pages to align with the new transparency standards.</p>
                 </article>
 
                 <article class="source-entry">
@@ -115,7 +115,7 @@ get_header();
                     <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial policy &mdash; corrections process</a></li>
                     <li><a href="<?php echo esc_url(home_url('/methodology/')); ?>">Testing methodology</a></li>
                     <li><a href="<?php echo esc_url(home_url('/sources/')); ?>">Cited sources and bibliography</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/author/suraj-giri/')); ?>">Author: Suraj Giri</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">Author: Suraj Giri</a></li>
                 </ul>
             </section>
 
@@ -129,13 +129,13 @@ get_header();
   "@type": "Article",
   "headline": "Editorial Changelog",
   "url": "<?php echo esc_url(home_url('/changelog/')); ?>",
-  "datePublished": "2025-01-15",
-  "dateModified": "<?php echo date('Y-m-d'); ?>",
+  "datePublished": "<?php echo esc_js(get_post_time('c', true)); ?>",
+  "dateModified": "<?php echo esc_js(get_post_modified_time('c', true)); ?>",
   "author": {
     "@type": "Person",
     "name": "Suraj Giri",
     "email": "suraj@theblogtimer.com",
-    "url": "<?php echo esc_url(home_url('/author/suraj-giri/')); ?>"
+    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
   },
   "publisher": {
     "@type": "Organization",
