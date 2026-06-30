@@ -38,7 +38,7 @@ $loader = Timer_Content_Loader::get_instance();
                 <button class="btn btn--secondary reset-timer" style="display:none;">Reset</button>
             </div>
             <div class="timer-complete-banner" style="display:none;">
-                <h3>Pomodoro Complete!</h3>
+                <p class="timer-complete-title" role="status" aria-live="polite">Pomodoro Complete!</p>
                 <p>Take a 5-minute break before your next session.</p>
                 <button class="btn btn--success start-timer">Start Break</button>
             </div>
@@ -46,7 +46,7 @@ $loader = Timer_Content_Loader::get_instance();
 
         <!-- Pomodoro Presets -->
         <div class="pomodoro-presets">
-            <h3 class="section-subtitle">Quick Presets</h3>
+            <h2 class="section-subtitle">Quick Presets</h2>
             <div class="timer-grid">
                 <button class="btn btn--secondary pomodoro-preset" data-work="25" data-break="5">
                     <strong>Classic</strong>
@@ -65,7 +65,7 @@ $loader = Timer_Content_Loader::get_instance();
 
         <!-- Session Counter -->
         <div class="pomodoro-session-count">
-            <h4>Sessions Completed Today: <span class="session-count-number">0</span></h4>
+            <h3 class="section-subtitle">Sessions Completed Today: <span class="session-count-number">0</span></h3>
             <button class="btn btn--secondary reset-sessions">Reset Sessions</button>
         </div>
     </div>

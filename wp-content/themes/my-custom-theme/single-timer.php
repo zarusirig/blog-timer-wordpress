@@ -81,9 +81,9 @@ $usecase_terms = get_the_terms($post_id, 'timer_usecase');
                 <button class="btn btn--outline fullscreen-btn" id="timer-fullscreen" aria-label="Enter fullscreen">&#x26F6; Fullscreen</button>
             </div>
             <div class="timer-complete-banner" id="timer-complete-banner">
-                <h3>
+                <p class="timer-complete-title" role="status" aria-live="polite">
                     <?php echo esc_html($loader->get_string('ui.time_up')); ?>
-                </h3>
+                </p>
                 <button class="btn btn--success" id="timer-replay-sound">&#128266;
                     <?php echo esc_html($loader->get_string('ui.replay_sound')); ?>
                 </button>

@@ -88,9 +88,9 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                     <span class="kbd-hint"><kbd>F</kbd> Fullscreen</span>
                 </div>
                 <div class="timer-complete-banner" id="timer-complete-banner">
-                    <h3>
+                    <p class="timer-complete-title" role="status" aria-live="polite">
                         <?php echo esc_html($loader->get_string('ui.time_up')); ?>
-                    </h3>
+                    </p>
                     <button class="btn btn--success" id="timer-replay-sound">
                         <?php echo esc_html($loader->get_string('ui.replay_sound')); ?>
                     </button>
