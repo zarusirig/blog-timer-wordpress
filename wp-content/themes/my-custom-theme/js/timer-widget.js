@@ -118,17 +118,18 @@
                 });
             }
 
-            // Custom input change
+            // Custom input change. Clamp by unit so the homepage tool matches the
+            // advertised range (1 second to 161 minutes), not a flat cap of 100.
             if (this.customInput) {
                 this.customInput.addEventListener('change', function() {
-                    var val = parseInt(self.customInput.value, 10);
-                    if (isNaN(val) || val < 1) val = 1;
-                    if (val > 100) val = 100;
-                    self.customInput.value = val;
-
-                    // Check unit
                     var activeUnit = document.querySelector('.timer-unit-toggle button.active');
                     var unit = activeUnit ? activeUnit.getAttribute('data-unit') : 'minutes';
+                    var max = unit === 'minutes' ? 161 : 60;
+                    var val = parseInt(self.customInput.value, 10);
+                    if (isNaN(val) || val < 1) val = 1;
+                    if (val > max) val = max;
+                    self.customInput.value = val;
+
                     var newDuration = unit === 'minutes' ? val * 60 : val;
                     self.setDuration(newDuration);
                 });

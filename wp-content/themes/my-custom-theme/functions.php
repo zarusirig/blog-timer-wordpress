@@ -64,7 +64,7 @@ function blogtimer_enqueue_assets()
 
     // Timer widget JS (only on pages that need it)
     if (is_singular('timer') || is_front_page() || is_page(['pomodoro', 'minute-timers', 'second-timers'])) {
-        wp_enqueue_script('blogtimer-timer', get_template_directory_uri() . '/js/timer-widget.js', [], '2.0.0', true);
+        wp_enqueue_script('blogtimer-timer', get_template_directory_uri() . '/js/timer-widget.js', [], '2.1.0', true);
 
         // Pass localized data to JS
         $timer_data = [
@@ -79,6 +79,28 @@ function blogtimer_enqueue_assets()
         }
 
         wp_localize_script('blogtimer-timer', 'blogTimerData', $timer_data);
+    }
+
+    // Shared hub-timer engine: drives the CLASS-BASED .timer-widget markup on the
+    // niche hub pages that shipped without any timer JavaScript (their Start buttons
+    // were dead). Enqueued ONLY on these scriptless pages so it never double-binds the
+    // pages with their own bespoke timer script (stopwatch, tabata-timer, countdown-timer,
+    // sleep-timer, focus-timer, study-timer, chess-clock, online-alarm-clock) or the
+    // ID-based timer-widget.js pages. If you add a new class-based hub timer page that
+    // has no inline timer script, add its slug here.
+    $blogtimer_hub_timer_pages = [
+        'egg-timer', 'coffee-timer', 'pasta-timer', 'rice-timer', 'tea-timer', 'steak-timer',
+        'turkey-timer', 'sous-vide-timer', 'bbq-timer', 'bread-baking-timer', 'microwave-popcorn-timer',
+        'baby-bottle-timer', 'hiit-timer', 'emom-timer', 'crossfit-amrap-timer', 'boxing-round-timer',
+        'jump-rope-timer', 'running-interval-timer', 'plank-timer', 'stretching-timer', 'yoga-timer',
+        'nap-timer', 'sprint-timer', 'presentation-timer', 'interval-timer', 'timer-for-kids',
+        'timer-for-remote-workers',
+    ];
+    if (is_page($blogtimer_hub_timer_pages)) {
+        wp_enqueue_script('blogtimer-hub-timer', get_template_directory_uri() . '/js/hub-timer.js', [], '1.0.0', true);
+        wp_localize_script('blogtimer-hub-timer', 'blogTimerData', [
+            'audioUrl' => get_template_directory_uri() . '/audio/timer-alert.wav',
+        ]);
     }
 
     // FAQ accordion

@@ -71,7 +71,7 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                     </button>
                 </div>
                 <div class="timer-custom">
-                    <input type="number" class="timer-custom-input" id="timer-custom-value" min="1" max="100" value="5"
+                    <input type="number" class="timer-custom-input" id="timer-custom-value" min="1" max="161" value="5"
                         placeholder="<?php echo esc_attr($loader->get_string('ui.enter_value')); ?>">
                     <div class="timer-unit-toggle">
                         <button class="active" data-unit="minutes">
