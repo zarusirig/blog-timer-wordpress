@@ -263,7 +263,7 @@ get_header();
             <div class="cta-banner">
                 <h2>20 seconds. 10 seconds. Eight rounds. Maximal effort.</h2>
                 <p>The original Tabata protocol exactly as studied. Audio cues keep your eyes off the screen so you can focus on the work.</p>
-                <a href="#top" class="btn btn--primary btn--large">Start a Tabata Round</a>
+                <a href="#main" class="btn btn--primary btn--large">Start a Tabata Round</a>
             </div>
         </div>
     </section>
