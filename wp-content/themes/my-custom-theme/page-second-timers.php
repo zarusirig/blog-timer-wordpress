@@ -11,7 +11,7 @@ $second_bucket_terms = blogtimer_get_taxonomy_terms('timer_bucket', blogtimer_ge
 $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 'cooking', 'exercise', 'meditation', 'studying']);
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="container">
         <h1 class="page-h1">
             <?php echo esc_html($loader->get_string('hub.seconds.h1')); ?>
@@ -46,7 +46,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                 <?php endforeach; ?>
             </div>
             <?php if (!empty($usecase_terms)): ?>
-                <ul class="taxonomy-link-list" style="margin-top:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+                <ul class="taxonomy-link-list" style="margin-top:var(--space-5);display:grid;gap:var(--space-3,0.75rem);grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
                     <?php foreach ($usecase_terms as $usecase_term): ?>
                         <?php $usecase_url = get_term_link($usecase_term); ?>
                         <?php if (is_wp_error($usecase_url)) {
@@ -59,7 +59,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
         </section>
 
         <!-- All Seconds -->
-        <section class="section">
+        <section class="section" style="content-visibility:auto;contain-intrinsic-size:auto 600px;">
             <h2 class="section-title">
                 <?php echo esc_html($loader->get_string('ui.browse_all')); ?>
             </h2>

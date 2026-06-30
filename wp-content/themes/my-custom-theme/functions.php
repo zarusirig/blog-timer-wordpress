@@ -62,8 +62,10 @@ function blogtimer_enqueue_assets()
     // Mobile navigation
     wp_enqueue_script('blogtimer-mobile-nav', get_template_directory_uri() . '/js/mobile-nav.js', [], '2.0.0', true);
 
-    // Timer widget JS (only on pages that need it)
-    if (is_singular('timer') || is_front_page() || is_page(['pomodoro', 'minute-timers', 'second-timers'])) {
+    // Timer widget JS — only on pages that use the ID-based widget markup
+    // (#timer-start / #timer-display). pomodoro is self-driven (inline script),
+    // and minute-timers/second-timers are link hubs with no widget.
+    if (is_singular('timer') || is_front_page()) {
         wp_enqueue_script('blogtimer-timer', get_template_directory_uri() . '/js/timer-widget.js', [], '2.1.0', true);
 
         // Pass localized data to JS
@@ -551,13 +553,17 @@ function blogtimer_render_faq($faqs)
         return;
     ?>
     <div class="faq-list">
-        <?php foreach ($faqs as $faq): ?>
+        <?php
+        static $faq_idx = 0;
+        foreach ($faqs as $faq) :
+            $faq_id = 'faq-' . (++$faq_idx);
+        ?>
             <div class="faq-item">
-                <button class="faq-question" type="button">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="<?php echo esc_attr($faq_id); ?>">
                     <span><?php echo esc_html($faq['q']); ?></span>
-                    <span class="faq-icon">+</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
                 </button>
-                <div class="faq-answer">
+                <div class="faq-answer" id="<?php echo esc_attr($faq_id); ?>" role="region">
                     <p><?php echo esc_html($faq['a']); ?></p>
                 </div>
             </div>
@@ -671,12 +677,18 @@ add_action('wp_footer', function () {
             // Scroll-to-top button
             var scrollBtn = document.getElementById('scroll-top');
             if (scrollBtn) {
+                var ticking = false;
                 window.addEventListener('scroll', function () {
-                    if (window.scrollY > 400) {
-                        scrollBtn.classList.add('visible');
-                    } else {
-                        scrollBtn.classList.remove('visible');
-                    }
+                    if (ticking) return;
+                    ticking = true;
+                    requestAnimationFrame(function () {
+                        if (window.scrollY > 400) {
+                            scrollBtn.classList.add('visible');
+                        } else {
+                            scrollBtn.classList.remove('visible');
+                        }
+                        ticking = false;
+                    });
                 });
                 scrollBtn.addEventListener('click', function () {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -946,6 +958,12 @@ add_action('wp_head', function () {
         return;
     }
 
+    // The guide CPT archive (/guides/) and the legitimate custom taxonomies are
+    // indexable programmatic-SEO hubs — must NOT be noindexed.
+    if (is_post_type_archive('guide') || is_tax(['timer_unit', 'timer_bucket', 'timer_usecase', 'guide_cluster'])) {
+        return;
+    }
+
     // Allow the front page
     if (is_front_page() || is_home()) {
         return;
@@ -1019,6 +1037,13 @@ add_action('send_headers', function () {
     if (is_singular(['timer', 'guide'])) {
         return;
     }
+
+    // The guide CPT archive (/guides/) and the legitimate custom taxonomies are
+    // indexable programmatic-SEO hubs — must NOT be noindexed.
+    if (is_post_type_archive('guide') || is_tax(['timer_unit', 'timer_bucket', 'timer_usecase', 'guide_cluster'])) {
+        return;
+    }
+
     if (is_front_page() || is_home()) {
         return;
     }
@@ -1217,6 +1242,10 @@ add_action('send_headers', function () {
 // CANONICAL TAGS & META ENHANCEMENTS
 // ==========================================
 
+// The theme prints its own comprehensive canonical (singular/page/tax/archive).
+// Remove WP core's rel_canonical (singular/front only) so we don't emit two.
+remove_action('wp_head', 'rel_canonical', 10);
+
 /**
  * Output canonical URL, hreflang, and enhanced meta tags in wp_head.
  */
@@ -1251,7 +1280,8 @@ add_action('wp_head', function () {
     $og_title = wp_get_document_title();
     $og_desc = get_bloginfo('description');
     $og_type = 'website';
-    $og_image = get_template_directory_uri() . '/images/og-default.png';
+    // Fallback chain: post thumbnail (singular, set below) → site icon → theme default.
+    $og_image = get_site_icon_url(512) ?: get_template_directory_uri() . '/images/og-default.png';
 
     if (is_singular()) {
         $og_type = 'article';
@@ -1794,6 +1824,13 @@ function blogtimer_render_see_also($context = 'timer')
         $links[] = ['url' => home_url('/second-timers/'), 'label' => 'Second Timers'];
         $links[] = ['url' => home_url('/pomodoro/'), 'label' => 'Pomodoro Timer'];
         $links[] = ['url' => home_url('/faq/'), 'label' => 'Frequently Asked Questions'];
+    } elseif ($context === 'page') {
+        // Tool / hub pages (egg-timer, hiit-timer, etc.) — link to sibling hubs + guides.
+        $links[] = ['url' => home_url('/use-cases/'), 'label' => 'Browse Timers by Use Case'];
+        $links[] = ['url' => home_url('/pomodoro/'), 'label' => 'Pomodoro Timer'];
+        $links[] = ['url' => home_url('/minute-timers/'), 'label' => 'Minute Timers'];
+        $links[] = ['url' => home_url('/second-timers/'), 'label' => 'Second Timers'];
+        $links[] = ['url' => home_url('/guides/'), 'label' => 'Timer Guides & Tips'];
     }
 
     if (empty($links)) return;

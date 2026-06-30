@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Turkey Cooking Timer &mdash; From Frozen to Carved</h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">

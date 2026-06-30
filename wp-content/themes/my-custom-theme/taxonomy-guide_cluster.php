@@ -16,7 +16,7 @@ $guide_hubs = [
 ];
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="container">
         <header class="section-header">
             <h1 class="page-h1"><?php echo esc_html($cluster_name); ?> Guides</h1>

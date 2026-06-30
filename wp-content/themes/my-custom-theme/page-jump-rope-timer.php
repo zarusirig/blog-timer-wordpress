@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Jump Rope Timer &mdash; Rounds, Rest, and Conditioning</h1>
         <p class="page-intro">Time your jump rope rounds with boxer-style 3-minute rounds as the default. Presets for boxer 3x3, double-under work, CrossFit RX rounds, and Tabata jump rope variants.</p>

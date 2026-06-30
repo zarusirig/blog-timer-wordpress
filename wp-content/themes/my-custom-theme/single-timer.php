@@ -20,7 +20,7 @@ $bucket_terms = get_the_terms($post_id, 'timer_bucket');
 $usecase_terms = get_the_terms($post_id, 'timer_usecase');
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="container container--narrow">
 
         <!-- BREADCRUMBS -->

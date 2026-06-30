@@ -9,7 +9,7 @@ $privacy_faq_url = home_url('/faq/');
 $privacy_guide_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'accuracy');
 ?>
 
-<main class="content-page">
+<main id="main" tabindex="-1" class="content-page">
     <div class="container">
 
         <h1>Privacy Policy</h1>

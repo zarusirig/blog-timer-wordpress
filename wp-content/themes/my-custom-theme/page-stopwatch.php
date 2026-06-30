@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Stopwatch &mdash; Lap, Split, and Millisecond Timing</h1>
         <p class="page-intro">A precision browser stopwatch with millisecond accuracy via <code>performance.now()</code>, lap and split tracking, copy-to-clipboard export, and zero install. Works offline once loaded.</p>
@@ -32,10 +32,10 @@ get_header();
         <div class="timer-widget" style="text-align:center;padding:var(--space-6);background:var(--color-surface);border-radius:var(--radius-lg);border:1px solid rgba(99,102,241,0.15);margin-top:var(--space-6);">
             <div id="sw-display" style="font-size:clamp(3rem,9vw,6.5rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-primary);letter-spacing:0.02em;">00:00:00.000</div>
             <div id="sw-controls" style="display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-3);margin-top:var(--space-5);">
-                <button class="btn btn--primary btn--large" id="sw-startstop" onclick="stopwatch.toggle()">Start</button>
-                <button class="btn btn--secondary btn--large" id="sw-lap" onclick="stopwatch.lap()" disabled>Lap</button>
-                <button class="btn btn--secondary btn--large" id="sw-reset" onclick="stopwatch.reset()">Reset</button>
-                <button class="btn btn--secondary btn--large" id="sw-copy" onclick="stopwatch.copyLaps()" disabled>Copy Laps</button>
+                <button class="btn btn--primary btn--large" id="sw-startstop">Start</button>
+                <button class="btn btn--secondary btn--large" id="sw-lap" disabled>Lap</button>
+                <button class="btn btn--secondary btn--large" id="sw-reset">Reset</button>
+                <button class="btn btn--secondary btn--large" id="sw-copy" disabled>Copy Laps</button>
             </div>
         </div>
 
@@ -249,6 +249,14 @@ get_header();
                     const original = copyBtn.textContent;
                     copyBtn.textContent = 'Copied!';
                     setTimeout(() => copyBtn.textContent = original, 1200);
+                }).catch(function() {
+                    // Clipboard permission denied or unavailable: fall back to execCommand.
+                    const ta = document.createElement('textarea');
+                    ta.value = text;
+                    document.body.appendChild(ta);
+                    ta.select();
+                    try { document.execCommand('copy'); } catch (e) {}
+                    document.body.removeChild(ta);
                 });
             } else {
                 const ta = document.createElement('textarea');
@@ -260,10 +268,24 @@ get_header();
             }
         }
 
+        // Button bindings (CSP-friendly: no inline onclick handlers)
+        startBtn.addEventListener('click', toggle);
+        lapBtn.addEventListener('click', lap);
+        resetBtn.addEventListener('click', reset);
+        copyBtn.addEventListener('click', copyLaps);
+
         // Keyboard shortcuts
         document.addEventListener('keydown', function(e) {
-            const tag = (e.target && e.target.tagName) || '';
-            if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+            const el = e.target;
+            const tag = (el && el.tagName) || '';
+            // Bail when focus is on an interactive control so we don't hijack
+            // Space/Enter on buttons, links, inputs, etc.
+            if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' ||
+                tag === 'BUTTON' || tag === 'A' ||
+                (el && el.isContentEditable) ||
+                (el && el.closest && el.closest('[role="button"]'))) {
+                return;
+            }
             if (e.code === 'Space') { e.preventDefault(); toggle(); }
             else if (e.key === 'l' || e.key === 'L') { lap(); }
             else if (e.key === 'r' || e.key === 'R') { reset(); }

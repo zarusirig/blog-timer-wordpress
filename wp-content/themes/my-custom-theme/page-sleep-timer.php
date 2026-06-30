@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Sleep Timer &mdash; Drift Off Without Worrying About the Clock</h1>
         <p class="page-intro">A bedtime timer with built-in ambient noise (white, pink, brown, rain, ocean). The sound gradually fades to silence in the last two minutes so it does not wake you when it ends. Set it, lie down, sleep.</p>
@@ -169,7 +169,7 @@ get_header();
         let durationMs = 30 * 60 * 1000;
         let endTimestamp = null;
         let running = false;
-        let rafId = null;
+        let tickInterval = null;
         let audioCtx = null;
         let noiseNode = null;
         let gainNode = null;
@@ -177,9 +177,8 @@ get_header();
         const FADE_SECONDS = 120;
 
         function pad(n) { return n < 10 ? '0' + n : '' + n; }
-        function format(ms) {
-            ms = Math.max(0, ms);
-            const totalSec = Math.ceil(ms / 1000);
+        function format(totalSec) {
+            totalSec = Math.max(0, Math.floor(totalSec));
             const h = Math.floor(totalSec / 3600);
             const m = Math.floor((totalSec % 3600) / 60);
             const s = totalSec % 60;
@@ -188,25 +187,24 @@ get_header();
 
         function tick() {
             if (!running) return;
-            const remaining = endTimestamp - performance.now();
-            if (remaining <= 0) {
+            const remainingSec = Math.max(0, Math.ceil((endTimestamp - performance.now()) / 1000));
+            if (remainingSec <= 0) {
                 display.textContent = format(0);
                 stopAudio();
                 running = false;
                 startBtn.textContent = 'Start';
                 status.textContent = 'Sleep timer complete. Sweet dreams.';
+                clearInterval(tickInterval);
                 return;
             }
-            display.textContent = format(remaining);
-            // Update fade
-            applyFade(remaining);
-            rafId = requestAnimationFrame(tick);
+            display.textContent = format(remainingSec);
+            // Update fade (seconds-based)
+            applyFade(remainingSec);
         }
 
-        function applyFade(remainingMs) {
+        function applyFade(remainingSec) {
             if (!gainNode || !audioCtx) return;
             const targetVol = parseInt(volSlider.value, 10) / 100;
-            const remainingSec = remainingMs / 1000;
             let scale = 1;
             if (remainingSec < FADE_SECONDS) {
                 scale = Math.max(0, remainingSec / FADE_SECONDS);
@@ -303,7 +301,7 @@ get_header();
             if (running) {
                 // pause
                 running = false;
-                cancelAnimationFrame(rafId);
+                clearInterval(tickInterval);
                 stopAudio();
                 startBtn.textContent = 'Resume';
                 return;
@@ -315,15 +313,16 @@ get_header();
             status.textContent = 'Sleep timer running. Audio fades in last 2 minutes.';
             startAudio();
             tick();
+            tickInterval = setInterval(tick, 250);
         }
 
         function reset() {
-            cancelAnimationFrame(rafId);
+            clearInterval(tickInterval);
             running = false;
             endTimestamp = null;
             stopAudio();
             startBtn.textContent = 'Start';
-            display.textContent = format(durationMs);
+            display.textContent = format(Math.round(durationMs / 1000));
             status.textContent = '';
         }
 
@@ -339,8 +338,8 @@ get_header();
 
         volSlider.addEventListener('input', function() {
             if (gainNode && running) {
-                const remaining = endTimestamp - performance.now();
-                applyFade(remaining);
+                const remainingSec = Math.max(0, Math.ceil((endTimestamp - performance.now()) / 1000));
+                applyFade(remainingSec);
             }
         });
 
@@ -348,8 +347,19 @@ get_header();
             if (running) startAudio();
         });
 
+        // Keyboard a11y: Space toggles start/pause, R resets.
+        // Bail on form fields and interactive controls (incl. button/a/role=button)
+        // so we never hijack other controls — fixes the hub-timer pattern.
+        document.addEventListener('keydown', function(e) {
+            const tag = (e.target && e.target.tagName || '').toLowerCase();
+            if (tag === 'input' || tag === 'textarea' || tag === 'select' || tag === 'button' || tag === 'a') return;
+            if (e.target && e.target.getAttribute && e.target.getAttribute('role') === 'button') return;
+            if (e.code === 'Space') { e.preventDefault(); startPause(); }
+            else if (e.code === 'KeyR') { e.preventDefault(); reset(); }
+        });
+
         // Init
-        display.textContent = format(durationMs);
+        display.textContent = format(Math.round(durationMs / 1000));
 
         return { startPause, reset, preset, setCustom };
     })();

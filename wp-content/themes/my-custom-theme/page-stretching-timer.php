@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Stretching Timer &mdash; Static Holds, Dynamic, and PNF</h1>
         <p class="page-intro">Time your static stretch holds, dynamic mobility flows, and PNF contract-relax cycles. The 30-second hold is the default &mdash; the research-backed middle ground for flexibility gains without performance loss.</p>

@@ -145,11 +145,17 @@
         }
         if (resetBtn) resetBtn.addEventListener('click', reset);
 
-        // Keyboard: Space toggles, R resets (ignored while typing in a field).
+        // Keyboard: Space toggles, R resets. Ignored while typing in a field OR
+        // while another interactive control (button/link/etc.) is focused so the
+        // shortcut never hijacks Space meant for FAQ toggles, cookie banner, etc.
         widget.setAttribute('tabindex', widget.getAttribute('tabindex') || '-1');
         document.addEventListener('keydown', function (e) {
             var tag = (e.target.tagName || '').toLowerCase();
             if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+            if (e.target.isContentEditable) return;
+            var isInteractive = tag === 'button' || tag === 'a' || tag === 'summary' ||
+                e.target.getAttribute('role') === 'button';
+            if (isInteractive) return;
             if (e.code === 'Space') { e.preventDefault(); onPrimary(); }
             else if (e.code === 'KeyR') { e.preventDefault(); reset(); }
         });

@@ -9,7 +9,7 @@ $productivity_usecase_url = blogtimer_get_term_url_by_slug('timer_usecase', 'pro
 $pomodoro_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'pomodoro');
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="content-page">
         <article class="page-content container container--narrow">
 

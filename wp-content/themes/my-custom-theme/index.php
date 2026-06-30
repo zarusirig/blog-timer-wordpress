@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="container">
         <header class="section-header">
             <?php if (is_home()): ?>

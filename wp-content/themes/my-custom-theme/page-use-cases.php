@@ -37,7 +37,7 @@ foreach (['productivity', 'cooking', 'exercise', 'meditation', 'studying'] as $u
 }
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="container">
         <h1 class="page-h1">
             <?php echo esc_html($loader->get_string('hub.usecases.h1')); ?>

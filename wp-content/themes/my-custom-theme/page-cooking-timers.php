@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <?php blogtimer_render_breadcrumb_nav([
             ['label' => 'Home', 'url' => home_url('/')],

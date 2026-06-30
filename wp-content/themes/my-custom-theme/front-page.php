@@ -13,7 +13,7 @@ $usecase_archive_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['product
 $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro', 'studying', 'exercise', 'cooking', 'meditation', 'accuracy']);
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <!-- HERO -->
     <section class="hero">
         <div class="container">

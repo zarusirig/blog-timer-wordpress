@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Alarm Clock &mdash; Set Wake-Up Alarms in Your Browser</h1>
         <p class="page-intro">Set a wake-up or reminder alarm that fires in your browser at the exact target time. Uses the Web Audio API for reliable sound and the Notification API for system-level alerts. No install, no signup.</p>
@@ -52,17 +52,17 @@ get_header();
             </div>
 
             <div style="margin-top:var(--space-5);display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-3);">
-                <button class="btn btn--primary btn--large" id="ac-set" onclick="alarmClock.set()">Set Alarm</button>
-                <button class="btn btn--secondary btn--large" id="ac-cancel" onclick="alarmClock.cancel()" disabled>Cancel</button>
-                <button class="btn btn--secondary btn--large" id="ac-test" onclick="alarmClock.test()">Test Sound</button>
+                <button class="btn btn--primary btn--large" id="ac-set">Set Alarm</button>
+                <button class="btn btn--secondary btn--large" id="ac-cancel" disabled>Cancel</button>
+                <button class="btn btn--secondary btn--large" id="ac-test">Test Sound</button>
             </div>
 
             <p id="ac-status" style="margin-top:var(--space-4);color:var(--color-text-muted);font-size:0.875rem;min-height:1.25rem;"></p>
 
             <div id="ac-ringing" style="display:none;margin-top:var(--space-5);padding:var(--space-5);background:var(--color-accent-soft);border-radius:var(--radius-md);border:2px solid var(--color-accent);">
                 <h3 style="margin:0 0 var(--space-3);color:var(--color-accent);">Alarm! Wake up.</h3>
-                <button class="btn btn--success" onclick="alarmClock.snooze()">Snooze 9 minutes</button>
-                <button class="btn btn--secondary" onclick="alarmClock.dismiss()" style="margin-left:0.5rem;">Dismiss</button>
+                <button class="btn btn--success" id="ac-snooze">Snooze 9 minutes</button>
+                <button class="btn btn--secondary" id="ac-dismiss" style="margin-left:0.5rem;">Dismiss</button>
             </div>
         </div>
     </div>
@@ -158,6 +158,9 @@ get_header();
         const repeatChk = document.getElementById('ac-repeat');
         const setBtn = document.getElementById('ac-set');
         const cancelBtn = document.getElementById('ac-cancel');
+        const testBtn = document.getElementById('ac-test');
+        const snoozeBtn = document.getElementById('ac-snooze');
+        const dismissBtn = document.getElementById('ac-dismiss');
         const status = document.getElementById('ac-status');
         const ringing = document.getElementById('ac-ringing');
 
@@ -293,6 +296,13 @@ get_header();
                 Notification.requestPermission();
             }
         }
+
+        // Button bindings (CSP-friendly: no inline onclick handlers)
+        setBtn.addEventListener('click', set);
+        cancelBtn.addEventListener('click', cancel);
+        testBtn.addEventListener('click', test);
+        snoozeBtn.addEventListener('click', snooze);
+        dismissBtn.addEventListener('click', dismiss);
 
         setInterval(tick, 250);
         tick();

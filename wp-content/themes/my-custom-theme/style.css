@@ -26,7 +26,8 @@ Text Domain: my-custom-theme
 
     --color-text-primary: #eef0f6;
     --color-text-secondary: #9ba3c0;
-    --color-text-muted: #5f6889;
+    /* Bumped from #5f6889 (~3.5:1) to pass WCAG AA 4.5:1 for body-adjacent text. */
+    --color-text-muted: #8b93b3;
     --color-text-inverse: #0b0d14;
 
     --color-accent: #6366f1;
@@ -142,6 +143,7 @@ body {
     color: var(--color-text-primary);
     background-color: var(--color-bg);
     min-height: 100vh;
+    min-height: 100dvh; /* dynamic viewport — fixes iOS chrome phantom-scroll on short pages */
     overflow-x: hidden;
 }
 
@@ -327,6 +329,17 @@ strong {
 .mobile-toggle:hover {
     background: rgba(255, 255, 255, 0.06);
 }
+
+/* Caret toggle for the mobile accordion nav. Hidden on desktop (hover menus),
+   revealed inside the 768px block. */
+.nav-submenu-toggle {
+    display: none;
+}
+
+/* Hamburger/close icon swap, driven by aria-expanded on the toggle button. */
+.mobile-toggle .icon-close { display: none; }
+.mobile-toggle[aria-expanded="true"] .icon-open { display: none; }
+.mobile-toggle[aria-expanded="true"] .icon-close { display: inline; }
 
 /* ===========================
    FOOTER
@@ -2100,6 +2113,131 @@ kbd {
     }
 }
 
+/* ===========================================================
+   MOBILE UX/A11Y FIXES (audit 2026-06-30)
+   Touch targets >=44px, 16px inputs (no iOS zoom), accordion nav,
+   scrollable data tables, footer link tap areas.
+   =========================================================== */
+@media (max-width: 768px) {
+    /* Touch targets ≥44px — primary interactive controls */
+    .mobile-toggle {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .timer-controls .btn,
+    .btn {
+        min-height: 44px;
+    }
+
+    /* Submenu links: comfortable, ≥44px tap rows */
+    .primary-nav .nav-submenu a {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--text-base);
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Tab buttons + unit toggle */
+    .tab-btn,
+    .timer-unit-toggle button {
+        min-height: 44px;
+    }
+
+    /* Footer links: ≥44px tap rows */
+    .footer-col a,
+    .footer-links a,
+    .footer-bottom-links a {
+        display: inline-block;
+        padding: var(--space-2) 0;
+        min-height: 44px;
+        line-height: 1.4;
+    }
+
+    /* Stop iOS auto-zoom: every text input ≥16px on mobile */
+    .form-input,
+    .form-textarea,
+    .form-select,
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="search"],
+    textarea,
+    select,
+    .timer-name-input,
+    .timer-custom-input {
+        font-size: 16px;
+    }
+
+    /* Data/comparison tables: scroll horizontally instead of being clipped by body overflow-x:hidden */
+    .comparison-table,
+    .content-page table,
+    .timer-widget table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+    }
+
+    /* ---- Mobile accordion nav: collapse submenus by default ----
+       .submenu-open (toggled by the caret button wired up in mobile-nav.js)
+       reveals one silo at a time. Replaces the old behavior where every
+       submenu was force-expanded into a ~48-link wall. */
+    .primary-nav .nav-submenu.mega-panel,
+    .primary-nav .nav-submenu {
+        display: none;
+    }
+    .primary-nav .nav-item--has-submenu.submenu-open > .nav-submenu.mega-panel,
+    .primary-nav .nav-item--has-submenu.submenu-open > .nav-submenu {
+        display: block;
+    }
+
+    /* Lay out each silo as: [parent link grows][caret 44px] then submenu below */
+    .primary-nav .nav-item--has-submenu {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+    .primary-nav .nav-item--has-submenu > a {
+        flex: 1 1 auto;
+    }
+    .primary-nav .nav-item--has-submenu > .nav-submenu {
+        flex-basis: 100%;
+    }
+
+    /* The caret toggle button rendered next to each parent link in header.php */
+    .nav-submenu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        min-height: 44px;
+        background: transparent;
+        border: 0;
+        color: var(--color-text-secondary);
+        cursor: pointer;
+        border-radius: var(--radius-sm);
+    }
+    .nav-submenu-toggle[aria-expanded="true"] {
+        color: var(--color-accent);
+    }
+}
+
+/* Touch devices: drop hover-only transforms (prevents tap flicker + layer cost). */
+@media (hover: none) {
+    .btn:hover,
+    .card:hover,
+    .timer-card:hover,
+    .tab-btn:hover {
+        transform: none;
+    }
+}
+
 @media (max-width: 480px) {
     .hero h1 {
         font-size: var(--text-2xl);
@@ -2198,6 +2336,27 @@ kbd {
     border: 0;
 }
 
+/* Skip-to-content link: invisible until keyboard-focused (WCAG 2.4.1 bypass). */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 10000;
+    background: var(--color-accent);
+    color: #ffffff;
+    padding: var(--space-3) var(--space-4);
+    font-weight: 600;
+    border-radius: 0 0 var(--radius-md) 0;
+    box-shadow: var(--shadow-md);
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+    left: 0;
+    color: #ffffff;
+}
+
+#main:focus { outline: none; }
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -2264,4 +2423,51 @@ kbd {
 }
 .tldr-box a {
     color: var(--color-accent, #6366f1);
+}
+
+/* ===========================================================
+   LIGHT MODE — opt-in via OS theme (prefers-color-scheme: light).
+   Token-level override so every component that uses vars inherits it.
+   =========================================================== */
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-bg: #f6f7fb;
+        --color-bg-elevated: #ffffff;
+        --color-bg-card: #ffffff;
+        --color-bg-hover: #eef0f7;
+        --color-surface: #eef0f7;
+        --color-border: #d9dde8;
+        --color-border-light: #e6e9f1;
+        --color-text-primary: #14182a;
+        --color-text-secondary: #444c63;
+        --color-text-muted: #5b6478;
+        --color-text-inverse: #ffffff;
+
+        --glass-bg: rgba(255, 255, 255, 0.85);
+        --glass-border: rgba(0, 0, 0, 0.08);
+        --glass-blur: blur(12px);
+
+        --shadow-sm: 0 1px 3px rgba(20, 24, 42, 0.08);
+        --shadow-md: 0 4px 16px rgba(20, 24, 42, 0.10);
+        --shadow-lg: 0 8px 32px rgba(20, 24, 42, 0.14);
+        --shadow-xl: 0 16px 48px rgba(20, 24, 42, 0.18);
+        --shadow-card: 0 2px 8px rgba(20, 24, 42, 0.06), 0 0 0 1px var(--color-border);
+        --shadow-card-hover: 0 8px 24px rgba(20, 24, 42, 0.12), 0 0 0 1px var(--color-accent);
+    }
+
+    body {
+        background-color: var(--color-bg);
+        color: var(--color-text-primary);
+    }
+
+    /* Hover backgrounds hardcode a white tint — flip to a dark tint in light mode. */
+    .primary-nav a:hover,
+    .primary-nav a.active,
+    .nav-submenu a:hover,
+    .mobile-toggle:hover {
+        background-color: rgba(20, 24, 42, 0.06);
+    }
+
+    /* Softer decorative glow on light backgrounds. */
+    .hero::before { opacity: 0.45; }
 }

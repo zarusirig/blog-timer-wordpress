@@ -36,7 +36,7 @@ $cluster_labels = [
 ];
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="container">
         <header class="section-header">
             <h1 class="page-h1">Timer Guides and Strategy Library</h1>

@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Yoga Timer &mdash; Sessions, Asanas, and Pranayama</h1>
         <p class="page-intro">Time your yoga session, your asana holds, and your pranayama cycles. Presets for Vinyasa, Yin, Hatha, Iyengar, and Restorative traditions.</p>

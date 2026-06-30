@@ -18,7 +18,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
 $hour_timers = $related->get_all_by_unit('hours');
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="container">
         <?php
         blogtimer_render_breadcrumb_nav([

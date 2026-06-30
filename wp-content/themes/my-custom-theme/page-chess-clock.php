@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Chess Clock — Two-Player Timer</h1>
         <p class="page-intro">A simple two-player countdown clock for chess, board games, debates, and any turn-based activity. Each player controls their own time.</p>
@@ -17,7 +17,7 @@ get_header();
             <div class="timer-widget" id="player1-clock" style="text-align:center;padding:var(--space-6);background:var(--color-surface);border-radius:var(--radius-lg);border:3px solid var(--color-primary);">
                 <p style="font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);margin-bottom:var(--space-3);">Player 1</p>
                 <div class="timer-display" id="p1-display" style="font-size:clamp(3rem,8vw,6rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-primary);">10:00</div>
-                <button class="btn btn--primary btn--large" id="p1-btn" style="margin-top:var(--space-4);width:100%;" onclick="chessClock.tap(1)">Tap to Start / End Turn</button>
+                <button class="btn btn--primary btn--large" id="p1-btn" style="margin-top:var(--space-4);width:100%;">Tap to Start / End Turn</button>
             </div>
             <div class="timer-widget" id="player2-clock" style="text-align:center;padding:var(--space-6);background:var(--color-surface);border-radius:var(--radius-lg);border:3px solid var(--color-text-muted);">
                 <p style="font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);margin-bottom:var(--space-3);">Player 2</p>
@@ -27,16 +27,16 @@ get_header();
         </div>
 
         <div style="text-align:center;margin-bottom:var(--space-8);">
-            <button class="btn btn--secondary" onclick="chessClock.reset()" style="margin-right:var(--space-3);">Reset Clock</button>
+            <button class="btn btn--secondary" id="chess-reset" style="margin-right:var(--space-3);">Reset Clock</button>
         </div>
 
         <div class="pomodoro-presets">
             <h3 class="section-subtitle">Time Control Presets</h3>
             <div class="timer-grid">
-                <button class="btn btn--secondary" onclick="chessClock.setTime(60)"><strong>Bullet</strong><span>1 minute</span></button>
-                <button class="btn btn--secondary" onclick="chessClock.setTime(180)"><strong>Blitz</strong><span>3 minutes</span></button>
-                <button class="btn btn--secondary" onclick="chessClock.setTime(300)"><strong>Blitz</strong><span>5 minutes</span></button>
-                <button class="btn btn--secondary" onclick="chessClock.setTime(600)"><strong>Rapid</strong><span>10 minutes</span></button>
+                <button class="btn btn--secondary chess-preset" data-time="60"><strong>Bullet</strong><span>1 minute</span></button>
+                <button class="btn btn--secondary chess-preset" data-time="180"><strong>Blitz</strong><span>3 minutes</span></button>
+                <button class="btn btn--secondary chess-preset" data-time="300"><strong>Blitz</strong><span>5 minutes</span></button>
+                <button class="btn btn--secondary chess-preset" data-time="600"><strong>Rapid</strong><span>10 minutes</span></button>
             </div>
         </div>
     </div>
@@ -66,9 +66,11 @@ get_header();
 
     <script>
     const chessClock = (function() {
-        let times = [600, 600]; // default 10 minutes in seconds
+        let times = [600, 600]; // current remaining seconds per player
+        let initialTime = 600; // original time control captured by setTime(); reset() restores both players from this
         let active = -1; // -1 = not started, 0 = player 1, 1 = player 2
         let interval = null;
+        let endTimestamp = null; // wall-clock ms at which the active player's clock hits zero
         let displays = [document.getElementById('p1-display'), document.getElementById('p2-display')];
         let buttons = [document.getElementById('p1-btn'), document.getElementById('p2-btn')];
         let clocks = [document.getElementById('player1-clock'), document.getElementById('player2-clock')];
@@ -84,10 +86,21 @@ get_header();
             displays[1].textContent = formatTime(times[1]);
         }
 
+        // Snapshot the active player's remaining seconds from the timestamp-based
+        // deadline back into times[active]. Call on every pause / turn switch so the
+        // remaining time survives browser tab throttling/sleep correctly.
+        function snapshotRemaining() {
+            if (active >= 0 && endTimestamp !== null) {
+                times[active] = Math.max(0, Math.ceil((endTimestamp - Date.now()) / 1000));
+            }
+            endTimestamp = null;
+        }
+
         function tap(player) {
             const p = player - 1;
             if (active === p) {
                 // Switch to other player
+                snapshotRemaining();
                 clearInterval(interval);
                 active = 1 - p;
                 startTicking();
@@ -100,18 +113,23 @@ get_header();
             }
         }
 
+        // Timestamp-based ticking: compute a wall-clock deadline on start/resume and
+        // recompute the remaining seconds from Date.now() each tick. This keeps
+        // correct time even when the browser throttles/pauses the interval while the
+        // tab is backgrounded or asleep (a decrement-per-tick clock would freeze).
         function startTicking() {
+            endTimestamp = Date.now() + times[active] * 1000;
             interval = setInterval(function() {
+                times[active] = Math.max(0, Math.ceil((endTimestamp - Date.now()) / 1000));
+                displays[active].textContent = formatTime(times[active]);
                 if (times[active] <= 0) {
                     clearInterval(interval);
+                    endTimestamp = null;
                     displays[active].textContent = '0:00';
                     displays[active].style.color = '#ef4444';
                     buttons[active].textContent = 'Time\'s Up!';
-                    return;
                 }
-                times[active]--;
-                displays[active].textContent = formatTime(times[active]);
-            }, 1000);
+            }, 250);
         }
 
         function updateActiveUI() {
@@ -132,7 +150,8 @@ get_header();
         function reset() {
             clearInterval(interval);
             active = -1;
-            times = [times[0], times[0]]; // preserve current time control
+            endTimestamp = null;
+            times = [initialTime, initialTime]; // restore the ORIGINAL time control for both players
             updateDisplays();
             displays[0].style.color = 'var(--color-primary)';
             displays[1].style.color = 'var(--color-text-muted)';
@@ -145,9 +164,29 @@ get_header();
         }
 
         function setTime(seconds) {
+            initialTime = seconds; // remember the chosen time control so reset() can restore it
             times = [seconds, seconds];
             reset();
         }
+
+        // CSP-friendly bindings: no inline onclick handlers in the markup.
+        function bindEvents() {
+            if (buttons[0]) {
+                buttons[0].addEventListener('click', function() { tap(1); });
+            }
+            const resetBtn = document.getElementById('chess-reset');
+            if (resetBtn) {
+                resetBtn.addEventListener('click', reset);
+            }
+            const presets = document.querySelectorAll('.chess-preset');
+            presets.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    setTime(parseInt(btn.getAttribute('data-time'), 10));
+                });
+            });
+        }
+
+        bindEvents();
 
         return { tap, reset, setTime };
     })();

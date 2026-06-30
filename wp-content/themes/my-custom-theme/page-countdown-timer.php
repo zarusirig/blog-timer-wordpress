@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Countdown Timer &mdash; Set Any Duration</h1>
         <p class="page-intro">A flexible countdown timer with hours, minutes, and seconds. Stays accurate in background tabs (timestamp-based, not interval-based). Plays an audible alert when done. No install, no signup.</p>
@@ -47,25 +47,25 @@ get_header();
             </div>
 
             <div style="margin-top:var(--space-5);display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-3);">
-                <button class="btn btn--primary btn--large" id="cd-start" onclick="countdown.startPause()">Start</button>
-                <button class="btn btn--secondary btn--large" id="cd-reset" onclick="countdown.reset()">Reset</button>
+                <button class="btn btn--primary btn--large" id="cd-start">Start</button>
+                <button class="btn btn--secondary btn--large" id="cd-reset">Reset</button>
             </div>
 
             <div id="cd-done" style="display:none;margin-top:var(--space-5);padding:var(--space-4);background:var(--color-accent-soft);border-radius:var(--radius-md);border:2px solid var(--color-accent);">
                 <h3 style="margin:0 0 var(--space-2);color:var(--color-accent);">Time's Up!</h3>
-                <button class="btn btn--success" onclick="countdown.stopAlert()">Stop Alert</button>
+                <button class="btn btn--success" id="cd-stop-alert">Stop Alert</button>
             </div>
         </div>
 
         <div class="pomodoro-presets" style="margin-top:var(--space-6);">
             <h3 class="section-subtitle">Quick Presets</h3>
             <div class="timer-grid">
-                <button class="btn btn--secondary" onclick="countdown.preset(1,0)"><strong>1 minute</strong><span>Quick task</span></button>
-                <button class="btn btn--secondary" onclick="countdown.preset(5,0)"><strong>5 minutes</strong><span>Stand-up, stretch</span></button>
-                <button class="btn btn--secondary" onclick="countdown.preset(10,0)"><strong>10 minutes</strong><span>Email triage</span></button>
-                <button class="btn btn--secondary" onclick="countdown.preset(15,0)"><strong>15 minutes</strong><span>Short focus</span></button>
-                <button class="btn btn--secondary" onclick="countdown.preset(25,0)"><strong>25 minutes</strong><span>Pomodoro</span></button>
-                <button class="btn btn--secondary" onclick="countdown.preset(60,0)"><strong>1 hour</strong><span>Deep work</span></button>
+                <button class="btn btn--secondary cd-preset" data-min="1"><strong>1 minute</strong><span>Quick task</span></button>
+                <button class="btn btn--secondary cd-preset" data-min="5"><strong>5 minutes</strong><span>Stand-up, stretch</span></button>
+                <button class="btn btn--secondary cd-preset" data-min="10"><strong>10 minutes</strong><span>Email triage</span></button>
+                <button class="btn btn--secondary cd-preset" data-min="15"><strong>15 minutes</strong><span>Short focus</span></button>
+                <button class="btn btn--secondary cd-preset" data-min="25"><strong>25 minutes</strong><span>Pomodoro</span></button>
+                <button class="btn btn--secondary cd-preset" data-min="60"><strong>1 hour</strong><span>Deep work</span></button>
             </div>
         </div>
     </div>
@@ -174,15 +174,14 @@ get_header();
         let endTimestamp = null;
         let pausedRemaining = null;
         let running = false;
-        let rafId = null;
+        let tickInterval = null;
         let alertTimer = null;
         let audioCtx = null;
 
         function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
-        function format(ms) {
-            ms = Math.max(0, ms);
-            const totalSec = Math.ceil(ms / 1000);
+        function format(totalSec) {
+            totalSec = Math.max(0, Math.floor(totalSec));
             const h = Math.floor(totalSec / 3600);
             const m = Math.floor((totalSec % 3600) / 60);
             const s = totalSec % 60;
@@ -198,23 +197,23 @@ get_header();
 
         function tick() {
             if (!running) return;
-            const remaining = endTimestamp - performance.now();
-            if (remaining <= 0) {
+            const remainingSec = Math.max(0, Math.ceil((endTimestamp - performance.now()) / 1000));
+            if (remainingSec <= 0) {
                 display.textContent = '00:00:00';
                 running = false;
+                clearInterval(tickInterval);
                 startBtn.textContent = 'Start';
                 fire();
                 return;
             }
-            display.textContent = format(remaining);
-            rafId = requestAnimationFrame(tick);
+            display.textContent = format(remainingSec);
         }
 
         function startPause() {
             if (running) {
                 pausedRemaining = endTimestamp - performance.now();
                 running = false;
-                cancelAnimationFrame(rafId);
+                clearInterval(tickInterval);
                 startBtn.textContent = 'Resume';
                 return;
             }
@@ -232,15 +231,16 @@ get_header();
             doneBox.style.display = 'none';
             ensureAudio();
             tick();
+            tickInterval = setInterval(tick, 250);
         }
 
         function reset() {
-            cancelAnimationFrame(rafId);
+            clearInterval(tickInterval);
             running = false;
             pausedRemaining = null;
             endTimestamp = null;
             startBtn.textContent = 'Start';
-            display.textContent = format(readDuration());
+            display.textContent = format(readDuration() / 1000);
             doneBox.style.display = 'none';
             stopAlert();
         }
@@ -307,7 +307,6 @@ get_header();
 
         document.addEventListener('visibilitychange', function() {
             if (running && document.visibilityState === 'visible') {
-                cancelAnimationFrame(rafId);
                 tick();
             }
         });
@@ -319,10 +318,20 @@ get_header();
             else if (e.key === 'r' || e.key === 'R') { reset(); }
         });
 
+        // Wire up controls via addEventListener (CSP-friendly: no inline onclick).
+        startBtn.addEventListener('click', startPause);
+        document.getElementById('cd-reset').addEventListener('click', reset);
+        document.getElementById('cd-stop-alert').addEventListener('click', stopAlert);
+        document.querySelectorAll('.cd-preset').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                preset(parseInt(btn.getAttribute('data-min'), 10), 0);
+            });
+        });
+
         // Init display
-        display.textContent = format(readDuration());
+        display.textContent = format(readDuration() / 1000);
         [hInput, mInput, sInput].forEach(function(inp) {
-            inp.addEventListener('input', function() { if (!running) display.textContent = format(readDuration()); });
+            inp.addEventListener('input', function() { if (!running) display.textContent = format(readDuration() / 1000); });
         });
 
         // Autostart support via ?autostart=1

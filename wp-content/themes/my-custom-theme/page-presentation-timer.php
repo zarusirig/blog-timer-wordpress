@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Presentation Timer — Speaking and Speech Timer</h1>
         <p class="page-intro">Practice speeches, time presentations, and stay on schedule during talks. Full-screen timer with visual alerts for every presentation format.</p>

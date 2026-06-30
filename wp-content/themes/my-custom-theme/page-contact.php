@@ -17,7 +17,7 @@ $contact_notices = [
 ];
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container">
         <h1 class="page-h1">Get in Touch with The Blog Timer</h1>
 
@@ -207,70 +207,70 @@ $contact_notices = [
 
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false">
                         <span class="faq-icon">Q</span>
                         <h3>How long does it take to get a response?</h3>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>Most messages receive a response within 24-48 hours during business days (Monday-Friday). Urgent bug reports often get same-day attention, while feature requests may take a bit longer as they require team discussion. We respond to every message—if you haven't heard from us within three business days, please check your spam folder or send a follow-up.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false">
                         <span class="faq-icon">Q</span>
                         <h3>Can I request a specific timer duration that's not on your site?</h3>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>Absolutely! We're always expanding our timer library based on user needs. Submit a feature request through the contact form above, and let us know what duration you need and how you plan to use it. If we receive multiple requests for the same duration, it moves up our priority list. Many of our timer pages were created directly from user suggestions.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false">
                         <span class="faq-icon">Q</span>
                         <h3>Do you offer phone support or live chat?</h3>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>Currently, we handle all support through email via the contact form. This allows us to provide thoughtful, detailed responses and maintain a record of our conversation in case follow-up is needed. It also helps us operate efficiently as a small team while keeping The Blog Timer completely free for users. Most questions are resolved with a single email exchange.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false">
                         <span class="faq-icon">Q</span>
                         <h3>I found a bug. Will you fix it?</h3>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>Yes, we take bug reports seriously and prioritize fixes based on severity. Critical bugs that prevent timers from working correctly are addressed immediately—often within hours. Visual glitches or minor usability issues are typically fixed within a week. When you report a bug, we'll acknowledge it quickly, investigate the issue, and update you when the fix is deployed. Your bug report helps improve the experience for everyone.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false">
                         <span class="faq-icon">Q</span>
                         <h3>Can I suggest features even if I'm not a programmer?</h3>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>Please do! You don't need any technical knowledge to suggest features. In fact, some of our best ideas come from users who simply describe what they wish the timer could do. Focus on explaining the problem you're trying to solve and how you envision the solution working from a user's perspective. Our development team handles the technical implementation details.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false">
                         <span class="faq-icon">Q</span>
                         <h3>Will you respond to partnership and collaboration inquiries?</h3>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>Yes, we're open to partnerships that align with our mission of providing free, accessible productivity tools. We've collaborated with educational institutions, productivity bloggers, and app developers in the past. When reaching out about partnerships, please describe what you have in mind, how it benefits both parties, and why you think we'd be a good fit. We review all partnership proposals, though we're selective about which opportunities we pursue.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="false">
                         <span class="faq-icon">Q</span>
                         <h3>What if my question isn't answered in your FAQ or guides?</h3>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>That's exactly what this contact form is for! We can't anticipate every question, and your unique situation might not be covered in our existing documentation. Send us your question with as much context as possible, and we'll provide a personalized answer. If we receive the same question multiple times, we add it to our FAQ to help future users.</p>
                     </div>
@@ -334,24 +334,8 @@ $contact_notices = [
                 });
             }
 
-            // FAQ accordion functionality
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    const faqItem = this.parentElement;
-                    const isActive = faqItem.classList.contains('active');
-
-                    // Close all FAQ items
-                    document.querySelectorAll('.faq-item').forEach(item => {
-                        item.classList.remove('active');
-                    });
-
-                    // Open clicked item if it wasn't already active
-                    if (!isActive) {
-                        faqItem.classList.add('active');
-                    }
-                });
-            });
+            // FAQ accordion is handled globally by js/faq-accordion.js
+            // (toggles .open + aria-expanded on .faq-question).
         });
         </script>
     </div>

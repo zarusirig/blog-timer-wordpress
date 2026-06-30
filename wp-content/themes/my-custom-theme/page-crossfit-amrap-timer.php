@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free CrossFit AMRAP Timer &mdash; 5, 10, 15, 20 Minute Workouts</h1>
         <p class="page-intro">A dedicated AMRAP (As Many Rounds As Possible) timer for CrossFit, conditioning circuits, and benchmark workouts. Default 20-minute AMRAP &mdash; the most common WOD format.</p>

@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free EMOM Timer &mdash; Every Minute on the Minute Training</h1>
         <p class="page-intro">A dedicated EMOM (Every Minute on the Minute) timer. A bell sounds at the top of every minute, signaling a new round of prescribed reps. Default 10-minute EMOM &mdash; the standard programming length.</p>

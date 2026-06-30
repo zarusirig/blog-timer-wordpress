@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Focus Timer &mdash; Science-Backed Concentration Intervals</h1>
         <p class="page-intro">A research-grounded focus timer with custom durations (15, 25, 45, 90 minutes), session tracking, and optional break alarms. Built around what cognitive science actually says about sustained attention.</p>
@@ -400,6 +400,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let remaining = durationSec;
     let intervalId = null;
     let running = false;
+    let endTimestamp = null; // timestamp-based timing (survives tab sleep)
 
     function fmt(s) {
         const m = Math.floor(s / 60);
@@ -424,36 +425,38 @@ document.addEventListener('DOMContentLoaded', function() {
             o.start(); o.stop(ctx.currentTime + 0.75);
         } catch (e) {}
     }
+    function tick() {
+        if (!running || !endTimestamp) return;
+        remaining = Math.max(0, Math.ceil((endTimestamp - Date.now()) / 1000));
+        render();
+        if (remaining <= 0) {
+            clearInterval(intervalId);
+            running = false;
+            endTimestamp = null;
+            if (breakAlarm && breakAlarm.checked) beep();
+            completeBanner.style.display = '';
+            startBtn.style.display = '';
+            resetBtn.style.display = 'none';
+            let c = parseInt(localStorage.getItem('focusSessions') || '0', 10);
+            c++;
+            localStorage.setItem('focusSessions', String(c));
+            if (countElement) countElement.textContent = c;
+            remaining = durationSec;
+        }
+    }
     function start() {
         if (running) return;
         running = true;
         startBtn.style.display = 'none';
         resetBtn.style.display = '';
         completeBanner.style.display = 'none';
-        intervalId = setInterval(function() {
-            remaining--;
-            if (remaining <= 0) {
-                clearInterval(intervalId);
-                running = false;
-                remaining = 0;
-                render();
-                if (breakAlarm && breakAlarm.checked) beep();
-                completeBanner.style.display = '';
-                startBtn.style.display = '';
-                resetBtn.style.display = 'none';
-                let c = parseInt(localStorage.getItem('focusSessions') || '0', 10);
-                c++;
-                localStorage.setItem('focusSessions', String(c));
-                if (countElement) countElement.textContent = c;
-                remaining = durationSec;
-            } else {
-                render();
-            }
-        }, 1000);
+        endTimestamp = Date.now() + remaining * 1000;
+        intervalId = setInterval(tick, 250);
     }
     function reset() {
         clearInterval(intervalId);
         running = false;
+        endTimestamp = null;
         remaining = durationSec;
         render();
         startBtn.style.display = '';

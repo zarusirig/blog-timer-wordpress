@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Plank Timer &mdash; Hold Goals from Beginner to World Record</h1>
         <p class="page-intro">Time your plank hold with the most common 60-second target as the default. Presets for beginner (15&ndash;30s), intermediate (60s), advanced (3+ minutes), and the world-record context.</p>

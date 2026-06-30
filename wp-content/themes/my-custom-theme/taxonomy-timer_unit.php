@@ -15,7 +15,7 @@ $bucket_terms = blogtimer_get_taxonomy_terms('timer_bucket', blogtimer_get_bucke
 $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 'cooking', 'exercise', 'meditation', 'studying']);
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="container">
         <header class="section-header">
             <h1 class="page-h1"><?php echo esc_html($unit_label); ?> Timers</h1>

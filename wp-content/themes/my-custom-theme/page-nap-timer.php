@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Nap Timer — Power Nap Durations That Actually Work</h1>
         <p class="page-intro">Set the scientifically optimal nap duration to wake up refreshed — not groggy. Choose from proven power nap lengths based on sleep science.</p>

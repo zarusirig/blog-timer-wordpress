@@ -370,34 +370,10 @@ class Timer_Engine
             echo '<meta name="description" content="' . esc_attr($meta_desc) . '">' . "\n";
         }
 
-        // Core already prints canonical for singular content, so we print for non-singular contexts only.
-        $canonical = $this->get_context_canonical_url();
-        if (!is_singular() && $canonical) {
-            echo '<link rel="canonical" href="' . esc_url($canonical) . '">' . "\n";
-        }
-
-        $title = wp_get_document_title();
-        $social_desc = $meta_desc ?: get_bloginfo('description');
-        $social_url = $canonical ?: (is_singular() ? get_permalink() : home_url(''));
-        $og_type = (is_front_page() || is_home() || is_archive()) ? 'website' : 'article';
-        $site_name = get_bloginfo('name');
-        $image = get_site_icon_url(512);
-
-        echo '<meta property="og:type" content="' . esc_attr($og_type) . '">' . "\n";
-        echo '<meta property="og:title" content="' . esc_attr($title) . '">' . "\n";
-        echo '<meta property="og:description" content="' . esc_attr($social_desc) . '">' . "\n";
-        echo '<meta property="og:url" content="' . esc_url($social_url) . '">' . "\n";
-        echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '">' . "\n";
-
-        if ($image) {
-            echo '<meta property="og:image" content="' . esc_url($image) . '">' . "\n";
-            echo '<meta name="twitter:image" content="' . esc_url($image) . '">' . "\n";
-        }
-
-        echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
-        echo '<meta name="twitter:title" content="' . esc_attr($title) . '">' . "\n";
-        echo '<meta name="twitter:description" content="' . esc_attr($social_desc) . '">' . "\n";
-        echo '<meta name="twitter:url" content="' . esc_url($social_url) . '">' . "\n";
+        // NOTE: canonical, Open Graph, and Twitter Card tags are emitted by the
+        // THEME (functions.php), which owns the complete, de-duplicated meta set.
+        // The plugin intentionally contributes ONLY the per-context meta description
+        // above to avoid duplicate og:description / canonical / twitter tags.
     }
 
     /**

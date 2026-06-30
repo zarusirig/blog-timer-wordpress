@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Timer for Remote Workers — Work-From-Home Productivity</h1>
         <p class="page-intro">Structure your remote workday with timed focus blocks, scheduled breaks, and meeting timers. Build discipline and boundaries when your home is your office.</p>

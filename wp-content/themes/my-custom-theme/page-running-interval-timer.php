@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Running Interval Timer &mdash; Track Workouts and Tempo Runs</h1>
         <p class="page-intro">Time your 400s, 800s, mile splits, fartlek surges, Yasso 800s, and tempo runs. Default to the 800-meter interval that anchors most marathon and 5K training plans.</p>

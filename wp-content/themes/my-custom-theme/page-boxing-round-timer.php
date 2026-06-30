@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Boxing Round Timer &mdash; Pro &amp; Amateur Round Lengths</h1>
         <p class="page-intro">A boxing round timer pre-configured for the standard 3-minute work / 1-minute rest format used in professional bouts, with presets for amateur, pro, and MMA rules.</p>

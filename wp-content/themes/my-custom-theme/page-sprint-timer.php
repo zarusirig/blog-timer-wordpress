@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Sprint Timer — Focused Work Sprints</h1>
         <p class="page-intro">Time-box your work into focused sprints with clear start and end points. Beat procrastination and build momentum with structured productivity intervals.</p>

@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Egg Timer — Soft, Medium, and Hard-Boiled</h1>
         <p class="page-intro">Get perfectly cooked eggs every time. Set your egg timer by doneness level — from runny soft-boiled to firm hard-boiled.</p>

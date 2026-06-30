@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Study Timer &mdash; Built on Spaced Practice and Deliberate Practice Research</h1>
         <p class="page-intro">A study timer with 25, 50, and 90-minute presets and a local study log. Designed around what cognitive psychology and education research actually say about learning &mdash; not productivity folklore.</p>
@@ -340,6 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let remaining = durationSec;
     let intervalId = null;
     let running = false;
+    let endTimestamp = null; // timestamp-based timing (survives tab sleep)
 
     function todayKey() {
         const d = new Date();
@@ -387,39 +388,42 @@ document.addEventListener('DOMContentLoaded', function() {
             o.start(); o.stop(ctx.currentTime + 1.0);
         } catch (e) {}
     }
+    function tick() {
+        if (!running || !endTimestamp) return;
+        remaining = Math.max(0, Math.ceil((endTimestamp - Date.now()) / 1000));
+        render();
+        if (remaining <= 0) {
+            clearInterval(intervalId);
+            running = false;
+            endTimestamp = null;
+            beep();
+            completeBanner.style.display = '';
+            startBtn.style.display = '';
+            resetBtn.style.display = 'none';
+            const arr = loadLog();
+            const now = new Date();
+            arr.push({
+                minutes: Math.round(durationSec / 60),
+                time: String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0')
+            });
+            saveLog(arr);
+            renderLog();
+            remaining = durationSec;
+        }
+    }
     function start() {
         if (running) return;
         running = true;
         startBtn.style.display = 'none';
         resetBtn.style.display = '';
         completeBanner.style.display = 'none';
-        intervalId = setInterval(function() {
-            remaining--;
-            if (remaining <= 0) {
-                clearInterval(intervalId);
-                running = false;
-                render();
-                beep();
-                completeBanner.style.display = '';
-                startBtn.style.display = '';
-                resetBtn.style.display = 'none';
-                const arr = loadLog();
-                const now = new Date();
-                arr.push({
-                    minutes: Math.round(durationSec / 60),
-                    time: String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0')
-                });
-                saveLog(arr);
-                renderLog();
-                remaining = durationSec;
-            } else {
-                render();
-            }
-        }, 1000);
+        endTimestamp = Date.now() + remaining * 1000;
+        intervalId = setInterval(tick, 250);
     }
     function reset() {
         clearInterval(intervalId);
         running = false;
+        endTimestamp = null;
         remaining = durationSec;
         render();
         startBtn.style.display = '';

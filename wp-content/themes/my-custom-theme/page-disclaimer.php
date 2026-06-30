@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="content-page">
+<main id="main" tabindex="-1" class="content-page">
     <div class="container">
 
         <h1>Disclaimer</h1>

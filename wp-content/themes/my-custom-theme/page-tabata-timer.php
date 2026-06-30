@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Tabata Timer with Audio Cues &mdash; 8 Rounds of 20s/10s</h1>
         <p class="page-intro">A real Tabata interval timer: 8 rounds of 20 seconds work and 10 seconds rest, with distinct audio beeps for each transition. Customize rounds and work-rest ratios. Built around what Tabata's 1996 paper (PMID 8897392) actually proved &mdash; not what the internet says it proved.</p>
@@ -29,7 +29,7 @@ get_header();
 
     <!-- HERO TABATA TIMER -->
     <div class="container">
-        <div class="timer-widget timer-widget--hero tabata-timer-widget"
+        <div id="top" class="timer-widget timer-widget--hero tabata-timer-widget"
              data-work="20"
              data-rest="10"
              data-rounds="8">
@@ -253,7 +253,7 @@ get_header();
                 ['q' => 'Does the audio cue play on mobile?', 'a' => 'Yes, but browsers require an initial user gesture to enable audio. Pressing the Start button unlocks the audio context; subsequent beeps then play automatically across all rounds.'],
                 ['q' => 'Why does my timer say "Ready" before starting?', 'a' => 'The timer waits in a Ready state so you can mentally prepare and assume your starting position. Pressing Start begins the first 20-second work interval immediately, accompanied by the high-pitched "Go" beep.'],
             ];
-            echo blogtimer_render_faq($faqs);
+            blogtimer_render_faq($faqs);
             ?>
         </div>
     </section>
@@ -312,6 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let phase = 'idle'; // idle | work | rest | done
     let remaining = workSec;
     let intervalId = null;
+    let phaseEndTimestamp = null; // timestamp-based timing (survives tab sleep)
 
     let audioCtx = null;
     function ensureAudio() {
@@ -366,17 +367,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function startInterval() {
         clearInterval(intervalId);
-        intervalId = setInterval(tick, 1000);
+        intervalId = setInterval(tick, 250);
     }
 
     function tick() {
-        remaining--;
-        if (phase === 'work' && remaining <= 3 && remaining > 0) beepTick();
+        if (!phaseEndTimestamp) return;
+        var now = Date.now();
+        var prev = remaining;
+        remaining = Math.max(0, Math.ceil((phaseEndTimestamp - now) / 1000));
+        // Countdown ticks during the final 3s of work (fire once per new second)
+        if (phase === 'work' && remaining > 0 && remaining <= 3 && remaining !== prev) {
+            beepTick();
+        }
         if (remaining <= 0) {
             if (phase === 'work') {
                 if (currentRound >= totalRounds) {
                     // workout done
                     clearInterval(intervalId);
+                    phaseEndTimestamp = null;
                     phase = 'done';
                     remaining = 0;
                     render();
@@ -388,11 +396,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 phase = 'rest';
                 remaining = restSec;
+                phaseEndTimestamp = Date.now() + remaining * 1000;
                 beepRest();
             } else if (phase === 'rest') {
                 currentRound++;
                 phase = 'work';
                 remaining = workSec;
+                phaseEndTimestamp = Date.now() + remaining * 1000;
                 beepGo();
             }
         }
@@ -405,6 +415,7 @@ document.addEventListener('DOMContentLoaded', function() {
             currentRound = 1;
             phase = 'work';
             remaining = workSec;
+            phaseEndTimestamp = Date.now() + remaining * 1000;
             render();
             beepGo();
             startBtn.style.display = 'none';
@@ -415,6 +426,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     function resetWorkout() {
         clearInterval(intervalId);
+        phaseEndTimestamp = null;
         phase = 'idle';
         currentRound = 0;
         remaining = workSec;

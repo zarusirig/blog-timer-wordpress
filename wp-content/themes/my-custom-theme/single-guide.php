@@ -102,7 +102,7 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
 }
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="container container--narrow">
 
         <!-- BREADCRUMBS -->

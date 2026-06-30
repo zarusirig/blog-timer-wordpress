@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">World Clock &mdash; Live Time in Any City, Any Timezone</h1>
         <p class="page-intro">A live world clock showing current time in any IANA timezone. Six default cities, add your own, every clock updates every second. Uses <code>Intl.DateTimeFormat</code> with the official tz database &mdash; no API key, no signup.</p>
@@ -27,6 +27,9 @@ get_header();
         </div>
     </div>
 
+    <style>
+        .world-clock-msg{font-size:0.8125rem;color:#ff6b6b;margin-top:0.35rem;min-height:1.1em;line-height:1.3;}
+    </style>
     <!-- WORLD CLOCK WIDGET -->
     <div class="container">
         <div style="margin-top:var(--space-6);display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:end;">
@@ -273,7 +276,7 @@ get_header();
         function render() {
             grid.innerHTML = cities.map(function(c, i) {
                 return '<div class="card" style="padding:var(--space-4);text-align:center;position:relative;">'
-                    + '<button onclick="worldClock.remove(' + i + ')" style="position:absolute;top:0.5rem;right:0.5rem;background:none;border:none;color:var(--color-text-muted);cursor:pointer;font-size:1.25rem;line-height:1;" title="Remove city">&times;</button>'
+                    + '<button data-remove="' + i + '" style="position:absolute;top:0.5rem;right:0.5rem;background:none;border:none;color:var(--color-text-muted);cursor:pointer;font-size:1.25rem;line-height:1;padding:0.5rem;" title="Remove city" aria-label="Remove ' + escapeHtml(c.city) + '">&times;</button>'
                     + '<div style="font-size:0.875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);">' + escapeHtml(c.city) + '</div>'
                     + '<div class="wc-time" data-tz="' + escapeHtml(c.tz) + '" style="font-size:clamp(1.75rem,4vw,2.25rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-primary);margin:0.25rem 0;">--:--:--</div>'
                     + '<div class="wc-date" data-tz="' + escapeHtml(c.tz) + '" style="font-size:0.8125rem;color:var(--color-text-secondary);"></div>'
@@ -315,12 +318,12 @@ get_header();
                     new Intl.DateTimeFormat([], { timeZone: val });
                     entry = { city: val.split('/').pop().replace(/_/g, ' '), tz: val };
                 } catch (e) {
-                    alert('Unknown city or timezone: ' + val);
+                    showMsg('Unknown city or timezone: ' + val);
                     return;
                 }
             }
             if (cities.find(c => c.tz === entry.tz)) {
-                alert('That city is already on the list.');
+                showMsg('That city is already on the list.');
                 return;
             }
             cities.push(entry);
@@ -340,6 +343,27 @@ get_header();
             saveCities();
             render();
         }
+
+        // Inline status message (replaces blocking alert()).
+        var msgEl = document.createElement('div');
+        msgEl.setAttribute('role', 'alert');
+        msgEl.setAttribute('aria-live', 'assertive');
+        msgEl.style.cssText = 'color:var(--color-error,#ef4444);font-size:0.875rem;margin-top:0.5rem;min-height:1.25em;';
+        searchInput.parentNode.insertBefore(msgEl, searchInput.nextSibling);
+        var msgTimer = null;
+        function showMsg(text) {
+            msgEl.textContent = text;
+            clearTimeout(msgTimer);
+            msgTimer = setTimeout(function () { msgEl.textContent = ''; }, 4000);
+        }
+
+        // Event delegation for remove buttons (no inline onclick).
+        grid.addEventListener('click', function (e) {
+            var btn = e.target.closest('[data-remove]');
+            if (!btn) return;
+            var idx = parseInt(btn.getAttribute('data-remove'), 10);
+            if (!isNaN(idx)) remove(idx);
+        });
 
         searchInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') { e.preventDefault(); addFromInput(); }

@@ -12,7 +12,7 @@ $exercise_usecase_url = blogtimer_get_term_url_by_slug('timer_usecase', 'exercis
 $pomodoro_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'pomodoro');
 ?>
 
-<main class="content-page">
+<main id="main" tabindex="-1" class="content-page">
     <div class="container">
         <h1 class="page-h1">Frequently Asked Questions</h1>
 

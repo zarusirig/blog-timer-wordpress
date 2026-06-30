@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="content-page">
         <article class="page-content container container--narrow">
 

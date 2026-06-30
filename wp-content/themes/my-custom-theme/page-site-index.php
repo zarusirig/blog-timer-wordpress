@@ -29,18 +29,35 @@ function blogtimer_sitemap_timer_list($timers, $unit_singular)
         echo '<p>No ' . esc_html($unit_singular) . ' timers found.</p>';
         return;
     }
-    echo '<ul class="sitemap-list" style="columns:200px;column-gap:var(--space-6,2rem);list-style:none;padding:0;">';
-    foreach ($timers as $t) {
-        $post = $t['post'];
-        $value = (int) $t['value'];
-        $label = $value . ' ' . $unit_singular . ($value === 1 ? '' : 's');
-        printf(
-            '<li style="break-inside:avoid;margin-bottom:0.35rem;"><a href="%s">%s timer</a></li>',
-            esc_url(get_permalink($post->ID)),
-            esc_html($label)
-        );
+
+    /*
+     * Progressive rendering for mobile DOM weight: every link stays in the
+     * server-rendered HTML (fully crawlable for SEO), but off-screen groups
+     * are skipped by the browser's paint pipeline via content-visibility.
+     * No JS, no pagination, no caps. The first group renders normally; later
+     * groups reserve a placeholder (contain-intrinsic-size) and only paint
+     * when scrolled near the viewport.
+     */
+    $groups = array_chunk($timers, 40);
+    foreach ($groups as $index => $group) {
+        $chunk_style = ($index > 0)
+            ? 'content-visibility:auto;contain-intrinsic-size:auto 600px;margin-top:var(--space-5,1.5rem);'
+            : '';
+        ?>
+        <div class="sitemap-chunk"<?php echo $chunk_style ? ' style="' . esc_attr($chunk_style) . '"' : ''; ?>>
+            <ul class="sitemap-list" style="columns:200px;column-gap:var(--space-6,2rem);list-style:none;padding:0;margin:0;">
+                <?php foreach ($group as $t):
+                    $post  = $t['post'];
+                    $value = (int) $t['value'];
+                    $label = $value . ' ' . $unit_singular . ($value === 1 ? '' : 's'); ?>
+                    <li style="break-inside:avoid;margin-bottom:0.35rem;">
+                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html($label); ?> timer</a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php
     }
-    echo '</ul>';
 }
 
 /**
@@ -146,7 +163,7 @@ $trust_pages = [
 ];
 ?>
 
-<main class="site-main">
+<main id="main" tabindex="-1" class="site-main">
     <div class="container">
         <?php
         blogtimer_render_breadcrumb_nav([
@@ -233,7 +250,7 @@ $trust_pages = [
                         continue; // no heading for an empty cluster
                     }
                     ?>
-                    <div class="content-page" style="margin-bottom:var(--space-6,2rem);">
+                    <div class="content-page" style="margin-bottom:var(--space-6,2rem);content-visibility:auto;contain-intrinsic-size:auto 600px;">
                         <h3><?php echo esc_html($cluster->name); ?></h3>
                         <ul class="sitemap-list" style="list-style:none;padding:0;">
                             <?php foreach ($cluster_guides as $guide):
@@ -257,7 +274,7 @@ $trust_pages = [
                 'post__not_in'   => !empty($listed_guide_ids) ? array_unique($listed_guide_ids) : [0],
             ]);
             if (!empty($unclustered)): ?>
-                <div class="content-page" style="margin-bottom:var(--space-6,2rem);">
+                <div class="content-page" style="margin-bottom:var(--space-6,2rem);content-visibility:auto;contain-intrinsic-size:auto 600px;">
                     <h3>Other Guides</h3>
                     <ul class="sitemap-list" style="list-style:none;padding:0;">
                         <?php foreach ($unclustered as $guide): ?>

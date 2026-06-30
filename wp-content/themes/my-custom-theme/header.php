@@ -90,10 +90,10 @@
             line-height: 1.25;
         }
 
-        /* ---- Mobile: fold the mega panel back into the accordion ---- */
+        /* ---- Mobile: silo accordion (caret-toggled), default-collapsed ---- */
         @media (max-width: 768px) {
             .primary-nav .nav-submenu.mega-panel {
-                display: block;
+                display: none;
                 grid-template-columns: 1fr;
                 min-width: 0;
                 max-width: none;
@@ -105,8 +105,8 @@
                 display: none;
             }
 
-            .primary-nav .nav-item--has-submenu:hover > .nav-submenu.mega-panel,
-            .primary-nav .nav-item--has-submenu:focus-within > .nav-submenu.mega-panel {
+            /* Expanded only when the caret toggles .submenu-open on the parent <li>. */
+            .primary-nav .nav-item--has-submenu.submenu-open > .nav-submenu.mega-panel {
                 display: block;
             }
 
@@ -125,16 +125,18 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
         <div class="container header-inner">
             <a href="<?php echo esc_url(home_url('')); ?>" class="site-brand">
-                <span class="brand-icon">&#9201;</span>
+                <span class="brand-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/><path d="M12 5V2"/></svg></span>
                 <span><?php echo esc_html(Timer_Content_Loader::get_instance()->get_string('brand.name') ?: 'The Blog Timer'); ?></span>
             </a>
 
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span>&#9776;</span>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+                <svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
             </button>
 
             <nav aria-label="Primary">
@@ -145,7 +147,8 @@
                     <!-- Silo 1: Focus &amp; Productivity (Quality Nodes — productivity FIRST) -->
                     <li class="nav-item--has-submenu">
                         <a href="<?php echo esc_url(home_url('/pomodoro/')); ?>" <?php echo (is_page(['pomodoro', 'focus-timer', 'study-timer', 'study-work-timers', 'interval-timer'])) ? 'class="active"' : ''; ?>>Focus &amp; Productivity</a>
-                        <ul class="nav-submenu mega-panel">
+                        <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <ul class="nav-submenu mega-panel">
                             <li class="mega-section-label">Focus &amp; Study Timers</li>
                             <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Pomodoro Timer</a></li>
                             <li><a href="<?php echo esc_url(home_url('/focus-timer/')); ?>">Deep Work &amp; Focus Timer</a></li>
@@ -161,7 +164,8 @@
                     <!-- Silo 2: Timers by Duration -->
                     <li class="nav-item--has-submenu">
                         <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>" <?php echo (is_page(['minute-timers', 'second-timers', 'hour-timers', 'use-cases']) || is_tax('timer_unit') || is_tax('timer_bucket') || is_tax('timer_usecase')) ? 'class="active"' : ''; ?>>Timers by Duration</a>
-                        <ul class="nav-submenu mega-panel mega-panel--single">
+                        <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <ul class="nav-submenu mega-panel mega-panel--single">
                             <li class="mega-section-label">Set a Timer by Length</li>
                             <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/minute-timers/')); ?>">Minute Timers (1&ndash;161 min)</a></li>
                             <li><a href="<?php echo esc_url(home_url('/second-timers/')); ?>">Second Timers (1&ndash;60 sec)</a></li>
@@ -173,7 +177,8 @@
                     <!-- Silo 3: Cooking Timers -->
                     <li class="nav-item--has-submenu">
                         <a href="<?php echo esc_url(home_url('/cooking-timers/')); ?>" <?php echo (is_page(['cooking-timers', 'egg-timer', 'pasta-timer', 'tea-timer', 'coffee-timer', 'steak-timer', 'rice-timer', 'turkey-timer'])) ? 'class="active"' : ''; ?>>Cooking Timers</a>
-                        <ul class="nav-submenu mega-panel">
+                        <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <ul class="nav-submenu mega-panel">
                             <li class="mega-section-label">Kitchen &amp; Cooking Timers</li>
                             <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/cooking-timers/')); ?>">All Cooking Timers</a></li>
                             <li><a href="<?php echo esc_url(home_url('/egg-timer/')); ?>">Egg Timer</a></li>
@@ -189,7 +194,8 @@
                     <!-- Silo 4: Workout &amp; Interval Timers -->
                     <li class="nav-item--has-submenu">
                         <a href="<?php echo esc_url(home_url('/workout-timers/')); ?>" <?php echo (is_page(['workout-timers', 'hiit-timer', 'tabata-timer', 'boxing-round-timer', 'emom-timer', 'crossfit-amrap-timer', 'plank-timer', 'yoga-timer'])) ? 'class="active"' : ''; ?>>Workout &amp; Interval Timers</a>
-                        <ul class="nav-submenu mega-panel">
+                        <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <ul class="nav-submenu mega-panel">
                             <li class="mega-section-label">HIIT, Tabata &amp; Interval Timers</li>
                             <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/workout-timers/')); ?>">All Workout Timers</a></li>
                             <li><a href="<?php echo esc_url(home_url('/hiit-timer/')); ?>">HIIT Timer</a></li>
@@ -205,7 +211,8 @@
                     <!-- Silo 5: Sleep &amp; Meditation -->
                     <li class="nav-item--has-submenu nav-align-right">
                         <a href="<?php echo esc_url(home_url('/sleep-meditation-timers/')); ?>" <?php echo (is_page(['sleep-meditation-timers', 'nap-timer', 'sleep-timer'])) ? 'class="active"' : ''; ?>>Sleep &amp; Meditation</a>
-                        <ul class="nav-submenu mega-panel mega-panel--single">
+                        <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <ul class="nav-submenu mega-panel mega-panel--single">
                             <li class="mega-section-label">Sleep &amp; Meditation Timers</li>
                             <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/sleep-meditation-timers/')); ?>">Sleep &amp; Meditation Timers</a></li>
                             <li><a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">Power Nap Timer</a></li>
@@ -216,7 +223,8 @@
                     <!-- Silo 6: Clocks &amp; Tools -->
                     <li class="nav-item--has-submenu nav-align-right">
                         <a href="<?php echo esc_url(home_url('/stopwatch-clock-tools/')); ?>" <?php echo (is_page(['stopwatch-clock-tools', 'stopwatch', 'online-alarm-clock', 'countdown-timer', 'world-clock'])) ? 'class="active"' : ''; ?>>Clocks &amp; Tools</a>
-                        <ul class="nav-submenu mega-panel mega-panel--single">
+                        <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <ul class="nav-submenu mega-panel mega-panel--single">
                             <li class="mega-section-label">Stopwatch &amp; Clock Tools</li>
                             <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/stopwatch-clock-tools/')); ?>">Stopwatch &amp; Clock Tools</a></li>
                             <li><a href="<?php echo esc_url(home_url('/stopwatch/')); ?>">Online Stopwatch</a></li>
@@ -229,7 +237,8 @@
                     <!-- Silo 7: Guides (evidence-based / methodology trust node) -->
                     <li class="nav-item--has-submenu nav-align-right">
                         <a href="<?php echo esc_url(home_url('/guides/')); ?>" <?php echo (is_post_type_archive('guide') || is_singular('guide') || is_page(['methodology', 'sources', 'site-index'])) ? 'class="active"' : ''; ?>>Guides</a>
-                        <ul class="nav-submenu mega-panel mega-panel--single">
+                        <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <ul class="nav-submenu mega-panel mega-panel--single">
                             <li class="mega-section-label">Evidence-Based Timing Guides</li>
                             <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/guides/')); ?>">All Timer Guides</a></li>
                             <li><a href="<?php echo esc_url(home_url('/methodology/')); ?>">Timer Accuracy &amp; Methodology</a></li>

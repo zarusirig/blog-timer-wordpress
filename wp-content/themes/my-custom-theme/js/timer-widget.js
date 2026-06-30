@@ -200,7 +200,7 @@
 
             this.intervalId = setInterval(function() {
                 self.tick();
-            }, 100); // check every 100ms for smooth updates
+            }, 250); // 250ms — smooth for a seconds-precision display, lighter on CPU/battery
         },
 
         /**
@@ -232,7 +232,7 @@
             this.startBtn.textContent = 'Start';
             if (this.completeBanner) this.completeBanner.classList.remove('visible');
             this.display.classList.remove('timer-complete');
-            document.title = document.title.replace(/^\d{2}:\d{2} — /, '');
+            document.title = this.stripTitlePrefix();
             this.clearState();
         },
 
@@ -248,11 +248,9 @@
             this.updateDisplay(remaining);
             this.updateProgress(remaining / this.durationSeconds);
 
-            // Update document title
-            var mins = Math.floor(remaining / 60);
-            var secs = remaining % 60;
-            var timeStr = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
-            var baseTitle = document.title.replace(/^\d{2}:\d{2} — /, '');
+            // Update document title (HH:MM:SS for >=1h so the strip regex always matches)
+            var timeStr = this.titleTimeFormat(remaining);
+            var baseTitle = this.stripTitlePrefix();
             if (remaining > 0) {
                 document.title = timeStr + ' — ' + baseTitle;
             }
@@ -280,7 +278,7 @@
             if (this.completeBanner) this.completeBanner.classList.add('visible');
 
             // Restore document title
-            document.title = document.title.replace(/^\d{2}:\d{2} — /, '');
+            document.title = this.stripTitlePrefix();
 
             this.playSound();
             this.clearState();
@@ -306,12 +304,56 @@
          * Play completion sound.
          */
         playSound: function() {
+            var self = this;
             if (this.audio) {
                 this.audio.currentTime = 0;
                 this.audio.play().catch(function() {
-                    // Browser autoplay policy — user gesture required
+                    // Browser autoplay policy / load failure — fall back to WebAudio beep.
+                    self.beep();
                 });
+            } else {
+                self.beep();
             }
+        },
+
+        /**
+         * WebAudio fallback beep (no asset needed). Mirrors hub-timer.js.
+         */
+        beep: function() {
+            try {
+                var AC = window.AudioContext || window.webkitAudioContext;
+                if (!AC) return;
+                var ac = new AC(), o = ac.createOscillator(), g = ac.createGain();
+                o.connect(g); g.connect(ac.destination);
+                o.type = 'sine'; o.frequency.value = 880; g.gain.value = 0.12;
+                o.start();
+                setTimeout(function() { o.stop(); ac.close(); }, 600);
+            } catch (e) { /* WebAudio unavailable */ }
+        },
+
+        /**
+         * Format remaining seconds for the document title.
+         * Uses HH:MM:SS for >=1h durations so the strip regex always matches
+         * (the old MM:SS builder produced 3-digit minutes for >=1h, which broke
+         * the strip and made the title accumulate a new prefix every tick).
+         */
+        titleTimeFormat: function(totalSeconds) {
+            totalSeconds = Math.max(0, Math.floor(totalSeconds));
+            var useHours = (this.durationSeconds >= 3600) || (totalSeconds >= 3600);
+            function p(n) { return String(n).padStart(2, '0'); }
+            if (useHours) {
+                return p(Math.floor(totalSeconds / 3600)) + ':' +
+                       p(Math.floor((totalSeconds % 3600) / 60)) + ':' +
+                       p(totalSeconds % 60);
+            }
+            return p(Math.floor(totalSeconds / 60)) + ':' + p(totalSeconds % 60);
+        },
+
+        /**
+         * Remove any leading "MM:SS — " / "HH:MM:SS — " countdown prefix from the title.
+         */
+        stripTitlePrefix: function() {
+            return document.title.replace(/^\d{1,3}:\d{2}(:\d{2})? — /, '');
         },
 
         /**
@@ -386,7 +428,7 @@
                         this.isRunning = true;
                         this.startBtn.textContent = 'Pause';
                         var self = this;
-                        this.intervalId = setInterval(function() { self.tick(); }, 100);
+                        this.intervalId = setInterval(function() { self.tick(); }, 250);
                     } else {
                         // Timer already completed while away
                         this.complete();
@@ -415,9 +457,15 @@
         initKeyboardShortcuts: function() {
             var self = this;
             document.addEventListener('keydown', function(e) {
-                // Ignore when typing in inputs/textareas
+                // Ignore when typing in inputs/textareas/contenteditable
                 var tag = e.target.tagName.toLowerCase();
-                if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+                if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+
+                // Don't hijack Space/R/F while another interactive control is focused
+                // (FAQ toggles, cookie banner, scroll-top, links, etc.) — let it act natively.
+                var isInteractive = tag === 'button' || tag === 'a' || tag === 'summary' ||
+                    e.target.getAttribute('role') === 'button';
+                if (isInteractive && (e.code === 'Space' || e.code === 'KeyR' || e.code === 'KeyF')) return;
 
                 switch (e.code) {
                     case 'Space':
@@ -484,7 +532,13 @@
             if (!this.fullscreenOverlay) return;
             this.isFullscreen = true;
             this.fullscreenOverlay.classList.add('active');
+            this.fullscreenOverlay.setAttribute('role', 'dialog');
+            this.fullscreenOverlay.setAttribute('aria-modal', 'true');
+            this.fullscreenOverlay.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
+
+            // Move focus into the dialog (close button) for keyboard/SR users.
+            if (this.fullscreenCloseBtn) this.fullscreenCloseBtn.focus();
 
             // Sync current display
             if (this.fullscreenDisplay && this.display) {
@@ -504,7 +558,11 @@
             if (!this.fullscreenOverlay) return;
             this.isFullscreen = false;
             this.fullscreenOverlay.classList.remove('active');
+            this.fullscreenOverlay.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            // Return focus to the trigger so keyboard users keep their place.
+            var trigger = document.getElementById('timer-fullscreen');
+            if (trigger) trigger.focus();
         }
     };
 

@@ -9,7 +9,7 @@ get_header();
 $loader = Timer_Content_Loader::get_instance();
 ?>
 
-<main class="site-main content-page">
+<main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1"><?php echo esc_html($loader->get_string('hub.pomodoro.h1')); ?></h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
