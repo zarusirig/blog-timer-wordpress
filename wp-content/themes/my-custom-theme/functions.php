@@ -1879,7 +1879,7 @@ add_action('wp_footer', function () {
             z-index: 99999;
             background: var(--color-surface, #1a1a2e);
             border-top: 2px solid var(--color-primary, #6c63ff);
-            padding: 1rem 0;
+            padding: 1rem 0 calc(1rem + env(safe-area-inset-bottom));
             box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
         }
         .cookie-consent__inner {
@@ -1912,8 +1912,11 @@ add_action('wp_footer', function () {
             flex-shrink: 0;
         }
         @media (max-width: 640px) {
-            .cookie-consent__inner { flex-direction: column; text-align: center; }
-            .cookie-consent__actions { width: 100%; justify-content: center; }
+            .cookie-consent__inner { flex-direction: column; text-align: left; align-items: stretch; gap: 1rem; padding: 0 1rem; }
+            .cookie-consent__text { min-width: 0; text-align: left; }
+            /* Stack the buttons full-width so "Accept All" is large and always fully visible. */
+            .cookie-consent__actions { width: 100%; flex-direction: column; gap: 0.5rem; }
+            .cookie-consent__actions .btn { width: 100%; }
         }
     </style>
     <script>
