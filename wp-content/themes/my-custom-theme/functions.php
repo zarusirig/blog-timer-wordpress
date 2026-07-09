@@ -48,16 +48,12 @@ add_action('after_setup_theme', 'blogtimer_set_default_blogdescription');
  */
 function blogtimer_enqueue_assets()
 {
-    // Google Fonts: Inter + JetBrains Mono
-    wp_enqueue_style(
-        'blogtimer-fonts',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap',
-        [],
-        null
-    );
+    // Fonts are SELF-HOSTED variable fonts (see blogtimer_inline_font_faces) —
+    // the old render-blocking fonts.googleapis.com stylesheet and both Google
+    // origins are gone from the critical path entirely.
 
     // Main stylesheet
-    wp_enqueue_style('blogtimer-style', get_stylesheet_uri(), ['blogtimer-fonts'], TIMER_ENGINE_VERSION ?? '2.0.0');
+    wp_enqueue_style('blogtimer-style', get_stylesheet_uri(), [], TIMER_ENGINE_VERSION ?? '2.0.0');
 
     // Mobile navigation
     wp_enqueue_script('blogtimer-mobile-nav', get_template_directory_uri() . '/js/mobile-nav.js', [], '2.0.0', [
@@ -121,6 +117,33 @@ function blogtimer_enqueue_assets()
     ]);
 }
 add_action('wp_enqueue_scripts', 'blogtimer_enqueue_assets');
+
+/**
+ * Self-hosted variable fonts: preload + inline @font-face, emitted at the very
+ * top of <head> (priority 0) so font fetches start before the stylesheet parses.
+ *
+ * One variable woff2 per family replaces the 7 static files Google served:
+ * Inter covers weights 400-800, JetBrains Mono 400-700 (latin subset, v20/v24
+ * from fonts.gstatic.com, vendored 2026-07-10). font-display: swap keeps text
+ * visible during load; the latin unicode-range lets non-latin glyphs fall
+ * through to the system stack instead of forcing a font download.
+ */
+function blogtimer_inline_font_faces()
+{
+    $fonts_uri = get_template_directory_uri() . '/fonts';
+    $ver = 'v1'; // bump when font files change — assets are cached for 1 year
+    $inter = esc_url($fonts_uri . '/inter-var-latin.woff2?ver=' . $ver);
+    $mono = esc_url($fonts_uri . '/jetbrains-mono-var-latin.woff2?ver=' . $ver);
+    $latin_range = 'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD';
+
+    echo '<link rel="preload" href="' . $inter . '" as="font" type="font/woff2" crossorigin>' . "\n";
+    echo '<link rel="preload" href="' . $mono . '" as="font" type="font/woff2" crossorigin>' . "\n";
+    echo '<style id="blogtimer-fonts">'
+        . "@font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:url({$inter}) format('woff2');unicode-range:{$latin_range};}"
+        . "@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url({$mono}) format('woff2');unicode-range:{$latin_range};}"
+        . '</style>' . "\n";
+}
+add_action('wp_head', 'blogtimer_inline_font_faces', 0);
 
 /**
  * Remove WordPress frontend assets that the classic theme does not use.
@@ -468,12 +491,21 @@ function blogtimer_redirect_legacy_migration_urls()
     if (preg_match('#^/item/(\d+)#', $path, $m)) {
         $post_id = (int) $m[1];
         $permalink = $post_id > 0 ? get_permalink($post_id) : false;
-        // Only redirect to a published, public permalink; otherwise let it 404.
         if ($permalink && get_post_status($post_id) === 'publish') {
             wp_safe_redirect($permalink, 301);
             exit;
         }
-        return;
+        // The ID doesn't exist in this install (legacy IDs from the pre-migration
+        // site). Serve 410 Gone instead of 404: Google de-indexes 410s faster and
+        // stops re-crawling them, reclaiming the crawl budget these URLs burn.
+        status_header(410);
+        nocache_headers();
+        header('Content-Type: text/html; charset=UTF-8');
+        echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="robots" content="noindex"><title>410 Gone</title></head>'
+            . '<body><h1>410 — This page has been permanently removed</h1>'
+            . '<p>Try the <a href="' . esc_url(home_url('/')) . '">free online timer</a> or browse the <a href="' . esc_url(home_url('/guides')) . '">timing guides</a>.</p>'
+            . '</body></html>';
+        exit;
     }
 
     // Pattern 2: /guide-cluster/* -> /guides/ hub, or homepage as a fallback.
@@ -1192,14 +1224,32 @@ add_action('parse_request', function ($wp) {
     echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 
-    // Add homepage
-    echo '  <url><loc>' . esc_url(home_url('/')) . '</loc></url>' . "\n";
+    // Accurate <lastmod> tells Google which URLs actually changed so re-crawl
+    // budget goes to fresh content first. Only emit dates we genuinely track
+    // (post_modified_gmt) — fabricated lastmod values teach Google to ignore them.
+    $sitemap_url = static function ($loc, $modified_gmt = '') {
+        $lastmod = '';
+        if ($modified_gmt && $modified_gmt !== '0000-00-00 00:00:00') {
+            $lastmod = '<lastmod>' . esc_html(gmdate('Y-m-d', strtotime($modified_gmt))) . '</lastmod>';
+        }
+        echo '  <url><loc>' . esc_url($loc) . '</loc>' . $lastmod . '</url>' . "\n";
+    };
+
+    // Homepage: lastmod = most recently modified content anywhere on the site.
+    $latest = get_posts([
+        'post_type' => ['timer', 'guide', 'page'],
+        'post_status' => 'publish',
+        'posts_per_page' => 1,
+        'orderby' => 'modified',
+        'order' => 'DESC',
+    ]);
+    $sitemap_url(home_url('/'), $latest ? $latest[0]->post_modified_gmt : '');
 
     // Add all whitelisted pages.
     foreach (blogtimer_indexable_page_slugs() as $slug) {
         $page = get_page_by_path($slug);
         if ($page && $page->post_status === 'publish') {
-            echo '  <url><loc>' . esc_url(get_permalink($page->ID)) . '</loc></url>' . "\n";
+            $sitemap_url(get_permalink($page->ID), $page->post_modified_gmt);
         }
     }
 
@@ -1225,15 +1275,15 @@ add_action('parse_request', function ($wp) {
     }
 
     // All timer posts
-    $timers = get_posts(['post_type' => 'timer', 'post_status' => 'publish', 'posts_per_page' => -1, 'fields' => 'ids']);
-    foreach ($timers as $tid) {
-        echo '  <url><loc>' . esc_url(get_permalink($tid)) . '</loc></url>' . "\n";
+    $timers = get_posts(['post_type' => 'timer', 'post_status' => 'publish', 'posts_per_page' => -1]);
+    foreach ($timers as $timer_post) {
+        $sitemap_url(get_permalink($timer_post->ID), $timer_post->post_modified_gmt);
     }
 
     // All guide posts
-    $guides = get_posts(['post_type' => 'guide', 'post_status' => 'publish', 'posts_per_page' => -1, 'fields' => 'ids']);
-    foreach ($guides as $gid) {
-        echo '  <url><loc>' . esc_url(get_permalink($gid)) . '</loc></url>' . "\n";
+    $guides = get_posts(['post_type' => 'guide', 'post_status' => 'publish', 'posts_per_page' => -1]);
+    foreach ($guides as $guide_post) {
+        $sitemap_url(get_permalink($guide_post->ID), $guide_post->post_modified_gmt);
     }
 
     echo '</urlset>' . "\n";
@@ -1514,23 +1564,41 @@ add_action('wp_head', function () {
         ],
         // TODO: orchestrator populates real social/Wikidata/Crunchbase URLs — do NOT invent
         'sameAs' => [],
+        // Topical-authority claim, anchored to Knowledge Graph entities.
+        // All Wikipedia URLs verified live (HTTP 200, 2026-07-10).
+        'knowsAbout' => [
+            ['@type' => 'Thing', 'name' => 'Time management', 'sameAs' => 'https://en.wikipedia.org/wiki/Time_management'],
+            ['@type' => 'Thing', 'name' => 'Pomodoro Technique', 'sameAs' => 'https://en.wikipedia.org/wiki/Pomodoro_Technique'],
+            ['@type' => 'Thing', 'name' => 'Timer', 'sameAs' => 'https://en.wikipedia.org/wiki/Timer'],
+            ['@type' => 'Thing', 'name' => 'Time perception', 'sameAs' => 'https://en.wikipedia.org/wiki/Time_perception'],
+            ['@type' => 'Thing', 'name' => 'High-intensity interval training', 'sameAs' => 'https://en.wikipedia.org/wiki/High-intensity_interval_training'],
+            ['@type' => 'Thing', 'name' => 'Meditation', 'sameAs' => 'https://en.wikipedia.org/wiki/Meditation'],
+        ],
+        'publishingPrinciples' => blogtimer_untrailingslashit_url(home_url('/editorial-policy/')),
+        'contactPoint' => [
+            '@type' => 'ContactPoint',
+            'contactType' => 'customer support',
+            'url' => blogtimer_untrailingslashit_url(home_url('/contact/')),
+            'email' => 'suraj@theblogtimer.com',
+        ],
     ];
 
-    // WebSite schema — homepage only. SINGLE consolidated node (stable @id).
+    // WebSite schema — every page. SINGLE consolidated node (stable @id).
+    // Emitted site-wide (not just the homepage) so the many isPartOf/publisher
+    // references to #website resolve inside the same page's graph — crawlers
+    // shouldn't have to visit the homepage to dereference the node.
     // This is the ONLY WebSite output site-wide; the plugin's duplicate has been neutralized.
-    if (is_front_page()) {
-        $schemas[] = [
-            '@context' => 'https://schema.org',
-            '@type' => 'WebSite',
-            '@id' => $website_id,
-            'name' => $site_name,
-            'url' => $site_url,
-            'description' => 'Evidence-based timing: research-backed "how long should I…" guides and accurate online countdown, Pomodoro, and stopwatch tools.',
-            'publisher' => [
-                '@id' => $org_id,
-            ],
-        ];
-    }
+    $schemas[] = [
+        '@context' => 'https://schema.org',
+        '@type' => 'WebSite',
+        '@id' => $website_id,
+        'name' => $site_name,
+        'url' => $site_url,
+        'description' => 'Evidence-based timing: research-backed "how long should I…" guides and accurate online countdown, Pomodoro, and stopwatch tools.',
+        'publisher' => [
+            '@id' => $org_id,
+        ],
+    ];
 
     // WebApplication schema — homepage and single timer pages
     if (is_front_page() || is_singular('timer')) {

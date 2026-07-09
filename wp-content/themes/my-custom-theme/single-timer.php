@@ -213,6 +213,12 @@ $usecase_terms = get_the_terms($post_id, 'timer_usecase');
         if ($value >= 25 && $value <= 60) {
             $potential_slugs[] = 'pomodoro-technique';
             $potential_slugs[] = 'deep-work-timers';
+        } elseif ($value > 60) {
+            // 61+ minute timers are the highest-impression pages on the site;
+            // route their equity into the productivity cluster (deep work first —
+            // these durations match deep-work blocks better than pomodoros).
+            $potential_slugs[] = 'deep-work-timers';
+            $potential_slugs[] = 'pomodoro-technique';
         } elseif ($value < 10) {
             $potential_slugs[] = 'meditation-timers-beginners';
         }
@@ -229,8 +235,8 @@ $usecase_terms = get_the_terms($post_id, 'timer_usecase');
         $g = get_page_by_path($slug, OBJECT, 'guide');
         if ($g)
             $relevant_guides[] = $g;
-        if (count($relevant_guides) >= 2)
-            break; // Limit to 2
+        if (count($relevant_guides) >= 3)
+            break; // Limit to 3: the accuracy trust node + both productivity guides
     }
 
     if (!empty($relevant_guides)):

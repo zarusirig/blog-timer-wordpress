@@ -26,6 +26,11 @@ $guide_date_meta   = get_post_meta($post_id, 'guide_date_modified', true);
 $guide_updated     = $guide_date_meta
     ? date_i18n('F j, Y', strtotime($guide_date_meta))
     : get_the_modified_date('F j, Y');
+// Machine-readable ISO date for the <time> element — must agree with the
+// dateModified in the Article schema so the visible and structured signals match.
+$guide_updated_iso = $guide_date_meta
+    ? gmdate('Y-m-d', strtotime($guide_date_meta))
+    : get_the_modified_date('Y-m-d');
 
 // Resolve Sources (array of { author, year, title, url })
 $guide_sources = get_post_meta($post_id, 'guide_sources', true);
@@ -134,7 +139,7 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
             </h1>
             <p class="page-byline byline" style="font-size: 0.875rem; color: var(--color-text-muted, #666); margin: 0.5rem 0;">
                 By <a href="<?php echo esc_url($guide_author_url); ?>" rel="author"><?php echo esc_html($guide_author); ?></a>
-                &middot; <em>Last updated: <?php echo esc_html($guide_updated); ?></em>
+                &middot; <em>Last updated: <time datetime="<?php echo esc_attr($guide_updated_iso); ?>"><?php echo esc_html($guide_updated); ?></time></em>
             </p>
             <?php if (has_excerpt()): ?>
                 <p class="page-intro">

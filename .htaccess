@@ -89,7 +89,8 @@ Options -Indexes +FollowSymLinks
     Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
 
     # Content Security Policy - restrict where resources can load from
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://source.unsplash.com; connect-src 'self'; frame-ancestors 'self';"
+    # Fonts are self-hosted (theme /fonts/), so the Google Fonts origins are gone.
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://images.unsplash.com https://source.unsplash.com; connect-src 'self'; frame-ancestors 'self';"
 
     # Strict Transport Security (HTTPS enforcement - 1 year)
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
@@ -106,10 +107,12 @@ Options -Indexes +FollowSymLinks
     </FilesMatch>
 
     # Cache theme-owned static assets for repeat crawls and visits.
+    # 1 year + immutable is safe: CSS/JS URLs carry a ?ver= cache-buster and
+    # the font files are versioned via ?ver= in the inline @font-face block.
     <IfModule mod_setenvif.c>
         SetEnvIf Request_URI "^/wp-content/themes/my-custom-theme/.+\.(css|js|wav|mp3|woff2?|png|jpe?g|gif|webp|svg)$" BLOGTIMER_THEME_ASSET=1
     </IfModule>
-    Header set Cache-Control "public, max-age=604800" env=BLOGTIMER_THEME_ASSET
+    Header set Cache-Control "public, max-age=31536000, immutable" env=BLOGTIMER_THEME_ASSET
 </IfModule>
 
 # ==========================================

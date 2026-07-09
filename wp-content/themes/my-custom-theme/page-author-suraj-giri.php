@@ -111,15 +111,17 @@ get_header();
     "knowsAbout": [
       "Web performance",
       "Browser timing APIs",
-      "Pomodoro Technique",
-      "Deep work",
-      "Cognitive psychology of attention",
-      "Ultradian rhythms",
-      "Productivity research"
+      {"@type": "Thing", "name": "Pomodoro Technique", "sameAs": "https://en.wikipedia.org/wiki/Pomodoro_Technique"},
+      {"@type": "Thing", "name": "Deep Work", "sameAs": "https://en.wikipedia.org/wiki/Deep_Work"},
+      {"@type": "Thing", "name": "Attention", "sameAs": "https://en.wikipedia.org/wiki/Attention"},
+      {"@type": "Thing", "name": "Ultradian rhythm", "sameAs": "https://en.wikipedia.org/wiki/Ultradian_rhythm"},
+      {"@type": "Thing", "name": "Time perception", "sameAs": "https://en.wikipedia.org/wiki/Time_perception"},
+      {"@type": "Thing", "name": "Productivity", "sameAs": "https://en.wikipedia.org/wiki/Productivity"}
     ],
     "worksFor": {
       "@id": "<?php echo esc_url(home_url('/')); ?>#organization"
-    }
+    },
+    "publishingPrinciples": "<?php echo esc_url(blogtimer_untrailingslashit_url(home_url('/editorial-policy/'))); ?>"
   }
 }
 </script>

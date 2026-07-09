@@ -325,6 +325,10 @@ class Timer_Engine
         $title_override = $this->get_title_override();
         if (!empty($title_override)) {
             $title_parts['title'] = $title_override;
+            // On the front page core populates 'tagline' (not 'site'), which would
+            // append the full ~90-char tagline after the override. Drop both so the
+            // override is the complete <=60-char title.
+            unset($title_parts['tagline'], $title_parts['site']);
         }
 
         return $title_parts;
@@ -475,6 +479,15 @@ class Timer_Engine
         }
 
         if (is_singular('guide')) {
+            $slug = get_post_field('post_name', get_queried_object_id());
+            // Per-slug overrides for guides whose excerpts make weak SERP snippets.
+            $guide_meta_overrides = [
+                'pomodoro-technique' => 'What the Pomodoro Technique is and how to use it: the classic 25/5 work-break cycle, why it beats procrastination, when to use 50/10 instead, and the research behind it.',
+                'deep-work-timers' => 'How long a deep work session should be, backed by research: 60-90 minute blocks, ultradian rhythms, and the timer setups that protect focus from interruption.',
+            ];
+            if (isset($guide_meta_overrides[$slug])) {
+                return $guide_meta_overrides[$slug];
+            }
             return $this->get_post_fallback_description(get_queried_object_id());
         }
 
@@ -881,7 +894,104 @@ class Timer_Engine
             $article['image'] = [$image];
         }
 
+        // Entity layer: `about` (primary topic) + `mentions` (secondary topics), each
+        // anchored to a Wikipedia URI via sameAs so Google can resolve the page to
+        // Knowledge Graph entities instead of inferring the topic from text alone.
+        $entities = $this->get_guide_entities($slug, (string) ($entry['cluster'] ?? ''));
+        if (!empty($entities['about'])) {
+            $article['about'] = $entities['about'];
+        }
+        if (!empty($entities['mentions'])) {
+            $article['mentions'] = $entities['mentions'];
+        }
+
+        $article['inLanguage'] = 'en-US';
+        $article['isPartOf'] = ['@id' => home_url('/#website')];
+        // E-E-A-T: point Google at the editorial standards behind every guide.
+        $editorial_policy = get_page_by_path('editorial-policy');
+        if ($editorial_policy) {
+            $article['publishingPrinciples'] = get_permalink($editorial_policy);
+        }
+
         $this->output_json_ld($article);
+    }
+
+    /**
+     * Knowledge Graph entity registry for guides.
+     *
+     * Every sameAs URL below was verified live (HTTP 200 on en.wikipedia.org,
+     * 2026-07-10). Do NOT add entries with unverified URLs — a sameAs that 404s
+     * is worse than no entity link at all.
+     */
+    private function get_guide_entities($slug, $cluster)
+    {
+        $wiki = static function ($name, $path) {
+            return [
+                '@type' => 'Thing',
+                'name' => $name,
+                'sameAs' => 'https://en.wikipedia.org/wiki/' . $path,
+            ];
+        };
+
+        // Slug-keyword rules, most specific first. First match becomes `about`;
+        // its companion entities become `mentions`.
+        $rules = [
+            'pomodoro' => [$wiki('Pomodoro Technique', 'Pomodoro_Technique'), $wiki('Time management', 'Time_management')],
+            'deep-work' => [$wiki('Deep Work', 'Deep_Work'), $wiki('Attention', 'Attention'), $wiki('Flow (psychology)', 'Flow_(psychology)')],
+            '52-17' => [$wiki('Time management', 'Time_management'), $wiki('Pomodoro Technique', 'Pomodoro_Technique')],
+            'time-blocking' => [$wiki('Time management', 'Time_management')],
+            'tabata' => [$wiki('High-intensity interval training', 'High-intensity_interval_training')],
+            'hiit' => [$wiki('High-intensity interval training', 'High-intensity_interval_training')],
+            'plank' => [$wiki('Plank (exercise)', 'Plank_(exercise)'), $wiki('Exercise', 'Exercise')],
+            'boxing' => [$wiki('Boxing training', 'Boxing_training')],
+            'nap' => [$wiki('Power nap', 'Power_nap'), $wiki('Sleep', 'Sleep')],
+            'sleep' => [$wiki('Sleep', 'Sleep')],
+            'ultradian' => [$wiki('Ultradian rhythm', 'Ultradian_rhythm'), $wiki('Circadian rhythm', 'Circadian_rhythm')],
+            'spaced-repetition' => [$wiki('Spaced repetition', 'Spaced_repetition'), $wiki('Study skills', 'Study_skills')],
+            'flashcard' => [$wiki('Spaced repetition', 'Spaced_repetition')],
+            'boil-eggs' => [$wiki('Boiled egg', 'Boiled_egg'), $wiki('Egg timer', 'Egg_timer')],
+            'meditat' => [$wiki('Meditation', 'Meditation')],
+            'mindfulness' => [$wiki('Meditation', 'Meditation')],
+            'breath' => [$wiki('Meditation', 'Meditation')],
+            'study' => [$wiki('Study skills', 'Study_skills')],
+            'exam' => [$wiki('Study skills', 'Study_skills')],
+            'accuracy' => [$wiki('Timer', 'Timer'), $wiki('Time perception', 'Time_perception')],
+            'drift' => [$wiki('Timer', 'Timer'), $wiki('Time perception', 'Time_perception')],
+        ];
+
+        // Cluster fallbacks when no slug keyword matches.
+        $cluster_map = [
+            'pomodoro' => [$wiki('Pomodoro Technique', 'Pomodoro_Technique'), $wiki('Time management', 'Time_management')],
+            'productivity' => [$wiki('Time management', 'Time_management'), $wiki('Productivity', 'Productivity')],
+            'study' => [$wiki('Study skills', 'Study_skills')],
+            'studying' => [$wiki('Study skills', 'Study_skills')],
+            'accuracy' => [$wiki('Timer', 'Timer'), $wiki('Stopwatch', 'Stopwatch')],
+            'fitness' => [$wiki('Interval training', 'Interval_training'), $wiki('Exercise', 'Exercise')],
+            'exercise' => [$wiki('Exercise', 'Exercise')],
+            'meditation' => [$wiki('Meditation', 'Meditation')],
+            'cooking' => [$wiki('Cooking', 'Cooking')],
+            'devices' => [$wiki('Timer', 'Timer')],
+            'comparisons' => [$wiki('Time management', 'Time_management'), $wiki('Timer', 'Timer')],
+        ];
+
+        $matched = null;
+        foreach ($rules as $keyword => $entity_set) {
+            if (strpos($slug, $keyword) !== false) {
+                $matched = $entity_set;
+                break;
+            }
+        }
+        if ($matched === null && isset($cluster_map[$cluster])) {
+            $matched = $cluster_map[$cluster];
+        }
+        if ($matched === null) {
+            return ['about' => [], 'mentions' => []];
+        }
+
+        return [
+            'about' => [array_shift($matched)],
+            'mentions' => $matched,
+        ];
     }
 
     private function output_collection_schema()
