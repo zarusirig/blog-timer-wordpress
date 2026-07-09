@@ -90,7 +90,8 @@ Options -Indexes +FollowSymLinks
 
     # Content Security Policy - restrict where resources can load from
     # Fonts are self-hosted (theme /fonts/), so the Google Fonts origins are gone.
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://images.unsplash.com https://source.unsplash.com; connect-src 'self'; frame-ancestors 'self';"
+    # googletagmanager/google-analytics origins are for GA4 (gtag.js + beacons).
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://images.unsplash.com https://source.unsplash.com https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; frame-ancestors 'self';"
 
     # Strict Transport Security (HTTPS enforcement - 1 year)
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"

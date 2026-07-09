@@ -146,6 +146,65 @@ function blogtimer_inline_font_faces()
 add_action('wp_head', 'blogtimer_inline_font_faces', 0);
 
 /**
+ * GA4 Measurement ID. Set via `define('BLOGTIMER_GA4_ID', 'G-XXXXXXXXXX');`
+ * in wp-config.php (preferred) or the `blogtimer_ga4_id` option. Empty = GA off.
+ */
+function blogtimer_ga4_measurement_id()
+{
+    if (defined('BLOGTIMER_GA4_ID') && BLOGTIMER_GA4_ID) {
+        return (string) BLOGTIMER_GA4_ID;
+    }
+    return (string) get_option('blogtimer_ga4_id', '');
+}
+
+/**
+ * Google Analytics 4 with Consent Mode v2, wired to the theme cookie banner.
+ *
+ * - Defaults every consent signal to denied; gtag then sends only cookieless
+ *   pings until the visitor clicks "Accept All" (stored by the banner in
+ *   localStorage as blogtimer_cookie_consent = 'all' | 'essential').
+ * - Skipped for logged-in users and non-production hosts so admin sessions
+ *   and local Docker never pollute the property.
+ */
+add_action('wp_head', function () {
+    $ga_id = blogtimer_ga4_measurement_id();
+    if ($ga_id === '' || is_user_logged_in()) {
+        return;
+    }
+    $host = (string) wp_parse_url(home_url('/'), PHP_URL_HOST);
+    if ($host === '' || strpos($host, 'localhost') !== false || strpos($host, '127.0.0.1') !== false) {
+        return;
+    }
+    $ga_id_attr = esc_js($ga_id);
+    ?>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
+    });
+    try {
+        if (localStorage.getItem('blogtimer_cookie_consent') === 'all') {
+            gtag('consent', 'update', {
+                analytics_storage: 'granted',
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted'
+            });
+        }
+    } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', '<?php echo $ga_id_attr; ?>');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo rawurlencode($ga_id); ?>"></script>
+    <?php
+}, 3);
+
+/**
  * Remove WordPress frontend assets that the classic theme does not use.
  */
 function blogtimer_cleanup_frontend_assets()
@@ -1305,6 +1364,10 @@ add_action('send_headers', function () {
         header('X-Content-Type-Options: nosniff');
         header('X-Frame-Options: SAMEORIGIN');
         header('X-XSS-Protection: 1; mode=block');
+        // CSP + HSTS live here (not only .htaccess): the Cloudways nginx/Varnish
+        // stack drops Apache-set headers on HTML responses; PHP-set ones survive.
+        header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://images.unsplash.com https://source.unsplash.com https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; frame-ancestors 'self'");
+        header('Strict-Transport-Security: max-age=31536000; includeSubDomains; preload');
         header('Referrer-Policy: strict-origin-when-cross-origin');
         header('Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()');
     }
@@ -2159,6 +2222,15 @@ add_action('wp_footer', function () {
         document.getElementById('cookie-accept-all').addEventListener('click', function() {
             localStorage.setItem(CONSENT_KEY, 'all');
             banner.style.display = 'none';
+            // Tell GA4 Consent Mode immediately (no reload needed).
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    analytics_storage: 'granted',
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted'
+                });
+            }
         });
 
         document.getElementById('cookie-essential-only').addEventListener('click', function() {
