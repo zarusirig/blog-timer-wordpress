@@ -3,10 +3,13 @@
  * Timer use case taxonomy template.
  */
 get_header();
+require_once get_template_directory() . '/inc/taxonomy-hub-helpers.php';
 
 $term = get_queried_object();
 $usecase_name = $term instanceof WP_Term ? $term->name : 'Timer Use Case';
-$usecase_desc = $term instanceof WP_Term ? $term->description : '';
+$usecase_slug = $term instanceof WP_Term ? $term->slug : '';
+$usecase_profile = blogtimer_taxhub_usecase_profile($usecase_slug, $usecase_name);
+$usecase_desc = blogtimer_taxhub_term_description($term, $usecase_profile['intro']);
 $sibling_usecases = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 'cooking', 'exercise', 'meditation', 'studying']);
 $minute_unit_url = blogtimer_get_term_url_by_slug('timer_unit', 'minutes');
 $second_unit_url = blogtimer_get_term_url_by_slug('timer_unit', 'seconds');
@@ -34,8 +37,26 @@ $query = new WP_Query([
     <div class="container">
         <header class="section-header">
             <h1 class="page-h1"><?php echo esc_html($usecase_name); ?> Timers</h1>
-            <p class="page-intro"><?php echo esc_html($usecase_desc ?: 'Use curated timer durations built for this activity and start countdowns instantly.'); ?></p>
+            <p class="page-intro"><?php echo esc_html($usecase_desc); ?></p>
         </header>
+
+        <section class="section">
+            <div class="taxonomy-hub-grid">
+                <article class="card taxonomy-link-card">
+                    <h2>Best Fit</h2>
+                    <ul class="taxonomy-link-list">
+                        <?php foreach ($usecase_profile['best_for'] as $fit): ?>
+                            <li><?php echo esc_html($fit); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </article>
+                <article class="card taxonomy-link-card">
+                    <h2>How to Pick a Timer</h2>
+                    <p><?php echo esc_html($usecase_profile['guidance']); ?></p>
+                    <p>Compare by duration in the <a href="<?php echo esc_url($minute_unit_url); ?>">minute timer archive</a> or <a href="<?php echo esc_url($second_unit_url); ?>">second timer archive</a>.</p>
+                </article>
+            </div>
+        </section>
 
         <section class="section">
             <h2 class="section-title">Related Archives</h2>
@@ -53,6 +74,9 @@ $query = new WP_Query([
             <?php if (!empty($sibling_usecases)): ?>
                 <ul class="taxonomy-link-list" style="margin-top:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
                     <?php foreach ($sibling_usecases as $sibling_term): ?>
+                        <?php if ($term instanceof WP_Term && $sibling_term->term_id === $term->term_id) {
+                            continue;
+                        } ?>
                         <?php $sibling_url = get_term_link($sibling_term); ?>
                         <?php if (is_wp_error($sibling_url)) {
                             continue;
@@ -98,7 +122,7 @@ $query = new WP_Query([
         <section class="section">
             <div class="content-page container--narrow">
                 <h2>Applying Timers to <?php echo esc_html($usecase_name); ?></h2>
-                <p>For best results, pair each timer with a clear task definition before pressing start. A named objective plus a fixed interval improves completion rates and keeps sessions measurable across days.</p>
+                <p><?php echo esc_html($usecase_profile['guidance']); ?> For best results, pair each timer with a clear task definition before pressing start. A named objective plus a fixed interval improves completion rates and keeps sessions measurable across days.</p>
                 <p>Track which durations deliver both high-quality output and sustainable energy. If quality drops near the end of your interval, shorten by 5 to 10 minutes. If you consistently finish early, extend gradually and reassess after a week.</p>
                 <p>Need broader recommendations? Visit <a href="<?php echo esc_url(home_url('/use-cases/')); ?>">Timer Use Cases</a> for a full breakdown by activity and common timing patterns.</p>
             </div>

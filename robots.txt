@@ -5,6 +5,7 @@
 # so it is always available and fast for Googlebot. It mirrors the dynamic
 # rules in the theme's `robots_txt` filter. Keep both in sync if you edit either.
 
+Sitemap: https://theblogtimer.com/sitemap-fresh.xml
 Sitemap: https://theblogtimer.com/wp-sitemap.xml
 
 User-agent: *
@@ -47,7 +48,9 @@ Allow: /interval-timer
 Allow: /nap-timer
 Allow: /sprint-timer
 Allow: /presentation-timer
-Allow: /timer-for/*
+Allow: /timer-for
+Allow: /timer-for-kids
+Allow: /timer-for-remote-workers
 Allow: /about
 Allow: /contact
 Allow: /faq

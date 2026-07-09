@@ -3,13 +3,16 @@
  * Timer bucket taxonomy template.
  */
 get_header();
+require_once get_template_directory() . '/inc/taxonomy-hub-helpers.php';
 
 $term = get_queried_object();
 $bucket_name = $term instanceof WP_Term ? $term->name : 'Timer Bucket';
-$bucket_desc = $term instanceof WP_Term ? $term->description : '';
 $bucket_slug = $term instanceof WP_Term ? $term->slug : '';
-$unit_slug = strpos($bucket_slug, 'seconds_') === 0 ? 'seconds' : 'minutes';
+$unit_slug = blogtimer_taxhub_bucket_unit($bucket_slug);
+$bucket_profile = blogtimer_taxhub_bucket_profile($bucket_slug, $bucket_name, $unit_slug);
+$bucket_desc = blogtimer_taxhub_term_description($term, $bucket_profile['summary']);
 $unit_url = blogtimer_get_term_url_by_slug('timer_unit', $unit_slug);
+$unit_archive_label = $unit_slug === 'hours' ? 'hour timers' : ($unit_slug === 'seconds' ? 'second timers' : 'minute timers');
 $sibling_bucket_terms = blogtimer_get_taxonomy_terms('timer_bucket', blogtimer_get_bucket_slugs_for_unit($unit_slug));
 $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 'cooking', 'exercise', 'meditation', 'studying']);
 
@@ -34,17 +37,38 @@ $query = new WP_Query([
     <div class="container">
         <header class="section-header">
             <h1 class="page-h1"><?php echo esc_html($bucket_name); ?></h1>
-            <p class="page-intro"><?php echo esc_html($bucket_desc ?: 'Browse countdown durations in this range and select a timer that matches your pace and workload.'); ?></p>
+            <p class="page-intro"><?php echo esc_html($bucket_desc); ?></p>
         </header>
+
+        <section class="section">
+            <div class="taxonomy-hub-grid">
+                <article class="card taxonomy-link-card">
+                    <h2>Best Fit</h2>
+                    <ul class="taxonomy-link-list">
+                        <?php foreach ($bucket_profile['best_for'] as $fit): ?>
+                            <li><?php echo esc_html($fit); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </article>
+                <article class="card taxonomy-link-card">
+                    <h2>How to Use This Range</h2>
+                    <p><?php echo esc_html($bucket_profile['guidance']); ?></p>
+                    <p><a href="<?php echo esc_url($unit_url); ?>">Compare all <?php echo esc_html($unit_archive_label); ?></a> in the parent unit archive.</p>
+                </article>
+            </div>
+        </section>
 
         <section class="section">
             <h2 class="section-title">Related Timer Archives</h2>
             <div class="taxonomy-hub-grid">
                 <article class="card taxonomy-link-card">
-                    <h3><a href="<?php echo esc_url($unit_url); ?>"><?php echo esc_html(ucfirst($unit_slug)); ?> unit archive</a></h3>
-                    <p>Open all <?php echo esc_html($unit_slug); ?> timers in one index and compare neighboring durations.</p>
+                    <h3><a href="<?php echo esc_url($unit_url); ?>"><?php echo esc_html(ucfirst($unit_archive_label)); ?> archive</a></h3>
+                    <p>Open all <?php echo esc_html($unit_archive_label); ?> in one index and compare neighboring durations.</p>
                 </article>
                 <?php foreach ($sibling_bucket_terms as $sibling_term): ?>
+                    <?php if ($term instanceof WP_Term && $sibling_term->term_id === $term->term_id) {
+                        continue;
+                    } ?>
                     <?php $sibling_url = get_term_link($sibling_term); ?>
                     <?php if (is_wp_error($sibling_url)) {
                         continue;
@@ -92,9 +116,9 @@ $query = new WP_Query([
 
         <section class="section">
             <div class="content-page container--narrow">
-                <h2>When to Choose This Timer Bucket</h2>
-                <p>Timer buckets group durations by intent. Short buckets are ideal for fast iterations and resistance-free starts. Medium buckets support complete task chunks with manageable cognitive load. Long and extended buckets are best when context switching is expensive and deep continuity matters.</p>
-                <p>Start with a timer you can complete consistently, then scale upward only when your completion quality stays high. If you frequently pause sessions or restart, move one bucket shorter and stabilize your routine before increasing duration again.</p>
+                <h2>When to Choose <?php echo esc_html($bucket_name); ?></h2>
+                <p><?php echo esc_html($bucket_profile['summary']); ?></p>
+                <p>Start with a timer you can complete consistently, then scale upward only when your completion quality stays high. If you frequently pause sessions or restart, move one range shorter and stabilize your routine before increasing duration again.</p>
                 <p>Compare other ranges in <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">Minute Timers</a> and <a href="<?php echo esc_url(home_url('/second-timers/')); ?>">Second Timers</a>.</p>
             </div>
         </section>

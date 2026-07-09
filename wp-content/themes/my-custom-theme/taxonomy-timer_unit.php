@@ -3,12 +3,16 @@
  * Timer unit taxonomy template.
  */
 get_header();
+require_once get_template_directory() . '/inc/taxonomy-hub-helpers.php';
 
 $loader = Timer_Content_Loader::get_instance();
 $related = Timer_Related::get_instance();
 $term = get_queried_object();
 $unit = $term instanceof WP_Term ? $term->slug : 'minutes';
-$unit_label = $term instanceof WP_Term ? $term->name : 'Minute';
+$unit_label = $unit === 'hours' ? 'Hour' : ($unit === 'seconds' ? 'Second' : 'Minute');
+$unit_archive_label = strtolower($unit_label) . ' timers';
+$unit_profile = blogtimer_taxhub_unit_profile($unit, $unit_label);
+$unit_intro = blogtimer_taxhub_term_description($term, $unit_profile['intro']);
 $buckets = $loader->get_buckets($unit);
 $popular = $related->get_popular_posts($unit, 12);
 $bucket_terms = blogtimer_get_taxonomy_terms('timer_bucket', blogtimer_get_bucket_slugs_for_unit($unit));
@@ -19,8 +23,26 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
     <div class="container">
         <header class="section-header">
             <h1 class="page-h1"><?php echo esc_html($unit_label); ?> Timers</h1>
-            <p class="page-intro">Browse all <?php echo esc_html(strtolower($unit_label)); ?> countdown durations with instant start, accurate background timing, and clear completion alerts. Choose a preset below or jump to a specific range based on your task.</p>
+            <p class="page-intro"><?php echo esc_html($unit_intro); ?> Choose a preset below or jump to a specific range based on your task.</p>
         </header>
+
+        <section class="section">
+            <div class="taxonomy-hub-grid">
+                <article class="card taxonomy-link-card">
+                    <h2>Best Fit</h2>
+                    <ul class="taxonomy-link-list">
+                        <?php foreach ($unit_profile['best_for'] as $fit): ?>
+                            <li><?php echo esc_html($fit); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </article>
+                <article class="card taxonomy-link-card">
+                    <h2>How to Choose</h2>
+                    <p><?php echo esc_html($unit_profile['guidance']); ?></p>
+                    <p>Need activity-first recommendations? Open the <a href="<?php echo esc_url(home_url('/use-cases/')); ?>">Timer Use Cases</a> hub.</p>
+                </article>
+            </div>
+        </section>
 
         <?php if (!empty($bucket_terms)): ?>
             <section class="section">
@@ -31,9 +53,10 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                         <?php if (is_wp_error($bucket_url)) {
                             continue;
                         } ?>
+                        <?php $bucket_profile = blogtimer_taxhub_bucket_profile($bucket_term->slug, $bucket_term->name, $unit); ?>
                         <article class="card taxonomy-link-card">
                             <h3><a href="<?php echo esc_url($bucket_url); ?>"><?php echo esc_html($bucket_term->name); ?> range</a></h3>
-                            <p><?php echo esc_html($bucket_term->description ?: 'Timer archive for this duration range.'); ?></p>
+                            <p><?php echo esc_html(blogtimer_taxhub_term_description($bucket_term, $bucket_profile['summary'])); ?></p>
                         </article>
                     <?php endforeach; ?>
                 </div>
@@ -42,9 +65,9 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                         <?php foreach ($usecase_terms as $usecase_term): ?>
                             <?php $usecase_url = get_term_link($usecase_term); ?>
                             <?php if (is_wp_error($usecase_url)) {
-                                continue;
-                            } ?>
-                            <li><a href="<?php echo esc_url($usecase_url); ?>"><?php echo esc_html($unit_label); ?> timers for <?php echo esc_html(strtolower($usecase_term->name)); ?></a></li>
+                            continue;
+                        } ?>
+                            <li><a href="<?php echo esc_url($usecase_url); ?>"><?php echo esc_html(ucfirst($unit_archive_label)); ?> for <?php echo esc_html(strtolower($usecase_term->name)); ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 <?php endif; ?>
@@ -84,7 +107,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
         <section class="section">
             <div class="content-page container--narrow">
                 <h2>Choosing the Right <?php echo esc_html($unit_label); ?> Duration</h2>
-                <p>Use shorter durations when you need urgency and quick execution, and longer durations when your task requires sustained concentration. If your sessions often run over, increase your timer in small steps. If your focus drops early, shorten the interval and chain multiple sessions with planned breaks.</p>
+                <p><?php echo esc_html($unit_profile['guidance']); ?> Use shorter durations when you need urgency and quick execution, and longer durations when your task requires sustained concentration. If your sessions often run over, increase your timer in small steps.</p>
                 <p>For consistency, use the same duration for similar tasks during a full week. This helps your brain associate the timer start with a specific work mode, making it easier to enter focus quickly and reduce decision fatigue before each session.</p>
                 <p>Need use-case recommendations? Visit the <a href="<?php echo esc_url(home_url('/use-cases/')); ?>">Timer Use Cases</a> hub for productivity, cooking, exercise, meditation, and study-specific setups.</p>
             </div>

@@ -60,13 +60,19 @@ function blogtimer_enqueue_assets()
     wp_enqueue_style('blogtimer-style', get_stylesheet_uri(), ['blogtimer-fonts'], TIMER_ENGINE_VERSION ?? '2.0.0');
 
     // Mobile navigation
-    wp_enqueue_script('blogtimer-mobile-nav', get_template_directory_uri() . '/js/mobile-nav.js', [], '2.0.0', true);
+    wp_enqueue_script('blogtimer-mobile-nav', get_template_directory_uri() . '/js/mobile-nav.js', [], '2.0.0', [
+        'in_footer' => true,
+        'strategy' => 'defer',
+    ]);
 
     // Timer widget JS — only on pages that use the ID-based widget markup
     // (#timer-start / #timer-display). pomodoro is self-driven (inline script),
     // and minute-timers/second-timers are link hubs with no widget.
     if (is_singular('timer') || is_front_page()) {
-        wp_enqueue_script('blogtimer-timer', get_template_directory_uri() . '/js/timer-widget.js', [], '2.1.0', true);
+        wp_enqueue_script('blogtimer-timer', get_template_directory_uri() . '/js/timer-widget.js', [], '2.1.0', [
+            'in_footer' => true,
+            'strategy' => 'defer',
+        ]);
 
         // Pass localized data to JS
         $timer_data = [
@@ -99,16 +105,70 @@ function blogtimer_enqueue_assets()
         'timer-for-remote-workers',
     ];
     if (is_page($blogtimer_hub_timer_pages)) {
-        wp_enqueue_script('blogtimer-hub-timer', get_template_directory_uri() . '/js/hub-timer.js', [], '1.0.0', true);
+        wp_enqueue_script('blogtimer-hub-timer', get_template_directory_uri() . '/js/hub-timer.js', [], '1.0.0', [
+            'in_footer' => true,
+            'strategy' => 'defer',
+        ]);
         wp_localize_script('blogtimer-hub-timer', 'blogTimerData', [
             'audioUrl' => get_template_directory_uri() . '/audio/timer-alert.wav',
         ]);
     }
 
     // FAQ accordion
-    wp_enqueue_script('blogtimer-faq', get_template_directory_uri() . '/js/faq-accordion.js', [], '2.0.0', true);
+    wp_enqueue_script('blogtimer-faq', get_template_directory_uri() . '/js/faq-accordion.js', [], '2.0.0', [
+        'in_footer' => true,
+        'strategy' => 'defer',
+    ]);
 }
 add_action('wp_enqueue_scripts', 'blogtimer_enqueue_assets');
+
+/**
+ * Remove WordPress frontend assets that the classic theme does not use.
+ */
+function blogtimer_cleanup_frontend_assets()
+{
+    if (is_admin()) {
+        return;
+    }
+
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('classic-theme-styles');
+    wp_dequeue_style('global-styles');
+
+    if (!is_user_logged_in()) {
+        wp_dequeue_style('dashicons');
+    }
+}
+add_action('wp_enqueue_scripts', 'blogtimer_cleanup_frontend_assets', 100);
+
+/**
+ * Disable WordPress emoji detection and styles on the public frontend.
+ */
+function blogtimer_disable_frontend_emojis()
+{
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    remove_action('admin_print_scripts', 'print_emoji_detection_script');
+    remove_action('admin_print_styles', 'print_emoji_styles');
+    remove_filter('the_content_feed', 'wp_staticize_emoji');
+    remove_filter('comment_text_rss', 'wp_staticize_emoji');
+    remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+}
+add_action('init', 'blogtimer_disable_frontend_emojis');
+
+/**
+ * Remove the obsolete s.w.org emoji DNS prefetch hint.
+ */
+function blogtimer_remove_emoji_resource_hint($urls, $relation_type)
+{
+    if ($relation_type === 'dns-prefetch') {
+        $urls = array_diff($urls, ['https://s.w.org']);
+    }
+
+    return $urls;
+}
+add_filter('wp_resource_hints', 'blogtimer_remove_emoji_resource_hint', 10, 2);
 
 /**
  * Register widget areas
@@ -342,6 +402,19 @@ function blogtimer_redirect_trailing_slash_urls()
 add_action('template_redirect', 'blogtimer_redirect_trailing_slash_urls', 1);
 
 /**
+ * Legacy "timer for" URL variants that should redirect to clean canonical pages.
+ */
+function blogtimer_timer_for_redirect_map()
+{
+    return [
+        '/timer-for/kids' => '/timer-for-kids',
+        '/timer/for/kids' => '/timer-for-kids',
+        '/timer-for/remote-workers' => '/timer-for-remote-workers',
+        '/timer/for/remote-workers' => '/timer-for-remote-workers',
+    ];
+}
+
+/**
  * 301-redirect legacy migration URLs that Google still crawls.
  *
  * Two old patterns produce 404s in Search Console:
@@ -374,11 +447,18 @@ function blogtimer_redirect_legacy_migration_urls()
         return;
     }
 
+    // Canonicalize old/nested "timer for" URL variants to the clean page URLs.
+    $timer_for_redirects = blogtimer_timer_for_redirect_map();
+    $path_trimmed = rtrim($path, '/');
+    if (isset($timer_for_redirects[$path_trimmed])) {
+        wp_safe_redirect(home_url($timer_for_redirects[$path_trimmed]), 301);
+        exit;
+    }
+
     // One-off guide consolidations: 301 a retired duplicate slug to its replacement.
     $guide_redirects = [
         '/guides/pomodoro-vs-52-17' => '/guides/52-17-rule-vs-pomodoro',
     ];
-    $path_trimmed = rtrim($path, '/');
     if (isset($guide_redirects[$path_trimmed])) {
         wp_safe_redirect(home_url($guide_redirects[$path_trimmed]), 301);
         exit;
@@ -812,6 +892,69 @@ add_filter('pings_open', '__return_false', 9999);
 // ==========================================
 
 /**
+ * Canonical public page slugs that are allowed to be indexed and listed in sitemaps.
+ *
+ * Keep this as the single source of truth for page-level crawl/index controls.
+ * Timer and guide CPT URLs, the guide archive, and approved custom taxonomies are
+ * handled separately by post-type/taxonomy checks.
+ */
+function blogtimer_indexable_page_slugs()
+{
+    return [
+        'home', 'about', 'contact', 'faq',
+        'privacy-policy', 'terms-of-service',
+        'minute-timers', 'second-timers',
+        'pomodoro', 'use-cases',
+        'disclaimer', 'dmca', 'accessibility',
+        'editorial-policy',
+        'methodology', 'sources', 'author-suraj-giri', 'changelog',
+        'chess-clock', 'egg-timer', 'interval-timer',
+        'nap-timer', 'sprint-timer', 'presentation-timer',
+        'timer-for', 'timer-for-kids', 'timer-for-remote-workers',
+        'stopwatch',
+        'online-alarm-clock',
+        'countdown-timer',
+        'sleep-timer',
+        'world-clock',
+        'focus-timer',
+        'study-timer',
+        'tabata-timer',
+        'cooking-timers',
+        'workout-timers',
+        'sleep-meditation-timers',
+        'study-work-timers',
+        'stopwatch-clock-tools',
+        'pasta-timer',
+        'tea-timer',
+        'coffee-timer',
+        'steak-timer',
+        'rice-timer',
+        'turkey-timer',
+        'bread-baking-timer',
+        'microwave-popcorn-timer',
+        'sous-vide-timer',
+        'bbq-timer',
+        'baby-bottle-timer',
+        'boxing-round-timer',
+        'hiit-timer',
+        'yoga-timer',
+        'plank-timer',
+        'jump-rope-timer',
+        'running-interval-timer',
+        'stretching-timer',
+        'crossfit-amrap-timer',
+        'emom-timer',
+        'hour-timers',
+        'site-index',
+    ];
+}
+
+function blogtimer_indexable_taxonomies()
+{
+    return ['timer_unit', 'timer_bucket', 'timer_usecase'];
+}
+
+/**
  * Override WordPress default robots.txt with strict version
  * This tells Google and all crawlers to ONLY index known-good URL patterns
  */
@@ -821,6 +964,7 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "# Security hardened - blocks spam/injected pages from being indexed\n\n";
 
     // Sitemap location
+    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml') . "\n";
     $robots .= "Sitemap: " . home_url('/wp-sitemap.xml') . "\n\n";
 
     // Allow all legitimate bots to crawl whitelisted content
@@ -879,7 +1023,9 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "Allow: /nap-timer\n";
     $robots .= "Allow: /sprint-timer\n";
     $robots .= "Allow: /presentation-timer\n";
-    $robots .= "Allow: /timer-for/*\n";
+    $robots .= "Allow: /timer-for\n";
+    $robots .= "Allow: /timer-for-kids\n";
+    $robots .= "Allow: /timer-for-remote-workers\n";
     $robots .= "Allow: /about\n";
     $robots .= "Allow: /contact\n";
     $robots .= "Allow: /faq\n";
@@ -901,55 +1047,7 @@ add_filter('robots_txt', function ($output, $public) {
  * Google treats meta robots as a DIRECTIVE (must obey), not a suggestion
  */
 add_action('wp_head', function () {
-    // Known legitimate page slugs
-    $allowed_pages = [
-        'home', 'about', 'contact', 'faq',
-        'privacy-policy', 'terms-of-service',
-        'minute-timers', 'second-timers',
-        'pomodoro', 'use-cases',
-        'disclaimer', 'dmca', 'accessibility',
-        'editorial-policy',
-        'methodology', 'sources', 'author-suraj-giri', 'changelog',
-        'chess-clock', 'egg-timer', 'interval-timer',
-        'nap-timer', 'sprint-timer', 'presentation-timer',
-        'timer-for', 'kids', 'remote-workers',
-            // tool & hub pages added 2026-05-27
-            'stopwatch',
-            'online-alarm-clock',
-            'countdown-timer',
-            'sleep-timer',
-            'world-clock',
-            'focus-timer',
-            'study-timer',
-            'tabata-timer',
-            'cooking-timers',
-            'workout-timers',
-            'sleep-meditation-timers',
-            'study-work-timers',
-            'stopwatch-clock-tools',
-            'pasta-timer',
-            'tea-timer',
-            'coffee-timer',
-            'steak-timer',
-            'rice-timer',
-            'turkey-timer',
-            'bread-baking-timer',
-            'microwave-popcorn-timer',
-            'sous-vide-timer',
-            'bbq-timer',
-            'baby-bottle-timer',
-            'boxing-round-timer',
-            'hiit-timer',
-            'yoga-timer',
-            'plank-timer',
-            'jump-rope-timer',
-            'running-interval-timer',
-            'stretching-timer',
-            'crossfit-amrap-timer',
-            'emom-timer',
-            'hour-timers',
-            'site-index',
-    ];
+    $allowed_pages = blogtimer_indexable_page_slugs();
 
     // Timer (/timer/*) and guide (/guides/*) CPT pages must ALWAYS be indexable.
     // This post-type check runs BEFORE any slug whitelist so a newly published
@@ -960,7 +1058,7 @@ add_action('wp_head', function () {
 
     // The guide CPT archive (/guides/) and the legitimate custom taxonomies are
     // indexable programmatic-SEO hubs — must NOT be noindexed.
-    if (is_post_type_archive('guide') || is_tax(['timer_unit', 'timer_bucket', 'timer_usecase', 'guide_cluster'])) {
+    if (is_post_type_archive('guide') || is_tax(blogtimer_indexable_taxonomies())) {
         return;
     }
 
@@ -983,54 +1081,16 @@ add_action('wp_head', function () {
  * Belt-and-suspenders approach: header + meta tag
  */
 add_action('send_headers', function () {
-    $allowed_pages = [
-        'home', 'about', 'contact', 'faq',
-        'privacy-policy', 'terms-of-service',
-        'minute-timers', 'second-timers',
-        'pomodoro', 'use-cases',
-        'disclaimer', 'dmca', 'accessibility',
-        'editorial-policy',
-        'methodology', 'sources', 'author-suraj-giri', 'changelog',
-        'chess-clock', 'egg-timer', 'interval-timer',
-        'nap-timer', 'sprint-timer', 'presentation-timer',
-        'timer-for', 'kids', 'remote-workers',
-            // tool & hub pages added 2026-05-27
-            'stopwatch',
-            'online-alarm-clock',
-            'countdown-timer',
-            'sleep-timer',
-            'world-clock',
-            'focus-timer',
-            'study-timer',
-            'tabata-timer',
-            'cooking-timers',
-            'workout-timers',
-            'sleep-meditation-timers',
-            'study-work-timers',
-            'stopwatch-clock-tools',
-            'pasta-timer',
-            'tea-timer',
-            'coffee-timer',
-            'steak-timer',
-            'rice-timer',
-            'turkey-timer',
-            'bread-baking-timer',
-            'microwave-popcorn-timer',
-            'sous-vide-timer',
-            'bbq-timer',
-            'baby-bottle-timer',
-            'boxing-round-timer',
-            'hiit-timer',
-            'yoga-timer',
-            'plank-timer',
-            'jump-rope-timer',
-            'running-interval-timer',
-            'stretching-timer',
-            'crossfit-amrap-timer',
-            'emom-timer',
-            'hour-timers',
-            'site-index',
-    ];
+    $allowed_pages = blogtimer_indexable_page_slugs();
+
+    $request_uri = isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '';
+    $path = $request_uri !== '' ? wp_parse_url($request_uri, PHP_URL_PATH) : '';
+    if ($path && preg_match('#/(robots\.txt|sitemap-fresh\.xml|wp-sitemap.*\.xml)$#', $path)) {
+        return;
+    }
+    if ($path && isset(blogtimer_timer_for_redirect_map()[rtrim($path, '/')])) {
+        return;
+    }
 
     // Timer (/timer/*) and guide (/guides/*) CPT pages must ALWAYS be indexable.
     // Post-type check runs BEFORE the slug whitelist for the same reason as above.
@@ -1040,7 +1100,7 @@ add_action('send_headers', function () {
 
     // The guide CPT archive (/guides/) and the legitimate custom taxonomies are
     // indexable programmatic-SEO hubs — must NOT be noindexed.
-    if (is_post_type_archive('guide') || is_tax(['timer_unit', 'timer_bucket', 'timer_usecase', 'guide_cluster'])) {
+    if (is_post_type_archive('guide') || is_tax(blogtimer_indexable_taxonomies())) {
         return;
     }
 
@@ -1070,11 +1130,16 @@ add_filter('wp_sitemaps_post_types', function ($post_types) {
 });
 
 /**
- * Remove all taxonomy-based sitemaps (often contain spam)
+ * Keep only approved taxonomy sitemaps.
  */
 add_filter('wp_sitemaps_taxonomies', function ($taxonomies) {
-    // Remove all taxonomy sitemaps - they often contain injected spam terms
-    return [];
+    $allowed = blogtimer_indexable_taxonomies();
+    foreach ($taxonomies as $key => $value) {
+        if (!in_array($key, $allowed, true)) {
+            unset($taxonomies[$key]);
+        }
+    }
+    return $taxonomies;
 });
 
 /**
@@ -1097,11 +1162,14 @@ add_filter('wp_sitemaps_add_provider', function ($provider, $name) {
 add_action('send_headers', function () {
     if (!isset($_SERVER['REQUEST_URI'])) { return; }
     $uri = $_SERVER['REQUEST_URI'];
-    if (preg_match('#/(wp-)?sitemap[^/]*\.xml#', $uri)) {
+    if (preg_match('#/(robots\.txt|(wp-)?sitemap[^/]*\.xml)#', $uri)) {
         header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0', true);
         header('Pragma: no-cache', true);
         header('Expires: 0', true);
         header('X-Accel-Expires: 0', true);  // Nginx-specific directive to bypass cache
+        if (preg_match('#/robots\.txt$#', (string) parse_url($uri, PHP_URL_PATH))) {
+            header('Content-Type: text/plain; charset=utf-8', true);
+        }
     }
 }, 1);
 
@@ -1127,30 +1195,32 @@ add_action('parse_request', function ($wp) {
     // Add homepage
     echo '  <url><loc>' . esc_url(home_url('/')) . '</loc></url>' . "\n";
 
-    // Add all whitelisted pages
-    $allowed_page_slugs = [
-        'about','contact','faq','privacy-policy','terms-of-service',
-        'minute-timers','second-timers','pomodoro','use-cases',
-        'disclaimer','dmca','accessibility','editorial-policy',
-        'methodology','sources','author-suraj-giri','changelog',
-        'chess-clock','egg-timer','interval-timer','nap-timer',
-        'sprint-timer','presentation-timer','timer-for','kids','remote-workers',
-        'stopwatch','online-alarm-clock','countdown-timer','sleep-timer',
-        'world-clock','focus-timer','study-timer','tabata-timer',
-        'cooking-timers','workout-timers','sleep-meditation-timers',
-        'study-work-timers','stopwatch-clock-tools',
-        'pasta-timer','tea-timer','coffee-timer','steak-timer','rice-timer',
-        'turkey-timer','bread-baking-timer','microwave-popcorn-timer',
-        'sous-vide-timer','bbq-timer','baby-bottle-timer',
-        'boxing-round-timer','hiit-timer','yoga-timer','plank-timer',
-        'jump-rope-timer','running-interval-timer','stretching-timer',
-        'crossfit-amrap-timer','emom-timer','hour-timers',
-        'site-index',
-    ];
-    foreach ($allowed_page_slugs as $slug) {
+    // Add all whitelisted pages.
+    foreach (blogtimer_indexable_page_slugs() as $slug) {
         $page = get_page_by_path($slug);
         if ($page && $page->post_status === 'publish') {
             echo '  <url><loc>' . esc_url(get_permalink($page->ID)) . '</loc></url>' . "\n";
+        }
+    }
+
+    $guides_archive = get_post_type_archive_link('guide');
+    if ($guides_archive) {
+        echo '  <url><loc>' . esc_url($guides_archive) . '</loc></url>' . "\n";
+    }
+
+    foreach (blogtimer_indexable_taxonomies() as $taxonomy) {
+        $terms = get_terms([
+            'taxonomy' => $taxonomy,
+            'hide_empty' => false,
+        ]);
+        if (is_wp_error($terms) || empty($terms)) {
+            continue;
+        }
+        foreach ($terms as $term) {
+            $term_url = get_term_link($term);
+            if (!is_wp_error($term_url)) {
+                echo '  <url><loc>' . esc_url($term_url) . '</loc></url>' . "\n";
+            }
         }
     }
 
@@ -1172,55 +1242,7 @@ add_action('parse_request', function ($wp) {
 
 add_filter('wp_sitemaps_posts_query_args', function ($args, $post_type) {
     if ($post_type === 'page') {
-        $allowed_pages = [
-            'home', 'about', 'contact', 'faq',
-            'privacy-policy', 'terms-of-service',
-            'minute-timers', 'second-timers',
-            'pomodoro', 'use-cases',
-            'disclaimer', 'dmca', 'accessibility',
-            'editorial-policy',
-            'methodology', 'sources', 'author-suraj-giri', 'changelog',
-            'chess-clock', 'egg-timer', 'interval-timer',
-            'nap-timer', 'sprint-timer', 'presentation-timer',
-            'timer-for', 'kids', 'remote-workers',
-            // tool & hub pages added 2026-05-27
-            'stopwatch',
-            'online-alarm-clock',
-            'countdown-timer',
-            'sleep-timer',
-            'world-clock',
-            'focus-timer',
-            'study-timer',
-            'tabata-timer',
-            'cooking-timers',
-            'workout-timers',
-            'sleep-meditation-timers',
-            'study-work-timers',
-            'stopwatch-clock-tools',
-            'pasta-timer',
-            'tea-timer',
-            'coffee-timer',
-            'steak-timer',
-            'rice-timer',
-            'turkey-timer',
-            'bread-baking-timer',
-            'microwave-popcorn-timer',
-            'sous-vide-timer',
-            'bbq-timer',
-            'baby-bottle-timer',
-            'boxing-round-timer',
-            'hiit-timer',
-            'yoga-timer',
-            'plank-timer',
-            'jump-rope-timer',
-            'running-interval-timer',
-            'stretching-timer',
-            'crossfit-amrap-timer',
-            'emom-timer',
-            'hour-timers',
-            'site-index',
-        ];
-        $args['post_name__in'] = $allowed_pages;
+        $args['post_name__in'] = blogtimer_indexable_page_slugs();
     }
     return $args;
 }, 10, 2);
@@ -1267,7 +1289,11 @@ add_action('wp_head', function () {
             }
         }
     } elseif (is_post_type_archive()) {
-        $canonical = get_post_type_archive_link(get_post_type());
+        $post_type = get_query_var('post_type');
+        if (is_array($post_type)) {
+            $post_type = reset($post_type);
+        }
+        $canonical = get_post_type_archive_link($post_type ?: 'post');
     }
 
     if (!empty($canonical)) {
@@ -1319,6 +1345,132 @@ add_action('wp_head', function () {
 // ==========================================
 
 /**
+ * Build the CollectionPage + ItemList graph for public timer taxonomy archives.
+ *
+ * @param WP_Term $term Current timer taxonomy term.
+ * @param string  $org_id Stable Organization @id.
+ * @param string  $website_id Stable WebSite @id.
+ * @param string  $breadcrumb_id Stable BreadcrumbList @id for this archive.
+ * @return array|null
+ */
+function blogtimer_get_timer_taxonomy_archive_schema($term, $org_id, $website_id, $breadcrumb_id)
+{
+    if (!$term instanceof WP_Term || !in_array($term->taxonomy, blogtimer_indexable_taxonomies(), true)) {
+        return null;
+    }
+
+    $term_url = get_term_link($term);
+    if (is_wp_error($term_url) || empty($term_url)) {
+        return null;
+    }
+
+    $term_url = blogtimer_untrailingslashit_url($term_url);
+    $page_id = $term_url . '#webpage';
+    $item_list_id = $term_url . '#itemlist';
+    $term_name = single_term_title('', false);
+    if ($term_name === '') {
+        $term_name = $term->name;
+    }
+
+    $description = trim(wp_strip_all_tags(term_description((int) $term->term_id, $term->taxonomy)));
+    if ($description === '') {
+        if ($term->taxonomy === 'timer_unit') {
+            $description = sprintf(
+                'Browse all %s countdown timers with instant start, reliable alerts, and clean interfaces for productivity, workouts, cooking, and daily routines.',
+                strtolower($term->name)
+            );
+        } elseif ($term->taxonomy === 'timer_usecase') {
+            $description = sprintf(
+                'Discover timers for %s, including recommended durations and focused countdown pages that help you stay on pace.',
+                strtolower($term->name)
+            );
+        } else {
+            $description = sprintf(
+                'Explore %s and choose the right countdown duration for your task with practical recommendations and one-click start links.',
+                strtolower($term->name)
+            );
+        }
+    }
+
+    $timer_query = new WP_Query([
+        'post_type' => 'timer',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'tax_query' => [
+            [
+                'taxonomy' => $term->taxonomy,
+                'field' => 'term_id',
+                'terms' => (int) $term->term_id,
+            ],
+        ],
+        'meta_key' => '_timer_value',
+        'orderby' => 'meta_value_num',
+        'order' => 'ASC',
+        'no_found_rows' => true,
+        'ignore_sticky_posts' => true,
+    ]);
+
+    $list_items = [];
+    $position = 1;
+    foreach ($timer_query->posts as $timer_post) {
+        $timer_url = blogtimer_untrailingslashit_url(get_permalink($timer_post));
+        if (empty($timer_url)) {
+            continue;
+        }
+
+        $list_items[] = [
+            '@type' => 'ListItem',
+            'position' => $position++,
+            'item' => [
+                '@type' => 'WebPage',
+                '@id' => $timer_url . '#webpage',
+                'url' => $timer_url,
+                'name' => get_the_title($timer_post),
+            ],
+        ];
+    }
+    wp_reset_postdata();
+
+    $item_list = [
+        '@type' => 'ItemList',
+        '@id' => $item_list_id,
+        'name' => $term_name . ' timer pages',
+        'numberOfItems' => count($list_items),
+        'itemListElement' => $list_items,
+    ];
+
+    return [
+        '@context' => 'https://schema.org',
+        '@type' => 'CollectionPage',
+        '@id' => $page_id,
+        'url' => $term_url,
+        'name' => $term_name,
+        'description' => wp_trim_words($description, 40, '...'),
+        'isPartOf' => [
+            '@id' => $website_id,
+        ],
+        'publisher' => [
+            '@id' => $org_id,
+        ],
+        'breadcrumb' => [
+            '@id' => $breadcrumb_id,
+        ],
+        'mainEntity' => $item_list,
+    ];
+}
+
+/**
+ * Keep timer taxonomy archive JSON-LD consolidated in the theme graph.
+ */
+add_action('wp_head', function () {
+    if (!is_tax(blogtimer_indexable_taxonomies()) || !class_exists('Timer_Engine')) {
+        return;
+    }
+
+    remove_action('wp_head', [Timer_Engine::get_instance(), 'output_schema'], 99);
+}, 4);
+
+/**
  * Output JSON-LD structured data in wp_head.
  */
 add_action('wp_head', function () {
@@ -1334,6 +1486,8 @@ add_action('wp_head', function () {
     $org_id = home_url('/#organization');
     $website_id = home_url('/#website');
     $person_id = home_url('/author-suraj-giri/') . '#person';
+    $current_url = blogtimer_untrailingslashit_url(home_url(add_query_arg([], $GLOBALS['wp']->request ?? '')));
+    $breadcrumb_id = $current_url . '#breadcrumb';
 
     // ONE logo node. Only favicon.svg exists in the theme images dir today.
     // TODO: replace with PNG logo ≥112px (Google requires a raster logo ≥112x112px for rich results).
@@ -1362,7 +1516,7 @@ add_action('wp_head', function () {
         'sameAs' => [],
     ];
 
-    // WebSite schema with SearchAction — homepage only. SINGLE consolidated node (stable @id).
+    // WebSite schema — homepage only. SINGLE consolidated node (stable @id).
     // This is the ONLY WebSite output site-wide; the plugin's duplicate has been neutralized.
     if (is_front_page()) {
         $schemas[] = [
@@ -1374,14 +1528,6 @@ add_action('wp_head', function () {
             'description' => 'Evidence-based timing: research-backed "how long should I…" guides and accurate online countdown, Pomodoro, and stopwatch tools.',
             'publisher' => [
                 '@id' => $org_id,
-            ],
-            'potentialAction' => [
-                '@type' => 'SearchAction',
-                'target' => [
-                    '@type' => 'EntryPoint',
-                    'urlTemplate' => $site_url . '?s={search_term_string}',
-                ],
-                'query-input' => 'required name=search_term_string',
             ],
         ];
     }
@@ -1513,8 +1659,16 @@ add_action('wp_head', function () {
             $schemas[] = [
                 '@context' => 'https://schema.org',
                 '@type' => 'BreadcrumbList',
+                '@id' => $breadcrumb_id,
                 'itemListElement' => $breadcrumb_items,
             ];
+        }
+    }
+
+    if (is_tax(blogtimer_indexable_taxonomies())) {
+        $taxonomy_schema = blogtimer_get_timer_taxonomy_archive_schema(get_queried_object(), $org_id, $website_id, $breadcrumb_id);
+        if (!empty($taxonomy_schema)) {
+            $schemas[] = $taxonomy_schema;
         }
     }
 

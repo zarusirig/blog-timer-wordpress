@@ -12,7 +12,7 @@
 (function () {
     'use strict';
 
-    var MOBILE_MAX = 768; // must match the CSS @media (max-width: 768px)
+    var MOBILE_MAX = 1320; // must match the nav drawer CSS breakpoint
     var FOCUSABLE = 'a[href], button:not([disabled])';
 
     function isMobile() { return window.innerWidth <= MOBILE_MAX; }

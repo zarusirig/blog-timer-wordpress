@@ -22,7 +22,8 @@
 
         /* Wide multi-column dropdown panel (desktop) */
         .primary-nav .nav-submenu.mega-panel {
-            min-width: 540px;
+            width: max-content;
+            min-width: 520px;
             max-width: 92vw;
             padding: 18px;
             display: none;
@@ -91,11 +92,12 @@
         }
 
         /* ---- Mobile: silo accordion (caret-toggled), default-collapsed ---- */
-        @media (max-width: 768px) {
+        @media (max-width: 1320px) {
             .primary-nav .nav-submenu.mega-panel {
                 display: none;
                 grid-template-columns: 1fr;
                 min-width: 0;
+                width: auto;
                 max-width: none;
                 padding: 4px 0 8px;
             }
@@ -188,11 +190,16 @@
                             <li><a href="<?php echo esc_url(home_url('/steak-timer/')); ?>">Steak Timer</a></li>
                             <li><a href="<?php echo esc_url(home_url('/rice-timer/')); ?>">Rice Cooking Timer</a></li>
                             <li><a href="<?php echo esc_url(home_url('/turkey-timer/')); ?>">Turkey Roasting Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/bread-baking-timer/')); ?>">Bread Baking Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/microwave-popcorn-timer/')); ?>">Microwave Popcorn Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/sous-vide-timer/')); ?>">Sous Vide Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/bbq-timer/')); ?>">BBQ &amp; Grill Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/baby-bottle-timer/')); ?>">Baby Bottle Timer</a></li>
                         </ul>
                     </li>
 
                     <!-- Silo 4: Workout &amp; Interval Timers -->
-                    <li class="nav-item--has-submenu">
+                    <li class="nav-item--has-submenu nav-align-right">
                         <a href="<?php echo esc_url(home_url('/workout-timers/')); ?>" <?php echo (is_page(['workout-timers', 'hiit-timer', 'tabata-timer', 'boxing-round-timer', 'emom-timer', 'crossfit-amrap-timer', 'plank-timer', 'yoga-timer'])) ? 'class="active"' : ''; ?>>Workout &amp; Interval Timers</a>
                         <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                             <ul class="nav-submenu mega-panel">
@@ -205,6 +212,9 @@
                             <li><a href="<?php echo esc_url(home_url('/crossfit-amrap-timer/')); ?>">CrossFit AMRAP Timer</a></li>
                             <li><a href="<?php echo esc_url(home_url('/plank-timer/')); ?>">Plank Timer</a></li>
                             <li><a href="<?php echo esc_url(home_url('/yoga-timer/')); ?>">Yoga Session Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/jump-rope-timer/')); ?>">Jump Rope Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/running-interval-timer/')); ?>">Running Interval Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/stretching-timer/')); ?>">Stretching Timer</a></li>
                         </ul>
                     </li>
 

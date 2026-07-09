@@ -351,6 +351,8 @@ class Timer_Engine
             'hour-timers' => 'Hour Timers — 1 to 24-Hour Countdowns',
             'world-clock' => 'World Clock — Current Time in Cities Worldwide',
             'timer-for' => 'Timer For Every Task, Person & Activity',
+            'timer-for-kids' => 'Timer for Kids — Visual Countdowns for Children',
+            'timer-for-remote-workers' => 'Timer for Remote Workers — Focus & Break Blocks',
         ];
 
         return $page_title_overrides[$slug] ?? '';
@@ -409,8 +411,8 @@ class Timer_Engine
                 'sprint-timer' => 'Free online sprint timer for focused work sessions. 15, 25, 45, and 90-minute work sprint presets to boost productivity and beat procrastination.',
                 'presentation-timer' => 'Free presentation timer for speakers. Time lightning talks, Pecha Kucha, TED-style talks, and conference sessions with simple visual countdowns.',
                 'timer-for' => 'Browse timers designed for specific audiences and use cases — students, remote workers, kids, fitness enthusiasts, and more.',
-                'kids' => 'Child-friendly timers for homework, chores, screen time, and calm-down moments. Age-appropriate durations and tips for managing kids time with visual countdowns.',
-                'remote-workers' => 'Productivity timers for remote work and work-from-home schedules. Structure your day with focus blocks, scheduled breaks, and hard-stop timers.',
+                'timer-for-kids' => 'Child-friendly timers for homework, chores, screen time, and calm-down moments. Age-appropriate durations and tips for managing kids time with visual countdowns.',
+                'timer-for-remote-workers' => 'Productivity timers for remote work and work-from-home schedules. Structure your day with focus blocks, scheduled breaks, and hard-stop timers.',
                 'methodology' => 'How The Blog Timer tests countdown accuracy: the 8-test protocol, browser/OS matrix, statistical drift reporting, and an open methodology you can replicate.',
                 'sources' => 'Complete bibliography of primary sources cited across The Blog Timer: productivity research, sleep science, HIIT physiology, food safety, and cognitive psychology.',
                 'author-suraj-giri' => 'Suraj Giri is the founder and editor of The Blog Timer. Productivity researcher and software engineer writing on attention, timing, and tool design.',
@@ -610,7 +612,9 @@ class Timer_Engine
         }
 
         if (is_singular('timer')) {
-            $this->output_timer_schema();
+            // Timer structured data is emitted by the theme's consolidated schema graph.
+            // Keeping a single owner avoids duplicate WebApplication, FAQPage, and
+            // BreadcrumbList nodes on every timer URL.
             return;
         }
 

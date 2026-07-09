@@ -97,6 +97,19 @@ Options -Indexes +FollowSymLinks
     # Remove WordPress version from headers
     Header unset X-Powered-By
     Header unset Server
+
+    # Keep crawl-control files fresh for search engines.
+    <FilesMatch "^(robots\.txt|sitemap.*\.xml|wp-sitemap.*\.xml)$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+
+    # Cache theme-owned static assets for repeat crawls and visits.
+    <IfModule mod_setenvif.c>
+        SetEnvIf Request_URI "^/wp-content/themes/my-custom-theme/.+\.(css|js|wav|mp3|woff2?|png|jpe?g|gif|webp|svg)$" BLOGTIMER_THEME_ASSET=1
+    </IfModule>
+    Header set Cache-Control "public, max-age=604800" env=BLOGTIMER_THEME_ASSET
 </IfModule>
 
 # ==========================================
