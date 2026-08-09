@@ -265,7 +265,7 @@ strong {
 .primary-nav a:hover,
 .primary-nav a.active {
     color: var(--color-text-primary);
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--color-bg-hover);
 }
 
 .primary-nav a.active {
@@ -314,7 +314,7 @@ strong {
 }
 
 .nav-submenu a:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--color-bg-hover);
     color: var(--color-text-primary);
 }
 
@@ -333,7 +333,7 @@ strong {
 }
 
 .mobile-toggle:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--color-bg-hover);
 }
 
 /* Caret toggle for the mobile accordion nav. Hidden on desktop (hover menus),
@@ -367,6 +367,7 @@ strong {
         min-height: 44px;
     }
 
+    /* ---- Off-canvas dropdown panel ---- */
     .primary-nav {
         display: none;
         position: absolute;
@@ -376,10 +377,13 @@ strong {
         max-height: calc(100dvh - var(--header-height));
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-        align-items: stretch;
         flex-direction: column;
-        padding: var(--space-3) var(--space-4) var(--space-5);
+        align-items: stretch;
+        gap: 0;
+        /* extra bottom room so the last item scrolls clear of the cookie banner */
+        padding: var(--space-2) 0 var(--space-10);
         background: var(--color-bg-elevated);
+        border-top: 1px solid var(--color-border-light);
         border-bottom: 1px solid var(--color-border);
         box-shadow: var(--shadow-lg);
         overscroll-behavior: contain;
@@ -387,17 +391,29 @@ strong {
 
     .primary-nav.open {
         display: flex;
+        animation: navSlideDown 0.18s ease-out;
     }
 
+    @keyframes navSlideDown {
+        from { opacity: 0; transform: translateY(-6px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Clear row separators between top-level destinations */
     .primary-nav > li {
         width: 100%;
+        border-bottom: 1px solid var(--color-border-light);
     }
 
-    .primary-nav a {
-        padding: var(--space-3) var(--space-4);
-        min-height: 44px;
+    /* Top-level rows: bold, full-width, generous tap target */
+    .primary-nav > li > a {
+        padding: var(--space-4) var(--space-5);
+        min-height: 52px;
         font-size: var(--text-base);
+        font-weight: 600;
+        color: var(--color-text-primary);
         white-space: normal;
+        border-radius: 0;
     }
 
     .nav-item--has-submenu > a::after {
@@ -405,30 +421,49 @@ strong {
         margin-left: 0;
     }
 
+    /* Accordion submenus — indented, lighter than the parent row */
     .nav-submenu {
         display: none;
         position: static;
         min-width: 0;
-        padding: var(--space-1) 0 var(--space-2);
+        padding: 0 0 var(--space-2);
         margin: 0;
         border: 0;
         background: transparent;
         box-shadow: none;
     }
 
-    .primary-nav .nav-submenu a {
-        display: flex;
-        align-items: center;
-        min-height: 44px;
-        padding: var(--space-3) var(--space-6);
-        color: var(--color-text-muted);
-        font-size: var(--text-base);
-    }
-
     .primary-nav .nav-item--has-submenu.submenu-open > .nav-submenu {
         display: block;
     }
 
+    /* Section labels inside submenus — a LABEL, not a link */
+    .primary-nav .mega-section-label {
+        padding: var(--space-4) var(--space-5) var(--space-1);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+    }
+
+    .primary-nav .nav-submenu a {
+        display: block;
+        min-height: 44px;
+        padding: var(--space-3) var(--space-5) var(--space-3) var(--space-7);
+        color: var(--color-text-secondary);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        border-radius: 0;
+    }
+
+    /* Hub ("all X") links get the accent to mark them as category entries */
+    .primary-nav .nav-submenu a.mega-hub-link {
+        color: var(--color-accent);
+        font-weight: 600;
+    }
+
+    /* Parent silo row = link + caret side by side */
     .primary-nav .nav-item--has-submenu {
         display: flex;
         flex-wrap: wrap;
@@ -448,16 +483,36 @@ strong {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        flex: 0 0 44px;
-        min-height: 44px;
+        flex: 0 0 52px;
+        min-height: 52px;
         background: transparent;
         border: 0;
         color: var(--color-text-secondary);
         cursor: pointer;
-        border-radius: var(--radius-sm);
+        border-radius: 0;
+        transition: transform var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
     }
 
+    /* Rotate the chevron when the silo is open */
     .nav-submenu-toggle[aria-expanded="true"] {
+        color: var(--color-accent);
+        transform: rotate(180deg);
+    }
+
+    /* Hover/focus + active — theme-aware (resolves correctly in forced-light) */
+    .primary-nav a:hover,
+    .primary-nav a:focus-visible,
+    .nav-submenu-toggle:hover,
+    .mobile-toggle:hover {
+        background: var(--color-bg-hover);
+    }
+
+    .primary-nav a:hover,
+    .primary-nav a:focus-visible {
+        color: var(--color-text-primary);
+    }
+
+    .primary-nav a.active {
         color: var(--color-accent);
     }
 }
@@ -1058,7 +1113,7 @@ kbd {
 
 .btn--ghost:hover {
     color: var(--color-text-primary);
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--color-bg-hover);
 }
 
 .btn--large {
@@ -2552,48 +2607,42 @@ kbd {
 }
 
 /* ===========================================================
-   LIGHT MODE — opt-in via OS theme (prefers-color-scheme: light).
+   LIGHT MODE — always on (the site is light-only).
    Token-level override so every component that uses vars inherits it.
+   These unconditional values sit AFTER the dark base :root at the top of
+   the file, so they win the cascade on every device regardless of OS theme.
+   Component hover/surface tints already use var(--color-bg-hover), which
+   resolves correctly here without a separate media-query override.
    =========================================================== */
-@media (prefers-color-scheme: light) {
-    :root {
-        --color-bg: #f6f7fb;
-        --color-bg-elevated: #ffffff;
-        --color-bg-card: #ffffff;
-        --color-bg-hover: #eef0f7;
-        --color-surface: #eef0f7;
-        --color-border: #d9dde8;
-        --color-border-light: #e6e9f1;
-        --color-text-primary: #14182a;
-        --color-text-secondary: #444c63;
-        --color-text-muted: #5b6478;
-        --color-text-inverse: #ffffff;
+:root {
+    --color-bg: #f6f7fb;
+    --color-bg-elevated: #ffffff;
+    --color-bg-card: #ffffff;
+    --color-bg-hover: #eef0f7;
+    --color-surface: #eef0f7;
+    --color-border: #d9dde8;
+    --color-border-light: #e6e9f1;
+    --color-text-primary: #14182a;
+    --color-text-secondary: #444c63;
+    --color-text-muted: #5b6478;
+    --color-text-inverse: #ffffff;
 
-        --glass-bg: rgba(255, 255, 255, 0.85);
-        --glass-border: rgba(0, 0, 0, 0.08);
-        --glass-blur: blur(12px);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-blur: blur(12px);
 
-        --shadow-sm: 0 1px 3px rgba(20, 24, 42, 0.08);
-        --shadow-md: 0 4px 16px rgba(20, 24, 42, 0.10);
-        --shadow-lg: 0 8px 32px rgba(20, 24, 42, 0.14);
-        --shadow-xl: 0 16px 48px rgba(20, 24, 42, 0.18);
-        --shadow-card: 0 2px 8px rgba(20, 24, 42, 0.06), 0 0 0 1px var(--color-border);
-        --shadow-card-hover: 0 8px 24px rgba(20, 24, 42, 0.12), 0 0 0 1px var(--color-accent);
-    }
-
-    body {
-        background-color: var(--color-bg);
-        color: var(--color-text-primary);
-    }
-
-    /* Hover backgrounds hardcode a white tint — flip to a dark tint in light mode. */
-    .primary-nav a:hover,
-    .primary-nav a.active,
-    .nav-submenu a:hover,
-    .mobile-toggle:hover {
-        background-color: rgba(20, 24, 42, 0.06);
-    }
-
-    /* Softer decorative glow on light backgrounds. */
-    .hero::before { opacity: 0.45; }
+    --shadow-sm: 0 1px 3px rgba(20, 24, 42, 0.08);
+    --shadow-md: 0 4px 16px rgba(20, 24, 42, 0.10);
+    --shadow-lg: 0 8px 32px rgba(20, 24, 42, 0.14);
+    --shadow-xl: 0 16px 48px rgba(20, 24, 42, 0.18);
+    --shadow-card: 0 2px 8px rgba(20, 24, 42, 0.06), 0 0 0 1px var(--color-border);
+    --shadow-card-hover: 0 8px 24px rgba(20, 24, 42, 0.12), 0 0 0 1px var(--color-accent);
 }
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+}
+
+/* Softer decorative glow on light backgrounds. */
+.hero::before { opacity: 0.45; }
