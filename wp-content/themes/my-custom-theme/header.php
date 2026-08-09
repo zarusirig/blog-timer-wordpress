@@ -4,9 +4,14 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php // Favicons — raster-first so Google's SERP favicon fetcher (which does not
+          // reliably render SVG) gets a PNG/ICO. SVG kept last as progressive enhancement. ?>
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo esc_url(get_template_directory_uri()); ?>/images/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url(get_template_directory_uri()); ?>/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo esc_url(get_template_directory_uri()); ?>/images/favicon-16.png">
     <link rel="icon" type="image/svg+xml" href="<?php echo esc_url(get_template_directory_uri()); ?>/images/favicon.svg">
-    <link rel="alternate icon" type="image/png" href="<?php echo esc_url(get_template_directory_uri()); ?>/images/favicon.svg">
-    <link rel="apple-touch-icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url(get_template_directory_uri()); ?>/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="<?php echo esc_url(home_url('/favicon.ico')); ?>">
     <meta name="theme-color" content="#6366f1">
     <?php wp_head(); ?>
     <style id="megamenu-css">

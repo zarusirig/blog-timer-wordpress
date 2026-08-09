@@ -1692,22 +1692,13 @@ add_action('wp_head', function () {
     $current_url = blogtimer_untrailingslashit_url(home_url(add_query_arg([], $GLOBALS['wp']->request ?? '')));
     $breadcrumb_id = $current_url . '#breadcrumb';
 
-    // F-11: Google requires a RASTER logo ≥112x112px for Article / rich results —
-    // SVG is not accepted. The theme ships only images/favicon.svg (no PNG in
-    // images/), so the best available raster is the WordPress site icon, which is a
-    // 512px PNG when configured (Appearance → Settings → Site Icon). When it is set we
-    // use it and declare width/height; otherwise we fall back to the SVG and flag it.
-    // TODO(F-11): add a dedicated PNG logo at images/logo-512.png (512x512px, or at
-    // minimum ≥112x112px) and reference it here for a deterministic raster logo that
-    // does not depend on the site-icon being configured. Do NOT point at a file that
-    // does not yet exist.
-    $logo_url  = get_site_icon_url(512);
-    $logo_size = null;
-    if ($logo_url) {
-        $logo_size = ['width' => 512, 'height' => 512];
-    } else {
-        $logo_url = get_theme_file_uri('images/favicon.svg');
-    }
+    // F-11 (resolved): Google requires a RASTER logo ≥112x112px for Article / rich
+    // results — SVG is not accepted. The theme now ships a deterministic 512px PNG
+    // (images/favicon-512.png, generated from favicon.svg) used for the Organization
+    // schema logo and, at smaller sizes, the favicon link tags in header.php. No
+    // longer depends on the WP site-icon being configured.
+    $logo_url  = get_theme_file_uri('images/favicon-512.png');
+    $logo_size = ['width' => 512, 'height' => 512];
 
     // Organization schema — every page. SINGLE consolidated node (stable @id).
     // This is the ONLY Organization output site-wide; the plugin's duplicate has been neutralized.
