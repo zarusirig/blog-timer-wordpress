@@ -53,7 +53,7 @@ function blogtimer_enqueue_assets()
     // origins are gone from the critical path entirely.
 
     // Main stylesheet
-    wp_enqueue_style('blogtimer-style', get_stylesheet_uri(), [], TIMER_ENGINE_VERSION ?? '2.0.0');
+    wp_enqueue_style('blogtimer-style', get_stylesheet_uri(), [], filemtime(get_stylesheet_directory() . '/style.css'));
 
     // Mobile navigation
     wp_enqueue_script('blogtimer-mobile-nav', get_template_directory_uri() . '/js/mobile-nav.js', [], '2.0.0', [
