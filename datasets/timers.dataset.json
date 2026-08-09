@@ -63,7 +63,7 @@
           "id": "seconds_long",
           "label": "Long Second Timers",
           "min": 31,
-          "max": 60,
+          "max": 90,
           "description": "Longer second-based timers for planks, intervals, and timed activities."
         }
       ],
@@ -2893,6 +2893,16 @@
       "useCases": [
         "exercise",
         "meditation"
+      ]
+    },
+    {
+      "id": "t_s_90",
+      "unit": "seconds",
+      "value": 90,
+      "slug": "set-timer-for-90-seconds",
+      "isPopular": true,
+      "useCases": [
+        "exercise"
       ]
     },
     {

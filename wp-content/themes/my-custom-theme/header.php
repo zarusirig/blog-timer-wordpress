@@ -148,116 +148,116 @@
 
                     <!-- Silo 1: Focus &amp; Productivity (Quality Nodes — productivity FIRST) -->
                     <li class="nav-item--has-submenu">
-                        <a href="<?php echo esc_url(home_url('/pomodoro/')); ?>" <?php echo (is_page(['pomodoro', 'focus-timer', 'study-timer', 'study-work-timers', 'interval-timer'])) ? 'class="active"' : ''; ?>>Focus &amp; Productivity</a>
+                        <a href="<?php echo esc_url(home_url('/pomodoro')); ?>" <?php echo (is_page(['pomodoro', 'focus-timer', 'study-timer', 'study-work-timers', 'interval-timer'])) ? 'class="active"' : ''; ?>>Focus &amp; Productivity</a>
                         <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                             <ul class="nav-submenu mega-panel">
                             <li class="mega-section-label">Focus &amp; Study Timers</li>
-                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Pomodoro Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/focus-timer/')); ?>">Deep Work &amp; Focus Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/study-timer/')); ?>">Study Timer for Students</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/study-work-timers/')); ?>">Study &amp; Work Timers</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/interval-timer/')); ?>">Interval &amp; Time-Blocking Timer</a></li>
+                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/pomodoro')); ?>">Pomodoro Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/focus-timer')); ?>">Deep Work &amp; Focus Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/study-timer')); ?>">Study Timer for Students</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/study-work-timers')); ?>">Study &amp; Work Timers</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/interval-timer')); ?>">Interval &amp; Time-Blocking Timer</a></li>
                             <li class="mega-section-label">Evidence-Based Guides</li>
-                            <li><a href="<?php echo esc_url(home_url('/guides/how-long-is-a-pomodoro/')); ?>">How Long Is a Pomodoro?</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/guides/deep-work-timers/')); ?>">Best Deep Work Timers</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/guides/how-long-is-a-pomodoro')); ?>">How Long Is a Pomodoro?</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/guides/deep-work-timers')); ?>">Best Deep Work Timers</a></li>
                         </ul>
                     </li>
 
                     <!-- Silo 2: Timers by Duration -->
                     <li class="nav-item--has-submenu">
-                        <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>" <?php echo (is_page(['minute-timers', 'second-timers', 'hour-timers', 'use-cases']) || is_tax('timer_unit') || is_tax('timer_bucket') || is_tax('timer_usecase')) ? 'class="active"' : ''; ?>>Timers by Duration</a>
+                        <a href="<?php echo esc_url(home_url('/minute-timers')); ?>" <?php echo (is_page(['minute-timers', 'second-timers', 'hour-timers', 'use-cases']) || is_tax('timer_unit') || is_tax('timer_bucket') || is_tax('timer_usecase')) ? 'class="active"' : ''; ?>>Timers by Duration</a>
                         <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                             <ul class="nav-submenu mega-panel mega-panel--single">
                             <li class="mega-section-label">Set a Timer by Length</li>
-                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/minute-timers/')); ?>">Minute Timers (1&ndash;161 min)</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/second-timers/')); ?>">Second Timers (1&ndash;60 sec)</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/hour-timers/')); ?>">Hour Timers (1&ndash;12 hr)</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/use-cases/')); ?>">Browse Timers by Use Case</a></li>
+                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/minute-timers')); ?>">Minute Timers (1&ndash;161 min)</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/second-timers')); ?>">Second Timers (1&ndash;60 sec)</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/hour-timers')); ?>">Hour Timers (1&ndash;12 hr)</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/use-cases')); ?>">Browse Timers by Use Case</a></li>
                         </ul>
                     </li>
 
                     <!-- Silo 3: Cooking Timers -->
                     <li class="nav-item--has-submenu">
-                        <a href="<?php echo esc_url(home_url('/cooking-timers/')); ?>" <?php echo (is_page(['cooking-timers', 'egg-timer', 'pasta-timer', 'tea-timer', 'coffee-timer', 'steak-timer', 'rice-timer', 'turkey-timer'])) ? 'class="active"' : ''; ?>>Cooking Timers</a>
+                        <a href="<?php echo esc_url(home_url('/cooking-timers')); ?>" <?php echo (is_page(['cooking-timers', 'egg-timer', 'pasta-timer', 'tea-timer', 'coffee-timer', 'steak-timer', 'rice-timer', 'turkey-timer'])) ? 'class="active"' : ''; ?>>Cooking Timers</a>
                         <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                             <ul class="nav-submenu mega-panel">
                             <li class="mega-section-label">Kitchen &amp; Cooking Timers</li>
-                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/cooking-timers/')); ?>">All Cooking Timers</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/egg-timer/')); ?>">Egg Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/pasta-timer/')); ?>">Pasta Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/tea-timer/')); ?>">Tea Steeping Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/coffee-timer/')); ?>">Coffee Brew Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/steak-timer/')); ?>">Steak Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/rice-timer/')); ?>">Rice Cooking Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/turkey-timer/')); ?>">Turkey Roasting Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/bread-baking-timer/')); ?>">Bread Baking Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/microwave-popcorn-timer/')); ?>">Microwave Popcorn Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/sous-vide-timer/')); ?>">Sous Vide Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/bbq-timer/')); ?>">BBQ &amp; Grill Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/baby-bottle-timer/')); ?>">Baby Bottle Timer</a></li>
+                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/cooking-timers')); ?>">All Cooking Timers</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/egg-timer')); ?>">Egg Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/pasta-timer')); ?>">Pasta Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/tea-timer')); ?>">Tea Steeping Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/coffee-timer')); ?>">Coffee Brew Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/steak-timer')); ?>">Steak Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/rice-timer')); ?>">Rice Cooking Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/turkey-timer')); ?>">Turkey Roasting Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/bread-baking-timer')); ?>">Bread Baking Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/microwave-popcorn-timer')); ?>">Microwave Popcorn Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/sous-vide-timer')); ?>">Sous Vide Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/bbq-timer')); ?>">BBQ &amp; Grill Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/baby-bottle-timer')); ?>">Baby Bottle Timer</a></li>
                         </ul>
                     </li>
 
                     <!-- Silo 4: Workout &amp; Interval Timers -->
                     <li class="nav-item--has-submenu nav-align-right">
-                        <a href="<?php echo esc_url(home_url('/workout-timers/')); ?>" <?php echo (is_page(['workout-timers', 'hiit-timer', 'tabata-timer', 'boxing-round-timer', 'emom-timer', 'crossfit-amrap-timer', 'plank-timer', 'yoga-timer'])) ? 'class="active"' : ''; ?>>Workout &amp; Interval Timers</a>
+                        <a href="<?php echo esc_url(home_url('/workout-timers')); ?>" <?php echo (is_page(['workout-timers', 'hiit-timer', 'tabata-timer', 'boxing-round-timer', 'emom-timer', 'crossfit-amrap-timer', 'plank-timer', 'yoga-timer'])) ? 'class="active"' : ''; ?>>Workout &amp; Interval Timers</a>
                         <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                             <ul class="nav-submenu mega-panel">
                             <li class="mega-section-label">HIIT, Tabata &amp; Interval Timers</li>
-                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/workout-timers/')); ?>">All Workout Timers</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/hiit-timer/')); ?>">HIIT Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/tabata-timer/')); ?>">Tabata Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/boxing-round-timer/')); ?>">Boxing Round Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/emom-timer/')); ?>">EMOM Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/crossfit-amrap-timer/')); ?>">CrossFit AMRAP Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/plank-timer/')); ?>">Plank Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/yoga-timer/')); ?>">Yoga Session Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/jump-rope-timer/')); ?>">Jump Rope Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/running-interval-timer/')); ?>">Running Interval Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/stretching-timer/')); ?>">Stretching Timer</a></li>
+                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/workout-timers')); ?>">All Workout Timers</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/hiit-timer')); ?>">HIIT Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/tabata-timer')); ?>">Tabata Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/boxing-round-timer')); ?>">Boxing Round Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/emom-timer')); ?>">EMOM Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/crossfit-amrap-timer')); ?>">CrossFit AMRAP Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/plank-timer')); ?>">Plank Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/yoga-timer')); ?>">Yoga Session Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/jump-rope-timer')); ?>">Jump Rope Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/running-interval-timer')); ?>">Running Interval Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/stretching-timer')); ?>">Stretching Timer</a></li>
                         </ul>
                     </li>
 
                     <!-- Silo 5: Sleep &amp; Meditation -->
                     <li class="nav-item--has-submenu nav-align-right">
-                        <a href="<?php echo esc_url(home_url('/sleep-meditation-timers/')); ?>" <?php echo (is_page(['sleep-meditation-timers', 'nap-timer', 'sleep-timer'])) ? 'class="active"' : ''; ?>>Sleep &amp; Meditation</a>
+                        <a href="<?php echo esc_url(home_url('/sleep-meditation-timers')); ?>" <?php echo (is_page(['sleep-meditation-timers', 'nap-timer', 'sleep-timer'])) ? 'class="active"' : ''; ?>>Sleep &amp; Meditation</a>
                         <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                             <ul class="nav-submenu mega-panel mega-panel--single">
                             <li class="mega-section-label">Sleep &amp; Meditation Timers</li>
-                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/sleep-meditation-timers/')); ?>">Sleep &amp; Meditation Timers</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">Power Nap Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/sleep-timer/')); ?>">Sleep Timer</a></li>
+                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/sleep-meditation-timers')); ?>">Sleep &amp; Meditation Timers</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/nap-timer')); ?>">Power Nap Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/sleep-timer')); ?>">Sleep Timer</a></li>
                         </ul>
                     </li>
 
                     <!-- Silo 6: Clocks &amp; Tools -->
                     <li class="nav-item--has-submenu nav-align-right">
-                        <a href="<?php echo esc_url(home_url('/stopwatch-clock-tools/')); ?>" <?php echo (is_page(['stopwatch-clock-tools', 'stopwatch', 'online-alarm-clock', 'countdown-timer', 'world-clock'])) ? 'class="active"' : ''; ?>>Clocks &amp; Tools</a>
+                        <a href="<?php echo esc_url(home_url('/stopwatch-clock-tools')); ?>" <?php echo (is_page(['stopwatch-clock-tools', 'stopwatch', 'online-alarm-clock', 'countdown-timer', 'world-clock'])) ? 'class="active"' : ''; ?>>Clocks &amp; Tools</a>
                         <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                             <ul class="nav-submenu mega-panel mega-panel--single">
                             <li class="mega-section-label">Stopwatch &amp; Clock Tools</li>
-                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/stopwatch-clock-tools/')); ?>">Stopwatch &amp; Clock Tools</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/stopwatch/')); ?>">Online Stopwatch</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/online-alarm-clock/')); ?>">Online Alarm Clock</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/countdown-timer/')); ?>">Countdown Timer</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/world-clock/')); ?>">World Clock</a></li>
+                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/stopwatch-clock-tools')); ?>">Stopwatch &amp; Clock Tools</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/stopwatch')); ?>">Online Stopwatch</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/online-alarm-clock')); ?>">Online Alarm Clock</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/countdown-timer')); ?>">Countdown Timer</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/world-clock')); ?>">World Clock</a></li>
                         </ul>
                     </li>
 
                     <!-- Silo 7: Guides (evidence-based / methodology trust node) -->
                     <li class="nav-item--has-submenu nav-align-right">
-                        <a href="<?php echo esc_url(home_url('/guides/')); ?>" <?php echo (is_post_type_archive('guide') || is_singular('guide') || is_page(['methodology', 'sources', 'site-index'])) ? 'class="active"' : ''; ?>>Guides</a>
+                        <a href="<?php echo esc_url(home_url('/guides')); ?>" <?php echo (is_post_type_archive('guide') || is_singular('guide') || is_page(['methodology', 'sources', 'site-index'])) ? 'class="active"' : ''; ?>>Guides</a>
                         <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="Toggle submenu"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4 L6 8 L10 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                             <ul class="nav-submenu mega-panel mega-panel--single">
                             <li class="mega-section-label">Evidence-Based Timing Guides</li>
-                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/guides/')); ?>">All Timer Guides</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/methodology/')); ?>">Timer Accuracy &amp; Methodology</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/sources/')); ?>">Research Sources</a></li>
-                            <li><a href="<?php echo esc_url(home_url('/site-index/')); ?>">Full Site Index</a></li>
+                            <li><a class="mega-hub-link" href="<?php echo esc_url(home_url('/guides')); ?>">All Timer Guides</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/methodology')); ?>">Timer Accuracy &amp; Methodology</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/sources')); ?>">Research Sources</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/site-index')); ?>">Full Site Index</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="<?php echo esc_url(home_url('/faq/')); ?>" <?php echo is_page('faq') ? 'class="active"' : ''; ?>>FAQ</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/faq')); ?>" <?php echo is_page('faq') ? 'class="active"' : ''; ?>>FAQ</a></li>
 
                 </ul>
             </nav>

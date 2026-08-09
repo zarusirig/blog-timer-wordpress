@@ -18,7 +18,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~12 min read &middot; Curated hub page</div>
             </div>
         </div>
@@ -48,27 +48,27 @@ get_header();
             <p class="section-subtitle">Specialized timers for foods with narrow time windows.</p>
 
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/egg-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/egg-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">E</div>
                     <h3>Egg Timer</h3>
                     <p>Soft (6 min), medium (8 min), hard (10&ndash;12 min), and poached presets. Adjusts for egg size and starting temperature.</p>
                 </a>
-                <a class="card usecase-card" href="/pasta-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/pasta-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">P</div>
                     <h3>Pasta Timer</h3>
                     <p>Al dente timing for every pasta shape, from angel hair (3 min) to penne (11 min) to fresh tagliatelle (90 seconds).</p>
                 </a>
-                <a class="card usecase-card" href="/rice-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/rice-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">R</div>
                     <h3>Rice Timer</h3>
                     <p>Steaming times for white, brown, basmati, jasmine, arborio, and wild rice with rest periods included.</p>
                 </a>
-                <a class="card usecase-card" href="/microwave-popcorn-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/microwave-popcorn-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">M</div>
                     <h3>Microwave Popcorn Timer</h3>
                     <p>"Three seconds between pops" &mdash; the timer that stops you from burning a $1 bag of corn.</p>
                 </a>
-                <a class="card usecase-card" href="/baby-bottle-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/baby-bottle-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">B</div>
                     <h3>Baby Bottle Timer</h3>
                     <p>Warming and cooling timing for safe formula and breast milk temperatures.</p>
@@ -83,12 +83,12 @@ get_header();
             <p class="section-subtitle">Brewing chemistry has its own clocks. A 30-second overshoot on a cup of green tea makes it bitter.</p>
 
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/tea-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/tea-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">T</div>
                     <h3>Tea Timer</h3>
                     <p>Green (2 min), black (4 min), oolong (5 min), white (3 min), herbal (5&ndash;7 min) &mdash; steeping windows that preserve flavor.</p>
                 </a>
-                <a class="card usecase-card" href="/coffee-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/coffee-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">C</div>
                     <h3>Coffee Timer</h3>
                     <p>French press (4 min), pour-over (3 min), AeroPress (90 seconds), espresso (25&ndash;30 seconds) &mdash; brewing extraction windows.</p>
@@ -103,22 +103,22 @@ get_header();
             <p class="section-subtitle">The high-stakes timers. A 5-minute overshoot on a $40 steak is a $40 mistake.</p>
 
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/steak-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/steak-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">S</div>
                     <h3>Steak Timer</h3>
                     <p>Rare, medium-rare, medium, medium-well, well-done timing by thickness on grill, pan, and broiler.</p>
                 </a>
-                <a class="card usecase-card" href="/turkey-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/turkey-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">TR</div>
                     <h3>Turkey Timer</h3>
                     <p>Whole-bird roasting time by weight, with rest periods. The Thanksgiving Day timer.</p>
                 </a>
-                <a class="card usecase-card" href="/sous-vide-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/sous-vide-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">SV</div>
                     <h3>Sous Vide Timer</h3>
                     <p>Long-format timing for steak (1&ndash;4 hr), chicken breast (1.5 hr), pork (2&ndash;4 hr), and tougher cuts (24&ndash;72 hr).</p>
                 </a>
-                <a class="card usecase-card" href="/bbq-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/bbq-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">BBQ</div>
                     <h3>BBQ Timer</h3>
                     <p>Low-and-slow timing for brisket, pulled pork, and ribs &mdash; including the "stall" window.</p>
@@ -133,7 +133,7 @@ get_header();
             <p class="section-subtitle">Baking is chemistry that does not forgive distraction.</p>
 
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/bread-baking-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/bread-baking-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">BB</div>
                     <h3>Bread Baking Timer</h3>
                     <p>Bulk ferment, proof, oven spring, and bake timing for sourdough, no-knead, and enriched breads.</p>
@@ -157,17 +157,17 @@ get_header();
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Egg, soft-boiled</td><td>Boiling water</td><td>6 minutes</td><td>&plusmn;30 seconds</td><td><a href="/egg-timer/">Egg Timer</a></td></tr>
-                    <tr><td>Egg, hard-boiled</td><td>Boiling water</td><td>10&ndash;12 minutes</td><td>&plusmn;1 minute</td><td><a href="/egg-timer/">Egg Timer</a></td></tr>
-                    <tr><td>Pasta, dried</td><td>Boiling water</td><td>8&ndash;11 minutes (shape)</td><td>&plusmn;30 seconds</td><td><a href="/pasta-timer/">Pasta Timer</a></td></tr>
-                    <tr><td>Pasta, fresh</td><td>Boiling water</td><td>90&ndash;180 seconds</td><td>&plusmn;15 seconds</td><td><a href="/pasta-timer/">Pasta Timer</a></td></tr>
-                    <tr><td>Green tea</td><td>Steeping at 75&deg;C</td><td>2&ndash;3 minutes</td><td>&plusmn;30 seconds</td><td><a href="/tea-timer/">Tea Timer</a></td></tr>
-                    <tr><td>Espresso shot</td><td>9-bar extraction</td><td>25&ndash;30 seconds</td><td>&plusmn;3 seconds</td><td><a href="/coffee-timer/">Coffee Timer</a></td></tr>
-                    <tr><td>White rice</td><td>Absorption</td><td>18 minutes + 10 rest</td><td>&plusmn;1 minute</td><td><a href="/rice-timer/">Rice Timer</a></td></tr>
-                    <tr><td>Steak, 1-inch, medium-rare</td><td>Hot pan</td><td>3&ndash;4 minutes per side</td><td>&plusmn;30 seconds</td><td><a href="/steak-timer/">Steak Timer</a></td></tr>
-                    <tr><td>Whole turkey (14 lb)</td><td>Roast 165&deg;C</td><td>3&ndash;3.5 hours</td><td>&plusmn;15 minutes (use thermometer)</td><td><a href="/turkey-timer/">Turkey Timer</a></td></tr>
-                    <tr><td>Sourdough bread</td><td>Bake 230&deg;C</td><td>40&ndash;45 minutes</td><td>&plusmn;5 minutes</td><td><a href="/bread-baking-timer/">Bread Baking Timer</a></td></tr>
-                    <tr><td>Microwave popcorn</td><td>Microwave</td><td>2&ndash;4 minutes</td><td>Listen for pops</td><td><a href="/microwave-popcorn-timer/">Popcorn Timer</a></td></tr>
+                    <tr><td>Egg, soft-boiled</td><td>Boiling water</td><td>6 minutes</td><td>&plusmn;30 seconds</td><td><a href="/egg-timer">Egg Timer</a></td></tr>
+                    <tr><td>Egg, hard-boiled</td><td>Boiling water</td><td>10&ndash;12 minutes</td><td>&plusmn;1 minute</td><td><a href="/egg-timer">Egg Timer</a></td></tr>
+                    <tr><td>Pasta, dried</td><td>Boiling water</td><td>8&ndash;11 minutes (shape)</td><td>&plusmn;30 seconds</td><td><a href="/pasta-timer">Pasta Timer</a></td></tr>
+                    <tr><td>Pasta, fresh</td><td>Boiling water</td><td>90&ndash;180 seconds</td><td>&plusmn;15 seconds</td><td><a href="/pasta-timer">Pasta Timer</a></td></tr>
+                    <tr><td>Green tea</td><td>Steeping at 75&deg;C</td><td>2&ndash;3 minutes</td><td>&plusmn;30 seconds</td><td><a href="/tea-timer">Tea Timer</a></td></tr>
+                    <tr><td>Espresso shot</td><td>9-bar extraction</td><td>25&ndash;30 seconds</td><td>&plusmn;3 seconds</td><td><a href="/coffee-timer">Coffee Timer</a></td></tr>
+                    <tr><td>White rice</td><td>Absorption</td><td>18 minutes + 10 rest</td><td>&plusmn;1 minute</td><td><a href="/rice-timer">Rice Timer</a></td></tr>
+                    <tr><td>Steak, 1-inch, medium-rare</td><td>Hot pan</td><td>3&ndash;4 minutes per side</td><td>&plusmn;30 seconds</td><td><a href="/steak-timer">Steak Timer</a></td></tr>
+                    <tr><td>Whole turkey (14 lb)</td><td>Roast 165&deg;C</td><td>3&ndash;3.5 hours</td><td>&plusmn;15 minutes (use thermometer)</td><td><a href="/turkey-timer">Turkey Timer</a></td></tr>
+                    <tr><td>Sourdough bread</td><td>Bake 230&deg;C</td><td>40&ndash;45 minutes</td><td>&plusmn;5 minutes</td><td><a href="/bread-baking-timer">Bread Baking Timer</a></td></tr>
+                    <tr><td>Microwave popcorn</td><td>Microwave</td><td>2&ndash;4 minutes</td><td>Listen for pops</td><td><a href="/microwave-popcorn-timer">Popcorn Timer</a></td></tr>
                 </tbody>
             </table>
         </div>
@@ -179,11 +179,11 @@ get_header();
             <h2 class="section-title">Related cooking guides</h2>
             <p>For longer-form cooking time references, see our food-timing guides:</p>
             <ul>
-                <li><a href="/guides/how-long-to-boil-eggs/">How long to boil eggs</a> &mdash; the full reference, with egg size adjustments.</li>
-                <li><a href="/guides/how-long-to-cook-pasta/">How long to cook pasta</a> &mdash; shape-by-shape reference.</li>
-                <li><a href="/guides/how-long-to-roast-turkey/">How long to roast a turkey</a> &mdash; weight, oven temperature, and stuffed vs. unstuffed.</li>
-                <li><a href="/guides/how-long-to-cook-rice/">How long to cook rice</a> &mdash; absorption method and rice variety chart.</li>
-                <li><a href="/guides/how-long-to-grill-steak/">How long to cook steak</a> &mdash; thickness, doneness, and method comparison.</li>
+                <li><a href="/guides/how-long-to-boil-eggs">How long to boil eggs</a> &mdash; the full reference, with egg size adjustments.</li>
+                <li><a href="/guides/how-long-to-cook-pasta">How long to cook pasta</a> &mdash; shape-by-shape reference.</li>
+                <li><a href="/guides/how-long-to-roast-turkey">How long to roast a turkey</a> &mdash; weight, oven temperature, and stuffed vs. unstuffed.</li>
+                <li><a href="/guides/how-long-to-cook-rice">How long to cook rice</a> &mdash; absorption method and rice variety chart.</li>
+                <li><a href="/guides/how-long-to-grill-steak">How long to cook steak</a> &mdash; thickness, doneness, and method comparison.</li>
             </ul>
         </div>
     </section>
@@ -249,7 +249,7 @@ get_header();
             <div class="cta-banner">
                 <h2>Cooking is chemistry with a clock.</h2>
                 <p>Pick the right timer for what you are making. Each one is calibrated to the food science of that specific dish.</p>
-                <a href="/egg-timer/" class="btn btn--primary btn--large">Start with the Egg Timer</a>
+                <a href="/egg-timer" class="btn btn--primary btn--large">Start with the Egg Timer</a>
             </div>
         </div>
     </section>
@@ -260,8 +260,8 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Cooking Timers &mdash; Every Kitchen and Food Timer in One Place",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
   "mainEntityOfPage": "<?php echo esc_url(get_permalink()); ?>",

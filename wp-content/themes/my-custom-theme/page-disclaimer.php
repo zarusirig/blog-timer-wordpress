@@ -35,7 +35,7 @@ get_header();
             <h2>Advertising Disclaimer</h2>
             <p>The Blog Timer may display advertisements provided by third-party advertising networks, including Google AdSense. These advertisements are clearly identified and separated from our editorial content.</p>
             <p>The presence of advertisements on our website does not constitute an endorsement, guarantee, or recommendation of the advertised products or services. We do not control the content of third-party advertisements and are not responsible for any claims made in those advertisements.</p>
-            <p>Ad placements on our site are designed to be non-intrusive and clearly distinguishable from our timer tools and editorial content. If you believe an advertisement is misleading or inappropriate, please <a href="<?php echo esc_url(home_url('/contact/')); ?>">contact us</a>.</p>
+            <p>Ad placements on our site are designed to be non-intrusive and clearly distinguishable from our timer tools and editorial content. If you believe an advertisement is misleading or inappropriate, please <a href="<?php echo esc_url(home_url('/contact')); ?>">contact us</a>.</p>
         </section>
 
         <section class="legal-section">
@@ -62,16 +62,16 @@ get_header();
 
         <section class="legal-section">
             <h2>Contact</h2>
-            <p>If you have questions about this disclaimer, please visit our <a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact page</a>.</p>
+            <p>If you have questions about this disclaimer, please visit our <a href="<?php echo esc_url(home_url('/contact')); ?>">Contact page</a>.</p>
         </section>
 
         <section class="legal-section">
             <h2>Related Pages</h2>
             <ul class="context-link-list">
-                <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy Policy</a></li>
-                <li><a href="<?php echo esc_url(home_url('/terms-of-service/')); ?>">Terms of Service</a></li>
-                <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial Policy</a></li>
-                <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About Us</a></li>
+                <li><a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy Policy</a></li>
+                <li><a href="<?php echo esc_url(home_url('/terms-of-service')); ?>">Terms of Service</a></li>
+                <li><a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">Editorial Policy</a></li>
+                <li><a href="<?php echo esc_url(home_url('/about')); ?>">About Us</a></li>
             </ul>
         </section>
 

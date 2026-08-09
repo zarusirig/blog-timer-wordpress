@@ -303,17 +303,27 @@ class Timer_Engine
             $value = get_post_meta($post->ID, '_timer_value', true);
             $unit = get_post_meta($post->ID, '_timer_unit', true);
             if ($value && $unit) {
-                $loader = Timer_Content_Loader::get_instance();
-                if ($unit === 'hours' && (int) $value === 1) {
-                    $title_key = 'timer.seo_title.hours_singular';
-                } else {
-                    $title_key = 'timer.seo_title.' . $unit;
-                }
-                $seo_title = $loader->get_string($title_key, ['value' => $value]);
+                $seo_title = $this->get_timer_seo_title((int) $value, $unit);
                 if ($seo_title) {
                     $title_parts['title'] = $seo_title;
+                    // Google renders the site name separately in SERPs, so the
+                    // brand suffix would only waste differentiation space.
                     unset($title_parts['site']);
                     unset($title_parts['tagline']);
+                }
+            }
+            return $title_parts;
+        }
+
+        // Plugin taxonomy archives otherwise fall back to the bare term name
+        // (e.g. /timer-usecase/studying → "Studying"), which is useless in SERPs.
+        if (is_tax(['timer_unit', 'timer_bucket', 'timer_usecase', 'guide_cluster'])) {
+            $term = get_queried_object();
+            if ($term instanceof WP_Term) {
+                $tax_title = $this->get_taxonomy_archive_title($term);
+                if (!empty($tax_title)) {
+                    $title_parts['title'] = $tax_title;
+                    unset($title_parts['tagline'], $title_parts['site']);
                 }
             }
             return $title_parts;
@@ -350,6 +360,8 @@ class Timer_Engine
         $slug = get_post_field('post_name', get_queried_object_id());
 
         $page_title_overrides = [
+            'minute-timers' => 'Minute Timers — 1 to 161-Minute Countdowns',
+            'second-timers' => 'Second Timers — 1 to 90-Second Countdowns',
             'pomodoro' => 'Pomodoro Timer — 25/5 & 50/10 Presets',
             'use-cases' => 'Timer Use Cases — Find the Right Timer for Any Task',
             'hour-timers' => 'Hour Timers — 1 to 24-Hour Countdowns',
@@ -360,6 +372,111 @@ class Timer_Engine
         ];
 
         return $page_title_overrides[$slug] ?? '';
+    }
+
+    /**
+     * Build the differentiated SERP title for a timer page.
+     *
+     * The base pattern comes from strings.en.json and carries NO brand suffix —
+     * Google renders the site name separately, so the suffix only wasted space.
+     * Long minute timers get an hour-fraction conversion ("150 Minute Timer
+     * (2.5 Hours)") and every title ends with one truthful value hook selected
+     * deterministically by duration so adjacent pages never share a title.
+     */
+    private function get_timer_seo_title($value, $unit)
+    {
+        $loader = Timer_Content_Loader::get_instance();
+        if ($unit === 'hours' && $value === 1) {
+            $title_key = 'timer.seo_title.hours_singular';
+        } else {
+            $title_key = 'timer.seo_title.' . $unit;
+        }
+        $title = $loader->get_string($title_key, ['value' => $value]);
+        if (!$title) {
+            return '';
+        }
+
+        // Hour-fraction conversion is genuinely useful for long minute timers.
+        // Only clean quarter-hour fractions (90 → 1.5, 105 → 1.75, 150 → 2.5).
+        if ($unit === 'minutes' && $value >= 90 && $value % 15 === 0) {
+            $hours = rtrim(rtrim(number_format($value / 60, 2, '.', ''), '0'), '.');
+            $hours_label = ($hours === '1') ? 'Hour' : 'Hours';
+            $title .= " ({$hours} {$hours_label})";
+        }
+
+        // One truthful value hook per page, rotated deterministically by duration.
+        $hook_letters = ['a', 'b', 'c', 'd', 'e', 'f'];
+        $hook = $loader->get_string('timer.seo_hook.' . $hook_letters[$value % count($hook_letters)]);
+        if ($hook) {
+            $title .= ' — ' . $hook;
+        }
+
+        return $title;
+    }
+
+    /**
+     * Build a real document title for plugin taxonomy archives.
+     */
+    private function get_taxonomy_archive_title($term)
+    {
+        if ($term->taxonomy === 'timer_usecase') {
+            $usecase_titles = [
+                'studying' => 'Study Timers — Every Duration for Focused Study Sessions',
+                'productivity' => 'Productivity Timers — Focus Blocks, Sprints & Breaks',
+                'cooking' => 'Cooking Timers — Durations for Boiling, Baking & Brewing',
+                'exercise' => 'Exercise Timers — Intervals, Rounds & Rest Durations',
+                'meditation' => 'Meditation Timers — Calm, Breathing & Mindfulness Sessions',
+            ];
+            return $usecase_titles[$term->slug] ?? sprintf('%s Timers — Every Duration for the Task', $term->name);
+        }
+
+        if ($term->taxonomy === 'timer_unit') {
+            $unit_titles = [
+                'minutes' => 'All Minute Timers — Every Duration from 1 to 161 Minutes',
+                'seconds' => 'All Second Timers — Every Duration from 1 to 60 Seconds',
+                'hours' => 'All Hour Timers — Countdowns from 1 to 24 Hours',
+            ];
+            return $unit_titles[$term->slug] ?? sprintf('%s Timers — Browse Every Duration', $term->name);
+        }
+
+        if ($term->taxonomy === 'timer_bucket') {
+            $bucket = $this->get_bucket_range($term->slug);
+            if ($bucket) {
+                return sprintf('%s — %d to %d %s Countdowns', $term->name, $bucket['min'], $bucket['max'], $bucket['unit_label']);
+            }
+            return sprintf('%s — Pick a Duration & Start Counting Down', $term->name);
+        }
+
+        if ($term->taxonomy === 'guide_cluster') {
+            return sprintf('%s Guides — Evidence-Based Timing & Methods', $term->name);
+        }
+
+        return '';
+    }
+
+    /**
+     * Look up a bucket's duration range from the dataset by term slug.
+     */
+    private function get_bucket_range($slug)
+    {
+        $loader = Timer_Content_Loader::get_instance();
+        $unit_labels = [
+            'minutes' => 'Minute',
+            'seconds' => 'Second',
+            'hours' => 'Hour',
+        ];
+        foreach ($unit_labels as $unit => $label) {
+            foreach ($loader->get_buckets($unit) as $bucket) {
+                if (($bucket['id'] ?? '') === $slug && isset($bucket['min'], $bucket['max'])) {
+                    return [
+                        'min' => (int) $bucket['min'],
+                        'max' => (int) $bucket['max'],
+                        'unit_label' => $label,
+                    ];
+                }
+            }
+        }
+        return null;
     }
 
     /**
@@ -454,6 +571,8 @@ class Timer_Engine
                 'running-interval-timer' => 'Free online running interval timer for sprints, intervals, and run-walk training. Set work and recovery splits with audio cues to nail every rep and pace.',
                 'stretching-timer' => 'Free online stretching timer with interval cues for each hold and side. Time your mobility routine, cool-down, and flexibility work to stretch evenly and safely.',
                 'crossfit-amrap-timer' => 'Free online CrossFit AMRAP timer to count down your WOD and track rounds. Set the clock, hear the buzzer, and push for as many rounds as possible, every workout.',
+                'emom-timer' => 'Free online EMOM timer for Every Minute on the Minute workouts. Customize round length and total duration, then hear the bell at the top of every minute.',
+                'site-index' => 'A complete, human-readable directory of every timer, guide, and hub on The Blog Timer, grouped by topic and duration for easy one-click browsing.',
             ];
 
             if (isset($core_page_meta[$slug])) {
@@ -531,19 +650,102 @@ class Timer_Engine
             return '';
         }
 
-        $value = get_post_meta($post->ID, '_timer_value', true);
+        $value = (int) get_post_meta($post->ID, '_timer_value', true);
         $unit = get_post_meta($post->ID, '_timer_unit', true);
 
         if (!$value || !$unit) {
             return '';
         }
 
+        // Rotating sentence frames (stable per page via value % count) with a
+        // duration-specific {fact} slot computed from the number itself, so no
+        // two adjacent durations share a description and no fact is fabricated.
         $loader = Timer_Content_Loader::get_instance();
-        $variant_index = ((int) $value) % 3;
-        $variant_letter = ['a', 'b', 'c'][$variant_index];
-        $meta_key = "timer.meta.{$unit}_{$variant_letter}";
+        $frames = [];
+        foreach (['a', 'b', 'c', 'd', 'e', 'f'] as $letter) {
+            $frame = $loader->get_string("timer.meta_frame.{$unit}_{$letter}");
+            if ($frame) {
+                $frames[] = $frame;
+            }
+        }
 
-        return (string) $loader->get_string($meta_key, ['value' => $value]);
+        if (empty($frames)) {
+            return '';
+        }
+
+        $frame = $frames[$value % count($frames)];
+        $fact = $this->get_timer_duration_fact($value, $unit);
+
+        return str_replace(['{value}', '{fact}'], [$value, $fact], $frame);
+    }
+
+    /**
+     * Compute a truthful, duration-specific fact for the meta description.
+     *
+     * Every fact is derived arithmetically from the value itself (hour
+     * fractions, 25+5 Pomodoro-cycle equivalents, seconds counts), so it can
+     * never be fabricated.
+     */
+    private function get_timer_duration_fact($value, $unit)
+    {
+        $value = (int) $value;
+
+        if ($unit === 'hours') {
+            if ($value === 1) {
+                return "That's 60 minutes — exactly two 25/5 Pomodoro cycles.";
+            }
+            $minutes = $value * 60;
+            $cycles = $value * 2;
+            return "That's {$minutes} minutes — exactly {$cycles} 25/5 Pomodoro cycles.";
+        }
+
+        if ($unit === 'seconds') {
+            if ($value === 60) {
+                return "That's exactly one full minute, second by second.";
+            }
+            if ($value === 30) {
+                return "That's exactly half a minute, second by second.";
+            }
+            if ($value === 15) {
+                return "That's one quarter of a minute, second by second.";
+            }
+            if (60 % $value === 0) {
+                $fits = 60 / $value;
+                return "One minute holds exactly {$fits} of these {$value}-second rounds.";
+            }
+            $percent = (int) round(($value / 60) * 100);
+            return "That's about {$percent}% of one minute on the clock.";
+        }
+
+        // Minutes.
+        if ($value % 60 === 0) {
+            $hours = $value / 60;
+            $hour_word = ($hours === 1) ? 'hour' : 'hours';
+            $cycles = $value / 30;
+            return "That's exactly {$hours} {$hour_word} — {$cycles} full 25/5 Pomodoro cycles.";
+        }
+        if ($value > 60) {
+            $hours = (int) floor($value / 60);
+            $mins = $value % 60;
+            $hour_word = ($hours === 1) ? 'hour' : 'hours';
+            $cycles = (int) round($value / 30);
+            return "That's {$hours} {$hour_word} {$mins} min — about {$cycles} Pomodoro cycles.";
+        }
+        if ($value === 30) {
+            return "That's half an hour — one full 25/5 Pomodoro cycle.";
+        }
+        if ($value >= 25) {
+            if ($value % 25 === 0) {
+                $blocks_word = ($value === 25) ? 'one' : 'two';
+                $block_word = ($value === 25) ? 'block' : 'blocks';
+                return "That's exactly {$blocks_word} 25-minute Pomodoro work {$block_word}.";
+            }
+            $blocks = (int) round($value / 25);
+            $block_word = ($blocks === 1) ? 'block' : 'blocks';
+            return "That's about {$blocks} classic 25-minute Pomodoro work {$block_word}.";
+        }
+        $seconds = $value * 60;
+        return "That's {$seconds} seconds on the clock from start to zero.";
     }
 
     private function get_post_fallback_description($post_id)
@@ -627,7 +829,9 @@ class Timer_Engine
         if (is_singular('timer')) {
             // Timer structured data is emitted by the theme's consolidated schema graph.
             // Keeping a single owner avoids duplicate WebApplication, FAQPage, and
-            // BreadcrumbList nodes on every timer URL.
+            // BreadcrumbList nodes on every timer URL. NOTE (2026-07 CTR audit): HowTo
+            // rich results were deprecated by Google in 2023 and the rotated copyblocks
+            // FAQ pool is NOT per-page-distinct — neither may be (re-)emitted here.
             return;
         }
 
@@ -649,101 +853,6 @@ class Timer_Engine
         if (is_tax() || is_post_type_archive('guide')) {
             $this->output_collection_schema();
         }
-    }
-
-    private function output_timer_schema()
-    {
-        global $post;
-        $value = get_post_meta($post->ID, '_timer_value', true);
-        $unit = get_post_meta($post->ID, '_timer_unit', true);
-
-        if (!$value || !$unit) {
-            return;
-        }
-
-        $loader = Timer_Content_Loader::get_instance();
-        $title_key = ($unit === 'hours' && (int) $value === 1) ? 'timer.title.hours_singular' : "timer.title.{$unit}";
-        $title = $loader->get_string($title_key, ['value' => $value]);
-        $unit_label = ucfirst($unit);
-        if ($unit === 'hours' && (int) $value === 1) {
-            $unit_label = 'Hour';
-        }
-
-        $schema = [
-            '@context' => 'https://schema.org',
-            '@type' => 'WebApplication',
-            'name' => $title ?: "Set Timer for {$value} " . $unit_label,
-            'url' => get_permalink($post->ID),
-            'applicationCategory' => 'UtilityApplication',
-            'operatingSystem' => 'Any',
-            'offers' => [
-                '@type' => 'Offer',
-                'price' => '0',
-                'priceCurrency' => 'USD',
-            ],
-        ];
-
-        $this->output_json_ld($schema);
-
-        $faqs = $loader->get_faqs($post);
-        if (!empty($faqs)) {
-            $faq_schema = [
-                '@context' => 'https://schema.org',
-                '@type' => 'FAQPage',
-                'mainEntity' => [],
-            ];
-
-            foreach ($faqs as $faq) {
-                $faq_schema['mainEntity'][] = [
-                    '@type' => 'Question',
-                    'name' => $faq['q'],
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => $faq['a'],
-                    ],
-                ];
-            }
-
-            $this->output_json_ld($faq_schema);
-        }
-
-        if ($unit === 'minutes') {
-            $hub_name = 'Minute Timers';
-            $hub_url = home_url('/minute-timers/');
-        } elseif ($unit === 'hours') {
-            $hub_name = 'Hour Timers';
-            $hub_url = home_url('/hour-timers/');
-        } else {
-            $hub_name = 'Second Timers';
-            $hub_url = home_url('/second-timers/');
-        }
-
-        $breadcrumbs = [
-            '@context' => 'https://schema.org',
-            '@type' => 'BreadcrumbList',
-            'itemListElement' => [
-                [
-                    '@type' => 'ListItem',
-                    'position' => 1,
-                    'name' => 'Home',
-                    'item' => home_url(''),
-                ],
-                [
-                    '@type' => 'ListItem',
-                    'position' => 2,
-                    'name' => $hub_name,
-                    'item' => $hub_url,
-                ],
-                [
-                    '@type' => 'ListItem',
-                    'position' => 3,
-                    'name' => $title,
-                    'item' => get_permalink($post->ID),
-                ],
-            ],
-        ];
-
-        $this->output_json_ld($breadcrumbs);
     }
 
     private function output_site_schema()

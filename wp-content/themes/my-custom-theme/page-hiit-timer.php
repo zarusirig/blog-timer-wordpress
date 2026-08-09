@@ -15,7 +15,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~16 min read &middot; Built on Gibala 2006, Buchheit &amp; Laursen 2013, and Tabata 1996</div>
             </div>
         </div>
@@ -63,7 +63,7 @@ get_header();
                     <strong>45/15 Work</strong>
                     <span>45 seconds</span>
                 </a>
-                <a href="/timer/set-timer-for-1-minute" class="btn btn--secondary">
+                <a href="/timer/set-timer-for-1-minutes" class="btn btn--secondary">
                     <strong>Gibala Interval</strong>
                     <span>1 minute</span>
                 </a>
@@ -212,6 +212,28 @@ get_header();
         </div>
     </section>
 
+    <!-- RELATED GUIDES -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Related Guides</h2>
+            <div class="usecase-grid">
+                <?php
+                $guide_slugs = ['hiit-interval-timers', 'tabata-timer-guide', 'rest-timers-strength'];
+                foreach ($guide_slugs as $gs) {
+                    $g = get_page_by_path($gs, OBJECT, 'guide');
+                    if ($g): ?>
+                        <a href="<?php echo esc_url(get_permalink($g->ID)); ?>" class="card usecase-card" style="text-decoration:none;">
+                            <div class="usecase-card-icon">G</div>
+                            <h3><?php echo esc_html($g->post_title); ?></h3>
+                            <p><?php echo esc_html(wp_trim_words($g->post_excerpt, 12)); ?></p>
+                        </a>
+                    <?php endif;
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
     <?php blogtimer_render_see_also('page'); ?>
 </main>
 
@@ -233,16 +255,8 @@ get_header();
   "headline": "Free HIIT Timer - All Major Protocols, Cardio & Strength",
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "url": "https://theblogtimer.com/author-suraj-giri/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "https://theblogtimer.com/"
-  },
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"},
   "mainEntityOfPage": "https://theblogtimer.com/hiit-timer/"
 }
 </script>

@@ -15,7 +15,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~10 min read &middot; References: IANA tz database, MDN Intl.DateTimeFormat, Sir Sandford Fleming 1879 paper</div>
             </div>
         </div>
@@ -78,7 +78,7 @@ get_header();
                 <li><strong>Send calendar invites with floating times rejected.</strong> A Google Calendar or Outlook invite carries the timezone with it &mdash; the meeting will appear at the correct local time for every attendee.</li>
                 <li><strong>Watch for DST mismatch windows.</strong> For about three weeks each year, the U.S. and Europe are on different DST schedules; transatlantic meetings shift by an hour during this gap.</li>
                 <li><strong>For recurring meetings, pin one timezone.</strong> A meeting that is "Tuesday 9am Pacific" stays at 9am for the Pacific team and moves with DST for everyone else.</li>
-                <li><strong>Use a focus timer per side.</strong> For deep work blocks aligned across timezones, pair this world clock with the <a href="/pomodoro/">Pomodoro timer</a> or the <a href="/presentation-timer/">presentation timer</a>.</li>
+                <li><strong>Use a focus timer per side.</strong> For deep work blocks aligned across timezones, pair this world clock with the <a href="/pomodoro">Pomodoro timer</a> or the <a href="/presentation-timer">presentation timer</a>.</li>
             </ul>
 
             <h2 class="section-title">Major Cities by UTC Offset</h2>
@@ -386,18 +386,10 @@ get_header();
   "@type": "Article",
   "headline": "World Clock — Live Time in Any City, Any Timezone",
   "description": "Free browser world clock with live time in 300+ IANA timezones. Add and save custom cities. Uses Intl.DateTimeFormat and the official tz database.",
-  "url": "<?php echo esc_url(home_url('/world-clock/')); ?>",
+  "url": "<?php echo esc_url(home_url('/world-clock')); ?>",
   "dateModified": "2026-05-27",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "<?php echo esc_url(home_url('/')); ?>"
-  }
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

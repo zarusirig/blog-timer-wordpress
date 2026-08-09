@@ -107,7 +107,7 @@ get_header();
             <h2>Feedback and Contact</h2>
             <p>We welcome your feedback on the accessibility of The Blog Timer. If you encounter accessibility barriers or have suggestions for improvement, please let us know:</p>
             <ul>
-                <li><strong>Contact form:</strong> <a href="<?php echo esc_url(home_url('/contact/')); ?>">Visit our Contact page</a> and select "Bug Report" or "Feature Request"</li>
+                <li><strong>Contact form:</strong> <a href="<?php echo esc_url(home_url('/contact')); ?>">Visit our Contact page</a> and select "Bug Report" or "Feature Request"</li>
                 <li><strong>Response time:</strong> We aim to respond to accessibility feedback within 5 business days</li>
             </ul>
             <p>When reporting accessibility issues, please include:</p>
@@ -122,10 +122,10 @@ get_header();
         <section class="legal-section">
             <h2>Related Pages</h2>
             <ul class="context-link-list">
-                <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About Us</a></li>
-                <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact Us</a></li>
-                <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy Policy</a></li>
-                <li><a href="<?php echo esc_url(home_url('/faq/')); ?>">Frequently Asked Questions</a></li>
+                <li><a href="<?php echo esc_url(home_url('/about')); ?>">About Us</a></li>
+                <li><a href="<?php echo esc_url(home_url('/contact')); ?>">Contact Us</a></li>
+                <li><a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy Policy</a></li>
+                <li><a href="<?php echo esc_url(home_url('/faq')); ?>">Frequently Asked Questions</a></li>
             </ul>
         </section>
 

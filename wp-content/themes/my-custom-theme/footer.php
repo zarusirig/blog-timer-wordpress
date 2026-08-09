@@ -26,8 +26,8 @@ $terms_candidates = get_posts([
 
 $privacy_page = !empty($privacy_candidates) ? $privacy_candidates[0] : null;
 $terms_page = !empty($terms_candidates) ? $terms_candidates[0] : null;
-$privacy_url = $privacy_page ? get_permalink($privacy_page->ID) : home_url('/privacy-policy/');
-$terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-service/');
+$privacy_url = $privacy_page ? get_permalink($privacy_page->ID) : home_url('/privacy-policy');
+$terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-service');
 ?>
 
 <footer class="site-footer">
@@ -58,56 +58,56 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
             </div>
 
             <div class="footer-col">
-                <h4>Timer Tools</h4>
+                <p class="footer-heading">Timer Tools</p>
                 <ul>
-                    <li><a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">Minute Timers</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/second-timers/')); ?>">Second Timers</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Pomodoro Timer</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/timer/set-timer-for-5-minutes/')); ?>">5 Minute Timer</a>
+                    <li><a href="<?php echo esc_url(home_url('/minute-timers')); ?>">Minute Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/second-timers')); ?>">Second Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/pomodoro')); ?>">Pomodoro Timer</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/timer/set-timer-for-5-minutes')); ?>">5 Minute Timer</a>
                     </li>
-                    <li><a href="<?php echo esc_url(home_url('/timer/set-timer-for-10-minutes/')); ?>">10 Minute
+                    <li><a href="<?php echo esc_url(home_url('/timer/set-timer-for-10-minutes')); ?>">10 Minute
                             Timer</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/timer/set-timer-for-25-minutes/')); ?>">25 Minute
+                    <li><a href="<?php echo esc_url(home_url('/timer/set-timer-for-25-minutes')); ?>">25 Minute
                             Timer</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Use Cases</h4>
+                <p class="footer-heading">Use Cases</p>
                 <ul>
-                    <li><a href="<?php echo esc_url(home_url('/use-cases/#productivity')); ?>">Productivity</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/use-cases/#cooking')); ?>">Cooking</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/use-cases/#exercise')); ?>">Exercise</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/use-cases/#meditation')); ?>">Meditation</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/use-cases/#studying')); ?>">Studying</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/use-cases#productivity')); ?>">Productivity</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/use-cases#cooking')); ?>">Cooking</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/use-cases#exercise')); ?>">Exercise</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/use-cases#meditation')); ?>">Meditation</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/use-cases#studying')); ?>">Studying</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Resources</h4>
+                <p class="footer-heading">Resources</p>
                 <ul>
-                    <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About Us</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/guides/')); ?>">Guides</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/focus-timer/')); ?>">Deep Work &amp; Focus Timer</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/study-timer/')); ?>">Study Timer</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/methodology/')); ?>">Methodology</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/sources/')); ?>">Sources</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial Policy</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/faq/')); ?>">FAQ</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/about')); ?>">About Us</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/guides')); ?>">Guides</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/focus-timer')); ?>">Deep Work &amp; Focus Timer</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/study-timer')); ?>">Study Timer</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/methodology')); ?>">Methodology</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/sources')); ?>">Sources</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">Editorial Policy</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/faq')); ?>">FAQ</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/contact')); ?>">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Timer Categories</h4>
+                <p class="footer-heading">Timer Categories</p>
                 <ul>
-                    <li><a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Focus &amp; Productivity Timers</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">Minute &amp; Second Timers</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/hour-timers/')); ?>">Hour Timers</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/cooking-timers/')); ?>">Cooking Timers</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/workout-timers/')); ?>">Workout &amp; Interval Timers</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/sleep-meditation-timers/')); ?>">Sleep &amp; Meditation Timers</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/stopwatch-clock-tools/')); ?>">Stopwatch &amp; Clock Tools</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/pomodoro')); ?>">Focus &amp; Productivity Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/minute-timers')); ?>">Minute &amp; Second Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/hour-timers')); ?>">Hour Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/cooking-timers')); ?>">Cooking Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/workout-timers')); ?>">Workout &amp; Interval Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/sleep-meditation-timers')); ?>">Sleep &amp; Meditation Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/stopwatch-clock-tools')); ?>">Stopwatch &amp; Clock Tools</a></li>
                 </ul>
             </div>
         </div>
@@ -118,12 +118,12 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
                 All rights reserved.
             </p>
             <div class="footer-bottom-links">
-                <a href="<?php echo esc_url(home_url('/site-index/')); ?>">Site Index</a>
+                <a href="<?php echo esc_url(home_url('/site-index')); ?>">Site Index</a>
                 <a href="<?php echo esc_url($privacy_url); ?>">Privacy Policy</a>
                 <a href="<?php echo esc_url($terms_url); ?>">Terms of Service</a>
-                <a href="<?php echo esc_url(home_url('/disclaimer/')); ?>">Disclaimer</a>
-                <a href="<?php echo esc_url(home_url('/dmca/')); ?>">DMCA</a>
-                <a href="<?php echo esc_url(home_url('/accessibility/')); ?>">Accessibility</a>
+                <a href="<?php echo esc_url(home_url('/disclaimer')); ?>">Disclaimer</a>
+                <a href="<?php echo esc_url(home_url('/dmca')); ?>">DMCA</a>
+                <a href="<?php echo esc_url(home_url('/accessibility')); ?>">Accessibility</a>
             </div>
         </div>
     </div>

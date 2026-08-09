@@ -13,7 +13,7 @@ $loader = Timer_Content_Loader::get_instance();
     <div class="container container--narrow">
         <h1 class="page-h1"><?php echo esc_html($loader->get_string('hub.pomodoro.h1')); ?></h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro"><?php echo esc_html($loader->get_string('hub.pomodoro.intro')); ?></p>
@@ -252,7 +252,7 @@ $loader = Timer_Content_Loader::get_instance();
             <h2 class="section-title">Who invented the Pomodoro Technique?</h2>
             <p>The Pomodoro Technique was invented in 1987 by <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank" rel="noopener">Francesco Cirillo</a>, then an Italian university student at the Guido Carli International University in Rome. Cirillo was struggling to focus on his sociology coursework and challenged himself to commit to just ten uninterrupted minutes of study. He grabbed a tomato-shaped mechanical kitchen timer from his family's kitchen &mdash; <em>pomodoro</em> means tomato in Italian &mdash; and started winding it for short, defined intervals.</p>
 
-                <p>What started as a self-experiment evolved into a formal methodology. Cirillo later refined the intervals to 25 minutes after observing that 30-minute slots felt psychologically heavier and 20-minute slots cut off momentum prematurely. He documented the system in his book <em><a href="https://francescocirillo.com/pages/pomodoro-technique" target="_blank" rel="noopener">The Pomodoro Technique</a></em>, originally circulated as a free PDF and later released commercially through Cirillo Consulting. The book remains the canonical reference for the method.</p>
+                <p>What started as a self-experiment evolved into a formal methodology. Cirillo later refined the intervals to 25 minutes after observing that 30-minute slots felt psychologically heavier and 20-minute slots cut off momentum prematurely. He documented the system in his book <em><a href="https://www.pomodorotechnique.com/" target="_blank" rel="noopener">The Pomodoro Technique</a></em>, originally circulated as a free PDF and later released commercially through Cirillo Consulting. The book remains the canonical reference for the method.</p>
 
                 <p>The historical significance is that Cirillo did not invent timeboxing &mdash; the broader practice has roots going back to <a href="https://en.wikipedia.org/wiki/Frederick_Winslow_Taylor" target="_blank" rel="noopener">Frederick Winslow Taylor</a>'s scientific management in the early 1900s and was popularized in software engineering by James Martin's rapid application development. What Cirillo formalized was the specific marriage of a short interval, a tactile timer, and a four-cycle rhythm leading to a longer recovery break. That packaging is what made the method a cultural touchpoint.</p>
         </div>
@@ -537,7 +537,7 @@ $loader = Timer_Content_Loader::get_instance();
             <h2 class="section-title">Related Guides</h2>
             <div class="usecase-grid">
                 <?php
-                $guide_slugs = ['pomodoro-technique', 'pomodoro-studying', 'study-timer-methods', 'deep-work-timers'];
+                $guide_slugs = ['pomodoro-technique', 'pomodoro-studying', 'study-timer-methods', 'deep-work-timers', '52-17-rule-vs-pomodoro', 'flowtime-technique'];
                 foreach ($guide_slugs as $gs) {
                     $g = get_page_by_path($gs, OBJECT, 'guide');
                     if ($g): ?>

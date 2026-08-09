@@ -52,7 +52,7 @@ foreach (['productivity', 'cooking', 'exercise', 'meditation', 'studying'] as $u
                 <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);">
                     <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
                     <div style="flex:1;min-width:240px;">
-                        <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                        <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                         <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~12 min read</div>
                     </div>
                 </div>
@@ -143,7 +143,7 @@ foreach (['productivity', 'cooking', 'exercise', 'meditation', 'studying'] as $u
                 </div>
                 <div class="content-page" style="max-width:none;margin-bottom:var(--space-6);">
                     <p><?php echo esc_html($desc); ?></p>
-                    <p><a href="<?php echo esc_url($usecase_archive_urls[$uc['id']] ?? home_url('/use-cases/')); ?>">Browse all <?php echo esc_html(strtolower($uc['label'])); ?> timer pages.</a></p>
+                    <p><a href="<?php echo esc_url($usecase_archive_urls[$uc['id']] ?? home_url('/use-cases')); ?>">Browse all <?php echo esc_html(strtolower($uc['label'])); ?> timer pages.</a></p>
                 </div>
                 <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:var(--space-4);">Recommended Timers</h3>
                 <div class="timer-grid">
@@ -208,10 +208,10 @@ foreach (['productivity', 'cooking', 'exercise', 'meditation', 'studying'] as $u
                     <p>A <a href="/presentation-timer">presentation timer</a> typically counts down a fixed talk length (5, 10, 15, 20 minutes) with visible elapsed/remaining time for the speaker and color-coded warnings (green &rarr; amber &rarr; red) for transitions. Conference talk slots of 18 minutes (TED), 25 minutes (academic), and 45 minutes (keynote) are the most common. The goal is rehearsal pacing first, live-talk discipline second.</p>
 
                     <h3>Kids' timers</h3>
-                    <p><a href="/timer-for-kids/">Kids' timers</a> trade precision for visibility. Children under seven do not yet have a stable internal clock (Piaget's stages of cognitive development), so a giant visual countdown &mdash; a draining bar, a shrinking pie, or a Time Timer-style red disk &mdash; communicates time remaining without numeracy. Typical durations: 2 minutes for toothbrushing, 5 minutes for clean-up, 15 minutes for screen-time warnings.</p>
+                    <p><a href="/timer-for-kids">Kids' timers</a> trade precision for visibility. Children under seven do not yet have a stable internal clock (Piaget's stages of cognitive development), so a giant visual countdown &mdash; a draining bar, a shrinking pie, or a Time Timer-style red disk &mdash; communicates time remaining without numeracy. Typical durations: 2 minutes for toothbrushing, 5 minutes for clean-up, 15 minutes for screen-time warnings.</p>
 
                     <h3>Remote work timer</h3>
-                    <p>For distributed teams, the <a href="/timer-for-remote-workers/">remote work timer</a> serves two roles: structuring async deep-work blocks and synchronizing standups across time zones. A common pattern is the "core hours" pomodoro &mdash; two 50-minute focus blocks every morning, then async-only the rest of the day. The other pattern is the 5-minute standup timer (one minute per person, hard stop) that keeps virtual meetings tight.</p>
+                    <p>For distributed teams, the <a href="/timer-for-remote-workers">remote work timer</a> serves two roles: structuring async deep-work blocks and synchronizing standups across time zones. A common pattern is the "core hours" pomodoro &mdash; two 50-minute focus blocks every morning, then async-only the rest of the day. The other pattern is the 5-minute standup timer (one minute per person, hard stop) that keeps virtual meetings tight.</p>
 
                     <h3>Sleep and nap timers</h3>
                     <p>The <a href="/nap-timer">nap timer</a> uses sleep-stage science to wake you before deep sleep (sub-30 minutes) or at the end of a full 90-minute cycle. This is not a generic countdown problem &mdash; the wake-up moment within the sleep cycle determines whether you feel refreshed or groggy.</p>
@@ -297,7 +297,7 @@ foreach (['productivity', 'cooking', 'exercise', 'meditation', 'studying'] as $u
         <div class="cta-banner">
             <h2>Not Sure Which Timer to Use?</h2>
             <p>Start with the most popular choice: a 5-minute timer. It works for quick breaks, micro-tasks, and short meditation sessions.</p>
-            <a href="<?php echo esc_url(home_url('/timer/set-timer-for-5-minutes/')); ?>" class="btn btn--primary btn--large">Start a 5-Minute Timer</a>
+            <a href="<?php echo esc_url(home_url('/timer/set-timer-for-5-minutes')); ?>" class="btn btn--primary btn--large">Start a 5-Minute Timer</a>
         </div>
     </div>
 </main>

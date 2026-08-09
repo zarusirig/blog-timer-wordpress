@@ -124,7 +124,7 @@ $pomodoro_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'pomodor
 
             <div class="highlight-box highlight-box--accent">
                 <h3>Ready to boost your productivity?</h3>
-                <p>Try our dedicated <a href="<?php echo home_url('/pomodoro/'); ?>">Pomodoro Timer</a> with automatic work and break intervals, session tracking, and audio notifications to keep you on schedule.</p>
+                <p>Try our dedicated <a href="<?php echo home_url('/pomodoro'); ?>">Pomodoro Timer</a> with automatic work and break intervals, session tracking, and audio notifications to keep you on schedule.</p>
             </div>
         </section>
 
@@ -258,22 +258,22 @@ $pomodoro_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'pomodor
             <div class="page-intro">
                 <p>We've covered the most common questions about The Blog Timer, but if you have additional questions or need support, we're here to help. Our timer tools are designed to be intuitive and user-friendly, but we understand that everyone has unique needs and use cases. Whether you're using our timers for professional productivity, academic studying, fitness training, cooking, meditation, or any other purpose, we want to ensure you have the best possible experience.</p>
 
-                <p>If you've encountered a technical issue, have a feature suggestion, or simply want to share how you're using The Blog Timer, please don't hesitate to reach out through our <a href="<?php echo home_url('/contact/'); ?>">contact page</a>. We actively read and respond to all user feedback, and many of our best features have come directly from user suggestions. Your input helps us continuously improve and expand our timer offerings to serve the community better.</p>
+                <p>If you've encountered a technical issue, have a feature suggestion, or simply want to share how you're using The Blog Timer, please don't hesitate to reach out through our <a href="<?php echo home_url('/contact'); ?>">contact page</a>. We actively read and respond to all user feedback, and many of our best features have come directly from user suggestions. Your input helps us continuously improve and expand our timer offerings to serve the community better.</p>
             </div>
 
             <div class="highlight-box highlight-box--accent">
                 <h3>Explore Our Timer Collection</h3>
-                <p>The Blog Timer offers dozens of preset timers for every need, from quick 1-second timers to extended 60-minute sessions. Browse our complete collection of <a href="<?php echo home_url('/second-timers/'); ?>">second timers</a> and <a href="<?php echo home_url('/minute-timers/'); ?>">minute timers</a> to find the perfect duration for your specific task. Each timer is optimized for instant loading and reliable performance.</p>
+                <p>The Blog Timer offers dozens of preset timers for every need, from quick 1-second timers to extended 60-minute sessions. Browse our complete collection of <a href="<?php echo home_url('/second-timers'); ?>">second timers</a> and <a href="<?php echo home_url('/minute-timers'); ?>">minute timers</a> to find the perfect duration for your specific task. Each timer is optimized for instant loading and reliable performance.</p>
             </div>
         </section>
 
         <section class="section">
             <h2 class="section-title">Quick Internal Links</h2>
             <ul class="context-link-list">
-                <li><a href="<?php echo esc_url(home_url('/guides/')); ?>">Browse the full timer guides archive</a></li>
+                <li><a href="<?php echo esc_url(home_url('/guides')); ?>">Browse the full timer guides archive</a></li>
                 <li><a href="<?php echo esc_url($pomodoro_cluster_url); ?>">Read Pomodoro-specific guide cluster pages</a></li>
-                <li><a href="<?php echo esc_url(home_url('/timer-unit/minutes/')); ?>">Open the minute timer taxonomy archive</a></li>
-                <li><a href="<?php echo esc_url(home_url('/timer-unit/seconds/')); ?>">Open the second timer taxonomy archive</a></li>
+                <li><a href="<?php echo esc_url(home_url('/timer-unit/minutes')); ?>">Open the minute timer taxonomy archive</a></li>
+                <li><a href="<?php echo esc_url(home_url('/timer-unit/seconds')); ?>">Open the second timer taxonomy archive</a></li>
                 <li><a href="<?php echo esc_url($exercise_usecase_url); ?>">View exercise timer use-case pages</a></li>
             </ul>
         </section>

@@ -25,8 +25,8 @@ get_header();
 
             <section class="section">
                 <h2 class="section-title">Why I Built The Blog Timer</h2>
-                <p>In short: a browser timer drifted on me while I was reducing a sauce, and dinner was ruined. The longer version is on the <a href="<?php echo esc_url(home_url('/about/')); ?>">about page</a>. The condensed version: most browser-based timers count down using <code>setInterval</code>, which browsers throttle aggressively in background tabs. The result is a timer that quietly lies to you. I built The Blog Timer's engine around stored end-timestamps so this class of bug cannot occur. The full testing protocol is on the <a href="<?php echo esc_url(home_url('/methodology/')); ?>">methodology page</a>.</p>
-                <p>From there, the project expanded into a 220+ preset library covering Pomodoro work blocks, Tabata intervals, NASA-grade nap durations, and a long tail of cooking, study, and meditation timings. Every preset is anchored either to a primary research source (see <a href="<?php echo esc_url(home_url('/sources/')); ?>">/sources/</a>) or to a documented user request &mdash; never to fill out an SEO grid.</p>
+                <p>In short: a browser timer drifted on me while I was reducing a sauce, and dinner was ruined. The longer version is on the <a href="<?php echo esc_url(home_url('/about')); ?>">about page</a>. The condensed version: most browser-based timers count down using <code>setInterval</code>, which browsers throttle aggressively in background tabs. The result is a timer that quietly lies to you. I built The Blog Timer's engine around stored end-timestamps so this class of bug cannot occur. The full testing protocol is on the <a href="<?php echo esc_url(home_url('/methodology')); ?>">methodology page</a>.</p>
+                <p>From there, the project expanded into a 220+ preset library covering Pomodoro work blocks, Tabata intervals, NASA-grade nap durations, and a long tail of cooking, study, and meditation timings. Every preset is anchored either to a primary research source (see <a href="<?php echo esc_url(home_url('/sources')); ?>">/sources/</a>) or to a documented user request &mdash; never to fill out an SEO grid.</p>
             </section>
 
             <section class="section">
@@ -45,14 +45,14 @@ get_header();
                 <h2 class="section-title">Contact</h2>
                 <ul>
                     <li><strong>Email:</strong> <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a> &mdash; for corrections, citation suggestions, contributor pitches, and methodology questions. I read everything; I respond within 72 hours.</li>
-                    <li><strong>Corrections:</strong> see the <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a> for the formal corrections process. Confirmed corrections get a dated note in the <a href="<?php echo esc_url(home_url('/changelog/')); ?>">changelog</a>.</li>
+                    <li><strong>Corrections:</strong> see the <a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">editorial policy</a> for the formal corrections process. Confirmed corrections get a dated note in the <a href="<?php echo esc_url(home_url('/changelog')); ?>">changelog</a>.</li>
                     <li><strong>Press / interview / citation requests:</strong> same email. Happy to talk about timer accuracy, browser-timing internals, or the productivity research literature.</li>
                 </ul>
             </section>
 
             <section class="section">
                 <h2 class="section-title">Editorial Standards I Hold Myself To</h2>
-                <p>Briefly &mdash; the full version lives on the <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a>:</p>
+                <p>Briefly &mdash; the full version lives on the <a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">editorial policy</a>:</p>
                 <ul>
                     <li>Every empirical claim links to a primary source. No "studies show" without a study.</li>
                     <li>Where I'm not credentialed, I say so, and I cite people who are.</li>
@@ -66,25 +66,25 @@ get_header();
                 <h2 class="section-title">Recent Guides Published</h2>
                 <p>A rolling selection of guides I have authored or substantially edited recently. (This list will be replaced by an auto-generated query once the byline is wired into the <code>guide</code> custom post type.)</p>
                 <ul class="context-link-list">
-                    <li><a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Pomodoro Technique: the full guide</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/interval-timer/')); ?>">Interval timer for HIIT, Tabata, and EMOM</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">Science-backed power nap timer</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/sprint-timer/')); ?>">Sprint timer for focused work blocks</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/egg-timer/')); ?>">Egg timer with food-science temperature anchors</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/presentation-timer/')); ?>">Presentation timer for talks and lightning sessions</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/chess-clock/')); ?>">Chess clock for two-player games and debates</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/guides/')); ?>">All guides &mdash; full archive</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/pomodoro')); ?>">Pomodoro Technique: the full guide</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/interval-timer')); ?>">Interval timer for HIIT, Tabata, and EMOM</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/nap-timer')); ?>">Science-backed power nap timer</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/sprint-timer')); ?>">Sprint timer for focused work blocks</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/egg-timer')); ?>">Egg timer with food-science temperature anchors</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/presentation-timer')); ?>">Presentation timer for talks and lightning sessions</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/chess-clock')); ?>">Chess clock for two-player games and debates</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/guides')); ?>">All guides &mdash; full archive</a></li>
                 </ul>
             </section>
 
             <section class="section">
                 <h2 class="section-title">Related Pages</h2>
                 <ul class="context-link-list">
-                    <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About The Blog Timer (origin story)</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/methodology/')); ?>">Timer-accuracy testing methodology</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial policy</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/sources/')); ?>">Bibliography of cited sources</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/changelog/')); ?>">Editorial changelog</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/about')); ?>">About The Blog Timer (origin story)</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/methodology')); ?>">Timer-accuracy testing methodology</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">Editorial policy</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/sources')); ?>">Bibliography of cited sources</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/changelog')); ?>">Editorial changelog</a></li>
                 </ul>
             </section>
 
@@ -96,16 +96,16 @@ get_header();
 {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  "@id": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>#profilepage",
-  "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>",
+  "@id": "<?php echo esc_url(home_url('/author-suraj-giri')); ?>#profilepage",
+  "url": "<?php echo esc_url(home_url('/author-suraj-giri')); ?>",
   "mainEntity": {
     "@type": "Person",
-    "@id": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>#person",
+    "@id": "<?php echo esc_url(home_url('/author-suraj-giri')); ?>#person",
     "name": "Suraj Giri",
     "givenName": "Suraj",
     "familyName": "Giri",
     "email": "suraj@theblogtimer.com",
-    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>",
+    "url": "<?php echo esc_url(home_url('/author-suraj-giri')); ?>",
     "jobTitle": "Productivity researcher and software engineer",
     "description": "Founder and editor of The Blog Timer. Background in web development and cognitive psychology research, focused on attention and time perception. Built The Blog Timer to solve browser timer accuracy issues.",
     "knowsAbout": [
@@ -121,7 +121,7 @@ get_header();
     "worksFor": {
       "@id": "<?php echo esc_url(home_url('/')); ?>#organization"
     },
-    "publishingPrinciples": "<?php echo esc_url(blogtimer_untrailingslashit_url(home_url('/editorial-policy/'))); ?>"
+    "publishingPrinciples": "<?php echo esc_url(blogtimer_untrailingslashit_url(home_url('/editorial-policy'))); ?>"
   }
 }
 </script>

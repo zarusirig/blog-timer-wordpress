@@ -10,7 +10,7 @@ get_header();
     <div class="container container--narrow">
         <h1 class="page-h1">Free Sous Vide Timer &mdash; Precision Times for Every Food</h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home cook &amp; culinary researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Set time and temperature for sous vide steak, chicken, pork, fish, eggs, and vegetables. Includes pasteurization tables for safe extended cooks and reference to Douglas Baldwin's <em>A Practical Guide to Sous Vide Cooking</em>.</p>
@@ -125,9 +125,9 @@ get_header();
             <h2 class="section-title">How Sous Vide Works</h2>
             <p>Sous vide &mdash; French for "under vacuum" &mdash; cooks food sealed in a plastic bag, submerged in water held at the food's target final temperature. The food cannot exceed the water temperature, so unlike pan-searing or roasting, there is no overshoot. A steak cooked sous vide at 130&deg;F finishes at exactly 130&deg;F internal, edge to edge.</p>
 
-            <p>The method was developed in the 1970s by French chefs <a href="https://en.wikipedia.org/wiki/Georges_Pralus" target="_blank" rel="noopener">Georges Pralus</a> and Bruno Goussault, originally for foie gras at Restaurant Troisgros and for industrial food production. It entered home kitchens with the launch of the Anova circulator (2014) and Joule (2016), which brought temperature-controlled water baths under $200. The technique is now mainstream &mdash; Modernist Cuisine treats it as standard equipment, and Kenji L&oacute;pez-Alt's <em>The Food Lab</em> has detailed sous-vide guides for every major protein.</p>
+            <p>The method was developed in the 1970s by French chefs <a href="https://fr.wikipedia.org/wiki/Georges_Pralus" target="_blank" rel="noopener">Georges Pralus</a> and Bruno Goussault, originally for foie gras at Restaurant Troisgros and for industrial food production. It entered home kitchens with the launch of the Anova circulator (2014) and Joule (2016), which brought temperature-controlled water baths under $200. The technique is now mainstream &mdash; Modernist Cuisine treats it as standard equipment, and Kenji L&oacute;pez-Alt's <em>The Food Lab</em> has detailed sous-vide guides for every major protein.</p>
 
-            <p>The technical reference is <a href="https://www.douglasbaldwin.com/sous-vide.html" target="_blank" rel="noopener">Douglas Baldwin's <em>A Practical Guide to Sous Vide Cooking</em></a>, freely available online and used as the safety reference by ChefSteps, Anova, and most commercial sous-vide producers. Baldwin's pasteurization tables, derived from FDA Food Code thermal-process calculations, are the standard for safe long-cook timing.</p>
+            <p>The technical reference is <a href="https://douglasbaldwin.com/sous-vide.html" target="_blank" rel="noopener">Douglas Baldwin's <em>A Practical Guide to Sous Vide Cooking</em></a>, freely available online and used as the safety reference by ChefSteps, Anova, and most commercial sous-vide producers. Baldwin's pasteurization tables, derived from FDA Food Code thermal-process calculations, are the standard for safe long-cook timing.</p>
         </div>
     </section>
 
@@ -213,7 +213,7 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": "How to Sous Vide a Steak",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "description": "Cook a perfect medium-rare steak using sous vide and a finishing sear.",
   "prepTime": "PT5M",
@@ -237,10 +237,10 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Free Sous Vide Timer — Precision Times for Every Food",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"}
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

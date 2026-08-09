@@ -2,14 +2,18 @@
 /**
  * Timer use case taxonomy template.
  */
-get_header();
+// Load helpers BEFORE get_header() so the SEO head hooks (title, meta
+// description, rel prev/next) register ahead of wp_head output.
 require_once get_template_directory() . '/inc/taxonomy-hub-helpers.php';
+get_header();
 
 $term = get_queried_object();
 $usecase_name = $term instanceof WP_Term ? $term->name : 'Timer Use Case';
 $usecase_slug = $term instanceof WP_Term ? $term->slug : '';
 $usecase_profile = blogtimer_taxhub_usecase_profile($usecase_slug, $usecase_name);
 $usecase_desc = blogtimer_taxhub_term_description($term, $usecase_profile['intro']);
+$usecase_copy = blogtimer_taxhub_copy('timer_usecase', $usecase_slug);
+$usecase_h1 = !empty($usecase_copy['h1']) ? $usecase_copy['h1'] : $usecase_name . ' Timers';
 $sibling_usecases = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 'cooking', 'exercise', 'meditation', 'studying']);
 $minute_unit_url = blogtimer_get_term_url_by_slug('timer_unit', 'minutes');
 $second_unit_url = blogtimer_get_term_url_by_slug('timer_unit', 'seconds');
@@ -36,10 +40,17 @@ $query = new WP_Query([
 <main id="main" tabindex="-1" class="site-main">
     <div class="container">
         <header class="section-header">
-            <h1 class="page-h1"><?php echo esc_html($usecase_name); ?> Timers</h1>
-            <p class="page-intro"><?php echo esc_html($usecase_desc); ?></p>
+            <h1 class="page-h1"><?php echo esc_html($usecase_h1); ?></h1>
+            <?php if (!is_paged()): ?>
+                <?php if (!empty($usecase_copy['intro_html'])): ?>
+                    <div class="page-intro"><?php echo blogtimer_taxhub_intro_kses($usecase_copy['intro_html']); ?></div>
+                <?php else: ?>
+                    <p class="page-intro"><?php echo esc_html($usecase_desc); ?></p>
+                <?php endif; ?>
+            <?php endif; ?>
         </header>
 
+        <?php if (!is_paged()): ?>
         <section class="section">
             <div class="taxonomy-hub-grid">
                 <article class="card taxonomy-link-card">
@@ -96,6 +107,7 @@ $query = new WP_Query([
                 <?php endforeach; ?>
             </ul>
         </section>
+        <?php endif; ?>
 
         <section class="section">
             <h2 class="section-title">Recommended Countdown Pages</h2>
@@ -119,14 +131,16 @@ $query = new WP_Query([
             <?php wp_reset_postdata(); ?>
         </section>
 
+        <?php if (!is_paged()): ?>
         <section class="section">
             <div class="content-page container--narrow">
                 <h2>Applying Timers to <?php echo esc_html($usecase_name); ?></h2>
                 <p><?php echo esc_html($usecase_profile['guidance']); ?> For best results, pair each timer with a clear task definition before pressing start. A named objective plus a fixed interval improves completion rates and keeps sessions measurable across days.</p>
                 <p>Track which durations deliver both high-quality output and sustainable energy. If quality drops near the end of your interval, shorten by 5 to 10 minutes. If you consistently finish early, extend gradually and reassess after a week.</p>
-                <p>Need broader recommendations? Visit <a href="<?php echo esc_url(home_url('/use-cases/')); ?>">Timer Use Cases</a> for a full breakdown by activity and common timing patterns.</p>
+                <p>Need broader recommendations? Visit <a href="<?php echo esc_url(home_url('/use-cases')); ?>">Timer Use Cases</a> for a full breakdown by activity and common timing patterns.</p>
             </div>
         </section>
+        <?php endif; ?>
     </div>
 </main>
 

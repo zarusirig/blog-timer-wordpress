@@ -15,7 +15,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~10 min read &middot; References: Mednick (Nature Neuroscience 2002), Reyner &amp; Horne (Psychophysiology 1997), MDN Notification API</div>
             </div>
         </div>
@@ -132,7 +132,7 @@ get_header();
                 <li><strong>Public-transit alarms</strong> &mdash; "leave the desk at 17:42 for the 18:00 train."</li>
                 <li><strong>Late-shift wake</strong> &mdash; secondary alarm when napping during a long evening shift.</li>
             </ul>
-            <p>For shorter, duration-based reminders see the <a href="/countdown-timer/">countdown timer</a>. For deep-work sessions, see <a href="/pomodoro/">Pomodoro</a>. For wake-up after a nap, see <a href="/nap-timer/">nap timer</a>. For ambient wind-down before bed, see <a href="/sleep-timer/">sleep timer</a>.</p>
+            <p>For shorter, duration-based reminders see the <a href="/countdown-timer">countdown timer</a>. For deep-work sessions, see <a href="/pomodoro">Pomodoro</a>. For wake-up after a nap, see <a href="/nap-timer">nap timer</a>. For ambient wind-down before bed, see <a href="/sleep-timer">sleep timer</a>.</p>
 
             <h2 class="section-title">Alarm Clock FAQ</h2>
             <?php
@@ -320,18 +320,10 @@ get_header();
   "@type": "Article",
   "headline": "Free Online Alarm Clock — Set Wake-Up Alarms in Your Browser",
   "description": "Browser-based alarm clock with snooze, repeat, custom tones, and OS-level notifications. Uses Web Audio API and Notification API. No install required.",
-  "url": "<?php echo esc_url(home_url('/online-alarm-clock/')); ?>",
+  "url": "<?php echo esc_url(home_url('/online-alarm-clock')); ?>",
   "dateModified": "2026-05-27",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "<?php echo esc_url(home_url('/')); ?>"
-  }
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

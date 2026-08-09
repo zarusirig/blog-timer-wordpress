@@ -15,7 +15,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~11 min read &middot; References: Page Visibility API (W3C), Chrome timer throttling, MDN performance.now()</div>
             </div>
         </div>
@@ -73,7 +73,7 @@ get_header();
     <section class="section">
         <div class="container container--narrow">
             <h2 class="section-title">Countdown vs. Count-Up (Stopwatch)</h2>
-            <p>A countdown timer starts at a fixed duration and decrements to zero, firing an alert when the duration elapses. A <a href="/stopwatch/">stopwatch</a> does the opposite: starts at zero and counts up indefinitely. Use a countdown when the endpoint is known (cook this pasta for 9 minutes; this exam is 45 minutes long). Use a stopwatch when the endpoint is unknown and you need to measure how long something took.</p>
+            <p>A countdown timer starts at a fixed duration and decrements to zero, firing an alert when the duration elapses. A <a href="/stopwatch">stopwatch</a> does the opposite: starts at zero and counts up indefinitely. Use a countdown when the endpoint is known (cook this pasta for 9 minutes; this exam is 45 minutes long). Use a stopwatch when the endpoint is unknown and you need to measure how long something took.</p>
             <p>Some workflows benefit from both: a 25-minute Pomodoro is a countdown, but the lab experiment you are running inside the Pomodoro is timed with a stopwatch. The Blog Timer ships both with the same underlying timing engine, so accuracy is identical across the toolset.</p>
 
             <h2 class="section-title">Setting Custom Durations</h2>
@@ -87,19 +87,19 @@ get_header();
 
             <h2 class="section-title">Top Countdown Use Cases</h2>
             <h3>Cooking and baking</h3>
-            <p>Pasta cook time, bread proof, oven bake, sous-vide hold. A web countdown is faster than fishing the phone out of an oily kitchen pocket. For one-egg jobs see also our <a href="/egg-timer/">egg timer</a>.</p>
+            <p>Pasta cook time, bread proof, oven bake, sous-vide hold. A web countdown is faster than fishing the phone out of an oily kitchen pocket. For one-egg jobs see also our <a href="/egg-timer">egg timer</a>.</p>
 
             <h3>Exams, practice tests, and study sessions</h3>
             <p>Time a 45-minute writing section. Time a 90-minute mock LSAT logic block. Time a 25-minute Pomodoro of vocabulary memorization. The Visible Timer Effect &mdash; the psychological pressure of seeing the clock count down &mdash; measurably improves task completion rates in students (Britton &amp; Tesser, 1991; Locke &amp; Latham 2002 review on goal-setting). Use the timer as a deadline, not a stick.</p>
 
             <h3>Presentations, speeches, and meetings</h3>
-            <p>Keep talks to length. A countdown projected on a backup display is the single most effective way to keep speakers on time. For dedicated presentation timing with a soft visual escalator, see <a href="/presentation-timer/">presentation timer</a>.</p>
+            <p>Keep talks to length. A countdown projected on a backup display is the single most effective way to keep speakers on time. For dedicated presentation timing with a soft visual escalator, see <a href="/presentation-timer">presentation timer</a>.</p>
 
             <h3>Workouts and HIIT intervals</h3>
-            <p>For a single round, a countdown is fine. For repeating work/rest cycles, switch to the <a href="/interval-timer/">interval timer</a> which automates the cycles. For sprint repeats, see <a href="/sprint-timer/">sprint timer</a>.</p>
+            <p>For a single round, a countdown is fine. For repeating work/rest cycles, switch to the <a href="/interval-timer">interval timer</a> which automates the cycles. For sprint repeats, see <a href="/sprint-timer">sprint timer</a>.</p>
 
             <h3>Parenting time-outs and screen limits</h3>
-            <p>"You have 15 minutes left on the tablet." Visible countdowns help kids self-regulate the end of an activity. See our <a href="/timer-for-kids/">kids timer</a> page for child-friendly large-text presets.</p>
+            <p>"You have 15 minutes left on the tablet." Visible countdowns help kids self-regulate the end of an activity. See our <a href="/timer-for-kids">kids timer</a> page for child-friendly large-text presets.</p>
 
             <h3>Parties, games, and live events</h3>
             <p>Trivia round time limits, charades buzzers, escape-room countdowns, debate rounds. A full-screen countdown projected on a TV or shared screen sets the pace for the whole room.</p>
@@ -155,7 +155,7 @@ get_header();
                 ['q' => 'How loud is the end-of-timer alert?', 'a' => 'The alert plays at your system volume. Test it before relying on the alarm for an unattended task. We use the Web Audio API to synthesize the tone, so it plays even when no audio file has loaded.'],
                 ['q' => 'What is the maximum duration?', 'a' => '99 hours, 59 minutes, 59 seconds. For durations measured in days, a calendar event with notifications is a better tool than a browser countdown.'],
                 ['q' => 'Can I have multiple countdowns running at once?', 'a' => 'Open the page in multiple tabs to run independent countdowns. The timer state is per-tab and does not interfere across windows.'],
-                ['q' => 'How is this different from the Pomodoro timer?', 'a' => 'A Pomodoro is a specific countdown protocol &mdash; 25 minutes of work, 5 minutes of break, repeated. This generic countdown lets you pick any duration. For the Pomodoro workflow with built-in break cycles, use the <a href="/pomodoro/">Pomodoro timer</a>.'],
+                ['q' => 'How is this different from the Pomodoro timer?', 'a' => 'A Pomodoro is a specific countdown protocol &mdash; 25 minutes of work, 5 minutes of break, repeated. This generic countdown lets you pick any duration. For the Pomodoro workflow with built-in break cycles, use the <a href="/pomodoro">Pomodoro timer</a>.'],
                 ['q' => 'Why does the timer keep ringing if I do not press stop?', 'a' => 'The end-of-timer alert loops gently for up to 30 seconds. This is intentional &mdash; a single chime is easy to miss. Press "Stop Alert" or reset the timer to silence it immediately.'],
             ]);
             ?>
@@ -352,18 +352,10 @@ get_header();
   "@type": "Article",
   "headline": "Free Online Countdown Timer — Set Any Duration",
   "description": "Flexible browser countdown timer with hours, minutes, and seconds input. Timestamp-based engine stays accurate in background tabs.",
-  "url": "<?php echo esc_url(home_url('/countdown-timer/')); ?>",
+  "url": "<?php echo esc_url(home_url('/countdown-timer')); ?>",
   "dateModified": "2026-05-27",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "<?php echo esc_url(home_url('/')); ?>"
-  }
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

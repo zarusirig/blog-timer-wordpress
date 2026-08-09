@@ -17,7 +17,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
             <?php echo esc_html($loader->get_string('hub.minutes.h1')); ?>
         </h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">
@@ -313,7 +313,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                     <p>Fifteen minutes is the "FlyLady" cleaning interval popularized by Marla Cilley. It is short enough to feel approachable and long enough to make visible progress. The same duration is used in agile development for <em>focused spikes</em> &mdash; brief, single-purpose investigations.</p>
 
                     <h3>25-minute timer &mdash; the Pomodoro standard</h3>
-                    <p>The classic Pomodoro interval from Francesco Cirillo's 1987 methodology. See our <a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Pomodoro Technique page</a> for complete protocol details.</p>
+                    <p>The classic Pomodoro interval from Francesco Cirillo's 1987 methodology. See our <a href="<?php echo esc_url(home_url('/pomodoro')); ?>">Pomodoro Technique page</a> for complete protocol details.</p>
 
                     <h3>45-minute timer &mdash; the deep-work entry block</h3>
                     <p>Forty-five minutes is the standard classroom lecture length and a typical psychotherapy session duration. <a href="https://en.wikipedia.org/wiki/Cal_Newport" target="_blank" rel="noopener">Cal Newport</a> recommends 45-minute initial deep-work blocks for practitioners building focus stamina.</p>
@@ -339,7 +339,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                         <li><strong>Does the task have a hard deadline?</strong> Hard deadlines benefit from the visible-countdown urgency of shorter timers.</li>
                     </ol>
 
-                    <p>If you are unsure, start with a 25-minute Pomodoro and adjust based on how you feel at the boundary. Specific timers we recommend: <a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Pomodoro</a>, <a href="<?php echo esc_url(home_url('/sprint-timer/')); ?>">Sprint timer</a>, <a href="<?php echo esc_url(home_url('/interval-timer/')); ?>">Interval timer</a>, <a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">Nap timer</a>, and the dedicated <a href="<?php echo esc_url(home_url('/presentation-timer/')); ?>">Presentation timer</a>.</p>
+                    <p>If you are unsure, start with a 25-minute Pomodoro and adjust based on how you feel at the boundary. Specific timers we recommend: <a href="<?php echo esc_url(home_url('/pomodoro')); ?>">Pomodoro</a>, <a href="<?php echo esc_url(home_url('/sprint-timer')); ?>">Sprint timer</a>, <a href="<?php echo esc_url(home_url('/interval-timer')); ?>">Interval timer</a>, <a href="<?php echo esc_url(home_url('/nap-timer')); ?>">Nap timer</a>, and the dedicated <a href="<?php echo esc_url(home_url('/presentation-timer')); ?>">Presentation timer</a>.</p>
                 </div>
             </div>
         </section>
@@ -398,7 +398,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
         <div class="cta-banner">
             <h2>Need a Second-Based Timer?</h2>
             <p>For shorter intervals measured in seconds, check out our complete collection of second timers from 1 to 60 seconds.</p>
-            <a href="<?php echo esc_url(home_url('/second-timers/')); ?>" class="btn btn--primary btn--large">Browse Second Timers</a>
+            <a href="<?php echo esc_url(home_url('/second-timers')); ?>" class="btn btn--primary btn--large">Browse Second Timers</a>
         </div>
     </div>
 </main>

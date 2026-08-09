@@ -484,6 +484,34 @@ function blogtimer_redirect_trailing_slash_urls()
 add_action('template_redirect', 'blogtimer_redirect_trailing_slash_urls', 1);
 
 /**
+ * 301 www.theblogtimer.com -> https://theblogtimer.com (host canonicalization).
+ *
+ * Production is Cloudways Nginx with no server-config access, so the host
+ * redirect must happen in PHP. Hooked on 'init' (priority 0) because
+ * template_redirect fires too late for some asset/endpoint requests — without
+ * this, www serves 200s and Google sees two hosts with only a canonical hint.
+ */
+function blogtimer_redirect_www_to_apex()
+{
+    if (defined('WP_CLI') && WP_CLI) {
+        return;
+    }
+    if (php_sapi_name() === 'cli' || is_admin() || wp_doing_ajax() || wp_doing_cron()) {
+        return;
+    }
+
+    $host = isset($_SERVER['HTTP_HOST']) ? strtolower((string) $_SERVER['HTTP_HOST']) : '';
+    if ($host !== 'www.theblogtimer.com') {
+        return;
+    }
+
+    $request_uri = isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '/';
+    wp_safe_redirect('https://theblogtimer.com' . $request_uri, 301);
+    exit;
+}
+add_action('init', 'blogtimer_redirect_www_to_apex', 0);
+
+/**
  * Legacy "timer for" URL variants that should redirect to clean canonical pages.
  */
 function blogtimer_timer_for_redirect_map()
@@ -538,9 +566,9 @@ function blogtimer_redirect_legacy_migration_urls()
     }
 
     // One-off guide consolidations: 301 a retired duplicate slug to its replacement.
-    $guide_redirects = [
-        '/guides/pomodoro-vs-52-17' => '/guides/52-17-rule-vs-pomodoro',
-    ];
+    // (pomodoro-vs-52-17 was removed from this map 2026-07-31: the page was
+    // resurrected as the 52/17 implementation guide and must resolve again.)
+    $guide_redirects = [];
     if (isset($guide_redirects[$path_trimmed])) {
         wp_safe_redirect(home_url($guide_redirects[$path_trimmed]), 301);
         exit;
@@ -744,6 +772,37 @@ function blogtimer_render_faq($faqs)
 }
 
 /**
+ * Resolve the absolute path to datasets/copyblocks.json across local + production layouts.
+ *
+ * Several features (FAQ schema, taxonomy hub overrides) read this file. Local Docker
+ * and Cloudways production place the datasets directory at different depths relative
+ * to ABSPATH, so we probe a few candidates and cache the first hit.
+ *
+ * @return string|null Absolute path to copyblocks.json, or null if not found.
+ */
+function blogtimer_copyblocks_path()
+{
+    static $path = null;
+    static $looked = false;
+    if (!$looked) {
+        $looked = true;
+        $candidates = [
+            ABSPATH . '../datasets/copyblocks.json',       // Docker: repo root above wp/
+            ABSPATH . 'datasets/copyblocks.json',          // datasets inside WP root
+            '/var/www/datasets/copyblocks.json',           // Cloudways production layout
+            WP_CONTENT_DIR . '/../datasets/copyblocks.json',
+        ];
+        foreach ($candidates as $c) {
+            if (is_file($c)) {
+                $path = $c;
+                break;
+            }
+        }
+    }
+    return $path;
+}
+
+/**
  * Contact form subject labels.
  */
 function blogtimer_contact_subjects()
@@ -763,13 +822,13 @@ function blogtimer_contact_subjects()
 function blogtimer_handle_contact_form()
 {
     if (!isset($_POST['blogtimer_contact_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['blogtimer_contact_nonce'])), 'blogtimer_contact_submit')) {
-        wp_safe_redirect(add_query_arg('contact_status', 'invalid_nonce', home_url('/contact/')));
+        wp_safe_redirect(add_query_arg('contact_status', 'invalid_nonce', home_url('/contact')), 302);
         exit;
     }
 
     // Honeypot field: silently accept to reduce bot retries.
     if (!empty($_POST['blogtimer_website'])) {
-        wp_safe_redirect(add_query_arg('contact_status', 'success', home_url('/contact/')));
+        wp_safe_redirect(add_query_arg('contact_status', 'success', home_url('/contact')), 302);
         exit;
     }
 
@@ -781,7 +840,7 @@ function blogtimer_handle_contact_form()
     $subject_map = blogtimer_contact_subjects();
 
     if (strlen($name) < 2 || !is_email($email) || empty($subject_map[$subject_key]) || strlen($message) < 50) {
-        wp_safe_redirect(add_query_arg('contact_status', 'validation_error', home_url('/contact/')));
+        wp_safe_redirect(add_query_arg('contact_status', 'validation_error', home_url('/contact')), 302);
         exit;
     }
 
@@ -806,7 +865,7 @@ function blogtimer_handle_contact_form()
 
     $sent = wp_mail(get_option('admin_email'), $email_subject, $email_body, $headers);
 
-    wp_safe_redirect(add_query_arg('contact_status', $sent ? 'success' : 'send_error', home_url('/contact/')));
+    wp_safe_redirect(add_query_arg('contact_status', $sent ? 'success' : 'send_error', home_url('/contact')), 302);
     exit;
 }
 add_action('admin_post_blogtimer_contact', 'blogtimer_handle_contact_form');
@@ -1054,9 +1113,9 @@ add_filter('robots_txt', function ($output, $public) {
     $robots = "# robots.txt for The Blog Timer\n";
     $robots .= "# Security hardened - blocks spam/injected pages from being indexed\n\n";
 
-    // Sitemap location
-    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml') . "\n";
-    $robots .= "Sitemap: " . home_url('/wp-sitemap.xml') . "\n\n";
+    // Sitemap location — sitemap-fresh.xml ONLY. WP core sitemaps are disabled
+    // (see wp_sitemaps_enabled below); advertising both confused Google.
+    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml') . "\n\n";
 
     // Allow all legitimate bots to crawl whitelisted content
     $robots .= "User-agent: *\n";
@@ -1206,6 +1265,22 @@ add_action('send_headers', function () {
 }, 1);
 
 /**
+ * Fully disable WP core sitemaps (/wp-sitemap*.xml).
+ *
+ * The site runs a single sitemap system: /sitemap-fresh.xml (submitted to GSC).
+ * Running wp-sitemap.xml alongside it fed Google thin taxonomy index sitemaps
+ * and split discovery signals across two systems. sitemap-fresh.xml carries all
+ * timer/guide/page URLs PLUS the /timer-unit/*, /timer-bucket/*, /timer-usecase/*
+ * taxonomy archives, so nothing loses sitemap presence.
+ *
+ * The wp_sitemaps_* filters below are intentionally KEPT (not dead code removal
+ * candidates): wp_sitemaps_add_provider still fires during core registration
+ * even when disabled, and the whole set is the safety net that keeps spam/thin
+ * URLs out of wp-sitemap.xml if core sitemaps are ever re-enabled.
+ */
+add_filter('wp_sitemaps_enabled', '__return_false');
+
+/**
  * Remove spam pages from WordPress default sitemap
  * Only include legitimate content types in the sitemap
  */
@@ -1247,19 +1322,30 @@ add_filter('wp_sitemaps_add_provider', function ($provider, $name) {
  * Filter out any non-legitimate pages from the sitemap
  */
 /**
- * Disable Nginx/CDN caching on sitemap URLs so search engines always see fresh content.
- * Cloudways Varnish/Nginx was caching wp-sitemap-*.xml for 4+ hours, causing GSC to read stale counts.
+ * Cache + robots headers for robots.txt and sitemap XML responses.
+ *
+ * These used to send no-store/no-cache, which forced a full WordPress boot on
+ * EVERY crawler fetch — GSC logged 53.7% of crawl responses as "robots.txt not
+ * available" and a 3-week crawl outage. A 1-hour cache window keeps them fresh
+ * enough for GSC while letting Nginx/Varnish absorb repeat fetches.
+ *
+ * robots.txt is normally a physical file served by Nginx (see repo-root
+ * robots.txt deployed to public_html); this branch is only the WP fallback.
+ *
+ * X-Robots-Tag: noindex on sitemap XML keeps the sitemap files themselves out
+ * of web search results (they were ranking at position 7-16) — Google still
+ * reads noindexed sitemaps for URL discovery.
  */
 add_action('send_headers', function () {
     if (!isset($_SERVER['REQUEST_URI'])) { return; }
     $uri = $_SERVER['REQUEST_URI'];
     if (preg_match('#/(robots\.txt|(wp-)?sitemap[^/]*\.xml)#', $uri)) {
-        header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0', true);
-        header('Pragma: no-cache', true);
-        header('Expires: 0', true);
-        header('X-Accel-Expires: 0', true);  // Nginx-specific directive to bypass cache
+        header('Cache-Control: public, max-age=3600', true);
+        header('X-Accel-Expires: 3600', true);  // Nginx-specific cache lifetime
         if (preg_match('#/robots\.txt$#', (string) parse_url($uri, PHP_URL_PATH))) {
             header('Content-Type: text/plain; charset=utf-8', true);
+        } else {
+            header('X-Robots-Tag: noindex', true);
         }
     }
 }, 1);
@@ -1274,11 +1360,15 @@ add_action('parse_request', function ($wp) {
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     if ($path !== '/sitemap-fresh.xml') { return; }
 
+    // Cacheable for 1 hour: the old no-store headers forced a WP boot on every
+    // Googlebot fetch (GSC "robots.txt not available" / crawl-outage root cause).
+    // This handler exits before send_headers fires, so headers live here.
+    // noindex keeps the XML file itself out of web search results; Google still
+    // reads noindexed sitemaps for URL discovery.
     header('Content-Type: application/xml; charset=UTF-8');
-    header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-    header('Pragma: no-cache');
-    header('Expires: 0');
-    header('X-Accel-Expires: 0');
+    header('Cache-Control: public, max-age=3600');
+    header('X-Accel-Expires: 3600');
+    header('X-Robots-Tag: noindex');
 
     echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
@@ -1598,13 +1688,26 @@ add_action('wp_head', function () {
     // so Google consolidates the entity instead of seeing competing/anonymous nodes.
     $org_id = home_url('/#organization');
     $website_id = home_url('/#website');
-    $person_id = home_url('/author-suraj-giri/') . '#person';
+    $person_id = home_url('/author-suraj-giri') . '#person';
     $current_url = blogtimer_untrailingslashit_url(home_url(add_query_arg([], $GLOBALS['wp']->request ?? '')));
     $breadcrumb_id = $current_url . '#breadcrumb';
 
-    // ONE logo node. Only favicon.svg exists in the theme images dir today.
-    // TODO: replace with PNG logo ≥112px (Google requires a raster logo ≥112x112px for rich results).
-    $logo_url = get_theme_file_uri('images/favicon.svg');
+    // F-11: Google requires a RASTER logo ≥112x112px for Article / rich results —
+    // SVG is not accepted. The theme ships only images/favicon.svg (no PNG in
+    // images/), so the best available raster is the WordPress site icon, which is a
+    // 512px PNG when configured (Appearance → Settings → Site Icon). When it is set we
+    // use it and declare width/height; otherwise we fall back to the SVG and flag it.
+    // TODO(F-11): add a dedicated PNG logo at images/logo-512.png (512x512px, or at
+    // minimum ≥112x112px) and reference it here for a deterministic raster logo that
+    // does not depend on the site-icon being configured. Do NOT point at a file that
+    // does not yet exist.
+    $logo_url  = get_site_icon_url(512);
+    $logo_size = null;
+    if ($logo_url) {
+        $logo_size = ['width' => 512, 'height' => 512];
+    } else {
+        $logo_url = get_theme_file_uri('images/favicon.svg');
+    }
 
     // Organization schema — every page. SINGLE consolidated node (stable @id).
     // This is the ONLY Organization output site-wide; the plugin's duplicate has been neutralized.
@@ -1616,10 +1719,10 @@ add_action('wp_head', function () {
         'url' => $site_url,
         // Source-Context "evidence-based timing" message — the E-E-A-T differentiator.
         'description' => 'The most rigorously researched timing resource on the web — evidence-based "how long should I…" guides and accurate countdown tools, with every duration sourced to research.',
-        'logo' => [
-            '@type' => 'ImageObject',
-            'url' => $logo_url,
-        ],
+        'logo' => array_merge(
+            ['@type' => 'ImageObject', 'url' => $logo_url],
+            $logo_size ? ['width' => $logo_size['width'], 'height' => $logo_size['height']] : []
+        ),
         // TODO: confirm founding year
         'foundingDate' => '2025',
         'founder' => [
@@ -1637,11 +1740,11 @@ add_action('wp_head', function () {
             ['@type' => 'Thing', 'name' => 'High-intensity interval training', 'sameAs' => 'https://en.wikipedia.org/wiki/High-intensity_interval_training'],
             ['@type' => 'Thing', 'name' => 'Meditation', 'sameAs' => 'https://en.wikipedia.org/wiki/Meditation'],
         ],
-        'publishingPrinciples' => blogtimer_untrailingslashit_url(home_url('/editorial-policy/')),
+        'publishingPrinciples' => blogtimer_untrailingslashit_url(home_url('/editorial-policy')),
         'contactPoint' => [
             '@type' => 'ContactPoint',
             'contactType' => 'customer support',
-            'url' => blogtimer_untrailingslashit_url(home_url('/contact/')),
+            'url' => blogtimer_untrailingslashit_url(home_url('/contact')),
             'email' => 'suraj@theblogtimer.com',
         ],
     ];
@@ -1724,21 +1827,21 @@ add_action('wp_head', function () {
                     '@type' => 'ListItem',
                     'position' => $position++,
                     'name' => 'Minute Timers',
-                    'item' => blogtimer_untrailingslashit_url(home_url('/minute-timers/')),
+                    'item' => blogtimer_untrailingslashit_url(home_url('/minute-timers')),
                 ];
             } elseif ($unit === 'hours') {
                 $breadcrumb_items[] = [
                     '@type' => 'ListItem',
                     'position' => $position++,
                     'name' => 'Hour Timers',
-                    'item' => blogtimer_untrailingslashit_url(home_url('/hour-timers/')),
+                    'item' => blogtimer_untrailingslashit_url(home_url('/hour-timers')),
                 ];
             } else {
                 $breadcrumb_items[] = [
                     '@type' => 'ListItem',
                     'position' => $position++,
                     'name' => 'Second Timers',
-                    'item' => blogtimer_untrailingslashit_url(home_url('/second-timers/')),
+                    'item' => blogtimer_untrailingslashit_url(home_url('/second-timers')),
                 ];
             }
             $breadcrumb_items[] = [
@@ -1751,7 +1854,7 @@ add_action('wp_head', function () {
                 '@type' => 'ListItem',
                 'position' => $position++,
                 'name' => 'Guides',
-                'item' => blogtimer_untrailingslashit_url(home_url('/guides/')),
+                'item' => blogtimer_untrailingslashit_url(home_url('/guides')),
             ];
             // Cluster level — the /guide-cluster/{term}/ archive 404s and is redirected,
             // so the cluster crumb links to the /guides/ hub rather than the dead archive.
@@ -1761,7 +1864,7 @@ add_action('wp_head', function () {
                     '@type' => 'ListItem',
                     'position' => $position++,
                     'name' => $guide_cluster_crumb['label'],
-                    'item' => blogtimer_untrailingslashit_url(home_url('/guides/')),
+                    'item' => blogtimer_untrailingslashit_url(home_url('/guides')),
                 ];
             }
             $breadcrumb_items[] = [
@@ -1803,13 +1906,20 @@ add_action('wp_head', function () {
         }
     }
 
-    // FAQPage schema — pages that render FAQ sections (except guide pages which handle their own)
+    // FAQPage schema — every page that renders a visible FAQ block (except guide
+    // pages, which emit their own). Google requires the Question/Answer text in the
+    // markup to mirror the visible on-page FAQ, so each branch here sources from the
+    // SAME data the corresponding template renders.
     if (!is_singular('guide')) {
         $faq_items = [];
 
         if (is_front_page() || is_page(['minute-timers', 'second-timers', 'faq'])) {
-            $copyblocks_path = ABSPATH . '../datasets/copyblocks.json';
-            if (file_exists($copyblocks_path)) {
+            // F-09: previously this used a single hardcoded path
+            // (ABSPATH . '../datasets/copyblocks.json') that does not resolve on the
+            // Cloudways production layout, so FAQPage silently never emitted on the
+            // homepage. Use the shared multi-candidate resolver instead.
+            $copyblocks_path = blogtimer_copyblocks_path();
+            if ($copyblocks_path) {
                 $cb = json_decode(file_get_contents($copyblocks_path), true);
                 if (!empty($cb['faqs'])) {
                     $count = 0;
@@ -1848,22 +1958,48 @@ add_action('wp_head', function () {
                 }
             }
         } elseif (is_singular('timer')) {
+            // F-09: single timer pages render their FAQ via
+            // Timer_Content_Loader::get_faqs($post, 4) in single-timer.php. To satisfy
+            // Google's schema-mirrors-visible-content rule, the FAQPage markup is built
+            // from that EXACT same loader call (same post, same count, same rotation),
+            // guaranteeing the Question name/text matches what the visitor sees.
+            //
+            // VARIETY, not suppression: get_faqs() rotates the shared faq_timer_* pool
+            // by the timer's numeric value (offset = value % pool_size), so the 4-Q
+            // subset and its ordering differ across the ~233 timer pages — the emitted
+            // JSON-LD is NOT byte-identical, avoiding the boilerplate-detection signal.
+            // Deepening this to per-bucket question sets requires expanding the FAQ
+            // pool in datasets/copyblocks.json (see TODO(F-09) below).
             if (class_exists('Timer_Content_Loader')) {
-                $loader = Timer_Content_Loader::get_instance();
-                $timer_faqs = $loader->get_faqs(get_post(), 4);
-                if (!empty($timer_faqs)) {
-                    foreach ($timer_faqs as $faq) {
-                        $faq_items[] = [
-                            '@type' => 'Question',
-                            'name' => $faq['q'],
-                            'acceptedAnswer' => [
-                                '@type' => 'Answer',
-                                'text' => $faq['a'],
-                            ],
-                        ];
+                $timer_post = get_post(get_the_ID());
+                if ($timer_post) {
+                    $loader = Timer_Content_Loader::get_instance();
+                    $timer_faqs = $loader->get_faqs($timer_post, 4);
+                    if (!empty($timer_faqs)) {
+                        foreach ($timer_faqs as $faq) {
+                            if (empty($faq['q']) || empty($faq['a'])) {
+                                continue;
+                            }
+                            $faq_items[] = [
+                                '@type' => 'Question',
+                                'name' => $faq['q'],
+                                'acceptedAnswer' => [
+                                    '@type' => 'Answer',
+                                    'text' => $faq['a'],
+                                ],
+                            ];
+                        }
                     }
                 }
             }
+            // TODO(F-09): for fuller per-duration variety (3-4 genuinely different
+            // question sets per bucket: short <10min / medium 10-30 / long 30-90 /
+            // extended >90, and seconds vs minutes vs hours), add bucket-scoped FAQ
+            // entries to datasets/copyblocks.json (e.g. faq_timer_short_*, _medium_*,
+            // _long_*, _extended_*) and extend Timer_Content_Loader::get_faqs() to pick
+            // the bucket's set before rotating. The schema here will inherit that
+            // variety automatically since it mirrors get_faqs(). Editing copyblocks.json
+            // and the loader is outside this file's boundary.
         }
 
         if (!empty($faq_items)) {
@@ -1875,39 +2011,9 @@ add_action('wp_head', function () {
         }
     }
 
-    // HowTo schema — pages with how-to sections
-    if (is_front_page() || is_singular('timer') || is_page(['minute-timers', 'second-timers'])) {
-        if (class_exists('Timer_Content_Loader')) {
-            $loader = Timer_Content_Loader::get_instance();
-            $schemas[] = [
-                '@context' => 'https://schema.org',
-                '@type' => 'HowTo',
-                'name' => 'How to Use The Blog Timer',
-                'description' => 'Set a countdown timer in three simple steps. No sign-up required.',
-                'step' => [
-                    [
-                        '@type' => 'HowToStep',
-                        'position' => 1,
-                        'name' => $loader->get_string('howto.step1.title'),
-                        'text' => $loader->get_string('howto.step1.desc'),
-                    ],
-                    [
-                        '@type' => 'HowToStep',
-                        'position' => 2,
-                        'name' => $loader->get_string('howto.step2.title'),
-                        'text' => $loader->get_string('howto.step2.desc'),
-                    ],
-                    [
-                        '@type' => 'HowToStep',
-                        'position' => 3,
-                        'name' => $loader->get_string('howto.step3.title'),
-                        'text' => $loader->get_string('howto.step3.desc'),
-                    ],
-                ],
-                'totalTime' => 'PT10S',
-            ];
-        }
-    }
+    // HowTo schema removed 2026-07-31: Google dropped HowTo rich results in 2023,
+    // and one identical block across the front page + all timers + hubs was
+    // boilerplate. The visible how-to steps still render on the pages.
 
     // ItemList schema — category hub pages
     if (is_page('minute-timers') || is_page('second-timers')) {
@@ -2005,7 +2111,7 @@ function blogtimer_guide_cluster_crumb($post_id = null)
     return [
         'label' => $cluster_term->name,
         // Cluster archive 404s; point the labeled step at the guides hub instead.
-        'url'   => home_url('/guides/'),
+        'url'   => home_url('/guides'),
     ];
 }
 
@@ -2032,15 +2138,15 @@ function blogtimer_build_breadcrumb_items()
             ? Timer_Engine::get_timer_unit($post_id)
             : get_post_meta($post_id, '_timer_unit', true);
         if ($unit === 'minutes') {
-            $items[] = ['label' => 'Minute Timers', 'url' => home_url('/minute-timers/')];
+            $items[] = ['label' => 'Minute Timers', 'url' => home_url('/minute-timers')];
         } elseif ($unit === 'hours') {
-            $items[] = ['label' => 'Hour Timers', 'url' => home_url('/hour-timers/')];
+            $items[] = ['label' => 'Hour Timers', 'url' => home_url('/hour-timers')];
         } else {
-            $items[] = ['label' => 'Second Timers', 'url' => home_url('/second-timers/')];
+            $items[] = ['label' => 'Second Timers', 'url' => home_url('/second-timers')];
         }
         $items[] = ['label' => get_the_title(), 'url' => null];
     } elseif (is_singular('guide')) {
-        $items[] = ['label' => 'Guides', 'url' => home_url('/guides/')];
+        $items[] = ['label' => 'Guides', 'url' => home_url('/guides')];
         $cluster_crumb = blogtimer_guide_cluster_crumb();
         if ($cluster_crumb) {
             $items[] = $cluster_crumb;
@@ -2098,24 +2204,24 @@ function blogtimer_render_see_also($context = 'timer')
     $links = [];
 
     if ($context === 'timer') {
-        $links[] = ['url' => home_url('/minute-timers/'), 'label' => 'Browse All Minute Timers'];
-        $links[] = ['url' => home_url('/second-timers/'), 'label' => 'Browse All Second Timers'];
-        $links[] = ['url' => home_url('/pomodoro/'), 'label' => 'Try the Pomodoro Timer'];
-        $links[] = ['url' => home_url('/use-cases/'), 'label' => 'Timers by Use Case'];
-        $links[] = ['url' => home_url('/guides/'), 'label' => 'Timer Guides & Tips'];
+        $links[] = ['url' => home_url('/minute-timers'), 'label' => 'Browse All Minute Timers'];
+        $links[] = ['url' => home_url('/second-timers'), 'label' => 'Browse All Second Timers'];
+        $links[] = ['url' => home_url('/pomodoro'), 'label' => 'Try the Pomodoro Timer'];
+        $links[] = ['url' => home_url('/use-cases'), 'label' => 'Timers by Use Case'];
+        $links[] = ['url' => home_url('/guides'), 'label' => 'Timer Guides & Tips'];
     } elseif ($context === 'guide') {
-        $links[] = ['url' => home_url('/guides/'), 'label' => 'All Guides'];
-        $links[] = ['url' => home_url('/minute-timers/'), 'label' => 'Minute Timers'];
-        $links[] = ['url' => home_url('/second-timers/'), 'label' => 'Second Timers'];
-        $links[] = ['url' => home_url('/pomodoro/'), 'label' => 'Pomodoro Timer'];
-        $links[] = ['url' => home_url('/faq/'), 'label' => 'Frequently Asked Questions'];
+        $links[] = ['url' => home_url('/guides'), 'label' => 'All Guides'];
+        $links[] = ['url' => home_url('/minute-timers'), 'label' => 'Minute Timers'];
+        $links[] = ['url' => home_url('/second-timers'), 'label' => 'Second Timers'];
+        $links[] = ['url' => home_url('/pomodoro'), 'label' => 'Pomodoro Timer'];
+        $links[] = ['url' => home_url('/faq'), 'label' => 'Frequently Asked Questions'];
     } elseif ($context === 'page') {
         // Tool / hub pages (egg-timer, hiit-timer, etc.) — link to sibling hubs + guides.
-        $links[] = ['url' => home_url('/use-cases/'), 'label' => 'Browse Timers by Use Case'];
-        $links[] = ['url' => home_url('/pomodoro/'), 'label' => 'Pomodoro Timer'];
-        $links[] = ['url' => home_url('/minute-timers/'), 'label' => 'Minute Timers'];
-        $links[] = ['url' => home_url('/second-timers/'), 'label' => 'Second Timers'];
-        $links[] = ['url' => home_url('/guides/'), 'label' => 'Timer Guides & Tips'];
+        $links[] = ['url' => home_url('/use-cases'), 'label' => 'Browse Timers by Use Case'];
+        $links[] = ['url' => home_url('/pomodoro'), 'label' => 'Pomodoro Timer'];
+        $links[] = ['url' => home_url('/minute-timers'), 'label' => 'Minute Timers'];
+        $links[] = ['url' => home_url('/second-timers'), 'label' => 'Second Timers'];
+        $links[] = ['url' => home_url('/guides'), 'label' => 'Timer Guides & Tips'];
     }
 
     if (empty($links)) return;
@@ -2147,7 +2253,7 @@ add_action('wp_footer', function () {
         <div class="cookie-consent__inner">
             <div class="cookie-consent__text">
                 <p><strong>Cookie Notice:</strong> We use cookies to improve your experience and serve relevant ads through Google AdSense. Essential cookies are required for site functionality. Advertising cookies help us show you relevant ads and keep this site free.</p>
-                <p>By clicking "Accept All," you consent to the use of all cookies. You can manage your preferences or learn more in our <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy Policy</a>.</p>
+                <p>By clicking "Accept All," you consent to the use of all cookies. You can manage your preferences or learn more in our <a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy Policy</a>.</p>
             </div>
             <div class="cookie-consent__actions">
                 <button id="cookie-accept-all" class="btn btn--primary">Accept All</button>

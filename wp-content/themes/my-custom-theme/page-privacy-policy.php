@@ -5,7 +5,7 @@
  */
 get_header();
 $loader = Timer_Content_Loader::get_instance();
-$privacy_faq_url = home_url('/faq/');
+$privacy_faq_url = home_url('/faq');
 $privacy_guide_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'accuracy');
 ?>
 
@@ -53,7 +53,7 @@ $privacy_guide_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'ac
             <ul>
                 <li><strong>Cookie consent banner:</strong> When you first visit our site, you can choose to accept or decline non-essential cookies</li>
                 <li><strong>Google Ads Settings:</strong> You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a></li>
-                <li><strong>NAI opt-out:</strong> You may opt out of third-party vendor cookies by visiting the <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener">Network Advertising Initiative opt-out page</a></li>
+                <li><strong>NAI opt-out:</strong> You may opt out of third-party vendor cookies by visiting the <a href="https://thenai.org/how-to-opt-out/" target="_blank" rel="noopener">Network Advertising Initiative opt-out page</a></li>
                 <li><strong>DAA opt-out:</strong> Visit <a href="https://optout.aboutads.info/" target="_blank" rel="noopener">aboutads.info</a> to opt out of interest-based advertising</li>
                 <li><strong>Browser settings:</strong> Most browsers allow you to block or delete cookies through their settings</li>
             </ul>
@@ -95,7 +95,7 @@ $privacy_guide_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'ac
                 <li><strong>Right to object:</strong> You can object to the processing of your personal data</li>
                 <li><strong>Right to withdraw consent:</strong> You can withdraw your consent at any time by clearing your cookies or using the cookie consent controls on our site</li>
             </ul>
-            <p>Since The Blog Timer stores user data primarily in localStorage on your device, you can exercise most of these rights directly by clearing your browser data. For server-side data inquiries, please <a href="<?php echo esc_url(home_url('/contact/')); ?>">contact us</a>.</p>
+            <p>Since The Blog Timer stores user data primarily in localStorage on your device, you can exercise most of these rights directly by clearing your browser data. For server-side data inquiries, please <a href="<?php echo esc_url(home_url('/contact')); ?>">contact us</a>.</p>
         </section>
 
         <section class="legal-section">
@@ -107,7 +107,7 @@ $privacy_guide_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'ac
                 <li><strong>Right to opt out:</strong> You can opt out of the sale of personal information. Note: We do not sell personal information in the traditional sense, but targeted advertising may constitute a "sale" under CCPA</li>
                 <li><strong>Right to non-discrimination:</strong> We will not discriminate against you for exercising your CCPA rights</li>
             </ul>
-            <p>To exercise your CCPA rights, please <a href="<?php echo esc_url(home_url('/contact/')); ?>">contact us</a> or use the opt-out links provided in the Cookies section above.</p>
+            <p>To exercise your CCPA rights, please <a href="<?php echo esc_url(home_url('/contact')); ?>">contact us</a> or use the opt-out links provided in the Cookies section above.</p>
         </section>
 
         <section class="legal-section">
@@ -126,16 +126,16 @@ $privacy_guide_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'ac
         <section class="legal-section">
             <h2>Contact</h2>
             <p>If you have questions about this privacy policy, please visit our <a
-                    href="<?php echo home_url('/contact/'); ?>">Contact page</a>.</p>
+                    href="<?php echo home_url('/contact'); ?>">Contact page</a>.</p>
         </section>
 
         <section class="legal-section">
             <h2>Related Resources</h2>
             <ul class="context-link-list">
                 <li><a href="<?php echo esc_url($privacy_faq_url); ?>">Read timer privacy and usage FAQs</a></li>
-                <li><a href="<?php echo esc_url(home_url('/guides/')); ?>">Browse timer setup and troubleshooting guides</a></li>
+                <li><a href="<?php echo esc_url(home_url('/guides')); ?>">Browse timer setup and troubleshooting guides</a></li>
                 <li><a href="<?php echo esc_url($privacy_guide_cluster_url); ?>">Open timer accuracy guide cluster pages</a></li>
-                <li><a href="<?php echo esc_url(home_url('/timer-unit/minutes/')); ?>">Browse minute timer archive pages</a></li>
+                <li><a href="<?php echo esc_url(home_url('/timer-unit/minutes')); ?>">Browse minute timer archive pages</a></li>
             </ul>
         </section>
 

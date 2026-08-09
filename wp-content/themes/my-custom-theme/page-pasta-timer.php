@@ -10,7 +10,7 @@ get_header();
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Pasta Timer &mdash; Al Dente Every Time</h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home cook &amp; culinary researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Set the timer for any pasta shape and cook to a true al dente bite &mdash; with shape-by-shape guidance, the correct salt-to-water ratio, and timing adjustments for fresh vs. dried.</p>
@@ -174,7 +174,7 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": "How to Cook Pasta Al Dente",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "description": "Cook dried pasta to a true al dente bite using the correct salt-to-water ratio and shape-specific timing.",
   "prepTime": "PT5M",
@@ -199,10 +199,10 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Free Online Pasta Timer — Al Dente Every Time",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"}
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

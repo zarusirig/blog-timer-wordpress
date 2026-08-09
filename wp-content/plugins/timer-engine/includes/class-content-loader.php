@@ -15,6 +15,7 @@ class Timer_Content_Loader
     private $strings = null;
     private $copyblocks = null;
     private $dataset = null;
+    private $duration_facts = null;
 
     public static function get_instance()
     {
@@ -72,6 +73,21 @@ class Timer_Content_Loader
         }
         if (!$this->dataset)
             $this->dataset = [];
+    }
+
+    /**
+     * Load duration facts file.
+     */
+    private function load_duration_facts()
+    {
+        if ($this->duration_facts !== null)
+            return;
+        $file = $this->get_datasets_path() . 'duration-facts.json';
+        if (file_exists($file)) {
+            $this->duration_facts = json_decode(file_get_contents($file), true);
+        }
+        if (!$this->duration_facts)
+            $this->duration_facts = [];
     }
 
     /**
@@ -228,6 +244,84 @@ class Timer_Content_Loader
             }
         }
         return null;
+    }
+
+    /**
+     * Get the "About this duration" facts for a timer value/unit.
+     * Facts are precomputed conversions and verified anchors from duration-facts.json.
+     * Returns an array of plain-text sentences (possibly empty).
+     */
+    public function get_duration_facts($value, $unit)
+    {
+        $this->load_duration_facts();
+        $facts = $this->duration_facts[$unit][(string) $value] ?? [];
+        if (!is_array($facts))
+            return [];
+        return array_values(array_filter($facts, 'is_string'));
+    }
+
+    /**
+     * Get semantically adjacent timers for a value/unit from the dataset.
+     * Candidates: direct neighbors, the two nearest multiples of five in each
+     * direction (nearest known values for the sparse hours list), plus the
+     * half and double durations. Only durations present in timers.dataset.json
+     * are returned, so no link can point to a non-existent timer page.
+     * Returns array of ['value' => int, 'unit' => string, 'slug' => string].
+     */
+    public function get_nearby_timers($value, $unit)
+    {
+        $this->load_dataset();
+
+        $value = (int) $value;
+        $slug_map = [];
+        foreach ($this->dataset['timers'] ?? [] as $t) {
+            if (($t['unit'] ?? '') === $unit && !empty($t['slug'])) {
+                $slug_map[(int) $t['value']] = $t['slug'];
+            }
+        }
+        if (empty($slug_map))
+            return [];
+
+        $candidates = [];
+        if ($unit === 'hours') {
+            // Sparse list: take the two nearest known values in each direction
+            $known = array_keys($slug_map);
+            sort($known);
+            $below = array_values(array_filter($known, fn($v) => $v < $value));
+            $above = array_values(array_filter($known, fn($v) => $v > $value));
+            $candidates = array_merge(array_slice($below, -2), array_slice($above, 0, 2));
+        } else {
+            // Direct neighbors
+            $candidates[] = $value - 1;
+            $candidates[] = $value + 1;
+            // Two nearest multiples of five below and above
+            $down = (int) (floor(($value - 1) / 5) * 5);
+            $candidates[] = $down;
+            $candidates[] = $down - 5;
+            $up = (int) (ceil(($value + 1) / 5) * 5);
+            $candidates[] = $up;
+            $candidates[] = $up + 5;
+        }
+
+        // Half and double durations where those pages exist
+        $candidates[] = (int) floor($value / 2);
+        $candidates[] = $value * 2;
+
+        $nearby = [];
+        foreach ($candidates as $cv) {
+            if ($cv === $value || $cv <= 0)
+                continue;
+            if (!isset($slug_map[$cv]))
+                continue;
+            $nearby[$cv] = [
+                'value' => $cv,
+                'unit' => $unit,
+                'slug' => $slug_map[$cv],
+            ];
+        }
+        ksort($nearby);
+
+        return array_values($nearby);
     }
 
     /**

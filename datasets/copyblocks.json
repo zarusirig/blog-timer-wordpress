@@ -487,6 +487,654 @@
         "q": "How do I keep a browser timer running in the background on mobile?",
         "a": "Keep the tab in the foreground with the screen on by disabling auto-lock or using a screen wake lock, or move any time-critical alert to your phone's native Clock app."
       }
+    },
+    "faq_g_52_17_rule_vs_pomodoro_01": {
+      "en": {
+        "q": "What is the 52/17 rule?",
+        "a": "Work in 52-minute blocks separated by 17-minute breaks. The pattern comes from a 2014 DeskTime analysis that found its top 10% most productive users naturally worked in roughly that rhythm, with breaks spent fully away from the screen."
+      }
+    },
+    "faq_g_52_17_rule_vs_pomodoro_02": {
+      "en": {
+        "q": "Is 52/17 better than Pomodoro?",
+        "a": "For deep individual knowledge work and strong focus stamina, usually yes. For fragmented tasks, beginners, and procrastination-prone starts, Pomodoro's 25/5 fits better. No randomized trial has tested the two head-to-head."
+      }
+    },
+    "faq_g_52_17_rule_vs_pomodoro_03": {
+      "en": {
+        "q": "Where did the 52/17 rule come from?",
+        "a": "From time-tracking company DeskTime, which in 2014 analyzed the work patterns of its most productive users. The rule describes behavior those users drifted into on their own; nobody was instructed to work in 52/17 cycles."
+      }
+    },
+    "faq_g_52_17_rule_vs_pomodoro_04": {
+      "en": {
+        "q": "Is the 52/17 rule scientifically proven?",
+        "a": "No. It is a correlation from observational productivity data, not a controlled experiment, and DeskTime's own 2021 re-analysis found the pattern had shifted to about 112 minutes of work per 26 of break. Treat 52/17 as a strong default, not a law."
+      }
+    },
+    "faq_g_best_free_pomodoro_timers_01": {
+      "en": {
+        "q": "What is the best completely free Pomodoro timer?",
+        "a": "Marinara Timer is the only tool on our list with no paid tier at all: Pomodoro, custom, and kitchen modes plus shareable timer URLs, no signup. Pomofocus is the strongest free browser option if you also want a task list and focus reports."
+      }
+    },
+    "faq_g_best_free_pomodoro_timers_02": {
+      "en": {
+        "q": "Do free Pomodoro apps have ads or hidden paywalls?",
+        "a": "The browser tools we tested (Pomofocus, Marinara, The Blog Timer) run their core 25/5 cycle free forever. Mobile apps typically paywall statistics history, cross-device sync, and themes; Focus Keeper's Pro tier is now a subscription from $3.99 a month. The timer itself is free in every app we reviewed."
+      }
+    },
+    "faq_g_best_free_pomodoro_timers_03": {
+      "en": {
+        "q": "Can I use a Pomodoro timer without creating an account?",
+        "a": "Yes. Pomofocus, Marinara Timer, and The Blog Timer all start a full Pomodoro cycle with no signup. Accounts only become necessary when you want your session history synced across devices."
+      }
+    },
+    "faq_g_best_free_pomodoro_timers_04": {
+      "en": {
+        "q": "Is there a free Pomodoro timer for Apple Watch?",
+        "a": "Focus Keeper's free tier runs on Apple Watch (watchOS 8 or later) alongside iPhone and iPad, covering the standard 25-minute sessions and breaks. Its Pro subscription adds customization and app blocking but is not required for the basic cycle."
+      }
+    },
+    "faq_g_best_online_timers_01": {
+      "en": {
+        "q": "What is the most accurate online timer?",
+        "a": "Any timer that anchors its countdown to real timestamps and recomputes remaining time when the tab regains focus. Timers built on naive setInterval() counting fall behind in background tabs because browsers throttle hidden tabs, a behavior documented in MDN's setTimeout reference."
+      }
+    },
+    "faq_g_best_online_timers_02": {
+      "en": {
+        "q": "Do online timers keep running in a background tab?",
+        "a": "The page keeps running, but browsers throttle its timers: Firefox clamps hidden tabs to one tick per second, and Chrome can batch timer checks to once per minute after five minutes hidden. Well-built timers survive this by recomputing from the system clock; naive ones drift."
+      }
+    },
+    "faq_g_best_online_timers_03": {
+      "en": {
+        "q": "Are online timers free to use?",
+        "a": "All six timers in our comparison are free without signup. The difference is advertising: Online-Stopwatch is ad-heavy with a paid removal tier, vClock is ad-supported, and e.gg Timer, Big Timer, Google's widget, and The Blog Timer keep it light or ad-free."
+      }
+    },
+    "faq_g_best_online_timers_04": {
+      "en": {
+        "q": "What is the best online timer for classrooms and presentations?",
+        "a": "Online-Stopwatch for classrooms, thanks to themed countdowns and name pickers that hold kids' attention. Big Timer for presentations and workshops, because its full-screen digits are readable from the back of a room."
+      }
+    },
+    "faq_g_flowtime_technique_01": {
+      "en": {
+        "q": "What is the Flowtime technique?",
+        "a": "The Flowtime technique is a focus method where you pick one task, record your start time, work until your concentration naturally breaks, then take a break proportional to how long you worked. Unlike Pomodoro, no fixed interval interrupts the work."
+      }
+    },
+    "faq_g_flowtime_technique_02": {
+      "en": {
+        "q": "How long should Flowtime breaks be?",
+        "a": "The original guideline scales the break to the work: about 5 minutes after less than 25 minutes of work, 8 minutes after 25 to 50, 10 minutes after 50 to 90, and 15 minutes or more after 90-plus minutes."
+      }
+    },
+    "faq_g_flowtime_technique_03": {
+      "en": {
+        "q": "Do you need a timer for the Flowtime technique?",
+        "a": "You need a stopwatch or clock to record how long each work session lasts, plus a countdown timer for breaks. The work phase is never ended by an alarm; only the break gets a fixed end time."
+      }
+    },
+    "faq_g_flowtime_technique_04": {
+      "en": {
+        "q": "Is Flowtime better than Pomodoro?",
+        "a": "For deep, absorbing work where an interruption costs real momentum, usually yes. For procrastination-prone starts, fragmented tasks, and study rotations, Pomodoro's small fixed 25-minute commitment tends to work better."
+      }
+    },
+    "faq_g_how_long_for_deep_work_01": {
+      "en": {
+        "q": "How many hours of deep work per day is realistic?",
+        "a": "One to two hours for most knowledge workers, three to four for people who have trained the capacity over months. Ericsson's research on elite performers found even world-class musicians capped deliberate practice near four hours a day, split into sessions of 90 minutes or less."
+      }
+    },
+    "faq_g_how_long_for_deep_work_02": {
+      "en": {
+        "q": "Is 2 hours of deep work a day enough?",
+        "a": "Yes. Two protected, uninterrupted hours daily exceeds what most professionals actually achieve and compounds quickly. A single 90-to-120-minute morning block, run consistently, outperforms a longer but fragmented schedule."
+      }
+    },
+    "faq_g_how_long_for_deep_work_03": {
+      "en": {
+        "q": "How long should a single deep work session last?",
+        "a": "About 60 to 90 minutes. The expert-performance literature found top performers practiced in sessions of roughly 80 to 90 minutes with breaks between, and attention research shows performance holds up when long stretches are separated by brief, genuine breaks."
+      }
+    },
+    "faq_g_how_long_for_deep_work_04": {
+      "en": {
+        "q": "Why do I get tired after 90 minutes of focus?",
+        "a": "Attention research suggests the mind habituates to an unchanging goal rather than running out of fuel; after about 90 minutes on one task, performance sags. A short real break, movement, tea, a window, deactivates and reactivates the goal, and focus returns for the next block."
+      }
+    },
+    "faq_g_how_long_to_bake_chicken_01": {
+      "en": {
+        "q": "What internal temperature does baked chicken need to reach?",
+        "a": "165°F for every cut, per the USDA safe minimum internal temperature chart. On a whole bird, check the innermost thigh and wing and the thickest part of the breast, keeping the probe away from bone."
+      }
+    },
+    "faq_g_how_long_to_bake_chicken_02": {
+      "en": {
+        "q": "How long does a boneless chicken breast take to bake at 350°F?",
+        "a": "The USDA timetable lists 20 to 30 minutes for a 4-ounce boneless breast half at 350°F. Supermarket breasts often weigh twice that and need longer, so verify 165°F with a thermometer rather than trusting the clock."
+      }
+    },
+    "faq_g_how_long_to_bake_chicken_03": {
+      "en": {
+        "q": "Can I bake chicken straight from frozen?",
+        "a": "Yes. USDA says chicken can be cooked from frozen in the oven or on the stove with roughly 50 percent more cooking time, but never in a slow cooker or microwave. It still has to reach 165°F."
+      }
+    },
+    "faq_g_how_long_to_bake_chicken_04": {
+      "en": {
+        "q": "Is chicken that looks pink still safe?",
+        "a": "It can be. USDA notes that heat-stable hemoglobin can leave safely cooked chicken pink, especially in young or smoked birds, and that color is not a reliable doneness indicator. If a thermometer read 165°F at the thickest point, it is safe."
+      }
+    },
+    "faq_g_how_long_to_cook_salmon_01": {
+      "en": {
+        "q": "What internal temperature is salmon done at?",
+        "a": "145°F, per FDA seafood guidance and the USDA temperature chart. Without a thermometer, the FDA's cue is flesh that turns opaque and separates easily with a fork."
+      }
+    },
+    "faq_g_how_long_to_cook_salmon_02": {
+      "en": {
+        "q": "How long does salmon take per inch of thickness?",
+        "a": "Clemson Extension's rule is 10 minutes per inch at 450°F, turning halfway through and measuring at the thickest point. A typical 1-inch fillet lands around 10 minutes, but the thermometer reading of 145°F is what actually ends the cook."
+      }
+    },
+    "faq_g_how_long_to_cook_salmon_03": {
+      "en": {
+        "q": "Is medium-rare salmon safe to eat?",
+        "a": "The FDA's food-safety recommendation is 145°F, fully cooked, and anything softer is a personal risk choice rather than a sanctioned doneness level. Anyone pregnant, older, or immunocompromised should stay at 145°F."
+      }
+    },
+    "faq_g_how_long_to_cook_salmon_04": {
+      "en": {
+        "q": "How should I thaw salmon before cooking?",
+        "a": "FDA guidance is gradual thawing in the refrigerator overnight. In a hurry, seal it in a plastic bag and immerse it in cold water, or use the microwave's defrost setting only if the fish will be cooked immediately afterward."
+      }
+    },
+    "faq_g_how_to_set_a_timer_on_mac_01": {
+      "en": {
+        "q": "Does the Mac have a built-in timer?",
+        "a": "Yes, since macOS Ventura. The Clock app includes a Timers tab alongside world clocks, alarms, and a stopwatch: open Clock, click Timers, set a duration, and click Start. On Monterey and earlier there is no Clock app, but Siri and Terminal methods still work."
+      }
+    },
+    "faq_g_how_to_set_a_timer_on_mac_02": {
+      "en": {
+        "q": "Does a Mac timer keep running when the laptop sleeps?",
+        "a": "Yes. Apple's Clock documentation states a timer continues even if you open another app or your Mac goes to sleep, so closing the lid does not cancel the countdown. Terminal-based timers are the exception; a sleeping Mac pauses shell scripts unless you keep it awake with caffeinate."
+      }
+    },
+    "faq_g_how_to_set_a_timer_on_mac_03": {
+      "en": {
+        "q": "Can you run multiple timers at once on a Mac?",
+        "a": "Yes, on macOS 14.2 or later. After starting one timer in the Clock app, click the add button to run more side by side, each with its own label and sound. Ventura and 14.0-14.1 are limited to a single timer."
+      }
+    },
+    "faq_g_how_to_set_a_timer_on_mac_04": {
+      "en": {
+        "q": "How do you set a timer in Terminal on Mac?",
+        "a": "Chain sleep with a sound: sleep 300 && afplay /System/Library/Sounds/Glass.aiff waits five minutes and plays the Glass chime. Use say 'time is up' for a spoken alert, or caffeinate -t 300 in place of sleep to keep the Mac awake for the duration."
+      }
+    },
+    "faq_g_pasta_cooking_timer_01": {
+      "en": {
+        "q": "How long does spaghetti take to cook al dente?",
+        "a": "Barilla lists 9 to 10 minutes for its spaghetti and De Cecco lists 10 minutes al dente for Spaghetti n° 12, so start tasting about two minutes before your box time ends. The center should resist slightly with a thin, lighter core."
+      }
+    },
+    "faq_g_pasta_cooking_timer_02": {
+      "en": {
+        "q": "Is the cook time printed on the pasta box accurate?",
+        "a": "It is the manufacturer's tested number for that exact shape and thickness, which makes it more reliable than any generic chart. Pot size, altitude, and how fast the water returns to a boil still shift it, so taste two minutes early."
+      }
+    },
+    "faq_g_pasta_cooking_timer_03": {
+      "en": {
+        "q": "How long does fresh pasta take to cook?",
+        "a": "Fresh pasta has never been dried, so it cooks in a fraction of the time of boxed pasta. Follow the package time and start testing almost as soon as the water returns to a boil, because it can overcook in under a minute."
+      }
+    },
+    "faq_g_pasta_cooking_timer_04": {
+      "en": {
+        "q": "Why pull pasta early when finishing it in sauce?",
+        "a": "Draining one to two minutes before al dente lets carryover heat and the simmering sauce finish the cooking. The pasta absorbs sauce instead of water and lands on the plate with bite instead of arriving soft."
+      }
+    },
+    "faq_g_pomodoro_sound_alerts_01": {
+      "en": {
+        "q": "What is the best sound for a Pomodoro timer?",
+        "a": "A soft, single-strike chime. Alarm-design research maps urgent events to fast, loud, high tones and routine events to slower, softer ones; the end of a work session is a routine event, so a gentle chime signals the boundary without triggering a startle or stress response."
+      }
+    },
+    "faq_g_pomodoro_sound_alerts_02": {
+      "en": {
+        "q": "Why do harsh alarm sounds feel stressful?",
+        "a": "Sudden loud noise engages the body's stress response. Noise research (Babisch, 2003) documents measurable changes in stress hormones such as adrenaline, noradrenaline, and cortisol from noise exposure, which is why a klaxon-style alert leaves you jangled while a chime does not."
+      }
+    },
+    "faq_g_pomodoro_sound_alerts_03": {
+      "en": {
+        "q": "Should the break-end sound differ from the work-end sound?",
+        "a": "It helps. Using a softer tone to end work and a slightly brighter one to end the break gives each boundary its own meaning, so you know which transition is happening without looking at the screen. Keep both on the gentle end of the scale."
+      }
+    },
+    "faq_g_pomodoro_sound_alerts_04": {
+      "en": {
+        "q": "Can I run a Pomodoro timer silently?",
+        "a": "Yes. Vibration-only alerts on a phone or watch deliver the session boundary without any audio, which suits shared quiet rooms and people who work with music or binaural beats. The risk is missing the alert if the device is not on your body, so test the setup once before relying on it."
+      }
+    },
+    "faq_g_pomodoro_vs_52_17_01": {
+      "en": {
+        "q": "How do I start using the 52/17 method?",
+        "a": "Open a 52-minute timer and a 17-minute timer in two browser tabs. Name one task, run the 52-minute timer while working only on it, then start the 17-minute timer and step away from the screen. Repeat three times before lunch and three after."
+      }
+    },
+    "faq_g_pomodoro_vs_52_17_02": {
+      "en": {
+        "q": "What should I do during the 17-minute break?",
+        "a": "Disconnect completely: walk, stretch, eat, or do a small chore away from screens. DeskTime found top performers took fully off-screen breaks, and break research suggests recovery from demanding work needs pauses longer than 10 minutes."
+      }
+    },
+    "faq_g_pomodoro_vs_52_17_03": {
+      "en": {
+        "q": "How many 52/17 cycles fit in a workday?",
+        "a": "Six work blocks fit a standard 9-to-5 with an hour lunch: three cycles in the morning and three in the afternoon. That adds up to 5 hours 12 minutes of timed, single-task focused work."
+      }
+    },
+    "faq_g_pomodoro_vs_52_17_04": {
+      "en": {
+        "q": "Can I change the 52/17 ratio?",
+        "a": "Yes. The numbers are defaults, not laws. DeskTime's own follow-up analyses found 80/17 and later 112/26 patterns among top performers. Lengthen the work block if the alarm keeps cutting real momentum; shorten it if you fade before 40 minutes."
+      }
+    },
+    "faq_g_pressure_cooker_timer_01": {
+      "en": {
+        "q": "How long do dried beans take in a pressure cooker?",
+        "a": "Instant Pot's official tables list 35 minutes at high pressure for unsoaked chickpeas and 20 minutes for unsoaked black beans. Older dried beans run longer, so add a few minutes for bags that have sat in the pantry."
+      }
+    },
+    "faq_g_pressure_cooker_timer_02": {
+      "en": {
+        "q": "Why did my pressure cooker meal take twice the recipe time?",
+        "a": "The headline time covers only the at-pressure phase. Reaching pressure commonly adds around 10 minutes and natural release adds 10 to 25 more, so the true wall-clock time often doubles the number on the display."
+      }
+    },
+    "faq_g_pressure_cooker_timer_03": {
+      "en": {
+        "q": "Should I use natural release or quick release?",
+        "a": "Use natural release for meats, beans, and grains, because the food keeps cooking while pressure falls and recipes count on that carryover. Quick release suits vegetables and delicate foods where cooking needs to stop within a minute."
+      }
+    },
+    "faq_g_pressure_cooker_timer_04": {
+      "en": {
+        "q": "Can I can vegetables in a regular pressure cooker or multicooker?",
+        "a": "Follow USDA and National Center for Home Food Preservation guidance: low-acid foods must be processed with tested pressure-canning schedules at 240 to 250°F, the temperature range that destroys botulism spores. Everyday cook-time charts are not canning schedules."
+      }
+    },
+    "faq_g_visualization_meditation_timer_01": {
+      "en": {
+        "q": "How long should a visualization meditation session be?",
+        "a": "The durations tested in published research cluster between 13 and 20 minutes: 13 minutes daily in the Basso 2019 meditation trial and 20 minutes per session in the Toussaint 2021 guided imagery study. Ten minutes is a reasonable on-ramp for the first week."
+      }
+    },
+    "faq_g_visualization_meditation_timer_02": {
+      "en": {
+        "q": "Does mental rehearsal actually change physical performance?",
+        "a": "In the Ranganathan 2004 study, 12 weeks of imagined muscle contractions at 15 minutes per session raised finger strength by 35 percent with no physical training, versus 53 percent for the group doing the real exercise. The dose was mental practice alone."
+      }
+    },
+    "faq_g_visualization_meditation_timer_03": {
+      "en": {
+        "q": "How quickly do meditation and imagery benefits appear?",
+        "a": "Zeidan 2010 found improved attention, working memory, and executive function after just four consecutive days of brief mindfulness training in complete beginners. The mood and memory gains in Basso 2019 came from 13-minute daily practice over eight weeks."
+      }
+    },
+    "faq_g_visualization_meditation_timer_04": {
+      "en": {
+        "q": "Should the timer chime during a visualization session?",
+        "a": "No mid-session bells. Use one countdown with a single gentle chime at the end, so you never wonder how much time remains; that question is what breaks the imagery. If you want a cue to end the settling phase, a soft interval at minute four is the most it should do."
+      }
+    },
+    "faq_g_how_long_to_boil_eggs_01": {
+      "en": {
+        "q": "Is 10 minutes long enough for hard-boiled eggs?",
+        "a": "Ten minutes gives a just-firm yolk that is still slightly soft in the very center, which some people prefer. For a fully set, pale, sliceable yolk with no green ring, use 12 minutes for large eggs. Add a minute at altitude or for extra-large eggs."
+      }
+    },
+    "faq_g_how_long_to_boil_eggs_02": {
+      "en": {
+        "q": "Do I start the timer when I put the eggs in or when the water boils?",
+        "a": "Start the timer when the water returns to a full boil after you have lowered the eggs in. That is the only point where the cooking temperature is known and repeatable. Starting from cold water makes the result depend on your stove and pot."
+      }
+    },
+    "faq_g_how_long_to_boil_eggs_03": {
+      "en": {
+        "q": "Are soft-boiled eggs safe to eat?",
+        "a": "For healthy adults, yes, but they do not reach the USDA's 160F safe minimum for eggs, so the American Egg Board advises that pregnant women, young children, older adults, and immunocompromised people avoid soft and jammy yolks. Cook to 9-12 minutes (160F and above) for those groups."
+      }
+    },
+    "faq_g_how_long_to_boil_eggs_04": {
+      "en": {
+        "q": "Why do my hard-boiled eggs float?",
+        "a": "An egg that floats in water has a large air cell and is old - not necessarily unsafe, but past its prime for boiling. Very fresh eggs sink and lie on their side. For boiled eggs you want eggs 1-2 weeks old: fresh enough to be safe, old enough to peel cleanly."
+      }
+    },
+    "faq_g_how_long_to_boil_corn_on_the_cob_01": {
+      "en": {
+        "q": "Do you boil corn in salted or unsalted water?",
+        "a": "Either works for timing, but most extension services recommend lightly salted or unsalted water. Heavy salting can toughen the kernel skin; salt the cooked ear with butter at the table instead. The boil time is the same either way."
+      }
+    },
+    "faq_g_how_long_to_boil_corn_on_the_cob_02": {
+      "en": {
+        "q": "Can you overcook corn on the cob?",
+        "a": "Yes. Beyond about 5-7 minutes for fresh ears or 10 minutes for frozen, the kernels lose their snap and turn mushy. Iowa State Extension notes modern sweet corn is done in as little as 30 seconds to 3 minutes, so start checking early."
+      }
+    },
+    "faq_g_how_long_to_boil_corn_on_the_cob_03": {
+      "en": {
+        "q": "Should you add sugar to the boiling water?",
+        "a": "It's not necessary. Sugar won't penetrate the kernel skin in a few minutes of boiling. If corn isn't sweet, it's usually a freshness problem — cook it the same day you buy it, or use frozen super-sweet corn picked and frozen at peak sugar."
+      }
+    },
+    "faq_g_how_long_to_boil_corn_on_the_cob_04": {
+      "en": {
+        "q": "Is corn on the cob done at a specific internal temperature?",
+        "a": "No. Unlike poultry (165°F) or ground meat (160°F), corn has no food-safety doneness temperature — boiling makes it safe. Judge doneness by texture: kernels should be bright, plump, and yield to a fingernail. NCHFP boil times of 7-11 minutes for full-size ears are the closest official benchmark."
+      }
+    },
+    "faq_g_how_long_to_steam_broccoli_01": {
+      "en": {
+        "q": "How long to steam broccoli so it stays crisp-tender?",
+        "a": "Steam small to medium florets 4 to 5 minutes on the stovetop once the water is at a full boil. Test a stalk with a fork at the 4-minute mark — it should pierce with light resistance. Anything past 6 minutes heads toward mushy, so drain immediately to stop the cooking."
+      }
+    },
+    "faq_g_how_long_to_steam_broccoli_02": {
+      "en": {
+        "q": "Do I steam the broccoli stems too?",
+        "a": "Yes — the peeled stem is edible and nutritious. Slice it into pieces smaller than the florets because the stalk takes longer to soften, then add it to the basket a minute ahead of the florets, or steam the whole mix for 5 to 6 minutes."
+      }
+    },
+    "faq_g_how_long_to_steam_broccoli_03": {
+      "en": {
+        "q": "Is microwave steaming as good as stovetop?",
+        "a": "For speed and nutrient retention, yes. Because microwave steaming uses very little water, it preserves more water-soluble vitamins than boiling. Cook 3 to 5 minutes on high in a covered, vented dish with a few tablespoons of water, checking at the low end and adding 30 seconds as needed."
+      }
+    },
+    "faq_g_how_long_to_steam_broccoli_04": {
+      "en": {
+        "q": "How long does steamed broccoli last in the fridge?",
+        "a": "Per USDA FSIS, cooked leftovers keep 3 to 4 days refrigerated and should be chilled within 2 hours of cooking. Reheat to 165°F before serving. Freeze for longer storage — up to 3 to 4 months — though the texture softens on thawing."
+      }
+    },
+    "faq_g_how_long_to_microwave_a_potato_01": {
+      "en": {
+        "q": "How long do I microwave one medium potato?",
+        "a": "About 5-7 minutes on HIGH. USDA SNAP-Ed / Montana State Extension lists 7-8 minutes for one; Mississippi State Extension lists 4-5 minutes. Split the difference for a typical 7-9 oz russet and check with a knife at 5 minutes, adding time as needed. A 7-minute timer is a safe starting point."
+      }
+    },
+    "faq_g_how_long_to_microwave_a_potato_02": {
+      "en": {
+        "q": "Should I wrap the potato in a paper towel or plastic?",
+        "a": "A paper towel underneath is fine and absorbs moisture. Do not wrap the potato tightly in plastic that touches the skin, and never use foil — USDA FSIS warns metal causes arcing that can damage the oven. Pricking the skin, not wrapping, is what prevents explosions."
+      }
+    },
+    "faq_g_how_long_to_microwave_a_potato_03": {
+      "en": {
+        "q": "Do I need to flip the potato?",
+        "a": "Yes. Both extension recipes say to turn the potato over at the halfway mark, and USDA FSIS lists turning food midway as a core step to eliminate cold spots. For two potatoes, set a 10-minute timer and flip at 5."
+      }
+    },
+    "faq_g_how_long_to_microwave_a_potato_04": {
+      "en": {
+        "q": "Can I microwave sweet potatoes the same way?",
+        "a": "Yes — same method (scrub, prick, flip, rest) and roughly the same time as a russet of equal weight, typically 5-7 minutes for one medium. Sweet potatoes are denser, so check the center with a knife and add a minute if needed."
+      }
+    },
+    "faq_g_how_long_to_poach_an_egg_01": {
+      "en": {
+        "q": "Is 3 minutes enough for a poached egg?",
+        "a": "Yes, for a large cold egg in ~180°F water, 3 minutes gives a set white and warm runny yolk — the soft end of the 3-to-5-minute range from the University of Arkansas and the American Egg Board. For a thicker yolk, go to 4 minutes."
+      }
+    },
+    "faq_g_how_long_to_poach_an_egg_02": {
+      "en": {
+        "q": "What temperature should the poaching water be?",
+        "a": "Around 180°F (82°C) — small bubbles on the bottom barely breaking the surface, well below a rolling boil. The Serious Eats Food Lab found this quivering-not-simmering stage gives the cleanest egg."
+      }
+    },
+    "faq_g_how_long_to_poach_an_egg_03": {
+      "en": {
+        "q": "Are runny poached eggs safe?",
+        "a": "Not by USDA standards. FSIS recommends cooking eggs until white and yolk are firm and egg dishes to 160°F internal, because shell eggs can carry Salmonella. Healthy adults often accept the risk; high-risk groups should eat firm-yolk eggs or use pasteurized shell eggs."
+      }
+    },
+    "faq_g_how_long_to_poach_an_egg_04": {
+      "en": {
+        "q": "Do I need vinegar to poach an egg?",
+        "a": "No. A teaspoon of white vinegar per cup of water helps the outer white set faster, useful for older eggs, but it barely changes the time and is not required. Fresh Grade AA eggs hold their shape in plain simmering water."
+      }
+    },
+    "faq_g_how_long_to_cook_rice_01": {
+      "en": {
+        "q": "How long does white rice take on the stove?",
+        "a": "15 minutes at a bare simmer, covered, then a 5-10 minute rest off the heat. That holds for long-grain white, basmati, and jasmine with 1¾-2 cups of liquid per cup of dry rice, per UNL Food. On a weak burner, plan for up to 18 minutes."
+      }
+    },
+    "faq_g_how_long_to_cook_rice_02": {
+      "en": {
+        "q": "Does brown rice really take 45 minutes?",
+        "a": "Yes — 45 to 50 minutes on the stovetop, because the bran and germ layers resist water absorption. Converted (parboiled) brown rice is the exception at about 10 minutes, since it is partially precooked at the mill, according to Colorado State University's Food Smart Colorado."
+      }
+    },
+    "faq_g_how_long_to_cook_rice_03": {
+      "en": {
+        "q": "What is the correct water-to-rice ratio?",
+        "a": "It depends on the variety: 1¾-2 cups of liquid per cup of long-grain white, basmati, or jasmine; 1½ cups for medium- or short-grain white; and 2-2½ cups for brown rice. These are the UNL Food absorption-method ratios that the cooking times above are built on."
+      }
+    },
+    "faq_g_how_long_to_cook_rice_04": {
+      "en": {
+        "q": "How long is leftover cooked rice safe to eat?",
+        "a": "Refrigerate it within 2 hours of cooking and use it within 3 to 4 days, or freeze for 3 to 4 months. Reheat to 165°F measured with a food thermometer. These are USDA FSIS rules for all leftovers, and they matter more for rice than most foods because of Bacillus cereus."
+      }
+    },
+    "faq_g_how_long_to_grill_chicken_01": {
+      "en": {
+        "q": "How long do I grill boneless chicken thighs?",
+        "a": "Boneless thighs are thin enough to cook over direct heat, like boneless breast—about the same 6–8 minutes per side at 400–450°F, pulled at 165°F (or 175°F if you want them more tender). Their higher fat content makes them far more forgiving than breast."
+      }
+    },
+    "faq_g_how_long_to_grill_chicken_02": {
+      "en": {
+        "q": "Do I grill chicken with the lid open or closed?",
+        "a": "Use indirect heat with the lid closed so the grill acts like an oven and bone-in pieces cook through evenly; finish over direct heat with the lid open so you can control the sear and flare-ups."
+      }
+    },
+    "faq_g_how_long_to_grill_chicken_03": {
+      "en": {
+        "q": "Can I tell chicken is done without a thermometer?",
+        "a": "You can make a rough check—juices should run clear and the meat should be opaque with no pink at the bone—but the USDA considers a thermometer the only reliable test, because color varies with the bird's age, cut, and cooking method. For food safety, confirm 165°F."
+      }
+    },
+    "faq_g_how_long_to_grill_chicken_04": {
+      "en": {
+        "q": "How do I keep grilled chicken breast juicy?",
+        "a": "Three things: pound it to even thickness so the thin end doesn't overcook, pull it the instant it hits 165°F, and rest it 5 minutes before slicing. A short marinade of oil, acid, and salt also helps retain moisture."
+      }
+    },
+    "faq_g_how_long_to_cook_a_burger_01": {
+      "en": {
+        "q": "How long do I cook a burger on each side?",
+        "a": "About 3 to 5 minutes per side on the stovetop or grill for a 1-inch patty. The decisive factor is temperature, not time — pull the burger when a thermometer reads 160°F for beef."
+      }
+    },
+    "faq_g_how_long_to_cook_a_burger_02": {
+      "en": {
+        "q": "Is it safe to eat a medium (pink) burger?",
+        "a": "Only if it has reached 160°F internally. The USDA does not treat color as a safety signal, and about 1 in 4 burgers browns before it reaches a safe temperature. Ground beef should always be cooked to 160°F."
+      }
+    },
+    "faq_g_how_long_to_cook_a_burger_03": {
+      "en": {
+        "q": "Can I cook burgers from frozen?",
+        "a": "Yes. Frozen patties take roughly 1 to 2 extra minutes per side, but the USDA still requires an internal temperature of 160°F measured with a food thermometer. Avoid pressing the patties while they cook, which squeezes out moisture."
+      }
+    },
+    "faq_g_how_long_to_cook_a_burger_04": {
+      "en": {
+        "q": "What temperature for turkey or chicken burgers?",
+        "a": "Ground poultry must reach 165°F, higher than beef's 160°F. Expect to add about 1 to 2 minutes per side, and check with a thermometer because poultry dries out quickly past the safe point."
+      }
+    },
+    "faq_g_how_long_to_air_fry_chicken_01": {
+      "en": {
+        "q": "Do you preheat an air fryer for chicken?",
+        "a": "Yes, a 3-minute preheat at the cooking temperature (375-400°F) gives more consistent results and better browning. Without preheating, add 2-3 minutes to the times in the chart above and rely on a thermometer to confirm 165°F."
+      }
+    },
+    "faq_g_how_long_to_air_fry_chicken_02": {
+      "en": {
+        "q": "Can you put raw chicken in an air fryer?",
+        "a": "Yes. Raw chicken cooks well in an air fryer because the circulating hot air crisps the surface while the interior reaches 165°F. FSIS lists chicken wings, nuggets, and similar items among foods that air fry well, and reminds cooks not to overcrowd the basket."
+      }
+    },
+    "faq_g_how_long_to_air_fry_chicken_03": {
+      "en": {
+        "q": "What temperature should chicken be cooked to in an air fryer?",
+        "a": "Set the air fryer between 375-400°F and cook the chicken until a food thermometer reads 165°F in the thickest part. FSIS confirms the safe internal temperature for poultry is always 165°F regardless of the appliance used."
+      }
+    },
+    "faq_g_how_long_to_air_fry_chicken_04": {
+      "en": {
+        "q": "Is air-fried chicken healthier than deep-fried?",
+        "a": "Yes. The University of Arkansas Extension reports that air-fried food has about 75% less fat than traditionally deep-fried food, because air fryers use little to no oil while still producing a crisp exterior through circulating super-heated air."
+      }
+    },
+    "faq_g_how_long_to_cook_bacon_01": {
+      "en": {
+        "q": "What temperature should bacon be cooked to?",
+        "a": "FSIS doesn't give a numeric target for bacon because slices are too thin to thermometer reliably; the standard is to cook until crisp, which FSIS says guarantees safety. The USDA safe-minimum chart lists pork at 145°F with a 3-minute rest and ground pork at 160°F."
+      }
+    },
+    "faq_g_how_long_to_cook_bacon_02": {
+      "en": {
+        "q": "Can you cook bacon from frozen?",
+        "a": "Yes. FSIS states it is safe to cook bacon from the frozen state. As a general rule, cooking meat from frozen takes about 50% longer; turn the strips more often so they render and brown evenly."
+      }
+    },
+    "faq_g_how_long_to_cook_bacon_03": {
+      "en": {
+        "q": "Is it safe to microwave bacon?",
+        "a": "Yes. The microwave is one of FSIS's three named cooking methods for bacon, and the agency reports that microwaved bacon forms fewer nitrosamines than pan-fried bacon. Use a microwave-safe plate and paper towels, and cook in short bursts so it doesn't overcook."
+      }
+    },
+    "faq_g_how_long_to_cook_bacon_04": {
+      "en": {
+        "q": "How long does cooked bacon last?",
+        "a": "Per FSIS, consumer-cooked bacon keeps 4 to 5 days in the refrigerator and 1 month in the freezer. Raw bacon keeps 7 days refrigerated or 4 months frozen. Reheat leftover strips for about 10 seconds each in the microwave."
+      }
+    },
+    "faq_g_how_long_to_roast_vegetables_01": {
+      "en": {
+        "q": "Can I roast different vegetables on the same pan?",
+        "a": "Yes, but only if they share a cooking time. Otherwise stagger them: start the dense 30-minute group (potatoes, carrots, Brussels sprouts) first, then add the 15-minute group (zucchini, asparagus, peppers) partway through. The Florida IFAS chart recommends using two separate sheets so each group comes out when it should."
+      }
+    },
+    "faq_g_how_long_to_roast_vegetables_02": {
+      "en": {
+        "q": "Do I really need to stir or flip midway?",
+        "a": "Yes. Tennessee Extension recommends shaking the pan or turning the vegetables once or twice during cooking so each surface gets direct heat and nothing burns on one side while staying pale on the other."
+      }
+    },
+    "faq_g_how_long_to_roast_vegetables_03": {
+      "en": {
+        "q": "Is 425°F the only temperature that works?",
+        "a": "It is the sweet spot both university extensions publish, but anything from 400°F to 450°F will roast vegetables. Drop to 400°F for delicate or very sugary vegetables that scorch easily; push to 450°F for maximum char on sturdy crucifers like broccoli and Brussels sprouts."
+      }
+    },
+    "faq_g_how_long_to_roast_vegetables_04": {
+      "en": {
+        "q": "How do I store and reheat leftovers safely?",
+        "a": "Refrigerate roasted vegetables within 2 hours of cooking and eat them within 3 to 5 days, per Florida IFAS and USDA FSIS. Reheat to a steaming 165°F internal temperature, either back in a 425°F oven for about 8-10 minutes or in the microwave."
+      }
+    },
+    "faq_g_how_long_to_cook_quinoa_01": {
+      "en": {
+        "q": "Do I really need to rinse quinoa?",
+        "a": "Yes, for about 30-60 seconds under cold water in a fine-mesh strainer. Quinoa's seed coat carries saponins, bitter compounds that taste soapy. Even pre-rinsed brands can carry residue, so rinsing is cheap insurance. Drain it well before adding to the pot."
+      }
+    },
+    "faq_g_how_long_to_cook_quinoa_02": {
+      "en": {
+        "q": "What is the water-to-quinoa ratio?",
+        "a": "Use a 1:2 ratio: 1 cup of dry quinoa to 2 cups of liquid (water, broth, or a mix). This is the ratio Michigan State University Extension publishes, and it yields about 3 cups of cooked quinoa. Drop to about 1 3/4 cups liquid per 1 cup quinoa only if you want firmer grains for a salad."
+      }
+    },
+    "faq_g_how_long_to_cook_quinoa_03": {
+      "en": {
+        "q": "Can I cook quinoa in a rice cooker?",
+        "a": "Yes. Combine 1 cup rinsed quinoa with 2 cups liquid, salt lightly, and run the white-rice cycle, which lasts about 15-20 minutes on most machines. Let it rest 5 minutes after the cycle ends, then fluff with a fork."
+      }
+    },
+    "faq_g_how_long_to_cook_quinoa_04": {
+      "en": {
+        "q": "How long does cooked quinoa last in the fridge?",
+        "a": "Cooked quinoa keeps 3 to 4 days refrigerated at 40 F or below, per USDA FSIS guidance on leftovers. Refrigerate it within 2 hours of cooking (1 hour if your kitchen is above 90 F), and reheat to 165 F before eating."
+      }
+    },
+    "faq_g_how_long_to_bake_cookies_01": {
+      "en": {
+        "q": "Is 350°F or 375°F better for cookies?",
+        "a": "350°F (175°C) is the standard for chewy drop cookies — chocolate chip, oatmeal, and drop sugar cookies — because moderate heat sets the edges before the centers dry out. 375°F (190°C) suits cut-out sugar cookies and cookie bars, where you want a firmer structure and quicker surface browning. Above 375°F, the edges usually burn before the center sets."
+      }
+    },
+    "faq_g_how_long_to_bake_cookies_02": {
+      "en": {
+        "q": "Why are my cookies raw in the middle but done on the edges?",
+        "a": "Either the oven runs hot, the portions are too large, or the dough was over-scooped with flour. Lower the temperature 25°F, portion with a 2-tbsp scoop, and measure flour by spooning it into the cup and leveling off. Pull the sheet when the center still looks a touch underdone — residual heat finishes the job."
+      }
+    },
+    "faq_g_how_long_to_bake_cookies_03": {
+      "en": {
+        "q": "Can I eat raw cookie dough?",
+        "a": "Not conventional homemade dough. The FDA warns that raw flour and raw eggs can carry harmful bacteria, and advises against home heat-treating flour because it may not be effective. Only eat dough sold specifically as edible cookie dough, made with heat-treated flour and pasteurized eggs."
+      }
+    },
+    "faq_g_how_long_to_bake_cookies_04": {
+      "en": {
+        "q": "How long do baked cookies last?",
+        "a": "Cool cookies completely, then store in an airtight container at room temperature for up to one week, or freeze for up to three months. Refrigerating fully baked cookies dries them out and is unnecessary for safety once they are baked through."
+      }
+    },
+    "faq_g_how_long_to_cook_oatmeal_01": {
+      "en": {
+        "q": "Is 5 minutes long enough for rolled oats?",
+        "a": "Yes. Quaker's stovetop directions specify about 5 minutes for old-fashioned rolled oats at medium heat. Simmer up to 10 minutes only if you want a softer, creamier texture."
+      }
+    },
+    "faq_g_how_long_to_cook_oatmeal_02": {
+      "en": {
+        "q": "Can I cook steel-cut oats faster?",
+        "a": "Yes. Soaking the groats overnight can cut the morning simmer roughly in half; or buy 'quick' steel-cut oats, which Quaker says cook in about 5 minutes on the stove."
+      }
+    },
+    "faq_g_how_long_to_cook_oatmeal_03": {
+      "en": {
+        "q": "How long is cooked oatmeal good for in the fridge?",
+        "a": "Three to four days refrigerated, or three to four months frozen, according to the USDA FSIS. Cool it within 2 hours of cooking and store it covered."
+      }
+    },
+    "faq_g_how_long_to_cook_oatmeal_04": {
+      "en": {
+        "q": "Is instant oatmeal the same as quick oats?",
+        "a": "No. Quick oats are rolled oats pressed thinner so they cook in about a minute; instant oats are pre-cooked, sweetened, and dried, so they only need to rehydrate in hot water for about 2 minutes."
+      }
     }
   },
   "quickUseIdeas": {
@@ -582,6 +1230,116 @@
         "Multi-day fasting",
         "Long deadline tracker"
       ]
+    }
+  },
+  "taxonomyHubs": {
+    "timer_usecase:studying": {
+      "h1": "Study Timers & Focus Sessions",
+      "title": "Study Timers — The Best Timer Durations for Studying",
+      "intro_html": "<p>The right study timer depends on what you are studying and how long you can genuinely concentrate. For flashcards, vocabulary drills, and quick reviews, a <a href=\"/timer/set-timer-for-25-minutes\">25-minute timer</a> — the classic Pomodoro length — keeps sessions sharp without burning out. Problem sets and note-taking usually fit a <a href=\"/timer/set-timer-for-30-minutes\">30-minute</a> or <a href=\"/timer/set-timer-for-45-minutes\">45-minute timer</a>, while reading-heavy subjects reward a deeper <a href=\"/timer/set-timer-for-50-minutes\">50-minute block</a> followed by a ten-minute break.</p><p>For past papers and mock exams, match the real thing: a <a href=\"/timer/set-timer-for-60-minutes\">60-minute</a> or <a href=\"/timer/set-timer-for-90-minutes\">90-minute timer</a> builds the stamina exams actually demand. Start shorter than you think you need and extend only when you finish blocks without drifting. Our guides on <a href=\"/guides/study-timer-methods\">study timer methods</a> and <a href=\"/guides/how-long-to-study\">how long to study</a> explain which interval fits each subject and how to structure breaks so review actually sticks.</p>",
+      "meta_description": "Find the best study timer durations — 25, 45, 50, 60 and 90-minute focus sessions for reading, problem sets, and exam practice, with free one-click countdowns."
+    },
+    "timer_usecase:productivity": {
+      "h1": "Productivity Timers & Deep Work Blocks",
+      "title": "Productivity Timers — The Best Timer Durations for Deep Work",
+      "intro_html": "<p>Productivity timers turn a vague intention to \"do some work\" into a bounded, finishable session. When starting feels hard, open a <a href=\"/timer/set-timer-for-5-minutes\">5-minute timer</a> and just begin — momentum usually follows. Email triage and admin fit a <a href=\"/timer/set-timer-for-15-minutes\">15-minute sprint</a>, while the classic <a href=\"/timer/set-timer-for-25-minutes\">25-minute Pomodoro</a> remains the most reliable default for everyday tasks.</p><p>For writing, coding, and planning that needs real depth, step up to a <a href=\"/timer/set-timer-for-50-minutes\">50-minute</a> or <a href=\"/timer/set-timer-for-90-minutes\">90-minute deep work block</a> — long enough to reach flow, short enough to protect your energy across the day. Cap meetings with a <a href=\"/timer/set-timer-for-60-minutes\">60-minute timer</a> so they end on time. See our guides to the <a href=\"/guides/pomodoro-technique\">Pomodoro Technique</a> and <a href=\"/guides/deep-work-timer-guide\">deep work timers</a> to pick the ratio of focus to break that fits your role.</p>",
+      "meta_description": "The best productivity timer durations for deep work and daily tasks — 5, 15, 25, 50 and 90-minute focus blocks with free one-click online countdowns."
+    },
+    "timer_usecase:exercise": {
+      "h1": "Workout & Exercise Interval Timers",
+      "title": "Workout Timers — The Best Timer Durations for Exercise",
+      "intro_html": "<p>Exercise timing works on two scales: seconds for intervals and minutes for full sessions. Sprint and HIIT work typically alternates a <a href=\"/timer/set-timer-for-30-seconds\">30-second effort</a> with rest, while a <a href=\"/timer/set-timer-for-45-seconds\">45-second timer</a> suits planks, wall sits, and longer holds. For strength training, rest <a href=\"/timer/set-timer-for-3-minutes\">3 minutes</a> between heavy sets so power actually recovers.</p><p>For complete sessions, a <a href=\"/timer/set-timer-for-20-minutes\">20-minute timer</a> covers a solid HIIT or core circuit, and a <a href=\"/timer/set-timer-for-30-minutes\">30-minute countdown</a> fits most home workouts, runs, and mobility routines. Warm up first — five minutes is enough to raise your heart rate and protect your joints. Our guides to <a href=\"/guides/hiit-interval-timers\">HIIT interval timers</a> and <a href=\"/guides/rest-timers-strength\">rest timers for strength training</a> break down exact work-to-rest ratios by goal, from fat loss to max strength. Consistency in rest lengths matters as much as effort — timing rests stops the drift that quietly turns intervals into casual breaks.</p>",
+      "meta_description": "The best workout timer durations — 30 and 45-second intervals, 3-minute rests, and 20-30 minute sessions for HIIT, strength, and cardio. Free online timers."
+    },
+    "timer_usecase:meditation": {
+      "h1": "Meditation & Mindfulness Timers",
+      "title": "Meditation Timers — The Best Timer Durations for Mindfulness",
+      "intro_html": "<p>A meditation timer removes the one distraction mindfulness cannot: wondering how long you have been sitting. Beginners do best with a <a href=\"/timer/set-timer-for-5-minutes\">5-minute timer</a> — short enough to finish calmly every day — before moving to the widely recommended <a href=\"/timer/set-timer-for-10-minutes\">10-minute</a> and <a href=\"/timer/set-timer-for-15-minutes\">15-minute sessions</a>. Experienced meditators often settle at <a href=\"/timer/set-timer-for-20-minutes\">20</a> or <a href=\"/timer/set-timer-for-30-minutes\">30 minutes</a>, the lengths used in most studied mindfulness programs.</p><p>For breathwork, seconds matter more than minutes: a repeating <a href=\"/timer/set-timer-for-30-seconds\">30-second countdown</a> can pace box breathing and extended exhales. Whatever length you choose, consistency beats duration — a daily ten minutes outperforms an occasional hour. Start with our guides to <a href=\"/guides/meditation-timers-beginners\">meditation timers for beginners</a> and <a href=\"/guides/how-long-to-meditate\">how long to meditate</a> to match session length to your experience and goals. If a session ends before you feel ready, sit for three more breaths before standing — the timer marks the minimum, not the limit.</p>",
+      "meta_description": "The best meditation timer durations — 5, 10, 15, 20 and 30-minute mindfulness sessions plus breathing countdowns. Free, quiet online timers that end gently."
+    },
+    "timer_usecase:cooking": {
+      "h1": "Cooking & Kitchen Timers",
+      "title": "Cooking Timers — The Best Timer Durations for the Kitchen",
+      "intro_html": "<p>Cooking is the one place where a timer is not optional — thirty seconds separates silky eggs from rubbery ones. For soft-boiled eggs, set a <a href=\"/timer/set-timer-for-6-minutes\">6-minute timer</a>; hard-boiled needs <a href=\"/timer/set-timer-for-10-minutes\">10 minutes</a>. Most dried pasta lands al dente around <a href=\"/timer/set-timer-for-11-minutes\">11 minutes</a>, while white rice wants <a href=\"/timer/set-timer-for-18-minutes\">18 minutes</a> of covered simmering plus a rest.</p><p>Longer jobs need longer countdowns: a <a href=\"/timer/set-timer-for-45-minutes\">45-minute timer</a> covers roast vegetables and traybakes, and a <a href=\"/timer/set-timer-for-2-hours\">2-hour timer</a> handles braises and slow roasts. Set the timer the moment food meets heat, not after you tidy up. Our guides on <a href=\"/guides/how-long-to-boil-eggs\">how long to boil eggs</a> and <a href=\"/guides/how-long-to-cook-pasta\">how long to cook pasta</a> give exact times by size, shape, and doneness. Altitude, pan size, and starting temperature all shift times slightly, so treat the first attempt as calibration and adjust by a minute either way.</p>",
+      "meta_description": "The best cooking timer durations — 6 and 10-minute eggs, 11-minute pasta, 18-minute rice, 45-minute roasts and 2-hour braises. Free one-click kitchen timers."
+    },
+    "timer_bucket:short": {
+      "h1": "Short Timers: 1–10 Minute Countdowns",
+      "title": "Short Timers (1–10 Min) — The Best Quick Countdown Durations",
+      "intro_html": "<p>Short timers between one and ten minutes are the workhorses of daily timing. A <a href=\"/timer/set-timer-for-1-minutes\">1-minute timer</a> paces rests between exercise sets, a <a href=\"/timer/set-timer-for-3-minutes\">3-minute timer</a> steeps most black teas, and a <a href=\"/timer/set-timer-for-5-minutes\">5-minute countdown</a> is the classic low-resistance way to start a task you have been avoiding.</p><p>At the top of the range, a <a href=\"/timer/set-timer-for-7-minutes\">7-minute timer</a> runs the famous bodyweight workout of the same name, and <a href=\"/timer/set-timer-for-10-minutes\">10 minutes</a> is enough for a meaningful tidy-up, a meditation session, or an inbox sweep. Chain two or three completed short timers to build momentum before committing to a longer block. See our guides to <a href=\"/guides/break-timers\">break timers</a> and <a href=\"/guides/email-batching-timer\">email batching</a> for routines built entirely from short countdowns. Because these countdowns end quickly, keep the tab visible — the value of a short timer is the finish line you can actually see.</p>",
+      "meta_description": "Quick 1-10 minute countdown timers for breaks, tea, workouts and fast tasks. Pick a 1, 3, 5, 7 or 10-minute timer and start with one click — free online."
+    },
+    "timer_bucket:medium": {
+      "h1": "Medium Timers: 11–30 Minute Countdowns",
+      "title": "Medium Timers (11–30 Min) — The Best All-Round Durations",
+      "intro_html": "<p>The 11–30 minute range is where most real work gets done. The <a href=\"/timer/set-timer-for-25-minutes\">25-minute timer</a> — one Pomodoro — is the most popular duration on this site for a reason: long enough to finish something, short enough to start without dread. A <a href=\"/timer/set-timer-for-15-minutes\">15-minute timer</a> suits admin sprints and quick workouts, while <a href=\"/timer/set-timer-for-20-minutes\">20 minutes</a> is the sweet spot for power naps and HIIT sessions.</p><p>In the kitchen this range covers <a href=\"/timer/set-timer-for-12-minutes\">12-minute pasta</a> and <a href=\"/timer/set-timer-for-18-minutes\">18-minute rice</a>, and a full <a href=\"/timer/set-timer-for-30-minutes\">30-minute countdown</a> handles home workouts, study drills, and most weeknight cooking. If a task regularly overruns this bucket, that is a sign to move up to a long timer rather than restart. Start with the <a href=\"/guides/pomodoro-technique\">Pomodoro Technique guide</a> or check <a href=\"/guides/how-long-to-cook-pasta\">exact pasta times</a>.</p>",
+      "meta_description": "11-30 minute countdown timers for Pomodoro sessions, naps, HIIT, pasta and rice. Pick a 15, 20, 25 or 30-minute timer and start instantly — free online."
+    },
+    "timer_bucket:long": {
+      "h1": "Long Timers: 31–60 Minute Countdowns",
+      "title": "Long Timers (31–60 Min) — The Best Deep Work Durations",
+      "intro_html": "<p>Timers between 31 and 60 minutes exist for work that needs a run-up. A <a href=\"/timer/set-timer-for-45-minutes\">45-minute timer</a> matches a school period or therapy session and covers most roast dinners; the research-backed <a href=\"/timer/set-timer-for-52-minutes\">52-minute block</a> (from the 52/17 method) suits sustained office work; and a <a href=\"/timer/set-timer-for-50-minutes\">50-minute timer</a> plus a ten-minute break makes a clean, repeatable hour.</p><p>The full <a href=\"/timer/set-timer-for-60-minutes\">60-minute countdown</a> is the natural ceiling: one uninterrupted hour of writing, coding, or reading is a genuinely productive session by any standard. Protect these blocks — silence notifications before you press start, because a single interruption costs far more here than in a short timer. Our guides to <a href=\"/guides/deep-work-timers\">deep work timers</a> and the <a href=\"/guides/52-17-rule-vs-pomodoro\">52/17 rule vs Pomodoro</a> show when longer blocks beat shorter cycles. Keep water and notes within reach so the block stays unbroken from the first minute to the last.</p>",
+      "meta_description": "31-60 minute timers for deep work, study hours and long cooking. Pick a 45, 50, 52 or 60-minute countdown and start with one click — free online timers."
+    },
+    "timer_bucket:extended": {
+      "h1": "Extended Timers: Countdowns Over an Hour",
+      "title": "Extended Timers (61+ Min) — The Best Long Session Durations",
+      "intro_html": "<p>Extended timers cover everything from just over an hour to two and a half hours — sessions where the risk is not losing urgency but losing track of time entirely. A <a href=\"/timer/set-timer-for-75-minutes\">75-minute timer</a> matches a university lecture, a <a href=\"/timer/set-timer-for-90-minutes\">90-minute block</a> aligns with a full ultradian focus cycle (and a football match), and <a href=\"/timer/set-timer-for-120-minutes\">120 minutes</a> is the standard length of many written exams.</p><p>At the far end, a <a href=\"/timer/set-timer-for-150-minutes\">150-minute countdown</a> handles slow braises, long mock exams, and film-length focus sessions. For anything this long, decide your break point before you start — a checkpoint at the halfway mark keeps quality from sliding. See our guides to <a href=\"/guides/exam-prep-timer\">exam prep timers</a> and <a href=\"/guides/slow-cooker-timing-guide\">slow cooker timing</a> for how to structure multi-hour sessions. Hydrate and stand briefly at your checkpoint; returning takes seconds, but skipping it costs focus in the final stretch.</p>",
+      "meta_description": "Extended 61-161 minute timers for lectures, mock exams, 90-minute focus cycles and slow cooking. Pick 75, 90, 120 or 150 minutes and start instantly."
+    },
+    "timer_bucket:seconds_short": {
+      "h1": "Short Second Timers: 1–10 Second Countdowns",
+      "title": "1–10 Second Timers — The Best Instant Countdown Durations",
+      "intro_html": "<p>One-to-ten-second timers are cues, not sessions — they mark a single rep, breath, or transition. A <a href=\"/timer/set-timer-for-3-seconds\">3-second timer</a> paces the lowering phase of a slow rep, a <a href=\"/timer/set-timer-for-4-seconds\">4-second countdown</a> is one side of a box-breathing square, and a <a href=\"/timer/set-timer-for-5-seconds\">5-second timer</a> covers sprint starts and reaction drills.</p><p>The <a href=\"/timer/set-timer-for-10-seconds\">10-second timer</a> is the most versatile of the range: a full isometric hold, a quick kitchen check, or the countdown before a lift. Because these timers repeat constantly, the alert matters more than the display — pick a sound you can hear mid-exercise. Our guides to <a href=\"/guides/breathing-timers\">breathing timers</a> and <a href=\"/guides/hiit-interval-timers\">HIIT intervals</a> show how to chain second-level cues into complete routines. If you need the cue to repeat on a fixed cycle, restart on the beep rather than counting in your head — accuracy drifts surprisingly fast.</p>",
+      "meta_description": "Instant 1-10 second countdown timers for reps, reaction drills and breathing cues. Start a 3, 4, 5 or 10-second timer with one click — free online."
+    },
+    "timer_bucket:seconds_medium": {
+      "h1": "Medium Second Timers: 11–30 Second Countdowns",
+      "title": "11–30 Second Timers — The Best Interval Countdown Durations",
+      "intro_html": "<p>The 11–30 second range is the engine room of interval training. Tabata's famous protocol alternates a <a href=\"/timer/set-timer-for-20-seconds\">20-second work burst</a> with a <a href=\"/timer/set-timer-for-10-seconds\">10-second rest</a>, while a <a href=\"/timer/set-timer-for-30-seconds\">30-second timer</a> is the default for HIIT efforts, planks, and side holds. A <a href=\"/timer/set-timer-for-15-seconds\">15-second countdown</a> paces stretches held per side, and <a href=\"/timer/set-timer-for-25-seconds\">25 seconds</a> makes a fair progression target between the two classics.</p><p>These lengths also pace breathing patterns — try fifteen seconds per extended exhale — and quick kitchen steps like blooming coffee. If you repeat an interval more than a few times, reset speed matters; every timer here restarts with a single tap. See our <a href=\"/guides/tabata-timer-guide\">Tabata timer guide</a> and <a href=\"/guides/breathwork-timer\">breathwork timer guide</a> for ready-made interval structures. Keep work and rest lengths honest — shaving rests is the fastest way to turn measured intervals into an unmeasured grind.</p>",
+      "meta_description": "11-30 second countdown timers for Tabata, HIIT and breathing drills. Start a 15, 20, 25 or 30-second interval timer with one click — free online."
+    },
+    "timer_bucket:seconds_long": {
+      "h1": "Long Second Timers: 31–90 Second Countdowns",
+      "title": "31–90 Second Timers — The Best Hold & Rest Durations",
+      "intro_html": "<p>Timers from 31 to 90 seconds bridge quick cues and full multi-minute sessions. A <a href=\"/timer/set-timer-for-40-seconds\">40-second timer</a> suits extended HIIT work intervals, a <a href=\"/timer/set-timer-for-45-seconds\">45-second countdown</a> is a strong plank target for intermediate exercisers, and the <a href=\"/timer/set-timer-for-60-seconds\">60-second timer</a> covers short strength rests, breathing rounds, and the classic one-minute plank, while the <a href=\"/timer/set-timer-for-90-seconds\">90-second timer</a> handles the between-set rest intervals common in strength training.</p><p>A <a href=\"/timer/set-timer-for-50-seconds\">50-second timer</a> works well for near-minute intervals where a full sixty feels arbitrary, and <a href=\"/timer/set-timer-for-35-seconds\">35 seconds</a> splits the difference when progressing holds. When a duration in this bucket starts to feel easy, add five seconds rather than jumping ranges. Our guides on <a href=\"/guides/how-long-to-hold-a-plank\">how long to hold a plank</a> and <a href=\"/guides/rest-timer-strength-training\">rest timers for strength</a> give progression targets by level. Time both sides of paired holds separately so left and right develop evenly, and log your best hold each week to see progress.</p>",
+      "meta_description": "31-90 second countdown timers for planks, holds, rests and near-minute intervals. Start a 40, 45, 50 or 60-second timer with one click — free online."
+    },
+    "timer_bucket:hours_short": {
+      "h1": "Short Hour Timers: 1–3 Hour Countdowns",
+      "title": "1–3 Hour Timers — The Best Long Block Durations",
+      "intro_html": "<p>One-to-three-hour timers cover the sessions minute timers cannot: a <a href=\"/timer/set-timer-for-1-hour\">1-hour timer</a> caps meetings, laundry cycles, and paid-parking windows; a <a href=\"/timer/set-timer-for-2-hours\">2-hour countdown</a> matches written exams, braised dinners, and half-day study splits; and a <a href=\"/timer/set-timer-for-3-hours\">3-hour timer</a> handles slow roasts and long creative sessions.</p><p>For focus work inside this range, the <a href=\"/timer/set-timer-for-90-minutes\">90-minute block</a> is often the better unit — it tracks your natural ultradian rhythm, after which a real break beats pushing on. These countdowns keep running in a background tab, so you can set one and get on with the task. See our guides on <a href=\"/guides/how-long-to-nap\">how long to nap</a> and <a href=\"/guides/slow-cooker-timing-guide\">slow cooker timing</a> for hour-scale timing done right. If you tend to ignore long timers, set the alert sound louder than usual — after two quiet hours, a soft chime is easy to miss.</p>",
+      "meta_description": "1, 2 and 3-hour online countdown timers for exams, cooking, naps and long work blocks. Set an hour timer in one click — runs reliably in the background."
+    },
+    "timer_bucket:hours_long": {
+      "h1": "Long Hour Timers: 4–12 Hour Countdowns",
+      "title": "4–12 Hour Timers — The Best Shift & Slow Cook Durations",
+      "intro_html": "<p>Timers from four to twelve hours act as background deadline trackers rather than attention tools. A <a href=\"/timer/set-timer-for-4-hours\">4-hour timer</a> covers marinating meat and half a workday; a <a href=\"/timer/set-timer-for-6-hours\">6-hour countdown</a> suits slow-cooker recipes on high and long travel legs; and the <a href=\"/timer/set-timer-for-8-hours\">8-hour timer</a> maps to a full shift, a night's sleep target, or low-and-slow barbecue.</p><p>At the top, a <a href=\"/timer/set-timer-for-12-hours\">12-hour countdown</a> tracks overnight proofing, fasting windows, and split-day schedules. Leave the tab open — the countdown continues accurately in the background and alerts you when time is up. Our <a href=\"/guides/marinating-timer\">marinating timer guide</a> and <a href=\"/guides/slow-cooker-timing-guide\">slow cooker timing guide</a> list exact hour targets by cut, dish, and setting. For anything involving food safety, set the timer for the minimum recommended time and check doneness properly before extending it.</p>",
+      "meta_description": "4 to 12-hour online countdown timers for shifts, slow cooking, marinating and overnight tracking. Set a long timer once and get alerted when it ends."
+    },
+    "timer_bucket:hours_extended": {
+      "h1": "Extended Hour Timers: Day-Length Countdowns",
+      "title": "13–24 Hour Timers — The Best Day-Length Countdown Durations",
+      "intro_html": "<p>Day-length timers are pure deadline trackers: set one and let it count while life happens. The <a href=\"/timer/set-timer-for-24-hours\">24-hour timer</a> is the anchor of this range — one full day for fridge-defrosting a chicken, a 24-hour fast, or an unmissable deadline. Below it, a <a href=\"/timer/set-timer-for-12-hours\">12-hour countdown</a> splits the day in half and a <a href=\"/timer/set-timer-for-10-hours\">10-hour timer</a> covers extended shifts and long-haul flights.</p><p>An <a href=\"/timer/set-timer-for-8-hours\">8-hour timer</a> handles overnight checkpoints before the full-day mark, like cold-proofing dough you will shape in the morning. Countdowns this long are about not forgetting rather than precision — pair the timer with a note of what it is for, since you will not remember tomorrow. See <a href=\"/guides/how-long-to-defrost-chicken\">how long to defrost chicken</a> and our <a href=\"/guides/sourdough-proofing-timer\">sourdough proofing guide</a> for jobs that genuinely take a day.</p>",
+      "meta_description": "13-24 hour countdown timers for fasting, defrosting, proofing and day-long deadlines. Set a 24-hour timer once — it counts down reliably in the background."
+    },
+    "timer_unit:minutes": {
+      "h1": "Minute Timers: Every Countdown from 1 to 161 Minutes",
+      "title": "Minute Timers — The Best Timer Durations for Every Task",
+      "intro_html": "<p>Minutes are the natural unit of everyday timing — long enough to finish something, short enough to stay urgent. This archive holds a dedicated page for every duration from 1 to 161 minutes. The most used are the <a href=\"/timer/set-timer-for-5-minutes\">5-minute timer</a> for quick starts and breaks, the <a href=\"/timer/set-timer-for-10-minutes\">10-minute timer</a> for tidy-ups and meditation, and the classic <a href=\"/timer/set-timer-for-25-minutes\">25-minute Pomodoro</a>.</p><p>Beyond those, <a href=\"/timer/set-timer-for-30-minutes\">30 minutes</a> covers workouts and weeknight cooking, <a href=\"/timer/set-timer-for-45-minutes\">45 minutes</a> matches lessons and roasts, and the full <a href=\"/timer/set-timer-for-60-minutes\">60-minute hour</a> anchors deep work. Browse by range below — short, medium, long, and extended — or jump straight to a use case. New to timed work? The <a href=\"/guides/pomodoro-technique\">Pomodoro Technique guide</a> and our <a href=\"/guides/best-online-timers\">comparison of online timers</a> are the right starting points. Every duration page starts with a single click and keeps counting accurately even when the tab sits in the background.</p>",
+      "meta_description": "Free online minute timers for every duration from 1 to 161 minutes. One-click 5, 10, 25, 30, 45 and 60-minute countdowns for work, cooking and workouts."
+    },
+    "timer_unit:seconds": {
+      "h1": "Second Timers: Precise 1–60 Second Countdowns",
+      "title": "Second Timers — The Best Precise Countdown Durations",
+      "intro_html": "<p>When the exact moment matters, you need seconds, not minutes. This archive has a page for every countdown from 1 to 60 seconds. Interval athletes live in the <a href=\"/timer/set-timer-for-20-seconds\">20-second</a> and <a href=\"/timer/set-timer-for-30-seconds\">30-second timers</a> — the building blocks of Tabata and HIIT — while a <a href=\"/timer/set-timer-for-10-seconds\">10-second countdown</a> cues holds, starts, and transitions.</p><p>The <a href=\"/timer/set-timer-for-45-seconds\">45-second timer</a> is a classic plank target, and the <a href=\"/timer/set-timer-for-60-seconds\">60-second timer</a> rounds out the range for one-minute rests, breathing rounds, and speed drills. Every page starts with one click and restarts instantly, which matters when you repeat an interval twenty times. See the <a href=\"/guides/tabata-timer-guide\">Tabata guide</a> and <a href=\"/guides/breathing-timers\">breathing timer guide</a> for structured second-by-second routines. For repeated rounds, decide your total round count before you start — a target like eight rounds keeps the session honest when fatigue argues otherwise.</p>",
+      "meta_description": "Free online second timers from 1 to 60 seconds. One-click 10, 20, 30, 45 and 60-second countdowns for HIIT intervals, planks, rests and breathing drills."
+    },
+    "timer_unit:hours": {
+      "h1": "Hour Timers: Long Countdowns from 1 to 24 Hours",
+      "title": "Hour Timers — The Best Long Countdown Durations",
+      "intro_html": "<p>Hour timers are set-and-forget countdowns for jobs measured in large blocks of the day. The <a href=\"/timer/set-timer-for-1-hour\">1-hour timer</a> caps meetings and parking; <a href=\"/timer/set-timer-for-2-hours\">2 hours</a> matches exams and braises; and the <a href=\"/timer/set-timer-for-4-hours\">4-hour</a> and <a href=\"/timer/set-timer-for-8-hours\">8-hour timers</a> track marinating, shifts, and sleep.</p><p>The <a href=\"/timer/set-timer-for-12-hours\">12-hour</a> and <a href=\"/timer/set-timer-for-24-hours\">24-hour countdowns</a> handle overnight proofing, fasting windows, and day-long deadlines. All hour timers keep counting accurately in a background tab and alert you when time is up, so you can set one and close the lid on the task. For hour-scale timing details, start with our <a href=\"/guides/slow-cooker-timing-guide\">slow cooker timing guide</a> and <a href=\"/guides/how-long-to-nap\">nap length guide</a>. Longer countdowns pair well with a written note of what the alarm means — set it, label it, and forget it until the alert brings you back.</p>",
+      "meta_description": "Free online hour timers from 1 to 24 hours. One-click 1, 2, 4, 8, 12 and 24-hour countdowns for cooking, shifts, fasting and deadlines — reliable in background."
     }
   }
 }

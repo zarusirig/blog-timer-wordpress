@@ -1,0 +1,1042 @@
+{
+  "_meta": {
+    "generated": "2026-07-31",
+    "generator": "scratchpad/generate_duration_facts.py (deterministic; rotates 3 phrasing variants by value % 3)",
+    "note": "All facts are exact computed conversions/equivalences. Real-world anchors are limited to a fixed verified whitelist (Pomodoro 25, 52/17 method, 90-min ultradian/soccer, 45-min school period, 20-20-20 rule, Tabata 20s/10s). No invented trivia."
+  },
+  "minutes": {
+    "1": [
+      "1 minute equals exactly 60 seconds.",
+      "In Pomodoro terms, 1 minute sits inside one 25-minute work interval, leaving 24 minutes of the block unused."
+    ],
+    "2": [
+      "Counted second by second, 2 minutes comes to exactly 120 seconds.",
+      "A classic 25-minute Pomodoro work interval would still have 23 minutes left after a countdown this long."
+    ],
+    "3": [
+      "A 3-minute timer runs for exactly 180 seconds.",
+      "It fits inside a single 25-minute Pomodoro work block with 22 minutes to spare."
+    ],
+    "4": [
+      "4 minutes equals exactly 240 seconds.",
+      "In Pomodoro terms, 4 minutes sits inside one 25-minute work interval, leaving 21 minutes of the block unused."
+    ],
+    "5": [
+      "Counted second by second, 5 minutes comes to exactly 300 seconds.",
+      "A classic 25-minute Pomodoro work interval would still have 20 minutes left after a countdown this long.",
+      "As a share of an hour, 5 minutes works out to exactly a twelfth of an hour."
+    ],
+    "6": [
+      "A 6-minute timer runs for exactly 360 seconds.",
+      "It fits inside a single 25-minute Pomodoro work block with 19 minutes to spare.",
+      "On the hour scale, 6 minutes is exactly a tenth of an hour."
+    ],
+    "7": [
+      "7 minutes equals exactly 420 seconds.",
+      "In Pomodoro terms, 7 minutes sits inside one 25-minute work interval, leaving 18 minutes of the block unused."
+    ],
+    "8": [
+      "Counted second by second, 8 minutes comes to exactly 480 seconds.",
+      "A classic 25-minute Pomodoro work interval would still have 17 minutes left after a countdown this long."
+    ],
+    "9": [
+      "A 9-minute timer runs for exactly 540 seconds.",
+      "It fits inside a single 25-minute Pomodoro work block with 16 minutes to spare."
+    ],
+    "10": [
+      "10 minutes equals exactly 600 seconds.",
+      "In Pomodoro terms, 10 minutes sits inside one 25-minute work interval, leaving 15 minutes of the block unused.",
+      "10 minutes is precisely a sixth of an hour."
+    ],
+    "11": [
+      "Counted second by second, 11 minutes comes to exactly 660 seconds.",
+      "A classic 25-minute Pomodoro work interval would still have 14 minutes left after a countdown this long."
+    ],
+    "12": [
+      "A 12-minute timer runs for exactly 720 seconds.",
+      "It fits inside a single 25-minute Pomodoro work block with 13 minutes to spare.",
+      "On the hour scale, 12 minutes is exactly a fifth of an hour."
+    ],
+    "13": [
+      "13 minutes equals exactly 780 seconds.",
+      "In Pomodoro terms, 13 minutes sits inside one 25-minute work interval, leaving 12 minutes of the block unused."
+    ],
+    "14": [
+      "Counted second by second, 14 minutes comes to exactly 840 seconds.",
+      "A classic 25-minute Pomodoro work interval would still have 11 minutes left after a countdown this long."
+    ],
+    "15": [
+      "A 15-minute timer runs for exactly 900 seconds.",
+      "It fits inside a single 25-minute Pomodoro work block with 10 minutes to spare.",
+      "On the hour scale, 15 minutes is exactly a quarter of an hour."
+    ],
+    "16": [
+      "16 minutes equals exactly 960 seconds.",
+      "In Pomodoro terms, 16 minutes sits inside one 25-minute work interval, leaving 9 minutes of the block unused."
+    ],
+    "17": [
+      "Counted second by second, 17 minutes comes to exactly 1,020 seconds.",
+      "17 minutes is the break length in the 52/17 method, which pairs each 52-minute work block with a 17-minute rest.",
+      "A classic 25-minute Pomodoro work interval would still have 8 minutes left after a countdown this long."
+    ],
+    "18": [
+      "A 18-minute timer runs for exactly 1,080 seconds.",
+      "It fits inside a single 25-minute Pomodoro work block with 7 minutes to spare.",
+      "On the hour scale, 18 minutes is exactly three-tenths of an hour."
+    ],
+    "19": [
+      "19 minutes equals exactly 1,140 seconds.",
+      "In Pomodoro terms, 19 minutes sits inside one 25-minute work interval, leaving 6 minutes of the block unused."
+    ],
+    "20": [
+      "Counted second by second, 20 minutes comes to exactly 1,200 seconds.",
+      "20 minutes is the interval in the 20-20-20 eye-strain rule: every 20 minutes of screen time, look at something 20 feet away for 20 seconds.",
+      "A classic 25-minute Pomodoro work interval would still have 5 minutes left after a countdown this long.",
+      "As a share of an hour, 20 minutes works out to exactly a third of an hour."
+    ],
+    "21": [
+      "A 21-minute timer runs for exactly 1,260 seconds.",
+      "It fits inside a single 25-minute Pomodoro work block with 4 minutes to spare."
+    ],
+    "22": [
+      "22 minutes equals exactly 1,320 seconds.",
+      "In Pomodoro terms, 22 minutes sits inside one 25-minute work interval, leaving 3 minutes of the block unused."
+    ],
+    "23": [
+      "Counted second by second, 23 minutes comes to exactly 1,380 seconds.",
+      "A classic 25-minute Pomodoro work interval would still have 2 minutes left after a countdown this long."
+    ],
+    "24": [
+      "A 24-minute timer runs for exactly 1,440 seconds.",
+      "It fits inside a single 25-minute Pomodoro work block with 1 minute to spare.",
+      "On the hour scale, 24 minutes is exactly two-fifths of an hour."
+    ],
+    "25": [
+      "25 minutes equals exactly 1,500 seconds.",
+      "25 minutes is the classic Pomodoro work block — the focused-work interval the Pomodoro Technique is built around.",
+      "25 minutes is precisely five-twelfths of an hour."
+    ],
+    "26": [
+      "Counted second by second, 26 minutes comes to exactly 1,560 seconds.",
+      "That is a full Pomodoro work block of 25 minutes with 1 minute of break time on top."
+    ],
+    "27": [
+      "A 27-minute timer runs for exactly 1,620 seconds.",
+      "It covers one full 25-minute Pomodoro work interval with 2 minutes left toward the 5-minute break."
+    ],
+    "28": [
+      "28 minutes equals exactly 1,680 seconds.",
+      "In Pomodoro terms, 28 minutes is one complete 25-minute work interval plus 3 minutes of the follow-up break."
+    ],
+    "29": [
+      "Counted second by second, 29 minutes comes to exactly 1,740 seconds.",
+      "That is a full Pomodoro work block of 25 minutes with 4 minutes of break time on top."
+    ],
+    "30": [
+      "A 30-minute timer runs for exactly 1,800 seconds.",
+      "It equals exactly 1 full Pomodoro cycle (25 minutes of work plus a 5-minute break).",
+      "On the hour scale, 30 minutes is exactly half an hour."
+    ],
+    "31": [
+      "31 minutes equals exactly 1,860 seconds.",
+      "In Pomodoro terms, 31 minutes covers 1 complete 25+5 cycle, leaving 1 minute spare."
+    ],
+    "32": [
+      "Counted second by second, 32 minutes comes to exactly 1,920 seconds.",
+      "That is enough for 1 full Pomodoro cycle of 25 minutes' work and a 5-minute break, plus 2 minutes extra."
+    ],
+    "33": [
+      "A 33-minute timer runs for exactly 1,980 seconds.",
+      "It holds 1 full Pomodoro cycle (25 minutes of work plus a 5-minute break) with 3 minutes left over."
+    ],
+    "34": [
+      "34 minutes equals exactly 2,040 seconds.",
+      "In Pomodoro terms, 34 minutes covers 1 complete 25+5 cycle, leaving 4 minutes spare."
+    ],
+    "35": [
+      "Counted second by second, 35 minutes comes to exactly 2,100 seconds.",
+      "That is enough for 1 full Pomodoro cycle of 25 minutes' work and a 5-minute break, plus 5 minutes extra.",
+      "As a share of an hour, 35 minutes works out to exactly seven-twelfths of an hour."
+    ],
+    "36": [
+      "A 36-minute timer runs for exactly 2,160 seconds.",
+      "It holds 1 full Pomodoro cycle (25 minutes of work plus a 5-minute break) with 6 minutes left over.",
+      "On the hour scale, 36 minutes is exactly three-fifths of an hour."
+    ],
+    "37": [
+      "37 minutes equals exactly 2,220 seconds.",
+      "In Pomodoro terms, 37 minutes covers 1 complete 25+5 cycle, leaving 7 minutes spare."
+    ],
+    "38": [
+      "Counted second by second, 38 minutes comes to exactly 2,280 seconds.",
+      "That is enough for 1 full Pomodoro cycle of 25 minutes' work and a 5-minute break, plus 8 minutes extra."
+    ],
+    "39": [
+      "A 39-minute timer runs for exactly 2,340 seconds.",
+      "It holds 1 full Pomodoro cycle (25 minutes of work plus a 5-minute break) with 9 minutes left over."
+    ],
+    "40": [
+      "40 minutes equals exactly 2,400 seconds.",
+      "In Pomodoro terms, 40 minutes covers 1 complete 25+5 cycle, leaving 10 minutes spare.",
+      "40 minutes is precisely two-thirds of an hour."
+    ],
+    "41": [
+      "Counted second by second, 41 minutes comes to exactly 2,460 seconds.",
+      "That is enough for 1 full Pomodoro cycle of 25 minutes' work and a 5-minute break, plus 11 minutes extra."
+    ],
+    "42": [
+      "A 42-minute timer runs for exactly 2,520 seconds.",
+      "It holds 1 full Pomodoro cycle (25 minutes of work plus a 5-minute break) with 12 minutes left over.",
+      "On the hour scale, 42 minutes is exactly seven-tenths of an hour."
+    ],
+    "43": [
+      "43 minutes equals exactly 2,580 seconds.",
+      "In Pomodoro terms, 43 minutes covers 1 complete 25+5 cycle, leaving 13 minutes spare."
+    ],
+    "44": [
+      "Counted second by second, 44 minutes comes to exactly 2,640 seconds.",
+      "That is enough for 1 full Pomodoro cycle of 25 minutes' work and a 5-minute break, plus 14 minutes extra."
+    ],
+    "45": [
+      "A 45-minute timer runs for exactly 2,700 seconds.",
+      "45 minutes is a typical school class period and exactly one half of a regulation soccer match.",
+      "It holds 1 full Pomodoro cycle (25 minutes of work plus a 5-minute break) with 15 minutes left over.",
+      "On the hour scale, 45 minutes is exactly three-quarters of an hour."
+    ],
+    "46": [
+      "46 minutes equals exactly 2,760 seconds.",
+      "In Pomodoro terms, 46 minutes covers 1 complete 25+5 cycle, leaving 16 minutes spare."
+    ],
+    "47": [
+      "Counted second by second, 47 minutes comes to exactly 2,820 seconds.",
+      "That is enough for 1 full Pomodoro cycle of 25 minutes' work and a 5-minute break, plus 17 minutes extra."
+    ],
+    "48": [
+      "A 48-minute timer runs for exactly 2,880 seconds.",
+      "It holds 1 full Pomodoro cycle (25 minutes of work plus a 5-minute break) with 18 minutes left over.",
+      "On the hour scale, 48 minutes is exactly four-fifths of an hour."
+    ],
+    "49": [
+      "49 minutes equals exactly 2,940 seconds.",
+      "In Pomodoro terms, 49 minutes covers 1 complete 25+5 cycle, leaving 19 minutes spare."
+    ],
+    "50": [
+      "Counted second by second, 50 minutes comes to exactly 3,000 seconds.",
+      "That is enough for 1 full Pomodoro cycle of 25 minutes' work and a 5-minute break, plus 20 minutes extra.",
+      "As a share of an hour, 50 minutes works out to exactly five-sixths of an hour."
+    ],
+    "51": [
+      "A 51-minute timer runs for exactly 3,060 seconds.",
+      "It holds 1 full Pomodoro cycle (25 minutes of work plus a 5-minute break) with 21 minutes left over."
+    ],
+    "52": [
+      "52 minutes equals exactly 3,120 seconds.",
+      "52 minutes is the work block of the 52/17 method, a rhythm that alternates 52 minutes of focused work with 17-minute breaks.",
+      "In Pomodoro terms, 52 minutes covers 1 complete 25+5 cycle, leaving 22 minutes spare."
+    ],
+    "53": [
+      "Counted second by second, 53 minutes comes to exactly 3,180 seconds.",
+      "That is enough for 1 full Pomodoro cycle of 25 minutes' work and a 5-minute break, plus 23 minutes extra."
+    ],
+    "54": [
+      "A 54-minute timer runs for exactly 3,240 seconds.",
+      "It holds 1 full Pomodoro cycle (25 minutes of work plus a 5-minute break) with 24 minutes left over.",
+      "On the hour scale, 54 minutes is exactly nine-tenths of an hour."
+    ],
+    "55": [
+      "55 minutes equals exactly 3,300 seconds.",
+      "In Pomodoro terms, 55 minutes covers 1 complete 25+5 cycle, leaving 25 minutes spare.",
+      "55 minutes is precisely eleven-twelfths of an hour."
+    ],
+    "56": [
+      "Counted second by second, 56 minutes comes to exactly 3,360 seconds.",
+      "That is enough for 1 full Pomodoro cycle of 25 minutes' work and a 5-minute break, plus 26 minutes extra."
+    ],
+    "57": [
+      "A 57-minute timer runs for exactly 3,420 seconds.",
+      "It holds 1 full Pomodoro cycle (25 minutes of work plus a 5-minute break) with 27 minutes left over."
+    ],
+    "58": [
+      "58 minutes equals exactly 3,480 seconds.",
+      "In Pomodoro terms, 58 minutes covers 1 complete 25+5 cycle, leaving 28 minutes spare."
+    ],
+    "59": [
+      "Counted second by second, 59 minutes comes to exactly 3,540 seconds.",
+      "That is enough for 1 full Pomodoro cycle of 25 minutes' work and a 5-minute break, plus 29 minutes extra."
+    ],
+    "60": [
+      "A 60-minute timer runs for exactly 3,600 seconds — 1 hour on the clock.",
+      "It equals exactly 2 full Pomodoro cycles (25 minutes of work plus a 5-minute break)."
+    ],
+    "90": [
+      "A 90-minute timer runs for exactly 5,400 seconds — 1 hour 30 minutes on the clock.",
+      "90 minutes is a common estimate for one ultradian rhythm cycle — the body's natural alertness wave — and is also the regulation length of a soccer match (two 45-minute halves).",
+      "It equals exactly 3 full Pomodoro cycles (25 minutes of work plus a 5-minute break).",
+      "On the hour scale, 90 minutes is exactly an hour and a half."
+    ],
+    "61": [
+      "61 minutes equals 1 hour 1 minute, or exactly 3,660 seconds.",
+      "In Pomodoro terms, 61 minutes covers 2 complete 25+5 cycles, leaving 1 minute spare."
+    ],
+    "62": [
+      "Counted second by second, 62 minutes comes to exactly 3,720 seconds — the same span as 1 hour 2 minutes.",
+      "That is enough for 2 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 2 minutes extra."
+    ],
+    "63": [
+      "A 63-minute timer runs for exactly 3,780 seconds — 1 hour 3 minutes on the clock.",
+      "It holds 2 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 3 minutes left over."
+    ],
+    "64": [
+      "64 minutes equals 1 hour 4 minutes, or exactly 3,840 seconds.",
+      "In Pomodoro terms, 64 minutes covers 2 complete 25+5 cycles, leaving 4 minutes spare."
+    ],
+    "65": [
+      "Counted second by second, 65 minutes comes to exactly 3,900 seconds — the same span as 1 hour 5 minutes.",
+      "That is enough for 2 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 5 minutes extra."
+    ],
+    "66": [
+      "A 66-minute timer runs for exactly 3,960 seconds — 1 hour 6 minutes on the clock.",
+      "It holds 2 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 6 minutes left over."
+    ],
+    "67": [
+      "67 minutes equals 1 hour 7 minutes, or exactly 4,020 seconds.",
+      "In Pomodoro terms, 67 minutes covers 2 complete 25+5 cycles, leaving 7 minutes spare."
+    ],
+    "68": [
+      "Counted second by second, 68 minutes comes to exactly 4,080 seconds — the same span as 1 hour 8 minutes.",
+      "That is enough for 2 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 8 minutes extra."
+    ],
+    "69": [
+      "A 69-minute timer runs for exactly 4,140 seconds — 1 hour 9 minutes on the clock.",
+      "It holds 2 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 9 minutes left over."
+    ],
+    "70": [
+      "70 minutes equals 1 hour 10 minutes, or exactly 4,200 seconds.",
+      "In Pomodoro terms, 70 minutes covers 2 complete 25+5 cycles, leaving 10 minutes spare."
+    ],
+    "71": [
+      "Counted second by second, 71 minutes comes to exactly 4,260 seconds — the same span as 1 hour 11 minutes.",
+      "That is enough for 2 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 11 minutes extra."
+    ],
+    "72": [
+      "A 72-minute timer runs for exactly 4,320 seconds — 1 hour 12 minutes on the clock.",
+      "It holds 2 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 12 minutes left over."
+    ],
+    "73": [
+      "73 minutes equals 1 hour 13 minutes, or exactly 4,380 seconds.",
+      "In Pomodoro terms, 73 minutes covers 2 complete 25+5 cycles, leaving 13 minutes spare."
+    ],
+    "74": [
+      "Counted second by second, 74 minutes comes to exactly 4,440 seconds — the same span as 1 hour 14 minutes.",
+      "That is enough for 2 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 14 minutes extra."
+    ],
+    "75": [
+      "A 75-minute timer runs for exactly 4,500 seconds — 1 hour 15 minutes on the clock.",
+      "It holds 2 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 15 minutes left over.",
+      "On the hour scale, 75 minutes is exactly an hour and a quarter."
+    ],
+    "76": [
+      "76 minutes equals 1 hour 16 minutes, or exactly 4,560 seconds.",
+      "In Pomodoro terms, 76 minutes covers 2 complete 25+5 cycles, leaving 16 minutes spare."
+    ],
+    "77": [
+      "Counted second by second, 77 minutes comes to exactly 4,620 seconds — the same span as 1 hour 17 minutes.",
+      "That is enough for 2 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 17 minutes extra."
+    ],
+    "78": [
+      "A 78-minute timer runs for exactly 4,680 seconds — 1 hour 18 minutes on the clock.",
+      "It holds 2 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 18 minutes left over."
+    ],
+    "79": [
+      "79 minutes equals 1 hour 19 minutes, or exactly 4,740 seconds.",
+      "In Pomodoro terms, 79 minutes covers 2 complete 25+5 cycles, leaving 19 minutes spare."
+    ],
+    "80": [
+      "Counted second by second, 80 minutes comes to exactly 4,800 seconds — the same span as 1 hour 20 minutes.",
+      "That is enough for 2 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 20 minutes extra.",
+      "As a share of an hour, 80 minutes works out to exactly an hour and a third."
+    ],
+    "81": [
+      "A 81-minute timer runs for exactly 4,860 seconds — 1 hour 21 minutes on the clock.",
+      "It holds 2 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 21 minutes left over."
+    ],
+    "82": [
+      "82 minutes equals 1 hour 22 minutes, or exactly 4,920 seconds.",
+      "In Pomodoro terms, 82 minutes covers 2 complete 25+5 cycles, leaving 22 minutes spare."
+    ],
+    "83": [
+      "Counted second by second, 83 minutes comes to exactly 4,980 seconds — the same span as 1 hour 23 minutes.",
+      "That is enough for 2 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 23 minutes extra."
+    ],
+    "84": [
+      "A 84-minute timer runs for exactly 5,040 seconds — 1 hour 24 minutes on the clock.",
+      "It holds 2 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 24 minutes left over."
+    ],
+    "85": [
+      "85 minutes equals 1 hour 25 minutes, or exactly 5,100 seconds.",
+      "In Pomodoro terms, 85 minutes covers 2 complete 25+5 cycles, leaving 25 minutes spare."
+    ],
+    "86": [
+      "Counted second by second, 86 minutes comes to exactly 5,160 seconds — the same span as 1 hour 26 minutes.",
+      "That is enough for 2 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 26 minutes extra."
+    ],
+    "87": [
+      "A 87-minute timer runs for exactly 5,220 seconds — 1 hour 27 minutes on the clock.",
+      "It holds 2 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 27 minutes left over."
+    ],
+    "88": [
+      "88 minutes equals 1 hour 28 minutes, or exactly 5,280 seconds.",
+      "In Pomodoro terms, 88 minutes covers 2 complete 25+5 cycles, leaving 28 minutes spare."
+    ],
+    "89": [
+      "Counted second by second, 89 minutes comes to exactly 5,340 seconds — the same span as 1 hour 29 minutes.",
+      "That is enough for 2 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 29 minutes extra."
+    ],
+    "91": [
+      "91 minutes equals 1 hour 31 minutes, or exactly 5,460 seconds.",
+      "In Pomodoro terms, 91 minutes covers 3 complete 25+5 cycles, leaving 1 minute spare."
+    ],
+    "92": [
+      "Counted second by second, 92 minutes comes to exactly 5,520 seconds — the same span as 1 hour 32 minutes.",
+      "That is enough for 3 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 2 minutes extra."
+    ],
+    "93": [
+      "A 93-minute timer runs for exactly 5,580 seconds — 1 hour 33 minutes on the clock.",
+      "It holds 3 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 3 minutes left over."
+    ],
+    "94": [
+      "94 minutes equals 1 hour 34 minutes, or exactly 5,640 seconds.",
+      "In Pomodoro terms, 94 minutes covers 3 complete 25+5 cycles, leaving 4 minutes spare."
+    ],
+    "95": [
+      "Counted second by second, 95 minutes comes to exactly 5,700 seconds — the same span as 1 hour 35 minutes.",
+      "That is enough for 3 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 5 minutes extra."
+    ],
+    "96": [
+      "A 96-minute timer runs for exactly 5,760 seconds — 1 hour 36 minutes on the clock.",
+      "It holds 3 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 6 minutes left over."
+    ],
+    "97": [
+      "97 minutes equals 1 hour 37 minutes, or exactly 5,820 seconds.",
+      "In Pomodoro terms, 97 minutes covers 3 complete 25+5 cycles, leaving 7 minutes spare."
+    ],
+    "98": [
+      "Counted second by second, 98 minutes comes to exactly 5,880 seconds — the same span as 1 hour 38 minutes.",
+      "That is enough for 3 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 8 minutes extra."
+    ],
+    "99": [
+      "A 99-minute timer runs for exactly 5,940 seconds — 1 hour 39 minutes on the clock.",
+      "It holds 3 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 9 minutes left over."
+    ],
+    "100": [
+      "100 minutes equals 1 hour 40 minutes, or exactly 6,000 seconds.",
+      "In Pomodoro terms, 100 minutes covers 3 complete 25+5 cycles, leaving 10 minutes spare.",
+      "100 minutes is precisely an hour and two-thirds."
+    ],
+    "101": [
+      "Counted second by second, 101 minutes comes to exactly 6,060 seconds — the same span as 1 hour 41 minutes.",
+      "That is enough for 3 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 11 minutes extra."
+    ],
+    "102": [
+      "A 102-minute timer runs for exactly 6,120 seconds — 1 hour 42 minutes on the clock.",
+      "It holds 3 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 12 minutes left over."
+    ],
+    "103": [
+      "103 minutes equals 1 hour 43 minutes, or exactly 6,180 seconds.",
+      "In Pomodoro terms, 103 minutes covers 3 complete 25+5 cycles, leaving 13 minutes spare."
+    ],
+    "104": [
+      "Counted second by second, 104 minutes comes to exactly 6,240 seconds — the same span as 1 hour 44 minutes.",
+      "That is enough for 3 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 14 minutes extra."
+    ],
+    "105": [
+      "A 105-minute timer runs for exactly 6,300 seconds — 1 hour 45 minutes on the clock.",
+      "It holds 3 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 15 minutes left over.",
+      "On the hour scale, 105 minutes is exactly an hour and three-quarters."
+    ],
+    "106": [
+      "106 minutes equals 1 hour 46 minutes, or exactly 6,360 seconds.",
+      "In Pomodoro terms, 106 minutes covers 3 complete 25+5 cycles, leaving 16 minutes spare."
+    ],
+    "107": [
+      "Counted second by second, 107 minutes comes to exactly 6,420 seconds — the same span as 1 hour 47 minutes.",
+      "That is enough for 3 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 17 minutes extra."
+    ],
+    "108": [
+      "A 108-minute timer runs for exactly 6,480 seconds — 1 hour 48 minutes on the clock.",
+      "It holds 3 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 18 minutes left over."
+    ],
+    "109": [
+      "109 minutes equals 1 hour 49 minutes, or exactly 6,540 seconds.",
+      "In Pomodoro terms, 109 minutes covers 3 complete 25+5 cycles, leaving 19 minutes spare."
+    ],
+    "110": [
+      "Counted second by second, 110 minutes comes to exactly 6,600 seconds — the same span as 1 hour 50 minutes.",
+      "That is enough for 3 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 20 minutes extra."
+    ],
+    "111": [
+      "A 111-minute timer runs for exactly 6,660 seconds — 1 hour 51 minutes on the clock.",
+      "It holds 3 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 21 minutes left over."
+    ],
+    "112": [
+      "112 minutes equals 1 hour 52 minutes, or exactly 6,720 seconds.",
+      "In Pomodoro terms, 112 minutes covers 3 complete 25+5 cycles, leaving 22 minutes spare."
+    ],
+    "113": [
+      "Counted second by second, 113 minutes comes to exactly 6,780 seconds — the same span as 1 hour 53 minutes.",
+      "That is enough for 3 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 23 minutes extra."
+    ],
+    "114": [
+      "A 114-minute timer runs for exactly 6,840 seconds — 1 hour 54 minutes on the clock.",
+      "It holds 3 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 24 minutes left over."
+    ],
+    "115": [
+      "115 minutes equals 1 hour 55 minutes, or exactly 6,900 seconds.",
+      "In Pomodoro terms, 115 minutes covers 3 complete 25+5 cycles, leaving 25 minutes spare."
+    ],
+    "116": [
+      "Counted second by second, 116 minutes comes to exactly 6,960 seconds — the same span as 1 hour 56 minutes.",
+      "That is enough for 3 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 26 minutes extra."
+    ],
+    "117": [
+      "A 117-minute timer runs for exactly 7,020 seconds — 1 hour 57 minutes on the clock.",
+      "It holds 3 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 27 minutes left over."
+    ],
+    "118": [
+      "118 minutes equals 1 hour 58 minutes, or exactly 7,080 seconds.",
+      "In Pomodoro terms, 118 minutes covers 3 complete 25+5 cycles, leaving 28 minutes spare."
+    ],
+    "119": [
+      "Counted second by second, 119 minutes comes to exactly 7,140 seconds — the same span as 1 hour 59 minutes.",
+      "That is enough for 3 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 29 minutes extra."
+    ],
+    "120": [
+      "A 120-minute timer runs for exactly 7,200 seconds — 2 hours on the clock.",
+      "It equals exactly 4 full Pomodoro cycles (25 minutes of work plus a 5-minute break)."
+    ],
+    "121": [
+      "121 minutes equals 2 hours 1 minute, or exactly 7,260 seconds.",
+      "In Pomodoro terms, 121 minutes covers 4 complete 25+5 cycles, leaving 1 minute spare."
+    ],
+    "122": [
+      "Counted second by second, 122 minutes comes to exactly 7,320 seconds — the same span as 2 hours 2 minutes.",
+      "That is enough for 4 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 2 minutes extra."
+    ],
+    "123": [
+      "A 123-minute timer runs for exactly 7,380 seconds — 2 hours 3 minutes on the clock.",
+      "It holds 4 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 3 minutes left over."
+    ],
+    "124": [
+      "124 minutes equals 2 hours 4 minutes, or exactly 7,440 seconds.",
+      "In Pomodoro terms, 124 minutes covers 4 complete 25+5 cycles, leaving 4 minutes spare."
+    ],
+    "125": [
+      "Counted second by second, 125 minutes comes to exactly 7,500 seconds — the same span as 2 hours 5 minutes.",
+      "That is enough for 4 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 5 minutes extra."
+    ],
+    "126": [
+      "A 126-minute timer runs for exactly 7,560 seconds — 2 hours 6 minutes on the clock.",
+      "It holds 4 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 6 minutes left over."
+    ],
+    "127": [
+      "127 minutes equals 2 hours 7 minutes, or exactly 7,620 seconds.",
+      "In Pomodoro terms, 127 minutes covers 4 complete 25+5 cycles, leaving 7 minutes spare."
+    ],
+    "128": [
+      "Counted second by second, 128 minutes comes to exactly 7,680 seconds — the same span as 2 hours 8 minutes.",
+      "That is enough for 4 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 8 minutes extra."
+    ],
+    "129": [
+      "A 129-minute timer runs for exactly 7,740 seconds — 2 hours 9 minutes on the clock.",
+      "It holds 4 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 9 minutes left over."
+    ],
+    "130": [
+      "130 minutes equals 2 hours 10 minutes, or exactly 7,800 seconds.",
+      "In Pomodoro terms, 130 minutes covers 4 complete 25+5 cycles, leaving 10 minutes spare."
+    ],
+    "131": [
+      "Counted second by second, 131 minutes comes to exactly 7,860 seconds — the same span as 2 hours 11 minutes.",
+      "That is enough for 4 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 11 minutes extra."
+    ],
+    "132": [
+      "A 132-minute timer runs for exactly 7,920 seconds — 2 hours 12 minutes on the clock.",
+      "It holds 4 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 12 minutes left over."
+    ],
+    "133": [
+      "133 minutes equals 2 hours 13 minutes, or exactly 7,980 seconds.",
+      "In Pomodoro terms, 133 minutes covers 4 complete 25+5 cycles, leaving 13 minutes spare."
+    ],
+    "134": [
+      "Counted second by second, 134 minutes comes to exactly 8,040 seconds — the same span as 2 hours 14 minutes.",
+      "That is enough for 4 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 14 minutes extra."
+    ],
+    "135": [
+      "A 135-minute timer runs for exactly 8,100 seconds — 2 hours 15 minutes on the clock.",
+      "It holds 4 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 15 minutes left over.",
+      "On the hour scale, 135 minutes is exactly two and a quarter hours."
+    ],
+    "136": [
+      "136 minutes equals 2 hours 16 minutes, or exactly 8,160 seconds.",
+      "In Pomodoro terms, 136 minutes covers 4 complete 25+5 cycles, leaving 16 minutes spare."
+    ],
+    "137": [
+      "Counted second by second, 137 minutes comes to exactly 8,220 seconds — the same span as 2 hours 17 minutes.",
+      "That is enough for 4 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 17 minutes extra."
+    ],
+    "138": [
+      "A 138-minute timer runs for exactly 8,280 seconds — 2 hours 18 minutes on the clock.",
+      "It holds 4 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 18 minutes left over."
+    ],
+    "139": [
+      "139 minutes equals 2 hours 19 minutes, or exactly 8,340 seconds.",
+      "In Pomodoro terms, 139 minutes covers 4 complete 25+5 cycles, leaving 19 minutes spare."
+    ],
+    "140": [
+      "Counted second by second, 140 minutes comes to exactly 8,400 seconds — the same span as 2 hours 20 minutes.",
+      "That is enough for 4 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 20 minutes extra."
+    ],
+    "141": [
+      "A 141-minute timer runs for exactly 8,460 seconds — 2 hours 21 minutes on the clock.",
+      "It holds 4 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 21 minutes left over."
+    ],
+    "142": [
+      "142 minutes equals 2 hours 22 minutes, or exactly 8,520 seconds.",
+      "In Pomodoro terms, 142 minutes covers 4 complete 25+5 cycles, leaving 22 minutes spare."
+    ],
+    "143": [
+      "Counted second by second, 143 minutes comes to exactly 8,580 seconds — the same span as 2 hours 23 minutes.",
+      "That is enough for 4 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 23 minutes extra."
+    ],
+    "144": [
+      "A 144-minute timer runs for exactly 8,640 seconds — 2 hours 24 minutes on the clock.",
+      "It holds 4 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 24 minutes left over."
+    ],
+    "145": [
+      "145 minutes equals 2 hours 25 minutes, or exactly 8,700 seconds.",
+      "In Pomodoro terms, 145 minutes covers 4 complete 25+5 cycles, leaving 25 minutes spare."
+    ],
+    "146": [
+      "Counted second by second, 146 minutes comes to exactly 8,760 seconds — the same span as 2 hours 26 minutes.",
+      "That is enough for 4 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 26 minutes extra."
+    ],
+    "147": [
+      "A 147-minute timer runs for exactly 8,820 seconds — 2 hours 27 minutes on the clock.",
+      "It holds 4 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 27 minutes left over."
+    ],
+    "148": [
+      "148 minutes equals 2 hours 28 minutes, or exactly 8,880 seconds.",
+      "In Pomodoro terms, 148 minutes covers 4 complete 25+5 cycles, leaving 28 minutes spare."
+    ],
+    "149": [
+      "Counted second by second, 149 minutes comes to exactly 8,940 seconds — the same span as 2 hours 29 minutes.",
+      "That is enough for 4 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 29 minutes extra."
+    ],
+    "150": [
+      "A 150-minute timer runs for exactly 9,000 seconds — 2 hours 30 minutes on the clock.",
+      "It equals exactly 5 full Pomodoro cycles (25 minutes of work plus a 5-minute break).",
+      "On the hour scale, 150 minutes is exactly two and a half hours."
+    ],
+    "151": [
+      "151 minutes equals 2 hours 31 minutes, or exactly 9,060 seconds.",
+      "In Pomodoro terms, 151 minutes covers 5 complete 25+5 cycles, leaving 1 minute spare."
+    ],
+    "152": [
+      "Counted second by second, 152 minutes comes to exactly 9,120 seconds — the same span as 2 hours 32 minutes.",
+      "That is enough for 5 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 2 minutes extra."
+    ],
+    "153": [
+      "A 153-minute timer runs for exactly 9,180 seconds — 2 hours 33 minutes on the clock.",
+      "It holds 5 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 3 minutes left over."
+    ],
+    "154": [
+      "154 minutes equals 2 hours 34 minutes, or exactly 9,240 seconds.",
+      "In Pomodoro terms, 154 minutes covers 5 complete 25+5 cycles, leaving 4 minutes spare."
+    ],
+    "155": [
+      "Counted second by second, 155 minutes comes to exactly 9,300 seconds — the same span as 2 hours 35 minutes.",
+      "That is enough for 5 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 5 minutes extra."
+    ],
+    "156": [
+      "A 156-minute timer runs for exactly 9,360 seconds — 2 hours 36 minutes on the clock.",
+      "It holds 5 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 6 minutes left over."
+    ],
+    "157": [
+      "157 minutes equals 2 hours 37 minutes, or exactly 9,420 seconds.",
+      "In Pomodoro terms, 157 minutes covers 5 complete 25+5 cycles, leaving 7 minutes spare."
+    ],
+    "158": [
+      "Counted second by second, 158 minutes comes to exactly 9,480 seconds — the same span as 2 hours 38 minutes.",
+      "That is enough for 5 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 8 minutes extra."
+    ],
+    "159": [
+      "A 159-minute timer runs for exactly 9,540 seconds — 2 hours 39 minutes on the clock.",
+      "It holds 5 full Pomodoro cycles (25 minutes of work plus a 5-minute break) with 9 minutes left over."
+    ],
+    "160": [
+      "160 minutes equals 2 hours 40 minutes, or exactly 9,600 seconds.",
+      "In Pomodoro terms, 160 minutes covers 5 complete 25+5 cycles, leaving 10 minutes spare."
+    ],
+    "161": [
+      "Counted second by second, 161 minutes comes to exactly 9,660 seconds — the same span as 2 hours 41 minutes.",
+      "That is enough for 5 full Pomodoro cycles of 25 minutes' work and a 5-minute break, plus 11 minutes extra."
+    ]
+  },
+  "seconds": {
+    "1": [
+      "A 1-second countdown covers one-sixtieth of a minute.",
+      "One minute holds exactly 60 back-to-back 1-second intervals.",
+      "Stacked end to end, 3,600 of these 1-second countdowns make exactly one hour."
+    ],
+    "5": [
+      "As a slice of a minute, 5 seconds is a twelfth of a minute.",
+      "Repeated back-to-back, it divides a minute into exactly 12 equal 5-second parts.",
+      "At 720 repetitions, 5-second intervals fill a full hour precisely."
+    ],
+    "10": [
+      "A 10-second countdown covers a sixth of a minute.",
+      "10 seconds is the rest interval in the Tabata protocol, which alternates 20 seconds of all-out effort with 10 seconds of recovery for eight rounds.",
+      "One minute holds exactly 6 back-to-back 10-second intervals."
+    ],
+    "30": [
+      "30 seconds is half a minute.",
+      "It fits exactly 2 times into one minute.",
+      "An hour contains exactly 120 back-to-back 30-second intervals."
+    ],
+    "60": [
+      "A 60-second timer is exactly one minute — the base unit every longer countdown on this site is built from.",
+      "An hour contains exactly 60 back-to-back 60-second intervals."
+    ],
+    "2": [
+      "As a slice of a minute, 2 seconds is one-thirtieth of a minute.",
+      "Repeated back-to-back, it divides a minute into exactly 30 equal 2-second parts.",
+      "At 1,800 repetitions, 2-second intervals fill a full hour precisely."
+    ],
+    "3": [
+      "3 seconds is one-twentieth of a minute.",
+      "It fits exactly 20 times into one minute.",
+      "An hour contains exactly 1,200 back-to-back 3-second intervals."
+    ],
+    "4": [
+      "A 4-second countdown covers one-fifteenth of a minute.",
+      "One minute holds exactly 15 back-to-back 4-second intervals.",
+      "Stacked end to end, 900 of these 4-second countdowns make exactly one hour."
+    ],
+    "6": [
+      "6 seconds is a tenth of a minute.",
+      "It fits exactly 10 times into one minute.",
+      "An hour contains exactly 600 back-to-back 6-second intervals."
+    ],
+    "7": [
+      "A 7-second countdown covers exactly 7/60 of a minute.",
+      "One minute holds 8 full 7-second intervals with 4 seconds remaining.",
+      "It takes 60 consecutive 7-second intervals to land exactly on the minute mark, at 7 minutes."
+    ],
+    "8": [
+      "As a slice of a minute, 8 seconds is exactly 2/15 of a minute.",
+      "Run inside a single minute, it completes 7 whole times and leaves 4 seconds on the clock.",
+      "Stacked end to end, 15 of these countdowns total precisely 2 minutes."
+    ],
+    "9": [
+      "9 seconds is exactly 3/20 of a minute.",
+      "It fits into one minute 6 whole times, with 6 seconds left over.",
+      "Run back-to-back, 20 repeats of 9 seconds add up to exactly 3 minutes."
+    ],
+    "11": [
+      "As a slice of a minute, 11 seconds is exactly 11/60 of a minute.",
+      "Run inside a single minute, it completes 5 whole times and leaves 5 seconds on the clock.",
+      "Stacked end to end, 60 of these countdowns total precisely 11 minutes."
+    ],
+    "12": [
+      "12 seconds is a fifth of a minute.",
+      "It fits exactly 5 times into one minute.",
+      "An hour contains exactly 300 back-to-back 12-second intervals."
+    ],
+    "13": [
+      "A 13-second countdown covers exactly 13/60 of a minute.",
+      "One minute holds 4 full 13-second intervals with 8 seconds remaining.",
+      "It takes 60 consecutive 13-second intervals to land exactly on the minute mark, at 13 minutes."
+    ],
+    "14": [
+      "As a slice of a minute, 14 seconds is exactly 7/30 of a minute.",
+      "Run inside a single minute, it completes 4 whole times and leaves 4 seconds on the clock.",
+      "Stacked end to end, 30 of these countdowns total precisely 7 minutes."
+    ],
+    "15": [
+      "15 seconds is a quarter of a minute.",
+      "It fits exactly 4 times into one minute.",
+      "An hour contains exactly 240 back-to-back 15-second intervals."
+    ],
+    "16": [
+      "A 16-second countdown covers exactly 4/15 of a minute.",
+      "One minute holds 3 full 16-second intervals with 12 seconds remaining.",
+      "It takes 15 consecutive 16-second intervals to land exactly on the minute mark, at 4 minutes."
+    ],
+    "17": [
+      "As a slice of a minute, 17 seconds is exactly 17/60 of a minute.",
+      "Run inside a single minute, it completes 3 whole times and leaves 9 seconds on the clock.",
+      "Stacked end to end, 60 of these countdowns total precisely 17 minutes."
+    ],
+    "18": [
+      "18 seconds is three-tenths of a minute.",
+      "It fits into one minute 3 whole times, with 6 seconds left over.",
+      "Run back-to-back, 10 repeats of 18 seconds add up to exactly 3 minutes."
+    ],
+    "19": [
+      "A 19-second countdown covers exactly 19/60 of a minute.",
+      "One minute holds 3 full 19-second intervals with 3 seconds remaining.",
+      "It takes 60 consecutive 19-second intervals to land exactly on the minute mark, at 19 minutes."
+    ],
+    "20": [
+      "As a slice of a minute, 20 seconds is a third of a minute.",
+      "20 seconds is the work interval in the Tabata protocol: eight rounds of 20 seconds of all-out effort followed by 10 seconds of rest.",
+      "Repeated back-to-back, it divides a minute into exactly 3 equal 20-second parts."
+    ],
+    "21": [
+      "21 seconds is exactly 7/20 of a minute.",
+      "It fits into one minute 2 whole times, with 18 seconds left over.",
+      "Run back-to-back, 20 repeats of 21 seconds add up to exactly 7 minutes."
+    ],
+    "22": [
+      "A 22-second countdown covers exactly 11/30 of a minute.",
+      "One minute holds 2 full 22-second intervals with 16 seconds remaining.",
+      "It takes 30 consecutive 22-second intervals to land exactly on the minute mark, at 11 minutes."
+    ],
+    "23": [
+      "As a slice of a minute, 23 seconds is exactly 23/60 of a minute.",
+      "Run inside a single minute, it completes 2 whole times and leaves 14 seconds on the clock.",
+      "Stacked end to end, 60 of these countdowns total precisely 23 minutes."
+    ],
+    "24": [
+      "24 seconds is two-fifths of a minute.",
+      "It fits into one minute 2 whole times, with 12 seconds left over.",
+      "Run back-to-back, 5 repeats of 24 seconds add up to exactly 2 minutes."
+    ],
+    "25": [
+      "A 25-second countdown covers five-twelfths of a minute.",
+      "One minute holds 2 full 25-second intervals with 10 seconds remaining.",
+      "It takes 12 consecutive 25-second intervals to land exactly on the minute mark, at 5 minutes."
+    ],
+    "26": [
+      "As a slice of a minute, 26 seconds is exactly 13/30 of a minute.",
+      "Run inside a single minute, it completes 2 whole times and leaves 8 seconds on the clock.",
+      "Stacked end to end, 30 of these countdowns total precisely 13 minutes."
+    ],
+    "27": [
+      "27 seconds is exactly 9/20 of a minute.",
+      "It fits into one minute 2 whole times, with 6 seconds left over.",
+      "Run back-to-back, 20 repeats of 27 seconds add up to exactly 9 minutes."
+    ],
+    "28": [
+      "A 28-second countdown covers exactly 7/15 of a minute.",
+      "One minute holds 2 full 28-second intervals with 4 seconds remaining.",
+      "It takes 15 consecutive 28-second intervals to land exactly on the minute mark, at 7 minutes."
+    ],
+    "29": [
+      "As a slice of a minute, 29 seconds is exactly 29/60 of a minute.",
+      "Run inside a single minute, it completes 2 whole times and leaves 2 seconds on the clock.",
+      "Stacked end to end, 60 of these countdowns total precisely 29 minutes."
+    ],
+    "31": [
+      "A 31-second countdown covers exactly 31/60 of a minute.",
+      "One minute holds one full 31-second interval with 29 seconds remaining.",
+      "It takes 60 consecutive 31-second intervals to land exactly on the minute mark, at 31 minutes."
+    ],
+    "32": [
+      "As a slice of a minute, 32 seconds is exactly 8/15 of a minute.",
+      "Run inside a single minute, it completes once and leaves 28 seconds on the clock.",
+      "Stacked end to end, 15 of these countdowns total precisely 8 minutes."
+    ],
+    "33": [
+      "33 seconds is exactly 11/20 of a minute.",
+      "It fits into one minute once, with 27 seconds left over.",
+      "Run back-to-back, 20 repeats of 33 seconds add up to exactly 11 minutes."
+    ],
+    "34": [
+      "A 34-second countdown covers exactly 17/30 of a minute.",
+      "One minute holds one full 34-second interval with 26 seconds remaining.",
+      "It takes 30 consecutive 34-second intervals to land exactly on the minute mark, at 17 minutes."
+    ],
+    "35": [
+      "As a slice of a minute, 35 seconds is seven-twelfths of a minute.",
+      "Run inside a single minute, it completes once and leaves 25 seconds on the clock.",
+      "Stacked end to end, 12 of these countdowns total precisely 7 minutes."
+    ],
+    "36": [
+      "36 seconds is three-fifths of a minute.",
+      "It fits into one minute once, with 24 seconds left over.",
+      "Run back-to-back, 5 repeats of 36 seconds add up to exactly 3 minutes."
+    ],
+    "37": [
+      "A 37-second countdown covers exactly 37/60 of a minute.",
+      "One minute holds one full 37-second interval with 23 seconds remaining.",
+      "It takes 60 consecutive 37-second intervals to land exactly on the minute mark, at 37 minutes."
+    ],
+    "38": [
+      "As a slice of a minute, 38 seconds is exactly 19/30 of a minute.",
+      "Run inside a single minute, it completes once and leaves 22 seconds on the clock.",
+      "Stacked end to end, 30 of these countdowns total precisely 19 minutes."
+    ],
+    "39": [
+      "39 seconds is exactly 13/20 of a minute.",
+      "It fits into one minute once, with 21 seconds left over.",
+      "Run back-to-back, 20 repeats of 39 seconds add up to exactly 13 minutes."
+    ],
+    "40": [
+      "A 40-second countdown covers two-thirds of a minute.",
+      "One minute holds one full 40-second interval with 20 seconds remaining.",
+      "It takes 3 consecutive 40-second intervals to land exactly on the minute mark, at 2 minutes."
+    ],
+    "41": [
+      "As a slice of a minute, 41 seconds is exactly 41/60 of a minute.",
+      "Run inside a single minute, it completes once and leaves 19 seconds on the clock.",
+      "Stacked end to end, 60 of these countdowns total precisely 41 minutes."
+    ],
+    "42": [
+      "42 seconds is seven-tenths of a minute.",
+      "It fits into one minute once, with 18 seconds left over.",
+      "Run back-to-back, 10 repeats of 42 seconds add up to exactly 7 minutes."
+    ],
+    "43": [
+      "A 43-second countdown covers exactly 43/60 of a minute.",
+      "One minute holds one full 43-second interval with 17 seconds remaining.",
+      "It takes 60 consecutive 43-second intervals to land exactly on the minute mark, at 43 minutes."
+    ],
+    "44": [
+      "As a slice of a minute, 44 seconds is exactly 11/15 of a minute.",
+      "Run inside a single minute, it completes once and leaves 16 seconds on the clock.",
+      "Stacked end to end, 15 of these countdowns total precisely 11 minutes."
+    ],
+    "45": [
+      "45 seconds is three-quarters of a minute.",
+      "It fits into one minute once, with 15 seconds left over.",
+      "Run back-to-back, 4 repeats of 45 seconds add up to exactly 3 minutes."
+    ],
+    "46": [
+      "A 46-second countdown covers exactly 23/30 of a minute.",
+      "One minute holds one full 46-second interval with 14 seconds remaining.",
+      "It takes 30 consecutive 46-second intervals to land exactly on the minute mark, at 23 minutes."
+    ],
+    "47": [
+      "As a slice of a minute, 47 seconds is exactly 47/60 of a minute.",
+      "Run inside a single minute, it completes once and leaves 13 seconds on the clock.",
+      "Stacked end to end, 60 of these countdowns total precisely 47 minutes."
+    ],
+    "48": [
+      "48 seconds is four-fifths of a minute.",
+      "It fits into one minute once, with 12 seconds left over.",
+      "Run back-to-back, 5 repeats of 48 seconds add up to exactly 4 minutes."
+    ],
+    "49": [
+      "A 49-second countdown covers exactly 49/60 of a minute.",
+      "One minute holds one full 49-second interval with 11 seconds remaining.",
+      "It takes 60 consecutive 49-second intervals to land exactly on the minute mark, at 49 minutes."
+    ],
+    "50": [
+      "As a slice of a minute, 50 seconds is five-sixths of a minute.",
+      "Run inside a single minute, it completes once and leaves 10 seconds on the clock.",
+      "Stacked end to end, 6 of these countdowns total precisely 5 minutes."
+    ],
+    "51": [
+      "51 seconds is exactly 17/20 of a minute.",
+      "It fits into one minute once, with 9 seconds left over.",
+      "Run back-to-back, 20 repeats of 51 seconds add up to exactly 17 minutes."
+    ],
+    "52": [
+      "A 52-second countdown covers exactly 13/15 of a minute.",
+      "One minute holds one full 52-second interval with 8 seconds remaining.",
+      "It takes 15 consecutive 52-second intervals to land exactly on the minute mark, at 13 minutes."
+    ],
+    "53": [
+      "As a slice of a minute, 53 seconds is exactly 53/60 of a minute.",
+      "Run inside a single minute, it completes once and leaves 7 seconds on the clock.",
+      "Stacked end to end, 60 of these countdowns total precisely 53 minutes."
+    ],
+    "54": [
+      "54 seconds is nine-tenths of a minute.",
+      "It fits into one minute once, with 6 seconds left over.",
+      "Run back-to-back, 10 repeats of 54 seconds add up to exactly 9 minutes."
+    ],
+    "55": [
+      "A 55-second countdown covers eleven-twelfths of a minute.",
+      "One minute holds one full 55-second interval with 5 seconds remaining.",
+      "It takes 12 consecutive 55-second intervals to land exactly on the minute mark, at 11 minutes."
+    ],
+    "56": [
+      "As a slice of a minute, 56 seconds is exactly 14/15 of a minute.",
+      "Run inside a single minute, it completes once and leaves 4 seconds on the clock.",
+      "Stacked end to end, 15 of these countdowns total precisely 14 minutes."
+    ],
+    "57": [
+      "57 seconds is exactly 19/20 of a minute.",
+      "It fits into one minute once, with 3 seconds left over.",
+      "Run back-to-back, 20 repeats of 57 seconds add up to exactly 19 minutes."
+    ],
+    "58": [
+      "A 58-second countdown covers exactly 29/30 of a minute.",
+      "One minute holds one full 58-second interval with 2 seconds remaining.",
+      "It takes 30 consecutive 58-second intervals to land exactly on the minute mark, at 29 minutes."
+    ],
+    "59": [
+      "As a slice of a minute, 59 seconds is exactly 59/60 of a minute.",
+      "Run inside a single minute, it completes once and leaves 1 second on the clock.",
+      "Stacked end to end, 60 of these countdowns total precisely 59 minutes."
+    ],
+    "90": [
+      "90 seconds equals 1 minute 30 seconds — exactly 1.5 minutes.",
+      "Run back-to-back, 2 repeats of 90 seconds add up to exactly 3 minutes.",
+      "An hour contains exactly 40 back-to-back 90-second intervals."
+    ]
+  },
+  "hours": {
+    "1": [
+      "A 1-hour timer runs for 60 minutes — 3,600 seconds from start to finish.",
+      "1 hour is one twenty-fourth of a day.",
+      "In Pomodoro terms, 1 hour is precisely 2 complete 25+5 cycles with nothing left over."
+    ],
+    "2": [
+      "Measured out in smaller units, 2 hours comes to 120 minutes, or 7,200 seconds.",
+      "As a share of a day, 2 hours works out to exactly one-twelfth of a day.",
+      "That works out to exactly 4 full Pomodoro cycles of 25 minutes' work and a 5-minute break each."
+    ],
+    "3": [
+      "3 hours equals 180 minutes, or exactly 10,800 seconds.",
+      "On the 24-hour scale, 3 hours is exactly one-eighth of a day.",
+      "It holds exactly 6 full Pomodoro cycles (25 minutes of work plus a 5-minute break)."
+    ],
+    "4": [
+      "A 4-hour timer runs for 240 minutes — 14,400 seconds from start to finish.",
+      "4 hours is exactly one-sixth of a day.",
+      "In Pomodoro terms, 4 hours is precisely 8 complete 25+5 cycles with nothing left over."
+    ],
+    "5": [
+      "Measured out in smaller units, 5 hours comes to 300 minutes, or 18,000 seconds.",
+      "As a share of a day, 5 hours works out to exactly 5/24 of a day.",
+      "That works out to exactly 10 full Pomodoro cycles of 25 minutes' work and a 5-minute break each."
+    ],
+    "6": [
+      "6 hours equals 360 minutes, or exactly 21,600 seconds.",
+      "On the 24-hour scale, 6 hours is exactly one-quarter of a day.",
+      "It holds exactly 12 full Pomodoro cycles (25 minutes of work plus a 5-minute break)."
+    ],
+    "8": [
+      "Measured out in smaller units, 8 hours comes to 480 minutes, or 28,800 seconds.",
+      "As a share of a day, 8 hours works out to exactly one-third of a day.",
+      "That works out to exactly 16 full Pomodoro cycles of 25 minutes' work and a 5-minute break each."
+    ],
+    "10": [
+      "A 10-hour timer runs for 600 minutes — 36,000 seconds from start to finish.",
+      "10 hours is exactly 5/12 of a day.",
+      "In Pomodoro terms, 10 hours is precisely 20 complete 25+5 cycles with nothing left over."
+    ],
+    "12": [
+      "12 hours equals 720 minutes, or exactly 43,200 seconds.",
+      "On the 24-hour scale, 12 hours is exactly half a day.",
+      "It holds exactly 24 full Pomodoro cycles (25 minutes of work plus a 5-minute break)."
+    ],
+    "24": [
+      "24 hours equals 1,440 minutes, or exactly 86,400 seconds.",
+      "On the 24-hour scale, 24 hours is a full day.",
+      "It holds exactly 48 full Pomodoro cycles (25 minutes of work plus a 5-minute break)."
+    ]
+  }
+}

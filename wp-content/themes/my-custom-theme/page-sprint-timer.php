@@ -69,7 +69,7 @@ get_header();
             <p>The shortest sprint that's meaningful. A 15-minute sprint is perfect when you're procrastinating on a task and need to build momentum. Tell yourself: "Just 15 minutes." Once you start, the momentum usually carries you further. Ideal for email responses, quick edits, administrative tasks, or getting unstuck on a creative project.</p>
 
             <h3>25-Minute Pomodoro Sprint</h3>
-            <p>The classic Pomodoro duration, 25 minutes sits in the sweet spot between long enough to make real progress and short enough to maintain urgency throughout. Pair with a 5-minute break and repeat 4 times for a full 2-hour morning work block. See our <a href="/pomodoro/">Pomodoro Timer</a> for the full structured experience.</p>
+            <p>The classic Pomodoro duration, 25 minutes sits in the sweet spot between long enough to make real progress and short enough to maintain urgency throughout. Pair with a 5-minute break and repeat 4 times for a full 2-hour morning work block. See our <a href="/pomodoro">Pomodoro Timer</a> for the full structured experience.</p>
 
             <h3>45-Minute Deep Sprint</h3>
             <p>For complex cognitive tasks — writing, analysis, coding, strategic planning — a 45-minute sprint provides enough uninterrupted time to get into a genuine flow state without the mental fatigue that comes from longer blocks. Research suggests 50 minutes is near the limit of peak cognitive performance before diminishing returns set in.</p>

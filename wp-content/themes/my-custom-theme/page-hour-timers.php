@@ -23,7 +23,7 @@ $hour_timers = $related->get_all_by_unit('hours');
         <?php
         blogtimer_render_breadcrumb_nav([
             ['label' => 'Home', 'url' => home_url('/')],
-            ['label' => 'Timers by Duration', 'url' => home_url('/minute-timers/')],
+            ['label' => 'Timers by Duration', 'url' => home_url('/minute-timers')],
             ['label' => 'Hour Timers', 'url' => null],
         ]);
         ?>
@@ -32,7 +32,7 @@ $hour_timers = $related->get_all_by_unit('hours');
             <?php echo esc_html($loader->get_string('hub.hours.h1') ?: 'Online Hour Timers'); ?>
         </h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">
@@ -85,7 +85,7 @@ $hour_timers = $related->get_all_by_unit('hours');
                         blogtimer_render_timer_card($t); endforeach; ?>
                 </div>
             <?php else: ?>
-                <p>Hour timers are being added. In the meantime, browse our <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">minute timers</a>.</p>
+                <p>Hour timers are being added. In the meantime, browse our <a href="<?php echo esc_url(home_url('/minute-timers')); ?>">minute timers</a>.</p>
             <?php endif; ?>
         </section>
 
@@ -267,9 +267,9 @@ $hour_timers = $related->get_all_by_unit('hours');
             <h2 class="section-title">Need a shorter timer?</h2>
             <p class="section-subtitle">Hour timers are for day-scale durations. For shorter intervals, browse our minute and second timer hubs.</p>
             <ul class="taxonomy-link-list" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
-                <li><a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">All Minute Timers (1&ndash;161 minutes)</a></li>
-                <li><a href="<?php echo esc_url(home_url('/second-timers/')); ?>">All Second Timers (1&ndash;60 seconds)</a></li>
-                <li><a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Pomodoro Timer (25-minute focus blocks)</a></li>
+                <li><a href="<?php echo esc_url(home_url('/minute-timers')); ?>">All Minute Timers (1&ndash;161 minutes)</a></li>
+                <li><a href="<?php echo esc_url(home_url('/second-timers')); ?>">All Second Timers (1&ndash;60 seconds)</a></li>
+                <li><a href="<?php echo esc_url(home_url('/pomodoro')); ?>">Pomodoro Timer (25-minute focus blocks)</a></li>
             </ul>
         </section>
 
@@ -277,7 +277,7 @@ $hour_timers = $related->get_all_by_unit('hours');
         <div class="cta-banner">
             <h2>Structure Your Next Deep-Work Marathon</h2>
             <p>Set an hour timer as the container, then work in 90-minute ultradian sprints with real breaks between them. Accurate, clock-anchored, and free.</p>
-            <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>" class="btn btn--primary btn--large">Browse Minute Timers</a>
+            <a href="<?php echo esc_url(home_url('/minute-timers')); ?>" class="btn btn--primary btn--large">Browse Minute Timers</a>
         </div>
     </div>
 </main>

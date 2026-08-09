@@ -4,9 +4,9 @@
 # NOTE: This is a STATIC file served directly by the web server (no PHP boot),
 # so it is always available and fast for Googlebot. It mirrors the dynamic
 # rules in the theme's `robots_txt` filter. Keep both in sync if you edit either.
+# sitemap-fresh.xml is the ONLY sitemap (WP core sitemaps are disabled).
 
 Sitemap: https://theblogtimer.com/sitemap-fresh.xml
-Sitemap: https://theblogtimer.com/wp-sitemap.xml
 
 User-agent: *
 Disallow: /wp-admin/

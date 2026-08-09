@@ -10,7 +10,7 @@ get_header();
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Tea Timer &mdash; Perfect Steep Times for Every Variety</h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Tea drinker &amp; cooking researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Steep tea correctly the first time with this free timer. Use the chart below to match the right time and water temperature to your tea &mdash; green, black, oolong, white, pu-erh, or herbal.</p>
@@ -42,7 +42,7 @@ get_header();
         <div class="pomodoro-presets" style="margin-top:var(--space-6);">
             <h3 class="section-subtitle">Steep Time Presets</h3>
             <div class="timer-grid">
-                <a href="/timer/set-timer-for-1-minute" class="btn btn--secondary"><strong>White Tea</strong><span>1&ndash;3 minutes</span></a>
+                <a href="/timer/set-timer-for-1-minutes" class="btn btn--secondary"><strong>White Tea</strong><span>1&ndash;3 minutes</span></a>
                 <a href="/timer/set-timer-for-2-minutes" class="btn btn--secondary"><strong>Green Tea</strong><span>1&ndash;3 minutes</span></a>
                 <a href="/timer/set-timer-for-3-minutes" class="btn btn--secondary"><strong>Oolong</strong><span>2&ndash;4 minutes</span></a>
                 <a href="/timer/set-timer-for-4-minutes" class="btn btn--secondary"><strong>Black Tea</strong><span>3&ndash;5 minutes</span></a>
@@ -173,7 +173,7 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": "How to Steep Tea Correctly",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "description": "Steep tea to the correct strength using the right water temperature and steep time for each tea variety.",
   "prepTime": "PT1M",
@@ -196,10 +196,10 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Free Online Tea Timer — Perfect Steep Times for Every Variety",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"}
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

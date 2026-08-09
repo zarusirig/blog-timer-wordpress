@@ -10,7 +10,7 @@ get_header();
     <div class="container container--narrow">
         <h1 class="page-h1">Free Bread Baking Timer &mdash; Proof, Bake, and Cool</h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home baker &amp; recipe researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Time every stage of bread baking accurately &mdash; mixing, autolyse, bulk fermentation, shaping, final proof, bake, and cool &mdash; whether you are making yeasted loaves, sourdough, no-knead, or quick breads.</p>
@@ -187,7 +187,7 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": "How to Bake a Simple Crusty Loaf",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "description": "Bake a crusty country loaf using yeasted dough, bulk fermentation, and a preheated Dutch oven.",
   "prepTime": "PT3H",
@@ -212,10 +212,10 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Free Bread Baking Timer — Proof, Bake, and Cool",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"}
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

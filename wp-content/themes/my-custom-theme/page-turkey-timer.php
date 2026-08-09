@@ -10,7 +10,7 @@ get_header();
     <div class="container container--narrow">
         <h1 class="page-h1">Free Turkey Cooking Timer &mdash; From Frozen to Carved</h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home cook &amp; recipe researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Time your turkey end-to-end &mdash; thawing, brining, roasting, and resting &mdash; for Thanksgiving, Christmas, or any holiday. Charts by weight and method (oven, deep-fry, smoker, spatchcock), plus the USDA-mandated internal temperature.</p>
@@ -207,7 +207,7 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": "How to Roast a Thanksgiving Turkey",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "description": "Roast a Thanksgiving turkey to 165°F using the USDA-recommended method.",
   "prepTime": "PT24H",
@@ -232,10 +232,10 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Free Turkey Cooking Timer — From Frozen to Carved",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"}
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

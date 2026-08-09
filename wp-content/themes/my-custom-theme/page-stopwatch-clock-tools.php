@@ -18,7 +18,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~9 min read &middot; Curated hub page</div>
             </div>
         </div>
@@ -36,19 +36,19 @@ get_header();
             <p>These four tool categories all involve "time" but solve different problems. Picking the right one is the difference between an efficient workflow and a fragmented one.</p>
 
             <h3>Stopwatch &mdash; measuring elapsed time</h3>
-            <p>A stopwatch counts up from zero. You do not know in advance how long the activity will take; you want to measure it. Common uses include timing a workout interval you intend to repeat, measuring how long a task takes for billing or estimation, recording lap times for repeated movements, and benchmarking process times. A <a href="/stopwatch/">stopwatch</a> is the right tool whenever the question is "how long did that take?" rather than "when will this be done?"</p>
+            <p>A stopwatch counts up from zero. You do not know in advance how long the activity will take; you want to measure it. Common uses include timing a workout interval you intend to repeat, measuring how long a task takes for billing or estimation, recording lap times for repeated movements, and benchmarking process times. A <a href="/stopwatch">stopwatch</a> is the right tool whenever the question is "how long did that take?" rather than "when will this be done?"</p>
 
             <h3>Timer &mdash; counting down a fixed duration</h3>
-            <p>A timer counts down from a set duration to zero. You know in advance how long the activity should be; you want a clear endpoint. Cooking, focus blocks, exercise intervals, and presentation rehearsals are all timer problems. Use a <a href="/countdown-timer/">countdown timer</a> or any of the dedicated timers in the <a href="/study-work-timers/">Study &amp; Work</a> or <a href="/cooking-timers/">Cooking</a> hubs.</p>
+            <p>A timer counts down from a set duration to zero. You know in advance how long the activity should be; you want a clear endpoint. Cooking, focus blocks, exercise intervals, and presentation rehearsals are all timer problems. Use a <a href="/countdown-timer">countdown timer</a> or any of the dedicated timers in the <a href="/study-work-timers">Study &amp; Work</a> or <a href="/cooking-timers">Cooking</a> hubs.</p>
 
             <h3>Alarm clock &mdash; triggering at an absolute time</h3>
-            <p>An alarm clock fires at a specific wall-clock time, regardless of when you set it. "Wake me at 7:00 AM" is an alarm problem, not a timer problem &mdash; the duration depends on what time it is when you set it. Use an <a href="/online-alarm-clock/">online alarm clock</a> for absolute time triggers: meeting reminders, scheduled wake-ups, and time-of-day boundaries.</p>
+            <p>An alarm clock fires at a specific wall-clock time, regardless of when you set it. "Wake me at 7:00 AM" is an alarm problem, not a timer problem &mdash; the duration depends on what time it is when you set it. Use an <a href="/online-alarm-clock">online alarm clock</a> for absolute time triggers: meeting reminders, scheduled wake-ups, and time-of-day boundaries.</p>
 
             <h3>Countdown to a future date &mdash; tracking days, hours, and minutes</h3>
-            <p>A countdown to a future date is what people mean colloquially when they say "countdown" &mdash; the days, hours, minutes, and seconds remaining until an event. New Year's Eve, a wedding, a product launch, a vacation, an exam date. This is a different visualization problem from a short-duration timer. Use a <a href="/countdown-timer/">countdown timer</a> set to the future date.</p>
+            <p>A countdown to a future date is what people mean colloquially when they say "countdown" &mdash; the days, hours, minutes, and seconds remaining until an event. New Year's Eve, a wedding, a product launch, a vacation, an exam date. This is a different visualization problem from a short-duration timer. Use a <a href="/countdown-timer">countdown timer</a> set to the future date.</p>
 
             <h3>World clock &mdash; current time across timezones</h3>
-            <p>A world clock shows the current time in multiple geographies simultaneously. Cross-timezone scheduling, distributed-team coordination, and travel planning all benefit from seeing 5 to 10 cities at a glance. Use a <a href="/world-clock/">world clock</a> when the question is "what time is it there right now?"</p>
+            <p>A world clock shows the current time in multiple geographies simultaneously. Cross-timezone scheduling, distributed-team coordination, and travel planning all benefit from seeing 5 to 10 cities at a glance. Use a <a href="/world-clock">world clock</a> when the question is "what time is it there right now?"</p>
         </div>
     </section>
 
@@ -57,22 +57,22 @@ get_header();
         <div class="container">
             <h2 class="section-title">The four core clock tools</h2>
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/stopwatch/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/stopwatch" style="text-decoration:none;">
                     <div class="usecase-card-icon">SW</div>
                     <h3>Stopwatch</h3>
                     <p>Counts up from zero with lap recording. For measuring workouts, billing, benchmarks, and any "how long did that take?" question.</p>
                 </a>
-                <a class="card usecase-card" href="/online-alarm-clock/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/online-alarm-clock" style="text-decoration:none;">
                     <div class="usecase-card-icon">A</div>
                     <h3>Online Alarm Clock</h3>
                     <p>Fires at a specific wall-clock time. For scheduled wake-ups, meeting reminders, and time-of-day triggers.</p>
                 </a>
-                <a class="card usecase-card" href="/world-clock/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/world-clock" style="text-decoration:none;">
                     <div class="usecase-card-icon">WC</div>
                     <h3>World Clock</h3>
                     <p>Current time across major cities. For cross-timezone scheduling and distributed-team coordination.</p>
                 </a>
-                <a class="card usecase-card" href="/countdown-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/countdown-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">CD</div>
                     <h3>Countdown Timer</h3>
                     <p>Counts down a fixed duration or to a future date. For events, deadlines, and any pre-defined endpoint.</p>
@@ -111,16 +111,16 @@ get_header();
         <div class="container container--narrow">
             <h2 class="section-title">Common use cases and the right tool for each</h2>
             <ul>
-                <li><strong>"How long did my run take?"</strong> &mdash; <a href="/stopwatch/">Stopwatch</a>.</li>
-                <li><strong>"Cook the pasta for 9 minutes."</strong> &mdash; <a href="/cooking-timers/">Cooking timer</a> or <a href="/countdown-timer/">countdown timer</a>.</li>
-                <li><strong>"Wake me at 6:30 AM."</strong> &mdash; <a href="/online-alarm-clock/">Online alarm clock</a>.</li>
-                <li><strong>"Remind me in 90 minutes."</strong> &mdash; <a href="/countdown-timer/">Countdown timer</a>.</li>
-                <li><strong>"What time is it in London right now?"</strong> &mdash; <a href="/world-clock/">World clock</a>.</li>
-                <li><strong>"How many days until the wedding?"</strong> &mdash; <a href="/countdown-timer/">Countdown</a> set to the date.</li>
-                <li><strong>"Time each lap of my sprint workout."</strong> &mdash; <a href="/stopwatch/">Stopwatch</a> with lap recording.</li>
-                <li><strong>"Limit me to 25 minutes on this task."</strong> &mdash; <a href="/pomodoro/">Pomodoro timer</a> or <a href="/focus-timer/">focus timer</a>.</li>
-                <li><strong>"Coordinate a meeting with NYC, London, and Tokyo."</strong> &mdash; <a href="/world-clock/">World clock</a>.</li>
-                <li><strong>"Track time spent for billing a client."</strong> &mdash; <a href="/stopwatch/">Stopwatch</a> (or dedicated time-tracking software for ongoing billing).</li>
+                <li><strong>"How long did my run take?"</strong> &mdash; <a href="/stopwatch">Stopwatch</a>.</li>
+                <li><strong>"Cook the pasta for 9 minutes."</strong> &mdash; <a href="/cooking-timers">Cooking timer</a> or <a href="/countdown-timer">countdown timer</a>.</li>
+                <li><strong>"Wake me at 6:30 AM."</strong> &mdash; <a href="/online-alarm-clock">Online alarm clock</a>.</li>
+                <li><strong>"Remind me in 90 minutes."</strong> &mdash; <a href="/countdown-timer">Countdown timer</a>.</li>
+                <li><strong>"What time is it in London right now?"</strong> &mdash; <a href="/world-clock">World clock</a>.</li>
+                <li><strong>"How many days until the wedding?"</strong> &mdash; <a href="/countdown-timer">Countdown</a> set to the date.</li>
+                <li><strong>"Time each lap of my sprint workout."</strong> &mdash; <a href="/stopwatch">Stopwatch</a> with lap recording.</li>
+                <li><strong>"Limit me to 25 minutes on this task."</strong> &mdash; <a href="/pomodoro">Pomodoro timer</a> or <a href="/focus-timer">focus timer</a>.</li>
+                <li><strong>"Coordinate a meeting with NYC, London, and Tokyo."</strong> &mdash; <a href="/world-clock">World clock</a>.</li>
+                <li><strong>"Track time spent for billing a client."</strong> &mdash; <a href="/stopwatch">Stopwatch</a> (or dedicated time-tracking software for ongoing billing).</li>
             </ul>
         </div>
     </section>
@@ -198,7 +198,7 @@ get_header();
             <div class="cta-banner">
                 <h2>Time, measured in every direction.</h2>
                 <p>Stopwatches measure backwards. Timers count down. Alarms trigger forward. Each tool for its specific job.</p>
-                <a href="/stopwatch/" class="btn btn--primary btn--large">Open the Stopwatch</a>
+                <a href="/stopwatch" class="btn btn--primary btn--large">Open the Stopwatch</a>
             </div>
         </div>
     </section>
@@ -209,8 +209,8 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Stopwatch &amp; Clock Tools Hub",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
   "mainEntityOfPage": "<?php echo esc_url(get_permalink()); ?>",

@@ -15,7 +15,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~16 min read &middot; References: Newport (2016), Mark (UC Irvine 2008), Csikszentmihalyi (1990)</div>
             </div>
         </div>
@@ -96,7 +96,7 @@ get_header();
 
             <p>Focus timers differ from general countdown timers in three ways. First, they are tied to a single task, not a generic event. Second, they typically include a session counter or log so you can see cumulative output over time. Third, they often pair with break alarms or session transitions because attention research consistently shows that uninterrupted work eventually degrades, and that brief, deliberate rest restores it. A focus timer is therefore part timing instrument, part behavioral commitment device, and part personal analytics tool.</p>
 
-            <p>The defining feature of an effective focus timer is its honesty. If you check your phone, stop the timer. If you switch tasks, restart. The numbers on the dial only mean something if they correspond to actual single-tasked work. This is the core principle behind Francesco Cirillo's original Pomodoro method, and it is the same principle that makes a modern <a href="/pomodoro/">Pomodoro timer</a>, a <a href="/sprint-timer/">15-minute sprint timer</a>, or a long-form deep work block work the way it does.</p>
+            <p>The defining feature of an effective focus timer is its honesty. If you check your phone, stop the timer. If you switch tasks, restart. The numbers on the dial only mean something if they correspond to actual single-tasked work. This is the core principle behind Francesco Cirillo's original Pomodoro method, and it is the same principle that makes a modern <a href="/pomodoro">Pomodoro timer</a>, a <a href="/sprint-timer">15-minute sprint timer</a>, or a long-form deep work block work the way it does.</p>
         </div>
     </section>
 
@@ -265,13 +265,13 @@ get_header();
             <h2 class="section-title">Focus timer use by audience</h2>
 
             <h3>Students</h3>
-            <p>For exam preparation and study sessions, 25 to 50-minute blocks paired with our <a href="/study-timer/">study timer</a> work best. Spaced practice research (Cepeda et al., 2006) shows that distributed sessions outperform massed study, so multiple focus blocks across a day or week beat one long marathon.</p>
+            <p>For exam preparation and study sessions, 25 to 50-minute blocks paired with our <a href="/study-timer">study timer</a> work best. Spaced practice research (Cepeda et al., 2006) shows that distributed sessions outperform massed study, so multiple focus blocks across a day or week beat one long marathon.</p>
 
             <h3>Knowledge workers</h3>
-            <p>For analysts, engineers, and writers, the 45 to 90-minute block is the sweet spot. Schedule it during your peak cognitive window &mdash; most chronotypes peak two to four hours after wake. Defend the block from meetings and use the <a href="/pomodoro/">Pomodoro timer</a> for shallower work later in the day.</p>
+            <p>For analysts, engineers, and writers, the 45 to 90-minute block is the sweet spot. Schedule it during your peak cognitive window &mdash; most chronotypes peak two to four hours after wake. Defend the block from meetings and use the <a href="/pomodoro">Pomodoro timer</a> for shallower work later in the day.</p>
 
             <h3>Remote workers</h3>
-            <p>Without the structure of an office, time can blur. A focus timer reintroduces explicit boundaries. Pair it with our <a href="/timer-for-remote-workers/">remote-work timer guide</a> for context-shifting and end-of-day shutdown rituals.</p>
+            <p>Without the structure of an office, time can blur. A focus timer reintroduces explicit boundaries. Pair it with our <a href="/timer-for-remote-workers">remote-work timer guide</a> for context-shifting and end-of-day shutdown rituals.</p>
 
             <h3>ADHD</h3>
             <p>Adults with ADHD often experience time-blindness &mdash; abstract time does not register as a behavioral cue. A visible countdown converts time into a perceivable signal. Russell Barkley's framing of ADHD as an executive function disorder supports this. Start with shorter 15-minute blocks and build up; rigid 90-minute blocks can backfire.</p>
@@ -288,13 +288,14 @@ get_header();
             <p>Default mode network activation is what restores attention. Activities that maintain task-positive engagement &mdash; scrolling social media, checking email, watching a video clip &mdash; do not provide recovery. Effective breaks share three properties: they remove you from the work environment, they require minimal cognitive load, and they allow mind-wandering.</p>
             <ul>
                 <li><strong>Walk.</strong> Even a 5-minute walk outside increases blood flow and supports memory consolidation. Walking while thinking has produced documented creative effects since Aristotle.</li>
-                <li><strong>Stretch or do light mobility.</strong> Couple it with a <a href="/stretching-timer/">stretching timer</a> for structure.</li>
+                <li><strong>Stretch or do light mobility.</strong> Couple it with a <a href="/stretching-timer">stretching timer</a> for structure.</li>
                 <li><strong>Look at distance.</strong> Long-distance focus relaxes ciliary muscles tightened by screen work and reduces eye strain.</li>
                 <li><strong>Hydrate.</strong> Mild dehydration reduces cognitive performance, especially in long sessions.</li>
                 <li><strong>Breathe deliberately.</strong> A 4-minute breathing exercise &mdash; box breathing, or 4-7-8 &mdash; downregulates sympathetic activation.</li>
                 <li><strong>Stare out a window.</strong> Genuinely. The mental idle is the point.</li>
                 <li><strong>Do not start another task.</strong> Reading work-adjacent material is not a break.</li>
             </ul>
+            <p>Not sure how long to make the break itself? See our <a href="/guides/break-timers">guide to break timing</a> for micro-break, restorative-break, and study-break lengths.</p>
         </div>
     </section>
 
@@ -303,22 +304,22 @@ get_header();
         <div class="container">
             <h2 class="section-title">Related focus and productivity timers</h2>
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/pomodoro/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/pomodoro" style="text-decoration:none;">
                     <div class="usecase-card-icon">P</div>
                     <h3>Pomodoro Timer</h3>
                     <p>The classic 25/5 interval, with full session tracking and history.</p>
                 </a>
-                <a class="card usecase-card" href="/study-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/study-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">S</div>
                     <h3>Study Timer</h3>
                     <p>Spaced-practice intervals for exam prep and long-form learning.</p>
                 </a>
-                <a class="card usecase-card" href="/sprint-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/sprint-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">15</div>
                     <h3>Sprint Timer (15 min)</h3>
                     <p>Short, high-commitment bursts to break inertia and start hard tasks.</p>
                 </a>
-                <a class="card usecase-card" href="/study-work-timers/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/study-work-timers" style="text-decoration:none;">
                     <div class="usecase-card-icon">H</div>
                     <h3>All Study &amp; Work Timers</h3>
                     <p>Hub of every productivity timer on the site.</p>
@@ -365,16 +366,8 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Free Online Focus Timer &mdash; Science-Backed Concentration Intervals",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "<?php echo esc_url(home_url('/')); ?>"
-  },
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
   "mainEntityOfPage": "<?php echo esc_url(get_permalink()); ?>",

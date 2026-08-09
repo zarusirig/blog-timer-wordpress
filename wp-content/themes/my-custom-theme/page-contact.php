@@ -303,10 +303,10 @@ $contact_notices = [
         <section class="section">
             <h2 class="section-title">Helpful Internal Resources</h2>
             <ul class="context-link-list">
-                <li><a href="<?php echo esc_url(home_url('/faq/')); ?>">Read frequently asked timer support questions</a></li>
-                <li><a href="<?php echo esc_url(home_url('/guides/')); ?>">Browse all timer guides before submitting a ticket</a></li>
+                <li><a href="<?php echo esc_url(home_url('/faq')); ?>">Read frequently asked timer support questions</a></li>
+                <li><a href="<?php echo esc_url(home_url('/guides')); ?>">Browse all timer guides before submitting a ticket</a></li>
                 <li><a href="<?php echo esc_url($accuracy_guides_url); ?>">Check timer accuracy and browser behavior guides</a></li>
-                <li><a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Try the built-in Pomodoro timer workflow</a></li>
+                <li><a href="<?php echo esc_url(home_url('/pomodoro')); ?>">Try the built-in Pomodoro timer workflow</a></li>
                 <li><a href="<?php echo esc_url($support_usecase_url); ?>">Browse productivity timer use-case pages</a></li>
             </ul>
         </section>

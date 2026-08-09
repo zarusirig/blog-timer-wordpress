@@ -2,8 +2,10 @@
 /**
  * Timer unit taxonomy template.
  */
-get_header();
+// Load helpers BEFORE get_header() so the SEO head hooks (title, meta
+// description, rel prev/next) register ahead of wp_head output.
 require_once get_template_directory() . '/inc/taxonomy-hub-helpers.php';
+get_header();
 
 $loader = Timer_Content_Loader::get_instance();
 $related = Timer_Related::get_instance();
@@ -13,6 +15,8 @@ $unit_label = $unit === 'hours' ? 'Hour' : ($unit === 'seconds' ? 'Second' : 'Mi
 $unit_archive_label = strtolower($unit_label) . ' timers';
 $unit_profile = blogtimer_taxhub_unit_profile($unit, $unit_label);
 $unit_intro = blogtimer_taxhub_term_description($term, $unit_profile['intro']);
+$unit_copy = blogtimer_taxhub_copy('timer_unit', $unit);
+$unit_h1 = !empty($unit_copy['h1']) ? $unit_copy['h1'] : $unit_label . ' Timers';
 $buckets = $loader->get_buckets($unit);
 $popular = $related->get_popular_posts($unit, 12);
 $bucket_terms = blogtimer_get_taxonomy_terms('timer_bucket', blogtimer_get_bucket_slugs_for_unit($unit));
@@ -22,10 +26,17 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
 <main id="main" tabindex="-1" class="site-main">
     <div class="container">
         <header class="section-header">
-            <h1 class="page-h1"><?php echo esc_html($unit_label); ?> Timers</h1>
-            <p class="page-intro"><?php echo esc_html($unit_intro); ?> Choose a preset below or jump to a specific range based on your task.</p>
+            <h1 class="page-h1"><?php echo esc_html($unit_h1); ?></h1>
+            <?php if (!is_paged()): ?>
+                <?php if (!empty($unit_copy['intro_html'])): ?>
+                    <div class="page-intro"><?php echo blogtimer_taxhub_intro_kses($unit_copy['intro_html']); ?></div>
+                <?php else: ?>
+                    <p class="page-intro"><?php echo esc_html($unit_intro); ?> Choose a preset below or jump to a specific range based on your task.</p>
+                <?php endif; ?>
+            <?php endif; ?>
         </header>
 
+        <?php if (!is_paged()): ?>
         <section class="section">
             <div class="taxonomy-hub-grid">
                 <article class="card taxonomy-link-card">
@@ -39,7 +50,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                 <article class="card taxonomy-link-card">
                     <h2>How to Choose</h2>
                     <p><?php echo esc_html($unit_profile['guidance']); ?></p>
-                    <p>Need activity-first recommendations? Open the <a href="<?php echo esc_url(home_url('/use-cases/')); ?>">Timer Use Cases</a> hub.</p>
+                    <p>Need activity-first recommendations? Open the <a href="<?php echo esc_url(home_url('/use-cases')); ?>">Timer Use Cases</a> hub.</p>
                 </article>
             </div>
         </section>
@@ -73,6 +84,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                 <?php endif; ?>
             </section>
         <?php endif; ?>
+        <?php endif; ?>
 
         <?php if (!empty($popular)): ?>
             <section class="section">
@@ -104,14 +116,16 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
             </section>
         <?php endforeach; ?>
 
+        <?php if (!is_paged()): ?>
         <section class="section">
             <div class="content-page container--narrow">
                 <h2>Choosing the Right <?php echo esc_html($unit_label); ?> Duration</h2>
                 <p><?php echo esc_html($unit_profile['guidance']); ?> Use shorter durations when you need urgency and quick execution, and longer durations when your task requires sustained concentration. If your sessions often run over, increase your timer in small steps.</p>
                 <p>For consistency, use the same duration for similar tasks during a full week. This helps your brain associate the timer start with a specific work mode, making it easier to enter focus quickly and reduce decision fatigue before each session.</p>
-                <p>Need use-case recommendations? Visit the <a href="<?php echo esc_url(home_url('/use-cases/')); ?>">Timer Use Cases</a> hub for productivity, cooking, exercise, meditation, and study-specific setups.</p>
+                <p>Need use-case recommendations? Visit the <a href="<?php echo esc_url(home_url('/use-cases')); ?>">Timer Use Cases</a> hub for productivity, cooking, exercise, meditation, and study-specific setups.</p>
             </div>
         </section>
+        <?php endif; ?>
     </div>
 </main>
 

@@ -68,3 +68,6 @@ Thumbs.db
 *.backup
 error_log
 php_error.log
+
+# Local backups from content upgrades
+*.bak.*

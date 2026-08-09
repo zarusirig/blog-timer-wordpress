@@ -10,7 +10,7 @@ get_header();
     <div class="container container--narrow">
         <h1 class="page-h1">Free Coffee Brew Timer &mdash; Pour Over, French Press, Espresso, Cold Brew</h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home barista &amp; coffee researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Brew better coffee with method-specific timing. Use the presets for pour-over, French press, espresso, AeroPress, cold brew, and Chemex &mdash; each tuned to the SCA brew guideline and the recipes published by James Hoffmann.</p>
@@ -43,7 +43,7 @@ get_header();
             <h3 class="section-subtitle">Brewing Method Presets</h3>
             <div class="timer-grid">
                 <a href="/timer/set-timer-for-30-seconds" class="btn btn--secondary"><strong>Espresso Shot</strong><span>25&ndash;30 seconds</span></a>
-                <a href="/timer/set-timer-for-1-minute" class="btn btn--secondary"><strong>AeroPress (fast)</strong><span>1&ndash;2 minutes</span></a>
+                <a href="/timer/set-timer-for-1-minutes" class="btn btn--secondary"><strong>AeroPress (fast)</strong><span>1&ndash;2 minutes</span></a>
                 <a href="/timer/set-timer-for-3-minutes" class="btn btn--secondary"><strong>Moka Pot</strong><span>3&ndash;5 minutes</span></a>
                 <a href="/timer/set-timer-for-4-minutes" class="btn btn--secondary"><strong>Pour Over / V60</strong><span>3&ndash;4 minutes</span></a>
                 <a href="/timer/set-timer-for-4-minutes" class="btn btn--secondary"><strong>French Press</strong><span>4 minutes</span></a>
@@ -131,7 +131,7 @@ get_header();
             <p>Boiling water (212&deg;F) is too hot for direct brewing &mdash; it scalds the grounds and accelerates bitter extraction. Target 195&ndash;205&deg;F (90&ndash;96&deg;C). Below 185&deg;F, extraction stalls and the cup is sour.</p>
 
             <h3>Inconsistent Pouring</h3>
-            <p>For pour-over methods, an uneven pour creates channels through the bed where water bypasses the grounds. A gooseneck kettle and a slow, controlled spiral pour solve this. The <a href="https://en.wikipedia.org/wiki/Hario" target="_blank" rel="noopener">Hario Buono</a> and Fellow Stagg EKG are the most cited gooseneck kettles in the specialty coffee community.</p>
+            <p>For pour-over methods, an uneven pour creates channels through the bed where water bypasses the grounds. A gooseneck kettle and a slow, controlled spiral pour solve this. The <a href="https://en.wikipedia.org/wiki/Hario_V60" target="_blank" rel="noopener">Hario Buono</a> and Fellow Stagg EKG are the most cited gooseneck kettles in the specialty coffee community.</p>
 
             <h3>Skipping the Bloom</h3>
             <p>Fresh coffee releases CO&#8322; on contact with water, which physically pushes water away from the grounds. A 30 to 45 second bloom &mdash; pouring about 2x the coffee weight in water and waiting &mdash; degasses the bed so the main pour extracts evenly.</p>
@@ -184,7 +184,7 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": "How to Brew Pour-Over Coffee",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "description": "Brew a balanced pour-over coffee using the SCA Golden Cup ratio and James Hoffmann's V60 technique.",
   "prepTime": "PT2M",
@@ -208,10 +208,10 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Free Coffee Brew Timer — Pour Over, French Press, Espresso, Cold Brew",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"}
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

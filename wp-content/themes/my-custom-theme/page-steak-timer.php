@@ -10,12 +10,12 @@ get_header();
     <div class="container container--narrow">
         <h1 class="page-h1">Free Steak Timer &mdash; Perfect Doneness for Every Cut</h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home cook &amp; culinary researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Cook steak to your exact target temperature and rest it properly. Use the chart below to match cooking time to cut, thickness, doneness, and method (grill, pan-sear, sous vide, reverse-sear, oven).</p>
         <div class="tldr-box" style="background:#f5f8fb;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:6px;">
-            <strong>TL;DR:</strong> A 1-inch steak takes 3&ndash;4 minutes per side over high heat for medium-rare (130&ndash;135&deg;F internal). Always pull the steak 5&deg;F below your target &mdash; carryover cooking finishes the job during the rest. Rest at least 5 minutes for a 1-inch cut, 10 minutes for thick-cut. The <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat" target="_blank" rel="noopener">USDA</a> safety minimum is 145&deg;F with a 3-minute rest; below that is a personal-preference call, not a safety guarantee.
+            <strong>TL;DR:</strong> A 1-inch steak takes 3&ndash;4 minutes per side over high heat for medium-rare (130&ndash;135&deg;F internal). Always pull the steak 5&deg;F below your target &mdash; carryover cooking finishes the job during the rest. Rest at least 5 minutes for a 1-inch cut, 10 minutes for thick-cut. The <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish" target="_blank" rel="noopener">USDA</a> safety minimum is 145&deg;F with a 3-minute rest; below that is a personal-preference call, not a safety guarantee.
         </div>
     </div>
 
@@ -163,7 +163,7 @@ get_header();
     <section class="section">
         <div class="container container--narrow">
             <h2 class="section-title">Food Safety</h2>
-            <p>The <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat/safe-minimum-internal-temperatures" target="_blank" rel="noopener">USDA's safe minimum internal temperature for beef steaks</a> is 145&deg;F (63&deg;C) with a 3-minute rest. Below that, you are accepting a small (whole-muscle steaks are very low risk) but nonzero pathogen risk &mdash; primarily <em>E. coli</em> O157:H7 contamination on the surface. Searing the exterior to 165&deg;F kills surface pathogens, so a rare or medium-rare steak from a reputable source is generally considered safe by food scientists, but the USDA does not officially endorse this temperature for at-risk populations (pregnant individuals, young children, elderly, immunocompromised).</p>
+            <p>The <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart" target="_blank" rel="noopener">USDA's safe minimum internal temperature for beef steaks</a> is 145&deg;F (63&deg;C) with a 3-minute rest. Below that, you are accepting a small (whole-muscle steaks are very low risk) but nonzero pathogen risk &mdash; primarily <em>E. coli</em> O157:H7 contamination on the surface. Searing the exterior to 165&deg;F kills surface pathogens, so a rare or medium-rare steak from a reputable source is generally considered safe by food scientists, but the USDA does not officially endorse this temperature for at-risk populations (pregnant individuals, young children, elderly, immunocompromised).</p>
 
             <p>Ground beef is a different story: bacteria from the surface are distributed throughout the grind, so burgers must reach 160&deg;F internal. The same applies to mechanically tenderized "blade-tenderized" steaks &mdash; the perforation pushes surface bacteria inside.</p>
         </div>
@@ -206,7 +206,7 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": "How to Cook a Perfect Steak",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "description": "Cook a steak to your target doneness using time, temperature, and the reverse-sear or pan-sear method.",
   "prepTime": "PT30M",
@@ -230,10 +230,10 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Free Steak Timer — Perfect Doneness for Every Cut",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"}
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

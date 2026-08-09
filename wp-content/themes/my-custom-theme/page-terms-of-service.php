@@ -81,14 +81,14 @@ $terms_guide_cluster_url = blogtimer_get_term_url_by_slug('guide_cluster', 'accu
         <section class="legal-section">
             <h2>Contact</h2>
             <p>For questions regarding these terms, please visit our <a
-                    href="<?php echo home_url('/contact/'); ?>">Contact page</a>.</p>
+                    href="<?php echo home_url('/contact'); ?>">Contact page</a>.</p>
         </section>
 
         <section class="legal-section">
             <h2>Related Resources</h2>
             <ul class="context-link-list">
-                <li><a href="<?php echo esc_url(home_url('/faq/')); ?>">Read usage and policy FAQs</a></li>
-                <li><a href="<?php echo esc_url(home_url('/guides/')); ?>">Browse operational timer guides</a></li>
+                <li><a href="<?php echo esc_url(home_url('/faq')); ?>">Read usage and policy FAQs</a></li>
+                <li><a href="<?php echo esc_url(home_url('/guides')); ?>">Browse operational timer guides</a></li>
                 <li><a href="<?php echo esc_url($terms_guide_cluster_url); ?>">Read timing accuracy guidance</a></li>
                 <li><a href="<?php echo esc_url($terms_usecase_url); ?>">Open productivity timer use-case pages</a></li>
             </ul>

@@ -522,7 +522,8 @@ strong {
     letter-spacing: 0.08em;
 }
 
-.footer-col h4 {
+.footer-col h4,
+.footer-col .footer-heading {
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-text-primary);

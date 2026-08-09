@@ -15,7 +15,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~13 min read &middot; References: W3C High Resolution Time, MDN Web Docs, FINA Swimming Rules</div>
             </div>
         </div>
@@ -54,7 +54,7 @@ get_header();
         <div class="container container--narrow">
             <h2 class="section-title">How a Stopwatch Differs from a Countdown Timer</h2>
             <p>A stopwatch and a countdown timer are mirror images. A stopwatch starts at zero and counts up indefinitely until you stop it &mdash; it answers the question "how long did that take?" A countdown timer starts at a fixed duration and counts down to zero &mdash; it answers "how much time is left?" Both share the same underlying clock, but the user interface and the cognitive frame are different.</p>
-            <p>Use a stopwatch when the endpoint is unknown: timing a sprint, a science experiment, a presentation rehearsal, or a debugging session. Use a <a href="/countdown-timer/">countdown timer</a> when the endpoint is fixed: a 25-minute <a href="/pomodoro/">Pomodoro</a>, a five-minute speech limit, an oven bake time. The Blog Timer's stopwatch and <a href="/interval-timer/">interval timer</a> share the same timing engine, so accuracy is identical across tools.</p>
+            <p>Use a stopwatch when the endpoint is unknown: timing a sprint, a science experiment, a presentation rehearsal, or a debugging session. Use a <a href="/countdown-timer">countdown timer</a> when the endpoint is fixed: a 25-minute <a href="/pomodoro">Pomodoro</a>, a five-minute speech limit, an oven bake time. The Blog Timer's stopwatch and <a href="/interval-timer">interval timer</a> share the same timing engine, so accuracy is identical across tools.</p>
 
             <h2 class="section-title">A Short History of the Stopwatch</h2>
             <p>The mechanical stopwatch is an offshoot of the chronograph, a complication added to pocket watches in the early 19th century. Louis Moinet, a French watchmaker, built what is now recognized as the first chronograph in 1816 with a 60-Hz beat rate &mdash; capable of resolving 1/60th of a second. Nicolas Mathieu Rieussec patented an inked-recording chronograph in 1821, used at the Champ de Mars horse races to record finishing times.</p>
@@ -77,7 +77,7 @@ get_header();
             <p>Pendulum period measurements, free-fall timing, chemical reaction durations, biology behavioural studies. A stopwatch with sub-millisecond resolution and exportable lap data is more useful than the analog wall clock in most school labs. The W3C High Resolution Time specification (<a href="https://www.w3.org/TR/hr-time-3/" rel="nofollow noopener" target="_blank">HR-Time Level 3</a>) defines the monotonic clock used here, which never goes backwards even if the system clock is adjusted &mdash; a property analog stopwatches cannot offer.</p>
 
             <h3>Presentation and debate timing</h3>
-            <p>Track total speaking time while logging each speaker as a lap. Debate formats like British Parliamentary, Lincoln-Douglas, and policy debate all have strict per-speaker limits. Press "Lap" when a speaker finishes; the split tells you total round time, the lap tells you that speaker's duration. For team-based formats, see also our <a href="/chess-clock/">chess clock</a> for per-player budgets.</p>
+            <p>Track total speaking time while logging each speaker as a lap. Debate formats like British Parliamentary, Lincoln-Douglas, and policy debate all have strict per-speaker limits. Press "Lap" when a speaker finishes; the split tells you total round time, the lap tells you that speaker's duration. For team-based formats, see also our <a href="/chess-clock">chess clock</a> for per-player budgets.</p>
 
             <h3>Cooking, brewing, and fermentation</h3>
             <p>Steeping tea, brewing coffee, timing a sourdough fold cycle, measuring pasta cook time. For fixed durations a countdown timer is cleaner, but a stopwatch is unbeatable when you don't know how long something will take and need to record the total &mdash; for example "how long did the dough rise to double its volume?"</p>
@@ -118,8 +118,8 @@ get_header();
                     <tr><td>Standard stopwatch</td><td>Counts up from zero, single elapsed reading</td><td>Single event timing</td></tr>
                     <tr><td>Lap mode</td><td>Records discrete segment times alongside running total</td><td>Track laps, swim lengths</td></tr>
                     <tr><td>Split mode</td><td>Records cumulative times at intermediate points</td><td>Marathon split tracking, ultra running</td></tr>
-                    <tr><td>Countdown</td><td>Counts down from fixed duration to zero</td><td><a href="/countdown-timer/">Use the countdown timer</a></td></tr>
-                    <tr><td>Interval</td><td>Alternates work and rest periods automatically</td><td><a href="/interval-timer/">Use the interval timer</a></td></tr>
+                    <tr><td>Countdown</td><td>Counts down from fixed duration to zero</td><td><a href="/countdown-timer">Use the countdown timer</a></td></tr>
+                    <tr><td>Interval</td><td>Alternates work and rest periods automatically</td><td><a href="/interval-timer">Use the interval timer</a></td></tr>
                 </tbody>
             </table>
 
@@ -305,18 +305,10 @@ get_header();
   "@type": "Article",
   "headline": "Free Online Stopwatch — Lap, Split, and Millisecond Timing",
   "description": "Browser-based precision stopwatch with millisecond timing, lap and split tracking, and copy-to-clipboard export. Uses W3C High Resolution Time API.",
-  "url": "<?php echo esc_url(home_url('/stopwatch/')); ?>",
+  "url": "<?php echo esc_url(home_url('/stopwatch')); ?>",
   "dateModified": "2026-05-27",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "<?php echo esc_url(home_url('/')); ?>"
-  }
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

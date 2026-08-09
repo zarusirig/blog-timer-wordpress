@@ -15,7 +15,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~13 min read &middot; Cross-referenced against Tabata 1996 and Compendium of Physical Activities</div>
             </div>
         </div>
@@ -55,7 +55,7 @@ get_header();
                     <strong>Tabata Work</strong>
                     <span>20 seconds</span>
                 </a>
-                <a href="/timer/set-timer-for-1-minute" class="btn btn--secondary">
+                <a href="/timer/set-timer-for-1-minutes" class="btn btn--secondary">
                     <strong>Beginner Round</strong>
                     <span>1 minute</span>
                 </a>
@@ -212,16 +212,8 @@ get_header();
   "headline": "Free Jump Rope Timer - Rounds, Rest, and Conditioning",
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "url": "https://theblogtimer.com/author-suraj-giri/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "https://theblogtimer.com/"
-  },
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"},
   "mainEntityOfPage": "https://theblogtimer.com/jump-rope-timer/"
 }
 </script>

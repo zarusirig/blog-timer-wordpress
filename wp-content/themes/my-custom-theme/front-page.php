@@ -21,7 +21,7 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                 <?php echo esc_html($loader->get_string('home.h1')); ?>
             </h1>
             <p class="byline" style="font-size: 0.875rem; color: var(--color-text-muted, #666); margin: 0.5rem 0;">
-                By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+                By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
                 &middot; Productivity researcher &middot; <em>Last updated: <?php echo esc_html(get_the_modified_date('F j, Y')); ?></em>
             </p>
             <p class="hero-subtext">
@@ -31,11 +31,11 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                 <strong>TL;DR:</strong> The Blog Timer is a free browser-based countdown built around timestamp-anchored accuracy. It hosts 220+ preset durations spanning seconds, minutes, the 25-minute Pomodoro interval, the 20s/10s Tabata structure, and the 90-minute ultradian block &mdash; all grounded in published research from Francesco Cirillo, Cal Newport, and Anders Ericsson.
             </div>
             <div class="hero-ctas">
-                <a href="<?php echo esc_url(home_url('/timer/set-timer-for-5-minutes/')); ?>"
+                <a href="<?php echo esc_url(home_url('/timer/set-timer-for-5-minutes')); ?>"
                     class="btn btn--primary btn--large">
                     <?php echo esc_html($loader->get_string('home.cta_primary')); ?>
                 </a>
-                <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>" class="btn btn--secondary btn--large">
+                <a href="<?php echo esc_url(home_url('/minute-timers')); ?>" class="btn btn--secondary btn--large">
                     <?php echo esc_html($loader->get_string('home.cta_secondary')); ?>
                 </a>
             </div>
@@ -443,7 +443,7 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                 <h2 class="section-title">What does research say about the optimal focus interval?</h2>
             </div>
             <div class="content-page">
-                <p>There is no single "correct" focus interval, but the research clusters around predictable lengths. <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank" rel="noopener">Francesco Cirillo</a> arrived at 25 minutes empirically as an Italian university student in 1987, using a tomato-shaped kitchen timer (<em>pomodoro</em> in Italian). Decades later, <a href="https://en.wikipedia.org/wiki/Cal_Newport" target="_blank" rel="noopener">Cal Newport</a> popularized 60-to-90-minute "deep work" blocks in his 2016 book <em><a href="https://www.calnewport.com/books/deep-work/" target="_blank" rel="noopener">Deep Work: Rules for Focused Success in a Distracted World</a></em>. Performance researcher <a href="https://en.wikipedia.org/wiki/Anders_Ericsson" target="_blank" rel="noopener">Anders Ericsson</a> observed in his deliberate-practice studies that elite performers rarely sustain peak concentration past 90 minutes without a substantial break.</p>
+                <p>There is no single "correct" focus interval, but the research clusters around predictable lengths. <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank" rel="noopener">Francesco Cirillo</a> arrived at 25 minutes empirically as an Italian university student in 1987, using a tomato-shaped kitchen timer (<em>pomodoro</em> in Italian). Decades later, <a href="https://en.wikipedia.org/wiki/Cal_Newport" target="_blank" rel="noopener">Cal Newport</a> popularized 60-to-90-minute "deep work" blocks in his 2016 book <em><a href="https://calnewport.com/writing/" target="_blank" rel="noopener">Deep Work: Rules for Focused Success in a Distracted World</a></em>. Performance researcher <a href="https://en.wikipedia.org/wiki/Anders_Ericsson" target="_blank" rel="noopener">Anders Ericsson</a> observed in his deliberate-practice studies that elite performers rarely sustain peak concentration past 90 minutes without a substantial break.</p>
 
                 <p>The 90-minute figure tracks human <strong>ultradian rhythms</strong> &mdash; the natural cycles of alertness first described by sleep researcher <a href="https://en.wikipedia.org/wiki/Nathaniel_Kleitman" target="_blank" rel="noopener">Nathaniel Kleitman</a> as the Basic Rest-Activity Cycle. <a href="https://en.wikipedia.org/wiki/Tony_Schwartz_(author)" target="_blank" rel="noopener">Tony Schwartz</a>'s work at The Energy Project applies this directly: structure the day around 90-minute work pulses separated by genuine recovery. Meanwhile, shorter intervals serve different goals. The <a href="https://en.wikipedia.org/wiki/Tabata_method" target="_blank" rel="noopener">Tabata protocol</a> (Tabata et al., 1996, <em>Medicine &amp; Science in Sports &amp; Exercise</em>) demonstrated that eight rounds of 20 seconds maximum effort and 10 seconds rest produce measurable VO2 max improvements in just four minutes.</p>
 
@@ -462,13 +462,13 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                 <p>Over 220 timer pages on The Blog Timer span a deliberately wide range of durations. In our analysis of preset usage, four use cases dominate, each anchored to a different research lineage and physiological purpose.</p>
 
                 <ul>
-                    <li><strong>Focused work and study</strong> &mdash; The <a href="<?php echo esc_url(home_url('/pomodoro/')); ?>">Pomodoro Technique</a> remains the most-used method on the site. Twenty-five-minute work intervals with 5-minute breaks support sustained academic and knowledge work. See our <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">complete minute timer hub</a> for the full 1-to-161-minute range, plus our <a href="<?php echo esc_url(home_url('/sprint-timer/')); ?>">sprint timer</a> for 90-minute ultradian blocks.</li>
+                    <li><strong>Focused work and study</strong> &mdash; The <a href="<?php echo esc_url(home_url('/pomodoro')); ?>">Pomodoro Technique</a> remains the most-used method on the site. Twenty-five-minute work intervals with 5-minute breaks support sustained academic and knowledge work. See our <a href="<?php echo esc_url(home_url('/minute-timers')); ?>">complete minute timer hub</a> for the full 1-to-161-minute range, plus our <a href="<?php echo esc_url(home_url('/sprint-timer')); ?>">sprint timer</a> for 90-minute ultradian blocks.</li>
 
-                    <li><strong>Interval training and HIIT</strong> &mdash; Our <a href="<?php echo esc_url(home_url('/interval-timer/')); ?>">interval timer</a> handles Tabata-style 20s/10s, EMOM (every minute on the minute), and circuit structures. For granular control, the <a href="<?php echo esc_url(home_url('/second-timers/')); ?>">second timer hub</a> covers every duration from 1 to 60 seconds.</li>
+                    <li><strong>Interval training and HIIT</strong> &mdash; Our <a href="<?php echo esc_url(home_url('/interval-timer')); ?>">interval timer</a> handles Tabata-style 20s/10s, EMOM (every minute on the minute), and circuit structures. For granular control, the <a href="<?php echo esc_url(home_url('/second-timers')); ?>">second timer hub</a> covers every duration from 1 to 60 seconds.</li>
 
-                    <li><strong>Strategic rest and recovery</strong> &mdash; The <a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">nap timer</a> applies Sara Mednick's research on 20-minute, 60-minute, and 90-minute nap durations. Each interval corresponds to a different sleep stage and recovery outcome.</li>
+                    <li><strong>Strategic rest and recovery</strong> &mdash; The <a href="<?php echo esc_url(home_url('/nap-timer')); ?>">nap timer</a> applies Sara Mednick's research on 20-minute, 60-minute, and 90-minute nap durations. Each interval corresponds to a different sleep stage and recovery outcome.</li>
 
-                    <li><strong>Presentations, classrooms, and meetings</strong> &mdash; Our <a href="<?php echo esc_url(home_url('/presentation-timer/')); ?>">presentation timer</a> and <a href="<?php echo esc_url(home_url('/timer-for-kids/')); ?>">kids' timer</a> serve speakers, teachers, and parents who need a visible countdown from across a room. Chess players use the dedicated <a href="<?php echo esc_url(home_url('/chess-clock/')); ?>">chess clock</a> for tournament-style game timing.</li>
+                    <li><strong>Presentations, classrooms, and meetings</strong> &mdash; Our <a href="<?php echo esc_url(home_url('/presentation-timer')); ?>">presentation timer</a> and <a href="<?php echo esc_url(home_url('/timer-for-kids')); ?>">kids' timer</a> serve speakers, teachers, and parents who need a visible countdown from across a room. Chess players use the dedicated <a href="<?php echo esc_url(home_url('/chess-clock')); ?>">chess clock</a> for tournament-style game timing.</li>
                 </ul>
             </div>
         </div>
@@ -568,7 +568,7 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                 <h2 class="section-title">About The Blog Timer</h2>
             </div>
             <div class="content-page">
-                <p>The Blog Timer is built and maintained by <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">Suraj Giri</a>, a productivity researcher who started the project after watching friends and colleagues struggle with ad-heavy timer sites and unreliable phone apps. The timer engine uses timestamp-anchored calculations rather than naive <code>setInterval</code> ticks, so the countdown does not drift when a tab is backgrounded or a device sleeps. Every duration page is authored to a research-backed editorial standard. Read more on our <a href="<?php echo esc_url(home_url('/about/')); ?>">about page</a> or our <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a>.</p>
+                <p>The Blog Timer is built and maintained by <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>">Suraj Giri</a>, a productivity researcher who started the project after watching friends and colleagues struggle with ad-heavy timer sites and unreliable phone apps. The timer engine uses timestamp-anchored calculations rather than naive <code>setInterval</code> ticks, so the countdown does not drift when a tab is backgrounded or a device sleeps. Every duration page is authored to a research-backed editorial standard. Read more on our <a href="<?php echo esc_url(home_url('/about')); ?>">about page</a> or our <a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">editorial policy</a>.</p>
             </div>
         </div>
     </section>
@@ -593,7 +593,7 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                 <p>For most students, the 25-minute Pomodoro is the best starting point. If you find 25 minutes too short, try the 45-minute or 50-minute interval &mdash; both align with research on classroom attention spans. For exam practice or long-form essay writing, consider 90-minute ultradian blocks with 15-to-20-minute breaks between them.</p>
 
                 <h3>Can I use The Blog Timer for cooking?</h3>
-                <p>Yes. Browser timers are reliable for cooking because they continue running even when minimized. For precision tasks like blanching, espresso extraction, or searing, our <a href="<?php echo esc_url(home_url('/second-timers/')); ?>">second timer hub</a> covers every duration from 1 to 60 seconds.</p>
+                <p>Yes. Browser timers are reliable for cooking because they continue running even when minimized. For precision tasks like blanching, espresso extraction, or searing, our <a href="<?php echo esc_url(home_url('/second-timers')); ?>">second timer hub</a> covers every duration from 1 to 60 seconds.</p>
 
                 <h3>What is the difference between Pomodoro and deep work?</h3>
                 <p>Pomodoro uses 25-minute intervals optimized for sustained attention on familiar tasks. Deep work, as defined by Cal Newport, refers to longer 60-to-90-minute sessions of cognitively demanding work performed at peak focus. Pomodoro is a structural method; deep work is a quality standard. Many practitioners combine the two by running back-to-back Pomodoros during a deep-work block.</p>
@@ -616,32 +616,6 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                 <p class="section-subtitle">Getting started takes less than three seconds. No account, no setup, no configuration.</p>
             </div>
             <?php blogtimer_render_howto(); ?>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <?php echo esc_html($loader->get_string('ui.faq')); ?>
-                </h2>
-            </div>
-            <?php
-            $home_faqs = [];
-            $copyblocks_path = ABSPATH . '../datasets/copyblocks.json';
-            if (file_exists($copyblocks_path)) {
-                $cb = json_decode(file_get_contents($copyblocks_path), true);
-                foreach ($cb['faqs'] as $key => $faq) {
-                    if (strpos($key, 'faq_timer_') === 0) {
-                        $home_faqs[] = $faq['en'];
-                    }
-                    if (count($home_faqs) >= 5)
-                        break;
-                }
-            }
-            blogtimer_render_faq($home_faqs);
-            ?>
         </div>
     </section>
 
@@ -715,7 +689,7 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                 ?>
             </div>
             <div class="hub-cta" style="margin-top: var(--space-5);">
-                <a href="<?php echo esc_url(home_url('/guides/')); ?>">View All Guides &rarr;</a>
+                <a href="<?php echo esc_url(home_url('/guides')); ?>">View All Guides &rarr;</a>
             </div>
         </div>
     </section>
@@ -726,7 +700,7 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
             <div class="cta-banner">
                 <h2>Ready to Start Timing?</h2>
                 <p>Pick any duration and begin your countdown instantly. No sign-up, no downloads, no distractions.</p>
-                <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>" class="btn btn--primary btn--large">Browse All Timers</a>
+                <a href="<?php echo esc_url(home_url('/minute-timers')); ?>" class="btn btn--primary btn--large">Browse All Timers</a>
             </div>
         </div>
     </section>

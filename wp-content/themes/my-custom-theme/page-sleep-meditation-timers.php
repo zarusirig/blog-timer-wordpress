@@ -18,7 +18,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~11 min read &middot; Curated hub page</div>
             </div>
         </div>
@@ -48,12 +48,12 @@ get_header();
         <div class="container">
             <h2 class="section-title">Sleep and nap timers</h2>
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/sleep-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/sleep-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">SL</div>
                     <h3>Sleep Timer</h3>
                     <p>Fades audio gracefully so podcasts, music, or audiobooks turn off after you fall asleep &mdash; without jarring you awake.</p>
                 </a>
-                <a class="card usecase-card" href="/nap-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/nap-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">N</div>
                     <h3>Nap Timer</h3>
                     <p>Science-backed nap durations: 10-minute micro nap, 20-minute power nap, 26-minute NASA nap, and 90-minute full cycle.</p>
@@ -67,12 +67,12 @@ get_header();
         <div class="container">
             <h2 class="section-title">Meditation and breathing timers</h2>
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/guides/meditation-timers-beginners/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/guides/meditation-timers-beginners" style="text-decoration:none;">
                     <div class="usecase-card-icon">M</div>
                     <h3>Meditation Timer</h3>
                     <p>Silent-session timer with optional Tibetan bowl bell at start, interval check-ins, and end. Non-intrusive.</p>
                 </a>
-                <a class="card usecase-card" href="/guides/breathing-timers/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/guides/breathing-timers" style="text-decoration:none;">
                     <div class="usecase-card-icon">BR</div>
                     <h3>Breathing Timer</h3>
                     <p>Paced breathing: box breathing (4-4-4-4), 4-7-8, coherent breathing (5 in / 5 out), and Wim Hof breathwork.</p>
@@ -85,7 +85,7 @@ get_header();
         <div class="container">
             <h2 class="section-title">Environmental and recovery timers</h2>
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/guides/white-noise-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/guides/white-noise-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">W</div>
                     <h3>White Noise Timer</h3>
                     <p>White, pink, and brown noise generators with fade-out timing for sleep and focus.</p>
@@ -109,15 +109,15 @@ get_header();
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Power nap</td><td>20 minutes</td><td>Optional alarm</td><td>Afternoon alertness</td><td><a href="/nap-timer/">Nap Timer</a></td></tr>
-                    <tr><td>NASA nap</td><td>26 minutes</td><td>Optional alarm</td><td>Pilots, shift workers</td><td><a href="/nap-timer/">Nap Timer</a></td></tr>
-                    <tr><td>Full cycle nap</td><td>90 minutes</td><td>Optional alarm</td><td>Sleep-deprived recovery</td><td><a href="/nap-timer/">Nap Timer</a></td></tr>
-                    <tr><td>Sleep fade-out</td><td>15&ndash;60 minutes</td><td>Gradual volume reduction</td><td>Falling asleep to audio</td><td><a href="/sleep-timer/">Sleep Timer</a></td></tr>
-                    <tr><td>Beginner meditation</td><td>10 minutes</td><td>Bell at start and end</td><td>New practitioners</td><td><a href="/guides/meditation-timers-beginners/">Meditation Timer</a></td></tr>
-                    <tr><td>MBSR meditation</td><td>45 minutes</td><td>Bell at start, mid, end</td><td>Established practice</td><td><a href="/guides/meditation-timers-beginners/">Meditation Timer</a></td></tr>
-                    <tr><td>Box breathing</td><td>3&ndash;5 minutes</td><td>Cue per phase (4-4-4-4)</td><td>Stress, focus reset</td><td><a href="/guides/breathing-timers/">Breathing Timer</a></td></tr>
-                    <tr><td>4-7-8 breathing</td><td>1&ndash;4 minutes</td><td>Cue per phase</td><td>Sleep onset</td><td><a href="/guides/breathing-timers/">Breathing Timer</a></td></tr>
-                    <tr><td>White noise</td><td>30&ndash;480 minutes</td><td>Continuous</td><td>Sleep, focus masking</td><td><a href="/guides/white-noise-timer/">White Noise Timer</a></td></tr>
+                    <tr><td>Power nap</td><td>20 minutes</td><td>Optional alarm</td><td>Afternoon alertness</td><td><a href="/nap-timer">Nap Timer</a></td></tr>
+                    <tr><td>NASA nap</td><td>26 minutes</td><td>Optional alarm</td><td>Pilots, shift workers</td><td><a href="/nap-timer">Nap Timer</a></td></tr>
+                    <tr><td>Full cycle nap</td><td>90 minutes</td><td>Optional alarm</td><td>Sleep-deprived recovery</td><td><a href="/nap-timer">Nap Timer</a></td></tr>
+                    <tr><td>Sleep fade-out</td><td>15&ndash;60 minutes</td><td>Gradual volume reduction</td><td>Falling asleep to audio</td><td><a href="/sleep-timer">Sleep Timer</a></td></tr>
+                    <tr><td>Beginner meditation</td><td>10 minutes</td><td>Bell at start and end</td><td>New practitioners</td><td><a href="/guides/meditation-timers-beginners">Meditation Timer</a></td></tr>
+                    <tr><td>MBSR meditation</td><td>45 minutes</td><td>Bell at start, mid, end</td><td>Established practice</td><td><a href="/guides/meditation-timers-beginners">Meditation Timer</a></td></tr>
+                    <tr><td>Box breathing</td><td>3&ndash;5 minutes</td><td>Cue per phase (4-4-4-4)</td><td>Stress, focus reset</td><td><a href="/guides/breathing-timers">Breathing Timer</a></td></tr>
+                    <tr><td>4-7-8 breathing</td><td>1&ndash;4 minutes</td><td>Cue per phase</td><td>Sleep onset</td><td><a href="/guides/breathing-timers">Breathing Timer</a></td></tr>
+                    <tr><td>White noise</td><td>30&ndash;480 minutes</td><td>Continuous</td><td>Sleep, focus masking</td><td><a href="/guides/white-noise-timer">White Noise Timer</a></td></tr>
                 </tbody>
             </table>
         </div>
@@ -198,7 +198,7 @@ get_header();
             <div class="cta-banner">
                 <h2>Pick a practice. Set the timer. Let the audio do the rest.</h2>
                 <p>Every rest, sleep, and meditation timer on the site, organized by use case.</p>
-                <a href="/nap-timer/" class="btn btn--primary btn--large">Start with a Power Nap</a>
+                <a href="/nap-timer" class="btn btn--primary btn--large">Start with a Power Nap</a>
             </div>
         </div>
     </section>
@@ -209,8 +209,8 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Sleep &amp; Meditation Timers Hub",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
   "mainEntityOfPage": "<?php echo esc_url(get_permalink()); ?>",

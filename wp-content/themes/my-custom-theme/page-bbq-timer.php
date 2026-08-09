@@ -10,7 +10,7 @@ get_header();
     <div class="container container--narrow">
         <h1 class="page-h1">Free BBQ &amp; Grill Timer &mdash; Brisket, Ribs, Burgers, Chicken</h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Backyard cook &amp; cooking researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Time your low-and-slow smoke (brisket, pork shoulder, ribs) and your high-heat grill cooks (steak, burgers, chicken, sausage) with method-specific charts referencing Aaron Franklin's <em>Franklin Barbecue</em> and Meathead Goldwyn's <em>Meathead</em>.</p>
@@ -145,7 +145,7 @@ get_header();
     <section class="section">
         <div class="container container--narrow">
             <h2 class="section-title">Food Safety</h2>
-            <p>The <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat/safe-minimum-internal-temperatures" target="_blank" rel="noopener">USDA's safe internal temperatures</a> for grilled foods: ground beef and pork, 160&deg;F; poultry, 165&deg;F; whole-muscle pork and beef, 145&deg;F with a 3-minute rest; fish, 145&deg;F. The low-and-slow exception applies for tough cuts cooked above 200&deg;F internal &mdash; these are well past all pasteurization thresholds.</p>
+            <p>The <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart" target="_blank" rel="noopener">USDA's safe internal temperatures</a> for grilled foods: ground beef and pork, 160&deg;F; poultry, 165&deg;F; whole-muscle pork and beef, 145&deg;F with a 3-minute rest; fish, 145&deg;F. The low-and-slow exception applies for tough cuts cooked above 200&deg;F internal &mdash; these are well past all pasteurization thresholds.</p>
 
             <p>The danger zone for unsmoked meat is 40&ndash;140&deg;F. For long smokes, the meat passes through this zone slowly, but the smoke and salt on the surface inhibit bacterial growth. The USDA's rule for smoked meats is that the internal temperature must reach 140&deg;F within 4 hours of starting; the FSIS Compliance Guideline for "stabilization" allows up to 6.5 hours for whole-muscle cuts. Most well-managed smoker setups hit 140&deg;F within 3 hours.</p>
 
@@ -190,7 +190,7 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": "How to Smoke a Brisket",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "description": "Smoke a central Texas-style brisket using Aaron Franklin's method.",
   "prepTime": "PT1H",
@@ -215,10 +215,10 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Free BBQ & Grill Timer — Brisket, Ribs, Burgers, Chicken",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"}
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

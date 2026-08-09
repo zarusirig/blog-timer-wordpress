@@ -14,13 +14,13 @@ get_header();
             <header class="page-header">
                 <h1 class="page-h1">How We Test Timer Accuracy</h1>
                 <p class="page-intro">The 8-test protocol we run against every release of The Blog Timer's countdown engine — browser/OS matrix, tooling, statistical reporting, and how to replicate it yourself.</p>
-                <p class="page-byline">By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
+                <p class="page-byline">By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
             </header>
 
             <section class="section">
                 <h2 class="section-title">Why a Methodology Page Exists</h2>
                 <p>Most online timers claim to be "accurate." Almost none publish what accurate means or how they measured it. When we built The Blog Timer, the question "how do we know this is right?" had to have a non-handwavy answer. This page is that answer.</p>
-                <p>Everything below is replicable. If you have a laptop, a phone, a browser, and roughly 90 minutes, you can reproduce our entire test protocol. We encourage that — if you find a result that contradicts ours, write to <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a> with your data and we will publish a correction in the <a href="<?php echo esc_url(home_url('/changelog/')); ?>">changelog</a>.</p>
+                <p>Everything below is replicable. If you have a laptop, a phone, a browser, and roughly 90 minutes, you can reproduce our entire test protocol. We encourage that — if you find a result that contradicts ours, write to <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a> with your data and we will publish a correction in the <a href="<?php echo esc_url(home_url('/changelog')); ?>">changelog</a>.</p>
                 <p>The protocol exists for one reason: <strong>browser-based timers fail in a lot of non-obvious ways</strong>. Background tab throttling, OS sleep, requestAnimationFrame de-prioritization, mobile background suspension, Daylight Saving transitions, and clock drift after wake-from-sleep are all real problems. The 8 tests below were designed to surface each failure mode.</p>
             </section>
 
@@ -164,7 +164,7 @@ get_header();
                 <p>Timer drift is not just a curiosity. For specific protocols, drift compounds.</p>
                 <p>Tabata's protocol &mdash; 20 seconds maximum-intensity work, 10 seconds rest, repeated 8 times &mdash; was validated in <a href="https://pubmed.ncbi.nlm.nih.gov/8897392/" rel="nofollow noopener" target="_blank">Tabata et al. (1996)</a> at <em>exactly</em> those durations. If your interval timer drifts by even 1 second per interval, you've added 16 seconds to a 4-minute protocol. That's enough to change the metabolic response the study reported. Drift turns a research-backed protocol into something else.</p>
                 <p>The same applies to nap timers. Sara Mednick's research (<a href="https://pubmed.ncbi.nlm.nih.gov/12377301/" rel="nofollow noopener" target="_blank">Mednick et al., 2002</a>; see also <a href="https://pubmed.ncbi.nlm.nih.gov/16796222/" rel="nofollow noopener" target="_blank">Brooks &amp; Lack, 2006</a>) identifies a critical window: naps shorter than ~26 minutes restore alertness without producing sleep inertia. A nap that drifts to 35 minutes leaves you groggier than no nap at all. The Hayashi research on post-nap recovery (<a href="https://pubmed.ncbi.nlm.nih.gov/10211992/" rel="nofollow noopener" target="_blank">Hayashi et al., 1999</a>) confirms the same threshold.</p>
-                <p>Pomodoro is more forgiving &mdash; Cirillo's original 25-minute interval was, by his own admission in <em>The Pomodoro Technique</em> (2006), partly arbitrary. But the <em>break boundaries</em> matter. A "5-minute" break that drifts to 12 is a derailment of the next work block, and Cal Newport's analysis in <a href="https://www.calnewport.com/books/deep-work/" rel="nofollow noopener" target="_blank">Deep Work</a> (2016) suggests the cost of re-engagement after over-long breaks is substantial.</p>
+                <p>Pomodoro is more forgiving &mdash; Cirillo's original 25-minute interval was, by his own admission in <em>The Pomodoro Technique</em> (2006), partly arbitrary. But the <em>break boundaries</em> matter. A "5-minute" break that drifts to 12 is a derailment of the next work block, and Cal Newport's analysis in <a href="https://calnewport.com/writing/" rel="nofollow noopener" target="_blank">Deep Work</a> (2016) suggests the cost of re-engagement after over-long breaks is substantial.</p>
             </section>
 
             <section class="section">
@@ -182,17 +182,17 @@ get_header();
                 <h2 class="section-title">Open Methodology &mdash; Please Replicate</h2>
                 <p>We publish this methodology because the alternative is a black box, and a black box is unacceptable for a tool that people rely on for cooking, exercise, sleep, and focus.</p>
                 <p>If you replicate our protocol on hardware or in browsers we don't currently test, we want your data. If your results contradict ours, we especially want your data. Write to <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a> with raw test logs and we'll either reproduce, correct our claims, or explain the discrepancy. Reproducibility is the whole point.</p>
-                <p>For the broader philosophy on why this transparency matters, see the <a href="<?php echo esc_url(home_url('/about/')); ?>">about page</a> and the <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">editorial policy</a>. For the full bibliography of timing-research citations referenced above, see <a href="<?php echo esc_url(home_url('/sources/')); ?>">/sources/</a>.</p>
+                <p>For the broader philosophy on why this transparency matters, see the <a href="<?php echo esc_url(home_url('/about')); ?>">about page</a> and the <a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">editorial policy</a>. For the full bibliography of timing-research citations referenced above, see <a href="<?php echo esc_url(home_url('/sources')); ?>">/sources/</a>.</p>
             </section>
 
             <section class="section">
                 <h2 class="section-title">Related Pages</h2>
                 <ul class="context-link-list">
-                    <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About The Blog Timer</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial policy</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/sources/')); ?>">Cited sources and bibliography</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/changelog/')); ?>">Editorial changelog</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">Author: Suraj Giri</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/about')); ?>">About The Blog Timer</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">Editorial policy</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/sources')); ?>">Cited sources and bibliography</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/changelog')); ?>">Editorial changelog</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>">Author: Suraj Giri</a></li>
                 </ul>
             </section>
 
@@ -205,21 +205,11 @@ get_header();
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "How We Test Timer Accuracy: The Blog Timer 8-Test Methodology",
-  "url": "<?php echo esc_url(home_url('/methodology/')); ?>",
+  "url": "<?php echo esc_url(home_url('/methodology')); ?>",
   "datePublished": "<?php echo esc_js(get_post_time('c', true)); ?>",
   "dateModified": "<?php echo esc_js(get_post_modified_time('c', true)); ?>",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "email": "suraj@theblogtimer.com",
-    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>",
-    "jobTitle": "Productivity researcher and software engineer"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "<?php echo esc_url(home_url('/')); ?>"
-  },
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"},
   "description": "The 8-test protocol The Blog Timer uses to verify countdown accuracy across browsers, devices, sleep states, and clock adjustments."
 }
 </script>

@@ -15,7 +15,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~16 min read &middot; References: Cepeda et al. (Psych. Bull. 2006), Ericsson et al. (1993)</div>
             </div>
         </div>
@@ -113,7 +113,7 @@ get_header();
             <p>John Sweller's cognitive load theory identifies three sources of mental effort during learning: intrinsic load (inherent difficulty of the material), extraneous load (poor presentation or distractions), and germane load (the productive effort of building schemas). A study timer reduces extraneous load by removing the meta-decision of when to stop and start, freeing capacity for germane load. Phones nearby, browser tabs open, and ambient music with lyrics all add extraneous load and reduce learning efficiency.</p>
 
             <h3>The Pomodoro Technique in study contexts</h3>
-            <p>The original Pomodoro Technique was developed by Francesco Cirillo while he was an undergraduate at Guido Carli International University struggling to study. The 25-minute interval is well-suited to review-and-recall sessions, less so to deep problem-solving. Many students use a hybrid: <a href="/pomodoro/">Pomodoro blocks</a> for flashcards and revision, longer 50 or 90-minute blocks for problem sets and writing.</p>
+            <p>The original Pomodoro Technique was developed by Francesco Cirillo while he was an undergraduate at Guido Carli International University struggling to study. The 25-minute interval is well-suited to review-and-recall sessions, less so to deep problem-solving. Many students use a hybrid: <a href="/pomodoro">Pomodoro blocks</a> for flashcards and revision, longer 50 or 90-minute blocks for problem sets and writing.</p>
         </div>
     </section>
 
@@ -140,7 +140,7 @@ get_header();
                     <tr><td>Adult self-learner</td><td>25&ndash;50 min</td><td>30&ndash;90 min</td><td>Online courses, language learning</td></tr>
                 </tbody>
             </table>
-            <p style="margin-top:var(--space-4);font-size:0.875rem;color:var(--color-text-muted,#7c87a8);">If you study with younger learners, our <a href="/timer-for-kids/">kid-friendly timer</a> has a calmer interface and shorter default intervals.</p>
+            <p style="margin-top:var(--space-4);font-size:0.875rem;color:var(--color-text-muted,#7c87a8);">If you study with younger learners, our <a href="/timer-for-kids">kid-friendly timer</a> has a calmer interface and shorter default intervals.</p>
         </div>
     </section>
 
@@ -244,22 +244,22 @@ get_header();
         <div class="container">
             <h2 class="section-title">Related study and productivity timers</h2>
             <div class="usecase-grid">
-                <a class="card usecase-card" href="/pomodoro/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/pomodoro" style="text-decoration:none;">
                     <div class="usecase-card-icon">P</div>
                     <h3>Pomodoro Timer</h3>
                     <p>25/5 intervals for revision and flashcards.</p>
                 </a>
-                <a class="card usecase-card" href="/focus-timer/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/focus-timer" style="text-decoration:none;">
                     <div class="usecase-card-icon">F</div>
                     <h3>Focus Timer</h3>
                     <p>15&ndash;90 minute focus blocks for deep work.</p>
                 </a>
-                <a class="card usecase-card" href="/timer-for-kids/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/timer-for-kids" style="text-decoration:none;">
                     <div class="usecase-card-icon">K</div>
                     <h3>Kid-Friendly Timer</h3>
                     <p>Calmer interface and shorter intervals for young learners.</p>
                 </a>
-                <a class="card usecase-card" href="/study-work-timers/" style="text-decoration:none;">
+                <a class="card usecase-card" href="/study-work-timers" style="text-decoration:none;">
                     <div class="usecase-card-icon">H</div>
                     <h3>All Study &amp; Work Timers</h3>
                     <p>Hub of every productivity timer on the site.</p>
@@ -304,16 +304,8 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Free Online Study Timer &mdash; Spaced Practice and Deliberate Practice",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "<?php echo esc_url(home_url('/')); ?>"
-  },
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
   "mainEntityOfPage": "<?php echo esc_url(get_permalink()); ?>",

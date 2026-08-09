@@ -10,7 +10,7 @@ get_header();
     <div class="container container--narrow">
         <h1 class="page-h1">Free Baby Bottle Timer &mdash; Sterilizing, Warming, Feeding Intervals</h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Researcher &amp; parent-resource writer &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Time the three baby-bottle stages new parents ask about most: sterilizing, warming, and the feeding interval between bottles. All guidance cross-checked against the <a href="https://www.aap.org/" target="_blank" rel="noopener">American Academy of Pediatrics</a> and the <a href="https://www.cdc.gov/" target="_blank" rel="noopener">CDC</a>.</p>
@@ -55,7 +55,7 @@ get_header();
     <section class="section">
         <div class="container container--narrow">
             <h2 class="section-title">Bottle Sterilizing: Method Comparison</h2>
-            <p>For the first three months of a baby's life, the <a href="https://www.cdc.gov/healthywater/hygiene/healthychildcare/infantfeeding/cleansanitize.html" target="_blank" rel="noopener">CDC recommends</a> sterilizing bottles, nipples, and feeding accessories once a day. Daily sterilizing is also recommended for premature infants and infants with weakened immune systems for the entire first year. After three months in a healthy term infant, thorough hand-washing with hot soapy water is generally considered adequate; consult your pediatrician.</p>
+            <p>For the first three months of a baby's life, the <a href="https://www.cdc.gov/hygiene/faq/" target="_blank" rel="noopener">CDC recommends</a> sterilizing bottles, nipples, and feeding accessories once a day. Daily sterilizing is also recommended for premature infants and infants with weakened immune systems for the entire first year. After three months in a healthy term infant, thorough hand-washing with hot soapy water is generally considered adequate; consult your pediatrician.</p>
 
             <table style="width:100%;border-collapse:collapse;margin:var(--space-6) 0;">
                 <thead>
@@ -145,7 +145,7 @@ get_header();
     <section class="section">
         <div class="container container--narrow">
             <h2 class="section-title">Safe Formula and Breast Milk Storage</h2>
-            <p>The CDC has detailed <a href="https://www.cdc.gov/nutrition/infantandtoddlernutrition/formula-feeding/infant-formula-preparation-and-storage.html" target="_blank" rel="noopener">guidance on formula preparation and storage</a>:</p>
+            <p>The CDC has detailed <a href="https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html" target="_blank" rel="noopener">guidance on formula preparation and storage</a>:</p>
             <ul>
                 <li><strong>Prepared formula at room temperature:</strong> use within 2 hours. After feeding starts, discard any leftover within 1 hour because the baby's saliva introduces bacteria.</li>
                 <li><strong>Prepared formula in refrigerator:</strong> 24 hours unopened.</li>
@@ -232,10 +232,10 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Free Baby Bottle Timer — Sterilizing, Warming, Feeding Intervals",
-  "author": {"@type": "Person", "name": "Suraj Giri", "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"},
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "publisher": {"@type": "Organization", "name": "The Blog Timer", "url": "<?php echo esc_url(home_url('/')); ?>"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"},
   "description": "Time baby bottle sterilizing, warming, and feeding intervals using CDC- and AAP-aligned guidance."
 }
 </script>

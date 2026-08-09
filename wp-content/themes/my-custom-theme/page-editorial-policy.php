@@ -14,7 +14,7 @@ get_header();
             <header class="page-header">
                 <h1 class="page-h1">Editorial Policy</h1>
                 <p class="page-intro">How content gets made on The Blog Timer: who writes it, how it's fact-checked, when it gets updated, and what we refuse to do for money. Plain language, falsifiable claims, public corrections.</p>
-                <p class="page-byline">By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
+                <p class="page-byline">By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
             </header>
 
             <section class="section">
@@ -27,7 +27,7 @@ get_header();
                     <li><strong>Honest about uncertainty.</strong> Where the research is contested or thin, we say so. Where a popular productivity claim is overstated, we say so. Where our own testing has a limitation, we document it.</li>
                     <li><strong>Bylined and dated.</strong> Every article has a named author and an explicit "updated on" date. Anonymous authority is not authority.</li>
                 </ol>
-                <p>The full bibliography of works we rely on is at <a href="<?php echo esc_url(home_url('/sources/')); ?>">/sources/</a>. The full testing protocol for any accuracy-related claim is at <a href="<?php echo esc_url(home_url('/methodology/')); ?>">/methodology/</a>.</p>
+                <p>The full bibliography of works we rely on is at <a href="<?php echo esc_url(home_url('/sources')); ?>">/sources/</a>. The full testing protocol for any accuracy-related claim is at <a href="<?php echo esc_url(home_url('/methodology')); ?>">/methodology/</a>.</p>
             </section>
 
             <section class="section">
@@ -41,8 +41,8 @@ get_header();
                     </div>
                     <div class="col">
                         <h3>Step 2: Replication test</h3>
-                        <p>For any claim about timer behavior, browser behavior, or technical accuracy, we run the documented test from the <a href="<?php echo esc_url(home_url('/methodology/')); ?>">methodology page</a> and confirm the claim against actual measurement. We do not write "our timer is accurate to within X milliseconds" without an X.</p>
-                        <p>For claims about cooking times (egg boiling, poultry temperatures), we cross-check against the <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat/poultry" rel="nofollow noopener" target="_blank">USDA Food Safety and Inspection Service guidelines</a> and the <a href="https://www.fda.gov/food/buy-store-serve-safe-food/safe-food-handling" rel="nofollow noopener" target="_blank">FDA Safe Food Handling reference</a> as the authoritative sources.</p>
+                        <p>For any claim about timer behavior, browser behavior, or technical accuracy, we run the documented test from the <a href="<?php echo esc_url(home_url('/methodology')); ?>">methodology page</a> and confirm the claim against actual measurement. We do not write "our timer is accurate to within X milliseconds" without an X.</p>
+                        <p>For claims about cooking times (egg boiling, poultry temperatures), we cross-check against the <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/poultry" rel="nofollow noopener" target="_blank">USDA Food Safety and Inspection Service guidelines</a> and the <a href="https://www.fda.gov/food/buy-store-serve-safe-food/safe-food-handling" rel="nofollow noopener" target="_blank">FDA Safe Food Handling reference</a> as the authoritative sources.</p>
                     </div>
                 </div>
                 <h3>Step 3: Plain-language read</h3>
@@ -53,13 +53,13 @@ get_header();
                 <h2 class="section-title">Update Cadence</h2>
                 <p>Articles get updated when one of the following triggers fires:</p>
                 <ul>
-                    <li><strong>New primary research</strong> changes the recommendation. Example: if a meta-analysis on nap duration supersedes Mednick (2002) or Hayashi (1999), the <a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">nap timer</a> guides get rewritten.</li>
+                    <li><strong>New primary research</strong> changes the recommendation. Example: if a meta-analysis on nap duration supersedes Mednick (2002) or Hayashi (1999), the <a href="<?php echo esc_url(home_url('/nap-timer')); ?>">nap timer</a> guides get rewritten.</li>
                     <li><strong>Browser behavior changes.</strong> When Chromium or Safari changes background-tab throttling policy, the methodology page and any guides that reference timer behavior get updated.</li>
                     <li><strong>USDA / FDA safety guidance updates.</strong> The cooking-related guides reference government tables; when those tables change, our guides change.</li>
                     <li><strong>Reader-reported error.</strong> Any confirmed factual error triggers an immediate correction (see Corrections Policy below).</li>
                     <li><strong>Quarterly review.</strong> Every guide is reviewed at minimum once per quarter even if no trigger has fired, to catch broken links and stale references.</li>
                 </ul>
-                <p>The full list of recent updates is maintained at <a href="<?php echo esc_url(home_url('/changelog/')); ?>">/changelog/</a>. Every entry there has a date and a one-sentence description of what changed. We do not silently rewrite articles.</p>
+                <p>The full list of recent updates is maintained at <a href="<?php echo esc_url(home_url('/changelog')); ?>">/changelog/</a>. Every entry there has a date and a one-sentence description of what changed. We do not silently rewrite articles.</p>
             </section>
 
             <section class="section">
@@ -69,7 +69,7 @@ get_header();
                     <li>Email <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a> with the URL, the specific claim you believe is wrong, and (ideally) the source that contradicts it.</li>
                     <li>Within 72 hours, we either correct the article or write back explaining why we disagree. We don't ignore corrections.</li>
                     <li>If the correction is made, the article gets a dated correction note at the bottom &mdash; not just a silent rewrite. Example: "Correction (2026-03-04): an earlier version of this article cited Tabata (1996) as a 4-minute protocol; the correct duration is 4 minutes total (8 rounds of 20s work + 10s rest)."</li>
-                    <li>The correction is also logged in the <a href="<?php echo esc_url(home_url('/changelog/')); ?>">changelog</a>.</li>
+                    <li>The correction is also logged in the <a href="<?php echo esc_url(home_url('/changelog')); ?>">changelog</a>.</li>
                     <li>If you want to be credited, we credit you. If you want to remain anonymous, we don't.</li>
                 </ol>
                 <p>Substantive corrections &mdash; ones that change the recommendation a reader would act on &mdash; get a top-of-article banner for 30 days so returning readers know to recheck.</p>
@@ -87,15 +87,15 @@ get_header();
                         <li><strong>No bought backlinks.</strong> Backlinks to The Blog Timer are organic. We do not pay for placement.</li>
                     </ul>
                 </div>
-                <p>The full privacy posture is documented on the <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">privacy policy</a>. Operational analytics (used to understand which pages need work) are described there.</p>
+                <p>The full privacy posture is documented on the <a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">privacy policy</a>. Operational analytics (used to understand which pages need work) are described there.</p>
             </section>
 
             <section class="section">
                 <h2 class="section-title">Author Requirements</h2>
-                <p>Currently the entire editorial team is one person (<a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">Suraj Giri</a>). As the site grows we expect to bring in contributors. Any author who publishes on The Blog Timer must meet all of the following:</p>
+                <p>Currently the entire editorial team is one person (<a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>">Suraj Giri</a>). As the site grows we expect to bring in contributors. Any author who publishes on The Blog Timer must meet all of the following:</p>
                 <ul>
                     <li><strong>Named on the byline.</strong> No ghostwriting. No "Editorial Team" mystery-meat bylines. Every article has a real person attached.</li>
-                    <li><strong>Public author page.</strong> The byline links to a bio page (like <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">/author-suraj-giri/</a>) documenting credentials and contact.</li>
+                    <li><strong>Public author page.</strong> The byline links to a bio page (like <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>">/author-suraj-giri/</a>) documenting credentials and contact.</li>
                     <li><strong>Demonstrable expertise in the topic.</strong> A nap-timer guide should be written by someone with sleep-science credentials or substantial relevant experience &mdash; not a generalist freelancer. The bio page must make the expertise verifiable.</li>
                     <li><strong>Reachable for corrections.</strong> Every author publishes a working email. If a reader finds an error, the author is contactable.</li>
                     <li><strong>No conflicts of interest.</strong> If an author has a financial relationship with a product or technique they're writing about, it's disclosed at the top of the article.</li>
@@ -113,7 +113,7 @@ get_header();
 
             <section class="section">
                 <h2 class="section-title">Medical, Legal, and Professional Advice Disclaimer</h2>
-                <p>The Blog Timer publishes information about productivity techniques, exercise protocols, nap durations, and cooking times. None of it is medical advice, legal advice, financial advice, or any other form of professional advice. If a protocol on this site interacts with a health condition you have, talk to a qualified clinician. The <a href="<?php echo esc_url(home_url('/disclaimer/')); ?>">full disclaimer</a> covers this in more detail.</p>
+                <p>The Blog Timer publishes information about productivity techniques, exercise protocols, nap durations, and cooking times. None of it is medical advice, legal advice, financial advice, or any other form of professional advice. If a protocol on this site interacts with a health condition you have, talk to a qualified clinician. The <a href="<?php echo esc_url(home_url('/disclaimer')); ?>">full disclaimer</a> covers this in more detail.</p>
             </section>
 
             <section class="section">
@@ -124,13 +124,13 @@ get_header();
             <section class="section">
                 <h2 class="section-title">Related Pages</h2>
                 <ul class="context-link-list">
-                    <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About The Blog Timer</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/methodology/')); ?>">Testing methodology</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/sources/')); ?>">Cited sources and bibliography</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/changelog/')); ?>">Editorial changelog</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">Author: Suraj Giri</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/disclaimer/')); ?>">Full disclaimer</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy policy</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/about')); ?>">About The Blog Timer</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/methodology')); ?>">Testing methodology</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/sources')); ?>">Cited sources and bibliography</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/changelog')); ?>">Editorial changelog</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>">Author: Suraj Giri</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/disclaimer')); ?>">Full disclaimer</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy policy</a></li>
                 </ul>
             </section>
 
@@ -143,20 +143,11 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Editorial Policy",
-  "url": "<?php echo esc_url(home_url('/editorial-policy/')); ?>",
+  "url": "<?php echo esc_url(home_url('/editorial-policy')); ?>",
   "datePublished": "<?php echo esc_js(get_post_time('c', true)); ?>",
   "dateModified": "<?php echo esc_js(get_post_modified_time('c', true)); ?>",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "email": "suraj@theblogtimer.com",
-    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "<?php echo esc_url(home_url('/')); ?>"
-  },
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"},
   "description": "The Blog Timer's editorial standards, fact-checking process, update cadence, corrections policy, and disclosures."
 }
 </script>

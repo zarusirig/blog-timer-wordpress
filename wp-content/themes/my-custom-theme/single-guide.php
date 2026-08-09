@@ -21,7 +21,7 @@ $cluster_terms = get_the_terms($post_id, 'guide_cluster');
 // these are mapped to guide_* post meta by the guide generator. Fall back to native
 // WordPress values so the byline/date always render even before the meta is populated.
 $guide_author      = get_post_meta($post_id, 'guide_author', true) ?: 'Suraj Giri';
-$guide_author_url  = home_url('/author-suraj-giri/');
+$guide_author_url  = home_url('/author-suraj-giri');
 $guide_date_meta   = get_post_meta($post_id, 'guide_date_modified', true);
 $guide_updated     = $guide_date_meta
     ? date_i18n('F j, Y', strtotime($guide_date_meta))
@@ -122,7 +122,7 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
         <nav class="breadcrumbs" aria-label="Breadcrumb">
             <ol>
                 <li><a href="<?php echo esc_url(home_url('/')); ?>">Home</a></li>
-                <li><a href="<?php echo esc_url(home_url('/guides/')); ?>">Guides</a></li>
+                <li><a href="<?php echo esc_url(home_url('/guides')); ?>">Guides</a></li>
                 <?php if ($guide_cluster_crumb): ?>
                     <li><a href="<?php echo esc_url($guide_cluster_crumb['url']); ?>"><?php echo esc_html($guide_cluster_crumb['label']); ?></a></li>
                 <?php endif; ?>

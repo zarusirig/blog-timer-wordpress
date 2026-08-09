@@ -14,13 +14,13 @@ get_header();
             <header class="page-header">
                 <h1 class="page-h1">Sources and Bibliography</h1>
                 <p class="page-intro">The complete index of works cited across The Blog Timer &mdash; productivity research, sleep science, exercise and HIIT physiology, food safety guidance, and cognitive psychology. Every claim on this site traces back to one of these primary sources.</p>
-                <p class="page-byline">Maintained by <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
+                <p class="page-byline">Maintained by <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a> &middot; Updated <?php echo esc_html(get_the_modified_date('F j, Y')); ?></p>
             </header>
 
             <section class="section">
                 <h2 class="section-title">How to Read This Page</h2>
                 <p>Each entry below includes the citation in roughly APA style, the year, the lead author or publishing body, a short note on what we cite the work for, and a link to the canonical version of the source. Where a PubMed PMID, a DOI, or a stable publisher URL exists, that's what we link to &mdash; not a press release or a summary article.</p>
-                <p>If a citation here is broken, contradicted by newer research, or used incorrectly elsewhere on the site, write to <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a> and we'll fix it. See the <a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">corrections policy</a> for how that works.</p>
+                <p>If a citation here is broken, contradicted by newer research, or used incorrectly elsewhere on the site, write to <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a> and we'll fix it. See the <a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">corrections policy</a> for how that works.</p>
             </section>
 
             <section class="section">
@@ -37,7 +37,7 @@ get_header();
                     <h3>Newport, C. (2016). <em>Deep Work: Rules for Focused Success in a Distracted World</em>. Grand Central Publishing.</h3>
                     <p><strong>Lead author:</strong> Cal Newport. <strong>Year:</strong> 2016. <strong>Type:</strong> Seminal practitioner book grounded in cognitive-psychology literature.</p>
                     <p><strong>What we cite it for:</strong> The framework of "deep work" as cognitively demanding, distraction-free work; the cost of "attention residue" (drawing on Sophie Leroy's 2009 research); and the case for blocking long focus sessions rather than short fragmented ones.</p>
-                    <p><strong>Link:</strong> <a href="https://www.calnewport.com/books/deep-work/" rel="nofollow noopener" target="_blank">calnewport.com/books/deep-work/</a></p>
+                    <p><strong>Link:</strong> <a href="https://calnewport.com/writing/" rel="nofollow noopener" target="_blank">calnewport.com/books/deep-work/</a></p>
                 </article>
 
                 <article class="source-entry">
@@ -57,7 +57,7 @@ get_header();
                 <article class="source-entry">
                     <h3>Csikszentmihalyi, M. (1990). <em>Flow: The Psychology of Optimal Experience</em>. Harper &amp; Row.</h3>
                     <p><strong>Lead author:</strong> Mihaly Csikszentmihalyi. <strong>Year:</strong> 1990. <strong>Type:</strong> Foundational practitioner text grounded in 25+ years of empirical research.</p>
-                    <p><strong>What we cite it for:</strong> The flow construct &mdash; the conditions under which deep, intrinsically rewarding focus emerges. Cited on the <a href="<?php echo esc_url(home_url('/sprint-timer/')); ?>">sprint timer</a> guides re: long-block focus.</p>
+                    <p><strong>What we cite it for:</strong> The flow construct &mdash; the conditions under which deep, intrinsically rewarding focus emerges. Cited on the <a href="<?php echo esc_url(home_url('/sprint-timer')); ?>">sprint timer</a> guides re: long-block focus.</p>
                     <p><strong>Link:</strong> <a href="https://www.harpercollins.com/products/flow-mihaly-csikszentmihalyi" rel="nofollow noopener" target="_blank">harpercollins.com (publisher page)</a></p>
                 </article>
 
@@ -76,14 +76,14 @@ get_header();
                 <article class="source-entry">
                     <h3>Mednick, S. C., Nakayama, K., &amp; Stickgold, R. (2002). The restorative effect of naps on perceptual deterioration. <em>Nature Neuroscience</em>, 5(7), 677&ndash;681.</h3>
                     <p><strong>Lead author:</strong> Sara C. Mednick. <strong>Year:</strong> 2002. <strong>Type:</strong> Peer-reviewed empirical research.</p>
-                    <p><strong>What we cite it for:</strong> The finding that naps of ~30 minutes restore perceptual performance to baseline; the cognitive value of short naps; and (in conjunction with later work) the existence of a sleep-inertia threshold around 30 minutes that we use to anchor the <a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">nap timer</a> presets.</p>
+                    <p><strong>What we cite it for:</strong> The finding that naps of ~30 minutes restore perceptual performance to baseline; the cognitive value of short naps; and (in conjunction with later work) the existence of a sleep-inertia threshold around 30 minutes that we use to anchor the <a href="<?php echo esc_url(home_url('/nap-timer')); ?>">nap timer</a> presets.</p>
                     <p><strong>Link:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/12032543/" rel="nofollow noopener" target="_blank">PubMed PMID 12032543</a></p>
                 </article>
 
                 <article class="source-entry">
                     <h3>Hayashi, M., Masuda, A., &amp; Hori, T. (1999). The alerting effects of caffeine, bright light and face washing after a short daytime nap. <em>Clinical Neurophysiology</em>, 110(8), 1419&ndash;1427.</h3>
                     <p><strong>Lead author:</strong> Mitsuo Hayashi. <strong>Year:</strong> 1999. <strong>Type:</strong> Peer-reviewed empirical research.</p>
-                    <p><strong>What we cite it for:</strong> Post-nap alertness recovery strategies and confirmation of the short-nap (15&ndash;20 min) sweet spot for avoiding sleep inertia. Cited on the <a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">nap timer</a> page.</p>
+                    <p><strong>What we cite it for:</strong> Post-nap alertness recovery strategies and confirmation of the short-nap (15&ndash;20 min) sweet spot for avoiding sleep inertia. Cited on the <a href="<?php echo esc_url(home_url('/nap-timer')); ?>">nap timer</a> page.</p>
                     <p><strong>Link:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/10454279/" rel="nofollow noopener" target="_blank">PubMed PMID 10454279</a></p>
                 </article>
 
@@ -97,7 +97,7 @@ get_header();
                 <article class="source-entry">
                     <h3>Rosekind, M. R., Graeber, R. C., Dinges, D. F., et al. (1995). Crew factors in flight operations IX: Effects of planned cockpit rest on crew performance and alertness in long-haul operations. <em>NASA Technical Memorandum 108839</em>.</h3>
                     <p><strong>Lead author:</strong> Mark Rosekind (NASA Ames). <strong>Year:</strong> 1995. <strong>Type:</strong> NASA technical report.</p>
-                    <p><strong>What we cite it for:</strong> The "NASA nap" finding &mdash; a planned 26-minute cockpit rest improved pilot performance by ~34% and alertness by ~54%. The reason "NASA nap" appears as a labeled preset on the <a href="<?php echo esc_url(home_url('/nap-timer/')); ?>">nap timer</a>.</p>
+                    <p><strong>What we cite it for:</strong> The "NASA nap" finding &mdash; a planned 26-minute cockpit rest improved pilot performance by ~34% and alertness by ~54%. The reason "NASA nap" appears as a labeled preset on the <a href="<?php echo esc_url(home_url('/nap-timer')); ?>">nap timer</a>.</p>
                     <p><strong>Link:</strong> <a href="https://ntrs.nasa.gov/citations/19960013817" rel="nofollow noopener" target="_blank">NASA Technical Reports Server (NTRS)</a></p>
                 </article>
 
@@ -123,7 +123,7 @@ get_header();
                 <article class="source-entry">
                     <h3>Tabata, I., Nishimura, K., Kouzaki, M., Hirai, Y., Ogita, F., Miyachi, M., &amp; Yamamoto, K. (1996). Effects of moderate-intensity endurance and high-intensity intermittent training on anaerobic capacity and VO2max. <em>Medicine &amp; Science in Sports &amp; Exercise</em>, 28(10), 1327&ndash;1330.</h3>
                     <p><strong>Lead author:</strong> Izumi Tabata. <strong>Year:</strong> 1996. <strong>Type:</strong> Peer-reviewed empirical research.</p>
-                    <p><strong>What we cite it for:</strong> The Tabata protocol &mdash; 20 seconds maximum-intensity work / 10 seconds rest, 8 rounds &mdash; and the original empirical finding that this protocol improved both aerobic and anaerobic capacity more than steady-state cardio. The duration precision (20/10/8) is non-negotiable and is why timer accuracy matters; see the <a href="<?php echo esc_url(home_url('/interval-timer/')); ?>">interval timer</a> guide.</p>
+                    <p><strong>What we cite it for:</strong> The Tabata protocol &mdash; 20 seconds maximum-intensity work / 10 seconds rest, 8 rounds &mdash; and the original empirical finding that this protocol improved both aerobic and anaerobic capacity more than steady-state cardio. The duration precision (20/10/8) is non-negotiable and is why timer accuracy matters; see the <a href="<?php echo esc_url(home_url('/interval-timer')); ?>">interval timer</a> guide.</p>
                     <p><strong>Link:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/8897392/" rel="nofollow noopener" target="_blank">PubMed PMID 8897392</a></p>
                 </article>
 
@@ -170,7 +170,7 @@ get_header();
                 <article class="source-entry">
                     <h3>Vega, C., Ubbink, J., &amp; van der Linden, E. (Eds.). (2012). <em>The Kitchen as Laboratory: Reflections on the Science of Food and Cooking</em>. Columbia University Press.</h3>
                     <p><strong>Lead editor:</strong> Cesar Vega. <strong>Year:</strong> 2012. <strong>Type:</strong> Peer-reviewed academic essay collection on food science.</p>
-                    <p><strong>What we cite it for:</strong> Egg-coagulation thermodynamics and the empirical basis for the soft-boiled (6&ndash;7 min), medium (8&ndash;9 min), and hard-boiled (10&ndash;12 min) timing windows on our <a href="<?php echo esc_url(home_url('/egg-timer/')); ?>">egg timer</a>.</p>
+                    <p><strong>What we cite it for:</strong> Egg-coagulation thermodynamics and the empirical basis for the soft-boiled (6&ndash;7 min), medium (8&ndash;9 min), and hard-boiled (10&ndash;12 min) timing windows on our <a href="<?php echo esc_url(home_url('/egg-timer')); ?>">egg timer</a>.</p>
                     <p><strong>Link:</strong> <a href="https://cup.columbia.edu/book/the-kitchen-as-laboratory/9780231153454" rel="nofollow noopener" target="_blank">Columbia University Press</a></p>
                 </article>
 
@@ -189,7 +189,7 @@ get_header();
                 <article class="source-entry">
                     <h3>Levitin, D. J. (2014). <em>The Organized Mind: Thinking Straight in the Age of Information Overload</em>. Dutton.</h3>
                     <p><strong>Lead author:</strong> Daniel J. Levitin. <strong>Year:</strong> 2014. <strong>Type:</strong> Seminal practitioner text grounded in cognitive-neuroscience literature.</p>
-                    <p><strong>What we cite it for:</strong> The ultradian rhythm framework &mdash; 90-minute cycles in human attention and arousal, originally described by Kleitman, that informs the 90-minute focus block on the <a href="<?php echo esc_url(home_url('/sprint-timer/')); ?>">sprint timer</a>. Also cited (with caveats) for the limits of multitasking.</p>
+                    <p><strong>What we cite it for:</strong> The ultradian rhythm framework &mdash; 90-minute cycles in human attention and arousal, originally described by Kleitman, that informs the 90-minute focus block on the <a href="<?php echo esc_url(home_url('/sprint-timer')); ?>">sprint timer</a>. Also cited (with caveats) for the limits of multitasking.</p>
                     <p><strong>Link:</strong> <a href="https://daniellevitin.com/publicpage/books/the-organized-mind/" rel="nofollow noopener" target="_blank">daniellevitin.com</a></p>
                 </article>
 
@@ -229,7 +229,7 @@ get_header();
                 <article class="source-entry">
                     <h3>W3C. (2024). High Resolution Time Level 3 (W3C Working Draft).</h3>
                     <p><strong>Publisher:</strong> World Wide Web Consortium. <strong>Type:</strong> Web standards specification.</p>
-                    <p><strong>What we cite it for:</strong> The formal specification of <code>performance.now()</code> as a monotonic high-resolution clock immune to system time adjustments &mdash; the foundation of our timer engine, as documented on the <a href="<?php echo esc_url(home_url('/methodology/')); ?>">methodology page</a>.</p>
+                    <p><strong>What we cite it for:</strong> The formal specification of <code>performance.now()</code> as a monotonic high-resolution clock immune to system time adjustments &mdash; the foundation of our timer engine, as documented on the <a href="<?php echo esc_url(home_url('/methodology')); ?>">methodology page</a>.</p>
                     <p><strong>Link:</strong> <a href="https://www.w3.org/TR/hr-time-3/" rel="nofollow noopener" target="_blank">w3.org/TR/hr-time-3/</a></p>
                 </article>
 
@@ -258,17 +258,17 @@ get_header();
 
             <section class="section">
                 <h2 class="section-title">How to Suggest a Citation</h2>
-                <p>If a guide on this site makes a claim that you think is missing a citation, or if you know of a stronger primary source for an existing claim, send it to <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a>. Include the specific page, the claim, and the proposed source (with stable link). Confirmed additions get logged in the <a href="<?php echo esc_url(home_url('/changelog/')); ?>">changelog</a>.</p>
+                <p>If a guide on this site makes a claim that you think is missing a citation, or if you know of a stronger primary source for an existing claim, send it to <a href="mailto:suraj@theblogtimer.com">suraj@theblogtimer.com</a>. Include the specific page, the claim, and the proposed source (with stable link). Confirmed additions get logged in the <a href="<?php echo esc_url(home_url('/changelog')); ?>">changelog</a>.</p>
             </section>
 
             <section class="section">
                 <h2 class="section-title">Related Pages</h2>
                 <ul class="context-link-list">
-                    <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About The Blog Timer</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/editorial-policy/')); ?>">Editorial policy &mdash; how sources are vetted</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/methodology/')); ?>">Testing methodology &mdash; how technical claims are verified</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/changelog/')); ?>">Editorial changelog</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>">Author: Suraj Giri</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/about')); ?>">About The Blog Timer</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">Editorial policy &mdash; how sources are vetted</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/methodology')); ?>">Testing methodology &mdash; how technical claims are verified</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/changelog')); ?>">Editorial changelog</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>">Author: Suraj Giri</a></li>
                 </ul>
             </section>
 
@@ -281,20 +281,11 @@ get_header();
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Sources and Bibliography",
-  "url": "<?php echo esc_url(home_url('/sources/')); ?>",
+  "url": "<?php echo esc_url(home_url('/sources')); ?>",
   "datePublished": "<?php echo esc_js(get_post_time('c', true)); ?>",
   "dateModified": "<?php echo esc_js(get_post_modified_time('c', true)); ?>",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "email": "suraj@theblogtimer.com",
-    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "<?php echo esc_url(home_url('/')); ?>"
-  },
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"},
   "description": "Bibliography of all primary sources cited across The Blog Timer: productivity research, sleep science, exercise physiology, food safety, and cognitive psychology."
 }
 </script>

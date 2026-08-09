@@ -15,7 +15,7 @@ get_header();
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
             <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);font-size:1.25rem;flex-shrink:0;">SG</div>
             <div style="flex:1;min-width:240px;">
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri/" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a>, Productivity Researcher</div>
                 <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-05-27 &middot; ~14 min read &middot; References: Mednick (Nature Neuroscience 2002), Cordi et al. (Scientific Reports 2019), Riedy et al. (Sleep Medicine Reviews 2021)</div>
             </div>
         </div>
@@ -23,7 +23,7 @@ get_header();
         <!-- TL;DR -->
         <div class="card" style="padding:var(--space-5);border-left:3px solid var(--color-accent);margin-top:var(--space-5);">
             <strong style="display:block;text-transform:uppercase;letter-spacing:0.08em;font-size:0.75rem;color:var(--color-accent);margin-bottom:var(--space-2);">TL;DR &mdash; Direct answer</strong>
-            <p style="margin:0;color:var(--color-text-secondary);line-height:1.65;">Pick a duration (15, 30, 45, 60, 90 minutes, or custom), pick a sound (white, pink, brown noise, rain, or ocean), and press Start. The timer counts down and the audio loops at a steady comfortable level until the last two minutes, when it fades smoothly to silence so it does not jolt you awake. For naps under 30 minutes use the <a href="/nap-timer/">nap timer</a> instead &mdash; the sleep-cycle science is different.</p>
+            <p style="margin:0;color:var(--color-text-secondary);line-height:1.65;">Pick a duration (15, 30, 45, 60, 90 minutes, or custom), pick a sound (white, pink, brown noise, rain, or ocean), and press Start. The timer counts down and the audio loops at a steady comfortable level until the last two minutes, when it fades smoothly to silence so it does not jolt you awake. For naps under 30 minutes use the <a href="/nap-timer">nap timer</a> instead &mdash; the sleep-cycle science is different.</p>
         </div>
     </div>
 
@@ -108,7 +108,7 @@ get_header();
 
             <h2 class="section-title">ASMR and Guided Meditation Timing</h2>
             <p>ASMR (autonomous sensory meridian response) and guided meditation tracks typically run 10 to 60 minutes. Set the sleep timer for slightly longer than the track you are listening to outside this widget &mdash; if the track ends and silence resumes, the silence itself can feel sudden. Cross-fading from a guided track into the steady noise from this widget is a smooth handoff that many sleep-meditation apps now build in by default (Calm, Headspace, Insight Timer).</p>
-            <p>For nap-length sessions (under 30 minutes) the <a href="/nap-timer/">nap timer</a> is the better tool because it is calibrated to wake you cleanly at the end. Use the sleep timer when you do <em>not</em> want to be woken &mdash; when your goal is "fall asleep and stay asleep through the night."</p>
+            <p>For nap-length sessions (under 30 minutes) the <a href="/nap-timer">nap timer</a> is the better tool because it is calibrated to wake you cleanly at the end. Use the sleep timer when you do <em>not</em> want to be woken &mdash; when your goal is "fall asleep and stay asleep through the night."</p>
 
             <h2 class="section-title">Smart Speakers and Phone Sleep Apps Compared</h2>
             <table class="comparison-table">
@@ -136,7 +136,7 @@ get_header();
             <p>Pink noise at low volume masks parent movements and household sounds for sleeping infants. Most pediatric sleep specialists recommend keeping the audio &lt;65 dB at the crib (an AAP guideline) and never running it continuously overnight at high volume &mdash; the fade-out is particularly relevant here.</p>
 
             <h3>Daytime focus sessions</h3>
-            <p>This same audio engine works as a focus background. For deep work, use a longer duration (90&ndash;120 minutes) at slightly higher volume. The fade-out at the end signals the natural break point. See also our <a href="/pomodoro/">Pomodoro timer</a> for structured work cycles.</p>
+            <p>This same audio engine works as a focus background. For deep work, use a longer duration (90&ndash;120 minutes) at slightly higher volume. The fade-out at the end signals the natural break point. See also our <a href="/pomodoro">Pomodoro timer</a> for structured work cycles.</p>
 
             <h2 class="section-title">Sleep Hygiene Pairings</h2>
             <p>The sleep timer is one tool in a larger sleep-hygiene stack. Pair it with: dark room (curtains or eye mask), cool temperature (60&ndash;67&deg;F / 15&ndash;19&deg;C is optimal per the Sleep Foundation), no screens for 30 minutes before bed, no caffeine after 2pm, no alcohol within 3 hours of bed. The CDC's 2022 sleep report identifies blue-light screen exposure within 2 hours of bed as the single most disruptive modern factor in adult sleep onset.</p>
@@ -151,7 +151,7 @@ get_header();
                 ['q' => 'Will this work on my phone?', 'a' => 'Yes, but keep the browser tab in the foreground and disable auto-lock. Mobile browsers aggressively pause background tabs to save battery; the Web Audio API can be silenced when the tab is hidden.'],
                 ['q' => 'Why does my battery drain while using this?', 'a' => 'Continuous audio playback is a significant energy draw on any device. Plug in your laptop or phone before bed. The Web Audio API itself is efficient, but the audio output stage and display will consume battery.'],
                 ['q' => 'Can I use my own audio file?', 'a' => 'Not currently. The built-in sounds are synthesized via the Web Audio API, which avoids the bandwidth cost of streaming an audio file overnight and ensures glitch-free looping. We may add file-upload support in a future version.'],
-                ['q' => 'Is this the same as a nap timer?', 'a' => 'No. A sleep timer is designed to end without waking you. A <a href="/nap-timer/">nap timer</a> is designed to wake you at the end, ideally before deep sleep sets in. Use the nap timer for sessions under 30 minutes when you need to wake up clear-headed.'],
+                ['q' => 'Is this the same as a nap timer?', 'a' => 'No. A sleep timer is designed to end without waking you. A <a href="/nap-timer">nap timer</a> is designed to wake you at the end, ideally before deep sleep sets in. Use the nap timer for sessions under 30 minutes when you need to wake up clear-headed.'],
             ]);
             ?>
         </div>
@@ -374,18 +374,10 @@ get_header();
   "@type": "Article",
   "headline": "Free Online Sleep Timer — Drift Off Without Worrying About the Clock",
   "description": "Browser sleep timer with built-in white, pink, brown, rain, and ocean noise. Audio fades out gracefully in the last two minutes so it does not wake you.",
-  "url": "<?php echo esc_url(home_url('/sleep-timer/')); ?>",
+  "url": "<?php echo esc_url(home_url('/sleep-timer')); ?>",
   "dateModified": "2026-05-27",
-  "author": {
-    "@type": "Person",
-    "name": "Suraj Giri",
-    "url": "<?php echo esc_url(home_url('/author-suraj-giri/')); ?>"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Blog Timer",
-    "url": "<?php echo esc_url(home_url('/')); ?>"
-  }
+  "author": {"@id": "<?php echo home_url('/author-suraj-giri'); ?>#person"},
+  "publisher": {"@id": "<?php echo home_url('/#organization'); ?>"}
 }
 </script>
 

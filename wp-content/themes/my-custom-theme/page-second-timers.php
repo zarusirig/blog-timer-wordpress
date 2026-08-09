@@ -17,7 +17,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
             <?php echo esc_html($loader->get_string('hub.seconds.h1')); ?>
         </h1>
         <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
-            By <a href="<?php echo esc_url(home_url('/author-suraj-giri/')); ?>" rel="author">Suraj Giri</a>
+            By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">
@@ -170,7 +170,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
 
                     <p>The key parameters that make a workout authentically "Tabata" are often misunderstood. The intensity must be all-out maximum effort &mdash; not a comfortable interval but a near-failure intensity by the final round. Eight rounds completed at a sustainable pace is not Tabata; it is a generic 20/10 interval workout, which still has value but does not produce the metabolic adaptations the original study demonstrated.</p>
 
-                    <p>Use our <a href="<?php echo esc_url(home_url('/interval-timer/')); ?>">interval timer</a> for true Tabata structure with audible round transitions.</p>
+                    <p>Use our <a href="<?php echo esc_url(home_url('/interval-timer')); ?>">interval timer</a> for true Tabata structure with audible round transitions.</p>
                 </div>
             </div>
         </section>
@@ -283,7 +283,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                     <p>One second is the practical lower bound for a visual countdown. For sub-second timing (e.g., reaction drills), use a dedicated reaction-time tool. The Blog Timer's smallest preset is the 1-second timer.</p>
 
                     <h3>How do I run a full Tabata workout?</h3>
-                    <p>Use our <a href="<?php echo esc_url(home_url('/interval-timer/')); ?>">interval timer</a> with 20s work and 10s rest configured for 8 rounds. Total workout duration is 4 minutes.</p>
+                    <p>Use our <a href="<?php echo esc_url(home_url('/interval-timer')); ?>">interval timer</a> with 20s work and 10s rest configured for 8 rounds. Total workout duration is 4 minutes.</p>
 
                     <h3>Is 30 seconds enough for a plank?</h3>
                     <p>For beginners, yes. For trained individuals, McGill's research suggests that 60&ndash;90 seconds is a reasonable target, but extending beyond 2 minutes provides diminishing returns. Endurance is better trained with multiple shorter holds than one long hold.</p>
@@ -295,7 +295,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                     <p>Tabata is one specific HIIT protocol (20s/10s &times; 8 at maximum effort). HIIT is the broader category of high-intensity interval training, which includes Tabata, EMOM, Gibala intervals, sprint intervals, and many others.</p>
 
                     <h3>How long is a boxing round?</h3>
-                    <p>Three minutes work, with a 60-second rest between rounds, is the standard for both Olympic amateur and professional boxing. Use our <a href="<?php echo esc_url(home_url('/interval-timer/')); ?>">interval timer</a> to structure round work.</p>
+                    <p>Three minutes work, with a 60-second rest between rounds, is the standard for both Olympic amateur and professional boxing. Use our <a href="<?php echo esc_url(home_url('/interval-timer')); ?>">interval timer</a> to structure round work.</p>
                 </div>
             </div>
         </section>
@@ -312,7 +312,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
                     blogtimer_render_timer_card($t); endforeach; ?>
             </div>
             <div class="hub-cta">
-                <a href="<?php echo esc_url(home_url('/minute-timers/')); ?>">
+                <a href="<?php echo esc_url(home_url('/minute-timers')); ?>">
                     <?php echo esc_html($loader->get_string('cta.browse_minutes')); ?> &rarr;
                 </a>
             </div>
@@ -353,7 +353,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
         <div class="cta-banner">
             <h2>Ready to Time Your Next Interval?</h2>
             <p>Pick any second timer above and start your countdown with a single click. Precise, reliable, and free.</p>
-            <a href="<?php echo esc_url(home_url('/pomodoro/')); ?>" class="btn btn--primary btn--large">Try the Pomodoro Timer</a>
+            <a href="<?php echo esc_url(home_url('/pomodoro')); ?>" class="btn btn--primary btn--large">Try the Pomodoro Timer</a>
         </div>
     </div>
 </main>

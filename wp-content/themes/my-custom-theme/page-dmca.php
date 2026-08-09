@@ -46,7 +46,7 @@ get_header();
 
         <section class="legal-section">
             <h2>Designated DMCA Agent</h2>
-            <p>DMCA notices and counter-notifications should be sent to our designated agent via our <a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact page</a>. Please select "General Inquiry" and include "DMCA Notice" or "DMCA Counter-Notification" in your message subject.</p>
+            <p>DMCA notices and counter-notifications should be sent to our designated agent via our <a href="<?php echo esc_url(home_url('/contact')); ?>">Contact page</a>. Please select "General Inquiry" and include "DMCA Notice" or "DMCA Counter-Notification" in your message subject.</p>
         </section>
 
         <section class="legal-section">
@@ -62,10 +62,10 @@ get_header();
         <section class="legal-section">
             <h2>Related Pages</h2>
             <ul class="context-link-list">
-                <li><a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy Policy</a></li>
-                <li><a href="<?php echo esc_url(home_url('/terms-of-service/')); ?>">Terms of Service</a></li>
-                <li><a href="<?php echo esc_url(home_url('/disclaimer/')); ?>">Disclaimer</a></li>
-                <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact Us</a></li>
+                <li><a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy Policy</a></li>
+                <li><a href="<?php echo esc_url(home_url('/terms-of-service')); ?>">Terms of Service</a></li>
+                <li><a href="<?php echo esc_url(home_url('/disclaimer')); ?>">Disclaimer</a></li>
+                <li><a href="<?php echo esc_url(home_url('/contact')); ?>">Contact Us</a></li>
             </ul>
         </section>
 

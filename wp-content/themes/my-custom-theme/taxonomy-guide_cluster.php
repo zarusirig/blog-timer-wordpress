@@ -9,10 +9,10 @@ $cluster_name = $term instanceof WP_Term ? $term->name : 'Guide Cluster';
 $cluster_desc = $term instanceof WP_Term ? $term->description : '';
 $cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro', 'studying', 'exercise', 'cooking', 'meditation', 'accuracy']);
 $guide_hubs = [
-    ['label' => 'All Guides', 'url' => home_url('/guides/')],
-    ['label' => 'Minute Timers Hub', 'url' => home_url('/minute-timers/')],
-    ['label' => 'Second Timers Hub', 'url' => home_url('/second-timers/')],
-    ['label' => 'Pomodoro Hub', 'url' => home_url('/pomodoro/')],
+    ['label' => 'All Guides', 'url' => home_url('/guides')],
+    ['label' => 'Minute Timers Hub', 'url' => home_url('/minute-timers')],
+    ['label' => 'Second Timers Hub', 'url' => home_url('/second-timers')],
+    ['label' => 'Pomodoro Hub', 'url' => home_url('/pomodoro')],
 ];
 ?>
 
