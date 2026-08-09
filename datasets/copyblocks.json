@@ -1735,6 +1735,30 @@
         "q": "Can I use a regular countdown timer instead of a breathwork app?",
         "a": "Yes. A plain countdown timer works for all three techniques as long as you know the phase counts. Box breathing uses 4-4-4-4, 4-7-8 uses a 19-second cycle, and coherent breathing uses roughly an 11-second cycle (about 5.5 per minute). Apps help by adding visual pacing cues, but they are optional."
       }
+    },
+    "faq_g_jump_rope_interval_timer_01": {
+      "en": {
+        "q": "What is the best work-to-rest ratio for jump rope intervals?",
+        "a": "A 2:1 ratio (for example 60 seconds of jumping followed by 30 seconds of rest) is the best default for general fitness and fat loss, matching the standard HIIT ratio and Harvard Health's rope guidance (1-2 min on, 1 min off). Use 1:1 as a beginner and 3:1 or Tabata (20/10) for conditioning."
+      }
+    },
+    "faq_g_jump_rope_interval_timer_02": {
+      "en": {
+        "q": "How long should a jump rope interval workout be?",
+        "a": "Keep the high-intensity portion 10-20 minutes and the whole session under 30 minutes (the usual HIIT ceiling). Three sessions per week meets the American Heart Association's 75-minute weekly vigorous-activity recommendation."
+      }
+    },
+    "faq_g_jump_rope_interval_timer_03": {
+      "en": {
+        "q": "Is jumping rope better than running for intervals?",
+        "a": "Neither is universally better. Rope matches or beats running for heart-rate response per minute and builds coordination running lacks; running wins for total volume and running-sport specificity. Many athletes alternate them across the week."
+      }
+    },
+    "faq_g_jump_rope_interval_timer_04": {
+      "en": {
+        "q": "Can I do jump rope Tabata intervals every day?",
+        "a": "No. True Tabata (20s at ~170% VO2max / 10s rest, 4 min) is max-effort and needs recovery. Two to three hard interval sessions per week is the practical ceiling; use low-intensity steady rope work or another modality on other days."
+      }
     }
   },
   "quickUseIdeas": {
