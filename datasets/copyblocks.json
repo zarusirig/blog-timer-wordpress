@@ -1135,6 +1135,606 @@
         "q": "Is instant oatmeal the same as quick oats?",
         "a": "No. Quick oats are rolled oats pressed thinner so they cook in about a minute; instant oats are pre-cooked, sweetened, and dried, so they only need to rehydrate in hot water for about 2 minutes."
       }
+    },
+    "faq_g_emom_timer_01": {
+      "en": {
+        "q": "How long is a typical EMOM workout?",
+        "a": "Most EMOM sessions run 10 to 20 minutes of working time, plus a 5 to 10 minute warm-up (ACE). A 10-minute EMOM is 10 rounds; a 20-minute EMOM is 20 rounds. Beginners should start at 10 minutes and add rounds only when the last minute still leaves a few seconds of rest."
+      }
+    },
+    "faq_g_emom_timer_02": {
+      "en": {
+        "q": "How many reps should I do per minute in an EMOM?",
+        "a": "Pick a number you can complete in about 40 to 45 seconds when fresh, leaving 15 to 20 seconds of recovery (aerobis). For bodyweight movements that might be 15 to 20 reps; for heavy kettlebell swings, 10 to 12. If you cannot hold the same split in minute 10 as minute 1, the target was too high."
+      }
+    },
+    "faq_g_emom_timer_03": {
+      "en": {
+        "q": "Is an EMOM the same as HIIT?",
+        "a": "It can be. HIIT is defined by intensity (work bouts near 85-95% of max heart rate with recovery, per ACE and ACSM); EMOM is a timing structure. A hard 40-second-work / 20-second-rest EMOM is HIIT; an EMOM of slow heavy singles with 40 seconds rest is strength work. The intensity, not the clock, decides the stimulus."
+      }
+    },
+    "faq_g_emom_timer_04": {
+      "en": {
+        "q": "How many EMOMs should I do per week?",
+        "a": "Two to three, on non-consecutive days, matching ACE's ceiling for HIIT frequency. Keep total weekly volume increases under 10-20%, and treat EMOMs as a complement to moderate-intensity training, not a replacement for it."
+      }
+    },
+    "faq_g_tabata_timer_variations_01": {
+      "en": {
+        "q": "How many seconds of work and rest are in one Tabata round?",
+        "a": "One round is 20 seconds of maximum-effort work followed by 10 seconds of complete rest, a 30-second cycle. Repeat eight times for the full 4-minute protocol (Tabata et al., 1996, MSSE)."
+      }
+    },
+    "faq_g_tabata_timer_variations_02": {
+      "en": {
+        "q": "How long is a complete Tabata workout?",
+        "a": "The authentic Tabata is 4 minutes (eight 30-second rounds). Tabata-style classes run 20-30 minutes by stacking 4-minute blocks with about 1 minute of rest between them (Emberts et al., 2013; Harvard Chan School)."
+      }
+    },
+    "faq_g_tabata_timer_variations_03": {
+      "en": {
+        "q": "Can I use a different work-to-rest ratio and still call it Tabata?",
+        "a": "Technically no. The name refers specifically to the 2:1 ratio of 20s work to 10s rest at near-maximal intensity. Other ratios (1:1, 1:2, 1:4) are valid HIIT, not Tabata."
+      }
+    },
+    "faq_g_tabata_timer_variations_04": {
+      "en": {
+        "q": "How often should I do a Tabata workout?",
+        "a": "Two to three all-out Tabata sessions per week is a sensible ceiling for most people, with easier training or rest between sessions, because HIIT injury risk rises with the size and frequency of the physiologic overload (ACSM, 2019)."
+      }
+    },
+    "faq_g_amrap_timer_01": {
+      "en": {
+        "q": "How long should an AMRAP timer be set for?",
+        "a": "Most AMRAP workouts run 10-20 minutes for the working block — set a 10-minute or 20-minute countdown to start. Cleveland Clinic places the typical range at five to 20 minutes, with full-body sessions at 15-20 minutes and single-area sessions at five to 10 minutes. Beginners should start at the low end (around 10 minutes)."
+      }
+    },
+    "faq_g_amrap_timer_02": {
+      "en": {
+        "q": "Do you rest during an AMRAP?",
+        "a": "There are no scheduled rest breaks — that is the defining difference from HIIT. You work continuously and only rest when you need to reset your form or catch your breath. Your rest is effectively the transition time between exercises."
+      }
+    },
+    "faq_g_amrap_timer_03": {
+      "en": {
+        "q": "How many times a week should I do AMRAP?",
+        "a": "Cleveland Clinic recommends treating AMRAP as an occasional tool rather than a daily workout because of the metabolic and musculoskeletal stress it imposes. One to three sessions per week, separated by easier training days, is a reasonable ceiling for most people."
+      }
+    },
+    "faq_g_amrap_timer_04": {
+      "en": {
+        "q": "What intensity should an AMRAP hit?",
+        "a": "The work bouts should drive your heart rate toward roughly 80-85% of maximum, consistent with the HIIT intensity range of 80-95% of max heart rate documented by ACSM and Harvard. If you can hold a conversation mid-round, the intensity is too low for the conditioning benefit."
+      }
+    },
+    "faq_g_boxing_training_timer_01": {
+      "en": {
+        "q": "How long is a standard boxing round?",
+        "a": "Three minutes for men's professional and Olympic-style amateur boxing, with a one-minute rest between rounds, per the ABC Unified Rules. Women's professional rounds are two minutes. Set a 3-minute work timer followed by a 1-minute rest timer and repeat."
+      }
+    },
+    "faq_g_boxing_training_timer_02": {
+      "en": {
+        "q": "How many rounds should a boxing workout have?",
+        "a": "Beginners should run 4-6 rounds of 3:1 on the heavy bag; intermediate trainees 6-8; advanced conditioning 10-12 to mirror a full fight. Match the total to your fitness level rather than copying a 12-round championship layout on day one."
+      }
+    },
+    "faq_g_boxing_training_timer_03": {
+      "en": {
+        "q": "Is a 3:1 work-to-rest ratio good for fat loss?",
+        "a": "It is effective but demanding. ACE Fitness HIIT research (Little et al., 2011) shows 1:1 intervals (60 seconds on, 60 seconds off at 90% HRmax) already drive strong cardio-metabolic gains. A 3:1 ratio raises intensity further; if you cannot sustain technique, drop to 1:1 or 2:1 and progress back up."
+      }
+    },
+    "faq_g_boxing_training_timer_04": {
+      "en": {
+        "q": "How often should I do boxing timer workouts?",
+        "a": "Two to three hard sessions per week, with at least 48 hours between them, following NASM's recovery recommendation for high-intensity interval training (the fast-glycolytic system needs 48 h recovery, 2-3x/week). Fill other days with low-intensity shadow boxing, skill work, or jump-rope intervals."
+      }
+    },
+    "faq_g_circuit_training_timer_01": {
+      "en": {
+        "q": "How long should each work interval be in a circuit?",
+        "a": "NASM recommends 30 to 60 seconds of work per station for time-based circuits, with 15 to 30 seconds to transition and 1 to 3 minutes between full rounds. The original circuit format used 15- to 45-second workbouts at 40-60% of 1RM."
+      }
+    },
+    "faq_g_circuit_training_timer_02": {
+      "en": {
+        "q": "What is the best work:rest ratio for fat loss and conditioning?",
+        "a": "For high-intensity conditioning, HPRC recommends a ratio of about 1:1, and no higher than 2:1, because ratios well above 2:1 push into extreme-conditioning territory with elevated injury risk. Longer aerobic intervals can use a 1:1 to 1:2 ratio."
+      }
+    },
+    "faq_g_circuit_training_timer_03": {
+      "en": {
+        "q": "How much rest do I need between circuit workouts?",
+        "a": "ACE Fitness recommends 48 to 72 hours of recovery between high-intensity strength and power sessions for the same muscle groups. Three full-body circuits per week, on non-consecutive days, fits this window."
+      }
+    },
+    "faq_g_circuit_training_timer_04": {
+      "en": {
+        "q": "Should I rest between exercises or only between rounds?",
+        "a": "In a true circuit, you move station to station with little (15-30 seconds) or no rest, then take a longer 1- to 3-minute recovery between full rounds. This keeps the heart rate elevated while letting each muscle group recover indirectly."
+      }
+    },
+    "faq_g_cool_down_timer_guide_01": {
+      "en": {
+        "q": "How long should a cool-down last?",
+        "a": "5 to 10 minutes total per the American Heart Association, split into an active taper plus stretching. Athletes in structured training commonly extend the active phase to 5 to 15 minutes (Van Hooren & Peake, 2018)."
+      }
+    },
+    "faq_g_cool_down_timer_guide_02": {
+      "en": {
+        "q": "How many seconds do I hold each cool-down stretch?",
+        "a": "10 to 30 seconds, repeated 2 to 4 times per muscle for about 60 seconds total (Page, 2012; NASM). Older adults should aim for 30 to 60 seconds per hold."
+      }
+    },
+    "faq_g_cool_down_timer_guide_03": {
+      "en": {
+        "q": "Is stretching after exercise better than before?",
+        "a": "For flexibility gains, yes. Muscles are warmer and more compliant, and you avoid the acute force loss that long static holds cause when done pre-lift (Page, 2012). Before exercise, use dynamic mobility drills instead."
+      }
+    },
+    "faq_g_cool_down_timer_guide_04": {
+      "en": {
+        "q": "Can I skip the cool-down?",
+        "a": "You can, but you risk post-exercise light-headedness from a rapid blood-pressure drop, and you lose an easy window for flexibility work (AHA). At minimum, walk for 5 minutes to taper your heart rate."
+      }
+    },
+    "faq_g_warm_up_timer_guide_01": {
+      "en": {
+        "q": "Can I use static stretches as a warm-up?",
+        "a": "No — not as the warm-up itself. Harvard Health notes expert opinion has moved away from pre-activity static stretching toward a gradual, active warm-up. Do dynamic stretches before the workout and reserve held, 30- to 60-second static stretches for after, when muscles are warm."
+      }
+    },
+    "faq_g_warm_up_timer_guide_02": {
+      "en": {
+        "q": "Is 5 minutes really enough warm-up time?",
+        "a": "For light or moderate exercise, yes. The Mayo Clinic's floor is 5 to 10 minutes of low-intensity movement. Use 5 minutes for an easy jog or walk, and stretch toward 10 minutes before HIIT, sprinting, heavy lifting, or any high-intensity work."
+      }
+    },
+    "faq_g_warm_up_timer_guide_03": {
+      "en": {
+        "q": "Should I warm up before a quick morning workout?",
+        "a": "Yes, and budget the full 10 minutes. Your core temperature is at its lowest in the morning, so joints and muscles need more time. A longer morning warm-up is one of the highest-return habits in any consistent training routine."
+      }
+    },
+    "faq_g_warm_up_timer_guide_04": {
+      "en": {
+        "q": "What is the difference between a warm-up and a cool-down?",
+        "a": "A warm-up happens first and ramps intensity up with dynamic movement; a cool-down happens last and ramps intensity down with easy cardio followed by held static stretches. They are mirror images, and a complete session uses both."
+      }
+    },
+    "faq_g_morning_workout_timer_01": {
+      "en": {
+        "q": "Is 20 minutes of exercise in the morning enough?",
+        "a": "Yes. The ACSM recommends at least 20 minutes of vigorous-intensity aerobic activity on three days per week as a valid standard for healthy adults. Twenty minutes is the floor for a vigorous session, not a compromise, provided the intensity is genuinely vigorous and the structure includes warm-up and cool-down."
+      }
+    },
+    "faq_g_morning_workout_timer_02": {
+      "en": {
+        "q": "What is the best work:rest ratio for a morning HIIT session?",
+        "a": "Start with 1:1 (30 seconds work / 30 seconds rest), the most studied general HIIT protocol. Progress to a 2:1 Tabata (20s / 10s) only once you can complete eight rounds at near-maximal effort without form breakdown. A 1:4 ratio is better if your priority is cardiopulmonary adaptation rather than metabolic conditioning (Seo et al., 2019)."
+      }
+    },
+    "faq_g_morning_workout_timer_03": {
+      "en": {
+        "q": "How long should I rest between strength sets in a short morning workout?",
+        "a": "30-60 seconds for hypertrophy and muscular endurance, and 3-5 minutes for maximal strength and power, per the de Salles review (PMID 19691365). In a 20-minute block, do not try to fit heavy strength work with full 3-5 minute rests across more than two or three lifts."
+      }
+    },
+    "faq_g_morning_workout_timer_04": {
+      "en": {
+        "q": "Should I eat before a 30-minute morning workout?",
+        "a": "For a 20-30 minute session at moderate-to-vigorous intensity, a small carbohydrate source (banana or toast) 20-30 minutes before helps if you feel weak or lightheaded; otherwise a fasted session is safe for most healthy people. Hydration matters more than food: drink water first, since overnight dehydration raises morning heart rate and perceived effort. This guide covers timing, not medical advice; consult a clinician for blood sugar or blood pressure conditions."
+      }
+    },
+    "faq_g_rest_timer_strength_training_01": {
+      "en": {
+        "q": "Is 1 minute enough rest between sets?",
+        "a": "One minute is enough only for light isolation work, hypertrophy accessories, or endurance circuits. For heavy compound lifts (squat, deadlift, press) it is too short: de Salles et al. showed repetitions fall sharply and strength gains shrink with 1-minute rest. Use 1 minute for curls and raises, not for working sets of the big lifts."
+      }
+    },
+    "faq_g_rest_timer_strength_training_02": {
+      "en": {
+        "q": "Is 2 minutes enough rest for strength?",
+        "a": "Two minutes is the minimum workable rest for sub-maximal strength work and most hypertrophy training. NASM's strength-endurance phase actually uses shorter rest (0-90 seconds) for its supersets, but 2 minutes is the floor once you are handling heavy compound loads. For true maximal strength at 80% 1RM and above, push to 3-5 minutes so phosphocreatine rebuilds and your second set stays strong."
+      }
+    },
+    "faq_g_rest_timer_strength_training_03": {
+      "en": {
+        "q": "Does shorter rest build more muscle?",
+        "a": "Not necessarily. Short rest raises acute metabolic stress and growth hormone, but Schoenfeld's 2015 study found trained lifters gained more muscle and strength with 3-minute rests than 1-minute rests, because longer rest allows heavier loads and higher total volume. Use 60-90 seconds on isolation work, but do not shorten rest on big lifts if size is the goal."
+      }
+    },
+    "faq_g_rest_timer_strength_training_04": {
+      "en": {
+        "q": "Should beginners rest longer or shorter?",
+        "a": "Beginners do best with 60-120 second rests, long enough to recover on moderate loads without wasting time on 5-minute sits for relatively light weight. As loads climb toward a true 1RM, gradually extend rest toward the 3-5 minute strength range. The 60-120s novice figure comes from Grgic et al. 2018 (via Healthline)."
+      }
+    },
+    "faq_g_how_long_is_a_hiit_workout_01": {
+      "en": {
+        "q": "Is a 10-minute HIIT workout effective?",
+        "a": "Yes, if those 10 minutes include real maximal effort. The Tabata protocol is just 4 minutes of pure work (plus warm-up) and still measurably improves VO2max. For most people, a 10–15 minute session including warm-up is the practical floor — below that there is not enough high-intensity stimulus to mean much."
+      }
+    },
+    "faq_g_how_long_is_a_hiit_workout_02": {
+      "en": {
+        "q": "Can I do HIIT every day?",
+        "a": "No, and trying to defeats the purpose. ACE and NASM both cap true HIIT at 2–3 sessions per week with 48–72 hours of recovery between. Daily 'HIIT' forces you to hold back, which drops the intensity below the threshold that makes HIIT work. Fill the other days with easy aerobic or mobility work instead."
+      }
+    },
+    "faq_g_how_long_is_a_hiit_workout_03": {
+      "en": {
+        "q": "Is 20 minutes of HIIT enough to lose weight?",
+        "a": "It can be, as part of a weekly plan. HIIT burns fewer in-session calories than longer steady-state cardio, but it raises energy expenditure for hours afterward (EPOC) and helps preserve lean mass. Harvard's evidence summary finds HIIT delivers comparable fat-loss and metabolic results to longer moderate exercise in roughly 40% less time — so 20 minutes, 2–3 times per week, is a legitimate dose."
+      }
+    },
+    "faq_g_how_long_is_a_hiit_workout_04": {
+      "en": {
+        "q": "Why do I feel wrecked for hours after a short HIIT session?",
+        "a": "That is expected. Short, intense intervals trigger excess post-exercise oxygen consumption (EPOC), central nervous system fatigue, and a prolonged elevated heart rate. If you feel flattened for the rest of the day after every session, you are either going too hard, too often, or under-recovering — cut back to two sessions a week and lengthen the rest ratios."
+      }
+    },
+    "faq_g_yoga_session_timer_01": {
+      "en": {
+        "q": "How many minutes of yoga should a beginner do?",
+        "a": "Start with 20 minutes, three to four times per week. Hold poses at the short end of the 15-30 second range, and prioritize the warm-up and cool-down blocks over adding more poses."
+      }
+    },
+    "faq_g_yoga_session_timer_02": {
+      "en": {
+        "q": "How long should I hold a yoga pose to build flexibility?",
+        "a": "ACSM recommends 10-30 seconds for most adults and 30-60 seconds for older adults, repeated 2-4 times per muscle group. For deep connective-tissue work, yin-style holds of 3-5 minutes are appropriate."
+      }
+    },
+    "faq_g_yoga_session_timer_03": {
+      "en": {
+        "q": "Is a 60-minute yoga session enough?",
+        "a": "Yes. Harvard's Nutrition Source reports that studies showing benefit used at least one 60-minute session per week, with 2-3 sessions weekly producing greater results. A 60-minute session is the standard reference dose for both physical and mental-health outcomes."
+      }
+    },
+    "faq_g_yoga_session_timer_04": {
+      "en": {
+        "q": "Should I use a timer for yoga or just count breaths?",
+        "a": "Both. Counting breaths works well inside a flow, but a timer is more reliable for restorative holds and for keeping a session on schedule. Set a 20-minute or 60-minute overall timer and use interval alerts for individual pose holds."
+      }
+    },
+    "faq_g_how_long_to_hold_a_plank_01": {
+      "en": {
+        "q": "Is a 2-minute plank good?",
+        "a": "Yes. Normative plank-test tables place a clean two-minute hold at the 'above average' to 'very good' level for recreational athletes, and spine researchers cite it as a reasonable goal. Treat it as a weekly test, not a daily target."
+      }
+    },
+    "faq_g_how_long_to_hold_a_plank_02": {
+      "en": {
+        "q": "How many plank sets should I do per day?",
+        "a": "Two to three sets, three to four days per week, is the ACE Fitness baseline. Harvard Health similarly recommends 2-3 sets of shorter holds rather than one long hold."
+      }
+    },
+    "faq_g_how_long_to_hold_a_plank_03": {
+      "en": {
+        "q": "How long should I rest between plank sets?",
+        "a": "Rest 20-30 seconds between plank sets for core endurance, per ACE Fitness circuit protocols. For a maximum single-hold test, take full recovery of 1-2 minutes before a second attempt."
+      }
+    },
+    "faq_g_how_long_to_hold_a_plank_04": {
+      "en": {
+        "q": "Is holding a plank for 5 minutes better for you?",
+        "a": "No. Beyond about 60-120 seconds returns diminish and injury risk rises as stabilisers fatigue. Add difficulty (variations, load) rather than duration once you can hold a clean 60 seconds."
+      }
+    },
+    "faq_g_stretching_timer_guide_01": {
+      "en": {
+        "q": "Is 30 seconds really long enough, or do I need to hold stretches longer?",
+        "a": "For general flexibility, yes — a 30-second hold repeated 2 to 4 times per muscle (60 to 120 seconds total) is the evidence-based standard, consistent with the Mayo Clinic's 30-second rule and ACSM's ~60-second-per-muscle target. Hold closer to 60 seconds for tight or problem areas. Only dedicated flexibility programs need the 60-to-120-second range, and chronic stiffness reduction requires 4+ minutes per muscle."
+      }
+    },
+    "faq_g_stretching_timer_guide_02": {
+      "en": {
+        "q": "Should I stretch before or after my workout?",
+        "a": "After, or as a standalone session. Warm up with 5 to 10 minutes of light activity first, then do your long static holds after training when muscles are warm. Avoid prolonged static stretches (over 60 seconds per muscle) right before maximal or explosive lifts, since the Delphi consensus shows they can acutely reduce force output — use dynamic movements to prep instead."
+      }
+    },
+    "faq_g_stretching_timer_guide_03": {
+      "en": {
+        "q": "How many days a week should I stretch to see results?",
+        "a": "At least two to three times a week to maintain flexibility, according to the Mayo Clinic and ACSM. To actually increase range of motion, the Delphi expert consensus calls for 2 to 3 sets daily of 30-to-120-second holds per muscle. Maintenance and gain are different dosages — match the frequency to your goal."
+      }
+    },
+    "faq_g_stretching_timer_guide_04": {
+      "en": {
+        "q": "Should I bounce at the end of a stretch to go deeper?",
+        "a": "No. The Mayo Clinic warns that bouncing (ballistic stretching) can injure the muscle and contribute to tightness by triggering the stretch reflex, which makes the muscle contract against the stretch. Hold each stretch smoothly and breathe normally. For a deeper range, use a longer static hold or the PNF contract-relax technique instead."
+      }
+    },
+    "faq_g_cold_stretching_timer_01": {
+      "en": {
+        "q": "Is cold stretching ever safe?",
+        "a": "Only as a very gentle, low-force mobility check, and even then warming up first is safer. Harvard Health notes expert opinion has moved away from static stretching before activity because stretching a cold, tight muscle can cause injury; 5-10 minutes of easy cardio before stretching removes most of the risk."
+      }
+    },
+    "faq_g_cold_stretching_timer_02": {
+      "en": {
+        "q": "How long should I hold a stretch if I'm over 65?",
+        "a": "Target 30-60 seconds per hold (a 60-second timer works well), for 2-4 repetitions. Older adults need longer holds than the standard 15-30 seconds to gain the same range of motion, and 60-second holds have produced larger flexibility improvements in older adults (Feland et al, via NIH/PMC; American Heart Association, 2024, citing ACSM's 2021 guidelines)."
+      }
+    },
+    "faq_g_cold_stretching_timer_03": {
+      "en": {
+        "q": "Should I bounce at the end of a stretch to go deeper?",
+        "a": "No. Bouncing (ballistic stretching) inside a static hold can injure the muscle and increase tightness. Move in smoothly, hold still, breathe normally, and come out smoothly, per Mayo Clinic."
+      }
+    },
+    "faq_g_cold_stretching_timer_04": {
+      "en": {
+        "q": "Should I static stretch before lifting or sprinting?",
+        "a": "No. Static holds immediately before explosive or heavy work reduce force and power output and offer little injury-prevention benefit for healthy muscle. Use a dynamic warm-up instead and place your 15-30 second static holds after the session."
+      }
+    },
+    "faq_g_meditation_timer_for_kids_01": {
+      "en": {
+        "q": "At what age should a child start meditating?",
+        "a": "The AAP says children can benefit at any age, but the form must match development. A preschooler's practice may be one minute of belly breathing or a slow bedtime story; formal seated breath-focus is realistic around age 6-7."
+      }
+    },
+    "faq_g_meditation_timer_for_kids_02": {
+      "en": {
+        "q": "How many minutes should a 6-year-old meditate?",
+        "a": "Aim for 3-10 minutes twice a day per the AAP, starting at the low end. A common pattern is a five-minute session before school and a shorter one at bedtime; if they fidget past three minutes, hold at three until it feels easy."
+      }
+    },
+    "faq_g_meditation_timer_for_kids_03": {
+      "en": {
+        "q": "Can meditation help a child with ADHD?",
+        "a": "Maybe, as a supplement. NCCIH states the ADHD evidence is mixed and low-quality, so meditation should not replace established treatment. Treat small school-program results as promising, not proven, and discuss with the child's clinician."
+      }
+    },
+    "faq_g_meditation_timer_for_kids_04": {
+      "en": {
+        "q": "Is meditation safe for children?",
+        "a": "Generally yes — NCCIH calls the practice low-risk and the AAP's clinical report treats it as safe enough to discuss with a pediatrician. The main caution is forcing an upset child; if breath-focus causes panic or irritability, switch to movement-based practice or stop. The available adverse-effect data is mostly from adults, so child-specific safety evidence is thin."
+      }
+    },
+    "faq_g_walking_meditation_timer_01": {
+      "en": {
+        "q": "Is walking meditation as effective as seated meditation?",
+        "a": "For acute mood and anxiety effects, the head-to-head evidence puts them roughly on par. The right answer is the one you'll actually do — people who get restless on a cushion tend to stick with walking, and consistency matters more than modality."
+      }
+    },
+    "faq_g_walking_meditation_timer_02": {
+      "en": {
+        "q": "How fast should I walk?",
+        "a": "Slowly enough to feel the parts of each step — roughly half your normal pace. MBSR's version is deliberately slow, but the rule is 'natural, not exaggerated.' If you can't distinguish the lifting, placing, and weight-shift phases, you're going too fast."
+      }
+    },
+    "faq_g_walking_meditation_timer_03": {
+      "en": {
+        "q": "Can I do walking meditation on a treadmill?",
+        "a": "Yes, though you lose the turns and the changing ground. Keep the speed low enough that you can track foot contact, fix your gaze rather than watching a screen, and treat each minute as a discrete unit rather than a distance to finish."
+      }
+    },
+    "faq_g_walking_meditation_timer_04": {
+      "en": {
+        "q": "What's the minimum dose that does anything?",
+        "a": "A single 10-minute bout of meditation measurably improves mood — a 10-minute brisk walk in the same trial reduced fatigue but not overall mood. For effects on anxiety or depressive symptoms, the RCTs used 20-30 minutes, three times a week, for 8-12 weeks. Below that dose, expect subtle effects, not clinical ones. Set a 10-minute timer and start there."
+      }
+    },
+    "faq_g_body_scan_meditation_timer_01": {
+      "en": {
+        "q": "Is 10 minutes of body scan long enough?",
+        "a": "Yes, for a beginner. The Greater Good Science Center protocol starts at 5-10 minutes, three to six days per week, and a 2023 randomized trial found roughly 10-minute daily sessions produced similar well-being gains to 30-minute sessions over two weeks. Longer sessions help over months, but 10 minutes is a legitimate practice, not a warm-up."
+      }
+    },
+    "faq_g_body_scan_meditation_timer_02": {
+      "en": {
+        "q": "Should I do the body scan lying down or sitting?",
+        "a": "Either works. Lying down makes deep relaxation and sleep onset easier but raises the odds of falling asleep. Sitting upright keeps you alert and is the better choice if your goal is attention training rather than rest. The UCLA MARC script is written for a seated posture."
+      }
+    },
+    "faq_g_body_scan_meditation_timer_03": {
+      "en": {
+        "q": "How many times per week should I practice?",
+        "a": "Three to six days per week is the range cited by both UC Berkeley's Greater Good Science Center and Mindful.org. Consistency tends to beat duration for building the habit: the cited protocols all emphasize regular weekly sessions over occasional long ones. Daily is fine if you want it; it is not required."
+      }
+    },
+    "faq_g_body_scan_meditation_timer_04": {
+      "en": {
+        "q": "Is the 45-minute MBSR body scan better than a short one?",
+        "a": "Not necessarily for general use. The 45-minute version is the standard homework length in the 8-week MBSR clinical program, and longer practice correlates with greater benefit over time. But the 2022 meta-analysis found the isolated body scan has only a small effect overall, and a 2023 trial found no short-term advantage for 30- over 10-minute sessions. Treat 45 minutes as an option for dedicated practice, not a minimum bar."
+      }
+    },
+    "faq_g_morning_meditation_timer_01": {
+      "en": {
+        "q": "Is morning really the best time to meditate?",
+        "a": "Only because it is easy to anchor to waking up. No high-quality study shows dawn meditation outperforming afternoon or evening meditation. The best time is the one you will repeat every day. If that is morning, use it; if not, pick another consistent slot."
+      }
+    },
+    "faq_g_morning_meditation_timer_02": {
+      "en": {
+        "q": "Is 5 minutes of morning meditation enough?",
+        "a": "Enough to build a habit, yes; enough to match the doses used in most studies, no. Five minutes daily is a fine first two weeks. Research on attention and mood used closer to 12-13 minutes daily for eight weeks (Basso et al., 2019). Work up to that range rather than staying at five forever."
+      }
+    },
+    "faq_g_morning_meditation_timer_03": {
+      "en": {
+        "q": "Should I use a guided meditation or meditate in silence?",
+        "a": "Guided audio helps beginners learn the technique and stay oriented; the Basso study used a guided track. Once you know the method, silence with a timer works fine and removes the dependency on a device. Try both."
+      }
+    },
+    "faq_g_morning_meditation_timer_04": {
+      "en": {
+        "q": "Can morning meditation replace medication for anxiety?",
+        "a": "No. NCCIH notes mindfulness can be as effective as some evidence-based therapies for anxiety symptoms, but explicitly cautions that results have 'been interpreted too optimistically' and that meditation is a complement to, not a substitute for, professional treatment. Talk to your clinician before changing any treatment plan."
+      }
+    },
+    "faq_g_evening_meditation_timer_01": {
+      "en": {
+        "q": "How long should an evening meditation be?",
+        "a": "Start at 5–10 minutes and work toward 15–20 minutes over a few weeks. The research-tested daily dose for measurable benefits sits between roughly 10 and 20 minutes: 10 minutes daily for a month improved mood and sleep motivation in a 1,247-person study, and 13 minutes daily for eight weeks improved attention and anxiety in non-meditators. Trials in the sleep literature prescribe 15–60 minutes of home practice, but more is not clearly better."
+      }
+    },
+    "faq_g_evening_meditation_timer_02": {
+      "en": {
+        "q": "Is it OK to meditate right before bed?",
+        "a": "Yes, but sit upright for the formal practice and finish about 30–60 minutes before your target sleep time, so the calming effect is established before you lie down. The relaxation response can be done seated and then continued as you settle into bed. Avoid doing it in bed from the start if it makes you associate the bed with effort rather than sleep."
+      }
+    },
+    "faq_g_evening_meditation_timer_03": {
+      "en": {
+        "q": "What if I fall asleep while meditating in the evening?",
+        "a": "That is common and usually means you are short on sleep. Sit upright, keep your eyes slightly open, and move the session earlier in the evening. If you still fall asleep quickly, prioritize your overall sleep debt — a meditation practice built on exhaustion will not produce the de-arousal benefits you are after."
+      }
+    },
+    "faq_g_evening_meditation_timer_04": {
+      "en": {
+        "q": "How many minutes a day of meditation is enough?",
+        "a": "Roughly 10 minutes a day, consistently, is the evidence-based floor for a meaningful effect. A meta-analysis found no reliable dose-response — meaning longer sessions do not automatically produce better sleep — so the enough dose is the one you repeat daily. Most settled practitioners land in the 10–20 minute range per session."
+      }
+    },
+    "faq_g_sleep_meditation_timer_01": {
+      "en": {
+        "q": "Is 5 minutes of sleep meditation enough to help?",
+        "a": "Five minutes is a fine way to build the habit, but most clinical effects appear at 15 to 20 minutes per session practiced most nights. Use five-minute sessions for the first week if that is all you can sustain, then lengthen the timer as it becomes routine."
+      }
+    },
+    "faq_g_sleep_meditation_timer_02": {
+      "en": {
+        "q": "What is the best time of night to do a sleep meditation?",
+        "a": "About 20 to 45 minutes before your target bedtime, after you have dimmed screens and gotten into bed. Doing it at the same time each night helps, because the practice becomes a cue that tells your nervous system it is time to power down."
+      }
+    },
+    "faq_g_sleep_meditation_timer_03": {
+      "en": {
+        "q": "Should I use a guided audio or meditate in silence?",
+        "a": "Either works. Guided audio is easier for beginners and reduces the chance you will ruminate; the UCLA Mindful 13-minute Body Scan for Sleep is a reliable free option. As you gain experience, a silent session with a timer lets you go at your own pace and removes the voice as a possible distraction."
+      }
+    },
+    "faq_g_sleep_meditation_timer_04": {
+      "en": {
+        "q": "Can sleep meditation replace melatonin or sleeping pills?",
+        "a": "Not on its own for diagnosed insomnia. The American Academy of Sleep Medicine does not recommend mindfulness as a standalone insomnia treatment, and CBT-I remains the first-line behavioral option. Mindfulness is a reasonable complement to, not a replacement for, evidence-based care, so discuss any change in medication with your doctor."
+      }
+    },
+    "faq_g_loving_kindness_timer_01": {
+      "en": {
+        "q": "How long should a loving-kindness meditation be?",
+        "a": "Begin with 5-10 minutes if you are new, and work up to a standard 15-20 minute session covering the full sequence of recipients. Long-term practitioners often sit 20-30 minutes. In the Fredrickson research trial, the first guided meditation was 15 minutes and participants practiced at home at least five days per week. A 15-minute session is a sensible default for most people."
+      }
+    },
+    "faq_g_loving_kindness_timer_02": {
+      "en": {
+        "q": "What are the exact phrases of metta meditation?",
+        "a": "The most common set, as taught by Sharon Salzberg, is: May I be safe. May I be happy. May I be healthy. May I live my life with ease. Change 'I' to 'you' for another person and 'all beings' for the final stage. The wording can be adapted — what matters is that the phrases carry genuine meaning for you, not that you use a fixed formula."
+      }
+    },
+    "faq_g_loving_kindness_timer_03": {
+      "en": {
+        "q": "How often should I practice loving-kindness meditation?",
+        "a": "The research protocol that produced measurable benefits used at least five days per week of home practice, on top of weekly group sessions. Daily is the target. Consistency matters more than length: 10 minutes daily for a month will outperform a single 60-minute sit per week."
+      }
+    },
+    "faq_g_loving_kindness_timer_04": {
+      "en": {
+        "q": "Is loving-kindness meditation backed by science?",
+        "a": "Partially. The best-known trial (Fredrickson et al., 2008) found increases in positive emotions, personal resources, and life satisfaction over seven weeks, and a review in PubMed Central reports reduced pain, anger, and psychological distress in clinical samples. The evidence is promising but mostly from small, short, waitlist-controlled studies. It is a low-risk practice worth trying, not a medically proven treatment."
+      }
+    },
+    "faq_g_binaural_beats_timer_01": {
+      "en": {
+        "q": "Do binaural beats work without headphones?",
+        "a": "No. The effect requires a different frequency in each ear. With speakers or a single earbud your brain never receives the two-tone mismatch, so the binaural beat is not generated. Standard stereo headphones are the minimum requirement."
+      }
+    },
+    "faq_g_binaural_beats_timer_02": {
+      "en": {
+        "q": "How long until I notice an effect?",
+        "a": "Single-session studies used 8 to 30 minutes of continuous listening and sometimes measured effects within that window, but the strongest results — for sleep and verbal memory — came from daily practice over 8 to 15 days. Expect a few sessions, not a few seconds."
+      }
+    },
+    "faq_g_binaural_beats_timer_03": {
+      "en": {
+        "q": "Are binaural beats safe?",
+        "a": "For most people, yes. The main reported downside is irritability from listening to bare tones, which masking noise fixes. The real risk is hearing damage from high volume, so keep levels well below 85 dBA. Anyone with epilepsy or a seizure history should consult a clinician first, as rhythmic audio stimulation is an active research area in that population."
+      }
+    },
+    "faq_g_binaural_beats_timer_04": {
+      "en": {
+        "q": "Which frequency is best for focus?",
+        "a": "Beta (around 15 Hz) has the most consistent evidence for concentration and working-memory accuracy, and it reduced false alarms and fatigue in the Lane et al. vigilance study. Gamma at 40 Hz is a secondary option some use for memory tasks, though its evidence is thinner. Avoid theta if your goal is alertness — it tended to increase fatigue in the same research."
+      }
+    },
+    "faq_g_ultradian_rhythm_timer_01": {
+      "en": {
+        "q": "Is the 90-minute focus cycle scientifically proven?",
+        "a": "Partly. The 90-minute ultradian rhythm during sleep is well established. The idea that the same strict 90-minute cycle governs daytime focus is a popular extension of Kleitman's basic rest-activity cycle, and it is genuinely debated — a 1995 study found no clear 90-minute periodicity in cognitive performance (Neubauer & Freudenthaler, PubMed). Treat the 90-minute block as a practical default that matches how expert performers actually work, not as a hardwired brain clock."
+      }
+    },
+    "faq_g_ultradian_rhythm_timer_02": {
+      "en": {
+        "q": "How many 90-minute blocks should I do per day?",
+        "a": "For most knowledge workers, two to four blocks (roughly 3–5 hours of true focus) is a full day. Ericsson's deliberate-practice data shows elite performers cap total daily focused work at about 4–5 hours, built from multiple separate sessions (Ericsson, 2019, PMC). Going beyond that yields sharply diminishing returns."
+      }
+    },
+    "faq_g_ultradian_rhythm_timer_03": {
+      "en": {
+        "q": "How long should the break between blocks be?",
+        "a": "Plan for 15–20 minutes of genuine recovery — standing up, moving, looking away from screens. The 2022 meta-analysis on micro-breaks found consistent reductions in fatigue and increases in vigor (both small effects), with a meta-regression showing longer breaks (toward the ~10-minute micro-break ceiling and beyond) outperforming very short ones (Albulescu et al., 2022, PMC). A 20-minute break timer is a good anchor."
+      }
+    },
+    "faq_g_ultradian_rhythm_timer_04": {
+      "en": {
+        "q": "What if I can't focus for 90 minutes yet?",
+        "a": "Start shorter. Begin with 25–45 minute blocks and add 5–10 minutes per week as your focus fitness improves. The 90-minute target is a capacity to train toward, not a requirement to meet on day one — try a 5-minute reset or a 45-minute block to build the habit first."
+      }
+    },
+    "faq_g_how_long_does_meditation_take_01": {
+      "en": {
+        "q": "Can meditation work in a few days?",
+        "a": "Within minutes of a single session you can measurably raise your state mindfulness — that is a well-documented state effect. But the lasting, trait-level changes (lower baseline anxiety, better focus between sits) require daily practice over weeks, not days, and a single sit has not been shown to lower anxiety on its own. Days give you a feeling; weeks give you a result."
+      }
+    },
+    "faq_g_how_long_does_meditation_take_02": {
+      "en": {
+        "q": "Is 10 minutes a day enough for meditation to work?",
+        "a": "Yes, for beginners. A randomized trial (Basso et al., 2019) found 13 minutes a day produced measurable improvements in mood, attention, and memory after 8 weeks. Ten minutes is a reasonable floor; twenty is a reasonable target once the habit is stable."
+      }
+    },
+    "faq_g_how_long_does_meditation_take_03": {
+      "en": {
+        "q": "What happens if I miss days?",
+        "a": "You lose momentum but not skill. Research has not pinned down a precise decay rate, and NCCIH notes that the few studies following people beyond 2 months found no reliable long-term effects — so the evidence base is thinnest exactly here. Treat it like exercise: missing a day is fine, and it is reasonable to assume dropping the habit for a month undoes most of the gains."
+      }
+    },
+    "faq_g_how_long_does_meditation_take_04": {
+      "en": {
+        "q": "How long until meditation changes the brain?",
+        "a": "Measurable structural changes — in the hippocampus and amygdala — appeared after 8 weeks in the Harvard/MGH study (Hölzel et al., 2011), with an average of about 27 minutes of daily practice as part of the full MBSR program. Lighter daily doses (10–20 minutes) are likely to produce subjective and functional gains before they produce structural ones."
+      }
+    },
+    "faq_g_breathwork_timer_01": {
+      "en": {
+        "q": "How long should a breathwork session be for a beginner?",
+        "a": "About 4 minutes, once a day. Box breathing at 4-count phases is the easiest entry point because the holds are short and equal. Add a minute or two each week as the holds become comfortable. A 4-minute timer is enough to complete three to four rounds and feel the parasympathetic shift."
+      }
+    },
+    "faq_g_breathwork_timer_02": {
+      "en": {
+        "q": "What is the best breathing pace for heart rate variability?",
+        "a": "Roughly 5.5 breaths per minute with an equal inhale and exhale. This is the coherent (resonance) breathing pace, and research confirms it produces higher HRV than faster or unequal patterns. Individual resonance rates in studies have ranged from about 4.5 to 7 breaths per minute, so 5.5 is a good default to test first."
+      }
+    },
+    "faq_g_breathwork_timer_03": {
+      "en": {
+        "q": "How often should I do 4-7-8 breathing?",
+        "a": "Four cycles (about 76 seconds), twice a day, per Dr. Andrew Weil's original protocol. It is most useful as a wind-down before sleep or as an acute calm-down tool. A single 19-second cycle can be enough to interrupt a stress spike."
+      }
+    },
+    "faq_g_breathwork_timer_04": {
+      "en": {
+        "q": "Can I use a regular countdown timer instead of a breathwork app?",
+        "a": "Yes. A plain countdown timer works for all three techniques as long as you know the phase counts. Box breathing uses 4-4-4-4, 4-7-8 uses a 19-second cycle, and coherent breathing uses roughly an 11-second cycle (about 5.5 per minute). Apps help by adding visual pacing cues, but they are optional."
+      }
     }
   },
   "quickUseIdeas": {
