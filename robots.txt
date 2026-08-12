@@ -48,6 +48,11 @@ Allow: /auto
 Allow: /beauty
 Allow: /body
 Allow: /health
+Allow: /craft
+Allow: /gardening
+Allow: /household
+Allow: /parenting
+Allow: /science
 Allow: /chess-clock
 Allow: /egg-timer
 Allow: /interval-timer

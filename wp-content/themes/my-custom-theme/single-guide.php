@@ -50,6 +50,11 @@ $hubs = [
     'hub_beauty' => ['url' => '/beauty/', 'label' => 'Beauty Timers'],
     'hub_body' => ['url' => '/body/', 'label' => 'Body & Frequency'],
     'hub_health' => ['url' => '/health/', 'label' => 'Healing Timers'],
+    'hub_craft' => ['url' => '/craft/', 'label' => 'Craft & Fermentation'],
+    'hub_gardening' => ['url' => '/gardening/', 'label' => 'Gardening'],
+    'hub_household' => ['url' => '/household/', 'label' => 'Household Timers'],
+    'hub_parenting' => ['url' => '/parenting/', 'label' => 'Parenting & Sleep'],
+    'hub_science' => ['url' => '/science/', 'label' => 'Space & Science'],
     'hub_guides' => ['url' => '/guides/', 'label' => 'All Guides'],
 ];
 $hub = $hubs[$primary_hub_id] ?? $hubs['hub_minutes'];

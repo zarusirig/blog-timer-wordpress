@@ -7479,7 +7479,7 @@
       "slug": "how-long-does-fermentation-take",
       "title": "How Long Does Fermentation Take? Times by Food and Drink",
       "cluster": "craft",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_craft",
       "excerpt": "Fermentation takes anywhere from 4 hours (yogurt) to 5-6 weeks (sauerkraut or lager). See the exact timelines for beer, bread, kombucha, kraut, and more.",
       "timers": [],
       "relatedGuides": [
@@ -7552,7 +7552,7 @@
       "slug": "how-long-does-it-take-to-get-to-the-moon",
       "title": "How Long Does It Take to Get to the Moon? (Crewed & Probes)",
       "cluster": "science",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_science",
       "excerpt": "A crewed Moon trip takes about 3 days on the fast Apollo-style path, while the fastest probe crossed lunar orbit in 8.5 hours. Here's what changes the time.",
       "timers": [],
       "relatedGuides": [
@@ -7606,7 +7606,7 @@
       "slug": "how-long-does-it-take-to-get-to-mars",
       "title": "How Long Does It Take to Get to Mars? Trip Time Facts",
       "cluster": "science",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_science",
       "excerpt": "A trip to Mars takes about 7-10 months (200-300 days) with today's rockets. Here is how trajectory, propulsion, and the 26-month launch window change that time.",
       "timers": [],
       "relatedGuides": [
@@ -8359,7 +8359,7 @@
       "slug": "how-often-should-you-wash-sheets",
       "title": "How Often Should You Wash Your Sheets? The Real Rule",
       "cluster": "household",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_household",
       "excerpt": "Wash sheets every 1–2 weeks—weekly if you sweat, have pets, or allergies. Here's what really builds up (dust mites, dead skin, sweat) plus a full table.",
       "timers": [],
       "relatedGuides": [
@@ -8416,7 +8416,7 @@
       "slug": "6-month-old-nap-schedule",
       "title": "6 Month Old Nap Schedule: Sample Day, Wake Windows & Tips",
       "cluster": "parenting",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_parenting",
       "excerpt": "A typical 6 month old nap schedule has 2-3 naps (about 3-3.5h day sleep), 11-12h at night, and 2-3h wake windows. See a sample day, sleep cues, and safe-sleep tips.",
       "timers": [],
       "relatedGuides": [
@@ -8466,7 +8466,7 @@
       "slug": "how-long-do-grass-seeds-take-to-grow",
       "title": "How Long Do Grass Seeds Take to Grow? Full Timeline",
       "cluster": "gardening",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_gardening",
       "author": "Suraj Giri",
       "datePublished": "2026-08-12",
       "dateModified": "2026-08-12",

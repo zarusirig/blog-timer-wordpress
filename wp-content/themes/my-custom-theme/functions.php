@@ -1113,6 +1113,11 @@ function blogtimer_indexable_page_slugs()
         'beauty',
         'body',
         'health',
+        'craft',
+        'gardening',
+        'household',
+        'parenting',
+        'science',
     ];
 }
 
@@ -1190,6 +1195,11 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "Allow: /beauty\n";
     $robots .= "Allow: /body\n";
     $robots .= "Allow: /health\n";
+    $robots .= "Allow: /craft\n";
+    $robots .= "Allow: /gardening\n";
+    $robots .= "Allow: /household\n";
+    $robots .= "Allow: /parenting\n";
+    $robots .= "Allow: /science\n";
     $robots .= "Allow: /chess-clock\n";
     $robots .= "Allow: /egg-timer\n";
     $robots .= "Allow: /interval-timer\n";
