@@ -43,6 +43,11 @@ Allow: /second-timers
 Allow: /pomodoro
 Allow: /use-cases
 Allow: /animals
+Allow: /travel
+Allow: /auto
+Allow: /beauty
+Allow: /body
+Allow: /health
 Allow: /chess-clock
 Allow: /egg-timer
 Allow: /interval-timer

@@ -1108,6 +1108,11 @@ function blogtimer_indexable_page_slugs()
         'hour-timers',
         'site-index',
         'animals',
+        'travel',
+        'auto',
+        'beauty',
+        'body',
+        'health',
     ];
 }
 
@@ -1180,6 +1185,11 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "Allow: /pomodoro\n";
     $robots .= "Allow: /use-cases\n";
     $robots .= "Allow: /animals\n";
+    $robots .= "Allow: /travel\n";
+    $robots .= "Allow: /auto\n";
+    $robots .= "Allow: /beauty\n";
+    $robots .= "Allow: /body\n";
+    $robots .= "Allow: /health\n";
     $robots .= "Allow: /chess-clock\n";
     $robots .= "Allow: /egg-timer\n";
     $robots .= "Allow: /interval-timer\n";

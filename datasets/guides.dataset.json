@@ -7152,7 +7152,7 @@
       "slug": "how-long-does-a-car-battery-last",
       "title": "How Long Does a Car Battery Last? Avg Life & Warning Signs",
       "cluster": "auto",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_auto",
       "excerpt": "A car battery lasts 3 to 5 years on average. Heat, short trips, and electronics draw cut that short. Learn the warning signs and exactly when to replace yours.",
       "timers": [],
       "relatedGuides": [
@@ -7206,7 +7206,7 @@
       "slug": "how-long-does-an-oil-change-take",
       "title": "How Long Does an Oil Change Take? Shop, Dealer & DIY Times",
       "cluster": "auto",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_auto",
       "excerpt": "An oil change takes 15-45 minutes - about 15-30 min at a quick-lube, 30-60 min at a dealer, and 30-45 min DIY. See what slows it down and how to plan ahead.",
       "timers": [],
       "relatedGuides": [
@@ -7267,7 +7267,7 @@
       "slug": "how-long-does-a-spray-tan-last",
       "title": "How Long Does a Spray Tan Last? Days, Stages, and Tips",
       "cluster": "beauty",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_beauty",
       "excerpt": "A spray tan lasts 7-10 days on average (lighter ~5, darker ~10). Learn the DHA science, fade stages, and dermatologist-backed tips to extend your glow.",
       "timers": [],
       "relatedGuides": [
@@ -7317,7 +7317,7 @@
       "slug": "how-long-does-a-tan-last",
       "title": "How Long Does a Tan Last? Timeline, Tips & Self-Tan",
       "cluster": "beauty",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_beauty",
       "excerpt": "A natural sun tan lasts about 7-10 days as your skin sheds its top layer. Here's how long each tan type lasts, what speeds fading, and how to extend it.",
       "timers": [],
       "relatedGuides": [
@@ -7373,7 +7373,7 @@
       "slug": "how-long-do-belly-button-piercings-take-to-heal",
       "title": "How Long Do Belly Button Piercings Take to Heal? Timeline",
       "cluster": "beauty",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_beauty",
       "excerpt": "Belly button piercings take 6 to 12 months to heal on average, and can take up to 18 months. Here's the full timeline, factors, and infection signs to watch.",
       "timers": [],
       "relatedGuides": [
@@ -7423,7 +7423,7 @@
       "slug": "how-often-should-you-wash-your-hair",
       "title": "How Often Should You Wash Your Hair? A Type-by-Type Guide",
       "cluster": "beauty",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_beauty",
       "excerpt": "No single number works for everyone. Most people should wash their hair 1-7 times a week depending on hair type, scalp oil, age, and activity. Here is the breakdown.",
       "timers": [],
       "relatedGuides": [
@@ -7666,7 +7666,7 @@
       "slug": "best-time-to-visit-japan",
       "title": "Best Time to Visit Japan: Month-by-Month Guide (2026)",
       "cluster": "travel",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_travel",
       "excerpt": "The best time to visit Japan is late March to mid-April for cherry blossoms, or November for autumn foliage. Month-by-month weather, crowds & costs.",
       "timers": [],
       "relatedGuides": [
@@ -7727,7 +7727,7 @@
       "slug": "best-time-to-visit-iceland",
       "title": "Best Time to Visit Iceland: A Month-by-Month Guide",
       "cluster": "travel",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_travel",
       "excerpt": "The best time to visit Iceland is June–August for the midnight sun, or November–March for northern lights. Compare every month's weather, crowds & cost.",
       "timers": [],
       "relatedGuides": [
@@ -7788,7 +7788,7 @@
       "slug": "best-time-to-visit-hawaii",
       "title": "Best Time to Visit Hawaii: Month-by-Month Weather Guide",
       "cluster": "travel",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_travel",
       "excerpt": "The best time to visit Hawaii is mid-April to early June or September-October. Expect 78-85F warmth, calmer seas, smaller crowds, and lower prices in these shoulder months.",
       "timers": [],
       "relatedGuides": [
@@ -7843,7 +7843,7 @@
       "slug": "best-time-to-visit-ireland",
       "title": "Best Time to Visit Ireland: Weather, Costs & Crowds (2026)",
       "cluster": "travel",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_travel",
       "excerpt": "The best time to visit Ireland is late May to September. May, June and September are the sweet spot: mild weather, long daylight, smaller crowds and lower prices.",
       "timers": [],
       "relatedGuides": [
@@ -7899,7 +7899,7 @@
       "slug": "best-time-to-visit-costa-rica",
       "title": "Best Time to Visit Costa Rica: Month-by-Month Guide",
       "cluster": "travel",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_travel",
       "excerpt": "The best time to visit Costa Rica is mid-December to April (dry season) for sun, beaches, and wildlife. May-November is cheaper, greener, and less crowded.",
       "author": "Suraj Giri",
       "datePublished": "2026-08-12",
@@ -7961,7 +7961,7 @@
       "slug": "best-time-to-visit-alaska",
       "title": "Best Time to Visit Alaska: Month-by-Month Weather Guide",
       "cluster": "travel",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_travel",
       "excerpt": "The best time to visit Alaska is mid-June to August for long days, wildlife and cruises; September brings fall color and aurora. Full month-by-month guide.",
       "timers": [],
       "relatedGuides": [
@@ -8024,7 +8024,7 @@
       "slug": "best-time-to-visit-puerto-rico",
       "title": "Best Time to Visit Puerto Rico: Month-by-Month Guide",
       "cluster": "travel",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_travel",
       "excerpt": "The best time to visit Puerto Rico is mid-December to April for dry, sunny warmth. See our month-by-month guide to weather, crowds, costs, and hurricane season.",
       "timers": [],
       "relatedGuides": [
@@ -8075,7 +8075,7 @@
       "slug": "best-time-to-visit-portugal",
       "title": "Best Time to Visit Portugal: A Month-by-Month Guide",
       "cluster": "travel",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_travel",
       "excerpt": "Best time to visit Portugal: mid-May–June and Sept–Oct bring warm, sunny days, smaller crowds, and lower prices. Full month-by-month weather and planning guide.",
       "timers": [],
       "relatedGuides": [
@@ -8137,7 +8137,7 @@
       "slug": "best-time-to-visit-mexico",
       "title": "Best Time to Visit Mexico: Month-by-Month Weather Guide",
       "cluster": "travel",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_travel",
       "excerpt": "The best time to visit Mexico is December to April for dry, sunny weather. See month-by-month pros and cons, the cheapest months, and hurricane-season risk.",
       "author": "Suraj Giri",
       "datePublished": "2026-08-12",
@@ -8190,7 +8190,7 @@
       "slug": "best-time-to-book-flights",
       "title": "Best Time to Book Flights: When to Buy Cheap Tickets",
       "cluster": "travel",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_travel",
       "excerpt": "Best time to book flights: 1-3 months ahead for domestic, 2-6 for international. Airline data reveals the cheapest days to fly, book, and the windows to avoid.",
       "timers": [],
       "relatedGuides": [
@@ -8253,7 +8253,7 @@
       "slug": "how-often-should-you-rotate-your-tires",
       "title": "How Often Should You Rotate Your Tires? The Right Schedule",
       "cluster": "auto",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_auto",
       "excerpt": "Rotate your tires every 5,000–7,500 miles, or roughly every other oil change. Here's the full schedule by drive type (FWD/RWD/AWD) and when to adjust it.",
       "timers": [],
       "relatedGuides": [
@@ -8313,7 +8313,7 @@
       "slug": "how-long-do-brake-pads-last",
       "title": "How Long Do Brake Pads Last? Average Mileage & Signs",
       "cluster": "auto",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_auto",
       "excerpt": "Brake pads typically last 30,000–50,000 miles — up to 60,000–70,000 in ideal conditions — with ceramic longer and organic shorter. See the exact lifespan, the factors that change it, and the squeal warning signs.",
       "timers": [],
       "relatedGuides": [
@@ -8522,7 +8522,7 @@
       "slug": "how-many-times-a-day-should-you-pee",
       "title": "How Many Times a Day Should You Pee? The Normal Range",
       "cluster": "body",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_body",
       "excerpt": "Most people pee 6-8 times a day (4-10 is normal) and produce about 2 liters of urine. Here's what changes your frequency and when to see a doctor.",
       "timers": [],
       "relatedGuides": [
@@ -8570,7 +8570,7 @@
       "slug": "how-many-times-a-day-should-you-poop",
       "title": "How Many Times a Day Should You Poop? Normal Range",
       "cluster": "body",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_body",
       "excerpt": "Most people poop anywhere from 3 times a day to 3 times a week. Learn what's normal, what changes your frequency, and when to see a doctor about bowel movements.",
       "timers": [],
       "relatedGuides": [
@@ -8624,7 +8624,7 @@
       "slug": "how-long-does-a-sprained-ankle-take-to-heal",
       "title": "How Long Does a Sprained Ankle Take to Heal? Full Timeline",
       "cluster": "health",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_health",
       "excerpt": "A mild sprained ankle heals in 1-2 weeks, a moderate tear in 3-6 weeks, and a complete tear can take several months. See the grade-by-grade recovery timeline.",
       "timers": [],
       "relatedGuides": [
@@ -8672,7 +8672,7 @@
       "slug": "how-long-do-broken-ribs-take-to-heal",
       "title": "How Long Do Broken Ribs Take to Heal? Recovery Timeline",
       "cluster": "health",
-      "primaryHub": "hub_guides",
+      "primaryHub": "hub_health",
       "excerpt": "Most broken ribs heal on their own in about 6 weeks, but pain can linger for months. Here is the full recovery timeline, pain-relief tips, and red-flag warning signs.",
       "timers": [],
       "relatedGuides": [
