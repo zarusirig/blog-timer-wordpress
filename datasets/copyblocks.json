@@ -2911,6 +2911,366 @@
         "q": "Do bees live longer in the winter?",
         "a": "Winter worker bees live far longer than summer workers — about four to six months (150 to 200 days) compared with roughly six weeks. Born in late summer and fall, these so-called fat bees store extra proteins and fat and stay inside the warm winter cluster rather than foraging, which avoids the wear and predation that kill summer bees. They survive to raise the colony's first spring bees, then die."
       }
+    },
+    "faq_g_how_long_does_resin_take_to_cure_01": {
+      "en": {
+        "q": "How long does resin take to cure before I can demold it?",
+        "a": "Most coating and tabletop epoxies are hard enough to demold at about 24 hours, when the piece reaches roughly 95% solidity and is hard to the touch. However, 24 hours is a demold/handle stage, not full cure; wait the full 72 hours before sanding, drilling, or putting the piece under load. Fast hardeners may allow demold sooner, slow systems later."
+      }
+    },
+    "faq_g_how_long_does_resin_take_to_cure_02": {
+      "en": {
+        "q": "Why is my resin still tacky after 24 hours?",
+        "a": "A sticky surface almost always comes from one of four causes: off-ratio measuring (TotalBoat requires a strict 2:1 resin-to-hardener ratio by volume), incomplete mixing, cold shop temperatures below the hardener's minimum (55 degF for TotalBoat, 60 degF for West System 206), or a pour that is too thin to generate enough exothermic heat. Fix the cause and recoat or pour a fresh layer over the tacky surface."
+      }
+    },
+    "faq_g_how_long_does_resin_take_to_cure_03": {
+      "en": {
+        "q": "How can I make resin cure faster?",
+        "a": "Warm the resin and workspace slightly (a warm water bath before mixing helps), switch to a fast hardener, and keep pours within the recommended depth so heat can dissipate. ArtResin notes that warmth reduces working time by about 10-15 minutes (and speeds the overall cure, though it does not quantify that reduction). A fast hardener like TotalBoat's reaches tack-free in about 2 hours and full cure in roughly 2 days at 77 degF."
+      }
+    },
+    "faq_g_how_long_does_resin_take_to_cure_04": {
+      "en": {
+        "q": "Can I pour a second coat of resin before the first fully cures?",
+        "a": "Yes, and it is usually preferred. Apply the second coat while the first is still slightly tacky (typically within the first 24 hours) so the two layers chemically bond with no sanding. If the first coat has passed full cure (around 72 hours), sand it lightly and wipe with solvent first to give the new layer mechanical grip before pouring."
+      }
+    },
+    "faq_g_how_long_does_soap_take_to_cure_01": {
+      "en": {
+        "q": "Can you use cold process soap before 4 weeks?",
+        "a": "Technically yes, but it is not recommended. Saponification finishes in 24-48 hours, so the soap is safe to handle after a couple of days, but uncured soap is soft, high in pH, and produces thin lather. Bramble Berry's Soap Queen blog notes cold process can be used before the full cure but will last longer and perform better with the full 4-6 weeks. Using it early will not harm you, but the bar will dissolve quickly and feel harsh on skin."
+      }
+    },
+    "faq_g_how_long_does_soap_take_to_cure_02": {
+      "en": {
+        "q": "How long does hot process soap take to cure?",
+        "a": "Hot process soap can be used sooner than cold process because the heat finishes saponification during the cook. Bramble Berry's Soap Queen blog says hot process soap can be cut within a day and is ready to use right away. The Petalmade curing guide puts it at a 1-2 week minimum cure, with about 4 weeks optimal. Hot-process bars still benefit from curing since they lose water and harden just like cold process, so it is faster but not skip-the-cure."
+      }
+    },
+    "faq_g_how_long_does_soap_take_to_cure_03": {
+      "en": {
+        "q": "Does melt-and-pour soap need to cure?",
+        "a": "No. Melt-and-pour base is already fully saponified when you buy it, so it does not require any cure time. According to Bramble Berry's Soap Queen blog, melt-and-pour does not need to cure and hardens in several hours. You only need to wait for it to set firm before unmolding and using."
+      }
+    },
+    "faq_g_how_long_does_soap_take_to_cure_04": {
+      "en": {
+        "q": "Why does castile (olive oil) soap need longer to cure?",
+        "a": "Soap high in olive oil, especially 100% olive castile, cures more slowly because olive oil is mostly soft, slow-hardening fatty acids. Lovely Greens recommends at least 6 weeks for castile, and notes that 6 months to a year produces an even harder, milder bar. Castile keeps improving long after a standard bar is done, so patience pays off."
+      }
+    },
+    "faq_g_how_long_does_spray_paint_take_to_dry_01": {
+      "en": {
+        "q": "How long does spray paint take to dry to the touch?",
+        "a": "Most general-purpose acrylic spray paints are dry to the touch in about 20 minutes. Rust-Oleum Painter's Touch 2X and Krylon Fusion All-In-One both reach touch-dry in about 20 minutes (Krylon lists up to 25). Metallic specialty sprays take around 1 hour, and oil-based enamels like Rust-Oleum Stops Rust are only tack-free after 2-4 hours. Times assume 70°F and 50% relative humidity."
+      }
+    },
+    "faq_g_how_long_does_spray_paint_take_to_dry_02": {
+      "en": {
+        "q": "When can I apply a second coat of spray paint?",
+        "a": "Read the label, because the recoat window is product-specific. Rust-Oleum Painter's Touch 2X should be recoated within 1 hour or after 48 hours; Stops Rust enamel within 1 hour or after 48 hours; Specialty Metallic within 1 hour or after 24 hours. Recoating during the in-between period can wrinkle or lift the first coat as its solvent re-activates."
+      }
+    },
+    "faq_g_how_long_does_spray_paint_take_to_dry_03": {
+      "en": {
+        "q": "How long until spray paint is fully cured?",
+        "a": "Full dry takes about 24 hours, but maximum adhesion and chip resistance take longer. Rust-Oleum's plastic-bonding paints and primers state that on plastic, maximum adhesion and durability is achieved in 5-7 days, and Krylon advertises its Fusion All-In-One as fully chip resistant after 7 days. Cure is a chemical process, not just drying, so wait the full week before heavy handling, washing, or weather exposure."
+      }
+    },
+    "faq_g_how_long_does_spray_paint_take_to_dry_04": {
+      "en": {
+        "q": "Does humidity and temperature affect spray paint dry time?",
+        "a": "Yes, heavily. Rust-Oleum allows application between 50-90°F with humidity below 65% (Krylon recommends 55-75°F and below 60%). Cool temperatures and high humidity slow solvent evaporation, lengthen every dry stage, and can cause cloudiness or a soft film. Aim for 70°F and 50% relative humidity to match the can's printed times. Always spray in a well-ventilated area."
+      }
+    },
+    "faq_g_how_long_do_tomatoes_take_to_grow_01": {
+      "en": {
+        "q": "How long do tomatoes take to grow from seed?",
+        "a": "About 100-140 days from seed. Seeds germinate in 5-12 days at 75-85°F, seedlings grow indoors for 5-8 weeks, and then the plant needs roughly 50-90 days from transplant to first ripe fruit. Catalog \"days to maturity\" numbers count from transplanting, not from sowing, per Cornell and Clemson extension guidance."
+      }
+    },
+    "faq_g_how_long_do_tomatoes_take_to_grow_02": {
+      "en": {
+        "q": "How long from transplant to the first ripe tomato?",
+        "a": "Roughly 50-90 days from transplant. Clemson Cooperative Extension gives 52-90 days depending on cultivar; the University of Maryland lists 65-90 days. Cornell groups varieties as early (65 days or fewer), mid-season (65-80), and late-season (80+) from transplant."
+      }
+    },
+    "faq_g_how_long_do_tomatoes_take_to_grow_03": {
+      "en": {
+        "q": "Are determinate or indeterminate tomatoes faster?",
+        "a": "Determinate (bush) types are often among the faster ones, with the earliest cultivars ripening a concentrated crop in about 55-70 days from transplant. Indeterminate (vining) types range widely — some cherry types ripen in 57-60 days, while many run 70-90+ days — and they keep producing until frost. Clemson notes most early-ripening cultivars are determinate, while most heirlooms are indeterminate."
+      }
+    },
+    "faq_g_how_long_do_tomatoes_take_to_grow_04": {
+      "en": {
+        "q": "How can I make tomatoes ripen faster?",
+        "a": "Choose a short days-to-maturity cultivar (65 days or fewer), warm the soil with black plastic two to three weeks before planting, and stake and prune indeterminates, which Cornell says can hasten the first harvest by a week or more. Keep plants in full sun (8+ hours), water evenly, and avoid excess nitrogen, which delays ripening."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_grow_an_avocado_from_seed_01": {
+      "en": {
+        "q": "How long does an avocado seed take to sprout?",
+        "a": "Roots and a stem typically emerge 2-6 weeks after you suspend the pit in water, with the soil method giving slightly faster results. If nothing has happened by 6-8 weeks, the California Avocado Commission recommends starting over with a fresh one. The University of Nebraska Extension notes a root appears from the flat end and a shoot from the pointed end within a few weeks."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_grow_an_avocado_from_seed_02": {
+      "en": {
+        "q": "Will an avocado grown from seed produce fruit?",
+        "a": "It can, but not reliably. UC Riverside extension experts say a seed-grown tree takes 5-13 years before it is mature enough to set fruit, and because every seed is a cross-pollinated hybrid, the fruit will NOT match the parent Hass you ate - its quality, size and taste are unpredictable. UF/IFAS adds that a seed-grown tree also lacks the parent's pest and disease resistance."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_grow_an_avocado_from_seed_03": {
+      "en": {
+        "q": "How fast does a grafted avocado tree bear fruit?",
+        "a": "Much faster. Both UC Riverside and the California Avocado Commission say a nursery-bought grafted tree typically produces its first fruit 3-4 years after planting, because it is a cloned variety on proven rootstock rather than a genetic roll of the dice. If your goal is actually harvesting avocados, a grafted tree is the practical choice over a home-sprouted pit."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_grow_an_avocado_from_seed_04": {
+      "en": {
+        "q": "Can you get avocados from an indoor tree?",
+        "a": "Rarely. An indoor seed-grown tree is grown mainly for its foliage - it seldom gets enough light, pollination, or size to flower and set fruit, and UC Riverside notes that avocados grow best at 60-85F and set fruit best at about 65-75F, so low light and dry indoor heat stress the plant and cause leaf drop. Treat a windowsill avocado as a leafy houseplant; for actual fruit, plant a grafted tree outdoors in a frost-free climate."
+      }
+    },
+    "faq_g_how_long_do_potatoes_take_to_grow_01": {
+      "en": {
+        "q": "How long do potatoes take to grow from seed potatoes?",
+        "a": "Most home-garden potato cultivars mature 90 to 120 days after planting seed pieces, per Iowa State and Maryland Extension. Early varieties finish closer to 70 to 90 days, mid-season around 90 to 110, and late storage types need 110 to 130+ days. Sprouts first emerge 14 to 28 days after planting, depending on soil temperature (Cornell)."
+      }
+    },
+    "faq_g_how_long_do_potatoes_take_to_grow_02": {
+      "en": {
+        "q": "When can I harvest new potatoes?",
+        "a": "You can harvest small, tender new potatoes about 6 to 8 weeks (roughly 40 to 60 days) after planting, usually once the plants have flowered, according to the University of Maryland Extension. Tuber initiation begins around 55 to 70 days (IFAS), so gently dig around the hills and take just a few; new potatoes have thin skins and should be eaten within about 10 days, not stored."
+      }
+    },
+    "faq_g_how_long_do_potatoes_take_to_grow_03": {
+      "en": {
+        "q": "What temperature and conditions do potatoes need to grow on time?",
+        "a": "Potatoes are a cool-season crop that bulks best at 65 to 70°F. Seed pieces will not sprout until soil reaches about 40 to 45°F, and Maryland Extension warns that soil temperatures above 80°F inhibit tuber development. Give them full sun (6-plus hours), well-drained acidic soil (pH about 5.0 to 6.0), and a steady 1 inch of water per week during bulking."
+      }
+    },
+    "faq_g_how_long_do_potatoes_take_to_grow_04": {
+      "en": {
+        "q": "How do I know when potatoes are ready to dig?",
+        "a": "For storage potatoes, wait until the vines have fully died back, then leave tubers in the ground about two more weeks so skins toughen. Iowa State Extension suggests digging one or two test hills, if the skin rubs off easily the potatoes are immature and will not store, so wait several more days. Firm, set skins mean they are ready. For new potatoes, dig early right after flowering."
+      }
+    },
+    "faq_g_how_often_should_you_wash_towels_01": {
+      "en": {
+        "q": "Can I use my bath towel more than 3–4 times before washing?",
+        "a": "Only if it dries completely between uses and you are healthy. Loma Linda University environmental microbiologist Ryan Sinclair says the 3–4-use rule assumes the towel fully dries each time; if it is folded, bunched, or in a humid room, drop to 2 uses. If you have a skin infection, open wound, or weakened immune system, use a fresh towel every single time. (This is general guidance, not medical advice — follow your doctor's instructions for any active infection.)"
+      }
+    },
+    "faq_g_how_often_should_you_wash_towels_02": {
+      "en": {
+        "q": "Why does my towel smell musty even after I wash it?",
+        "a": "That sour smell comes from volatile organic compounds produced by bacteria and mold that survived in the damp fabric. It means bacteria multiplied before the wash or that the towel was left damp too long. Rewash in the hottest water the label allows, dry fully, and going forward spread towels open and run the bathroom fan so they dry between uses."
+      }
+    },
+    "faq_g_how_often_should_you_wash_towels_03": {
+      "en": {
+        "q": "How often should you wash kitchen towels?",
+        "a": "Daily. Michigan State University Extension advises changing cloth kitchen towels every day because they touch raw food, juices, dirty hands, and counters, making them a major cross-contamination risk. FoodSafety.gov also recommends washing dishcloths often in the hot cycle of your washing machine."
+      }
+    },
+    "faq_g_how_often_should_you_wash_towels_04": {
+      "en": {
+        "q": "How often should you wash hand towels?",
+        "a": "Hand towels follow the same rule as bath towels — every 3 to 4 uses, or at least once a week. Houston Methodist dermatologist Dr. Jennifer Maender recommends laundering both bath and hand towels after every three uses, and Cleveland Clinic likewise puts them on the same weekly cycle. Because hand towels get touched by many hands throughout the day, a busy or sick household should swap them more often — every day or two in those cases."
+      }
+    },
+    "faq_g_how_long_does_a_mattress_last_01": {
+      "en": {
+        "q": "Can a mattress really last 20 years?",
+        "a": "Only a premium natural latex mattress can plausibly reach the 20-year mark — Saatva and other manufacturers quote 10–20 years for latex, with some models built for 15-plus. Every other type tops out closer to 8–10 years. Twenty years is realistic solely for high-quality latex that is rotated and protected; expecting it from foam, hybrid, or innerspring beds is unrealistic."
+      }
+    },
+    "faq_g_how_long_does_a_mattress_last_02": {
+      "en": {
+        "q": "How often should you replace a mattress?",
+        "a": "Sleep Foundation recommends replacing every 6 to 8 years under normal conditions, and the Better Sleep Council uses a 7-year rule of thumb as the point to start comparing new models. Replace sooner if you notice sagging, feel springs, sleep worse than in hotels, or wake with new aches and stiffness. Age is a guideline; the warning signs are the real trigger."
+      }
+    },
+    "faq_g_how_long_does_a_mattress_last_03": {
+      "en": {
+        "q": "What are the signs a mattress is worn out?",
+        "a": "According to Sleep Foundation and the Better Sleep Council, the clearest signs are visible sagging or permanent body impressions, noisy or poking springs, waking with back or joint stiffness, sleeping better away from home, and a noticeable rise in allergy or asthma symptoms — old mattresses accumulate dust mites and other allergens. Visible rips, lumps, or being 7+ years old also mean it's time."
+      }
+    },
+    "faq_g_how_long_does_a_mattress_last_04": {
+      "en": {
+        "q": "How can I make my mattress last longer?",
+        "a": "Rotate it every 3 months (flip too, if the maker allows), use a mattress protector to block sweat and mites, keep it on a solid or properly slatted foundation — never the floor, which can void the warranty — and vacuum or spot-clean it regularly. Pair it with fresh sheets washed weekly and pillows replaced every 1–2 years so grime doesn't migrate into the bed."
+      }
+    },
+    "faq_g_how_long_do_pillows_last_01": {
+      "en": {
+        "q": "How long do pillows last on average?",
+        "a": "Most experts recommend replacing pillows every 1 to 2 years, according to the Sleep Foundation. The exact lifespan depends on the fill: polyester lasts 6 months to 2 years, down alternative 1 to 2 years, memory foam and polyfoam 2 to 3 years, and latex 2 to 4 years. The Asthma and Allergy Foundation of America specifically recommends every 2 years for allergy sufferers because pillows accumulate dust mites and dead skin."
+      }
+    },
+    "faq_g_how_long_do_pillows_last_02": {
+      "en": {
+        "q": "How long does a memory foam pillow last?",
+        "a": "Memory foam pillows last about 2 to 3 years on average, per the Sleep Foundation. Premium high-density memory foam can last longer; Tempur-Pedic backs its memory-foam pillows with a 5-year limited warranty against cell-structure deterioration that stops the pillow returning to its original shape. That warranty covers defects, not the gradual softening that usually prompts replacement."
+      }
+    },
+    "faq_g_how_long_do_pillows_last_03": {
+      "en": {
+        "q": "What is the pillow fold test?",
+        "a": "Fold the pillow in half, squeeze out the air, and let go. The Sleep Foundation says a down or feather pillow should spring back to its normal shape on its own; if it stays folded or recovers slowly, the fill has lost resilience and the pillow should be replaced. For foam pillows, press the center firmly and look for a lingering dent."
+      }
+    },
+    "faq_g_how_long_do_pillows_last_04": {
+      "en": {
+        "q": "How often should you replace pillows for allergies?",
+        "a": "The Asthma and Allergy Foundation of America recommends replacing pillows every 2 years if you have dust-mite allergies, because they collect dead skin cells and dust mites over time. The American Lung Association notes the average person sheds 1.5 grams of skin flakes daily, enough to feed a million dust mites, and those flakes concentrate in pillows. Using allergen-proof encasements between replacements helps. This is general allergen-hygiene guidance, not medical advice; for persistent symptoms, talk to a doctor or allergist."
+      }
+    },
+    "faq_g_how_often_should_a_newborn_eat_01": {
+      "en": {
+        "q": "How often should a newborn eat in a 24-hour period?",
+        "a": "A newborn should eat 8 to 12 times every 24 hours, roughly every 2 to 3 hours around the clock, according to the AAP. Breastfed babies tend toward the higher end (10-12 feeds); bottle-fed babies usually manage closer to 8. The WHO recommends feeding on demand, day and night. Frequency is guided by early hunger cues rather than a strict clock. This is general guidance, not medical advice; talk to your pediatrician about your baby's specific needs."
+      }
+    },
+    "faq_g_how_often_should_a_newborn_eat_02": {
+      "en": {
+        "q": "How many ounces should a newborn eat per feeding?",
+        "a": "Per AAP guidance, newborns take about half an ounce per feed in the first 1-2 days, then 1-2 ounces after the first few days. By the end of the first month, most babies take 3-4 ounces every 3-4 hours. Breastfed intake can't be measured directly, so track wet diapers, stools, and weight gain instead of volume."
+      }
+    },
+    "faq_g_how_often_should_a_newborn_eat_03": {
+      "en": {
+        "q": "Is it normal for a newborn to eat every hour?",
+        "a": "Yes, during cluster feeding. La Leche League explains that newborns may bunch several feeds into a few hours, then sleep a longer stretch. This is normal and typically happens during growth spurts — commonly around 7-10 days and between 3-6 weeks, recurring several times in the first 3 months — lasting 2-3 days. Frequent feeding signals your body to increase milk supply."
+      }
+    },
+    "faq_g_how_often_should_a_newborn_eat_04": {
+      "en": {
+        "q": "How do I know my newborn is getting enough milk?",
+        "a": "Per La Leche League GB, look for 6+ heavy wet diapers and at least 3 yellow, seedy stools per day after the first few days, plus contentment after most feeds and steady weight gain (regaining birth weight by about 2 weeks, then about an ounce per day). If output drops, weight gain stalls, or your baby is lethargic, contact your pediatrician or a lactation consultant promptly."
+      }
+    },
+    "faq_g_how_long_do_newborns_sleep_01": {
+      "en": {
+        "q": "How long do newborns sleep at night?",
+        "a": "Newborns do not yet have a 'night' — they sleep roughly 14 to 17 hours per 24 hours scattered fairly evenly across day and night, in stretches of 1 to 4 hours. In the earliest weeks a single nighttime block is typically just 1 to 2 hours, lengthening toward 4 hours by 8 to 12 weeks as the circadian rhythm develops. The longest medically expected stretch is about 4 hours between feeds."
+      }
+    },
+    "faq_g_how_long_do_newborns_sleep_02": {
+      "en": {
+        "q": "When do newborns start sleeping through the night?",
+        "a": "Most newborns are not developmentally able to sleep a long nighttime stretch until 3 to 6 months. The AAP notes that regular sleep cycles do not organize until roughly 6 months. From 8 to 12 weeks many babies begin one longer 4 to 6 hour nighttime block, but 'sleeping through the night' for a young infant is often defined as just a 5 to 6 hour stretch, not an adult 8-hour stretch."
+      }
+    },
+    "faq_g_how_long_do_newborns_sleep_03": {
+      "en": {
+        "q": "How long can a newborn stay awake between naps?",
+        "a": "A newborn's wake window is short — roughly 30 to 60 minutes in the first month, lengthening to 1 to 2 hours (60 to 120 minutes) from 1 to 3 months, per Cleveland Clinic. Watch for early tired cues (yawning, staring, red eyebrows) and start the wind-down before fussing begins; an overtired newborn actually sleeps less, not more."
+      }
+    },
+    "faq_g_how_long_do_newborns_sleep_04": {
+      "en": {
+        "q": "Why does my newborn sleep all day and stay up at night?",
+        "a": "This is day-night confusion, which HealthyChildren.org describes as normal for newborns: they sleep through the day and demand feeds and interaction at night because their circadian rhythm has not yet developed. Use bright light and normal noise during the day and dim, quiet interactions at night. It usually resolves on its own over the first few months as the circadian rhythm matures."
+      }
+    },
+    "faq_g_how_long_does_the_4_month_sleep_regression_last_01": {
+      "en": {
+        "q": "When does the 4 month sleep regression start?",
+        "a": "It usually begins around 3 to 4 months of age, sometimes a few weeks earlier or later. The timing lines up with the moment a baby's brain begins moving through the four adult-like sleep stages instead of the two newborn stages, which the AAP notes happens as regular sleep cycles develop around 4 to 6 months."
+      }
+    },
+    "faq_g_how_long_does_the_4_month_sleep_regression_last_02": {
+      "en": {
+        "q": "How long does the 4 month sleep regression last?",
+        "a": "Most families see it resolve within a few days to a few weeks, often within a week or two. The Sleep Foundation notes the disruption can be as short as a few days for some babies, while others take a few weeks. The biological change is permanent; only the disrupted period is temporary."
+      }
+    },
+    "faq_g_how_long_does_the_4_month_sleep_regression_last_03": {
+      "en": {
+        "q": "Why does the 4 month sleep regression happen?",
+        "a": "It happens because sleep permanently matures. Newborns have just two sleep stages (active/REM and quiet/NREM), but around 3 to 4 months babies begin cycling through four adult-like stages, each cycle running well under an hour with a brief partial waking at the end. Learning to link those cycles is the regression."
+      }
+    },
+    "faq_g_how_long_does_the_4_month_sleep_regression_last_04": {
+      "en": {
+        "q": "When should I talk to a pediatrician about the sleep regression?",
+        "a": "Check in if sleep has not improved after several weeks, is getting worse, or comes with fewer than 5 to 6 wet diapers a day, poor weight gain, fever, persistent crying, breathing changes, snoring, gasping, or pauses in breathing. This guide is general information, not medical advice - your pediatrician knows your baby's individual history."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_pluto_01": {
+      "en": {
+        "q": "Can a spacecraft reach Pluto faster than 9.5 years?",
+        "a": "Not with today's standard rockets. New Horizons already set the record for the fastest launch ever — about 36,400 mph — and used a Jupiter gravity assist that NASA says shaved three years off the trip. Matching that ~9.5-year timeline again would require a similarly fast launch and a well-timed Jupiter window. Going faster would need new propulsion technology; slowing to orbit would take decades. (NASA, New Horizons)"
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_pluto_02": {
+      "en": {
+        "q": "Why did New Horizons fly past Pluto instead of orbiting it?",
+        "a": "Speed. To reach Pluto in about nine years, New Horizons had to travel faster than 30,000 mph — far too fast to be captured by tiny Pluto's weak gravity. Slowing into orbit would have required carrying massive braking fuel reserves, which would have made the spacecraft heavier and the trip much longer. NASA therefore chose a fast flyby, brief but actually achievable, over an impractical orbiter. (NASA)"
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_pluto_03": {
+      "en": {
+        "q": "How long does a radio signal take to reach Pluto?",
+        "a": "About 4.5 to 5.5 hours one way, depending on where Pluto is in its orbit. NASA notes that sunlight itself takes roughly 5.5 hours to travel from the Sun to Pluto at its average distance of 39 AU. That communications lag is why New Horizons had to execute its 2015 flyby autonomously — commands from Earth were hours out of date by the time they arrived. (NASA, Pluto Facts)"
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_pluto_04": {
+      "en": {
+        "q": "How far away is Pluto?",
+        "a": "Pluto averages about 3.7 billion miles (5.9 billion km) from the Sun — roughly 39 AU, or 39 times the Earth–Sun distance. Its elliptical orbit swings it between about 30 AU at its closest and 49 AU at its farthest. New Horizons covered more than 3 billion miles to reach it. That enormous distance, plus the speed needed to cross it, is what makes the trip take years. (NASA)"
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_the_iss_01": {
+      "en": {
+        "q": "How long does a SpaceX Crew Dragon take to reach the ISS?",
+        "a": "A Crew Dragon typically docks about one day after launch, with recent missions ranging from roughly 15 to 28 hours. The exact time depends on the phasing plan; NASA prioritizes a careful, well-instrumented approach over raw speed because the roomier cabin makes the longer ride comfortable for the crew."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_the_iss_02": {
+      "en": {
+        "q": "Why did Soyuz trips to the ISS used to take two days?",
+        "a": "Early Soyuz and many Progress cargo flights used a classic two-day, roughly 34-orbit profile that slowly raised the chaser's orbit until it matched the station's. It was simpler and safer, and for uncrewed cargo it remains common. Improved guidance and Baikonur's favorable latitude later enabled the six-hour fast-track, introduced in 2013, and the three-hour ultrafast profile."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_the_iss_03": {
+      "en": {
+        "q": "How far away is the ISS, and isn't that close enough to reach fast?",
+        "a": "The ISS orbits at about 408 km (250 miles) up, genuinely close in cosmic terms. The challenge is that the station moves at about 28,000 km/h (17,500 mph), so a craft can't fly straight to it. It must launch into the same orbital plane and chase the station down, which is why even a near neighbor takes hours to reach."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_the_iss_04": {
+      "en": {
+        "q": "What is the fastest anyone has ever reached the ISS?",
+        "a": "The confirmed record is 3 hours and 3 minutes from launch to docking, set by Russia's Soyuz MS-17 on October 14, 2020, and verified by Guinness World Records. Using an ultrafast two-orbit rendezvous, the capsule climbed to meet the station over about two and a half orbits."
+      }
+    },
+    "faq_g_how_long_does_it_take_for_light_to_travel_from_the_sun_to_earth_01": {
+      "en": {
+        "q": "Does sunlight take exactly 8 minutes to reach Earth?",
+        "a": "Not exactly &mdash; about 8 minutes 20 seconds (499 seconds, or 8.317 minutes) on average. Because Earth&rsquo;s orbit is elliptical, the real time ranges from roughly 8 minutes 10 seconds at perihelion (closest, early January) to 8 minutes 27 seconds at aphelion (farthest, early July). The familiar &ldquo;8 minutes&rdquo; is a rounded figure NASA uses for simplicity."
+      }
+    },
+    "faq_g_how_long_does_it_take_for_light_to_travel_from_the_sun_to_earth_02": {
+      "en": {
+        "q": "How long does light take to reach Earth from the Moon and other planets?",
+        "a": "From the Moon, about 1.28 seconds. Sunlight reaches Jupiter in about 43.2 minutes and Pluto in roughly 5.5 hours. A signal from Mars takes about 3 minutes at closest approach to roughly 22 minutes at the planets&rsquo; farthest separation &mdash; one reason NASA rovers can&rsquo;t be driven in real time."
+      }
+    },
+    "faq_g_how_long_does_it_take_for_light_to_travel_from_the_sun_to_earth_03": {
+      "en": {
+        "q": "What speed does light travel at, and why is 299,792 km/s the limit?",
+        "a": "Light moves at 299,792,458 meters per second (about 186,000 miles or 300,000 km per second) in a vacuum &mdash; a fixed constant under Einstein&rsquo;s relativity and the universe&rsquo;s ultimate speed limit for energy and information. No signal, including radio or laser communications, can travel faster."
+      }
+    },
+    "faq_g_how_long_does_it_take_for_light_to_travel_from_the_sun_to_earth_04": {
+      "en": {
+        "q": "If the Sun went out, how long until we would notice?",
+        "a": "About 8 minutes 20 seconds. Because light and all of the Sun&rsquo;s radiation travel at the finite speed of light, we would continue to see the Sun and receive its energy for roughly 500 seconds after it actually disappeared &mdash; a striking illustration that we always see the Sun as it was, not as it is."
+      }
     }
   },
   "quickUseIdeas": {
