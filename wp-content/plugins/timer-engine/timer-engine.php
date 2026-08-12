@@ -548,6 +548,7 @@ class Timer_Engine
                 'study-timer' => 'Free online study timer built for focused revision and exam prep. Use Pomodoro and timed study blocks with breaks to retain more and study without burning out.',
                 'tabata-timer' => 'Free online Tabata timer with the classic 20s work / 10s rest x 8 protocol. Loud interval beeps keep you moving through every round of this 4-minute HIIT workout.',
                 'cooking-timers' => 'Free online cooking timers for every dish, from pasta to steak to bread. Science-backed times and one-click presets so nothing burns, overcooks, or comes out raw.',
+                'animals' => 'How long do animals live, and how long are they pregnant? Vet-cited lifespans and gestation timelines for cats, dogs, horses, rabbits, fish, and more — with a pregnancy countdown timer.',
                 'workout-timers' => 'Free online workout timers for HIIT, Tabata, EMOM, circuits, and rounds. Customizable work and rest intervals with loud beeps to keep your training on pace.',
                 'sleep-meditation-timers' => 'Free online sleep and meditation timers for rest, breathwork, and mindfulness. Gentle fade-outs and quiet bells help you unwind, meditate, and fall asleep.',
                 'study-work-timers' => 'Free online study and work timers for focused sessions. Pomodoro, deep work, and 52/17 presets help you concentrate, take real breaks, and beat distraction.',

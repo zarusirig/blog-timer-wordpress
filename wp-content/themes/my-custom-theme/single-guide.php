@@ -44,6 +44,8 @@ $hubs = [
     'hub_seconds' => ['url' => '/second-timers/', 'label' => 'Second Timers'],
     'hub_pomodoro' => ['url' => '/pomodoro/', 'label' => 'Pomodoro Timers'],
     'hub_usecases' => ['url' => '/use-cases/', 'label' => 'Timer Use Cases'],
+    'hub_animals' => ['url' => '/animals/', 'label' => 'Animal Timers'],
+    'hub_guides' => ['url' => '/guides/', 'label' => 'All Guides'],
 ];
 $hub = $hubs[$primary_hub_id] ?? $hubs['hub_minutes'];
 

@@ -110,6 +110,17 @@ function blogtimer_enqueue_assets()
         ]);
     }
 
+    // Gestation / pregnancy countdown widget — only on single guides (a guide's
+    // content may embed a .bt-gestation-widget placeholder). The script no-ops if
+    // the placeholder is absent, so it's safe to load on every guide.
+    if (is_singular('guide')) {
+        wp_enqueue_style('blogtimer-gestation', get_template_directory_uri() . '/css/gestation-widget.css', [], '1.0.0');
+        wp_enqueue_script('blogtimer-gestation', get_template_directory_uri() . '/js/gestation-widget.js', [], '1.0.0', [
+            'in_footer' => true,
+            'strategy' => 'defer',
+        ]);
+    }
+
     // FAQ accordion
     wp_enqueue_script('blogtimer-faq', get_template_directory_uri() . '/js/faq-accordion.js', [], '2.0.0', [
         'in_footer' => true,
@@ -1096,6 +1107,7 @@ function blogtimer_indexable_page_slugs()
         'emom-timer',
         'hour-timers',
         'site-index',
+        'animals',
     ];
 }
 
@@ -1167,6 +1179,7 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "Allow: /second-timers\n";
     $robots .= "Allow: /pomodoro\n";
     $robots .= "Allow: /use-cases\n";
+    $robots .= "Allow: /animals\n";
     $robots .= "Allow: /chess-clock\n";
     $robots .= "Allow: /egg-timer\n";
     $robots .= "Allow: /interval-timer\n";

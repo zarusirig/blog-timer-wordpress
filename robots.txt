@@ -42,6 +42,7 @@ Allow: /minute-timers
 Allow: /second-timers
 Allow: /pomodoro
 Allow: /use-cases
+Allow: /animals
 Allow: /chess-clock
 Allow: /egg-timer
 Allow: /interval-timer

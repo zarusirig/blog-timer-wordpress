@@ -1759,6 +1759,1158 @@
         "q": "Can I do jump rope Tabata intervals every day?",
         "a": "No. True Tabata (20s at ~170% VO2max / 10s rest, 4 min) is max-effort and needs recovery. Two to three hard interval sessions per week is the practical ceiling; use low-intensity steady rope work or another modality on other days."
       }
+    },
+    "faq_g_cat_gestation_01": {
+      "en": {
+        "q": "How many kittens are in a normal cat litter?",
+        "a": "The average litter is about four kittens — peer-reviewed data puts the mean at 4.0. Individual litters can range well above or below that average. Your vet can give an exact count via X-ray after about day 45 of pregnancy, once the fetal skeletons have calcified."
+      }
+    },
+    "faq_g_cat_gestation_02": {
+      "en": {
+        "q": "What are the first signs that a cat is pregnant?",
+        "a": "The earliest visible sign is \"pinking up\" around day 16–20, when the queen's nipples become pinker, enlarged, and more prominent. You may also notice a subtle rise in appetite and a calmer, more affectionate mood. A vet can confirm pregnancy by palpating the abdomen at about 2.5 weeks or with an ultrasound at 3–4 weeks."
+      }
+    },
+    "faq_g_cat_gestation_03": {
+      "en": {
+        "q": "How long does cat labor last?",
+        "a": "Most queens deliver the whole litter within about six hours. Stage 1 (hidden contractions, restlessness, temperature drop) can last up to 36 hours in first-time mothers; stage 2 (visible straining) delivers each kitten in 5–30 minutes with 10–60 minute gaps. Cats can also pause labor for 24–36 hours between kittens — this interrupted labor is considered normal."
+      }
+    },
+    "faq_g_cat_gestation_04": {
+      "en": {
+        "q": "When should I call the vet during my cat's pregnancy or labor?",
+        "a": "Call immediately if you see vaginal bleeding or discharge at any point in gestation, if intense contractions last more than 20 minutes without producing a kitten, if a visible kitten is not passed within 10 minutes, if fresh blood flows for more than 10 minutes, or if the queen is lethargic with a fever above 103°F (39.4°C). These are signs of dystocia, or difficult birth."
+      }
+    },
+    "faq_g_dog_gestation_01": {
+      "en": {
+        "q": "How long is a dog pregnant in days?",
+        "a": "Dogs are pregnant for about 63 days on average &mdash; roughly two months &mdash; from ovulation or successful breeding. The normal range runs from 57 to 72 days, with most bitches whelping between 57 and 65 days after mating, according to VCA Animal Hospitals, PetMD, and the Merck Veterinary Manual. The length is essentially the same for all breeds and sizes."
+      }
+    },
+    "faq_g_dog_gestation_02": {
+      "en": {
+        "q": "How can I tell if my dog is pregnant at home?",
+        "a": "You usually can't confirm pregnancy at home early on. Visible signs (enlarged nipples, weight gain, swollen abdomen, nesting) appear gradually over weeks and overlap with false pregnancy. A veterinarian confirms it with an abdominal ultrasound from about day 21&ndash;28, a relaxin blood test from day 22&ndash;27, or an X-ray in the last two weeks to count puppies."
+      }
+    },
+    "faq_g_dog_gestation_03": {
+      "en": {
+        "q": "What are the first signs a dog is going into labor?",
+        "a": "In the final 24 hours, the bitch's rectal temperature drops below 99&deg;F (37.2&deg;C). She becomes restless, reclusive, and may pant, tremble, refuse food, and dig or scratch at her bedding to nest. This is Stage I labor, when the cervix dilates &mdash; it typically lasts 12&ndash;24 hours before visible straining and puppy delivery begin."
+      }
+    },
+    "faq_g_dog_gestation_04": {
+      "en": {
+        "q": "When should I call the vet during whelping?",
+        "a": "Call your vet if Stage I labor exceeds 24 hours, if strong straining lasts more than 30 minutes with no puppy, if more than 2 hours pass between puppies when more are expected, or if a foul-smelling or heavy green discharge appears with no puppy. Brachycephalic breeds like Bulldogs and Boston Terriers often need a planned C-section."
+      }
+    },
+    "faq_g_cat_lifespan_01": {
+      "en": {
+        "q": "How long do indoor cats live?",
+        "a": "Indoor cats commonly live 15–20 years, and many reach their late teens or early 20s with good nutrition and preventive care, according to PetMD. Because they are protected from traffic, predators, fights, and many infectious diseases, an indoor environment is the single biggest factor in a long feline lifespan."
+      }
+    },
+    "faq_g_cat_lifespan_02": {
+      "en": {
+        "q": "How long do outdoor cats live?",
+        "a": "Cats allowed to roam outdoors unsupervised live only about 2 to 5 years on average, PetMD reports. Trauma from vehicles and predators, infectious disease from other cats (such as FIV and feline leukemia), and parasites drive that short lifespan. Supervised outdoor time on a leash or in a secure enclosure is the safer compromise."
+      }
+    },
+    "faq_g_cat_lifespan_03": {
+      "en": {
+        "q": "What is the oldest a cat has ever lived?",
+        "a": "The verified record is held by Creme Puff, a cat from Austin, Texas, who lived to 38 years and 3 days old, according to Guinness World Records and cited by PetMD. That is a remarkable outlier rather than a realistic expectation — most well-cared-for indoor cats top out in their late teens or early 20s."
+      }
+    },
+    "faq_g_cat_lifespan_04": {
+      "en": {
+        "q": "How old is my cat in human years?",
+        "a": "Using the AVMA formula cited by PetMD, a cat reaches about 15 human years by age 1 and 24 by age 2, then adds roughly 4 human years for each year after. Cornell places a 10-year-old cat near 53 and a 15-year-old near 73 in human terms, so a typical indoor cat's final years equate to a person in their 70s to mid-90s."
+      }
+    },
+    "faq_g_dog_lifespan_01": {
+      "en": {
+        "q": "How long does a dog live on average?",
+        "a": "A dog lives about 10 to 13 years on average, but this swings sharply with size. Small and toy breeds typically reach 10 to 15 years (some over 18), medium breeds 10 to 13 years, large breeds 8 to 12 years, and giant breeds only 8 to 10 years, per AKC breed data."
+      }
+    },
+    "faq_g_dog_lifespan_02": {
+      "en": {
+        "q": "What breed of dog lives the longest?",
+        "a": "The longest-lived breeds are small dogs. Chihuahuas average about 15 to 17 years, Pomeranians 14 to 16, and Yorkshire Terriers 12 to 15, according to the AKC. In a study of 169,000 dogs, small dogs had a median lifespan of 14.95 years versus 13.38 for large dogs."
+      }
+    },
+    "faq_g_dog_lifespan_03": {
+      "en": {
+        "q": "How long do large and giant dogs live?",
+        "a": "Large breeds such as Labradors, Golden Retrievers, and German Shepherds typically live 8 to 12 years. Giant breeds including Great Danes, Bernese Mountain Dogs, and Irish Wolfhounds average only 8 to 10 years, and the AVMA notes they become seniors as early as 6 to 7 years old."
+      }
+    },
+    "faq_g_dog_lifespan_04": {
+      "en": {
+        "q": "What is the oldest dog ever recorded?",
+        "a": "The longest reliably verified lifespan belongs to Bluey, an Australian Cattle Dog who died in 1939 at 29 years and 5 months. A 2023 claim of a 31-year-old dog named Bobi was suspended and later stripped by Guinness World Records in 2024 over evidence concerns, leaving Bluey's record standing."
+      }
+    },
+    "faq_g_horse_lifespan_01": {
+      "en": {
+        "q": "Can a horse live to 40 years old?",
+        "a": "Yes, though it is uncommon. Domestic horses average 25–30 years, but ponies and small breeds regularly reach their late 30s and sometimes their 40s with good nutrition, dental, and veterinary care. Horses past 30 are classed as \"very old\" and are uncommon, so a 40-year-old horse is truly exceptional."
+      }
+    },
+    "faq_g_horse_lifespan_02": {
+      "en": {
+        "q": "What is the oldest horse ever recorded?",
+        "a": "The oldest reliably recorded horse is Old Billy, an English barge horse foaled in 1760 who died on 27 November 1822 at the age of 62, according to Guinness World Records. The oldest verified Thoroughbred, Tango Duke, reached 42."
+      }
+    },
+    "faq_g_horse_lifespan_03": {
+      "en": {
+        "q": "At what age is a horse considered a senior?",
+        "a": "Horses are generally considered past their physiological peak at about 15 years, which researchers commonly use as the threshold for an \"aged\" or geriatric horse; by that age only around 25% of the population remains. Horses over 30 are classified as very old."
+      }
+    },
+    "faq_g_horse_lifespan_04": {
+      "en": {
+        "q": "Do ponies live longer than full-size horses?",
+        "a": "Yes. As with dogs, smaller equines outlive larger ones. Ponies routinely live 30–35 years and frequently into their 40s, while large draft breeds tend to have shorter average lifespans than light riding horses. Breed itself matters less than overall size."
+      }
+    },
+    "faq_g_betta_fish_lifespan_01": {
+      "en": {
+        "q": "How long do betta fish live as pets?",
+        "a": "Most pet bettas live 3 to 5 years in captivity with proper care, with the realistic average in a typical home tank closer to 2 to 4 years. That beats the roughly 2-year lifespan measured for the species under laboratory conditions. Exceptional individuals have reportedly reached about 10 years, but anything past 5 is rare and unverified."
+      }
+    },
+    "faq_g_betta_fish_lifespan_02": {
+      "en": {
+        "q": "What tank size does a betta need to live a long life?",
+        "a": "Veterinarians at the University of Illinois state bettas should not live in bowls and need a 5-gallon tank minimum, with larger preferred; PetMD lists 2.5 gallons as an absolute floor but calls 5 to 10 gallons ideal. Bigger volumes keep temperature and water chemistry stable, which directly extends lifespan. The tank must also be filtered, heated, and covered."
+      }
+    },
+    "faq_g_betta_fish_lifespan_03": {
+      "en": {
+        "q": "How can I make my betta fish live longer?",
+        "a": "Focus on four levers: keep the water at 76 to 81 degrees F with a heater, maintain a cycled tank with weekly 15 to 25 percent water changes, feed a high-protein diet of betta pellets with occasional bloodworm or brine shrimp treats, and house males alone to avoid fatal fighting. Stable, clean, warm water is the single biggest life-extender."
+      }
+    },
+    "faq_g_betta_fish_lifespan_04": {
+      "en": {
+        "q": "How old was the oldest betta fish?",
+        "a": "PetMD reports that some bettas have been known to live up to about 10 years with excellent care. However, there is no authenticated, independently verified longevity record for bettas, and forum claims of 12 to 15 years are anecdotal and unverified. A realistic ceiling a careful owner can aim for is the 5 to 7 year range; reaching 5 already beats the species' roughly 2-year laboratory lifespan."
+      }
+    },
+    "faq_g_rabbit_lifespan_01": {
+      "en": {
+        "q": "How long do indoor pet rabbits live?",
+        "a": "Indoor pet rabbits typically live 8-12 years with good care. The Merck Veterinary Manual notes rabbits \"fed a suitable diet and kept in a healthy environment can live as long as 10 to 12 years,\" and VCA Animal Hospitals report that rabbits can live up to 12 years, with validated cases reaching 15. However, a UK study of 6,349 pet rabbits found the real-world average is only about 4.3 years, showing how much husbandry matters."
+      }
+    },
+    "faq_g_rabbit_lifespan_02": {
+      "en": {
+        "q": "How long do wild rabbits live?",
+        "a": "Wild rabbits face predators, disease and weather, so they live far shorter lives. Mass Audubon reports that cottontail rabbits have a life expectancy of less than two years, with nearly half of all young dying within a month of birth. By contrast, protected indoor pet rabbits commonly reach 8-12 years, and a few have been documented to 15."
+      }
+    },
+    "faq_g_rabbit_lifespan_03": {
+      "en": {
+        "q": "Does spaying or neutering help a rabbit live longer?",
+        "a": "Yes. VCA Animal Hospitals explain that spayed or neutered rabbits \"tend to enjoy longer, healthier lives,\" because cancers of the ovaries, uterus and mammary glands are a common cause of death in intact females. RVC peer-reviewed data confirms the gap: female rabbits averaged just 3.7 years versus 5.2 years for males, a difference driven in part by reproductive cancers in unspayed does. Spay/neuter also prevents a single female from producing up to 168 kits per year."
+      }
+    },
+    "faq_g_rabbit_lifespan_04": {
+      "en": {
+        "q": "Which rabbit breed lives the longest?",
+        "a": "Small and dwarf breeds generally outlive giant breeds. WebMD's veterinary content notes that \"larger rabbit breeds live shorter lives than dwarf breeds, and purebred rabbits have shorter lives than mixed breeds,\" though individuals vary — WebMD notes a large purebred may live up to 10 years, while a mixed-breed dwarf may only live eight. Diet, housing and spay/neuter status matter more than breed alone."
+      }
+    },
+    "faq_g_hamster_lifespan_01": {
+      "en": {
+        "q": "Which type of hamster lives the longest?",
+        "a": "The Roborovski dwarf hamster and the Syrian (golden) hamster tend to live the longest, typically 2-3 years, with some Roborovskis reportedly reaching 3-3.5 years. Winter White and Russian dwarf hamsters are generally the shortest-lived at about 1-2 years (PetMD cites about 12 months). PetMD notes Teddy Bear hamsters (long-haired Syrians) also reach 2-3 years. Genetics set the ceiling, but diet, housing, and veterinary care determine how close your pet gets to it.[2]"
+      }
+    },
+    "faq_g_hamster_lifespan_02": {
+      "en": {
+        "q": "Can hamsters live for 5 years?",
+        "a": "Most hamsters live 2-3 years, and a hamster is considered elderly at just 1.5 years. Five-year lifespans are occasionally claimed but are very rare outliers, not a normal expectation. The RVC's study of nearly 4,000 pet hamsters found an average lifespan of only 1.75 years. A well-cared-for hamster reaching 3-4 years is already exceptional; treat anything beyond that as unusual.[2][4]"
+      }
+    },
+    "faq_g_hamster_lifespan_03": {
+      "en": {
+        "q": "How long is a hamster pregnant?",
+        "a": "Hamster gestation lasts only 16-19 days, one of the shortest of any mammal, according to the Merck Veterinary Manual. Litters average around 9 pups (range 2-16). Pups are weaned at about 20 days and can reproduce themselves by 7-8 weeks of age. Because pregnancy is so brief and hard to detect early, separate sexes by 4-5 weeks to avoid accidental litters.[1]"
+      }
+    },
+    "faq_g_hamster_lifespan_04": {
+      "en": {
+        "q": "Why do hamsters die so easily?",
+        "a": "Hamsters are small prey animals that instinctively hide illness, so by the time symptoms appear the disease is often advanced. The RVC study found wet tail (diarrheal disease), bite injuries, overgrown nails and/or teeth, and traumatic injury to be the most common disorders, with wet tail also a leading cause of death. Poor diet, cedar or pine bedding, heat stress, overcrowding, and delayed vet care all raise the risk of an early death.[1][3][4]"
+      }
+    },
+    "faq_g_bearded_dragon_lifespan_01": {
+      "en": {
+        "q": "How long do bearded dragons live as pets?",
+        "a": "Pet bearded dragons typically live 8 to 12 years, with most healthy animals around 8 to 10 years, according to VCA Animal Hospitals and PetMD. Wild dragons live only 5 to 8 years (Animal Diversity Web). Reaching the upper end requires correct UVB lighting, a calcium-rich diet, proper temperatures, and yearly reptile vet checkups."
+      }
+    },
+    "faq_g_bearded_dragon_lifespan_02": {
+      "en": {
+        "q": "How can I make my bearded dragon live longer?",
+        "a": "Lifespan comes down to husbandry. Provide 10-12 hours of UVB daily and replace bulbs every 6-12 months (PetMD advises every 6 months; Merck allows 9-12 months for fluorescent tubes), feed an age-appropriate omnivore diet with calcium dusting, maintain a 100°F basking spot with a 75°F cool end, house one dragon per enclosure, and book an annual reptile vet visit with a fecal parasite check. Merck also recommends quarantining new dragons 3-6 months."
+      }
+    },
+    "faq_g_bearded_dragon_lifespan_03": {
+      "en": {
+        "q": "What is the most common cause of death in bearded dragons?",
+        "a": "The most common killers are husbandry-driven: metabolic bone disease from calcium or UVB deficiency, gastrointestinal impaction from swallowed loose substrate, kidney disease, respiratory infections from excess humidity, and egg-binding (dystocia) in females, per PetMD. Contagious adenovirus and yellow fungus also cut lives short in unquarantined collections. Nearly all are preventable with correct care."
+      }
+    },
+    "faq_g_bearded_dragon_lifespan_04": {
+      "en": {
+        "q": "How old was the oldest bearded dragon?",
+        "a": "The oldest bearded dragon on record was Sebastian, a UK pet owned by Lee-Anne Burgess, who lived 18 years and 237 days before dying on 24 January 2016, per Guinness World Records. That is an exceptional outlier — most well-cared-for dragons reach 8-12 years — but it shows what excellent, consistent husbandry can achieve."
+      }
+    },
+    "faq_g_turtle_lifespan_01": {
+      "en": {
+        "q": "How long do pet turtles live?",
+        "a": "Most pet aquatic turtles (like red-eared sliders, painted, and map turtles) live 20–30 years, with some — such as painted turtles — reaching their 40s or 50s. Box turtles typically live 25–50 years, and pet tortoises 50–100+ years. Given proper care, most turtle and tortoise species can live well into their 50s (PetMD, 2025)."
+      }
+    },
+    "faq_g_turtle_lifespan_02": {
+      "en": {
+        "q": "What is the longest-living turtle or tortoise ever recorded?",
+        "a": "The verified record belongs to Jonathan, a Seychelles giant tortoise on Saint Helena, born around 1832. He celebrated his official 193rd birthday on December 4, 2025 and is the oldest living land animal ever recorded. Seychelles giant tortoises average about 150 years, making Jonathan exceptional even for his species (Britannica, 2026)."
+      }
+    },
+    "faq_g_turtle_lifespan_03": {
+      "en": {
+        "q": "Do turtles live longer in captivity or in the wild?",
+        "a": "A well-cared-for captive turtle should outlive a wild one, since it avoids predators, starvation, and disease and receives veterinary care (PetMD, 2025). However, poor captivity shortens life: a 2025 UK study of 2,040 pet chelonians found a median age at death of just 7.32 years — far below the biological potential — because of preventable husbandry problems (Hornby et al., 2025)."
+      }
+    },
+    "faq_g_turtle_lifespan_04": {
+      "en": {
+        "q": "How can I help my turtle live longer?",
+        "a": "Provide a large enclosure, genuine UVB lighting (replaced roughly yearly), a species-appropriate varied diet with calcium, and excellent water filtration for aquatic species. Find a reptile veterinarian for annual exams and fecal parasite checks, keep the turtle separated from dogs and cats, and practice good Salmonella hygiene (PetMD, 2025; VCA Animal Hospitals)."
+      }
+    },
+    "faq_g_goldfish_lifespan_01": {
+      "en": {
+        "q": "Can goldfish really live 10 years or more?",
+        "a": "Yes. With a properly sized, filtered, and cycled tank, the average goldfish lives 10–15 years, and slim-bodied common goldfish often reach 20–30 years. PetMD lists 30+ years as achievable with good care. The idea that goldfish only live a few weeks is a myth caused by bowls, not by the fish’s biology."
+      }
+    },
+    "faq_g_goldfish_lifespan_02": {
+      "en": {
+        "q": "Why do goldfish in bowls die so young?",
+        "a": "Bowls lack the volume, filtration, and surface area a goldfish needs. Waste builds up as toxic ammonia, oxygen drops, growth is stunted, and the fish typically dies within 1–3 years. Per the Merck Veterinary Manual, even small unfiltered setups may need 50% water changes weekly — a sign the habitat is unsuitable, not the fish."
+      }
+    },
+    "faq_g_goldfish_lifespan_03": {
+      "en": {
+        "q": "What is the oldest goldfish ever recorded?",
+        "a": "The Guinness World Record for the oldest goldfish is held by Tish, who lived 43 years. He was won at a UK fairground in 1956 by seven-year-old Peter Hand and died on 6 August 1999 in North Yorkshire. Goldfish over 50 years have been reported in China, but Tish’s 43 years remain the authenticated record."
+      }
+    },
+    "faq_g_goldfish_lifespan_04": {
+      "en": {
+        "q": "How can I make my goldfish live longer?",
+        "a": "Give it at least 20 gallons for the first fish (and follow the 5-gallons-per-inch rule as it grows — roughly 10 extra gallons per additional fish), cycle the tank 4–6 weeks before adding it, over-filter (at least 4× the tank volume per hour), hold temperature at 65–75°F and pH at 6.5–7.5, do partial water changes (10–25%) every 2–4 weeks, and feed sparingly once a day. Stable, clean water does more for lifespan than any supplement."
+      }
+    },
+    "faq_g_ferret_lifespan_01": {
+      "en": {
+        "q": "How long does a ferret live as a pet?",
+        "a": "A healthy pet ferret typically lives 6 to 10 years, with the average US pet landing around 5 to 8 years. The Merck Veterinary Manual lists the typical life span as 6 to 10 years, Animal Diversity Web reports the same range, and a Veterinary Pathology review places the broader average at about 5 to 11 years. Many ferrets fall short of the upper end because of mid-life endocrine disease."
+      }
+    },
+    "faq_g_ferret_lifespan_02": {
+      "en": {
+        "q": "What is the oldest ferret on record?",
+        "a": "The oldest ferret on record reached 14 years, according to Oxbow Animal Health. That is an exceptional outlier rather than a normal expectation; with a proper diet, routine veterinary care and a safe environment, pet ferrets more commonly live toward the upper end of the 6 to 10-year range. Many well-cared-for pets reach the upper end of that range, around 8 to 10 years."
+      }
+    },
+    "faq_g_ferret_lifespan_03": {
+      "en": {
+        "q": "What disease shortens a ferret's life the most?",
+        "a": "Adrenal gland disease and insulinoma (a pancreatic insulin-secreting tumor) are the two biggest lifespan-cutters in US ferrets. VCA Animal Hospitals notes adrenal disease is common in North American ferrets over 3 years of age, while insulinoma typically appears at 3 to 5 years. Both are age-linked endocrine conditions; a peer-reviewed review in Veterinary Pathology confirms geriatric illness generally begins between 3 and 4 years in ferrets."
+      }
+    },
+    "faq_g_ferret_lifespan_04": {
+      "en": {
+        "q": "Does spaying or neutering affect how long a ferret lives?",
+        "a": "It is a genuine trade-off. Most US ferrets are spayed or neutered at 4 to 6 weeks, and early gonadectomy is one factor linked to higher rates of later adrenal disease (Bakthavatchalu et al., 2016). However, intact females (jills) must be spayed before first heat, because staying in estrus causes fatal estrogen toxicity (Merck Veterinary Manual). So desexing is still considered essential, even though timing can influence long-term endocrine risk."
+      }
+    },
+    "faq_g_guinea_pig_lifespan_01": {
+      "en": {
+        "q": "How long do guinea pigs live as pets?",
+        "a": "Guinea pigs live 5 to 7 years on average, with a typical range of 5 to 8 years when well cared for, and a verified maximum of nearly 15 years (14 years, 10.5 months — the Guinness World Record). Real-world pet lifespan is lower: a 2024 UK study of more than 50,000 guinea pigs under veterinary care (analyzing 757 recorded deaths) found a median age at death of 4.03 years (4.58 for females, 3.74 for males)."
+      }
+    },
+    "faq_g_guinea_pig_lifespan_02": {
+      "en": {
+        "q": "Do male or female guinea pigs live longer?",
+        "a": "On average, females live longer. The peer-reviewed UK VetCompass study recorded a median age at death of 4.58 years for females versus 3.74 years for males. The exception is breeding females, whose lifespans drop to around 3.5 years because of the strain of reproduction and a high rate of ovarian disease."
+      }
+    },
+    "faq_g_guinea_pig_lifespan_03": {
+      "en": {
+        "q": "Why do guinea pigs need vitamin C, and how much?",
+        "a": "Guinea pigs cannot synthesize their own vitamin C, so without dietary intake they develop scurvy. They need at least 10 mg of vitamin C per kilogram of body weight per day, rising to about 30 mg/kg/day when pregnant or growing. Scurvy causes appetite loss, swollen joints, dental problems, and bleeding, and can be fatal if untreated. Fresh greens (bell peppers) and fortified pellets are the usual sources."
+      }
+    },
+    "faq_g_guinea_pig_lifespan_04": {
+      "en": {
+        "q": "What is the most common disease that shortens a guinea pig's life?",
+        "a": "In unspayed females, cystic ovarian disease is the most common reproductive disorder and a major lifespan shortener; the Merck Veterinary Manual identifies it as the leading reproductive tract disorder in sows. Across both sexes, the most frequent causes of death recorded in UK practice were anorexia (~14% of deaths) and collapse, both often tied to dental disease, gut stasis, or late-stage illness."
+      }
+    },
+    "faq_g_parrot_lifespan_01": {
+      "en": {
+        "q": "How long do parrots live as pets?",
+        "a": "Pet parrots live anywhere from 8 to 50+ years depending on species. Small parrots such as budgies, parakeets, and cockatiels typically live 8 to 15 years, while large parrots like macaws, cockatoos, and African greys commonly reach 25 to 50 years. PetMD notes the overall range as 15 to over 50 years based on species and care, and the AVMA records larger birds (parrots, conures, macaws, cockatoos) living from 20 years to more than 100."
+      }
+    },
+    "faq_g_parrot_lifespan_02": {
+      "en": {
+        "q": "Which type of parrot lives the longest?",
+        "a": "The largest species live the longest. Macaws and cockatoos are the champions: Animal Diversity Web lists red-and-green macaws averaging about 50 years in captivity with a verified maximum near 63, and VCA Animal Hospitals reports cockatoos typically live 25 to 45 years, with larger species reaching 70 to 80. African greys average around 45 years and can reach 60. As a rule, bigger parrots outlive smaller ones."
+      }
+    },
+    "faq_g_parrot_lifespan_03": {
+      "en": {
+        "q": "How long do budgies and cockatiels live?",
+        "a": "Budgies (parakeets) typically live about 5 to 10 years, though the AVMA records an average near 6 years and exceptional birds up to 18. Cockatiels average around 15 to 20 years; the AVMA cites a 16-year average with many individuals living more than 30 years when given strong diet, enrichment, and avian vet care."
+      }
+    },
+    "faq_g_parrot_lifespan_04": {
+      "en": {
+        "q": "What was the oldest parrot ever recorded?",
+        "a": "The oldest verified parrot was Cookie, a Major Mitchell's cockatoo at Brookfield Zoo in Illinois. Guinness World Records certifies he lived to at least 82 years and 88 days old before dying on August 27, 2016; the zoo estimated he was closer to 83 (it assigned him a hatch date of June 30, 1933). His age is backed by documented zoo records dating to 1934."
+      }
+    },
+    "faq_g_how_long_do_cats_stay_in_heat_01": {
+      "en": {
+        "q": "At what age do cats first go into heat?",
+        "a": "Most female cats (queens) reach puberty and have their first heat between 4 and 12 months of age, according to the Merck Veterinary Manual, and kittens as young as 4 months can come into season. Shorthair breeds (such as Siamese and Burmese) tend to reach puberty earlier than longhair breeds (such as Persians), which may not have a first heat until 18 months or older. Because a kitten can get pregnant on her very first heat, veterinarians often recommend spaying before that first cycle."
+      }
+    },
+    "faq_g_how_long_do_cats_stay_in_heat_02": {
+      "en": {
+        "q": "How often do cats go into heat, and can it seem constant?",
+        "a": "During breeding season (roughly spring through early autumn in the Northern Hemisphere), an unspayed cat cycles every 14–21 days, averaging about three weeks per loop (Merck Veterinary Manual; VCA Animal Hospitals). Because cats are induced ovulators, an unbred queen skips true diestrus and swings back into heat after only an 8–10 day break, which is why she can seem to be 'always in heat.' Indoor cats under artificial light may cycle year-round."
+      }
+    },
+    "faq_g_how_long_do_cats_stay_in_heat_03": {
+      "en": {
+        "q": "Can a cat get pregnant the first time she is in heat?",
+        "a": "Yes. A cat can conceive on her very first heat, which can happen as early as 4 months old. Cats are induced ovulators, meaning mating triggers the release of eggs — but a single mating is usually not enough. Most queens require three to four matings within a 24-hour period for ovulation to occur (VCA Animal Hospitals), and only about half of queens will ovulate after a single breeding (Merck Veterinary Manual; Little, NCBI Bookshelf). Pregnancy lasts about 65 days (range 64–71 days), after which she can soon cycle again (VCA Animal Hospitals)."
+      }
+    },
+    "faq_g_how_long_do_cats_stay_in_heat_04": {
+      "en": {
+        "q": "Does spaying stop heat cycles, and when should I spay?",
+        "a": "Yes — spaying permanently ends heat cycles. Cornell University's College of Veterinary Medicine recommends spaying before the first heat, as young as 3–4 months of age, because it lowers mammary cancer risk by roughly 91% if done before 6 months and about 86% before 1 year. Spaying also prevents pyometra, a life-threatening uterine infection. Discuss the best timing for your individual cat with your veterinarian."
+      }
+    },
+    "faq_g_how_long_do_dogs_stay_in_heat_01": {
+      "en": {
+        "q": "How long does a dog bleed while in heat?",
+        "a": "Bloody vaginal discharge is heaviest during proestrus, which lasts about 9 days (range of 2 days to 3 weeks). As the cycle moves into estrus, the bleeding thins and shifts to a watery pink or straw color for roughly another 9 days before tapering off. Expect some discharge across much of the 2-3 week heat. (Merck Veterinary Manual; VCA Animal Hospitals.)"
+      }
+    },
+    "faq_g_how_long_do_dogs_stay_in_heat_02": {
+      "en": {
+        "q": "How often do dogs go into heat?",
+        "a": "Most unspayed dogs cycle twice a year, or about every 6 months (average interval 7 months, normal range 4-13 months). Small breeds may cycle three times a year, while giant breeds such as Great Danes may cycle only once. Young dogs' cycles can be irregular for the first two years before settling into a pattern. (Merck Veterinary Manual; VCA Animal Hospitals.)"
+      }
+    },
+    "faq_g_how_long_do_dogs_stay_in_heat_03": {
+      "en": {
+        "q": "At what age do dogs first go into heat?",
+        "a": "The first heat usually arrives around 6 months for small breeds (toy breeds can start as early as 4-5 months), later for medium-sized dogs, and as late as 18-24 months for large and giant breeds. Some dogs have a silent first heat with few visible signs, and most should be cycling regularly by two years of age. (American Kennel Club; VCA Animal Hospitals; PetMD.)"
+      }
+    },
+    "faq_g_how_long_do_dogs_stay_in_heat_04": {
+      "en": {
+        "q": "Can a dog get pregnant the first time she's in heat?",
+        "a": "Yes. A female can conceive during her very first heat, which is why vets urge keeping her away from intact males. She is most fertile during estrus (about 9 days), around the time the discharge turns watery, but because canine sperm can survive up to a week in the reproductive tract, pregnancy is possible across much of the cycle. (VCA Animal Hospitals; PetMD.)"
+      }
+    },
+    "faq_g_how_long_does_a_car_battery_last_01": {
+      "en": {
+        "q": "How long does a car battery last on average?",
+        "a": "A car battery lasts 3 to 5 years on average, according to AAA and Consumer Reports. Expect around 5 years or more in cool northern climates and closer to 3 years in hot southern regions, since heat is the single biggest factor that shortens battery life. Kelley Blue Book places the best-case ceiling near 6 years under gentle conditions."
+      }
+    },
+    "faq_g_how_long_does_a_car_battery_last_02": {
+      "en": {
+        "q": "Does hot weather really make a car battery die faster?",
+        "a": "Yes. AAA explains that heat speeds the chemical reaction that generates electricity but also accelerates internal degradation, and under-hood temperatures can exceed 200 degrees Fahrenheit in summer. As a result, a battery in a hot southern climate typically lasts about 3 years, while the same battery in a cool northern climate can last 5 years or longer."
+      }
+    },
+    "faq_g_how_long_does_a_car_battery_last_03": {
+      "en": {
+        "q": "What are the warning signs a car battery is going bad?",
+        "a": "AAA lists eight common signs: a slow engine crank, clicking when you try to start, dim headlights at idle, the battery or charging warning light, electrical glitches, frequent jump-starts, a rotten sulfur smell, and a bulging or swollen battery case. Not every failing battery shows symptoms, so AAA recommends annual testing once the battery passes its third year."
+      }
+    },
+    "faq_g_how_long_does_a_car_battery_last_04": {
+      "en": {
+        "q": "How long does an electric car battery last?",
+        "a": "An EV's 12-volt auxiliary battery follows the same 3- to 5-year rule as a gas car, but the lithium-ion traction pack that drives the motor is far more durable. Citing the U.S. Department of Energy, Edmunds reports traction packs last 12 to 15 years in moderate climates and 8 to 12 years in extreme climates, with U.S. federal law requiring at least an 8-year/100,000-mile warranty."
+      }
+    },
+    "faq_g_how_long_does_an_oil_change_take_01": {
+      "en": {
+        "q": "How long does an oil change take at a shop?",
+        "a": "Most shops take 15 to 45 minutes. A quick-lube or express lane that can see you immediately often finishes in about 15 minutes, while a full-service repair shop typically runs 30 to 45 minutes because it bundles in a multi-point inspection. Kelley Blue Book recommends setting aside a full hour to include waiting time."
+      }
+    },
+    "faq_g_how_long_does_an_oil_change_take_02": {
+      "en": {
+        "q": "How long does a DIY oil change take at home?",
+        "a": "An experienced home mechanic with the right tools can change oil in about 30 minutes, but AutoZone notes a first-timer should expect closer to an hour plus cleanup and used-oil disposal. Expect roughly 30 to 45 minutes for the job itself once the vehicle is safely lifted and level."
+      }
+    },
+    "faq_g_how_long_does_an_oil_change_take_03": {
+      "en": {
+        "q": "How often should you change full-synthetic oil?",
+        "a": "Most modern vehicles on full-synthetic oil can go 7,500 to 10,000 miles between changes, and AAA cites intervals of 10,000 to 15,000 miles for synthetic oil. Regardless of mileage, AAA recommends changing it at least once a year. Always defer to the interval in your owner's manual."
+      }
+    },
+    "faq_g_how_long_does_an_oil_change_take_04": {
+      "en": {
+        "q": "Why does the dealership take longer than a quick-lube?",
+        "a": "Quick-lube shops specialize in speed and focus on the oil, filter, and fluid top-offs, finishing in as little as 15 minutes. Dealerships and full-service shops also perform a multi-point inspection of brakes, tires, belts, and fluids - which AutoZone says can add up to 10 minutes - and they often have longer customer queues, pushing total time to 30 to 60 minutes."
+      }
+    },
+    "faq_g_how_long_does_a_spray_tan_last_01": {
+      "en": {
+        "q": "How long does a spray tan last on average?",
+        "a": "A spray tan lasts 7-10 days on average. Healthline notes the range runs from about 5 days for lighter shades up to 10 days for darker ones, and Cleveland Clinic's dermatologists confirm the same 5-10 day window. The exact number depends on DHA concentration, skin prep, and aftercare."
+      }
+    },
+    "faq_g_how_long_does_a_spray_tan_last_02": {
+      "en": {
+        "q": "Does a darker spray tan last longer than a lighter one?",
+        "a": "Yes. Darker solutions contain more DHA, so more pigment bonds with your skin and takes longer to shed away. Healthline reports lighter shades last around 5 days, medium shades 7-8 days, and darker shades up to 10 days. Choosing a darker shade is one of the simplest ways to extend the wear."
+      }
+    },
+    "faq_g_how_long_does_a_spray_tan_last_03": {
+      "en": {
+        "q": "How can I make my spray tan last longer?",
+        "a": "Exfoliate and avoid oils before the appointment, wait at least 6 hours before showering, wear loose clothing for 24 hours, moisturize daily with an oil-free lotion, take short lukewarm showers, and avoid chlorine and hot tubs. Healthline says the right maintenance can keep a darker tan glowing for up to 10 days, and the AAD's self-tanner guidance covers the prep basics."
+      }
+    },
+    "faq_g_how_long_does_a_spray_tan_last_04": {
+      "en": {
+        "q": "How soon can I shower after a spray tan?",
+        "a": "Wait at least 6 hours before your first shower to let DHA fully bond, per Healthline. Cleveland Clinic notes color keeps developing for up to 24-72 hours, so a longer wait can yield a deeper result. Use lukewarm water and gentle soap, and ask your technician about rapid formulas that allow a shorter rinse."
+      }
+    },
+    "faq_g_how_long_does_a_tan_last_01": {
+      "en": {
+        "q": "Does a tan ever fully go away?",
+        "a": "Yes — and always. A sun tan fades as your epidermis renews itself, which the Cleveland Clinic says happens about every 30 days. The melanin-darkened cells are continuously shed (about 40,000 a day), so the color goes with them. A tan is never permanent; anyone who appears \"always tan\" either has naturally darker skin, uses self-tanner, or gets repeated UV exposure."
+      }
+    },
+    "faq_g_how_long_does_a_tan_last_02": {
+      "en": {
+        "q": "How long does a spray tan last compared to a sun tan?",
+        "a": "They last a similar window. Healthline notes a sun tan typically lasts 7–10 days, and a spray or self-tan lasts about 5–10 days, per the Cleveland Clinic. The difference is mechanism: a spray tan's DHA dyes only dead surface cells, while a sun tan is melanin produced inside the skin. Both still ride on the same cell-shedding cycle, so both fade within roughly two weeks."
+      }
+    },
+    "faq_g_how_long_does_a_tan_last_03": {
+      "en": {
+        "q": "Why does my tan fade so fast?",
+        "a": "Fast fading usually comes from faster exfoliation. Hot showers, scrubbing with a loofah, harsh soaps, chlorine, salt water, and dry skin all strip the tanned surface cells quickly. Because hydrated skin exfoliates more slowly, skipping moisturizer shortens the tan. Tanning-bed UVA is more intense than sunlight, but it does not make the resulting tan last any longer."
+      }
+    },
+    "faq_g_how_long_does_a_tan_last_04": {
+      "en": {
+        "q": "Does a tan protect you from sunburn?",
+        "a": "No. The FDA notes that the extra melanin in tanned skin provides only about SPF 2–4 — far below the SPF 30 the American Academy of Dermatology recommends. A \"base tan\" is not protection; you still need a broad-spectrum sunscreen, about 1 ounce for the body, reapplied every two hours outdoors."
+      }
+    },
+    "faq_g_how_long_do_belly_button_piercings_take_to_heal_01": {
+      "en": {
+        "q": "Can a belly button piercing heal in 2 months?",
+        "a": "No. Navel piercings are among the slowest-healing body piercings. Cleveland Clinic puts the typical range at six months to a year, sometimes stretching to 18 months, while Healthline gives a narrower estimate of nine months to a year. A piercing that feels fine at 2 months is usually only healed on the surface; the APP notes this kind of wound \"heals from the outside to the inside,\" so the inner channel is still fragile."
+      }
+    },
+    "faq_g_how_long_do_belly_button_piercings_take_to_heal_02": {
+      "en": {
+        "q": "What are the signs a belly button piercing is infected?",
+        "a": "Per Cleveland Clinic, the four key signs are painful swelling or warmth, increased redness or skin discoloration, pus-like discharge (yellow, green, gray, brown, white, or bloody — often smelly), and feeling unwell with fever or chills. Mild redness and soreness alone are normal early on, but spreading redness, worsening swelling, pus, or fever warrant a call to your piercer or doctor."
+      }
+    },
+    "faq_g_how_long_do_belly_button_piercings_take_to_heal_03": {
+      "en": {
+        "q": "Can I change my belly button ring before it heals?",
+        "a": "No. The APP advises leaving the initial jewelry in for the entire healing period — removing it can let the hole shrink or close in minutes, and if infection is present, taking the jewelry out can trap bacteria inside. If jewelry must be changed early (say, for a medical scan), have an APP-member piercer swap it or use a non-metallic retainer."
+      }
+    },
+    "faq_g_how_long_do_belly_button_piercings_take_to_heal_04": {
+      "en": {
+        "q": "How do I clean a healing belly button piercing?",
+        "a": "Wash your hands, then spray with a sterile 0.9% saline wound wash — the APP's recommended method. Gently dry with disposable gauze or a paper towel, never a cloth towel. Clean twice a day, and avoid alcohol, hydrogen peroxide, iodine, antibacterial soaps, and ointments, which the APP says damage cells and slow healing. Don't twist or rotate the jewelry."
+      }
+    },
+    "faq_g_how_often_should_you_wash_your_hair_01": {
+      "en": {
+        "q": "How often should you wash your hair if it is oily?",
+        "a": "If you have an oily scalp or straight, fine hair, daily shampooing is reasonable. The AAD notes that people with straight hair and an oily scalp may want to shampoo every day, and the Cleveland Clinic adds that finer hair should be washed at least every other day, with daily washing an option if greasiness bothers you. Most people, however, only produce enough oil to need a wash every couple of days."
+      }
+    },
+    "faq_g_how_often_should_you_wash_your_hair_02": {
+      "en": {
+        "q": "Is it bad to wash your hair every day?",
+        "a": "Not for everyone, but it can be damaging for dry, curly, or chemically treated hair. The Cleveland Clinic warns that over-washing leads to breakage, dryness, and product overload over time, especially in curly hair. If you have oily or fine hair, daily washing is generally fine; if your hair feels brittle, frizzy, or your scalp is itchy and flaky, try cutting out one wash per week and see if it improves."
+      }
+    },
+    "faq_g_how_often_should_you_wash_your_hair_03": {
+      "en": {
+        "q": "How often should you wash curly, coily, or textured hair?",
+        "a": "Curly and thick hair should be washed about once a week, while tightly coiled or textured hair can go one to two weeks between washes. The Cleveland Clinic recommends coarse, thick hair once a week, and the AAD (cited by Healthline) advises that people with tight curls or textured hair wash no more than once a week or every other week to avoid dryness, breakage, and damage."
+      }
+    },
+    "faq_g_how_often_should_you_wash_your_hair_04": {
+      "en": {
+        "q": "What are the signs you are washing your hair too much or too little?",
+        "a": "Over-washing shows up as dry, brittle hair, split ends, frizz (especially in curly hair), and a tight, itchy, or flaky scalp that mimics dandruff. Under-washing shows up as a visibly oily scalp, limp or clumpy strands, stale smell, and itching or yellowish flakes from oil and yeast buildup. The Cleveland Clinic and Healthline recommend adjusting by one wash per week in the direction your symptoms point, then giving the change about a month before judging it."
+      }
+    },
+    "faq_g_how_long_does_fermentation_take_01": {
+      "en": {
+        "q": "How long does beer fermentation take?",
+        "a": "Ale beer finishes primary fermentation in about 3 to 7 days at 55 to 75 degrees F, while lager beer takes roughly 10 to 14 days at the colder 46 to 56 degrees F range. A peer-reviewed brewing protocol puts the typical primary at 6 days for ale and 10 days for lager, after which lagers condition for 4 to 6 weeks. Sources: BJCP study guide; PubMed Central brewing protocol (PMC9286407)."
+      }
+    },
+    "faq_g_how_long_does_fermentation_take_02": {
+      "en": {
+        "q": "How long does sauerkraut take to ferment?",
+        "a": "At the USDA-recommended 70 to 75 degrees F, sauerkraut is fully fermented in about 3 to 4 weeks. At a cooler 60 to 65 degrees F the same batch takes 5 to 6 weeks, and below 60 degrees F it may not ferment at all. Above 75 degrees F it tends to go soft and lose flavor. Source: National Center for Home Food Preservation (USDA)."
+      }
+    },
+    "faq_g_how_long_does_fermentation_take_03": {
+      "en": {
+        "q": "How long does kombucha take to ferment?",
+        "a": "Kombucha typically ferments for 7 to 10 days at warm room temperature (about 72 to 85 degrees F). During that window the pH drops from around 5 down to roughly 2.5, which is what makes it safe by suppressing pathogens. Michigan State University Extension advises discarding a batch that has not reached pH 2.5 by day 10 rather than fermenting it longer. Sources: Michigan State University Extension; Salinas-Ruiz et al., Foods (PMC13072973) for the optimal temperature range."
+      }
+    },
+    "faq_g_how_long_does_fermentation_take_04": {
+      "en": {
+        "q": "How do I know when fermentation is done?",
+        "a": "Measure, do not guess. Beer and wine are done when specific gravity holds steady over 2 to 3 days on a hydrometer. Kombucha is done at about pH 2.5 (typically day 7 to 10). Sauerkraut is done when bubbling stops and the brine tastes tart. Discard any ferment that shows fuzzy or colored mold, smells rotten rather than sour, or turns soft and slimy."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_the_moon_01": {
+      "en": {
+        "q": "How long did it take Apollo 11 to get to the Moon?",
+        "a": "Apollo 11 took 4 days, 6 hours, and 45 minutes from launch to lunar landing in July 1969, according to Britannica. The fastest crewed trip was Apollo 8, which entered lunar orbit just 69 hours and 8 minutes (a little under three days) after launch. Those three-to-four-day flights remain the standard benchmark for a fast, crewed trip."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_the_moon_02": {
+      "en": {
+        "q": "What is the fastest a spacecraft has reached the Moon?",
+        "a": "NASA's New Horizons probe crossed the Moon's orbital distance just 8 hours and 35 minutes after launch in 2006, Britannica notes. It did not stop at the Moon — it was racing toward Pluto and simply flew past lunar distance. Any craft that needs to slow down to orbit or land takes longer than a high-speed flyby."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_the_moon_03": {
+      "en": {
+        "q": "Why does Artemis take longer to reach the Moon than Apollo?",
+        "a": "Artemis II flies a fuel-efficient free-return trajectory shaped so the Moon's gravity can sling the craft back to Earth automatically if anything fails. That safer, leaner path makes the mission an approximately 10-day journey with the lunar flyby around day five or six, versus Apollo's brisk three-day direct shot. It is a design choice, not a step backward in technology."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_the_moon_04": {
+      "en": {
+        "q": "How far away is the Moon, and does its distance change travel time?",
+        "a": "The Moon averages 384,400 km (238,855 miles) from Earth, ranging from about 362,600 km (225,309 miles) at perigee to 405,400 km (251,903 miles) at apogee, according to NASA. Launching when the Moon is nearer saves a little time and fuel, but trajectory choice and propulsion matter far more than the Moon's slight distance variation."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_mars_01": {
+      "en": {
+        "q": "How long does it take to get to Mars?",
+        "a": "With today's rockets, a one-way trip to Mars takes about seven to ten months &mdash; roughly 200 to 300 days. NASA puts the cruise phase of a typical mission at about 200 days and notes that a relatively direct route generally takes 7 to 10 months. The exact duration depends on the trajectory chosen, the spacecraft's mass, and where Earth and Mars sit in their orbits."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_mars_02": {
+      "en": {
+        "q": "Why does it take so long, and can't we go faster?",
+        "a": "Spacecraft travel on curved, fuel-efficient paths rather than straight lines. Most missions use a Hohmann transfer &mdash; the lowest-energy route &mdash; in which the craft is given an initial push and then coasts for about 259 days. Flying faster means burning far more fuel, which requires a much larger and costlier rocket. Future nuclear thermal or ion propulsion could cut the trip, but no crewed system does so yet."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_mars_03": {
+      "en": {
+        "q": "How often can we launch to Mars?",
+        "a": "Only about once every 26 months. Earth and Mars orbit the Sun at different speeds, and they line up for an energy-efficient trip &mdash; with Mars roughly 44 degrees ahead of Earth &mdash; for just a few weeks each cycle. Miss the launch window and you wait roughly two years for the next one, which is why Mars missions worldwide tend to launch in clusters."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_get_to_mars_04": {
+      "en": {
+        "q": "How far away is Mars from Earth?",
+        "a": "It varies enormously. At closest approach Mars can come within about 34.7 million miles (55.8 million km) of Earth, the average separation is around 140 million miles (225 million km), and when the two planets sit on opposite sides of the Sun the gap can stretch to roughly 250 million miles (400 million km). That constantly changing distance is the main reason flight times vary."
+      }
+    },
+    "faq_g_best_time_to_visit_japan_01": {
+      "en": {
+        "q": "What is the best month to visit Japan for cherry blossoms?",
+        "a": "Late March to early April is peak cherry blossom season in most of Japan. According to JNTO's 2026 forecast, Tokyo's first bloom was around March 19, with full bloom following about a week later; Kyoto and Osaka peak in late March to early April. The bloom moves north, reaching Sapporo around April 19 and Hokkaido's east into May. Book hotels 4-6 months ahead, as this is Japan's busiest window."
+      }
+    },
+    "faq_g_best_time_to_visit_japan_02": {
+      "en": {
+        "q": "When is the cheapest time to visit Japan?",
+        "a": "The cheapest times are late January through early March (excluding New Year, Jan 1-3) and June, during the rainy season. Flights, hotels, and ryokan drop to their lowest rates and major sights in Kyoto and Nara are quiet. For cheaper travel with decent weather, early December and early May (just after Golden Week) are good shoulder-season picks."
+      }
+    },
+    "faq_g_best_time_to_visit_japan_03": {
+      "en": {
+        "q": "When is typhoon season in Japan?",
+        "a": "Japan's typhoon season runs from May to October and peaks in August and September, when storms are most likely to track near or across the country. September carries the highest risk of disrupted trains and flights. Outside the August-September peak, typhoon impacts on a typical 10-14 day trip are limited, but it's worth buying flexible tickets if you travel then."
+      }
+    },
+    "faq_g_best_time_to_visit_japan_04": {
+      "en": {
+        "q": "What is the worst time to visit Japan?",
+        "a": "For most travelers the worst window is mid-June to mid-July, the rainy season (tsuyu), when skies are overcast and humidity climbs; Tokyo's tsuyu averages June 8 to July 20. Also avoid Golden Week (April 29-May 5), Obon (mid-August), and New Year (Dec 29-Jan 3), when domestic travel surges, prices spike, and many businesses close."
+      }
+    },
+    "faq_g_best_time_to_visit_iceland_01": {
+      "en": {
+        "q": "When is the best time to see the northern lights in Iceland?",
+        "a": "Northern lights season runs from late August/early September to mid-April, when nights are dark enough for viewing. The equinox months of March, April, September and October are especially good for balancing dark skies with more stable weather. Auroras typically peak between 10:30 p.m. and 1:00 a.m. Check the Icelandic Met Office aurora forecast before heading out, away from city light pollution."
+      }
+    },
+    "faq_g_best_time_to_visit_iceland_02": {
+      "en": {
+        "q": "What is the warmest month to visit Iceland?",
+        "a": "July is the warmest month, with an average temperature of about 13°C (55°F) according to Lonely Planet. June averages around 9°C (48°F) and August about 10.3°C (50.5°F). July also brings 24-hour daylight and is when the Highland F-roads fully open, making it the peak month for hiking, whale watching and road trips — though it is also the busiest and most expensive."
+      }
+    },
+    "faq_g_best_time_to_visit_iceland_03": {
+      "en": {
+        "q": "What is the cheapest time to visit Iceland?",
+        "a": "The cheapest time is the shoulder and off-season: April, May, September, October and November. Accommodation and rental-car rates drop sharply from the June–July peak, crowds thin out, and you can still find off-season discounts on tours. The trade-off is that some Highland routes and seasonal tours are closed in spring, and autumn weather can turn stormy."
+      }
+    },
+    "faq_g_best_time_to_visit_iceland_04": {
+      "en": {
+        "q": "When can you experience the midnight sun in Iceland?",
+        "a": "The midnight sun is visible from late May through July, peaking around the summer solstice on June 21, when the sun barely (or never) sets — especially in the north, such as on Grímsey Island, which lies on the Arctic Circle. During this window Iceland gets near 24-hour daylight, ideal for hiking, camping and maximising sightseeing, though it means no darkness for northern lights viewing."
+      }
+    },
+    "faq_g_best_time_to_visit_hawaii_01": {
+      "en": {
+        "q": "What is the best month to visit Hawaii?",
+        "a": "Mid-April to early June, plus September and October, are the best months to visit Hawaii. The weather stays in the low-to-mid 80s F, the ocean is calm (late spring) or at its warmest (fall), and crowds and prices drop between school breaks. Lonely Planet specifically names September and October as the cheapest, quietest months with the warmest ocean of the year."
+      }
+    },
+    "faq_g_best_time_to_visit_hawaii_02": {
+      "en": {
+        "q": "When is the cheapest time to visit Hawaii?",
+        "a": "September and October are the cheapest months to visit Hawaii, according to Lonely Planet, with airfare from the U.S. mainland usually at its lowest and hotel deals easiest to find. Late February through early March is a secondary budget window after the holiday rush. Avoid the last two weeks of December through early January, when prices peak."
+      }
+    },
+    "faq_g_best_time_to_visit_hawaii_03": {
+      "en": {
+        "q": "When is hurricane season in Hawaii?",
+        "a": "Central Pacific hurricane season officially runs June 1 through November 30, according to NOAA's Central Pacific Hurricane Center, though tropical cyclones can occur year-round. Direct strikes on Hawaii are rare, but when systems approach it is most often in late summer and early fall. If you visit in August through October, build in flexibility and consider travel insurance."
+      }
+    },
+    "faq_g_best_time_to_visit_hawaii_04": {
+      "en": {
+        "q": "When can you see humpback whales in Hawaii?",
+        "a": "Humpback whales (kohola) visit Hawaiian waters from November through April to mate, calve, and nurse, with peak sightings in January through March. An estimated 8,000 to 12,000 migrate from Alaska each winter, and NOAA's Hawaiian Islands Humpback Whale National Marine Sanctuary reports they can be spotted from every island, often even from shore."
+      }
+    },
+    "faq_g_best_time_to_visit_ireland_01": {
+      "en": {
+        "q": "What is the absolute best month to visit Ireland?",
+        "a": "June or September. Both deliver long days and mild temperatures — daytime highs approach 18°C by June and September's mean sits near 13°C — but with fewer crowds and lower prices than the July–August peak, when Irish schools are out and accommodation fills up. Lonely Planet singles out September and October for crowd-free value, and April–June for flowers, golf and coastal drives."
+      }
+    },
+    "faq_g_best_time_to_visit_ireland_02": {
+      "en": {
+        "q": "What is the cheapest time to visit Ireland?",
+        "a": "November to February (excluding Christmas and New Year) is cheapest, with off-peak hotel and B&B rates in cities like Kilkenny, Limerick and Galway. The trade-off is short daylight, Atlantic storms and scaled-back transport, and many rural attractions close for winter. September–October is the smarter budget compromise — prices have fallen but everything stays open."
+      }
+    },
+    "faq_g_best_time_to_visit_ireland_03": {
+      "en": {
+        "q": "How cold does Ireland get in winter?",
+        "a": "Winters are mild rather than bitter. Met Éireann's long-term averages put January at about 5°C and December at 7–9°C, and Tourism Ireland notes that snow is \"quite rare.\" Expect wet, windy, overcast days with the occasional frosty morning rather than sustained freezing — so pack layers and a waterproof jacket, not heavy arctic gear."
+      }
+    },
+    "faq_g_best_time_to_visit_ireland_04": {
+      "en": {
+        "q": "When is the worst time to visit Ireland?",
+        "a": "For classic sightseeing, late November through January is the weakest window: the shortest days of the year, the highest storm risk, and the fewest open attractions and transport links. A close second is booking July–August at the last minute — peak summer is wonderful if you reserve months ahead, but risky, sold-out and expensive if you don't, since Irish schools are on break."
+      }
+    },
+    "faq_g_best_time_to_visit_costa_rica_01": {
+      "en": {
+        "q": "What is the cheapest month to visit Costa Rica?",
+        "a": "September and October are the cheapest months to visit Costa Rica. This is the peak of the green season, when hotels drop rates, crowds thin, and Lonely Planet notes you'll find the best deals on accommodation and travel. The catch is that it's also the wettest period — up to 25 inches of rain monthly on the Pacific slope, with possible flooding. The Caribbean coast is the exception: it gets a relatively dry window in September–October, making it the smartest region for a budget trip."
+      }
+    },
+    "faq_g_best_time_to_visit_costa_rica_02": {
+      "en": {
+        "q": "When is the rainy season in Costa Rica?",
+        "a": "The rainy (green) season runs from May through mid-December, according to the Costa Rica Tourism Board. On the Pacific side, the wettest months are September and October, driven by cyclone systems and monsoon winds; there's a relative rain dip called the veranillo (\"little summer\") in July–August. The Caribbean coast follows a different pattern — its rainiest month is December, and it actually gets a drier stretch in September–October."
+      }
+    },
+    "faq_g_best_time_to_visit_costa_rica_03": {
+      "en": {
+        "q": "What is the driest month in Costa Rica?",
+        "a": "March is the driest and hottest month on Costa Rica's Pacific coast, marking the heart of the dry season that runs from December to March (with April as a transition month), per the Costa Rica Tourism Board's climate data. February and March are also the first relatively dry window on the Caribbean coast. For the most reliable sunshine across the whole country, mid-December through March is your safest bet."
+      }
+    },
+    "faq_g_best_time_to_visit_costa_rica_04": {
+      "en": {
+        "q": "When should I avoid visiting Costa Rica?",
+        "a": "Avoid late September through October if dry-weather activities on the Pacific coast matter to you — it's the rainiest period, and NOAA's National Hurricane Center notes the Atlantic hurricane season peaks around September 10 with most activity from mid-August to mid-October. Some southern Pacific hotels close entirely during this stretch. Also avoid Christmas–New Year and Holy Week (La Semana Santa) if you want to dodge peak crowds and high-season pricing."
+      }
+    },
+    "faq_g_best_time_to_visit_alaska_01": {
+      "en": {
+        "q": "What is the absolute best month to visit Alaska?",
+        "a": "July is the single peak month for warm weather, long daylight, and wildlife, bears gather at Brooks Falls as salmon run and the Interior reaches average highs around 70°F. The broader best window is mid-June through August, when cruises, tours, and lodges are all fully open. Expect the biggest crowds and highest prices in July, so book months ahead."
+      }
+    },
+    "faq_g_best_time_to_visit_alaska_02": {
+      "en": {
+        "q": "When is the cheapest time to visit Alaska?",
+        "a": "The shoulder seasons are cheapest: May, and September into October. Travel Alaska reports these windows run roughly 20 to 40 percent below peak summer rates on flights and accommodations, with September especially good value because fall color peaks, aurora season opens, and roads stay clear. November through March is the lowest-priced period but trades away most classic sightseeing."
+      }
+    },
+    "faq_g_best_time_to_visit_alaska_03": {
+      "en": {
+        "q": "What is the best time to see the northern lights in Alaska?",
+        "a": "Aurora season around Fairbanks runs roughly August 21 to April 21, and displays are best between 9 p.m. and 3 a.m. centered on midnight. The University of Alaska Fairbanks Geophysical Institute says odds are highest near the spring (March) and fall (September) equinoxes, roughly double the solstice likelihood. Stay at least three clear nights for a strong chance of a sighting."
+      }
+    },
+    "faq_g_best_time_to_visit_alaska_04": {
+      "en": {
+        "q": "Can you see wildlife in Alaska during the winter?",
+        "a": "Winter wildlife viewing is limited. Bears den up and hibernate, and many marine species are less active or absent, so the classic wildlife season runs roughly May through September. If wildlife is your priority, visit June through August for bears, whales, and salmon runs, or September for bears feeding before hibernation. Winter is better reserved for aurora, dog sledding, and snow sports."
+      }
+    },
+    "faq_g_best_time_to_visit_puerto_rico_01": {
+      "en": {
+        "q": "What is the best month to visit Puerto Rico?",
+        "a": "Mid-December through April is the best overall window — dry, sunny, and comfortably in the low 80s &deg;F. Within that, February and March offer the most reliable sunshine and lowest humidity (January, after Three Kings Day on January 6, is the coolest month), while April begins to thin out as shoulder-season prices arrive. Lonely Planet singles out April and May for milder temperatures and fewer crowds if you can wait."
+      }
+    },
+    "faq_g_best_time_to_visit_puerto_rico_02": {
+      "en": {
+        "q": "When is hurricane season in Puerto Rico?",
+        "a": "Atlantic hurricane season officially runs June 1 to November 30, and NOAA places its climatological peak around September 10, with most storm activity concentrated between mid-August and mid-October. September and October carry the highest risk and consequently see the fewest visitors. If you travel in this window, buy travel insurance and keep your dates flexible."
+      }
+    },
+    "faq_g_best_time_to_visit_puerto_rico_03": {
+      "en": {
+        "q": "What is the cheapest time to visit Puerto Rico?",
+        "a": "August through October is the cheapest time, when hurricane risk drives a sharp drop in both visitor numbers and prices, with September typically the quietest month. To save more, stay in paradores — independent guesthouses outside San Juan. For better weather at a discount, the May–June shoulder season is the best value compromise."
+      }
+    },
+    "faq_g_best_time_to_visit_puerto_rico_04": {
+      "en": {
+        "q": "When is the worst time to visit Puerto Rico?",
+        "a": "It depends on what you're avoiding. For storm risk, mid-August to mid-October is the worst window, peaking around September 10. For crowds and high prices, the winter peak — especially Christmas, New Year's, and the mid-January Fiestas de la Calle San Sebastián — is the busiest and most expensive time to go. Shoulder months dodge both."
+      }
+    },
+    "faq_g_best_time_to_visit_portugal_01": {
+      "en": {
+        "q": "What is the best month to visit Portugal?",
+        "a": "May is the single best all-round month: Lisbon averages a 22°C (72°F) high, the south is carpeted in wildflowers, and crowds have not peaked. More broadly, mid-May to June and September to October are the ideal shoulder-season windows, with mild sunny weather and lower prices than peak summer, according to Lonely Planet and Rick Steves."
+      }
+    },
+    "faq_g_best_time_to_visit_portugal_02": {
+      "en": {
+        "q": "What is the cheapest time to visit Portugal?",
+        "a": "The cheapest time is the low season from November to March, when accommodation rates hit rock bottom and the Algarve stays sunny enough for uncrowded cliff-top walks. For the best value-for-comfort balance, target the shoulder edges — late October, November, and March — where pricing stays low but weather is milder."
+      }
+    },
+    "faq_g_best_time_to_visit_portugal_03": {
+      "en": {
+        "q": "How hot is Portugal in summer?",
+        "a": "Lisbon averages a daytime high of about 28°C (82–83°F) in July and August, while Faro and the Algarve peak around 29°C (84°F). The Algarve sea reaches roughly 21°C (71°F) in August and September. It is the busiest, most expensive period — Lonely Planet reports accommodation prices typically rise 30% or more in the summer high season."
+      }
+    },
+    "faq_g_best_time_to_visit_portugal_04": {
+      "en": {
+        "q": "When should you avoid visiting Portugal?",
+        "a": "August is the toughest month for most travellers — it is Portugal's busiest tourist month, with packed Algarve beaches and premium prices that require booking well in advance. Also avoid the wet northern winter (November–February) around Porto and the Douro if you dislike cold, rainy weather, and steer clear of festival nights in Lisbon and Porto in June unless you have booked rooms."
+      }
+    },
+    "faq_g_best_time_to_visit_mexico_01": {
+      "en": {
+        "q": "What is the best month to visit Mexico?",
+        "a": "The best months are December through April, during Mexico's dry season. For the ideal balance of dry, sunny weather and manageable crowds, target late November to mid-December or January through early March, before spring break and Easter price spikes hit the coast. Mexico's official tourism board defines the dry season as November to April and the rainy season as May to October."
+      }
+    },
+    "faq_g_best_time_to_visit_mexico_02": {
+      "en": {
+        "q": "What is the cheapest month to go to Mexico?",
+        "a": "Mexico has two low seasons: May to June and September to November, when hotel and flight prices drop sharply. September is usually the cheapest month on the Caribbean coast, though it coincides with peak rain and hurricane risk. May and early June offer a better deal: hot but mostly dry with thin crowds. Book flights one to three months ahead for the lowest fares."
+      }
+    },
+    "faq_g_best_time_to_visit_mexico_03": {
+      "en": {
+        "q": "When is hurricane season in Cancun, Mexico?",
+        "a": "Atlantic hurricane season, which affects Cancun and the Caribbean coast, runs June 1 to November 30, according to NOAA. The climatological peak is September 10, with most storm activity occurring between mid-August and mid-October. An average season produces 14 named storms and 7 hurricanes across the Atlantic basin, so the risk to any single destination on a given week is relatively low, but September carries the highest chance of disruption."
+      }
+    },
+    "faq_g_best_time_to_visit_mexico_04": {
+      "en": {
+        "q": "Is Mexico too hot in the summer?",
+        "a": "Summer is hot and humid across much of Mexico. May is the hottest pre-rain month, with average daily highs around 35C (95F) in Merida, 30C (86F) in Guadalajara and Oaxaca, and 26C (79F) in Mexico City. From June to August, temperatures stay high and afternoon downpours arrive with the rainy season. Inland Mexico City stays milder thanks to its altitude (about 2,240 m / 7,350 ft), but coastal resorts like Cancun are oppressively hot and can be affected by sargassum seaweed."
+      }
+    },
+    "faq_g_best_time_to_book_flights_01": {
+      "en": {
+        "q": "How far in advance should I book a domestic flight?",
+        "a": "Book a domestic flight roughly 1-3 months before departure, with a sweet spot around 28-45 days out. Expedia's 2026 report found the cheapest domestic fares fall 15-30 days before travel - about $130 less than tickets booked more than six months ahead. Google's data points to a similar low around day 39 (good prices from 23-51 days out). Book inside two weeks and you usually pay a last-minute premium."
+      }
+    },
+    "faq_g_best_time_to_book_flights_02": {
+      "en": {
+        "q": "What is the cheapest day of the week to fly?",
+        "a": "Tuesday and Wednesday are the cheapest days to fly. Google's study found flying Monday-through-Wednesday is about 13% cheaper than weekend departures, and Expedia reports Tuesday is roughly 14% cheaper than Sunday for domestic flights. For international routes, Expedia's 2026 data found Friday tends to be the cheapest departure day (about 8% cheaper than Sunday), while Sunday is the most expensive for both domestic and international travel."
+      }
+    },
+    "faq_g_best_time_to_book_flights_03": {
+      "en": {
+        "q": "Is it really cheaper to book flights on a Tuesday?",
+        "a": "Barely, and probably not for the reason you've heard. The old advice to book on Tuesday afternoon came from when airlines filed fares Monday night and competitors matched Tuesday morning - but modern dynamic pricing has erased that edge. Google's data shows booking on a Tuesday is only about 1.3% cheaper than booking on Sunday, which is negligible. Expedia's 2026 report actually found the cheapest day to book is now Friday (just 3% cheaper than Sunday). How far in advance you book matters far more than which day you click buy."
+      }
+    },
+    "faq_g_best_time_to_book_flights_04": {
+      "en": {
+        "q": "When should I book international flights for the best price?",
+        "a": "Book international flights roughly 1-6 months ahead, earlier for peak summer or holiday travel. The ideal window varies by source: Expedia found booking international economy 31-45 days out saves about $190 versus booking more than six months out (and booking 8-15 days out can save $225), while travel experts at The Points Guy and Hopper recommend 3-5 months for most routes. For Europe, lock in summer trips by March-April; for Asia and the South Pacific, plan 5-7 months ahead (per Hopper) since longer routes have less last-minute inventory."
+      }
+    },
+    "faq_g_how_often_should_you_rotate_your_tires_01": {
+      "en": {
+        "q": "How many miles should you go between tire rotations?",
+        "a": "Most vehicle manufacturers and AAA recommend every 5,000–7,500 miles, and the Tire Industry Association sets the baseline at 5,000–7,000 miles. A handy rule is every other oil change — as long as your oil interval is around 3,000–5,000 miles. With modern 7,500–10,000-mile oil intervals, rotate at every oil change instead. Check your owner's manual for the exact figure."
+      }
+    },
+    "faq_g_how_often_should_you_rotate_your_tires_02": {
+      "en": {
+        "q": "Do AWD and 4WD vehicles need tire rotation more often?",
+        "a": "All-wheel-drive and four-wheel-drive vehicles still follow roughly a 5,000-mile rotation, and Bridgestone recommends 5,000 miles or less for trucks used for hauling or off-road. Even tread matters more on AWD because mismatched tire circumferences force the differential to work constantly and can wear expensive drivetrain parts. Use an X-pattern (double cross) on AWD/4WD."
+      }
+    },
+    "faq_g_how_often_should_you_rotate_your_tires_03": {
+      "en": {
+        "q": "Is it okay to just rotate my tires every oil change?",
+        "a": "Yes — if your oil-change interval is around 5,000–7,500 miles, rotating at every oil change is ideal, and AAA notes the two intervals often align. If your car uses a 10,000-mile oil interval, that is too long to wait; rotate at 5,000 miles instead. The goal is to never let the rotation interval exceed about 8,000 miles."
+      }
+    },
+    "faq_g_how_often_should_you_rotate_your_tires_04": {
+      "en": {
+        "q": "Which tires wear out fastest on a front-wheel-drive car?",
+        "a": "The front tires. On a front-wheel-drive vehicle the fronts handle steering, most of the braking, and all of the acceleration, so they wear significantly faster than the rears — both the Tire Industry Association and Consumer Reports flag front-tire wear as the main reason rotation matters. The forward-cross pattern moves that faster-wearing pair to the rear."
+      }
+    },
+    "faq_g_how_long_do_brake_pads_last_01": {
+      "en": {
+        "q": "How many miles do brake pads last on average?",
+        "a": "Brake pads typically last 30,000–50,000 miles for most drivers — AAA cites about 30,000 miles as the general average and Kelley Blue Book places the typical range at 25,000–50,000 miles (two to five years). The broader window runs from under 20,000 miles in stop-and-go commuting (AutoZone) up to 60,000–70,000+ in ideal highway driving."
+      }
+    },
+    "faq_g_how_long_do_brake_pads_last_02": {
+      "en": {
+        "q": "What are the warning signs that brake pads need replacing?",
+        "a": "The most common sign is a high-pitched squeal caused by the pad's built-in wear indicator touching the rotor. AAA and KBB also list grinding (metal-on-metal), a spongy or vibrating pedal, longer stopping distances, visible pad thickness under 1/4 inch (6 mm), and a dashboard brake or ABS warning light. Grinding means immediate service."
+      }
+    },
+    "faq_g_how_long_do_brake_pads_last_03": {
+      "en": {
+        "q": "Which type of brake pad lasts longest — ceramic or semi-metallic?",
+        "a": "Ceramic pads generally last the longest and produce less dust and noise, making them ideal for most passenger cars. Semi-metallic pads handle heat and heavy loads better, so KBB recommends them for trucks and SUVs, but they may wear somewhat faster and dust more. Organic pads are softest and shortest-lived."
+      }
+    },
+    "faq_g_how_long_do_brake_pads_last_04": {
+      "en": {
+        "q": "How much does it cost to replace brake pads?",
+        "a": "AAA estimates $250–$500 per axle ($500–$1,000 for all four wheels) for pads and rotors at a shop, while KBB quotes around $300 per axle at a dealership. Doing the job yourself, as outlined by Edmunds, can cut the cost to roughly $115–$300 per axle in parts."
+      }
+    },
+    "faq_g_how_often_should_you_wash_sheets_01": {
+      "en": {
+        "q": "How often should you wash your sheets if you have no allergies or pets?",
+        "a": "Every 1–2 weeks, aiming for weekly. A Cleveland Clinic dermatologist and the Good Housekeeping Institute both set once-a-week as the standard, and the Sleep Foundation says you can stretch to two weeks only if you rarely sleep in the bed. Weekly is the safe default for most adults with no special factors."
+      }
+    },
+    "faq_g_how_often_should_you_wash_sheets_02": {
+      "en": {
+        "q": "How often should you wash sheets with pets, allergies, or night sweats?",
+        "a": "Every 3–4 days. The Sleep Foundation recommends that interval when a pet shares the bed, and Cleveland Clinic adds that allergies, asthma, illness, heavy sweating, hot/humid weather, and sleeping naked all call for more frequent washes — closer to twice weekly — because sweat and dander feed dust mites and bacteria."
+      }
+    },
+    "faq_g_how_often_should_you_wash_sheets_03": {
+      "en": {
+        "q": "What water temperature kills dust mites in sheets?",
+        "a": "The American Lung Association advises washing bedding weekly in hot water of at least 120°F (49°C). A peer-reviewed study found all dust mites are killed at 55°C (about 131°F) or above; a cold wash still removes over 90% of allergens but leaves live mites, so follow with a hot dryer cycle if you must wash cool."
+      }
+    },
+    "faq_g_how_often_should_you_wash_sheets_04": {
+      "en": {
+        "q": "Can dirty sheets cause acne or make you sick?",
+        "a": "They can worsen issues but rarely cause them outright. Dirty sheets build up dead skin, sweat, oils, and bacteria that may irritate skin and aggravate acne or eczema, and dust mites in bedding are a major asthma and allergy trigger. Weekly washing helps, but persistent breakouts, rashes, or morning congestion are worth discussing with a dermatologist or allergist. This is general information, not medical advice."
+      }
+    },
+    "faq_g_6_month_old_nap_schedule_01": {
+      "en": {
+        "q": "How many naps should a 6 month old take?",
+        "a": "Most 6 month olds take 2 to 3 naps per day. Many are still on three naps, with the third a short catnap, and they typically drop to two naps sometime between 6 and 9 months as their wake windows lengthen. The Sleep Foundation notes it is normal for infants to nap 2 to 3 hours or more each day."
+      }
+    },
+    "faq_g_6_month_old_nap_schedule_02": {
+      "en": {
+        "q": "How long should wake windows be for a 6 month old?",
+        "a": "Cleveland Clinic places the wake window for 5- to 7-month-old babies at roughly 2 to 4 hours. A typical 6 month old manages about 2 hours before the first nap, 2.5 hours before the second, and 2.5 to 3 hours before bed, with each window growing a little longer through the day."
+      }
+    },
+    "faq_g_6_month_old_nap_schedule_03": {
+      "en": {
+        "q": "How much total sleep does a 6 month old need in 24 hours?",
+        "a": "The American Academy of Sleep Medicine recommends 12 to 16 hours of sleep per 24 hours for infants aged 4 to 12 months, including naps, according to the Sleep Foundation and Stanford Medicine Children's Health. A 6 month old usually lands near 14 hours total, split between about 3 hours of naps and 11 to 12 hours at night. This is general guidance; talk to your pediatrician about your baby's specific needs."
+      }
+    },
+    "faq_g_6_month_old_nap_schedule_04": {
+      "en": {
+        "q": "How do I know when to drop from 3 naps to 2?",
+        "a": "Most babies move from three naps to two between 6 and 9 months. Signs it is time include the third nap becoming a daily struggle, your baby taking a long time to fall asleep for it, or the late nap pushing bedtime too late. When you drop it, move bedtime earlier for a week or two while the midday nap lengthens to cover the gap."
+      }
+    },
+    "faq_g_how_long_do_grass_seeds_take_to_grow_01": {
+      "en": {
+        "q": "How long does it take for grass seed to germinate?",
+        "a": "Grass seed germinates in 5–30 days depending on species. Perennial and annual ryegrass are fastest at 5–10 days, tall fescue 7–12 days, fine fescues 7–14 days, and Kentucky bluegrass is slowest at 14–30 days, according to UC Agriculture and Natural Resources’ turfgrass germination data. In ideal warmth, perennial ryegrass can appear in just 3–5 days."
+      }
+    },
+    "faq_g_how_long_do_grass_seeds_take_to_grow_02": {
+      "en": {
+        "q": "How often should I water new grass seed?",
+        "a": "Keep the top inch of soil constantly moist — not soggy — throughout the germination period (just a few days for ryegrass, but up to several weeks for Kentucky bluegrass), which usually means 2–4 light waterings a day. Oregon State University Extension stresses that the seedbed must stay moist the whole time and that you generally can’t rely on rain alone — if it dries out during germination, the seed is likely lost. Once seedlings emerge, shift to deeper, less frequent watering to encourage roots."
+      }
+    },
+    "faq_g_how_long_do_grass_seeds_take_to_grow_03": {
+      "en": {
+        "q": "When can I mow new grass for the first time?",
+        "a": "Penn State Extension recommends mowing once the new grass is about one-third taller than your target height (e.g., start when it reaches 4 inches if you mow at 3 inches), using a lightweight mower with sharp blades. A simple test: walk on the new turf — if the blades spring back upright, it can handle the mower. This typically falls within 3–8 weeks after seeding — sooner for fast-germinating ryegrass, later for slow Kentucky bluegrass."
+      }
+    },
+    "faq_g_how_long_do_grass_seeds_take_to_grow_04": {
+      "en": {
+        "q": "What temperature does grass seed need to germinate?",
+        "a": "Cool-season grasses germinate best at roughly 59–86°F, with optimum results in the 60–85°F air-temperature range. Penn State Extension lists species-specific optima (e.g., perennial ryegrass and tall fescue 68–86°F, Kentucky bluegrass 59–86°F). Root growth is strongest when soil sits between 50°F and 65°F. Warm-season grasses such as Bermudagrass need warmer soil — roughly 65°F or above — to germinate well."
+      }
+    },
+    "faq_g_how_many_times_a_day_should_you_pee_01": {
+      "en": {
+        "q": "Is it normal to pee every hour?",
+        "a": "No. Cleveland Clinic says most people average 7 to 8 trips a day (a normal range is 4 to 10), and peeing every 30 minutes to an hour is not typical. Occasional hourly trips can be fine if you've drunk a lot of fluid or caffeine, but a persistent pattern is your body's way of signaling that something may be wrong. If it continues, talk to your doctor."
+      }
+    },
+    "faq_g_how_many_times_a_day_should_you_pee_02": {
+      "en": {
+        "q": "Why am I peeing more than 8 times a day?",
+        "a": "Common reasons include high fluid or caffeine intake, diuretic medications (often for blood pressure), pregnancy, or a urinary tract infection — the single most common cause per Cleveland Clinic. Other possibilities are overactive bladder, diabetes, an enlarged prostate, or interstitial cystitis. If the increase is new, unexplained, and lasts more than a few days, see a healthcare provider."
+      }
+    },
+    "faq_g_how_many_times_a_day_should_you_pee_03": {
+      "en": {
+        "q": "How many times should you pee at night?",
+        "a": "Ideally zero to one. The Urology Care Foundation considers waking two or more times per night to urinate a sign of nocturia, and notes you should be able to sleep 6 to 8 hours without a bathroom break. Cleveland Clinic adds that one nightly trip is expected in your 40s-50s, two in your 60s-70s, and two to three by your 80s. If nighttime trips are new or bothersome, bring it up with your provider."
+      }
+    },
+    "faq_g_how_many_times_a_day_should_you_pee_04": {
+      "en": {
+        "q": "How much urine should you produce in a day?",
+        "a": "The Urology Care Foundation reports that healthy adult kidneys make about 1.5 to 2 quarts (roughly 1.5 to 2 liters) of urine per day, spread across roughly 6 to 8 bathroom visits. An adult bladder typically holds 350 to 600 mL (1.5 to 2.5 cups). Output well above that may signal polyuria, which can point to diabetes or excess fluid intake — worth discussing with a doctor."
+      }
+    },
+    "faq_g_how_many_times_a_day_should_you_poop_01": {
+      "en": {
+        "q": "Is it normal to poop three times a day?",
+        "a": "Yes. The accepted normal range is three times a day to three times a week, according to Mayo Clinic, the AGA, and Cleveland Clinic. Pooping multiple times a day can be perfectly healthy if it matches your usual pattern and the stool is comfortable to pass. What matters is whether the frequency represents a sudden change from your personal baseline — if it does, talk to a doctor."
+      }
+    },
+    "faq_g_how_many_times_a_day_should_you_poop_02": {
+      "en": {
+        "q": "Is pooping once a week normal?",
+        "a": "Probably not. Mayo Clinic and the AGA define constipation as fewer than three bowel movements a week, especially when stools are hard, dry, or require straining. If you're going only once a week, or regularly going fewer than three times a week, that falls below the normal range — try more fiber, water, and activity, and talk to a doctor if it persists."
+      }
+    },
+    "faq_g_how_many_times_a_day_should_you_poop_03": {
+      "en": {
+        "q": "What is the Bristol Stool Chart, and which types are healthy?",
+        "a": "The Bristol Stool Chart sorts stool into seven types by shape and firmness. Cleveland Clinic says Types 3 (sausage with cracks) and 4 (smooth, snakelike) are the ideal — easy to pass and well-formed. Types 1–2 suggest constipation, while Types 5–7 suggest stool is moving too quickly, as in diarrhea. Day-to-day variation is normal; a consistent drift toward the extremes is what to watch."
+      }
+    },
+    "faq_g_how_many_times_a_day_should_you_poop_04": {
+      "en": {
+        "q": "When should I see a doctor about how often I poop?",
+        "a": "See a doctor if a change in your bowel habits lasts beyond about two to three weeks, or immediately if you notice blood in your stool, black or tarry stools, severe abdominal pain, unintended weight loss, fever, or fecal incontinence. These red flags appear on warning lists from Mayo Clinic, the AGA, and Cleveland Clinic, which also stresses not to ignore persistent changes given rising colorectal cancer rates. This is general information, not medical advice."
+      }
+    },
+    "faq_g_how_long_does_a_sprained_ankle_take_to_heal_01": {
+      "en": {
+        "q": "Can I walk on a sprained ankle?",
+        "a": "It depends on the grade. With a mild Grade 1 sprain you can usually walk with little instability, according to the Cleveland Clinic. A Grade 2 partial tear makes walking painful and may feel unstable, while a Grade 3 complete tear can make bearing weight impossible. The AAOS recommends bearing weight \"as tolerated\" early on and using crutches or a walking boot if walking hurts. If you are unsure of the grade or the pain is severe, have a healthcare professional assess your ankle before putting full weight on it."
+      }
+    },
+    "faq_g_how_long_does_a_sprained_ankle_take_to_heal_02": {
+      "en": {
+        "q": "Should I use ice or heat on a sprained ankle?",
+        "a": "Use ice, not heat, for the first 48-72 hours. Mayo Clinic recommends an ice pack or slush bath for 15-20 minutes every 2-3 hours while awake, always with a thin towel between the ice and your skin. Heat increases blood flow and swelling in the acute phase. If you have diabetes, vascular disease, or reduced feeling in your skin, talk with your doctor before using ice, as Mayo Clinic cautions it may not be safe for you. After the first few days, your clinician may add heat or contrast baths as part of rehab."
+      }
+    },
+    "faq_g_how_long_does_a_sprained_ankle_take_to_heal_03": {
+      "en": {
+        "q": "How do I know if my ankle sprain is severe?",
+        "a": "Signs of a severe Grade 3 sprain include a complete inability to bear weight, severe swelling and bruising, an ankle that feels like it is giving out, and sometimes a pop at the time of injury, per the AAOS and Cleveland Clinic. Because these mirror a fracture, a clinician should examine the ankle and may order X-rays. Pain lasting beyond 4-6 weeks also warrants evaluation. This information is educational and not a diagnosis — see a doctor for an official assessment."
+      }
+    },
+    "faq_g_how_long_does_a_sprained_ankle_take_to_heal_04": {
+      "en": {
+        "q": "When can I return to sports after a sprained ankle?",
+        "a": "The AAOS returns athletes in Phase 3 of rehab: start with straight-line activities, then add cutting and pivoting sports last. Go back only when you are pain-free and have restored strength and balance. For mild sprains that is typically about 1-2 weeks; for severe tears it may take several months. Mayo Clinic advises having a healthcare professional run movement tests before you return. When in doubt, get cleared by a clinician rather than rushing back."
+      }
+    },
+    "faq_g_how_long_do_broken_ribs_take_to_heal_01": {
+      "en": {
+        "q": "How long do broken ribs take to heal?",
+        "a": "Most broken ribs heal on their own in about six weeks, according to the Mayo Clinic, and MedlinePlus confirms that healing takes at least six weeks. For a non-displaced fracture in an otherwise healthy person, Mayo Clinic trauma surgeon Dr. Brian D. Kim places full healing at six to twelve weeks, and the Cleveland Clinic says most people need at least a month to recover. Displaced fractures and injuries with organ damage take longer. Talk to your healthcare provider about the timeline that fits your specific injury."
+      }
+    },
+    "faq_g_how_long_do_broken_ribs_take_to_heal_02": {
+      "en": {
+        "q": "How long does the pain from a broken rib last?",
+        "a": "Pain is usually sharpest in the first one to two weeks and gradually subsides over roughly six weeks as the bone knits, the Mayo Clinic notes. Lingering discomfort with deep breaths, coughing, or twisting can persist toward the end of the six- to twelve-week healing window Dr. Kim describes, and older adults or those with displaced fractures may feel soreness longer. If your pain is worsening rather than improving, follow up with your provider."
+      }
+    },
+    "faq_g_how_long_do_broken_ribs_take_to_heal_03": {
+      "en": {
+        "q": "What helps broken ribs heal faster?",
+        "a": "Rest, ice the area for about 20 minutes a few times a day, and take over-the-counter NSAIDs like ibuprofen to control pain, the Cleveland Clinic advises. Do deep-breathing and controlled-coughing exercises every few hours (MedlinePlus suggests about every 2 hours), holding a pillow against your ribs, to prevent pneumonia. Avoid smoking and nicotine, which impair bone healing. Stay gently active but skip intense workouts and contact sports. This is general information, not medical advice, talk to your healthcare provider about the recovery plan that fits your situation."
+      }
+    },
+    "faq_g_how_long_do_broken_ribs_take_to_heal_04": {
+      "en": {
+        "q": "When is a broken rib an emergency?",
+        "a": "Go to the emergency room right away if you have trouble breathing or worsening shortness of breath, intense pain that does not improve, chest pressure or squeezing pain lasting more than a few minutes, pain spreading to your shoulder or arm, coughing up blood or bloody mucus, or a bone visible through the skin, the Cleveland Clinic, Mayo Clinic, and MedlinePlus warn. These can signal a collapsed lung, organ damage, or a heart attack. When in doubt, seek emergency care."
+      }
+    },
+    "faq_g_how_long_does_an_elephant_live_01": {
+      "en": {
+        "q": "How long do elephants live in the wild?",
+        "a": "African elephants average about 60 to 70 years in the wild, while Asian elephants typically live into their mid-50s, with a biological ceiling of roughly 60 to 70 years. Field data for Asian and forest elephants is patchier, so those figures carry more uncertainty. Recent data from the Smithsonian's National Zoo also suggests many wild African elephants rarely reach 50 because of poaching and habitat pressure, so real-world averages are often lower than the biological potential."
+      }
+    },
+    "faq_g_how_long_does_an_elephant_live_02": {
+      "en": {
+        "q": "Do elephants live longer in the wild or in captivity?",
+        "a": "It depends almost entirely on the quality of care. Historically, stressed circus, logging, or poorly managed zoo elephants died far younger than wild ones. But modern accredited zoos report a median life expectancy of about 47 years for female Asian elephants, per the Smithsonian's National Zoo, and the verified captive record is 86. A well-run captive home can approach wild lifespan; a poor one is dramatically shorter."
+      }
+    },
+    "faq_g_how_long_does_an_elephant_live_03": {
+      "en": {
+        "q": "What is the oldest elephant ever recorded?",
+        "a": "The oldest elephant ever verified was Lin Wang, an Asian bull who died at Taipei Zoo in Taiwan on February 26, 2003, at the age of 86, according to Guinness World Records. According to Guinness, he carried supplies for the Japanese army through the jungles of Myanmar (Burma) during World War II, was later taken by Chinese forces in 1943, and retired to Taipei Zoo in 1954. African elephants in captivity have reached a recorded maximum of about 65 years, with unpublished reports of individuals approaching 80 years (Animal Diversity Web)."
+      }
+    },
+    "faq_g_how_long_does_an_elephant_live_04": {
+      "en": {
+        "q": "What usually kills old elephants?",
+        "a": "In old age, elephants most often die of starvation caused by tooth wear. Elephants get six sets of molars in a lifetime, pushed forward like a conveyor belt as each set wears down; once the sixth and final set is exhausted, the animal can no longer chew tough vegetation and starves. In the wild, males also die at higher rates from fighting injuries and the metabolic strain of musth, their periodic state of heightened aggression and reproduction."
+      }
+    },
+    "faq_g_how_long_do_spiders_live_01": {
+      "en": {
+        "q": "How long do common house spiders live?",
+        "a": "Most common house spiders (Parasteatoda tepidariorum) live about one year or more after reaching maturity, according to Penn State Extension. Similar indoor cobweb weavers and cellar spiders typically persist 1-3 years, with barn funnel weavers occasionally reaching seven years in sheltered conditions."
+      }
+    },
+    "faq_g_how_long_do_spiders_live_02": {
+      "en": {
+        "q": "What species of spider lives the longest?",
+        "a": "Female tarantulas are the longest-lived spiders. The Mexican red-knee tarantula (Brachypelma smithi) reaches 25-30 years in females while males rarely exceed about 10, per the Animal Diversity Web. Trapdoor spiders are also exceptionally long-lived — commonly cited at up to about twenty years, with one Australian trapdoor spider documented at 43 — thanks to secure, climate-buffered burrows."
+      }
+    },
+    "faq_g_how_long_do_spiders_live_03": {
+      "en": {
+        "q": "Do male or female spiders live longer?",
+        "a": "Females almost always outlive males. In tarantulas, females live decades longer (25-30 years versus ~10 for males); in widows and jumping spiders, males typically die soon after their final molt and mating, while females guard egg sacs and may overwinter. This gap is thought to stem largely from the energy males expend roaming to find mates, while females remain relatively sedentary and invest in egg production and guarding."
+      }
+    },
+    "faq_g_how_long_do_spiders_live_04": {
+      "en": {
+        "q": "How can I help a pet spider live longer?",
+        "a": "Provide a stable species-appropriate temperature, correct humidity, a secure hiding burrow or web corner, clean water, and regular small prey, while minimising handling and falls. Captive spiders routinely exceed wild lifespans because they're protected from predators, parasitic worms, frost, and starvation — a widow that lives about a year outdoors can reach four or more years in a terrarium."
+      }
+    },
+    "faq_g_how_long_do_mosquitoes_live_01": {
+      "en": {
+        "q": "How long does a mosquito live indoors?",
+        "a": "An adult female that gets inside can live about 2 to 4 weeks, the same as outdoors, if she can find a blood meal and a little standing water for her eggs. Stable room temperature and humidity actually suit her. Males, which don't bite, are generally shorter-lived (in the common malaria mosquito, Anopheles quadrimaculatus, males average about 7 days). (CDC; Animal Diversity Web)"
+      }
+    },
+    "faq_g_how_long_do_mosquitoes_live_02": {
+      "en": {
+        "q": "How long can a mosquito live without food or blood?",
+        "a": "Adults of both sexes get most of their energy from plant nectar and sugars, not blood. Deprived of any food or water, an adult typically dies within a few days. Females need a blood meal only to develop their eggs, not to stay alive day to day. (CDC; Penn State Extension)"
+      }
+    },
+    "faq_g_how_long_do_mosquitoes_live_03": {
+      "en": {
+        "q": "How long can mosquito eggs survive before hatching?",
+        "a": "Longer than you'd expect. Aedes mosquito eggs, glued to container walls just above the waterline, can survive drying out for up to 8 months and even endure a southern U.S. winter, the CDC notes, hatching when water rises over them again. Anopheles eggs, by contrast, do not tolerate drying out and hatch within days. (CDC; Penn State Extension)"
+      }
+    },
+    "faq_g_how_long_do_mosquitoes_live_04": {
+      "en": {
+        "q": "Do male or female mosquitoes live longer?",
+        "a": "Females live noticeably longer. The CDC notes females \"often live longer than males,\" and in the common malaria mosquito (Anopheles quadrimaculatus) females average about 21 days versus roughly 7 for males, per Animal Diversity Web. Only females bite; males feed on nectar, mate, then die quickly."
+      }
+    },
+    "faq_g_how_long_do_bees_live_01": {
+      "en": {
+        "q": "How long does a worker honey bee live?",
+        "a": "A worker honey bee lives about six weeks during the active summer foraging season, on average about 15 to 38 days. Workers spend their first two to three weeks on inside-hive duties (nursing larvae, building comb, guarding) and then forage until worn out. Workers born in fall are different: they store extra fat and can live four to six months (150 to 200 days) through winter to rear the first spring brood."
+      }
+    },
+    "faq_g_how_long_do_bees_live_02": {
+      "en": {
+        "q": "How long does a queen bee live?",
+        "a": "A queen honey bee typically lives two to three years, and some reach up to five years; one study recorded a maximum of eight. Her productive egg-laying usually drops after about two years, which is why most beekeepers re-queen a colony every one to two years. The queen's long life comes from her royal-jelly diet, which sets up high levels of protective proteins (including vitellogenin) and strong resistance to oxidative stress."
+      }
+    },
+    "faq_g_how_long_do_bees_live_03": {
+      "en": {
+        "q": "How long do drone bees live, and do they die after mating?",
+        "a": "Drone bees (the males) live roughly three to four and a half weeks, on average about 21 to 32 days during the spring and summer when they are produced. They become sexually mature about a week after emerging, then fly to drone congregation areas to mate. A drone that successfully mates with a queen dies immediately afterward. Any drones that do not mate are expelled from the hive before winter, so very few males survive the cold months."
+      }
+    },
+    "faq_g_how_long_do_bees_live_04": {
+      "en": {
+        "q": "Do bees live longer in the winter?",
+        "a": "Winter worker bees live far longer than summer workers — about four to six months (150 to 200 days) compared with roughly six weeks. Born in late summer and fall, these so-called fat bees store extra proteins and fat and stay inside the warm winter cluster rather than foraging, which avoids the wear and predation that kill summer bees. They survive to raise the colony's first spring bees, then die."
+      }
     }
   },
   "quickUseIdeas": {
