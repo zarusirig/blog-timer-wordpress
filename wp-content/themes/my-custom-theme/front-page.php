@@ -279,6 +279,73 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
         </div>
     </section>
 
+    <!-- BROWSE GUIDES BY TOPIC (content hubs) -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Guides by Topic &mdash; How Long, How Often &amp; Best Time</h2>
+                <p class="section-subtitle">Beyond timers: cited, fact-checked guides on how long things last, how often to do them, and the best time to do it &mdash; from cat gestation to car batteries to the best time to visit Japan.</p>
+            </div>
+            <div class="usecase-grid">
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/animals')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#128062;</div>
+                    <h3>Animal Lifespans &amp; Pregnancy</h3>
+                    <p>How long cats, dogs, horses, rabbits &amp; fish live &mdash; and how long they are pregnant. With a pregnancy countdown timer.</p>
+                </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/travel')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#9992;&#65039;</div>
+                    <h3>Best Time to Visit</h3>
+                    <p>Month-by-month guides for Japan, Iceland, Ireland, Portugal, Costa Rica, Mexico, Puerto Rico, Alaska &amp; Hawaii &mdash; plus when to book flights.</p>
+                </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/auto')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#128663;</div>
+                    <h3>Car &amp; Auto Timers</h3>
+                    <p>How long a car battery lasts, an oil change takes, brake pads last, and how often to rotate tires.</p>
+                </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/beauty')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#128135;&#65039;</div>
+                    <h3>Beauty &amp; Self-Care</h3>
+                    <p>How long spray tans and sun tans last, how long a piercing takes to heal, and how often to wash your hair.</p>
+                </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/science')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#128640;</div>
+                    <h3>Space &amp; Science</h3>
+                    <p>How long it takes to get to the Moon, Mars, Pluto and the ISS &mdash; and how long light takes from the Sun.</p>
+                </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/body')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#129528;</div>
+                    <h3>Body &amp; Frequency</h3>
+                    <p>How many times a day you should pee and poop, what counts as normal, and when to see a doctor.</p>
+                </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/health')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#129657;</div>
+                    <h3>Healing &amp; Recovery</h3>
+                    <p>How long a sprained ankle and broken ribs take to heal, by severity, with red-flag symptoms.</p>
+                </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/craft')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#127869;&#65039;</div>
+                    <h3>Craft &amp; Fermentation</h3>
+                    <p>How long fermentation, resin, soap and spray paint take &mdash; cure and dry times by product.</p>
+                </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/gardening')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#127793;</div>
+                    <h3>Gardening</h3>
+                    <p>How long grass, tomatoes, potatoes and avocado seeds take to grow &mdash; germination to harvest.</p>
+                </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/household')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#127968;</div>
+                    <h3>Household Timers</h3>
+                    <p>How often to wash sheets and towels, and how long mattresses and pillows last before replacing.</p>
+                </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/parenting')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#128118;</div>
+                    <h3>Parenting &amp; Baby Sleep</h3>
+                    <p>Baby nap schedules and wake windows, how long newborns sleep, and how often to feed.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- KEY FEATURES -->
     <section class="section">
         <div class="container">

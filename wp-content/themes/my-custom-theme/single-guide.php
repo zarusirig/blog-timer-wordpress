@@ -153,6 +153,12 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
                 By <a href="<?php echo esc_url($guide_author_url); ?>" rel="author"><?php echo esc_html($guide_author); ?></a>
                 &middot; <em>Last updated: <time datetime="<?php echo esc_attr($guide_updated_iso); ?>"><?php echo esc_html($guide_updated); ?></time></em>
             </p>
+            <p class="trust-line" style="font-size: 0.8rem; color: var(--color-text-muted, #666); margin: 0.25rem 0 0;">
+                <em>Fact-checked against the cited sources below.</em>
+                <a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">Editorial policy</a>
+                &middot; <a href="<?php echo esc_url(home_url('/methodology')); ?>">Methodology</a>
+                &middot; <a href="<?php echo esc_url(home_url('/sources')); ?>">Sources</a>
+            </p>
             <?php if (has_excerpt()): ?>
                 <p class="page-intro">
                     <?php echo get_the_excerpt(); ?>

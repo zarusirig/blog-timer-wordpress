@@ -99,6 +99,23 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
             </div>
 
             <div class="footer-col">
+                <p class="footer-heading">Guides by Topic</p>
+                <ul>
+                    <li><a href="<?php echo esc_url(home_url('/animals')); ?>">Animal Lifespans &amp; Pregnancy</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/travel')); ?>">Best Time to Visit</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/auto')); ?>">Car &amp; Auto Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/beauty')); ?>">Beauty &amp; Self-Care</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/science')); ?>">Space &amp; Science</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/body')); ?>">Body &amp; Frequency</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/health')); ?>">Healing &amp; Recovery</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/craft')); ?>">Craft &amp; Fermentation</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/gardening')); ?>">Gardening Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/household')); ?>">Household Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/parenting')); ?>">Parenting &amp; Baby Sleep</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
                 <p class="footer-heading">Timer Categories</p>
                 <ul>
                     <li><a href="<?php echo esc_url(home_url('/pomodoro')); ?>">Focus &amp; Productivity Timers</a></li>
