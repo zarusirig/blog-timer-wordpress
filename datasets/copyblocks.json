@@ -3271,6 +3271,246 @@
         "q": "If the Sun went out, how long until we would notice?",
         "a": "About 8 minutes 20 seconds. Because light and all of the Sun&rsquo;s radiation travel at the finite speed of light, we would continue to see the Sun and receive its energy for roughly 500 seconds after it actually disappeared &mdash; a striking illustration that we always see the Sun as it was, not as it is."
       }
+    },
+    "faq_g_best_time_to_visit_italy_01": {
+      "en": {
+        "q": "What is the absolute best month to visit Italy?",
+        "a": "May or October. Daytime highs in Rome are a comfortable 22–24°C (72–75°F), crowds are thinner than in summer, prices are lower than the July–August peak, and almost everything is open. May gives blooming countryside and empty beaches; October brings autumn foliage, the grape and olive harvests, and truffle festivals."
+      }
+    },
+    "faq_g_best_time_to_visit_italy_02": {
+      "en": {
+        "q": "What is the cheapest time to visit Italy?",
+        "a": "November through February, excluding the Christmas-to-Epiphany holidays (around 24 December to 6 January) and the ski resorts. City hotels and flights drop to their lowest rates, museums such as the Uffizi are at their quietest, and headline sights are uncrowded. The trade-off is shorter days and many coastal hotels and restaurants closing until Easter."
+      }
+    },
+    "faq_g_best_time_to_visit_italy_03": {
+      "en": {
+        "q": "When should you avoid visiting Italy?",
+        "a": "August is the toughest month for most travellers: it is the hottest, most crowded and most expensive time, and because of the Ferragosto holiday on 15 August many city restaurants and shops shut while Italians flood the coast. Temperatures in the cities and south regularly exceed 35°C (95°F). Also avoid the Easter week and late June–July in the major cities if sightseeing is your main goal."
+      }
+    },
+    "faq_g_best_time_to_visit_italy_04": {
+      "en": {
+        "q": "When is the best time to visit the Italian coast and beaches?",
+        "a": "Roughly May to September, when the sea is warm enough to swim and coastal towns are fully open. Late May, June and September are ideal – warm water with far smaller crowds than August. The Amalfi Coast, Cinque Terre, Sardinia, Sicily and Puglia all follow this pattern; book well ahead for July and August."
+      }
+    },
+    "faq_g_best_time_to_visit_spain_01": {
+      "en": {
+        "q": "What is the best month to visit Spain?",
+        "a": "May is widely considered the single best month: temperatures sit around 16–24°C, rainfall is low (Seville sees roughly 30 mm all month per AEMET), and crowds and prices are still below the summer peak. April, June, September and October are close runners-up."
+      }
+    },
+    "faq_g_best_time_to_visit_spain_02": {
+      "en": {
+        "q": "What is the cheapest time to visit Spain?",
+        "a": "November through February is the cheapest window, when flights and hotels drop to their lowest levels — Lonely Planet calls it \"the best time for budget travelers.\" Late January and February tend to be the lowest-priced weeks, and Spain's winter rebajas (sales) run January–February with discounts up to 70% off."
+      }
+    },
+    "faq_g_best_time_to_visit_spain_03": {
+      "en": {
+        "q": "Is August a bad time to visit Spain?",
+        "a": "For most travelers, yes. Central and southern Spain regularly exceed 40°C (104°F) in August, Madrid empties out as locals flee the heat, and the coasts hit peak crowds and peak prices. The exceptions are the northern coast (Galicia, Asturias, Basque Country), which stays mild, and specific festivals like La Tomatina."
+      }
+    },
+    "faq_g_best_time_to_visit_spain_04": {
+      "en": {
+        "q": "When can you ski in Spain?",
+        "a": "Ski resorts generally open in December and close just after Easter. Peak snow runs January to March in the Pyrenees, January to February in central Spain, and the Sierra Nevada near Granada sometimes stays open until May, allowing a ski-and-beach combination in the same day."
+      }
+    },
+    "faq_g_best_time_to_visit_france_01": {
+      "en": {
+        "q": "What is the absolute best month to visit Paris?",
+        "a": "The single best window is April to June or September to October. Lonely Planet's Paris authors single out spring (especially April–May) and autumn (especially September–October) for thinner crowds and temperate, lovely weather. Paris daytime highs reach about 16°C in April, ~23°C in June, and 22°C in September (Météo-France, Paris-Orly 1991–2020 normals). If you must pick one month, choose May or September for the best weather-to-crowd ratio."
+      }
+    },
+    "faq_g_best_time_to_visit_france_02": {
+      "en": {
+        "q": "When is the cheapest time to visit France?",
+        "a": "The cheapest time is winter, roughly November through February, excluding the Christmas and New Year holidays. Lonely Planet names December to January as the best budget window for Paris, when sights are quieter and prices lower. There is also a cheaper pocket in August in Paris itself, when hotel rates often drop as locals leave for vacation — though many restaurants and shops shut, so you trade savings for closures."
+      }
+    },
+    "faq_g_best_time_to_visit_france_03": {
+      "en": {
+        "q": "Is August a bad time to visit Paris?",
+        "a": "August is a mixed bag. On the upside, Paris empties of locals, traffic is lighter, and hotel rates are often at their lowest. On the downside, temperatures average around 26°C (Météo-France) and many restaurants, small shops, and some services shut for the month as Parisians take their vacations — Lonely Planet warns it can be hard to get a good bistro meal. It is not the worst time, but if classic café culture matters to you, choose spring or September instead."
+      }
+    },
+    "faq_g_best_time_to_visit_france_04": {
+      "en": {
+        "q": "When is the best time to visit the French Riviera and the Alps?",
+        "a": "For the Côte d'Azur, the best beach season runs May to September; Nice averages about 28°C in August with sea temperatures near 24°C (Météo-France, Nice 1991–2020), but for fewer crowds target May, June, or September. For the Alps, ski season runs December to March (into April at altitude) — larger high resorts like Les Trois Vallées open from early-to-mid December through mid-April, while lower resorts may only run mid-January to mid-March depending on snow."
+      }
+    },
+    "faq_g_best_time_to_visit_greece_01": {
+      "en": {
+        "q": "When is the best time to visit Greece?",
+        "a": "The best time to visit Greece is mid-May through June and September. The islands are fully open, the sea is warm enough for swimming, daylight is long, crowds are thinner than in peak summer, and prices sit below the July-August high. If you can pick only one month, choose September, when the sea is at its warmest and school holidays are over."
+      }
+    },
+    "faq_g_best_time_to_visit_greece_02": {
+      "en": {
+        "q": "What is the cheapest time to visit Greece?",
+        "a": "The cheapest time is the off-season from November to March, when airfares, ferry prices and hotel rates drop steeply. Between 1 November and 31 March the state also reduces entrance fees at ancient sites and state museums, making an Athens city break very affordable. For a cheap but still swimmable beach trip, aim for late September or October."
+      }
+    },
+    "faq_g_best_time_to_visit_greece_03": {
+      "en": {
+        "q": "When is the worst time to visit Greece?",
+        "a": "There is no outright bad time, but late July and August disappoint travellers who dislike heat and crowds: it is the hottest, driest period (July and August are the hottest months, with average highs around 32-33C) and the busiest, with peak prices. The depth of winter (January-February) is also weak for an island beach holiday, since the sea is cold, many island businesses shut, and ferry schedules are skeletal."
+      }
+    },
+    "faq_g_best_time_to_visit_greece_04": {
+      "en": {
+        "q": "When are the Greek islands open and ferries running?",
+        "a": "The island-hopping season unofficially opens with Orthodox Easter in April or May (12 April 2026; 2 May 2027) and runs through October, with most hotels closing by the end of October. In the off-season (November to March) many small-island hotels and restaurants shut down and ferries that run daily in summer may drop to two or three sailings a week. Larger islands such as Crete, Rhodes, Corfu and Kefalonia stay more active year-round."
+      }
+    },
+    "faq_g_best_time_to_visit_switzerland_01": {
+      "en": {
+        "q": "What is the best month to visit Switzerland for hiking?",
+        "a": "Mid-June to mid-September is the best window for hiking, when daytime highs reach 18-28°C (65-82°F) and the high alpine passes and cable cars are open. July and August are the warmest but also the most crowded and expensive; mid-June and September offer similar conditions with far fewer people on the trails."
+      }
+    },
+    "faq_g_best_time_to_visit_switzerland_02": {
+      "en": {
+        "q": "When is ski season in Switzerland?",
+        "a": "The main ski season runs from December to March. January and February are the coldest and most snow-reliable, while the Christmas/New Year period and February school holidays are the busiest and priciest. Resorts also maintain more than 5,000 km of cross-country trails, and you can check current snow depth on the official Swiss snow report before you go."
+      }
+    },
+    "faq_g_best_time_to_visit_switzerland_03": {
+      "en": {
+        "q": "What is the cheapest time to visit Switzerland?",
+        "a": "The shoulder periods of April-May and October-November are the cheapest, with lower flights, hotels and thinner crowds than summer. November is the lowest-priced month of all, though it brings foggy lowlands and some 'between-seasons' closures. For a balance of decent weather and lower cost, target mid-June or September."
+      }
+    },
+    "faq_g_best_time_to_visit_switzerland_04": {
+      "en": {
+        "q": "When should I avoid visiting Switzerland?",
+        "a": "Switzerland's climate is moderate year-round, so no month is truly unvisitable. But if you dislike crowds, avoid mid-July to mid-August; if you do not ski, avoid the Christmas/New Year and February peaks, when ski resorts are packed and expensive. November is the quietest month but also the greyest, with low cloud over the plateau and several mountain hotels closed for the season."
+      }
+    },
+    "faq_g_best_time_to_visit_london_01": {
+      "en": {
+        "q": "What is the absolute best month to visit London?",
+        "a": "July is the warmest and sunniest month, averaging a high of 23.9°C with about 218 hours of sunshine, and it hosts Wimbledon and Pride. For slightly fewer crowds with near-peak weather, June and September are excellent alternatives; for the best value-for-conditions balance, May is the sweet spot."
+      }
+    },
+    "faq_g_best_time_to_visit_london_02": {
+      "en": {
+        "q": "When is the cheapest time to visit London / UK?",
+        "a": "January and February are the cheapest months, when flights, hotels and attractions drop to their lowest prices after Christmas. Early March and late October-November also offer shoulder-season value with noticeably better weather than midwinter. Avoid mid-December through New Year, when festive demand pushes rates back up."
+      }
+    },
+    "faq_g_best_time_to_visit_london_03": {
+      "en": {
+        "q": "What is the worst time to visit London?",
+        "a": "For weather, November to February is the toughest window - cold, wet (November is the wettest month at around 67 mm of rain) and dark, with only about eight hours of daylight in December. If your priority is avoiding crowds rather than cold, peak July-August is the worst time for you because of packed transport, long queues and peak pricing."
+      }
+    },
+    "faq_g_best_time_to_visit_london_04": {
+      "en": {
+        "q": "How many days do you need in London?",
+        "a": "Four to five days is enough to cover London's headline sights - the Tower of London, British Museum, Westminster, a West End show and a couple of major galleries - at a comfortable pace. Allow a full week if you want day trips (Windsor, Bath, Stonehenge, Oxford or Cambridge) or to explore neighbourhoods like Shoreditch, Notting Hill and Greenwich in depth."
+      }
+    },
+    "faq_g_best_time_to_visit_amsterdam_01": {
+      "en": {
+        "q": "What is the absolute best month to visit Amsterdam?",
+        "a": "Mid-to-late April is the standout: the tulips are at peak bloom, King's Day (April 27) brings the year's biggest street party, days are mild (around 15C/59F average high), and prices have not yet hit summer levels. If you prefer fewer crowds, September is the runner-up, with lingering warmth, lighter footfall, and festivals like Amsterdam Fashion Week."
+      }
+    },
+    "faq_g_best_time_to_visit_amsterdam_02": {
+      "en": {
+        "q": "When is tulip season in the Netherlands?",
+        "a": "Tulip season runs roughly mid-March to mid-May. Keukenhof, the famous spring garden in Lisse, opens for about eight weeks inside that window (it ran March 19 to May 10 in 2026). For the open bulb fields at their most colourful, target mid-April to early May; exact timing depends on the weather each spring."
+      }
+    },
+    "faq_g_best_time_to_visit_amsterdam_03": {
+      "en": {
+        "q": "What is the cheapest time to visit Amsterdam?",
+        "a": "February is typically the cheapest month, falling just before tulip season begins. Hotels and flights hit their lowest prices and museums are at their emptiest. January is similarly cheap. For a better balance of low prices and tolerable weather, March (before the bloom rush) and October are the value picks."
+      }
+    },
+    "faq_g_best_time_to_visit_amsterdam_04": {
+      "en": {
+        "q": "Is Amsterdam worth visiting in winter?",
+        "a": "Yes, if you pack for it. Winter averages a mild 3C (37F), rarely freezing hard, and you get the lowest prices of the year, the Amsterdam Light Festival, Christmas markets, and ice-skating rinks. The trade-off is grey, short days with little sunshine (around 55-67 sunshine hours in December and January). Bring warm layers and waterproof shoes."
+      }
+    },
+    "faq_g_best_time_to_visit_thailand_01": {
+      "en": {
+        "q": "What is the best month to visit Thailand?",
+        "a": "The best months are November through February, during Thailand's cool, dry season. December and January offer the most comfortable weather, with daytime highs around 28 to 31C and low humidity, but they are also the busiest and most expensive. November and February are excellent shoulder months with similar conditions and slightly fewer crowds."
+      }
+    },
+    "faq_g_best_time_to_visit_thailand_02": {
+      "en": {
+        "q": "When is the cheapest time to visit Thailand?",
+        "a": "The cheapest time to visit is the late monsoon, from September to October, when crowds and prices hit their annual lows and you rarely need to book ahead. May through July is a good-value middle ground, especially on the Andaman coast (Phuket, Krabi), where resorts offer large discounts and rains are usually brief."
+      }
+    },
+    "faq_g_best_time_to_visit_thailand_03": {
+      "en": {
+        "q": "When should I avoid visiting Thailand?",
+        "a": "Avoid March through May if you are sensitive to heat, as Bangkok has recently hit 40C (104F) and northern Thailand regularly reaches 36C (97F). Avoid September and October if you want to escape heavy rain and any flooding risk, particularly in the north and northeast, which can occasionally affect riverside areas of Bangkok."
+      }
+    },
+    "faq_g_best_time_to_visit_thailand_04": {
+      "en": {
+        "q": "Which Thai islands are best during the rainy season?",
+        "a": "The Gulf of Thailand islands (Ko Samui, Ko Phangan, and Ko Tao) have a different weather pattern from the Andaman coast and actually hit their peak season in July and August. If you are traveling during the European summer, the Gulf islands are the smart choice, while the Andaman coast (Phuket, Krabi) is quieter, wetter, and much cheaper at that time."
+      }
+    },
+    "faq_g_best_time_to_visit_bali_01": {
+      "en": {
+        "q": "What is the best month to visit Bali?",
+        "a": "The best months are May, June and July, when the dry season is in full swing, humidity is lower, rainfall is minimal and the peak holiday crowds of August have not yet peaked. September is also outstanding if you want similar weather at lower prices, as it is a shoulder month."
+      }
+    },
+    "faq_g_best_time_to_visit_bali_02": {
+      "en": {
+        "q": "When is the rainy season in Bali?",
+        "a": "Bali's wet (rainy) season runs from November to March, driven by the northwest monsoon. January and February are typically the wettest months, each receiving around 280–350 mm of rain. Showers are often heavy but short, and the island stays warm (around 27–28°C)."
+      }
+    },
+    "faq_g_best_time_to_visit_bali_03": {
+      "en": {
+        "q": "What is the cheapest time to visit Bali?",
+        "a": "The cheapest time is the low season — January to March and November — when rains keep crowds away and hotels and flights drop to their lowest rates. You will trade some sunshine for big savings and a quieter island, though the east coast still offers decent surf."
+      }
+    },
+    "faq_g_best_time_to_visit_bali_04": {
+      "en": {
+        "q": "Is Bali warm enough to visit year-round?",
+        "a": "Yes. Bali sits about 8 degrees south of the equator, so temperatures stay between roughly 28°C and 32°C (82–90°F) all year with close to 12 hours of daylight. It only gets noticeably cooler in the central mountains, where Mount Agung rises above 3,000 metres and is wetter and colder than the coast."
+      }
+    },
+    "faq_g_best_time_to_visit_new_york_01": {
+      "en": {
+        "q": "What is the absolute best month to visit New York City?",
+        "a": "May is widely considered the best single month to visit New York City—Lonely Planet calls it \"perhaps the best month for New York City weather.\" Average highs reach about 71°F (22°C) with low humidity, the cherry blossoms are fading into full green, Broadway rolls out new shows ahead of the Tony Awards, and outdoor dining is in full swing. October is the close runner-up for fall foliage and crisp, scenic days."
+      }
+    },
+    "faq_g_best_time_to_visit_new_york_02": {
+      "en": {
+        "q": "What is the cheapest time to visit New York City?",
+        "a": "January through early March (skipping holiday weekends) is the cheapest time to visit. Once the Christmas rush clears, hotel rates fall to their lowest of the year, and crowds thin out. You trade mild weather for cold—Central Park averages 8.8\" of snow in January and 10.1\" in February—but you'll save significantly on lodging and attractions."
+      }
+    },
+    "faq_g_best_time_to_visit_new_york_03": {
+      "en": {
+        "q": "When should you avoid visiting New York City?",
+        "a": "Avoid late July through mid-August if you dislike heat, humidity, high prices, and heavy crowds. July is the hottest (average high 85°F/29°C), most humid, and most expensive month, with the most rainfall of the year. Also watch the forecast in September and early October, when rare hurricane remnants can bring a rainy day or two, though direct hurricane hits on NYC are uncommon."
+      }
+    },
+    "faq_g_best_time_to_visit_new_york_04": {
+      "en": {
+        "q": "Is December a good time to visit New York City?",
+        "a": "December is magical but expensive and cold. The Rockefeller Center Christmas tree, Bryant Park holiday market, Fifth Avenue window displays, and ice rinks make it one of the most festive cities in the world—but hotel prices \"skyrocket to summertime levels,\" days are short (sunset near 4:30pm), and average highs only reach about 44°F (7°C). Go for the atmosphere, just book early and budget accordingly."
+      }
     }
   },
   "quickUseIdeas": {
