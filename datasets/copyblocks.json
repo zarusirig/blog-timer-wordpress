@@ -3511,6 +3511,342 @@
         "q": "Is December a good time to visit New York City?",
         "a": "December is magical but expensive and cold. The Rockefeller Center Christmas tree, Bryant Park holiday market, Fifth Avenue window displays, and ice rinks make it one of the most festive cities in the world—but hotel prices \"skyrocket to summertime levels,\" days are short (sunset near 4:30pm), and average highs only reach about 44°F (7°C). Go for the atmosphere, just book early and budget accordingly."
       }
+    },
+    "faq_g_how_long_do_snakes_live_01": {
+      "en": {
+        "q": "How long do pet snakes live on average?",
+        "a": "Most pet snakes live 10–30+ years, with popular beginner species averaging about 15–25 years in captivity. Corn snakes typically reach ~15–20 years, ball pythons ~20–30 years, and boas 25–35 years, while smaller species like garter snakes average closer to 6–10 years."
+      }
+    },
+    "faq_g_how_long_do_snakes_live_02": {
+      "en": {
+        "q": "Which pet snake lives the longest?",
+        "a": "Among common pet species, boas and pythons live the longest. Boa constrictors typically reach 25–35 years with a documented record of 40 years, and ball pythons average 20–30 years with a record near 50 years (reported by the Philadelphia Zoo). In general, boas and pythons outlive colubrids like corn snakes and kingsnakes."
+      }
+    },
+    "faq_g_how_long_do_snakes_live_03": {
+      "en": {
+        "q": "How long do snakes live in the wild versus captivity?",
+        "a": "Captive snakes live considerably longer than wild ones. Garter snakes average only about 2 years in the wild versus 6–10 in captivity, and boas average roughly 20 years in the wild versus 25–35 in captivity. Predation, disease, starvation, and exposure are largely removed in captivity, which is why good husbandry is the biggest factor in a pet snake's lifespan."
+      }
+    },
+    "faq_g_how_long_do_snakes_live_04": {
+      "en": {
+        "q": "How can I help my snake live longer?",
+        "a": "Provide a proper heat gradient (cool end 70–75°F, warm end 90–95°F), species-appropriate humidity (often 40–70%), whole frozen-thawed prey on the right schedule, safe substrate, secure hides, and a clean enclosure. Quarantine new animals, and work with a reptile veterinarian for check-ups and any signs of illness such as anorexia, wheezing, or poor sheds. This is general care information, not veterinary advice; a snake that is gasping/open-mouth breathing, weak or flaccid, twisted, or non-responsive is an emergency—see an exotics veterinarian immediately."
+      }
+    },
+    "faq_g_how_long_do_chinchillas_live_01": {
+      "en": {
+        "q": "How long do pet chinchillas live on average?",
+        "a": "Pet chinchillas typically live 10–15 years, with the upper range reaching about 20 years in captivity, according to the Merck Veterinary Manual. That makes them one of the longest-lived rodents kept as pets. With excellent diet, cool housing, and routine exotic-vet care, many well-kept chinchillas live into their mid-teens."
+      }
+    },
+    "faq_g_how_long_do_chinchillas_live_02": {
+      "en": {
+        "q": "What is the oldest recorded chinchilla lifespan?",
+        "a": "Verified longevity records are more modest than internet rumors. The AnAge longevity database lists a formal captive maximum of 17.2 years (Weigl, 2005), while Animal Diversity Web notes that some domesticated chinchillas have lived for more than 20 years (Nowak, 1999, unconfirmed). Claims of chinchillas reaching 29 years circulate online, but they are not confirmed by formal longevity registries."
+      }
+    },
+    "faq_g_how_long_do_chinchillas_live_03": {
+      "en": {
+        "q": "What is the most common cause of death in chinchillas?",
+        "a": "Among preventable causes, heat stroke is one of the most common and deadly, because chinchillas are very sensitive to heat and humidity (keep housing below 80°F, ideally 55–68°F). Dental disease—found in roughly one-third of apparently healthy chinchillas per the Merck Veterinary Manual—and gastrointestinal stasis from poor diet or sudden food changes are also leading causes of illness and death. This is general information, not veterinary advice; a chinchilla that stops eating, pants in a warm room, drools, or shows labored breathing is in a potential emergency and should see an exotic veterinarian immediately."
+      }
+    },
+    "faq_g_how_long_do_chinchillas_live_04": {
+      "en": {
+        "q": "Do male and female chinchillas live different lengths of time?",
+        "a": "There is no well-documented, significant lifespan difference between male and female chinchillas. Sex-specific risks do exist, however: intact males can develop a 'fur ring' (hair constricting the penis) that causes urinary retention, and breeding females face birth-related risks. Spaying/neutering decisions should be made with an exotic veterinarian, but sex itself is not a major driver of overall lifespan."
+      }
+    },
+    "faq_g_how_long_do_axolotls_live_01": {
+      "en": {
+        "q": "How long do axolotls live as pets?",
+        "a": "Pet axolotls typically live 10 to 15 years in captivity when kept in cool (60-64F / 16-18C), clean, well-cycled water and fed a carnivorous diet of worms and pellets. The 15-year mark represents well-cared-for animals; neglected ones can die within months. This is care information, not veterinary advice; if your axolotl is unwell, consult an exotic-animal vet."
+      }
+    },
+    "faq_g_how_long_do_axolotls_live_02": {
+      "en": {
+        "q": "How long do axolotls live in the wild?",
+        "a": "Wild axolotls have a potential lifespan of about 10 to 15 years, but very few reach it. The species is critically endangered, with National Geographic and Wikipedia estimating only around 50 to 1,000 adult individuals left in the canals of Lake Xochimilco, where pollution, invasive fish, and habitat loss kill most before old age."
+      }
+    },
+    "faq_g_how_long_do_axolotls_live_03": {
+      "en": {
+        "q": "What is the oldest an axolotl can live?",
+        "a": "The commonly cited upper limit for a captive axolotl is about 15 years, reported by zoos and veterinary sources. Laboratory animals average much shorter lives, around 5 to 6 years, because of research use and post-metamorphosis mortality."
+      }
+    },
+    "faq_g_how_long_do_axolotls_live_04": {
+      "en": {
+        "q": "Do male or female axolotls live longer?",
+        "a": "There is no well-documented sex difference in axolotl lifespan; males and females generally live about the same 10 to 15 years in captivity. Care factors such as water temperature, water quality, diet, and disease matter far more than sex in determining how long an individual lives."
+      }
+    },
+    "faq_g_how_long_do_leopard_geckos_live_01": {
+      "en": {
+        "q": "How long do leopard geckos live as pets?",
+        "a": "Most pet leopard geckos live 10-15 years with basic care, and well-cared-for individuals often reach 15-20 years. The documented captive maximum sits around 22 years (Animal Diversity Web), making them one of the longest-lived lizards for their size. Exceptional individuals may live longer still, though reliable figures cluster around two decades."
+      }
+    },
+    "faq_g_how_long_do_leopard_geckos_live_02": {
+      "en": {
+        "q": "How long do leopard geckos live in the wild?",
+        "a": "Wild leopard geckos live far shorter lives than captive ones-often only several years. Predation, parasites, irregular food, and temperature extremes all cut their lives short. There is no robust field longevity dataset, which is why trustworthy numbers come from protected captive animals rather than wild populations."
+      }
+    },
+    "faq_g_how_long_do_leopard_geckos_live_03": {
+      "en": {
+        "q": "Do leopard geckos need UVB light to live a long life?",
+        "a": "It is debated. Merck lists UVB as having 'no special requirement' for leopard geckos, while VCA Animal Hospitals recommends it. Because UVB drives the vitamin D3 that lets geckos absorb calcium, most keepers now provide low-level UVB mounted 10-12 inches away as inexpensive insurance against metabolic bone disease. This is general husbandry information, not veterinary advice-consult a reptile veterinarian about your specific setup."
+      }
+    },
+    "faq_g_how_long_do_leopard_geckos_live_04": {
+      "en": {
+        "q": "What is the most common reason leopard geckos die early?",
+        "a": "Poor calcium and vitamin D3-leading to metabolic bone disease (MBD)-is one of the most common preventable causes of illness and early death; Merck calls MBD 'the most common bone disease encountered in reptile practice.' Close behind are intestinal impaction from unsafe substrate (loose sand, walnut shell, gravel) and parasitic infections such as Cryptosporidium. All three are largely preventable with correct diet, safe substrate, and routine fecal testing. This is general care information, not veterinary advice-see a reptile veterinarian promptly if your gecko stops eating, loses weight rapidly, develops a swollen jaw or limbs, trembles, or has persistent diarrhea."
+      }
+    },
+    "faq_g_how_long_do_hermit_crabs_live_01": {
+      "en": {
+        "q": "How long do hermit crabs live as pets?",
+        "a": "With proper care, pet hermit crabs typically live 10 to 15 years or more, with a peer-reviewed longevity record of about 12 years for the Caribbean species (Coenobita clypeatus). However, most captive crabs die within their first one to two years because of poor habitat — low humidity, shallow substrate, or missing salt water — rather than old age."
+      }
+    },
+    "faq_g_how_long_do_hermit_crabs_live_02": {
+      "en": {
+        "q": "Can hermit crabs really live 30 or 40 years?",
+        "a": "Owner-reported claims of 30- to 40-year-old hermit crabs exist in the hobbyist community, but they have not been scientifically verified. Treat these figures as the outer ceiling of what is possible rather than the norm. The only formally documented lifespan is roughly 12 years, recorded in a peer-reviewed study of Coenobita clypeatus."
+      }
+    },
+    "faq_g_how_long_do_hermit_crabs_live_03": {
+      "en": {
+        "q": "Why do most pet hermit crabs die so young?",
+        "a": "The leading causes of early death are environmental: humidity below the required 70–85%, temperatures outside the 75–85°F range, substrate too shallow for safe molting, lack of marine-grade salt water, and poor diet. Hermit crabs breathe through modified gills that must stay moist, so a dry tank effectively suffocates them over time."
+      }
+    },
+    "faq_g_how_long_do_hermit_crabs_live_04": {
+      "en": {
+        "q": "Do hermit crabs from pet stores breed in captivity?",
+        "a": "No. Land hermit crabs do not breed in human care at any commercial scale because their larvae must develop in the open ocean. Essentially every crab sold in a pet shop was harvested from the wild, which is why the trade is considered unsustainable and why a captive crab's remaining lifespan is so hard to predict."
+      }
+    },
+    "faq_g_how_long_does_perfume_last_01": {
+      "en": {
+        "q": "Does unopened perfume expire?",
+        "a": "Unopened perfume doesn't expire on a fixed date, because U.S. fragrance has no regulated expiration. But it does slowly degrade. Expect about 3-5 years of good quality when the bottle is sealed and kept cool and dark; dense woody or oriental formulas can last longer, while citrus scents age fastest. These are perfumer-consensus estimates, not legal expiry dates."
+      }
+    },
+    "faq_g_how_long_does_perfume_last_02": {
+      "en": {
+        "q": "How long does perfume last on skin?",
+        "a": "Roughly 3-12 hours, set by concentration. A pure parfum (20-30% oils) can last 6-12+ hours, eau de parfum about 4-8 hours, eau de toilette 3-5 hours, and eau de cologne around 2 hours. These tiers are long-standing perfumery convention and ranges overlap; skin chemistry, hydration, and where you apply (pulse points) also affect wear time."
+      }
+    },
+    "faq_g_how_long_does_perfume_last_03": {
+      "en": {
+        "q": "How should I store perfume to make it last?",
+        "a": "Keep it cool, dark, and sealed - ideally in the original box in a bedroom drawer or closet, not a humid bathroom. Avoid sunlight, heat, and temperature swings, and decant half-empty bottles into smaller airtight sprays to limit the oxygen headspace above the liquid."
+      }
+    },
+    "faq_g_how_long_does_perfume_last_04": {
+      "en": {
+        "q": "Can expired perfume irritate skin?",
+        "a": "Yes. Citrus and floral terpenes like limonene and linalool oxidize when exposed to air, forming hydroperoxides that are strong contact allergens. If a fragrance causes redness, itching, or swelling, stop using it and see a doctor; for throat or face swelling, trouble breathing, or dizziness, seek emergency care. This is general health information, not medical advice."
+      }
+    },
+    "faq_g_how_long_does_hair_dye_last_01": {
+      "en": {
+        "q": "How long does permanent hair dye last?",
+        "a": "Permanent (oxidative) dye colors the hair permanently, so it has to grow out. Roots usually become visible about 4-6 weeks after coloring, and most people re-touch around 6-8 weeks. The dyed length itself can hold its tone for months, though it fades and shifts over time (He et al., 2022)."
+      }
+    },
+    "faq_g_how_long_does_hair_dye_last_02": {
+      "en": {
+        "q": "How many washes does semi-permanent or demi-permanent hair dye last?",
+        "a": "Demi-permanent typically lasts about 12-24 washes, and semi-permanent about 8-12 washes. Peer-reviewed reviews use a slightly different three-way split, reporting their temporary-dye category at ~8-12 washings and their semi-permanent category at ~24 washes, because the exact count depends on porosity, shade depth, and wash habits (He et al., 2022)."
+      }
+    },
+    "faq_g_how_long_does_hair_dye_last_03": {
+      "en": {
+        "q": "What makes hair dye fade faster?",
+        "a": "Frequent washing (especially with hot water and sulfate shampoos) is the biggest factor, because research shows dye leaches out of the hair shaft over multiple wash cycles (Zhang et al., 2016). Sunlight/UV, high-heat styling, hard-water minerals, chlorine, and porous, damaged hair also speed fading."
+      }
+    },
+    "faq_g_how_long_does_hair_dye_last_04": {
+      "en": {
+        "q": "How long does a hair-dye allergic reaction last, and when is it an emergency?",
+        "a": "Mild allergic contact dermatitis usually settles over several days once the allergen (often PPD in permanent dye) is removed, though severe cases take longer and sensitization is usually lifelong (DermNet NZ). Reactions are typically delayed, appearing 24-72 hours after exposure. Go to emergency care for face or throat swelling, trouble breathing or swallowing, a fast-spreading rash, eye involvement, or dizziness, as these can signal anaphylaxis. This is health information, not medical advice; see a doctor for any reaction."
+      }
+    },
+    "faq_g_how_long_does_wine_last_01": {
+      "en": {
+        "q": "How long does opened wine last in the fridge?",
+        "a": "Once resealed and refrigerated, sparkling wine lasts 1-2 days, light whites and rosés 3-5 days, full-bodied reds 3-6 days, and fortified wines like port 1-3 weeks. A dedicated sparkling stopper can stretch bubbles to about 2-3 days."
+      }
+    },
+    "faq_g_how_long_does_wine_last_02": {
+      "en": {
+        "q": "How long does unopened wine last?",
+        "a": "Stored cool and dark, everyday whites keep about 1-2 years past their printed date, reds 2-3 years, non-vintage sparkling 3-4 years, and vintage sparkling 5-10 years. Fine wine can age 10-20+ years, and fortified wines like port and Madeira can last decades."
+      }
+    },
+    "faq_g_how_long_does_wine_last_03": {
+      "en": {
+        "q": "Does wine go bad, and is spoiled wine dangerous?",
+        "a": "Yes. Wine spoils through oxidation and microbial growth, showing as brown color, a vinegar or burnt-rubber smell, or a sharp sour taste. A sip rarely causes harm, but heavily spoiled wine can trigger food-poisoning symptoms like upset stomach, nausea, vomiting, diarrhea, abdominal pain, and fever. This is health information, not medical advice - see a doctor if symptoms are severe or persistent, or include dehydration, a high fever, or blood in vomit or stool."
+      }
+    },
+    "faq_g_how_long_does_wine_last_04": {
+      "en": {
+        "q": "How should you store wine to make it last longer?",
+        "a": "Keep unopened bottles cool (around 55°F/13°C), dark, and steady in temperature, lying on their side at about 60% humidity so the cork stays moist. Wine tolerates up to about 69°F (21°C) fine, but sustained heat above roughly 77°F (25°C) can spoil it. Once open, re-cork tightly and refrigerate (even reds), minimize the air gap, and use a vacuum or sparkling stopper to slow oxidation."
+      }
+    },
+    "faq_g_how_long_does_caffeine_last_01": {
+      "en": {
+        "q": "How long does caffeine last in your system?",
+        "a": "Caffeine has an average half-life of about 5 hours, with a normal range of 1.5 to 9.5 hours depending on genetics, pregnancy, medications, and liver function. After 5 hours roughly half is still in your bloodstream, after 10 hours about a quarter remains, and it takes about 24-25 hours (around 5 half-lives) for caffeine to be essentially fully cleared. This is health information, not medical advice; see a doctor if caffeine affects your heart or sleep."
+      }
+    },
+    "faq_g_how_long_does_caffeine_last_02": {
+      "en": {
+        "q": "How long before bed should I stop drinking caffeine?",
+        "a": "Cut off caffeine at least 6 hours before bedtime. A peer-reviewed study found that caffeine taken 0, 3, or 6 hours before bed significantly disrupted sleep, and because the half-life is about 5 hours, even a 2 p.m. cup can still affect a slow metabolizer at 11 p.m. If you have persistent insomnia, talk with a healthcare provider."
+      }
+    },
+    "faq_g_how_long_does_caffeine_last_03": {
+      "en": {
+        "q": "What factors make caffeine last longer in the body?",
+        "a": "Caffeine lasts longest in pregnant women (up to about 15 hours in the third trimester), people taking oral contraceptives (which can double the half-life), those with liver disease, and newborns (up to about 100 hours in premature infants and up to about 8 hours in full-term infants). It clears fastest in smokers (up to 50% shorter half-life). The genetics of the CYP1A2 liver enzyme drives most of the individual variation. This is health information, not medical advice; if you are pregnant or managing a liver condition, talk with your doctor about caffeine."
+      }
+    },
+    "faq_g_how_long_does_caffeine_last_04": {
+      "en": {
+        "q": "How long do caffeine's effects (the buzz) last?",
+        "a": "The alert, energized feeling typically lasts 4 to 6 hours. Caffeine peaks in the blood 15 minutes to 2 hours after you drink it (often around 30-60 minutes), then gradually fades - though detectable caffeine remains in the body far longer than the felt effects. This is health information, not medical advice; if you get palpitations, anxiety, or trouble sleeping from caffeine, check in with a healthcare professional."
+      }
+    },
+    "faq_g_how_long_does_the_flu_last_01": {
+      "en": {
+        "q": "How long does the flu last?",
+        "a": "For most people the flu lasts a few days to about a week, with full recovery (including any lingering cough or tiredness) within one to two weeks, though a cough and fatigue can persist longer. The CDC says most people recover in a few days to less than two weeks; Johns Hopkins Medicine notes that fever and body aches often last 3 to 7 days, while cough and fatigue may last two weeks or more. This is general information, not medical advice — see a doctor if symptoms are severe, worsening, or not improving."
+      }
+    },
+    "faq_g_how_long_does_the_flu_last_02": {
+      "en": {
+        "q": "How long are you contagious with the flu?",
+        "a": "You can spread the flu from about one day before symptoms appear until roughly five to seven days after you become sick, according to the CDC. You are most contagious during the first three days of illness, and Cleveland Clinic notes contagiousness peaks in the three to four days after symptoms start. Young children and people with weakened immune systems may be contagious for longer. This is general information, not medical advice."
+      }
+    },
+    "faq_g_how_long_does_the_flu_last_03": {
+      "en": {
+        "q": "How long does a flu fever last?",
+        "a": "Fever and body aches often last about 3 to 7 days and tend to go away faster than other symptoms, while a cough or runny nose can linger for two weeks or more (Johns Hopkins Medicine; Cleveland Clinic). Cleveland Clinic advises contacting a healthcare provider if your fever lasts longer than three days or your symptoms don't improve after seven to ten days. This is general information, not medical advice — seek emergency care for difficulty breathing, chest pain, confusion, a fever above 103°F/40°C (adults), or any fever in an infant under 12 weeks."
+      }
+    },
+    "faq_g_how_long_does_the_flu_last_04": {
+      "en": {
+        "q": "When should I take antivirals for the flu?",
+        "a": "Prescription antiviral drugs work best when started within 48 hours of symptom onset and can shorten the illness by about a day, according to the CDC. They are most important for people at higher risk of complications, those who are very sick, or those who are hospitalized, though starting later can still help in those cases. Antibiotics do not treat the flu because it is a virus. This is descriptive, not medical advice — ask a healthcare provider whether antivirals are appropriate for you, and seek emergency care for difficulty breathing, chest pain, confusion, or dehydration."
+      }
+    },
+    "faq_g_how_long_does_a_cold_last_01": {
+      "en": {
+        "q": "How long does a common cold last?",
+        "a": "Most colds last 7 to 10 days in adults and older children. The Cleveland Clinic and MedlinePlus (NIH) put typical recovery at about a week to 10 days, while the Merck Manual notes that symptoms usually resolve within 10 days. The first symptoms typically appear within 1 to 3 days, symptoms often peak around days 4 to 7, and a cough can linger into the second week. This is health information, not medical advice — see a doctor if symptoms last more than 10 days, you have a high or persistent fever, or you have trouble breathing."
+      }
+    },
+    "faq_g_how_long_does_a_cold_last_02": {
+      "en": {
+        "q": "How long is a cold contagious?",
+        "a": "You can be contagious for up to two weeks, including a day or two before symptoms appear, according to the Cleveland Clinic. You are most contagious when symptoms are at their worst — usually the first two to three days you feel sick (Cleveland Clinic; MedlinePlus). The Merck Manual adds that a cold is most contagious during the first 1 to 2 days after symptoms develop. This is health information, not medical advice; contact a healthcare provider with any concerning symptoms."
+      }
+    },
+    "faq_g_how_long_does_a_cold_last_03": {
+      "en": {
+        "q": "Do antibiotics help a cold?",
+        "a": "No. Colds are caused by viruses, and antibiotics only treat bacterial infections, so they will not help you recover and can cause side effects — including rash, severe allergic reactions, antimicrobial-resistant infections, and C. diff infection (CDC). The CDC, Cleveland Clinic, and Merck Manual stress that even thick or colored mucus does not mean you need antibiotics. They are only useful if a bacterial complication, such as an ear infection or pneumonia, develops. This is health information, not medical advice; see a doctor if your symptoms worsen or do not improve."
+      }
+    },
+    "faq_g_how_long_does_a_cold_last_04": {
+      "en": {
+        "q": "When should I see a doctor for a cold?",
+        "a": "See a doctor if symptoms last more than 10 days without improving, if you have a high fever or a fever lasting longer than four days (CDC), or if a fever returns after clearing. Seek emergency or urgent care for trouble breathing, dehydration, or symptoms that improve and then return or worsen. For babies, the American Academy of Pediatrics says call your pediatrician immediately for any fever of 100.4°F (38°C) or higher in an infant younger than 3 months (12 weeks); for older children, contact a provider for a fever lasting more than 24 hours (under age 2) or more than 3 days (age 2 and up). This is health information, not medical advice — in an emergency, seek care immediately."
+      }
+    },
+    "faq_g_how_long_does_strep_throat_last_01": {
+      "en": {
+        "q": "How long does strep throat last without antibiotics?",
+        "a": "Untreated strep throat symptoms typically ease within about a week (roughly 5 to 7 days), though the full course can sometimes run toward 7 to 10 days (StatPearls; Nemours KidsHealth; NHS). Without antibiotics, though, you can stay contagious for up to 2 to 3 weeks and you remain at risk of complications such as rheumatic fever or kidney inflammation, which is why clinicians still recommend seeing a doctor for treatment rather than waiting it out. This is health information, not medical advice; contact a clinician for diagnosis and care."
+      }
+    },
+    "faq_g_how_long_does_strep_throat_last_02": {
+      "en": {
+        "q": "How long does strep throat last with antibiotics?",
+        "a": "With an appropriate antibiotic, most people feel better within 1 to 2 days and are no longer contagious after about 24 hours of treatment (Cleveland Clinic; Nemours KidsHealth; StatPearls). A standard course lasts 10 days. Even if symptoms disappear quickly, finish the entire course to help prevent complications such as rheumatic fever (American Academy of Pediatrics). This is health information, not medical advice; a clinician should confirm the diagnosis with a throat swab before any antibiotic is prescribed."
+      }
+    },
+    "faq_g_how_long_does_strep_throat_last_03": {
+      "en": {
+        "q": "When is strep throat no longer contagious?",
+        "a": "After starting antibiotics, you are generally no longer contagious after 24 hours, as long as your symptoms are improving and your fever is gone (StatPearls; NHS; Cleveland Clinic). Without antibiotics, you can spread strep for up to 2 to 3 weeks (Nemours KidsHealth). The incubation period is 2 to 5 days (CDC), and you can infect others before you feel sick. This is health information, not medical advice; see a doctor if you suspect strep or if symptoms worsen."
+      }
+    },
+    "faq_g_how_long_does_strep_throat_last_04": {
+      "en": {
+        "q": "How is strep throat diagnosed?",
+        "a": "A clinician swabs the back of the throat and runs either a rapid strep test (results in about 5 to 20 minutes) or a throat culture (results in 1 to 2 days) (Cleveland Clinic; StatPearls; AAP). Because most sore throats are viral (CDC), the swab, not the symptoms alone, determines whether bacteria are present and whether antibiotics will help. This is health information, not medical advice; see a healthcare provider for testing rather than self-diagnosing."
+      }
+    },
+    "faq_g_how_long_does_a_sinus_infection_last_01": {
+      "en": {
+        "q": "How long does a viral sinus infection last?",
+        "a": "A viral sinus infection typically lasts 7 to 10 days and usually follows a cold, clearing on its own without antibiotics. The CDC notes that most sinus infections get better on their own, and Johns Hopkins notes that viral sinus inflammation may resolve in about 10 days. This is general health information, not medical advice; see a doctor if symptoms last beyond 10 days, worsen after improving, or become severe."
+      }
+    },
+    "faq_g_how_long_does_a_sinus_infection_last_02": {
+      "en": {
+        "q": "How do I know if my sinus infection is bacterial?",
+        "a": "The CDC points to several clues: symptoms lasting more than 10 days without improvement, symptoms that get worse after they seemed to be getting better (often called \"double sickening\"), and persistent facial pain or fever. Only a healthcare provider can confirm a bacterial infection and decide whether antibiotics are appropriate. Seek emergency care for vision changes, swelling or redness around the eyes, high fever (over 103 F/40 C), stiff neck, confusion, or seizures."
+      }
+    },
+    "faq_g_how_long_does_a_sinus_infection_last_03": {
+      "en": {
+        "q": "When is a sinus infection considered chronic?",
+        "a": "Sinusitis is classified as chronic when symptoms last 12 weeks or longer despite medical treatment, according to the Cleveland Clinic and MedlinePlus (NIH). Cases lasting between 4 and 12 weeks are termed subacute, bridging acute and chronic. This is general health information, not medical advice; see a doctor for persistent or recurring symptoms."
+      }
+    },
+    "faq_g_how_long_does_a_sinus_infection_last_04": {
+      "en": {
+        "q": "Is a sinus infection contagious?",
+        "a": "The sinus infection itself is not contagious, but the viruses (and bacteria) that cause it are. The Cleveland Clinic states that sinusitis is not contagious even though the germs that trigger it can be, and the CDC confirms that viruses cause most sinus infections, spreading through coughs, sneezes, and unwashed hands. This is general health information, not medical advice; see a doctor for severe or worsening symptoms."
+      }
+    },
+    "faq_g_how_long_does_bronchitis_last_01": {
+      "en": {
+        "q": "How long does acute bronchitis typically last?",
+        "a": "Acute bronchitis (a chest cold) usually lasts 1 to 3 weeks. The CDC defines it as symptoms lasting less than 3 weeks, and the American Lung Association notes it usually lasts a week to 10 days. The cough can linger for several weeks, and the Cleveland Clinic notes full recovery may take 3 to 6 weeks in some people. This is health information, not medical advice."
+      }
+    },
+    "faq_g_how_long_does_bronchitis_last_02": {
+      "en": {
+        "q": "How long is bronchitis contagious?",
+        "a": "The inflammation itself is not contagious — only the underlying virus is. Because about 90–95% of cases are viral, you can spread it through coughs and sneezes for roughly a few days to about a week after symptoms start, per the Cleveland Clinic. If the cause is bacterial (such as pertussis), you are usually no longer contagious 24 hours after starting antibiotics."
+      }
+    },
+    "faq_g_how_long_does_bronchitis_last_03": {
+      "en": {
+        "q": "Do antibiotics help bronchitis go away faster?",
+        "a": "Rarely. Acute bronchitis is viral in roughly 90–95% of cases, and antibiotics do not kill viruses. The CDC says antibiotics will not help and are not recommended even for most bacterial chest colds. A Cochrane review of randomized trials found antibiotics shorten the cough by only about half a day while adding side-effect risk. Antibiotics are reserved for diagnosed whooping cough or pneumonia. This is general information, not medical advice — talk to a clinician about your own case."
+      }
+    },
+    "faq_g_how_long_does_bronchitis_last_04": {
+      "en": {
+        "q": "When should I see a doctor for bronchitis?",
+        "a": "See a clinician if your cough lasts more than 3 weeks, you have a fever greater than 102°F (38.9°C), a fever lasting more than 5 days or reaching 104°F, you cough up blood, or you have new or worsening shortness of breath, wheezing, confusion, or bluish, pale, or blotchy lips or skin. For infants under 3 months with a fever of 100.4°F (38°C) or higher, contact a provider right away (CDC). Severe breathing trouble, chest pain, or confusion is an emergency — call your local emergency number. This is health information, not a substitute for medical advice."
+      }
     }
   },
   "quickUseIdeas": {
