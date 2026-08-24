@@ -1387,11 +1387,16 @@ add_action('send_headers', function () {
  * Fresh custom sitemap endpoint that bypasses the Cloudways Nginx page cache.
  * Handled at parse_request (very early) to avoid WP's canonical-redirect for unknown URLs.
  * Accessible at /sitemap-fresh.xml — submit this to GSC.
+ *
+ * /sitemap.xml and /wp-sitemap.xml serve the SAME XML. Cloudways nginx 301s
+ * /sitemap.xml → /wp-sitemap.xml before WP boots, so without this handler the
+ * conventional sitemap URLs end in a WP 404. Serving one sitemap from all
+ * three paths keeps discovery signals consolidated on a single sitemap system.
  */
 add_action('parse_request', function ($wp) {
     if (!isset($_SERVER['REQUEST_URI'])) { return; }
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    if ($path !== '/sitemap-fresh.xml') { return; }
+    if (!in_array($path, ['/sitemap-fresh.xml', '/sitemap.xml', '/wp-sitemap.xml'], true)) { return; }
 
     // Cacheable for 1 hour: the old no-store headers forced a WP boot on every
     // Googlebot fetch (GSC "robots.txt not available" / crawl-outage root cause).
