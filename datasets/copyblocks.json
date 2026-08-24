@@ -4183,6 +4183,318 @@
         "q": "How long do fruit flies and horse flies live?",
         "a": "Fruit fly adults can live up to 30 days, and their full life cycle lasts 25 days or more — though they can complete development in as little as a week in ideal warmth. Horse flies are far slower: most species produce one generation per year, and some take two to three years to finish developing."
       }
+    },
+    "faq_g_how_long_is_a_soccer_game_01": {
+      "en": {
+        "q": "How long is a soccer game in total?",
+        "a": "On the clock, a soccer game is 90 minutes — two 45-minute halves — but stoppage time stretches the average professional match to 100 minutes and 36 seconds of match time in the Premier League this season. Once you add the halftime interval of up to 15 minutes, a normal game runs about 1 hour 55 minutes to 2 hours from kick-off to the final whistle."
+      }
+    },
+    "faq_g_how_long_is_a_soccer_game_02": {
+      "en": {
+        "q": "How long is a soccer game with halftime?",
+        "a": "Halftime can last no more than 15 minutes under Law 7 of the Laws of the Game, and competition rules must state the exact length. With a 45-minute first half plus a few minutes of stoppage time, the second half usually kicks off about an hour after the opening whistle, putting the whole match at roughly 1 hour 55 minutes to 2 hours."
+      }
+    },
+    "faq_g_how_long_is_a_soccer_game_03": {
+      "en": {
+        "q": "How long is a high school or youth soccer game?",
+        "a": "High school games under NFHS rules are played as two 40-minute halves, for 80 minutes of playing time. Youth games step down by age under US Youth Soccer rules, from two 45-minute halves at 17U-19U to four 6-minute quarters — just 24 minutes of play — at 6U."
+      }
+    },
+    "faq_g_how_long_is_a_soccer_game_04": {
+      "en": {
+        "q": "How long does a soccer game last with extra time and penalties?",
+        "a": "Knockout matches that are level after 90 minutes go to two extra-time periods of up to 15 minutes each, under Law 10 of the Laws of the Game. If the score is still tied, a penalty shootout follows — five kicks per team, then sudden death — so a deciding game can stretch close to two and a half hours, and sometimes beyond, from kick-off to the winning kick."
+      }
+    },
+    "faq_g_how_long_is_a_baseball_game_01": {
+      "en": {
+        "q": "How long is the average MLB game?",
+        "a": "The average nine-inning MLB game lasted 2 hours 38 minutes in 2025, the most recent full season. That is up just 2 minutes from 2024 but down 26 minutes from 3:04 in 2022, the last season before the pitch timer. Plan on roughly two and a half to three hours from first pitch to final out."
+      }
+    },
+    "faq_g_how_long_is_a_baseball_game_02": {
+      "en": {
+        "q": "How long should I plan to be at a baseball game?",
+        "a": "Budget about 2 hours 40 minutes for a typical game, then pad by 30-45 minutes for the two things that break the model: extra innings and rain delays. A 7:05 p.m. start at league-average pace ends around 9:45 p.m., with late extras pushing past 10:15. Postseason games run longer, thanks to 2:55 between-inning breaks and more pitching changes."
+      }
+    },
+    "faq_g_how_long_is_a_baseball_game_03": {
+      "en": {
+        "q": "What happens if a baseball game is tied after 9 innings?",
+        "a": "The game keeps going — baseball has no clock to expire, so extra innings are open-ended. In the regular season, every half-inning beyond the ninth starts with an automatic runner on second base (the ghost runner), a rule made permanent in 2023 that usually settles games quickly. The ghost runner is not used in the postseason, so October extras can turn into marathons."
+      }
+    },
+    "faq_g_how_long_is_a_baseball_game_04": {
+      "en": {
+        "q": "Why did MLB games get shorter in 2023?",
+        "a": "MLB introduced a pitch timer in 2023: 15 seconds between pitches with the bases empty and 20 with runners on, trimmed to 18 seconds for 2024, plus a 30-second timer between batters. Violations cost an automatic ball or strike. The average game dropped 24 minutes, from 3:04 in 2022 to 2:40 in 2023, and has stayed in the 2:36-2:38 range since."
+      }
+    },
+    "faq_g_how_long_is_nfl_halftime_01": {
+      "en": {
+        "q": "How long is halftime in an NFL game?",
+        "a": "NFL halftime is 13 minutes long, set by Rule 4, Section 1, Article 3 of the NFL rulebook, and the Back Judge times it on the field. The same 13-minute intermission applies to regular-season and playoff games. In practice, the second half reliably starts less than 15 minutes after the first half ends."
+      }
+    },
+    "faq_g_how_long_is_nfl_halftime_02": {
+      "en": {
+        "q": "How long is Super Bowl halftime?",
+        "a": "The Super Bowl break typically lasts 25 to 30 minutes, roughly twice a normal week, because crews need time to build and tear down the concert stage without damaging the field. The halftime show itself runs about 12 to 14 minutes inside that longer break. With kickoff at 6:30 p.m. ET, halftime usually begins between 8:00 and 8:15 p.m. ET."
+      }
+    },
+    "faq_g_how_long_is_nfl_halftime_03": {
+      "en": {
+        "q": "Why is NFL halftime shorter than college football halftime?",
+        "a": "NCAA halftimes last 20 minutes by rule, a full seven minutes longer than the NFL's 13-minute intermission. The NFL cut its break from 15 minutes to 12 in 1990 and lists it at 13 today, keeping the broadcast window tight. That is why a Saturday college game can drift at the midpoint while an NFL game snaps back into action."
+      }
+    },
+    "faq_g_how_long_is_nfl_halftime_04": {
+      "en": {
+        "q": "What do NFL players and coaches actually do at halftime?",
+        "a": "Thirteen minutes is barely enough time to get off the field and back. Then-Saints coach Sean Payton said in 2013 that halftime is mostly “getting something to drink, going to the bathroom” while coaches talk through a few adjustments. Coaches can shift overall strategy, but there is little time to meet with individual position groups."
+      }
+    },
+    "faq_g_how_long_is_a_basketball_game_01": {
+      "en": {
+        "q": "How long is an NBA game in real time?",
+        "a": "An NBA game is 48 minutes of playing time — four 12-minute quarters — but the rulebook wraps that in a 15-minute halftime, 2:30 quarter breaks and mandatory TV timeouts. Commissioner Adam Silver put the average regular-season game at about 2 hours 15 minutes from tip-off to the final buzzer, so budget two and a quarter hours, plus more if there is overtime."
+      }
+    },
+    "faq_g_how_long_is_a_basketball_game_02": {
+      "en": {
+        "q": "How long is a college basketball game?",
+        "a": "Men's college games are two 20-minute halves and women's games are four 10-minute quarters — 40 minutes of clock either way — with a 15-minute halftime and 5-minute overtime periods. Media timeouts, fouls and official reviews stretch the broadcast well beyond the 40 minutes of playing time."
+      }
+    },
+    "faq_g_how_long_is_a_basketball_game_03": {
+      "en": {
+        "q": "How long is a high school basketball game?",
+        "a": "Under NFHS rules, high school games are four 8-minute quarters, or 32 minutes of playing time. Teams get 1-minute breaks after the first and third quarters and a 10-minute halftime that can be extended to 15 minutes for special activities, and overtime periods run 4 minutes each."
+      }
+    },
+    "faq_g_how_long_is_a_basketball_game_04": {
+      "en": {
+        "q": "What was the longest basketball game ever played?",
+        "a": "The longest Division I men's game on record is Cincinnati's 75-73 seven-overtime win over Bradley on December 21, 1981 — 75 minutes of playing time, 35 of them after regulation. NBA, college and FIBA overtimes are all 5 minutes, and extra periods simply repeat until someone wins."
+      }
+    },
+    "faq_g_how_long_is_a_hockey_game_01": {
+      "en": {
+        "q": "How long is an NHL game in real time?",
+        "a": "An NHL game has 60 minutes of playing time, but from puck drop to final horn it typically runs about two and a half hours. A 7:00 p.m. start usually ends around 9:30 p.m., and a game decided in overtime and a shootout pushes closer to 9:45. Whistles, reviews and television timeouts are what stretch the clock."
+      }
+    },
+    "faq_g_how_long_is_a_hockey_game_02": {
+      "en": {
+        "q": "How long are intermissions at an NHL game?",
+        "a": "NHL intermissions are 18 minutes each, two per game, and the clock starts the moment the last official leaves the ice (Rules 77.2 and 34.2). That builds 36 minutes into your evening for the zamboni to resurface the ice. College hockey uses 12- or 15-minute breaks and IIHF or Olympic games use 15-minute breaks."
+      }
+    },
+    "faq_g_how_long_is_a_hockey_game_03": {
+      "en": {
+        "q": "How does NHL overtime work, and how much time does it add?",
+        "a": "In the regular season, a tied game goes to five minutes of 3-on-3 sudden-death overtime that the rulebook expects to start roughly two minutes after regulation ends. If nobody scores, a three-round-per-team shootout decides it, and those games typically finish about two hours 45 minutes after puck drop. In the playoffs there is no shootout: teams take a 15-minute intermission and then play 20-minute sudden-death periods, repeating until someone scores."
+      }
+    },
+    "faq_g_how_long_is_a_hockey_game_04": {
+      "en": {
+        "q": "Is a college or Olympic hockey game shorter than an NHL game?",
+        "a": "Not much — every level plays three 20-minute periods, so the evening is similar at about two and a half hours. College games actually run a bit shorter thanks to 12- or 15-minute intermissions, and the men's game now uses five minutes of 3-on-3 overtime plus a mandatory three-player shootout (women's games can still end tied unless conference policy adds a shootout). Olympic and IIHF games use 15-minute intermissions with five- or ten-minute overtimes plus a shootout, and repeated sudden-death periods in gold-medal games."
+      }
+    },
+    "faq_g_how_long_is_the_super_bowl_halftime_show_01": {
+      "en": {
+        "q": "How long is the Super Bowl halftime show itself?",
+        "a": "The musical performance itself runs about 12 to 14 minutes. Kendrick Lamar's 2025 set lasted 13 minutes 20 seconds, and Rihanna fit 13 songs into roughly 13 minutes in 2023. There is no rulebook length for the show — the runtime is a production decision by the artist, the league, and the network."
+      }
+    },
+    "faq_g_how_long_is_the_super_bowl_halftime_show_02": {
+      "en": {
+        "q": "How long is the full halftime break at the Super Bowl?",
+        "a": "The entire break lasts 25 to 30 minutes, roughly double a regular-season halftime. A normal NFL halftime is 13 minutes by rule (Rule 4, Section 1, Article 3) and is timed by the Back Judge. The Super Bowl stretches it to fit the stage build, commercials, and studio analysis around the performance."
+      }
+    },
+    "faq_g_how_long_is_the_super_bowl_halftime_show_03": {
+      "en": {
+        "q": "What time does the Super Bowl halftime show start?",
+        "a": "With kickoffs around 6:30 p.m. ET and first halves that run about 75 minutes of real time, the first note usually lands between 8:00 and 8:30 p.m. ET. Sporting News projected about 8:00 p.m. for the 2025 show, but the 2024 show did not begin until 8:25 p.m. ET. If you are tuning in just for the music, be watching by about 7:45 p.m. ET."
+      }
+    },
+    "faq_g_how_long_is_the_super_bowl_halftime_show_04": {
+      "en": {
+        "q": "Why is Super Bowl halftime longer than a regular-season halftime?",
+        "a": "The rulebook mandates just a 13-minute intermission, but the Super Bowl deliberately doubles it to 25 to 30 minutes. A crew needs roughly six minutes to assemble the stage on the field, and the network fills the rest of the break with the most expensive commercials of the TV year plus studio commentary. That extended break is a big reason the broadcast runs three and a half to four hours."
+      }
+    },
+    "faq_g_how_long_is_a_football_game_01": {
+      "en": {
+        "q": "How long does an NFL game actually last?",
+        "a": "An NFL game has 60 minutes of playing time, but the average broadcast runs about 3 hours and 12 minutes from kickoff to the final whistle. Only roughly 18 minutes of that is live action, while commercials fill about 45 minutes. Plan on a three-hour commitment with a little slack."
+      }
+    },
+    "faq_g_how_long_is_a_football_game_02": {
+      "en": {
+        "q": "How long is halftime in an NFL game?",
+        "a": "By NFL rule, halftime is a 13-minute intermission timed by the back judge. The break you experience at home feels longer because networks wrap studio coverage around it. The Super Bowl is the exception: stage setup and teardown stretch its halftime closer to 25-30 minutes."
+      }
+    },
+    "faq_g_how_long_is_a_football_game_03": {
+      "en": {
+        "q": "How long are college and high school football games?",
+        "a": "College games have the same 60 minutes of playing time as the NFL but average about 3 hours 24 minutes, because they run roughly 40 more plays and allow halftimes up to 20 minutes. High school games are shorter on the clock — 48 minutes in four 12-minute quarters — so their real-time length varies by state."
+      }
+    },
+    "faq_g_how_long_is_a_football_game_04": {
+      "en": {
+        "q": "How long is NFL overtime?",
+        "a": "In the regular season, overtime is a single 10-minute period, and the game ends in a tie if the score is still level after it. In the postseason, overtime periods run 15 minutes and keep repeating until a winner is decided. In both formats, each team gets an opportunity to possess the ball."
+      }
+    },
+    "faq_g_how_long_is_nba_halftime_01": {
+      "en": {
+        "q": "How long is halftime in the NBA?",
+        "a": "NBA halftime is 15 minutes long in every game, from opening night to Game 7 of the Finals. The figure is fixed by the NBA rulebook (Rule No. 5, Section II—Timing): \"Fifteen minutes will be permitted between halves of all games.\" Television pads the break with studio segments and commercials, but the arena's 15-minute clock is the official number."
+      }
+    },
+    "faq_g_how_long_is_nba_halftime_02": {
+      "en": {
+        "q": "Is NBA halftime longer in the playoffs or the Finals?",
+        "a": "No — the same 15-minute interval is written into the rules for all games, and the league publishes no separate playoff number. Special halftime performances can push the real break toward 20 or 30 minutes on showcase nights, and playoff broadcasts overall run roughly 12 to 13 minutes longer than regular-season games. But the halftime clock itself never changes."
+      }
+    },
+    "faq_g_how_long_is_nba_halftime_03": {
+      "en": {
+        "q": "How long are the breaks between quarters in the NBA?",
+        "a": "By rule, the break between the first-and-second and third-and-fourth quarters is 2:30 in locally televised games and 3:30 when the game airs on national TV. Before any overtime period, 2:30 is permitted. Those between-quarter pauses are far shorter than the 15-minute halftime."
+      }
+    },
+    "faq_g_how_long_is_nba_halftime_04": {
+      "en": {
+        "q": "How long does a full NBA game last including halftime?",
+        "a": "An average regular-season game that ends in regulation ran about 2 hours 13 minutes in 2021-22, and every season from 2016-17 through 2021-22 landed between 2:12 and 2:14, per The Hoops Geek's game data. One overtime pushes the average to about 2:35. That total includes the 15-minute halftime, the quarter breaks and all timeouts."
+      }
+    },
+    "faq_g_how_long_is_a_quarter_in_football_01": {
+      "en": {
+        "q": "How long is a quarter in an NFL game?",
+        "a": "An NFL quarter is 15 minutes of game-clock time, and the rulebook sets the full game at 60 minutes across four periods. Because the clock stops for incomplete passes, penalties, scoring plays, and TV breaks, a real NFL quarter usually takes about 40 to 45 minutes of wall-clock time. Four quarters plus a 13-minute halftime is why the average NFL game runs just over three hours."
+      }
+    },
+    "faq_g_how_long_is_a_quarter_in_football_02": {
+      "en": {
+        "q": "How long is a quarter in high school football?",
+        "a": "High school quarters are 12 minutes long under NFHS-based rules used in most states, for 48 minutes of total playing time; Texas plays under NCAA-based rules but also uses the 12-minute quarter. That is three minutes less per quarter than the NFL, NCAA, and CFL. It is the main reason Friday-night games finish so much earlier than Saturday and Sunday broadcasts."
+      }
+    },
+    "faq_g_how_long_is_a_quarter_in_football_03": {
+      "en": {
+        "q": "How many minutes does a football quarter take in real time?",
+        "a": "Budget roughly 40 to 50 minutes of real time per quarter. An NFL quarter averages about 40 to 45 minutes once stoppages are counted, while a college quarter runs closer to 45 to 50 minutes because of longer halftimes and a heavier commercial load — the average 2024 college game lasted 3 hours, 27 minutes. Treat every quarter as roughly three times its official length and you can predict a game's finish within about ten minutes."
+      }
+    },
+    "faq_g_how_long_is_a_quarter_in_football_04": {
+      "en": {
+        "q": "How long is halftime between the second and third quarter?",
+        "a": "An NFL halftime is 13 minutes between the second and third periods. A college halftime is 20 minutes in the regular season, unless both schools agree before kickoff to shorten it, and in the CFL the second half kicks off exactly 16 minutes after the first half ends. The Super Bowl is the exception — its halftime runs far longer to fit the halftime show."
+      }
+    },
+    "faq_g_how_long_is_a_tennis_match_01": {
+      "en": {
+        "q": "How long does the average tennis match last?",
+        "a": "A typical professional best-of-three match lasts about 90 minutes — around 1 hour 20 minutes if it ends in straight sets and about 2 hours if it goes three. Men's Grand Slam matches, which are best-of-five, average about 2 hours 45 minutes, with a typical range of 2 hours to 3 hours 20 minutes."
+      }
+    },
+    "faq_g_how_long_is_a_tennis_match_02": {
+      "en": {
+        "q": "What was the longest tennis match ever played?",
+        "a": "John Isner's 2010 Wimbledon first-round win over Nicolas Mahut lasted 11 hours and 5 minutes spread across three days, June 22-24, finishing 70-68 in the fifth set with a record 183 games. The deciding set alone ran 8 hours 11 minutes. Since 2022, a 10-point tiebreak at 6-6 in final sets has made a repeat impossible at the Grand Slams."
+      }
+    },
+    "faq_g_how_long_is_a_tennis_match_03": {
+      "en": {
+        "q": "How long is a women's tennis match compared to a men's match?",
+        "a": "Women's matches are best-of-three at every event, including the Grand Slams, so they average about 90 minutes. Men's matches are also best-of-three at regular tour events, but best-of-five at the four majors, which pushes the average up to about 2 hours 45 minutes and creates the famous marathon fifth sets."
+      }
+    },
+    "faq_g_how_long_is_a_tennis_match_04": {
+      "en": {
+        "q": "Is there a time limit or shot clock in tennis?",
+        "a": "There is no game clock — a match ends when a player wins the required number of sets, whether that takes 30 minutes or all day. The only between-point timing rule is the ITF's 25-second serve-clock standard, which keeps play moving but cannot shorten the rallies themselves. Since March 2022, final sets at the Grand Slams also end in a 10-point tiebreak at 6-6, which caps how long a deciding set can run."
+      }
+    },
+    "faq_g_how_long_does_a_marathon_take_01": {
+      "en": {
+        "q": "How long does it take the average person to run a marathon?",
+        "a": "The average finisher worldwide covers the 26.2 miles in about 4:30 — RunRepeat's study of 107.9 million results put the 2018 global average at 4:32:49. Men average close to 4:21 and women close to 4:51, with the fastest age band (30 to 50) averaging about 4:24."
+      }
+    },
+    "faq_g_how_long_does_a_marathon_take_02": {
+      "en": {
+        "q": "What is the fastest marathon time ever run?",
+        "a": "The men's world record is 1:59:30, set by Sabastian Sawe at the 2026 London Marathon — the first sub-two-hour marathon in record-eligible race conditions. Ruth Chepngetich holds the women's mixed-race record at 2:09:56 (Chicago 2024), and Tigst Assefa set the women-only record of 2:15:41 at the 2026 London Marathon."
+      }
+    },
+    "faq_g_how_long_does_a_marathon_take_03": {
+      "en": {
+        "q": "How long do you have to finish a marathon before the course closes?",
+        "a": "It depends on the race. The Chicago Marathon keeps its course open for 6 hours 30 minutes — roughly a 15:00 per mile pace — and warns that runners finishing after 4 p.m. may not be recorded as official finishers. Most big-city marathons stay open six and a half hours or more, so always check your specific race's published cutoff."
+      }
+    },
+    "faq_g_how_long_does_a_marathon_take_04": {
+      "en": {
+        "q": "What pace do you need to qualify for the Boston Marathon?",
+        "a": "For the 2027 race, men aged 18–34 must have run 2:55:00 or faster — about 6:41 per mile — and women 3:25:00. Standards step up by age group all the way to 4:50:00 for men and 5:20:00 for women aged 80 and over, and hitting the standard only qualifies you to apply for entry."
+      }
+    },
+    "faq_g_how_long_is_a_boxing_match_01": {
+      "en": {
+        "q": "How long is a 12-round boxing match?",
+        "a": "A full 12-round championship fight contains 36 minutes of actual boxing — twelve 3-minute rounds — plus eleven 1-minute rest periods, which works out to about 47 minutes from the first bell to the final bell. Add ring walks, introductions and the decision, and the main event fills roughly an hour of broadcast. If it ends early by knockout or stoppage, it can be over in minutes."
+      }
+    },
+    "faq_g_how_long_is_a_boxing_match_02": {
+      "en": {
+        "q": "How long is an Olympic boxing match?",
+        "a": "Olympic and elite amateur bouts are three rounds of 3 minutes with 1-minute breaks between them, the same format for men and women. That is just 9 minutes of actual boxing and roughly 11 minutes bell to bell, far shorter than a professional title fight."
+      }
+    },
+    "faq_g_how_long_is_a_boxing_match_03": {
+      "en": {
+        "q": "How long are women's boxing matches?",
+        "a": "Women's championship bouts are contested over 10 rounds of 2 minutes each — 20 minutes of fighting, about 29 minutes bell to bell. That is a minute less per round and two rounds fewer than the men's 12 x 3-minute championship format, and the debate over switching women to three-minute rounds is ongoing. A full women's title fight actually contains less fighting time than an 8-round men's bout."
+      }
+    },
+    "faq_g_how_long_is_a_boxing_match_04": {
+      "en": {
+        "q": "How long does a boxing fight night last on TV?",
+        "a": "The main event alone runs about an hour with ring walks and the decision, but a televised card stacks several undercard bouts in front of it. A five-bout card with 4-, 6-, 8- and 10-round support fights ahead of a 12-round main event carries 155 minutes of scheduled ring time alone, before any television padding. Expect the full broadcast to run three hours or more unless a run of early knockouts shortens the night."
+      }
+    },
+    "faq_g_how_long_is_a_nascar_race_01": {
+      "en": {
+        "q": "How many hours does a NASCAR race last?",
+        "a": "Most NASCAR Cup Series races run about three hours from green flag to checkered flag. Recent official times range from 2:48:03 for a 300-mile race to 4:25:08 for the Coca-Cola 600, and those figures exclude red-flag stoppages, so a rain-hit race can occupy far more of your day."
+      }
+    },
+    "faq_g_how_long_is_a_nascar_race_02": {
+      "en": {
+        "q": "How long does the Daytona 500 take to run?",
+        "a": "The Daytona 500 is scheduled for 200 laps, or 500 miles, and usually finishes in three to three and a half hours. It ran 3:10:52 in 2024, 3:53:26 in 2025 (eight cautions, plus rain red flags that added over three and a half hours of waiting), and 3:23:56 in 2026."
+      }
+    },
+    "faq_g_how_long_is_a_nascar_race_03": {
+      "en": {
+        "q": "How long is the Coca-Cola 600?",
+        "a": "The Coca-Cola 600 at Charlotte Motor Speedway is NASCAR's longest race: 400 laps and 600 miles on Memorial Day weekend. The 2025 edition, won by Ross Chastain, took 4:25:08 with eight cautions, so plan for at least a four-and-a-half-hour window."
+      }
+    },
+    "faq_g_how_long_is_a_nascar_race_04": {
+      "en": {
+        "q": "Why do some NASCAR races take longer than others?",
+        "a": "Race length is set by a fixed distance, not a clock, so cautions do most of the damage — the Daytona 500 ran 3:10 with five cautions in 2024 but 3:53 with eight in 2025. Every race also includes two scheduled stage-break cautions, rain can red-flag it for hours, and an overtime finish can add laps beyond the scheduled distance, as when Martinsville's 400-lap race became 415 laps in 2024."
+      }
     }
   },
   "quickUseIdeas": {

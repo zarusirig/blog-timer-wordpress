@@ -53,6 +53,7 @@ Allow: /gardening
 Allow: /household
 Allow: /parenting
 Allow: /science
+Allow: /sports
 Allow: /chess-clock
 Allow: /egg-timer
 Allow: /interval-timer

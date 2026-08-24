@@ -297,6 +297,11 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                     <h3>Best Time to Visit</h3>
                     <p>Month-by-month guides for Japan, Iceland, Ireland, Portugal, Costa Rica, Mexico, Puerto Rico, Alaska &amp; Hawaii &mdash; plus when to book flights.</p>
                 </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/sports')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#9917;</div>
+                    <h3>Sports Game Timers</h3>
+                    <p>How long a soccer, baseball, basketball, hockey or football game really lasts &mdash; playing time vs. TV time, plus every halftime and quarter clock.</p>
+                </a>
                 <a class="card usecase-card" href="<?php echo esc_url(home_url('/auto')); ?>" style="text-decoration:none;">
                     <div class="usecase-card-icon">&#128663;</div>
                     <h3>Car &amp; Auto Timers</h3>

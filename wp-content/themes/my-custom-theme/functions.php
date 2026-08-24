@@ -1118,6 +1118,7 @@ function blogtimer_indexable_page_slugs()
         'household',
         'parenting',
         'science',
+        'sports',
     ];
 }
 
@@ -1200,6 +1201,7 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "Allow: /household\n";
     $robots .= "Allow: /parenting\n";
     $robots .= "Allow: /science\n";
+    $robots .= "Allow: /sports\n";
     $robots .= "Allow: /chess-clock\n";
     $robots .= "Allow: /egg-timer\n";
     $robots .= "Allow: /interval-timer\n";

@@ -559,6 +559,7 @@ class Timer_Engine
                 'household' => 'How often should you wash your sheets? Every 1–2 weeks — adjusted for pets, allergies, sweat and illness. What builds up between washes and why it matters.',
                 'parenting' => 'Baby nap schedules and wake windows by age, how long newborns and toddlers sleep at night, and how often to feed. Health information, not medical advice.',
                 'science' => 'How long it takes to get to the Moon and Mars, how long light takes to reach Earth from the Sun, and the launch windows and trajectories that decide each mission.',
+                'sports' => 'How long is a soccer, baseball, basketball, hockey or football game? Regulation playing time vs. real broadcast length, plus halftime, quarter and period clocks for every major sport.',
                 'workout-timers' => 'Free online workout timers for HIIT, Tabata, EMOM, circuits, and rounds. Customizable work and rest intervals with loud beeps to keep your training on pace.',
                 'sleep-meditation-timers' => 'Free online sleep and meditation timers for rest, breathwork, and mindfulness. Gentle fade-outs and quiet bells help you unwind, meditate, and fall asleep.',
                 'study-work-timers' => 'Free online study and work timers for focused sessions. Pomodoro, deep work, and 52/17 presets help you concentrate, take real breaks, and beat distraction.',
