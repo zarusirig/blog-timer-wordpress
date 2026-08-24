@@ -3847,6 +3847,342 @@
         "q": "When should I see a doctor for bronchitis?",
         "a": "See a clinician if your cough lasts more than 3 weeks, you have a fever greater than 102°F (38.9°C), a fever lasting more than 5 days or reaching 104°F, you cough up blood, or you have new or worsening shortness of breath, wheezing, confusion, or bluish, pale, or blotchy lips or skin. For infants under 3 months with a fever of 100.4°F (38°C) or higher, contact a provider right away (CDC). Severe breathing trouble, chest pain, or confusion is an emergency — call your local emergency number. This is health information, not a substitute for medical advice."
       }
+    },
+    "faq_g_how_long_does_a_stomach_bug_last_01": {
+      "en": {
+        "q": "How long does a stomach bug last in adults?",
+        "a": "Most adults recover in 1 to 3 days — the CDC says most people with norovirus illness get better within 1 to 3 days. If rotavirus is the cause, vomiting and watery diarrhea can last 3 to 8 days. In occasional cases symptoms linger for up to 14 days."
+      }
+    },
+    "faq_g_how_long_does_a_stomach_bug_last_02": {
+      "en": {
+        "q": "How long are you contagious with a stomach bug?",
+        "a": "You are most contagious while you have symptoms, and you stay contagious for up to 48 hours after they stop, according to Cleveland Clinic. The CDC warns you can still spread norovirus for 2 weeks or more after you feel better. The practical rule: stay isolated until two days after your symptoms stop, and keep washing your hands with soap and water."
+      }
+    },
+    "faq_g_how_long_does_a_stomach_bug_last_03": {
+      "en": {
+        "q": "How fast do stomach bug symptoms appear after exposure?",
+        "a": "Norovirus symptoms usually develop 12 to 48 hours after exposure, per the CDC. Johns Hopkins Medicine says viral gastroenteritis symptoms often begin about 1 to 2 days after the virus enters the body, and Mayo Clinic puts the window at 1 to 3 days depending on the cause. Because the virus can be present in your stool before symptoms start, you may spread it before you feel sick."
+      }
+    },
+    "faq_g_how_long_does_a_stomach_bug_last_04": {
+      "en": {
+        "q": "When should you go to the doctor for a stomach bug?",
+        "a": "Adults should call a provider if they cannot keep liquids down for 24 hours, have vomited or had diarrhea for more than two days, run a fever above 104 F (40 C), vomit blood, notice blood in bowel movements or severe stomach pain, or show dehydration signs like dry mouth, deep yellow urine, or dizziness. Cleveland Clinic adds: no improvement after four days, or a fever above 102 F lasting four days. For children and infants the bar is lower — call right away for a fever of 102 F (38.9 C) or higher, bloody diarrhea, no wet diaper in six hours, or unusual sleepiness."
+      }
+    },
+    "faq_g_how_long_does_pink_eye_last_01": {
+      "en": {
+        "q": "How long does pink eye usually last?",
+        "a": "Most pink eye clears within 1 to 2 weeks. Viral pink eye, the most common kind, usually lasts 7 to 14 days, though most mild cases resolve within 5 to 7 days and some linger 2 to 3 weeks or more. Bacterial pink eye often clears in 2 to 5 days, and allergic pink eye continues as long as you are exposed to the trigger."
+      }
+    },
+    "faq_g_how_long_does_pink_eye_last_02": {
+      "en": {
+        "q": "How long is pink eye contagious?",
+        "a": "Viral and bacterial pink eye are very contagious, while allergic and irritant pink eye are not contagious at all. You can spread it before symptoms even appear, so the safest rule is to treat it as contagious while the eyes are still red with discharge. Antibiotics help stop bacterial pink eye from spreading, which is why many schools allow children back 24 hours after drops begin."
+      }
+    },
+    "faq_g_how_long_does_pink_eye_last_03": {
+      "en": {
+        "q": "When can my child go back to school with pink eye?",
+        "a": "For bacterial pink eye, many schools allow return 24 hours after antibiotic drops begin, once the discharge has dwindled to a small amount. For viral pink eye there is no drops shortcut — the AAO advises staying home until the eyes are no longer red with discharge, though the AAP notes that mild cold-related pinkeye may not require missing any school. Keep any child home who has a fever or feels generally ill."
+      }
+    },
+    "faq_g_how_long_does_pink_eye_last_04": {
+      "en": {
+        "q": "How can I tell if pink eye is viral or bacterial?",
+        "a": "Viral pink eye usually causes burning, red eyes with a watery discharge and often arrives alongside a cold, while bacterial pink eye tends to produce thicker yellow-green pus that can stick the eyelashes together. Allergic conjunctivitis brings intense itching and usually affects both eyes. A clinician confirms the cause from your symptoms and an eye exam — and antibiotics only help the bacterial kind."
+      }
+    },
+    "faq_g_how_long_does_shingles_last_01": {
+      "en": {
+        "q": "How long does shingles last?",
+        "a": "Most shingles rashes scab over in 7 to 10 days and clear up within 2 to 4 weeks, and the full illness usually runs about 3 to 5 weeks from the first symptoms until the skin is completely clear. Starting antiviral medicine within 72 hours of your first symptoms can shorten the course. In some cases, mostly in older adults, nerve pain called postherpetic neuralgia continues for months or years after the rash heals."
+      }
+    },
+    "faq_g_how_long_does_shingles_last_02": {
+      "en": {
+        "q": "How long are you contagious with shingles?",
+        "a": "You are contagious from the time the blisters appear until they have dried and scabbed over, which the CDC says typically takes 7 to 10 days. The virus spreads through direct contact with fluid from the blisters, and someone who catches it develops chickenpox, not shingles. Keep the rash covered and avoid contact with people who have never had chickenpox or the vaccine, pregnant women, newborns, and anyone with a weakened immune system."
+      }
+    },
+    "faq_g_how_long_does_shingles_last_03": {
+      "en": {
+        "q": "How long does shingles pain last after the rash heals?",
+        "a": "For most people the pain fades as the skin heals, but the CDC reports that about 10% to 18% of shingles patients develop postherpetic neuralgia — nerve pain in the rash area that lasts for months or even years. Your risk increases with age, and people younger than 40 rarely get it. Johns Hopkins notes that early treatment of shingles may prevent PHN, which is why the first 72 hours matter."
+      }
+    },
+    "faq_g_how_long_does_shingles_last_04": {
+      "en": {
+        "q": "Can you get shingles more than once?",
+        "a": "Yes, although most people have only one episode in their lifetime. The CDC notes that herpes zoster can recur, and Cleveland Clinic adds that repeat episodes are uncommon unless you have a weakened immune system. Adults 50 and older — and adults 19 and older with weakened immune systems — are still recommended to get the two-dose Shingrix vaccine even after having shingles."
+      }
+    },
+    "faq_g_how_long_does_a_colonoscopy_take_01": {
+      "en": {
+        "q": "How long does a colonoscopy take from start to finish?",
+        "a": "The exam itself usually takes 30 to 45 minutes — about 15 minutes to guide the scope to the end of the colon and 15 more to inspect the lining on the way out. Plan on about two hours at the hospital or outpatient center to cover check-in, the exam, and 30 to 60 minutes of monitored recovery. Counting the bowel prep that begins several days earlier, the whole process spans a few days."
+      }
+    },
+    "faq_g_how_long_does_a_colonoscopy_take_02": {
+      "en": {
+        "q": "How long does it take to recover from a colonoscopy?",
+        "a": "You will spend the first 30 to 60 minutes in recovery before your driver takes you home. Cramping and bloating from the pumped-in air are common in the first hour, and you can eat normally again as soon as you feel ready. You should not drive, operate equipment, or make important decisions until the next day, because the anesthesia takes about 24 hours to wear off completely — NIDDK says most people make a full recovery and return to a normal diet by the next day."
+      }
+    },
+    "faq_g_how_long_does_a_colonoscopy_take_03": {
+      "en": {
+        "q": "Do I need someone to drive me home after a colonoscopy?",
+        "a": "Yes. Because you receive sedatives or anesthesia, ASGE says patients are required to have a family member or friend drive them home, and you cannot drive again until the next day. Cleveland Clinic says your driver should expect to wait about two hours altogether, covering your preparation, exam, and recovery."
+      }
+    },
+    "faq_g_how_long_does_a_colonoscopy_take_04": {
+      "en": {
+        "q": "Does a colonoscopy take longer if polyps are found?",
+        "a": "Usually only a little. Polyps turn up in about 30% of routine colonoscopies, and removing them on the spot may add another 15 minutes, keeping most exams around 45 minutes — still under the one-hour ceiling NIDDK describes. You will not feel the polyp removal or a biopsy, and the removed tissue goes to a lab, with results back in a few days to weeks."
+      }
+    },
+    "faq_g_how_long_does_an_mri_take_01": {
+      "en": {
+        "q": "How long does an MRI take?",
+        "a": "Most MRI scans take 30 to 60 minutes. Cleveland Clinic says a standard MRI \"usually takes 30 to 60 minutes,\" the NHS gives a usual window of 15 minutes to an hour, and RadiologyInfo.org puts the typical total at 30 to 50 minutes. A cardiac MRI can take up to 90 minutes, and contrast dye adds still more time."
+      }
+    },
+    "faq_g_how_long_does_an_mri_take_02": {
+      "en": {
+        "q": "How long does a brain MRI take with contrast?",
+        "a": "Cleveland Clinic says a brain MRI \"can take about 30 minutes to an hour to complete\" and that it \"may take longer if you're getting a brain MRI with contrast.\" Plan extra time for placing the IV and the additional image sequences. The NHS also notes you may be asked to wait up to 30 minutes afterward so staff can check for a reaction to the dye."
+      }
+    },
+    "faq_g_how_long_does_an_mri_take_03": {
+      "en": {
+        "q": "Why does an MRI take longer than other scans?",
+        "a": "An MRI collects multiple image runs, or sequences, and RadiologyInfo.org notes that some of them \"last several minutes\" each. More anatomy or more detail means more sequences, and \"the type of exam and the equipment used\" also affect total time. If you move too much, UCSF Health warns the images blur and errors result, which stretches your appointment."
+      }
+    },
+    "faq_g_how_long_does_an_mri_take_04": {
+      "en": {
+        "q": "Can I have an MRI if I have a pacemaker or metal implant?",
+        "a": "Usually, but you must be screened first. The NHS asks whether you have metal in your body, such as surgical clips, a pacemaker, or dental fillings or bridges, and RadiologyInfo.org lists implants that need safety evaluation, including some cochlear implants, some brain aneurysm clips, some metal coils in blood vessels, some older defibrillators and pacemakers, and vagal nerve stimulators. Tell your provider and the technologist in advance: the technologist \"cannot perform the MRI exam without confirming and documenting the type of implant and MRI compatibility,\" so an undocumented implant can delay your slot."
+      }
+    },
+    "faq_g_how_long_does_alcohol_stay_in_your_system_01": {
+      "en": {
+        "q": "How long does alcohol stay in your blood?",
+        "a": "Alcohol can show up on a blood test for up to about 12 hours after your last drink. Your BAC then falls at an average rate of about 0.016% per hour — roughly one standard drink per hour. A heavy night stretches clearance much longer: a 0.20% BAC takes about 12.5 hours to reach zero."
+      }
+    },
+    "faq_g_how_long_does_alcohol_stay_in_your_system_02": {
+      "en": {
+        "q": "How long does alcohol stay in your urine?",
+        "a": "A traditional urine test detects alcohol itself for about 10 to 12 hours. An EtG urine test detects a metabolite of alcohol and can stay positive for 3 to 5 days after drinking. A positive EtG does not mean the person is intoxicated at that moment, and alcohol-containing products like mouthwash or vanilla extract can trigger a positive result."
+      }
+    },
+    "faq_g_how_long_does_alcohol_stay_in_your_system_03": {
+      "en": {
+        "q": "Can I drive the morning after drinking?",
+        "a": "Not automatically — alcohol can remain on your breath for 12 to 24 hours, and your body clears only about 0.016% BAC per hour. If you stopped drinking at 2 a.m. with a BAC near 0.20%, you could still be over the limit past midday. Coffee, water, food, and cold showers do not speed this up; only time does. When in doubt, arrange another ride."
+      }
+    },
+    "faq_g_how_long_does_alcohol_stay_in_your_system_04": {
+      "en": {
+        "q": "How long can alcohol be detected in a hair test?",
+        "a": "Hair follicle tests can detect alcohol metabolites for up to 90 days. They show drinking patterns over time, not current impairment. For a shorter abstinence window, labs typically use an EtG urine test, which stays positive for 3 to 5 days."
+      }
+    },
+    "faq_g_how_long_does_weed_stay_in_your_system_01": {
+      "en": {
+        "q": "How long does weed stay in your urine?",
+        "a": "For a standard urine test, THC metabolites are typically detectable for about 3 days after a single use, 5 to 7 days if you use roughly four times per week, 10 to 15 days with daily use, and 30 days or more with multiple uses per day. In chronic users, the inactive metabolite that federally regulated tests screen for can persist for weeks or even months after last use. How often you use is the single biggest factor."
+      }
+    },
+    "faq_g_how_long_does_weed_stay_in_your_system_02": {
+      "en": {
+        "q": "How long does weed stay in your blood?",
+        "a": "Blood tests mainly catch very recent use, typically within roughly 2 to 12 hours after smoking. In heavy chronic users, though, active THC has been detected in blood about 30 days after the last use. A positive blood result therefore shows past exposure, not proof that you are currently impaired."
+      }
+    },
+    "faq_g_how_long_does_weed_stay_in_your_system_03": {
+      "en": {
+        "q": "How long does weed stay in your saliva?",
+        "a": "Saliva tests usually detect THC for about 24 hours, and some evidence suggests oral fluid can stay positive for up to about 30 hours after use. In frequent smokers, THC has been detected in oral fluid as long as 72 hours after use. These tests are mainly used to flag recent use, such as in roadside or workplace checks."
+      }
+    },
+    "faq_g_how_long_does_weed_stay_in_your_system_04": {
+      "en": {
+        "q": "How do I get weed out of my system fast?",
+        "a": "You largely cannot. THC is stored in body fat and clears on its own schedule, so detox kits, gallons of water, and last-minute workouts do not reliably change results — in one study, neither 45 minutes of moderate exercise nor 24 hours of fasting significantly changed blood or urine cannabinoid levels. Stopping as early as possible before the test is the only thing that meaningfully shortens the window."
+      }
+    },
+    "faq_g_how_long_does_a_hangover_last_01": {
+      "en": {
+        "q": "How long does a hangover usually last?",
+        "a": "Most hangovers resolve within 24 hours, though the NIAAA notes symptoms can last 24 hours or longer. Severity peaks as your blood alcohol concentration returns to zero, and consensus research documents symptoms as far out as 20 hours after the start of drinking. If you still feel terrible well past a day, dose, sleep loss, and hydration are the usual suspects."
+      }
+    },
+    "faq_g_how_long_does_a_hangover_last_02": {
+      "en": {
+        "q": "When does a hangover peak after drinking?",
+        "a": "Hangover symptoms peak when your blood alcohol concentration returns to about zero — for a typical evening session, that means the worst hits the next morning, not while you are still drinking. Both NIAAA and the Alcohol Hangover Research Group describe this zero-BAC peak. Counterintuitively, you feel worst after the alcohol itself is gone."
+      }
+    },
+    "faq_g_how_long_does_a_hangover_last_03": {
+      "en": {
+        "q": "Is there a cure that makes a hangover go away faster?",
+        "a": "No. A BMJ review of randomized controlled trials found no compelling evidence that any conventional or complementary intervention prevents or treats hangover, and NIAAA states there is no cure other than time. Coffee only masks sleepiness, and a morning drink can prolong the malaise. Water, food, rest, and careful painkiller use can ease the wait."
+      }
+    },
+    "faq_g_how_long_does_a_hangover_last_04": {
+      "en": {
+        "q": "Why do some hangovers last longer than others?",
+        "a": "Dose is the biggest factor: in general, the more alcohol you drink, the worse and longer the hangover. Drink type matters too — in a controlled trial, bourbon drinkers felt significantly worse than vodka drinkers at the same breath alcohol level because bourbon is congener-heavy. Broken sleep and individual biology also play a role; women tend to have more severe, longer hangovers than men."
+      }
+    },
+    "faq_g_how_long_does_a_tattoo_take_to_heal_01": {
+      "en": {
+        "q": "How long does a tattoo take to heal?",
+        "a": "The visible outer layer of skin usually looks healed in 2 to 3 weeks, and Mayo Clinic says most tattoos take about two weeks. Underneath, Cleveland Clinic says the top layer of skin should be healed by the two-month mark, while the deeper layers take several more months. Healthline notes the full healing process beneath the surface can take up to 12 months."
+      }
+    },
+    "faq_g_how_long_does_a_tattoo_take_to_heal_02": {
+      "en": {
+        "q": "How often should I wash and moisturize my new tattoo?",
+        "a": "Wash the tattoo twice a day with a mild, fragrance-free, antibacterial soap and warm — not hot — water, then pat it dry with a clean paper towel. Follow with a water-based moisturizer or artist-recommended ointment twice a day, or several times a day for the first two to three weeks. Consistent cleaning and moisturizing helps prevent scabbing, cracking, and scarring."
+      }
+    },
+    "faq_g_how_long_does_a_tattoo_take_to_heal_03": {
+      "en": {
+        "q": "When can I go swimming after getting a tattoo?",
+        "a": "Not until the tattoo is fully healed — stay out of pools, hot tubs, bathtubs, rivers, and lakes. A healing tattoo is an open wound, and soaking it exposes that wound to bacteria. Since deep healing can continue for months, treat swimming as off-limits at least until the skin is completely smooth and every scab has fallen off."
+      }
+    },
+    "faq_g_how_long_does_a_tattoo_take_to_heal_04": {
+      "en": {
+        "q": "How do I know if my tattoo is infected?",
+        "a": "See a doctor if you notice fever or chills, skin that feels hot to the touch, odor or significant drainage, pain that keeps getting worse, or red streaks spreading from the tattoo toward the center of your body. Fluid or pus oozing from the tattoo, or swelling, discoloration, and itchiness that will not go away, are also warning signs. Mayo Clinic advises contacting a healthcare professional right away rather than waiting it out."
+      }
+    },
+    "faq_g_best_time_to_post_on_instagram_01": {
+      "en": {
+        "q": "What is the best time to post on Instagram right now?",
+        "a": "There is no single magic hour — the biggest 2026 studies openly disagree. Sprout Social's analysis of nearly 2 billion engagements points to midweek afternoons, especially Tuesday 1–7 PM and Wednesday 12–9 PM; Hootsuite favors late afternoons plus a Tuesday 5–8 AM window; Later's overall winner is 5 AM. All of these are your audience's local time, and Tuesday through Thursday is the safest block to start testing."
+      }
+    },
+    "faq_g_best_time_to_post_on_instagram_02": {
+      "en": {
+        "q": "What is the worst time to post on Instagram?",
+        "a": "In Sprout Social's 2026 data, Saturdays draw the lowest engagement of the week and Sundays are close behind, so the weekend is the weakest slot for an important post. Sprout also flags early mornings from 3 to 7 AM as a dead zone, and Later's worst specific slots were Thursday 3 AM and Saturday 11 PM. Note the exception, though: Later found posts between 3 AM and 6 AM actually earn higher-than-average engagement, which is exactly why your own data should have the final word."
+      }
+    },
+    "faq_g_best_time_to_post_on_instagram_03": {
+      "en": {
+        "q": "Do time zones change the best time to post on Instagram?",
+        "a": "Yes — all the major studies publish their recommendations in your audience's local time, not yours. Hootsuite localized its analysis across 118 countries, and Sprout Social says to schedule for your followers' local hours whether they sit in Los Angeles or London. If your audience spans regions, target the overlap between zones or alternate posts between them."
+      }
+    },
+    "faq_g_best_time_to_post_on_instagram_04": {
+      "en": {
+        "q": "How do I find my own best time to post on Instagram?",
+        "a": "Open Instagram Insights on a professional account, go to Total Followers, and study the \"Most active times\" heatmap for each day of the week. Cross-reference that chart with the day and hour of your ten best-performing recent posts, then rotate similar content across two or three candidate windows for two to four weeks, comparing reach and saves rather than likes. Buffer recommends rechecking your best times every few months, since optimal windows drift as your audience grows."
+      }
+    },
+    "faq_g_best_time_to_post_on_tiktok_01": {
+      "en": {
+        "q": "What is the best time to post on TikTok?",
+        "a": "Sprout Social's 2026 analysis of nearly 2 billion engagements puts it at Tuesday through Friday, 2–6 p.m. in your audience's local time. Buffer's study of 7.1 million posts leans the other way, with engagement peaking in the 6–11 p.m. evening hours and Sunday 9 a.m. standing as the single best slot of the week. Treat both as starting points and confirm them against your own TikTok analytics."
+      }
+    },
+    "faq_g_best_time_to_post_on_tiktok_02": {
+      "en": {
+        "q": "What are the best times to post on TikTok each day of the week?",
+        "a": "By Buffer's 2026 data: Monday 1 p.m., Tuesday 6 a.m., Wednesday 10 p.m., Thursday 1 p.m., Friday 6 p.m., Saturday 5 p.m., and Sunday 9 a.m., which was the strongest slot of the entire week. Sprout Social instead favors weekday afternoons such as Tuesday–Friday 2–6 p.m. and calls weekends the weakest days. Let your own followers' active hours break the tie between the two datasets."
+      }
+    },
+    "faq_g_best_time_to_post_on_tiktok_03": {
+      "en": {
+        "q": "How often should you post on TikTok?",
+        "a": "Buffer's analysis of 11.4 million TikTok posts found that 2–5 posts per week is the sweet spot, bringing up to 17 percent more views per post than posting once a week; heavier schedules reach up to 29–34 percent more but with diminishing returns per extra post. TikTok itself recommends posting 1–4 times per day, according to Hootsuite. Whatever cadence you choose, watch time still decides how far each video travels."
+      }
+    },
+    "faq_g_best_time_to_post_on_tiktok_04": {
+      "en": {
+        "q": "Does the time you post on TikTok really matter?",
+        "a": "Yes, but less than most creators assume. Posting when your followers are online helps a video win its first small test audience, which can trigger wider distribution on the For You feed. TikTok says it gives the greatest weight to strong interest signals like a viewer finishing a video, and that follower count is not a direct ranking factor, so watch time and hook quality matter more than any posting window. In Buffer's phrasing, timing is a boost, not a fix."
+      }
+    },
+    "faq_g_how_long_does_a_wheel_alignment_take_01": {
+      "en": {
+        "q": "How long does a wheel alignment take?",
+        "a": "Plan on about an hour of bay time. Les Schwab says a wheel alignment can take up to one hour once your vehicle is in the service bay, and GoodCar puts most alignments at approximately 60 minutes. Your total visit runs longer once you add waiting-room time and any repairs the technician finds."
+      }
+    },
+    "faq_g_how_long_does_a_wheel_alignment_take_02": {
+      "en": {
+        "q": "Does a four-wheel alignment take longer than a two-wheel alignment?",
+        "a": "Usually not. According to GoodCar, a four-wheel alignment takes about the same amount of time as any other alignment — roughly 60 minutes — as long as there are no suspension or steering issues. What differs is price: J.D. Power puts a front-end (two-wheel) alignment at $50 to $75 and a four-wheel alignment at $100 to $168."
+      }
+    },
+    "faq_g_how_long_does_a_wheel_alignment_take_03": {
+      "en": {
+        "q": "Why would a wheel alignment take longer than an hour?",
+        "a": "The biggest factors are a severe misalignment and worn or bent suspension or steering parts discovered mid-job, which must be repaired before the car can be aligned. Luxury vehicles that require specialized equipment and models with rear steering, stability control, or Steering Angle Sensors also add steps, according to J.D. Power and Firestone."
+      }
+    },
+    "faq_g_how_long_does_a_wheel_alignment_take_04": {
+      "en": {
+        "q": "How often should you get a wheel alignment?",
+        "a": "Firestone recommends an alignment check every 6,000 miles or 6 months — about every other oil change — while Les Schwab suggests at least once a year, and ideally twice. Also get the alignment checked right after a hard pothole or curb impact, or whenever you buy new tires."
+      }
+    },
+    "faq_g_how_long_do_pickles_take_to_ferment_01": {
+      "en": {
+        "q": "How long does it take cucumbers to turn into pickles?",
+        "a": "It depends on how sour you want them. Half-sour dills finish in 4 to 6 days at 60 to 77°F, while full-sours take about 3 to 4 weeks at 70 to 75°F, or 5 to 6 weeks in a cooler 55 to 65°F spot. Refrigerator dills are fermented for about 1 week. Taste is the real timer: refrigerate the jar when the sourness suits you."
+      }
+    },
+    "faq_g_how_long_do_pickles_take_to_ferment_02": {
+      "en": {
+        "q": "How do you know when fermented pickles are done?",
+        "a": "Taste one — pull a pickle around day 4, then every day or two until the sourness and texture please you. Cloudy brine, white sediment, and rising bubbles are all signs of normal fermentation, and the NCHFP considers fermentation complete when bubbling ceases. But if pickles become soft, slimy, or develop a disagreeable odor, discard them — that is spoilage, not extra fermentation."
+      }
+    },
+    "faq_g_how_long_do_pickles_take_to_ferment_03": {
+      "en": {
+        "q": "What temperature is best for fermenting pickles?",
+        "a": "70 to 75°F is the target: the NCHFP calls it the optimum temperature for the organisms that drive fermentation, and classic dills finish in about 3 to 4 weeks there. Temperatures of 55 to 65°F are acceptable but slow the ferment to 5 to 6 weeks. Avoid temperatures above 80°F, or the pickles will become too soft during fermentation."
+      }
+    },
+    "faq_g_how_long_do_pickles_take_to_ferment_04": {
+      "en": {
+        "q": "Do fermented pickles need to be refrigerated after fermentation?",
+        "a": "Yes, unless you can them. Refrigerating the jar stops additional souring and holds the pickles at the flavor you chose; fully fermented pickles keep about 4 to 6 months in the refrigerator in their original container, provided surface scum and molds are removed regularly. For shelf-stable storage, the NCHFP says canning is the better route — 10 minutes for pints and 15 for quarts at elevations up to 1,000 ft."
+      }
+    },
+    "faq_g_how_long_do_flies_live_01": {
+      "en": {
+        "q": "How long do flies live inside your house?",
+        "a": "An adult house fly typically lives 15 to 25 days — males about 15 days and females up to 25. In the wild, most house flies survive less than one month. The exact lifespan depends on temperature, food availability, and predators."
+      }
+    },
+    "faq_g_how_long_do_flies_live_02": {
+      "en": {
+        "q": "Do flies really die after 24 hours?",
+        "a": "No — Terminix pest experts explicitly call this a common myth. House fly adults normally live two to four weeks, not a single day. Flies in your kitchen are usually adults with most of that lifespan still ahead of them."
+      }
+    },
+    "faq_g_how_long_do_flies_live_03": {
+      "en": {
+        "q": "How long is a fly's life cycle from egg to adult?",
+        "a": "Under optimal summer conditions a house fly can go from egg to adult in as little as 7 days, typically 7 to 10. Eggs hatch in 12 to 24 hours in warm weather, and the pupal stage takes just 2 to 6 days at 35°C. In cold or adverse conditions the whole cycle can stretch to about two months."
+      }
+    },
+    "faq_g_how_long_do_flies_live_04": {
+      "en": {
+        "q": "How long do fruit flies and horse flies live?",
+        "a": "Fruit fly adults can live up to 30 days, and their full life cycle lasts 25 days or more — though they can complete development in as little as a week in ideal warmth. Horse flies are far slower: most species produce one generation per year, and some take two to three years to finish developing."
+      }
     }
   },
   "quickUseIdeas": {
