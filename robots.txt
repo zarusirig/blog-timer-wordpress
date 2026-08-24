@@ -54,6 +54,8 @@ Allow: /household
 Allow: /parenting
 Allow: /science
 Allow: /sports
+Allow: /entertainment
+Allow: /tech
 Allow: /chess-clock
 Allow: /egg-timer
 Allow: /interval-timer

@@ -1119,6 +1119,8 @@ function blogtimer_indexable_page_slugs()
         'parenting',
         'science',
         'sports',
+        'entertainment',
+        'tech',
     ];
 }
 
@@ -1202,6 +1204,8 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "Allow: /parenting\n";
     $robots .= "Allow: /science\n";
     $robots .= "Allow: /sports\n";
+    $robots .= "Allow: /entertainment\n";
+    $robots .= "Allow: /tech\n";
     $robots .= "Allow: /chess-clock\n";
     $robots .= "Allow: /egg-timer\n";
     $robots .= "Allow: /interval-timer\n";

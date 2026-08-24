@@ -302,6 +302,16 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                     <h3>Sports Game Timers</h3>
                     <p>How long a soccer, baseball, basketball, hockey or football game really lasts &mdash; playing time vs. TV time, plus every halftime and quarter clock.</p>
                 </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/entertainment')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#127914;</div>
+                    <h3>Concerts, Movies &amp; Shows</h3>
+                    <p>How long Hamilton runs, what a concert really takes, average movie lengths &mdash; runtimes, intermissions and encores.</p>
+                </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/tech')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#128267;</div>
+                    <h3>Battery &amp; Charge Times</h3>
+                    <p>AirPods battery life and charge times, iPhone battery cycles, Nintendo Switch charging &mdash; both clocks covered.</p>
+                </a>
                 <a class="card usecase-card" href="<?php echo esc_url(home_url('/auto')); ?>" style="text-decoration:none;">
                     <div class="usecase-card-icon">&#128663;</div>
                     <h3>Car &amp; Auto Timers</h3>

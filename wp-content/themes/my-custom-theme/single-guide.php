@@ -56,6 +56,8 @@ $hubs = [
     'hub_parenting' => ['url' => '/parenting/', 'label' => 'Parenting & Sleep'],
     'hub_science' => ['url' => '/science/', 'label' => 'Space & Science'],
     'hub_sports' => ['url' => '/sports/', 'label' => 'Sports Timers'],
+    'hub_entertainment' => ['url' => '/entertainment/', 'label' => 'Entertainment Timers'],
+    'hub_tech' => ['url' => '/tech/', 'label' => 'Tech Timers'],
     'hub_guides' => ['url' => '/guides/', 'label' => 'All Guides'],
 ];
 $hub = $hubs[$primary_hub_id] ?? $hubs['hub_minutes'];

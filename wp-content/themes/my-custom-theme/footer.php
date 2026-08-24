@@ -113,6 +113,8 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
                     <li><a href="<?php echo esc_url(home_url('/household')); ?>">Household Timers</a></li>
                     <li><a href="<?php echo esc_url(home_url('/parenting')); ?>">Parenting &amp; Baby Sleep</a></li>
                     <li><a href="<?php echo esc_url(home_url('/sports')); ?>">Sports Game Timers</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/entertainment')); ?>">Concerts, Movies &amp; Shows</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/tech')); ?>">Battery &amp; Charge Times</a></li>
                 </ul>
             </div>
 

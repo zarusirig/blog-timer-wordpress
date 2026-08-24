@@ -4807,6 +4807,198 @@
         "q": "Why does EV charging slow down after 80%?",
         "a": "Charge rate depends on the battery's state of charge, fueleconomy.gov notes — as a lithium-ion pack fills, it resists current. To limit heat and cell stress, the car's battery management system deliberately dials down the charge rate through that upper zone. That is why fast-charging times are quoted to 80% and why the final 20% takes far longer than the run up to it."
       }
+    },
+    "faq_g_how_long_is_hamilton_01": {
+      "en": {
+        "q": "How long is Hamilton the musical?",
+        "a": "Hamilton runs 2 hours and 45 minutes, including one 15-minute intermission. That official figure is the same on Broadway at the Richard Rodgers Theatre, on the North American tour, and in London's West End, so plan on being in the theatre for roughly three hours."
+      }
+    },
+    "faq_g_how_long_is_hamilton_02": {
+      "en": {
+        "q": "How long is Hamilton on Disney+?",
+        "a": "The filmed version on Disney+ runs 160 minutes, or 2 hours 40. It was recorded over three live performances in June 2016 with the original principal cast, and its only break is a one-minute intermission card, so it plays slightly differently from the 2h 45m stage show."
+      }
+    },
+    "faq_g_how_long_is_hamilton_03": {
+      "en": {
+        "q": "How long is each act of Hamilton?",
+        "a": "The producers publish only a total running time — 2 hours 45 minutes with a 15-minute intermission — not per-act timings, so exact Act One and Act Two lengths are unofficial stopwatch figures. Officially, you get about two and a half hours of stage time, with Act One ending on \"Non-Stop\" and Act Two opening with \"What'd I Miss.\""
+      }
+    },
+    "faq_g_how_long_is_hamilton_04": {
+      "en": {
+        "q": "What time does Hamilton end?",
+        "a": "With a typical 8:00 PM curtain, Hamilton ends around 10:45 PM; a 2:00 PM matinee wraps near 4:45 PM. Add a few minutes of cushion for a hyped crowd or a late curtain hold before you book dinner or a train."
+      }
+    },
+    "faq_g_how_long_is_a_concert_01": {
+      "en": {
+        "q": "How long is the average concert?",
+        "a": "A headline set usually runs 75 minutes to about two and a half hours, with arena and stadium headliners around the two-hour mark — Oasis opened their Live '25 tour with a two-hour-plus, 23-song set in Cardiff. Add one or two openers and 35–70 minute changeovers, and the whole night from doors to encore typically lasts around three hours. Marathon acts go longer: Taylor Swift's Eras Tour typically ran 3 hours 15 minutes across 44–46 songs."
+      }
+    },
+    "faq_g_how_long_is_a_concert_02": {
+      "en": {
+        "q": "How long do festival sets last?",
+        "a": "Festival slots are set by the running order, not the artist. Small-stage newcomers get about 30–45 minutes, main-stage support acts 45–60 minutes, and headliners 75–90 minutes — at Coachella 2024, Lana Del Rey played 11:20 p.m.–12:50 a.m. and Tyler, The Creator played 11:40 p.m.–12:55 a.m. The festival day itself is the real commitment, with music running from mid-afternoon until as late as 1 a.m. in the tents."
+      }
+    },
+    "faq_g_how_long_is_a_concert_03": {
+      "en": {
+        "q": "What time do concerts usually end?",
+        "a": "Most arena and stadium shows finish between about 10:30 and 11 p.m., because large venues enforce curfews written into their licences. When Madonna's Celebration Tour overran the O2's 10:30 p.m. curfew, the show still ended around 11 p.m. and reportedly risked a fine of £10,000 per minute. So if a show starts late at a curfew venue, expect a shortened set or a trimmed encore rather than a later finish."
+      }
+    },
+    "faq_g_how_long_is_a_concert_04": {
+      "en": {
+        "q": "How long is a concert with an opening act?",
+        "a": "Plan on the headliner's set plus roughly 45–60 minutes per opener, plus a 35–70 minute changeover between acts. One opener typically turns a two-hour headline set into a three-hour night out. Two openers — like Cast and Richard Ashcroft before Oasis in Cardiff — can push the evening well past three hours from doors to encore."
+      }
+    },
+    "faq_g_how_long_is_a_movie_01": {
+      "en": {
+        "q": "How long is the average movie?",
+        "a": "Across every film released worldwide in 2024, the average runtime was 103.6 minutes. The average wide U.S. theatrical release in the 2020s runs about 114 minutes, so a typical movie lands between roughly 100 and 115 minutes — just under two hours. Blockbusters sit well above that: films budgeted over $100 million average about 130 minutes."
+      }
+    },
+    "faq_g_how_long_is_a_movie_02": {
+      "en": {
+        "q": "Does a movie's runtime include the credits?",
+        "a": "Yes — every advertised runtime includes the full end credits. The median credit roll is 4 minutes 26 seconds across films from 1920 to 2025, rising to a median of 5 minutes 43 seconds in the 2020s, and superhero films run about 7 minutes 9 seconds of credits. That means a listed 150-minute blockbuster typically contains only about 143 minutes of story."
+      }
+    },
+    "faq_g_how_long_is_a_movie_03": {
+      "en": {
+        "q": "Why are blockbuster movies so long now?",
+        "a": "Theaters now compete with streaming by selling big-screen \"event\" experiences, and longer films justify premium IMAX ticket prices even though they mean fewer showtimes per screen per day. Binge-watching has normalized long runtimes, and as mid-budget dramas moved to streamers, directors like Christopher Nolan and Denis Villeneuve gained the leverage to go long. Films budgeted over $100 million now average about 130 minutes, and the top ten box office films of 2022 averaged 141."
+      }
+    },
+    "faq_g_how_long_is_a_movie_04": {
+      "en": {
+        "q": "How long should I plan for a movie at the theater?",
+        "a": "Assume about two hours for a standard release, closer to two and a half hours for a franchise or action title, and three or more for epics like Killers of the Flower Moon (206 minutes) or Avatar: The Way of Water (192 minutes). Add time for previews and concessions — for a blockbuster, block out about three hours end to end. Remember the listed runtime includes the credits, which run 5 to 8 minutes on most big films."
+      }
+    },
+    "faq_g_how_long_is_a_broadway_show_01": {
+      "en": {
+        "q": "How long is the average Broadway show?",
+        "a": "Most Broadway shows run between 90 minutes and three hours, including a 15 to 20 minute intermission. Most musicals run about two and a half hours, and the big blockbusters cluster tightly at 2 hours 30 minutes to 2 hours 45 minutes. Plays vary more, from 90-minute one-acts with no intermission to epics like Harry Potter and the Cursed Child at 2 hours 55 minutes."
+      }
+    },
+    "faq_g_how_long_is_a_broadway_show_02": {
+      "en": {
+        "q": "How long is a Broadway show with no intermission?",
+        "a": "The hit no-intermission shows are short: SIX and Oh, Mary! each run just 80 minutes straight through. Broadway producer Ken Davenport's analysis of three decades of data found a 20 percentage point rise in the share of one-act shows, and he predicted the \"90 minutes no intermission\" format will keep spreading. An 80-minute show gets you out roughly two hours earlier than a full-length musical."
+      }
+    },
+    "faq_g_how_long_is_a_broadway_show_03": {
+      "en": {
+        "q": "What time does a Broadway show start and end?",
+        "a": "Evening performances typically begin at 7:00, 7:30, or 8:00 PM, and matinees start at 2:00 PM or 3:00 PM. Add the published running time to the curtain time: an 8:00 PM musical with a 2 hour 45 minute runtime, like Wicked or Hamilton, ends around 10:45 PM. A 2:00 PM matinee of a 2 hour 30 minute show ends around 4:30 PM."
+      }
+    },
+    "faq_g_how_long_is_a_broadway_show_04": {
+      "en": {
+        "q": "How long is the intermission at a Broadway show?",
+        "a": "Broadway intermissions typically run 15 to 20 minutes and arrive about an hour into the show. Wicked's official FAQ, for example, lists the show as 2 hours 45 minutes including one 15-minute intermission. Full-length musicals almost always take exactly one intermission, while short shows and many newer plays skip it entirely."
+      }
+    },
+    "faq_g_how_long_do_airpods_last_01": {
+      "en": {
+        "q": "How long do AirPods last on a single charge?",
+        "a": "It depends on the model: AirPods 2 and AirPods 4 are rated for up to 5 hours of listening, AirPods 3 and AirPods Pro 2 for up to 6 hours, and AirPods Pro 3 for up to 8 hours with noise cancellation on. The AirPods 4 with ANC drops to about 4 hours per charge with noise control on, while AirPods Max headphones last up to 20 hours. Independent testing often runs a bit longer than Apple's rated figures."
+      }
+    },
+    "faq_g_how_long_do_airpods_last_02": {
+      "en": {
+        "q": "How many years do AirPods last before the battery dies?",
+        "a": "Expect about two to three years of daily use, or 300 to 500 charge cycles, before the small lithium-ion cells wear out noticeably, according to SoundGuys. Every charge cycle permanently shaves a little capacity off the batteries, so sessions keep getting shorter. Apple's warranty does not cover batteries that wear down from normal use."
+      }
+    },
+    "faq_g_how_long_do_airpods_last_03": {
+      "en": {
+        "q": "How long do AirPods last with the charging case?",
+        "a": "Counting the extra charges stored in the case, Apple rates total listening time at up to 30 hours for AirPods 4, AirPods 3 (MagSafe case), and AirPods Pro 2, up to 24 hours with ANC for AirPods Pro 3, and more than 24 hours for AirPods 2. AirPods Max have no case battery. On newer models, five minutes in the case adds around an hour of listening."
+      }
+    },
+    "faq_g_how_long_do_airpods_last_04": {
+      "en": {
+        "q": "Can you get the battery in AirPods replaced?",
+        "a": "The batteries are not user-replaceable, but Apple offers out-of-warranty battery service: an estimated $49 per set for AirPods 4 and AirPods Pro 2, and $79 for AirPods Max. Apple inspects the device to confirm the final fee, which may be subject to tax, and a shipping fee may be added. Many owners weigh that cost against buying a newer pair with longer per-charge runtime."
+      }
+    },
+    "faq_g_how_long_do_airpods_take_to_charge_01": {
+      "en": {
+        "q": "How long does it take for AirPods to fully charge?",
+        "a": "Independent timing measurements put AirPods 1 and 2 at about 25 to 30 minutes from empty to full in the case, AirPods 3, 4, and Pro 2 at 45 to 60 minutes, and AirPods Pro 3 at 30 to 45 minutes. AirPods Max take about 2 hours over USB-C. Apple does not publish 0-to-100% times, so these come from independent tests that line up with Apple's official fast-charge specs."
+      }
+    },
+    "faq_g_how_long_do_airpods_take_to_charge_02": {
+      "en": {
+        "q": "How long does the AirPods charging case take to charge?",
+        "a": "The case refills in about 1 to 2 hours over a USB-C or Lightning cable, 2 to 2.5 hours on a MagSafe, Apple Watch, or Qi charger, and 2.5 to 3 hours on a basic 5W wireless pad. Charging with the earbuds inside adds roughly 15 to 30 minutes because the system charges the earbuds first."
+      }
+    },
+    "faq_g_how_long_do_airpods_take_to_charge_03": {
+      "en": {
+        "q": "How much listening time do you get from a 5-minute AirPods charge?",
+        "a": "On AirPods 3, AirPods 4, AirPods 4 with ANC, AirPods Pro 2, and AirPods Pro 3, five minutes in the case provides around 1 hour of listening time, per Apple's official specs. AirPods Max get around 1.5 hours from a 5-minute charge, while AirPods 2 need 15 minutes for up to 3 hours of playback."
+      }
+    },
+    "faq_g_how_long_do_airpods_take_to_charge_04": {
+      "en": {
+        "q": "Why do my AirPods Pro 3 stop charging before they reach 100%?",
+        "a": "AirPods Pro 3 ship with Optimized Charge Limit on by default. It learns your daily routine and holds the battery at an optimized limit below a full charge when it predicts you will not need one, which preserves battery lifespan. If you genuinely need 100 percent, you can turn it off for just a day in Settings under your AirPods' Battery options."
+      }
+    },
+    "faq_g_how_long_does_iphone_battery_last_01": {
+      "en": {
+        "q": "How many hours does an iPhone battery last on one charge?",
+        "a": "Apple rates models released since 2024 at 22 to 39 hours of stored video playback: the current lineup spans 26 hours (iPhone 17e) to 39 hours (iPhone 17 Pro Max), with streaming cutting 3 to 5 hours off each rating. Real-world mixed use lands below these lab numbers, which is why most owners still charge overnight."
+      }
+    },
+    "faq_g_how_long_does_iphone_battery_last_02": {
+      "en": {
+        "q": "How long does an iPhone battery last before it needs to be replaced?",
+        "a": "Apple designs iPhone 15 batteries to retain 80 percent of their original capacity at 1,000 complete charge cycles, and iPhone 14-or-earlier batteries to reach the same threshold at 500 cycles. At one full cycle a day that is roughly two to three years; lighter use stretches it considerably longer. Watch the Battery Health screen and replace the battery when iOS recommends service."
+      }
+    },
+    "faq_g_how_long_does_iphone_battery_last_03": {
+      "en": {
+        "q": "Why is my iPhone battery draining so fast?",
+        "a": "Apple says the way you use the device has the biggest effect: video and gaming drain fastest, streaming costs 3 to 5 hours versus stored playback, and weak cellular signal makes the radio work harder. Heat permanently reduces capacity, and a chemically aged battery simply holds less charge than a new one. The Battery screen in Settings shows which apps are consuming the power."
+      }
+    },
+    "faq_g_how_long_does_iphone_battery_last_04": {
+      "en": {
+        "q": "How do I make my iPhone battery last longer?",
+        "a": "For more hours per charge, download video instead of streaming, favor audio, fast-charge to 50 percent when needed, and keep the phone out of hot cars and direct sun. For more years, avoid charging in hot environments, and store a spare device at about 50 percent charge, powered down, somewhere below 90° F (32° C), recharging it to 50 percent every six months if it sits longer than that. Replace the battery based on the Battery Health reading, not a fixed age."
+      }
+    },
+    "faq_g_how_long_does_a_nintendo_switch_take_to_charge_01": {
+      "en": {
+        "q": "How long does a Nintendo Switch take to fully charge?",
+        "a": "Approximately 3 hours when the console is powered off or in sleep mode, according to Nintendo's official support documentation. The same estimate applies to the standard Switch, the Switch OLED, the Switch Lite, and the Nintendo Switch 2. Nintendo notes that charging takes longer if the console is in use while plugged in."
+      }
+    },
+    "faq_g_how_long_does_a_nintendo_switch_take_to_charge_02": {
+      "en": {
+        "q": "Can I play my Nintendo Switch while it charges?",
+        "a": "Yes. Docked play is charging by design on the standard and OLED models, and in handheld mode you can plug the AC adapter into the console's bottom USB-C port and keep playing. Just expect a slower charge: Nintendo officially states that charging time is longer while the console is in use, so sleep mode or powering off is the fastest way to charge."
+      }
+    },
+    "faq_g_how_long_does_a_nintendo_switch_take_to_charge_03": {
+      "en": {
+        "q": "How long do Joy-Con controllers take to charge?",
+        "a": "Approximately 3.5 hours when attached to the charging console or Joy-Con grip, according to Nintendo's Joy-Con FAQ. A full charge delivers up to 20 hours of use, though Nintendo says actual runtime varies with the software and how the controllers are used."
+      }
+    },
+    "faq_g_how_long_does_a_nintendo_switch_take_to_charge_04": {
+      "en": {
+        "q": "Why is my Switch taking longer than 3 hours to charge?",
+        "a": "Nintendo's 3-hour estimate assumes the console is off or in sleep mode, so playing while charging is the most common cause. A weak or unofficial USB-C power source also stretches the wait, since Nintendo's figure is stated for its own adapter and dock. Battery age matters too: after about 800 charge cycles, Nintendo says the battery holds about 80 percent of a new console's charge."
+      }
     }
   },
   "quickUseIdeas": {
