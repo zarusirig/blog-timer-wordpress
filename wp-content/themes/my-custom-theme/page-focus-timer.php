@@ -422,6 +422,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!running || !endTimestamp) return;
         remaining = Math.max(0, Math.ceil((endTimestamp - Date.now()) / 1000));
         render();
+        if (window.BT) BT.title(fmt(remaining));
         if (remaining <= 0) {
             clearInterval(intervalId);
             running = false;
@@ -430,11 +431,17 @@ document.addEventListener('DOMContentLoaded', function() {
             completeBanner.style.display = '';
             startBtn.style.display = '';
             resetBtn.style.display = 'none';
+            if (window.BT) {
+                BT.keepAwake(false);
+                BT.title('');
+                BT.announce('Focus session complete');
+            }
             let c = parseInt(localStorage.getItem('focusSessions') || '0', 10);
             c++;
             localStorage.setItem('focusSessions', String(c));
             if (countElement) countElement.textContent = c;
             remaining = durationSec;
+            render();
         }
     }
     function start() {
@@ -443,6 +450,7 @@ document.addEventListener('DOMContentLoaded', function() {
         startBtn.style.display = 'none';
         resetBtn.style.display = '';
         completeBanner.style.display = 'none';
+        if (window.BT) BT.keepAwake(true);
         endTimestamp = Date.now() + remaining * 1000;
         intervalId = setInterval(tick, 250);
     }
@@ -455,9 +463,17 @@ document.addEventListener('DOMContentLoaded', function() {
         startBtn.style.display = '';
         resetBtn.style.display = 'none';
         completeBanner.style.display = 'none';
+        if (window.BT) { BT.keepAwake(false); BT.title(''); }
     }
     startBtn.addEventListener('click', start);
     resetBtn.addEventListener('click', reset);
+
+    // Keyboard: Space starts the session, R resets (standard tool guard set).
+    document.addEventListener('keydown', function(e) {
+        if (window.BT && BT.keysBlocked(e)) return;
+        if (e.code === 'Space') { e.preventDefault(); if (!running) start(); }
+        else if (e.code === 'KeyR') { e.preventDefault(); reset(); }
+    });
     completeBanner.querySelector('.start-timer').addEventListener('click', function() {
         completeBanner.style.display = 'none';
         start();

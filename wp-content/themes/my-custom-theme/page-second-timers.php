@@ -16,14 +16,14 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
         <h1 class="page-h1">
             <?php echo esc_html($loader->get_string('hub.seconds.h1')); ?>
         </h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">
             <?php echo esc_html($loader->get_string('hub.seconds.intro')); ?>
         </p>
-        <div class="tldr-box" style="background: var(--color-surface, rgba(255,255,255,0.04)); color: var(--color-text-secondary, #cbd5e1); border-left: 4px solid var(--color-accent, #6366f1); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> Second timers cover the granular intervals where precision matters more than duration &mdash; the 20-second Tabata work phase, the 60-second strength-set rest, the 30-second plank, the 4-second box-breathing inhale. The Blog Timer hosts every duration from 1 to 60 seconds, anchored to research from Izumi Tabata (1996), the NSCA, McGill spine protocols, and clinical breathing-exercise literature.
         </div>
 

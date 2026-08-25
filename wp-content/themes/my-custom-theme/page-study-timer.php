@@ -353,8 +353,8 @@ document.addEventListener('DOMContentLoaded', function() {
         logList.innerHTML = '';
         arr.slice().reverse().forEach(function(entry) {
             const li = document.createElement('li');
-            li.style.cssText = 'padding:var(--space-2) 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;font-size:0.9375rem;';
-            li.innerHTML = '<span>' + entry.minutes + '-minute session</span><span style="color:var(--color-text-muted,#7c87a8);">' + entry.time + '</span>';
+            li.style.cssText = 'padding:var(--space-2) 0;border-bottom:1px solid var(--color-border-light);display:flex;justify-content:space-between;font-size:0.9375rem;';
+            li.innerHTML = '<span>' + entry.minutes + '-minute session</span><span style="color:var(--color-text-muted);">' + entry.time + '</span>';
             logList.appendChild(li);
         });
     }
@@ -384,6 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!running || !endTimestamp) return;
         remaining = Math.max(0, Math.ceil((endTimestamp - Date.now()) / 1000));
         render();
+        if (window.BT) BT.title(fmt(remaining));
         if (remaining <= 0) {
             clearInterval(intervalId);
             running = false;
@@ -392,6 +393,11 @@ document.addEventListener('DOMContentLoaded', function() {
             completeBanner.style.display = '';
             startBtn.style.display = '';
             resetBtn.style.display = 'none';
+            if (window.BT) {
+                BT.keepAwake(false);
+                BT.title('');
+                BT.announce('Study session complete');
+            }
             const arr = loadLog();
             const now = new Date();
             arr.push({
@@ -401,6 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
             saveLog(arr);
             renderLog();
             remaining = durationSec;
+            render();
         }
     }
     function start() {
@@ -409,6 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
         startBtn.style.display = 'none';
         resetBtn.style.display = '';
         completeBanner.style.display = 'none';
+        if (window.BT) BT.keepAwake(true);
         endTimestamp = Date.now() + remaining * 1000;
         intervalId = setInterval(tick, 250);
     }
@@ -421,9 +429,17 @@ document.addEventListener('DOMContentLoaded', function() {
         startBtn.style.display = '';
         resetBtn.style.display = 'none';
         completeBanner.style.display = 'none';
+        if (window.BT) { BT.keepAwake(false); BT.title(''); }
     }
     startBtn.addEventListener('click', start);
     resetBtn.addEventListener('click', reset);
+
+    // Keyboard: Space starts the session, R resets (standard tool guard set).
+    document.addEventListener('keydown', function(e) {
+        if (window.BT && BT.keysBlocked(e)) return;
+        if (e.code === 'Space') { e.preventDefault(); if (!running) start(); }
+        else if (e.code === 'KeyR') { e.preventDefault(); reset(); }
+    });
     completeBanner.querySelector('.start-timer').addEventListener('click', function() { completeBanner.style.display = 'none'; start(); });
     presets.forEach(function(b) {
         b.addEventListener('click', function() {

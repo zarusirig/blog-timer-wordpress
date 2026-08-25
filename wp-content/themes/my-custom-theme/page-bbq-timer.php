@@ -9,12 +9,12 @@ get_header();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free BBQ &amp; Grill Timer &mdash; Brisket, Ribs, Burgers, Chicken</h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Backyard cook &amp; cooking researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Time your low-and-slow smoke (brisket, pork shoulder, ribs) and your high-heat grill cooks (steak, burgers, chicken, sausage) with method-specific charts referencing Aaron Franklin's <em>Franklin Barbecue</em> and Meathead Goldwyn's <em>Meathead</em>.</p>
-        <div class="tldr-box" style="background:#f5f8fb;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> Brisket and pork shoulder smoke at 225&deg;F for 1 to 1.5 hours per pound until the meat reaches 203&deg;F internal &mdash; the temperature where collagen has fully converted to gelatin. Pork ribs run 5 to 6 hours total using the 3-2-1 method. Burgers grill 3&ndash;4 minutes per side to 160&deg;F internal (USDA-mandated for ground beef). Chicken thighs need 8&ndash;10 minutes per side over direct heat to 165&deg;F. Rest big cuts at least an hour wrapped in butcher paper.
         </div>
     </div>

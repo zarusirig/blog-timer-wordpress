@@ -94,6 +94,7 @@
             if (resetBtn) resetBtn.style.display = '';
             if (banner) banner.style.display = 'none';
             display.classList.remove('timer-complete');
+            if (window.BT) BT.keepAwake(true);
             clearInterval(intervalId);
             intervalId = setInterval(tick, 200);
         }
@@ -102,11 +103,18 @@
             remaining = Math.max(0, Math.ceil((endTs - Date.now()) / 1000));
             endTs = null;
             clearInterval(intervalId);
+            if (window.BT) BT.keepAwake(false);
             setPrimary('Resume');
         }
         function reset() {
-            running = false; complete = false; endTs = null; remaining = duration;
+            running = false; complete = false; endTs = null;
             clearInterval(intervalId);
+            if (window.BT) BT.keepAwake(false);
+            // Re-read data-duration: preset buttons (e.g. the Pomodoro 50/10
+            // preset) rewrite the attribute after this engine initialized.
+            var attrDuration = parseInt(widget.getAttribute('data-duration'), 10);
+            if (attrDuration && attrDuration > 0) duration = attrDuration;
+            remaining = duration;
             render(duration);
             setPrimary(primaryLabel);
             if (resetBtn) resetBtn.style.display = 'none';
@@ -122,7 +130,14 @@
             setPrimary('Restart');
             if (banner) banner.style.display = '';
             document.title = stripTitle();
+            if (window.BT) {
+                BT.keepAwake(false);
+                BT.announce('Timer complete');
+            }
             playSound();
+            // Same contract as timer-widget.js: pages (e.g. the Pomodoro
+            // session counter) listen for this to react to completion.
+            document.dispatchEvent(new CustomEvent('timerComplete'));
         }
         function tick() {
             if (!running || !endTs) return;
@@ -139,9 +154,17 @@
         }
 
         primaryBtn.addEventListener('click', onPrimary);
-        // Extra start buttons (e.g. "Start Next Round" inside the complete banner) restart the interval.
+        // Extra start buttons (e.g. "Start Break" / "Start Next Round" inside
+        // the complete banner) restart the interval — honoring an optional
+        // data-duration on the button itself so a follow-up phase can run a
+        // different length than the phase that just finished.
         for (var i = 1; i < startBtns.length; i++) {
-            startBtns[i].addEventListener('click', function () { reset(); start(); });
+            startBtns[i].addEventListener('click', function () {
+                var d = parseInt(this.getAttribute('data-duration'), 10);
+                if (d && d > 0) widget.setAttribute('data-duration', String(d));
+                reset();
+                start();
+            });
         }
         if (resetBtn) resetBtn.addEventListener('click', reset);
 

@@ -20,14 +20,14 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
             <h1>
                 <?php echo esc_html($loader->get_string('home.h1')); ?>
             </h1>
-            <p class="byline" style="font-size: 0.875rem; color: var(--color-text-muted, #666); margin: 0.5rem 0;">
+            <p class="byline">
                 By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
                 &middot; Productivity researcher &middot; <em>Last updated: <?php echo esc_html(get_the_modified_date('F j, Y')); ?></em>
             </p>
             <p class="hero-subtext">
                 <?php echo esc_html($loader->get_string('home.subtext')); ?>
             </p>
-            <div class="tldr-box" style="background: var(--color-surface, rgba(255,255,255,0.04)); color: var(--color-text-secondary, #cbd5e1); border-left: 4px solid var(--color-accent, #6366f1); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 6px;">
+            <div class="tldr-box">
                 <strong>TL;DR:</strong> The Blog Timer is a free browser-based countdown built around timestamp-anchored accuracy. It hosts 220+ preset durations spanning seconds, minutes, the 25-minute Pomodoro interval, the 20s/10s Tabata structure, and the 90-minute ultradian block &mdash; all grounded in published research from Francesco Cirillo, Cal Newport, and Anders Ericsson.
             </div>
             <div class="hero-ctas">

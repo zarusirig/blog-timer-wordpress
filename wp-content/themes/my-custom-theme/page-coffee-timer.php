@@ -9,12 +9,12 @@ get_header();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Coffee Brew Timer &mdash; Pour Over, French Press, Espresso, Cold Brew</h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home barista &amp; coffee researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Brew better coffee with method-specific timing. Use the presets for pour-over, French press, espresso, AeroPress, cold brew, and Chemex &mdash; each tuned to the SCA brew guideline and the recipes published by James Hoffmann.</p>
-        <div class="tldr-box" style="background:#f5f8fb;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> Pour-over and French press both target 4 minutes of contact time. Espresso is a 25&ndash;30 second extraction at 9 bars of pressure. AeroPress runs 1 to 2 minutes depending on the recipe. Cold brew steeps 12 to 24 hours in the refrigerator. Chemex is slightly longer at 4 to 5 minutes due to the thicker filter. The <a href="https://sca.coffee/" target="_blank" rel="noopener">Specialty Coffee Association</a> defines the target brew strength at 1.15&ndash;1.35% TDS with 18&ndash;22% extraction.
         </div>
     </div>

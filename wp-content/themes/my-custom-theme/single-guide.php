@@ -153,11 +153,11 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
             <h1 class="page-h1">
                 <?php the_title(); ?>
             </h1>
-            <p class="page-byline byline" style="font-size: 0.875rem; color: var(--color-text-muted, #666); margin: 0.5rem 0;">
+            <p class="page-byline byline">
                 By <a href="<?php echo esc_url($guide_author_url); ?>" rel="author"><?php echo esc_html($guide_author); ?></a>
                 &middot; <em>Last updated: <time datetime="<?php echo esc_attr($guide_updated_iso); ?>"><?php echo esc_html($guide_updated); ?></time></em>
             </p>
-            <p class="trust-line" style="font-size: 0.8rem; color: var(--color-text-muted, #666); margin: 0.25rem 0 0;">
+            <p class="trust-line">
                 <em>Fact-checked against the cited sources below.</em>
                 <a href="<?php echo esc_url(home_url('/editorial-policy')); ?>">Editorial policy</a>
                 &middot; <a href="<?php echo esc_url(home_url('/methodology')); ?>">Methodology</a>
@@ -170,8 +170,9 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
             <?php endif; ?>
         </header>
 
-        <!-- MAIN CONTENT -->
-        <div class="guide-content content-page">
+        <!-- MAIN CONTENT — F-04: <article> marks the main-content block for
+             vision-based page segmentation (mirrors single-timer.php). -->
+        <article class="guide-content content-page">
             <?php
             if (get_the_content()) {
                 the_content();
@@ -207,7 +208,7 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
                 <?php
             }
             ?>
-        </div>
+        </article>
 
         <!-- SOURCES -->
         <?php if (!empty($guide_sources)): ?>

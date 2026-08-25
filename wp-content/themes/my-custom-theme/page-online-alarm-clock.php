@@ -31,16 +31,16 @@ get_header();
     <div class="container">
         <div class="timer-widget" style="text-align:center;padding:var(--space-6);background:var(--color-surface);border-radius:var(--radius-lg);border:1px solid rgba(99,102,241,0.15);margin-top:var(--space-6);">
             <p style="font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);margin-bottom:var(--space-2);">Current time</p>
-            <div id="ac-clock" style="font-size:clamp(2.5rem,7vw,5rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-primary);">--:--:--</div>
+            <div id="ac-clock" style="font-size:clamp(2.5rem,7vw,5rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-text-primary);">--:--:--</div>
 
             <div style="margin-top:var(--space-5);display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-3);align-items:end;">
                 <label style="display:flex;flex-direction:column;align-items:flex-start;gap:0.25rem;font-size:0.875rem;color:var(--color-text-secondary);">
                     Target time
-                    <input type="time" id="ac-time" value="07:00" style="padding:0.5rem 0.75rem;font-size:1.25rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg,#0b0e1a);color:var(--color-text);border-radius:var(--radius-md);">
+                    <input type="time" id="ac-time" value="07:00" style="padding:0.5rem 0.75rem;font-size:1.25rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg);color:var(--color-text-primary);border-radius:var(--radius-md);">
                 </label>
                 <label style="display:flex;flex-direction:column;align-items:flex-start;gap:0.25rem;font-size:0.875rem;color:var(--color-text-secondary);">
                     Tone
-                    <select id="ac-tone" style="padding:0.5rem 0.75rem;font-size:1rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg,#0b0e1a);color:var(--color-text);border-radius:var(--radius-md);">
+                    <select id="ac-tone" style="padding:0.5rem 0.75rem;font-size:1rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg);color:var(--color-text-primary);border-radius:var(--radius-md);">
                         <option value="beep">Beep (sine)</option>
                         <option value="gentle">Gentle chime</option>
                         <option value="urgent">Urgent triple beep</option>
@@ -185,6 +185,7 @@ get_header();
                     target = null;
                     setBtn.disabled = false;
                     cancelBtn.disabled = true;
+                    if (window.BT) BT.keepAwake(false);
                 }
             }
         }
@@ -202,6 +203,9 @@ get_header();
             updateStatus();
             requestNotificationPermission();
             ensureAudio();
+            // Keep the screen awake while armed — an alarm that fires while
+            // the device sleeps never rings.
+            if (window.BT) BT.keepAwake(true);
         }
 
         function updateStatus() {
@@ -219,6 +223,7 @@ get_header();
             setBtn.disabled = false;
             cancelBtn.disabled = true;
             status.textContent = 'Alarm cancelled.';
+            if (window.BT) BT.keepAwake(false);
             stopRinging();
         }
 
@@ -259,6 +264,7 @@ get_header();
             ringing.style.display = 'block';
             playTone();
             ringingTimer = setInterval(playTone, 2500);
+            if (window.BT) BT.announce('Alarm ringing');
             if ('Notification' in window && Notification.permission === 'granted') {
                 try { new Notification('Alarm', { body: 'It is ' + new Date().toLocaleTimeString() }); }
                 catch (e) {}
@@ -281,10 +287,14 @@ get_header();
             firedToday = false;
             setBtn.disabled = true;
             cancelBtn.disabled = false;
+            if (window.BT) BT.keepAwake(true);
             updateStatus();
         }
 
-        function dismiss() { stopRinging(); }
+        function dismiss() {
+            stopRinging();
+            if (!target && window.BT) BT.keepAwake(false);
+        }
 
         function test() {
             ensureAudio();
@@ -303,6 +313,15 @@ get_header();
         testBtn.addEventListener('click', test);
         snoozeBtn.addEventListener('click', snooze);
         dismissBtn.addEventListener('click', dismiss);
+
+        // Keyboard while ringing: S snoozes, Esc/D dismisses.
+        document.addEventListener('keydown', function(e) {
+            if (window.BT && BT.keysBlocked(e)) return;
+            if (ringing.style.display === 'block') {
+                if (e.code === 'KeyS') { e.preventDefault(); snooze(); }
+                else if (e.code === 'Escape' || e.code === 'KeyD') { e.preventDefault(); dismiss(); }
+            }
+        });
 
         setInterval(tick, 250);
         tick();

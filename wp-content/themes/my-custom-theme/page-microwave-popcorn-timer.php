@@ -9,12 +9,12 @@ get_header();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Microwave Popcorn Timer &mdash; No More Burnt Bags</h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home cook &amp; cooking researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Stop burning popcorn. Pick the right time for your microwave's wattage, listen for the pops, and pull the bag at the two-second gap &mdash; the proven trick used by every food-science writer who has tested microwave popcorn.</p>
-        <div class="tldr-box" style="background:#f5f8fb;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> Most microwave popcorn bags take 2 to 4 minutes depending on wattage. The reliable method is the listen-for-pops rule: stop the microwave when the gaps between pops reach two seconds. A 1100W microwave is faster (2&ndash;2.5 min) than a 700W microwave (3.5&ndash;4 min). The burnt-popcorn smell comes from sulfur compounds released when kernels char above 350&deg;F &mdash; once it starts, the bag is unsalvageable.
         </div>
     </div>

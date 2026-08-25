@@ -58,15 +58,15 @@ get_header();
             <div class="timer-grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));">
                 <div style="display:flex;flex-direction:column;gap:var(--space-2);">
                     <label style="font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted,#7c87a8);">Work (seconds)</label>
-                    <input type="number" id="tabata-work-input" value="20" min="5" max="120" style="padding:var(--space-3);border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:rgba(0,0,0,0.2);color:var(--color-text);font-size:1.125rem;">
+                    <input type="number" id="tabata-work-input" value="20" min="5" max="120" style="padding:var(--space-3);border-radius:6px;border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-text-primary);font-size:1.125rem;">
                 </div>
                 <div style="display:flex;flex-direction:column;gap:var(--space-2);">
                     <label style="font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted,#7c87a8);">Rest (seconds)</label>
-                    <input type="number" id="tabata-rest-input" value="10" min="0" max="120" style="padding:var(--space-3);border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:rgba(0,0,0,0.2);color:var(--color-text);font-size:1.125rem;">
+                    <input type="number" id="tabata-rest-input" value="10" min="0" max="120" style="padding:var(--space-3);border-radius:6px;border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-text-primary);font-size:1.125rem;">
                 </div>
                 <div style="display:flex;flex-direction:column;gap:var(--space-2);">
                     <label style="font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted,#7c87a8);">Rounds</label>
-                    <input type="number" id="tabata-rounds-input" value="8" min="1" max="40" style="padding:var(--space-3);border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:rgba(0,0,0,0.2);color:var(--color-text);font-size:1.125rem;">
+                    <input type="number" id="tabata-rounds-input" value="8" min="1" max="40" style="padding:var(--space-3);border-radius:6px;border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-text-primary);font-size:1.125rem;">
                 </div>
                 <button class="btn btn--secondary" id="tabata-apply" style="align-self:end;">Apply</button>
             </div>
@@ -371,6 +371,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (phase === 'work' && remaining > 0 && remaining <= 3 && remaining !== prev) {
             beepTick();
         }
+        if (window.BT) BT.title((phase === 'work' ? 'Work ' : 'Rest ') + remaining);
         if (remaining <= 0) {
             if (phase === 'work') {
                 if (currentRound >= totalRounds) {
@@ -384,18 +385,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     completeBanner.style.display = '';
                     startBtn.style.display = '';
                     resetBtn.style.display = 'none';
+                    if (window.BT) {
+                        BT.keepAwake(false);
+                        BT.title('');
+                        BT.announce('Workout complete. ' + totalRounds + ' rounds done.');
+                    }
                     return;
                 }
                 phase = 'rest';
                 remaining = restSec;
                 phaseEndTimestamp = Date.now() + remaining * 1000;
                 beepRest();
+                if (window.BT) BT.announce('Rest, ' + restSec + ' seconds');
             } else if (phase === 'rest') {
                 currentRound++;
                 phase = 'work';
                 remaining = workSec;
                 phaseEndTimestamp = Date.now() + remaining * 1000;
                 beepGo();
+                if (window.BT) BT.announce('Work, round ' + currentRound + ' of ' + totalRounds);
             }
         }
         render();
@@ -410,6 +418,10 @@ document.addEventListener('DOMContentLoaded', function() {
             phaseEndTimestamp = Date.now() + remaining * 1000;
             render();
             beepGo();
+            if (window.BT) {
+                BT.keepAwake(true);
+                BT.announce('Work, round 1 of ' + totalRounds);
+            }
             startBtn.style.display = 'none';
             resetBtn.style.display = '';
             completeBanner.style.display = 'none';
@@ -422,6 +434,7 @@ document.addEventListener('DOMContentLoaded', function() {
         phase = 'idle';
         currentRound = 0;
         remaining = workSec;
+        if (window.BT) { BT.keepAwake(false); BT.title(''); }
         render();
         startBtn.style.display = '';
         resetBtn.style.display = 'none';
@@ -446,6 +459,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const r = parseInt(document.getElementById('tabata-rest-input').value, 10) || 10;
         const rd = parseInt(document.getElementById('tabata-rounds-input').value, 10) || 8;
         apply(w, r, rd);
+    });
+
+    // Keyboard: Space starts the workout (from ready or done), R resets.
+    document.addEventListener('keydown', function(e) {
+        if (window.BT && BT.keysBlocked(e)) return;
+        if (e.code === 'Space') { e.preventDefault(); startWorkout(); }
+        else if (e.code === 'KeyR') { e.preventDefault(); resetWorkout(); }
     });
     document.querySelectorAll('.tabata-preset').forEach(function(b) {
         b.addEventListener('click', function() {

@@ -9,12 +9,12 @@ get_header();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Baby Bottle Timer &mdash; Sterilizing, Warming, Feeding Intervals</h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Researcher &amp; parent-resource writer &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Time the three baby-bottle stages new parents ask about most: sterilizing, warming, and the feeding interval between bottles. All guidance cross-checked against the <a href="https://www.aap.org/" target="_blank" rel="noopener">American Academy of Pediatrics</a> and the <a href="https://www.cdc.gov/" target="_blank" rel="noopener">CDC</a>.</p>
-        <div class="tldr-box" style="background:#f5f8fb;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> Boil bottles for 5 minutes to sterilize, or use a steam sterilizer for the manufacturer's recommended cycle (typically 6&ndash;15 minutes). The CDC advises against microwave sterilizing in plastic bottles due to BPA concerns and uneven heating. Warm a bottle in a warm-water bath (95&ndash;100&deg;F) for 5&ndash;10 minutes; never warm in a microwave because hot spots can scald the baby's mouth. Newborns feed every 2&ndash;3 hours; by 6 months, every 4&ndash;5 hours. Discard formula left at room temperature after 1 hour. <em>This information is for general guidance only and is not medical advice &mdash; consult your pediatrician.</em>
         </div>
     </div>
@@ -220,7 +220,7 @@ get_header();
 
     <section class="section">
         <div class="container container--narrow">
-            <p style="font-size:0.875rem;color:#666;font-style:italic;border-top:1px solid var(--color-border);padding-top:var(--space-4);">This page provides general information based on CDC and AAP guidance. It is not medical advice. Always follow your pediatrician's specific recommendations for your baby. For breastfeeding questions, consult a certified lactation consultant.</p>
+            <p class="fine-print">This page provides general information based on CDC and AAP guidance. It is not medical advice. Always follow your pediatrician's specific recommendations for your baby. For breastfeeding questions, consult a certified lactation consultant.</p>
         </div>
     </section>
 

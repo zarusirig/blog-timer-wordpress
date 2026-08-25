@@ -30,19 +30,19 @@ get_header();
     <!-- COUNTDOWN WIDGET -->
     <div class="container">
         <div class="timer-widget" style="text-align:center;padding:var(--space-6);background:var(--color-surface);border-radius:var(--radius-lg);border:1px solid rgba(99,102,241,0.15);margin-top:var(--space-6);">
-            <div id="cd-display" style="font-size:clamp(3rem,9vw,6.5rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-primary);">00:05:00</div>
+            <div id="cd-display" style="font-size:clamp(3rem,9vw,6.5rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-text-primary);">00:05:00</div>
             <div style="margin-top:var(--space-5);display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-3);align-items:end;">
                 <label style="display:flex;flex-direction:column;align-items:flex-start;gap:0.25rem;font-size:0.875rem;color:var(--color-text-secondary);">
                     Hours
-                    <input type="number" id="cd-h" value="0" min="0" max="99" style="width:5rem;padding:0.5rem 0.75rem;font-size:1.25rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg,#0b0e1a);color:var(--color-text);border-radius:var(--radius-md);text-align:center;">
+                    <input type="number" id="cd-h" value="0" min="0" max="99" style="width:5rem;padding:0.5rem 0.75rem;font-size:1.25rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg);color:var(--color-text-primary);border-radius:var(--radius-md);text-align:center;">
                 </label>
                 <label style="display:flex;flex-direction:column;align-items:flex-start;gap:0.25rem;font-size:0.875rem;color:var(--color-text-secondary);">
                     Minutes
-                    <input type="number" id="cd-m" value="5" min="0" max="59" style="width:5rem;padding:0.5rem 0.75rem;font-size:1.25rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg,#0b0e1a);color:var(--color-text);border-radius:var(--radius-md);text-align:center;">
+                    <input type="number" id="cd-m" value="5" min="0" max="59" style="width:5rem;padding:0.5rem 0.75rem;font-size:1.25rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg);color:var(--color-text-primary);border-radius:var(--radius-md);text-align:center;">
                 </label>
                 <label style="display:flex;flex-direction:column;align-items:flex-start;gap:0.25rem;font-size:0.875rem;color:var(--color-text-secondary);">
                     Seconds
-                    <input type="number" id="cd-s" value="0" min="0" max="59" style="width:5rem;padding:0.5rem 0.75rem;font-size:1.25rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg,#0b0e1a);color:var(--color-text);border-radius:var(--radius-md);text-align:center;">
+                    <input type="number" id="cd-s" value="0" min="0" max="59" style="width:5rem;padding:0.5rem 0.75rem;font-size:1.25rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg);color:var(--color-text-primary);border-radius:var(--radius-md);text-align:center;">
                 </label>
             </div>
 
@@ -207,6 +207,7 @@ get_header();
                 return;
             }
             display.textContent = format(remainingSec);
+            if (window.BT) BT.title(format(remainingSec));
         }
 
         function startPause() {
@@ -215,6 +216,7 @@ get_header();
                 running = false;
                 clearInterval(tickInterval);
                 startBtn.textContent = 'Resume';
+                if (window.BT) { BT.keepAwake(false); BT.title(''); }
                 return;
             }
             let dur;
@@ -229,6 +231,7 @@ get_header();
             running = true;
             startBtn.textContent = 'Pause';
             doneBox.style.display = 'none';
+            if (window.BT) BT.keepAwake(true);
             ensureAudio();
             tick();
             tickInterval = setInterval(tick, 250);
@@ -242,6 +245,7 @@ get_header();
             startBtn.textContent = 'Start';
             display.textContent = format(readDuration() / 1000);
             doneBox.style.display = 'none';
+            if (window.BT) { BT.keepAwake(false); BT.title(''); }
             stopAlert();
         }
 
@@ -285,12 +289,16 @@ get_header();
             doneBox.style.display = 'block';
             ensureAudio();
             playBeep();
+            if (window.BT) {
+                BT.keepAwake(false);
+                BT.announce('Countdown finished');
+            }
             let count = 0;
             alertTimer = setInterval(function() {
                 if (++count > 11) return stopAlert();
                 playBeep();
             }, 2500);
-            const orig = document.title;
+            const orig = document.title.replace(/^\d{1,3}:\d{2}(:\d{2})?\s+—\s+/, '');
             document.title = '⏰ DONE — ' + orig;
             doneBox.dataset.origTitle = orig;
             if ('Notification' in window && Notification.permission === 'granted') {

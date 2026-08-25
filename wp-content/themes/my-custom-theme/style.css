@@ -4,7 +4,7 @@ Theme URI: https://theblogtimer.com/
 Author: The Blog Timer
 Author URI: https://theblogtimer.com/
 Description: Programmatic SEO timer site — clean utility design with precision timers for every duration.
-Version: 3.0.0
+Version: 3.1.0
 License: GPL v2 or later
 Text Domain: my-custom-theme
 */
@@ -14,21 +14,23 @@ Text Domain: my-custom-theme
    =========================== */
 
 :root {
-    /* Core palette */
-    --color-bg: #0b0d14;
-    --color-bg-elevated: #12151f;
-    --color-bg-card: #171b28;
-    --color-bg-hover: #1e2336;
-    --color-surface: #222840;
-    --color-border: #2a3050;
-    --color-border-light: #363e5c;
+    /* Core palette — LIGHT (single source of truth; the site is light-only).
+       Previously the light values lived in a second :root override appended at
+       the end of this file on top of a dead dark base. Consolidated here so
+       there is exactly one place to change a color. */
+    --color-bg: #f6f7fb;
+    --color-bg-elevated: #ffffff;
+    --color-bg-card: #ffffff;
+    --color-bg-hover: #eef0f7;
+    --color-surface: #eef0f7;
+    --color-border: #d9dde8;
+    --color-border-light: #e6e9f1;
     --color-border-focus: #6366f1;
 
-    --color-text-primary: #eef0f6;
-    --color-text-secondary: #9ba3c0;
-    /* Bumped from #5f6889 (~3.5:1) to pass WCAG AA 4.5:1 for body-adjacent text. */
-    --color-text-muted: #8b93b3;
-    --color-text-inverse: #0b0d14;
+    --color-text-primary: #14182a;
+    --color-text-secondary: #444c63;
+    --color-text-muted: #5b6478;
+    --color-text-inverse: #ffffff;
 
     --color-accent: #6366f1;
     --color-accent-hover: #818cf8;
@@ -95,15 +97,15 @@ Text Domain: my-custom-theme
     --radius-xl: 24px;
     --radius-full: 9999px;
 
-    /* Shadows */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.45);
-    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
-    --shadow-glow: 0 0 24px var(--color-accent-glow);
-    --shadow-glow-lg: 0 0 48px var(--color-accent-glow), 0 0 96px rgba(99, 102, 241, 0.1);
-    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--color-border);
-    --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--color-accent);
+    /* Shadows — tuned for the light palette (dark-era values were near-black) */
+    --shadow-sm: 0 1px 3px rgba(20, 24, 42, 0.08);
+    --shadow-md: 0 4px 16px rgba(20, 24, 42, 0.10);
+    --shadow-lg: 0 8px 32px rgba(20, 24, 42, 0.14);
+    --shadow-xl: 0 16px 48px rgba(20, 24, 42, 0.18);
+    --shadow-glow: 0 4px 14px rgba(99, 102, 241, 0.28);
+    --shadow-glow-lg: 0 0 32px rgba(99, 102, 241, 0.16), 0 0 64px rgba(99, 102, 241, 0.08);
+    --shadow-card: 0 2px 8px rgba(20, 24, 42, 0.06), 0 0 0 1px var(--color-border);
+    --shadow-card-hover: 0 8px 24px rgba(20, 24, 42, 0.12), 0 0 0 1px var(--color-accent);
 
     /* Transitions */
     --transition-fast: 150ms ease;
@@ -112,9 +114,9 @@ Text Domain: my-custom-theme
     --transition-spring: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
     /* Glass */
-    --glass-bg: rgba(18, 21, 31, 0.8);
-    --glass-border: rgba(255, 255, 255, 0.06);
-    --glass-blur: blur(16px);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-blur: blur(12px);
 }
 
 /* ===========================
@@ -2607,41 +2609,107 @@ kbd {
 }
 
 /* ===========================================================
-   LIGHT MODE — always on (the site is light-only).
-   Token-level override so every component that uses vars inherits it.
-   These unconditional values sit AFTER the dark base :root at the top of
-   the file, so they win the cascade on every device regardless of OS theme.
-   Component hover/surface tints already use var(--color-bg-hover), which
-   resolves correctly here without a separate media-query override.
+   v3.1 DESIGN PASS — light-theme polish (2026-08-25)
+   The light palette now lives once in the :root at the top of this file.
+   This section fixes dark-era artifacts and adds affordance polish.
    =========================================================== */
-:root {
-    --color-bg: #f6f7fb;
-    --color-bg-elevated: #ffffff;
-    --color-bg-card: #ffffff;
-    --color-bg-hover: #eef0f7;
-    --color-surface: #eef0f7;
-    --color-border: #d9dde8;
-    --color-border-light: #e6e9f1;
-    --color-text-primary: #14182a;
-    --color-text-secondary: #444c63;
-    --color-text-muted: #5b6478;
-    --color-text-inverse: #ffffff;
 
-    --glass-bg: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(0, 0, 0, 0.08);
-    --glass-blur: blur(12px);
-
-    --shadow-sm: 0 1px 3px rgba(20, 24, 42, 0.08);
-    --shadow-md: 0 4px 16px rgba(20, 24, 42, 0.10);
-    --shadow-lg: 0 8px 32px rgba(20, 24, 42, 0.14);
-    --shadow-xl: 0 16px 48px rgba(20, 24, 42, 0.18);
-    --shadow-card: 0 2px 8px rgba(20, 24, 42, 0.06), 0 0 0 1px var(--color-border);
-    --shadow-card-hover: 0 8px 24px rgba(20, 24, 42, 0.12), 0 0 0 1px var(--color-accent);
+/* Row hover on data tables was rgba(255,255,255,.02) — invisible on white. */
+.comparison-table tr:hover td {
+    background: var(--color-bg-hover);
 }
 
-body {
-    background-color: var(--color-bg);
-    color: var(--color-text-primary);
+/* Card hover glow was a dark-theme neon ring; use the shared card shadow. */
+.timer-card:hover {
+    box-shadow: var(--shadow-card-hover);
+}
+
+/* Soften the display glow so it reads as depth, not smear, on white. */
+.timer-display {
+    text-shadow: 0 2px 24px rgba(99, 102, 241, 0.10);
+}
+
+/* Text selection tint (matches accent). */
+::selection {
+    background: rgba(99, 102, 241, 0.18);
+}
+
+/* Byline under page H1s — was a hardcoded #666 inline style on 15 templates. */
+.byline {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: var(--space-2) 0;
+}
+
+/* Small italic disclaimer under tool content (medical/safety notes). */
+.fine-print {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-4);
+}
+
+/* Guide byline + trust line (was inline #666 fallbacks). */
+.page-byline.byline {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: var(--space-2) 0;
+}
+
+.trust-line {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: var(--space-1) 0 0;
+}
+
+/* Active nav item gets a small underline indicator, not just color. */
+@media (min-width: 1321px) {
+    .primary-nav > li > a.active {
+        box-shadow: inset 0 -2px 0 var(--color-accent);
+        border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    }
+}
+
+/* Button affordance: pressed state + comfortable large size. */
+.btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.btn--large {
+    min-height: 48px;
+}
+
+.btn--primary {
+    background: linear-gradient(180deg, #6d70f2, var(--color-accent));
+    box-shadow: 0 1px 2px rgba(20, 24, 42, 0.12);
+}
+
+.btn--primary:hover {
+    background: linear-gradient(180deg, #818cf8, #6d70f2);
+}
+
+/* Timer display: stable digit widths so the layout never jitters. */
+.timer-display,
+#sw-display,
+.pomodoro-display {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Progress bar: more visible track + head glow. */
+.timer-progress {
+    height: 6px;
+    background: var(--color-surface);
+    box-shadow: inset 0 1px 2px rgba(20, 24, 42, 0.06);
+}
+
+.timer-progress-bar {
+    transition: width 200ms linear;
+}
+
+/* Fullscreen button/hero glow kept subtle on light. */
+.timer-widget--hero {
+    box-shadow: var(--shadow-glow-lg), inset 0 1px 0 var(--glass-border);
 }
 
 /* Softer decorative glow on light backgrounds. */

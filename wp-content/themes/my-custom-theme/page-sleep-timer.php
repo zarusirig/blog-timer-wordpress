@@ -30,12 +30,12 @@ get_header();
     <!-- SLEEP TIMER WIDGET -->
     <div class="container">
         <div class="timer-widget" style="text-align:center;padding:var(--space-6);background:var(--color-surface);border-radius:var(--radius-lg);border:1px solid rgba(99,102,241,0.15);margin-top:var(--space-6);">
-            <div id="st-display" style="font-size:clamp(3rem,9vw,6.5rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-primary);">30:00</div>
+            <div id="st-display" style="font-size:clamp(3rem,9vw,6.5rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-text-primary);">30:00</div>
 
             <div style="margin-top:var(--space-4);display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-3);align-items:end;">
                 <label style="display:flex;flex-direction:column;align-items:flex-start;gap:0.25rem;font-size:0.875rem;color:var(--color-text-secondary);">
                     Sound
-                    <select id="st-sound" style="padding:0.5rem 0.75rem;font-size:1rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg,#0b0e1a);color:var(--color-text);border-radius:var(--radius-md);">
+                    <select id="st-sound" style="padding:0.5rem 0.75rem;font-size:1rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg);color:var(--color-text-primary);border-radius:var(--radius-md);">
                         <option value="white">White noise</option>
                         <option value="pink">Pink noise</option>
                         <option value="brown" selected>Brown noise</option>
@@ -50,7 +50,7 @@ get_header();
                 </label>
                 <label style="display:flex;flex-direction:column;align-items:flex-start;gap:0.25rem;font-size:0.875rem;color:var(--color-text-secondary);">
                     Custom minutes
-                    <input type="number" id="st-custom" min="1" max="480" placeholder="e.g. 45" style="width:6rem;padding:0.5rem 0.75rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg,#0b0e1a);color:var(--color-text);border-radius:var(--radius-md);text-align:center;">
+                    <input type="number" id="st-custom" min="1" max="480" placeholder="e.g. 45" style="width:6rem;padding:0.5rem 0.75rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg);color:var(--color-text-primary);border-radius:var(--radius-md);text-align:center;">
                 </label>
             </div>
 
@@ -195,9 +195,14 @@ get_header();
                 startBtn.textContent = 'Start';
                 status.textContent = 'Sleep timer complete. Sweet dreams.';
                 clearInterval(tickInterval);
+                if (window.BT) {
+                    BT.title('');
+                    BT.announce('Sleep timer complete');
+                }
                 return;
             }
             display.textContent = format(remainingSec);
+            if (window.BT) BT.title(format(remainingSec));
             // Update fade (seconds-based)
             applyFade(remainingSec);
         }
@@ -304,6 +309,7 @@ get_header();
                 clearInterval(tickInterval);
                 stopAudio();
                 startBtn.textContent = 'Resume';
+                if (window.BT) BT.title('');
                 return;
             }
             const remaining = endTimestamp ? Math.max(0, endTimestamp - performance.now()) : durationMs;
@@ -324,6 +330,7 @@ get_header();
             startBtn.textContent = 'Start';
             display.textContent = format(Math.round(durationMs / 1000));
             status.textContent = '';
+            if (window.BT) BT.title('');
         }
 
         function preset(minutes) {

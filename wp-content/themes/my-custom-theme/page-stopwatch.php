@@ -30,7 +30,7 @@ get_header();
     <!-- STOPWATCH WIDGET -->
     <div class="container">
         <div class="timer-widget" style="text-align:center;padding:var(--space-6);background:var(--color-surface);border-radius:var(--radius-lg);border:1px solid rgba(99,102,241,0.15);margin-top:var(--space-6);">
-            <div id="sw-display" style="font-size:clamp(3rem,9vw,6.5rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-primary);letter-spacing:0.02em;">00:00:00.000</div>
+            <div id="sw-display" style="font-size:clamp(3rem,9vw,6.5rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-text-primary);letter-spacing:0.02em;">00:00:00.000</div>
             <div id="sw-controls" style="display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-3);margin-top:var(--space-5);">
                 <button class="btn btn--primary btn--large" id="sw-startstop">Start</button>
                 <button class="btn btn--secondary btn--large" id="sw-lap" disabled>Lap</button>
@@ -183,8 +183,24 @@ get_header();
             return running ? (elapsedBefore + (performance.now() - startTime)) : elapsedBefore;
         }
 
+        // Tab-title ticker — updated at most once per second.
+        let lastTitleSec = -1;
+        function updateTitle(ms) {
+            if (!window.BT) return;
+            const totalSec = Math.floor(ms / 1000);
+            if (totalSec === lastTitleSec) return;
+            lastTitleSec = totalSec;
+            const h = Math.floor(totalSec / 3600);
+            const m = Math.floor((totalSec % 3600) / 60);
+            const s = totalSec % 60;
+            const pad = (n, w = 2) => String(n).padStart(w, '0');
+            BT.title(pad(h) + ':' + pad(m) + ':' + pad(s));
+        }
+
         function tick() {
-            display.textContent = format(currentElapsed());
+            const elapsed = currentElapsed();
+            display.textContent = format(elapsed);
+            updateTitle(elapsed);
             if (running) rafId = requestAnimationFrame(tick);
         }
 
@@ -195,11 +211,17 @@ get_header();
                 cancelAnimationFrame(rafId);
                 startBtn.textContent = 'Resume';
                 lapBtn.disabled = true;
+                if (window.BT) {
+                    BT.keepAwake(false);
+                    BT.title('');
+                    BT.announce('Stopwatch stopped at ' + format(elapsedBefore));
+                }
             } else {
                 startTime = performance.now();
                 running = true;
                 startBtn.textContent = 'Stop';
                 lapBtn.disabled = false;
+                if (window.BT) BT.keepAwake(true);
                 tick();
             }
         }
@@ -212,6 +234,7 @@ get_header();
             lastLapSplit = total;
             renderLaps();
             copyBtn.disabled = false;
+            if (window.BT) BT.announce('Lap ' + laps.length + ' recorded');
         }
 
         function renderLaps() {
@@ -230,6 +253,7 @@ get_header();
             startTime = 0;
             elapsedBefore = 0;
             lastLapSplit = 0;
+            lastTitleSec = -1;
             laps = [];
             display.textContent = '00:00:00.000';
             startBtn.textContent = 'Start';
@@ -237,6 +261,10 @@ get_header();
             copyBtn.disabled = true;
             lapsBody.innerHTML = '';
             lapsWrap.style.display = 'none';
+            if (window.BT) {
+                BT.keepAwake(false);
+                BT.title('');
+            }
         }
 
         function copyLaps() {

@@ -14,9 +14,9 @@ get_header();
 
     <div class="container">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);margin:var(--space-8) 0;">
-            <div class="timer-widget" id="player1-clock" style="text-align:center;padding:var(--space-6);background:var(--color-surface);border-radius:var(--radius-lg);border:3px solid var(--color-primary);">
+            <div class="timer-widget" id="player1-clock" style="text-align:center;padding:var(--space-6);background:var(--color-surface);border-radius:var(--radius-lg);border:3px solid var(--color-text-primary);">
                 <p style="font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);margin-bottom:var(--space-3);">Player 1</p>
-                <div class="timer-display" id="p1-display" style="font-size:clamp(3rem,8vw,6rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-primary);">10:00</div>
+                <div class="timer-display" id="p1-display" style="font-size:clamp(3rem,8vw,6rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-text-primary);">10:00</div>
                 <button class="btn btn--primary btn--large" id="p1-btn" style="margin-top:var(--space-4);width:100%;">Tap to Start / End Turn</button>
             </div>
             <div class="timer-widget" id="player2-clock" style="text-align:center;padding:var(--space-6);background:var(--color-surface);border-radius:var(--radius-lg);border:3px solid var(--color-text-muted);">
@@ -119,24 +119,32 @@ get_header();
         // tab is backgrounded or asleep (a decrement-per-tick clock would freeze).
         function startTicking() {
             endTimestamp = Date.now() + times[active] * 1000;
+            if (window.BT) BT.keepAwake(true);
             interval = setInterval(function() {
                 times[active] = Math.max(0, Math.ceil((endTimestamp - Date.now()) / 1000));
                 displays[active].textContent = formatTime(times[active]);
+                if (window.BT) BT.title(formatTime(times[active]));
                 if (times[active] <= 0) {
                     clearInterval(interval);
                     endTimestamp = null;
                     displays[active].textContent = '0:00';
                     displays[active].style.color = '#ef4444';
                     buttons[active].textContent = 'Time\'s Up!';
+                    if (window.BT) {
+                        BT.keepAwake(false);
+                        BT.title('');
+                        BT.announce('Player ' + (active + 1) + ' flag fell. Time is up.');
+                        BT.beep();
+                    }
                 }
             }, 250);
         }
 
         function updateActiveUI() {
-            clocks[0].style.borderColor = active === 0 ? 'var(--color-primary)' : 'var(--color-text-muted)';
-            clocks[1].style.borderColor = active === 1 ? 'var(--color-primary)' : 'var(--color-text-muted)';
-            displays[0].style.color = active === 0 ? 'var(--color-primary)' : 'var(--color-text-muted)';
-            displays[1].style.color = active === 1 ? 'var(--color-primary)' : 'var(--color-text-muted)';
+            clocks[0].style.borderColor = active === 0 ? 'var(--color-accent)' : 'var(--color-border)';
+            clocks[1].style.borderColor = active === 1 ? 'var(--color-accent)' : 'var(--color-border)';
+            displays[0].style.color = active === 0 ? 'var(--color-accent)' : 'var(--color-text-muted)';
+            displays[1].style.color = active === 1 ? 'var(--color-accent)' : 'var(--color-text-muted)';
             buttons[0].textContent = active === 0 ? 'Tap When Your Turn Ends' : 'Waiting...';
             buttons[1].textContent = active === 1 ? 'Tap When Your Turn Ends' : 'Waiting...';
             buttons[0].disabled = active !== 0;
@@ -152,15 +160,16 @@ get_header();
             active = -1;
             endTimestamp = null;
             times = [initialTime, initialTime]; // restore the ORIGINAL time control for both players
+            if (window.BT) { BT.keepAwake(false); BT.title(''); }
             updateDisplays();
-            displays[0].style.color = 'var(--color-primary)';
+            displays[0].style.color = 'var(--color-accent)';
             displays[1].style.color = 'var(--color-text-muted)';
             buttons[0].textContent = 'Tap to Start / End Turn';
             buttons[1].textContent = 'Waiting...';
             buttons[0].disabled = false;
             buttons[1].disabled = true;
-            clocks[0].style.borderColor = 'var(--color-primary)';
-            clocks[1].style.borderColor = 'var(--color-text-muted)';
+            clocks[0].style.borderColor = 'var(--color-accent)';
+            clocks[1].style.borderColor = 'var(--color-border)';
         }
 
         function setTime(seconds) {
@@ -174,6 +183,9 @@ get_header();
             if (buttons[0]) {
                 buttons[0].addEventListener('click', function() { tap(1); });
             }
+            if (buttons[1]) {
+                buttons[1].addEventListener('click', function() { tap(2); });
+            }
             const resetBtn = document.getElementById('chess-reset');
             if (resetBtn) {
                 resetBtn.addEventListener('click', reset);
@@ -183,6 +195,18 @@ get_header();
                 btn.addEventListener('click', function() {
                     setTime(parseInt(btn.getAttribute('data-time'), 10));
                 });
+            });
+
+            // Keyboard: ArrowLeft ends player 1's turn, ArrowRight ends player
+            // 2's turn, R resets. Uses the toolkit's standard guard so the
+            // keys never fire while typing or while a control is focused.
+            document.addEventListener('keydown', function(e) {
+                if (window.BT && BT.keysBlocked(e)) return;
+                var tag = (e.target && e.target.tagName || '').toLowerCase();
+                if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+                if (e.code === 'ArrowLeft') { e.preventDefault(); tap(1); }
+                else if (e.code === 'ArrowRight') { e.preventDefault(); tap(2); }
+                else if (e.code === 'KeyR') { e.preventDefault(); reset(); }
             });
         }
 

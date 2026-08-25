@@ -61,6 +61,14 @@ function blogtimer_enqueue_assets()
         'strategy' => 'defer',
     ]);
 
+    // BT Toolkit — shared tool helpers (wake lock, chime, aria-live announcer,
+    // title ticker, keyboard guard). Loaded sitewide but inert until a tool
+    // calls into it; see js/toolkit.js.
+    wp_enqueue_script('blogtimer-toolkit', get_template_directory_uri() . '/js/toolkit.js', [], '1.0.0', [
+        'in_footer' => true,
+        'strategy' => 'defer',
+    ]);
+
     // Timer widget JS — only on pages that use the ID-based widget markup
     // (#timer-start / #timer-display). pomodoro is self-driven (inline script),
     // and minute-timers/second-timers are link hubs with no widget.
@@ -98,7 +106,7 @@ function blogtimer_enqueue_assets()
         'baby-bottle-timer', 'hiit-timer', 'emom-timer', 'crossfit-amrap-timer', 'boxing-round-timer',
         'jump-rope-timer', 'running-interval-timer', 'plank-timer', 'stretching-timer', 'yoga-timer',
         'nap-timer', 'sprint-timer', 'presentation-timer', 'interval-timer', 'timer-for-kids',
-        'timer-for-remote-workers',
+        'timer-for-remote-workers', 'pomodoro',
     ];
     if (is_page($blogtimer_hub_timer_pages)) {
         wp_enqueue_script('blogtimer-hub-timer', get_template_directory_uri() . '/js/hub-timer.js', [], '1.0.0', [
@@ -958,14 +966,29 @@ add_filter('xmlrpc_methods', function () {
  */
 remove_action('wp_head', 'wp_generator');
 add_filter('the_generator', '__return_empty_string');
-add_filter('style_loader_src', 'blogtimer_remove_version_query', 9999);
-add_filter('script_loader_src', 'blogtimer_remove_version_query', 9999);
-function blogtimer_remove_version_query($src)
+add_filter('style_loader_src', 'blogtimer_cache_bust_version_query', 9999);
+add_filter('script_loader_src', 'blogtimer_cache_bust_version_query', 9999);
+/**
+ * Theme assets: replace ?ver= with the file's modification time. This keeps
+ * the WP core version out of the markup (the original goal) while restoring
+ * cache busting — without it, every deploy serves returning visitors (and
+ * crawlers) a stale script/style until their cache expires. Non-theme assets
+ * (core, plugins) simply drop the query string as before.
+ */
+function blogtimer_cache_bust_version_query($src)
 {
-    if (strpos($src, 'ver=') !== false) {
-        $src = remove_query_arg('ver', $src);
+    if (strpos($src, 'ver=') === false) {
+        return $src;
     }
-    return $src;
+    $uri  = wp_parse_url($src, PHP_URL_PATH);
+    $base = wp_parse_url(content_url(), PHP_URL_PATH);
+    if ($uri && $base && strpos($uri, $base) === 0) {
+        $file = WP_CONTENT_DIR . substr($uri, strlen($base));
+        if (is_file($file)) {
+            return add_query_arg('ver', filemtime($file), remove_query_arg('ver', $src));
+        }
+    }
+    return remove_query_arg('ver', $src);
 }
 
 /**

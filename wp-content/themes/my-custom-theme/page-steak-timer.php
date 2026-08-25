@@ -9,12 +9,12 @@ get_header();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Steak Timer &mdash; Perfect Doneness for Every Cut</h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home cook &amp; culinary researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Cook steak to your exact target temperature and rest it properly. Use the chart below to match cooking time to cut, thickness, doneness, and method (grill, pan-sear, sous vide, reverse-sear, oven).</p>
-        <div class="tldr-box" style="background:#f5f8fb;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> A 1-inch steak takes 3&ndash;4 minutes per side over high heat for medium-rare (130&ndash;135&deg;F internal). Always pull the steak 5&deg;F below your target &mdash; carryover cooking finishes the job during the rest. Rest at least 5 minutes for a 1-inch cut, 10 minutes for thick-cut. The <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish" target="_blank" rel="noopener">USDA</a> safety minimum is 145&deg;F with a 3-minute rest; below that is a personal-preference call, not a safety guarantee.
         </div>
     </div>

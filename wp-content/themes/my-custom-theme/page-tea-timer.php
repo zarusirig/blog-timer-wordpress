@@ -9,12 +9,12 @@ get_header();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Tea Timer &mdash; Perfect Steep Times for Every Variety</h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Tea drinker &amp; cooking researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Steep tea correctly the first time with this free timer. Use the chart below to match the right time and water temperature to your tea &mdash; green, black, oolong, white, pu-erh, or herbal.</p>
-        <div class="tldr-box" style="background:#f5f8fb;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> Steep times depend on oxidation level. Delicate green and white teas need 1&ndash;3 minutes in 160&ndash;180&deg;F water. Oolongs steep 2&ndash;4 minutes at 185&deg;F. Black teas tolerate full boiling water for 3&ndash;5 minutes. Herbal infusions need 5&ndash;7 minutes at a full boil to extract flavor. Over-steeping releases tannins (catechins and theaflavins) that make tea bitter, so a precise timer matters more than most drinkers realize.
         </div>
     </div>

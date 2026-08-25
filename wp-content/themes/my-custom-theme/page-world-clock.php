@@ -35,7 +35,7 @@ get_header();
         <div style="margin-top:var(--space-6);display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:end;">
             <label style="display:flex;flex-direction:column;align-items:flex-start;gap:0.25rem;font-size:0.875rem;color:var(--color-text-secondary);flex:1;min-width:240px;">
                 Add a city
-                <input list="wc-cities" id="wc-search" placeholder="Type a city or timezone..." style="width:100%;padding:0.5rem 0.75rem;font-size:1rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg,#0b0e1a);color:var(--color-text);border-radius:var(--radius-md);">
+                <input list="wc-cities" id="wc-search" placeholder="Type a city or timezone..." style="width:100%;padding:0.5rem 0.75rem;font-size:1rem;border:1px solid rgba(99,102,241,0.25);background:var(--color-bg);color:var(--color-text-primary);border-radius:var(--radius-md);">
                 <datalist id="wc-cities"></datalist>
             </label>
             <button class="btn btn--primary" onclick="worldClock.addFromInput()">Add City</button>
@@ -273,14 +273,24 @@ get_header();
             } catch (e) { return ''; }
         }
 
+        // Local hour in a timezone (0-23) — drives the day/night indicator.
+        function localHour(date, tz) {
+            try {
+                const h = new Intl.DateTimeFormat('en-US', {
+                    timeZone: tz, hour: 'numeric', hour12: false
+                }).format(date);
+                return parseInt(h, 10) % 24;
+            } catch (e) { return 12; }
+        }
+
         function render() {
             grid.innerHTML = cities.map(function(c, i) {
                 return '<div class="card" style="padding:var(--space-4);text-align:center;position:relative;">'
                     + '<button data-remove="' + i + '" style="position:absolute;top:0.5rem;right:0.5rem;background:none;border:none;color:var(--color-text-muted);cursor:pointer;font-size:1.25rem;line-height:1;padding:0.5rem;" title="Remove city" aria-label="Remove ' + escapeHtml(c.city) + '">&times;</button>'
                     + '<div style="font-size:0.875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);">' + escapeHtml(c.city) + '</div>'
-                    + '<div class="wc-time" data-tz="' + escapeHtml(c.tz) + '" style="font-size:clamp(1.75rem,4vw,2.25rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-primary);margin:0.25rem 0;">--:--:--</div>'
+                    + '<div class="wc-time" data-tz="' + escapeHtml(c.tz) + '" style="font-size:clamp(1.75rem,4vw,2.25rem);font-weight:700;font-variant-numeric:tabular-nums;color:var(--color-text-primary);margin:0.25rem 0;">--:--:--</div>'
                     + '<div class="wc-date" data-tz="' + escapeHtml(c.tz) + '" style="font-size:0.8125rem;color:var(--color-text-secondary);"></div>'
-                    + '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.25rem;">' + escapeHtml(getOffset(c.tz)) + '</div>'
+                    + '<div class="wc-meta" data-tz="' + escapeHtml(c.tz) + '" style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.25rem;"></div>'
                     + '</div>';
             }).join('');
             updateAll();
@@ -293,6 +303,12 @@ get_header();
             });
             grid.querySelectorAll('.wc-date').forEach(function(el) {
                 el.textContent = formatDate(now, el.dataset.tz);
+            });
+            // Offset + day/night indicator (sun 06:00–17:59, moon otherwise).
+            grid.querySelectorAll('.wc-meta').forEach(function(el) {
+                const hour = localHour(now, el.dataset.tz);
+                const icon = (hour >= 6 && hour < 18) ? '☀️' : '🌙';
+                el.innerHTML = '<span aria-hidden="true">' + icon + '</span> ' + escapeHtml(getOffset(el.dataset.tz));
             });
         }
 

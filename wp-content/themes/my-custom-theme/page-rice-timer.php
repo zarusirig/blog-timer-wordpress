@@ -9,12 +9,12 @@ get_header();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Rice Cooking Timer &mdash; Perfect Rice Every Variety, Every Method</h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home cook &amp; recipe researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Match the right time, water ratio, and method to your rice variety &mdash; white, brown, jasmine, basmati, sushi, or wild &mdash; for fluffy, separated grains every time.</p>
-        <div class="tldr-box" style="background:#f5f8fb;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> Long-grain white rice cooks in 18 minutes (15 covered simmer + 5&ndash;10 rest off heat) with a 1:1.5 ratio. Brown rice needs 40&ndash;45 minutes with a 1:2 ratio. Jasmine and basmati are slightly faster (15 minutes plus rest). Sushi rice uses short-grain Japanese varieties at a 1:1.1 ratio for 18 minutes. Rice cookers handle the timing automatically; Instant Pot cuts most times in half. The off-heat rest is non-negotiable &mdash; it lets the steam finish the grains.
         </div>
     </div>

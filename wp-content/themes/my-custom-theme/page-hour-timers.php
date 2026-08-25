@@ -31,14 +31,14 @@ $hour_timers = $related->get_all_by_unit('hours');
         <h1 class="page-h1">
             <?php echo esc_html($loader->get_string('hub.hours.h1') ?: 'Online Hour Timers'); ?>
         </h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">
             <?php echo esc_html($loader->get_string('hub.hours.intro') ?: 'Long-duration hour-based countdown timers for sleep cycles, fasting windows, work shifts, study marathons, and deep focus sessions.'); ?>
         </p>
-        <div class="tldr-box" style="background: var(--color-surface, rgba(255,255,255,0.04)); color: var(--color-text-secondary, #cbd5e1); border-left: 4px solid var(--color-accent, #6366f1); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> Hour timers cover the long-duration intervals where minutes become unwieldy &mdash; the 8-hour work shift, the 16-hour intermittent-fasting window, the 90-minute-aligned multi-cycle sleep block, and the multi-hour deep-work marathon. The Blog Timer hosts hour timers from 1 hour to 24 hours, grouped into three buckets: short (1&ndash;3), long (4&ndash;12), and extended (13&ndash;24). Each duration maps to an evidence-based use case, anchored to research on ultradian rhythms, circadian sleep cycles, and sustained-attention limits.
         </div>
 

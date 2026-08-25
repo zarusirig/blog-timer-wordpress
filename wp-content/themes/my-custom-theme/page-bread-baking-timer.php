@@ -9,12 +9,12 @@ get_header();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Bread Baking Timer &mdash; Proof, Bake, and Cool</h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home baker &amp; recipe researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Time every stage of bread baking accurately &mdash; mixing, autolyse, bulk fermentation, shaping, final proof, bake, and cool &mdash; whether you are making yeasted loaves, sourdough, no-knead, or quick breads.</p>
-        <div class="tldr-box" style="background:#f5f8fb;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> A standard yeasted loaf needs about 1.5 hours of bulk fermentation, 45 minutes of final proof, and 30&ndash;40 minutes of baking at 400&deg;F. Sourdough doubles those times &mdash; bulk runs 4 to 6 hours, cold retard overnight, bake 45 minutes at 450&deg;F. No-knead breads use 12 to 18 hours of room-temperature fermentation. Internal temperature at doneness is 195&deg;F for soft sandwich loaves and 205&deg;F for crusty hearth breads. Cool at least 60 minutes before slicing.
         </div>
     </div>

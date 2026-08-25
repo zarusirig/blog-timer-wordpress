@@ -174,6 +174,7 @@
             this.isComplete = false;
             this.endTimestamp = null;
             clearInterval(this.intervalId);
+            if (window.BT) BT.keepAwake(false);
             this.updateDisplay(seconds);
             this.updateProgress(1);
             this.startBtn.textContent = 'Start';
@@ -196,6 +197,9 @@
             if (this.completeBanner) this.completeBanner.classList.remove('visible');
             this.display.classList.remove('timer-complete');
 
+            // Keep the screen awake while counting down (phones/tablets).
+            if (window.BT) BT.keepAwake(true);
+
             this.saveState();
 
             this.intervalId = setInterval(function() {
@@ -213,6 +217,8 @@
             this.endTimestamp = null;
             clearInterval(this.intervalId);
 
+            if (window.BT) BT.keepAwake(false);
+
             this.startBtn.textContent = 'Start';
             this.saveState();
         },
@@ -226,6 +232,7 @@
             this.endTimestamp = null;
             this.remainingAtPause = this.durationSeconds;
             clearInterval(this.intervalId);
+            if (window.BT) BT.keepAwake(false);
 
             this.updateDisplay(this.durationSeconds);
             this.updateProgress(1);
@@ -276,6 +283,11 @@
             this.display.classList.add('timer-complete');
             this.startBtn.textContent = 'Restart';
             if (this.completeBanner) this.completeBanner.classList.add('visible');
+
+            if (window.BT) {
+                BT.keepAwake(false);
+                BT.announce('Timer complete');
+            }
 
             // Restore document title
             document.title = this.stripTitlePrefix();
@@ -428,6 +440,7 @@
                         this.isRunning = true;
                         this.startBtn.textContent = 'Pause';
                         var self = this;
+                        if (window.BT) BT.keepAwake(true);
                         this.intervalId = setInterval(function() { self.tick(); }, 250);
                     } else {
                         // Timer already completed while away

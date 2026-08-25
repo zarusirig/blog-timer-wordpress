@@ -9,12 +9,12 @@ get_header();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Turkey Cooking Timer &mdash; From Frozen to Carved</h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home cook &amp; recipe researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Time your turkey end-to-end &mdash; thawing, brining, roasting, and resting &mdash; for Thanksgiving, Christmas, or any holiday. Charts by weight and method (oven, deep-fry, smoker, spatchcock), plus the USDA-mandated internal temperature.</p>
-        <div class="tldr-box" style="background:#f5f8fb;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> A 12&ndash;14 lb turkey roasts in 3 to 3.5 hours at 325&deg;F. The <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry" target="_blank" rel="noopener">USDA</a> requires 165&deg;F internal in the thickest part of the thigh, without touching bone. Thaw in the refrigerator for one day per 4&ndash;5 lb &mdash; a 16 lb turkey needs 3 to 4 days. Deep-frying takes 3 to 4 minutes per pound. Spatchcocked (flattened) birds cut roasting time roughly in half. Rest at least 30 minutes before carving.
         </div>
     </div>

@@ -9,12 +9,12 @@ get_header();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">Free Online Pasta Timer &mdash; Al Dente Every Time</h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Home cook &amp; culinary researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">Set the timer for any pasta shape and cook to a true al dente bite &mdash; with shape-by-shape guidance, the correct salt-to-water ratio, and timing adjustments for fresh vs. dried.</p>
-        <div class="tldr-box" style="background:#f5f8fb;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> Dried pasta cooks in roughly 8 to 12 minutes in vigorously boiling salted water (1 tablespoon salt per gallon, or ~10 g per liter). Long thin shapes like spaghetti finish in 8&ndash;10 minutes, short tubes like penne in 10&ndash;12, and ridged shapes a minute longer. Start tasting two minutes before the package says, drain when the center still shows the faintest white pinpoint, and finish in the sauce.
         </div>
     </div>

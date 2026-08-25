@@ -12,12 +12,12 @@ $loader = Timer_Content_Loader::get_instance();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1"><?php echo esc_html($loader->get_string('hub.pomodoro.h1')); ?></h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro"><?php echo esc_html($loader->get_string('hub.pomodoro.intro')); ?></p>
-        <div class="tldr-box" style="background: var(--color-surface, rgba(255,255,255,0.04)); color: var(--color-text-secondary, #cbd5e1); border-left: 4px solid var(--color-accent, #6366f1); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> The Pomodoro Technique, invented by Francesco Cirillo in 1987, structures work into 25-minute focused intervals separated by 5-minute breaks, with a longer 15&ndash;30 minute rest after four cycles. The method works because it externalizes self-control, leverages the Zeigarnik effect, and aligns with research-supported attention spans &mdash; making it the most-studied general-purpose focus interval in productivity literature.
         </div>
     </div>
@@ -39,8 +39,8 @@ $loader = Timer_Content_Loader::get_instance();
             </div>
             <div class="timer-complete-banner" style="display:none;">
                 <p class="timer-complete-title" role="status" aria-live="polite">Pomodoro Complete!</p>
-                <p>Take a 5-minute break before your next session.</p>
-                <button class="btn btn--success start-timer">Start Break</button>
+                <p class="timer-complete-copy">Take a 5-minute break before your next session.</p>
+                <button class="btn btn--success start-timer" data-duration="300">Start Break</button>
             </div>
         </div>
 
@@ -570,16 +570,47 @@ document.addEventListener('DOMContentLoaded', function() {
     const sessionCountElement = document.querySelector('.session-count-number');
     const resetSessionsBtn = document.querySelector('.reset-sessions');
     const presetButtons = document.querySelectorAll('.pomodoro-preset');
+    const bannerTitle = document.querySelector('.timer-complete-title');
+    const bannerCopy = document.querySelector('.timer-complete-copy');
+    const phaseBtn = document.querySelector('.timer-complete-banner .start-timer');
 
     // Load session count from localStorage
     let sessionCount = parseInt(localStorage.getItem('pomodoroSessions') || '0');
     sessionCountElement.textContent = sessionCount;
 
-    // Increment session count when timer completes
+    // Work/break cycle state. hub-timer.js drives the countdown and fires
+    // `timerComplete` on completion; this script owns WHAT each finished
+    // phase means and which duration comes next.
+    let mode = 'work';
+    let workMinutes = 25;
+    let breakMinutes = 5;
+
+    function setBanner(title, copy, btnLabel, btnSeconds) {
+        if (bannerTitle) bannerTitle.textContent = title;
+        if (bannerCopy) bannerCopy.textContent = copy;
+        if (phaseBtn) {
+            phaseBtn.textContent = btnLabel;
+            phaseBtn.setAttribute('data-duration', String(btnSeconds));
+        }
+    }
+
     document.addEventListener('timerComplete', function() {
-        sessionCount++;
-        sessionCountElement.textContent = sessionCount;
-        localStorage.setItem('pomodoroSessions', sessionCount.toString());
+        if (mode === 'work') {
+            sessionCount++;
+            sessionCountElement.textContent = sessionCount;
+            localStorage.setItem('pomodoroSessions', sessionCount.toString());
+            mode = 'break';
+            setBanner('Pomodoro Complete!',
+                      'Take a ' + breakMinutes + '-minute break before your next session.',
+                      'Start Break', breakMinutes * 60);
+            if (window.BT) BT.announce('Pomodoro complete. Time for a break.');
+        } else {
+            mode = 'work';
+            setBanner('Break Over!',
+                      'Start your next ' + workMinutes + '-minute pomodoro when ready.',
+                      'Start Next Pomodoro', workMinutes * 60);
+            if (window.BT) BT.announce('Break over. Ready for the next pomodoro.');
+        }
     });
 
     // Reset sessions
@@ -592,8 +623,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Preset buttons
     presetButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const workMinutes = parseInt(this.dataset.work);
-            const breakMinutes = parseInt(this.dataset.break);
+            workMinutes = parseInt(this.dataset.work);
+            breakMinutes = parseInt(this.dataset.break);
+            mode = 'work';
             const timerWidget = document.querySelector('.timer-widget--hero');
             const timerDisplay = timerWidget.querySelector('.timer-display');
 
@@ -602,11 +634,16 @@ document.addEventListener('DOMContentLoaded', function() {
             timerWidget.dataset.value = workMinutes.toString();
             timerDisplay.textContent = workMinutes + ':00';
 
-            // Reset timer if running
+            // Sync the hub-timer engine: reset() re-reads data-duration, so
+            // clicking it (always — even if never started) installs the new
+            // duration into the running widget.
             const resetBtn = timerWidget.querySelector('.reset-timer');
-            if (resetBtn.style.display !== 'none') {
-                resetBtn.click();
-            }
+            if (resetBtn) resetBtn.click();
+
+            // Restore the work-complete banner copy for the new preset.
+            setBanner('Pomodoro Complete!',
+                      'Take a ' + breakMinutes + '-minute break before your next session.',
+                      'Start Break', breakMinutes * 60);
 
             // Visual feedback
             presetButtons.forEach(btn => btn.classList.remove('active'));

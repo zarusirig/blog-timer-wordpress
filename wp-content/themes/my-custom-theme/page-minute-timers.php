@@ -16,14 +16,14 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
         <h1 class="page-h1">
             <?php echo esc_html($loader->get_string('hub.minutes.h1')); ?>
         </h1>
-        <p class="byline" style="font-size: 0.875rem; color: #666; margin: 0.5rem 0;">
+        <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>
         </p>
         <p class="page-intro">
             <?php echo esc_html($loader->get_string('hub.minutes.intro')); ?>
         </p>
-        <div class="tldr-box" style="background: var(--color-surface, rgba(255,255,255,0.04)); color: var(--color-text-secondary, #cbd5e1); border-left: 4px solid var(--color-accent, #6366f1); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 6px;">
+        <div class="tldr-box">
             <strong>TL;DR:</strong> Minute-based timers cover the durations most people use for focused work, study, exercise, meditation, and cooking. The Blog Timer hosts a complete library from 1 to 161 minutes, organized into four buckets: short (1&ndash;5), medium (6&ndash;30), long (31&ndash;60), and extended (61+). Each duration maps to specific research-backed use cases, from the 25-minute Pomodoro to the 90-minute ultradian deep-work block.
         </div>
 
