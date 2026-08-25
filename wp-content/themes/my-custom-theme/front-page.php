@@ -557,6 +557,12 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
 
                     <li><strong>Presentations, classrooms, and meetings</strong> &mdash; Our <a href="<?php echo esc_url(home_url('/presentation-timer')); ?>">presentation timer</a> and <a href="<?php echo esc_url(home_url('/timer-for-kids')); ?>">kids' timer</a> serve speakers, teachers, and parents who need a visible countdown from across a room. Chess players use the dedicated <a href="<?php echo esc_url(home_url('/chess-clock')); ?>">chess clock</a> for tournament-style game timing.</li>
                 </ul>
+
+                <!-- Study spotlight: timed exam rehearsal (cited example) -->
+                <div class="highlight-box highlight-box--accent">
+                    <h3>Study spotlight: rehearse under real exam conditions</h3>
+                    <p>The clearest real-world example of timer-driven study is timed exam practice. FINRA's Securities Industry Essentials (SIE) exam allots 105 minutes for 85 questions, and <a href="https://sieexamprep.com" target="_blank" rel="noopener">SIE Exam Prep</a>, a free study resource for that exam, advises candidates to complete at least one fully timed practice run before test day &mdash; because pacing, not knowledge, is what usually runs out first. Replicate the session with our <a href="<?php echo esc_url(home_url('/timer/set-timer-for-105-minutes')); ?>">105-minute timer</a>, and structure the review blocks with the <a href="<?php echo esc_url(home_url('/study-timer')); ?>">study timer</a>.</p>
+                </div>
             </div>
         </div>
     </section>
