@@ -4999,6 +4999,318 @@
         "q": "Why is my Switch taking longer than 3 hours to charge?",
         "a": "Nintendo's 3-hour estimate assumes the console is off or in sleep mode, so playing while charging is the most common cause. A weak or unofficial USB-C power source also stretches the wait, since Nintendo's figure is stated for its own adapter and dock. Battery age matters too: after about 800 charge cycles, Nintendo says the battery holds about 80 percent of a new console's charge."
       }
+    },
+    "faq_g_how_long_do_hard_boiled_eggs_last_in_the_fridge_01": {
+      "en": {
+        "q": "How long do hard-boiled eggs last in the fridge?",
+        "a": "Up to 1 week (7 days) in the refrigerator at 40°F (4°C) or below, according to the USDA FSIS egg storage chart. The clock starts when the eggs finish cooking, not when you peel them, and FSIS says to get them into the fridge within 2 hours of cooking. Store them unpeeled and label the cook date so day 7 does not sneak up on you."
+      }
+    },
+    "faq_g_how_long_do_hard_boiled_eggs_last_in_the_fridge_02": {
+      "en": {
+        "q": "Do hard-boiled eggs last longer in the shell or peeled?",
+        "a": "In the shell, by a wide margin. Unpeeled hard-boiled eggs keep safely for up to one week, while the American Egg Board says peeled eggs should be eaten the same day. The shell protects the cooked egg from moisture loss, odors, and bacteria, so peel each egg only right before you eat it."
+      }
+    },
+    "faq_g_how_long_do_hard_boiled_eggs_last_in_the_fridge_03": {
+      "en": {
+        "q": "How long can hard-boiled eggs sit out at room temperature?",
+        "a": "No more than 2 hours, and just 1 hour if the room is above 90°F (32°C), per USDA FSIS. Between 40°F and 140°F — the Danger Zone — bacteria can double in number in as little as 20 minutes. Both FSIS and the American Egg Board say eggs left out of refrigeration longer than 2 hours should be discarded."
+      }
+    },
+    "faq_g_how_long_do_hard_boiled_eggs_last_in_the_fridge_04": {
+      "en": {
+        "q": "Can you freeze hard-boiled eggs?",
+        "a": "Not whole. The USDA storage chart's freezer column for hard-cooked eggs reads do not freeze, and the American Egg Board explains that whole eggs and whites turn tough and watery when frozen. The one exception is hard-boiled yolks, which can be frozen for toppings or garnishes after a brief hot-water treatment. Extra raw eggs freeze better out of the shell, with yolks and whites beaten together."
+      }
+    },
+    "faq_g_how_long_do_eggs_last_in_the_fridge_01": {
+      "en": {
+        "q": "How long do eggs last in the fridge?",
+        "a": "Raw eggs in the shell keep 3 to 5 weeks in the refrigerator at 40 degrees F or below, according to USDA FSIS. The window usually outlasts the sell-by date, which is a store inventory tool, not a safety date. Raw whites or yolks out of the shell last only 2 to 4 days refrigerated."
+      }
+    },
+    "faq_g_how_long_do_eggs_last_in_the_fridge_02": {
+      "en": {
+        "q": "Are eggs still good after the sell-by date?",
+        "a": "Usually, yes. On USDA-graded eggs, sell-by style expiration dates can fall no more than 30 days after packing and are not safety dates, and FSIS says a product is still safe and wholesome if handled properly until spoilage is evident. The American Egg Board counts quality for up to 12 weeks past the pack date. When in doubt, crack the egg into a bowl and check for an off-odor or unusual appearance."
+      }
+    },
+    "faq_g_how_long_do_eggs_last_in_the_fridge_03": {
+      "en": {
+        "q": "Does the float test tell you if an egg is bad?",
+        "a": "No — it signals age, not safety. FSIS says a floating egg has an enlarged air cell, is of poor quality, but may be perfectly safe to use. A sinking egg can still carry Salmonella, so FSIS recommends cracking into a bowl and checking for an off-odor or unusual appearance, then cooking eggs until the white and yolk are firm."
+      }
+    },
+    "faq_g_how_long_do_eggs_last_in_the_fridge_04": {
+      "en": {
+        "q": "Can you freeze raw eggs?",
+        "a": "Yes, but never in the shell. Beat whole eggs just until blended (or separate whites and yolks) into freezer containers and freeze for up to one year; yolks need 1/8 teaspoon of salt or 1 1/2 teaspoons of sugar or corn syrup per 1/4 cup of yolks to stay usable. Thaw overnight in the refrigerator or under cold running water, and use thawed eggs only in thoroughly cooked dishes."
+      }
+    },
+    "faq_g_how_long_does_cooked_chicken_last_in_the_fridge_01": {
+      "en": {
+        "q": "How long does cooked chicken last in the fridge?",
+        "a": "Cooked chicken lasts 3 to 4 days in the refrigerator at 40°F (4°C) or below, according to USDA FSIS. The window is the same whether the chicken was grilled, roasted, baked, shredded, fried, or from a store rotisserie. Refrigerate it within 2 hours of cooking, and discard anything still in the fridge after day four."
+      }
+    },
+    "faq_g_how_long_does_cooked_chicken_last_in_the_fridge_02": {
+      "en": {
+        "q": "Can I eat cooked chicken after 5 days in the fridge?",
+        "a": "No. Five days puts cooked chicken past the USDA's 3-to-4-day storage window, so it should be discarded even if it looks and smells fine. USDA rules are based on time and temperature, not appearance, because bacteria such as Salmonella and Campylobacter can reach dangerous levels without changing how the chicken looks."
+      }
+    },
+    "faq_g_how_long_does_cooked_chicken_last_in_the_fridge_03": {
+      "en": {
+        "q": "How can you tell if cooked chicken has gone bad?",
+        "a": "Rely on the clock, not your nose: USDA rules include no smell test, so discard cooked chicken refrigerated more than 4 days, or left out longer than 2 hours (1 hour if it was above 90°F/32°C). Visible mold or a sour, rotten odor is an obvious toss signal, but the absence of odor means nothing. Reheating to 165°F (74°C) does not rescue chicken that sat out too long."
+      }
+    },
+    "faq_g_how_long_does_cooked_chicken_last_in_the_fridge_04": {
+      "en": {
+        "q": "Can you freeze cooked chicken?",
+        "a": "Yes. USDA FSIS gives frozen cooked chicken 4 months at 0°F (-18°C) for best quality — casseroles keep 4 to 6 months, chicken broth or gravy 2 to 3 months — and frozen food remains safe indefinitely. Thaw it in the refrigerator, use it within 3 to 4 days or refreeze it, and reheat to 165°F (74°C) measured with a food thermometer."
+      }
+    },
+    "faq_g_how_long_does_rice_last_in_the_fridge_01": {
+      "en": {
+        "q": "How long does cooked rice last in the fridge?",
+        "a": "Cooked rice keeps for 3 to 4 days in the refrigerator at 40°F (4°C) or below, per USDA FSIS guidance — the same window that applies to all cooked leftovers. FSIS's storage chart applies the figure to rice directly: dry rice holds 2 years on the shelf, and \"after cooking, 3 to 4 days in the refrigerator.\" Get it into the fridge within 2 hours of cooking (1 hour if the room is above 90°F) and the full window is yours."
+      }
+    },
+    "faq_g_how_long_does_rice_last_in_the_fridge_02": {
+      "en": {
+        "q": "Is cooked rice still safe after 5 days in the fridge?",
+        "a": "No. USDA guidance caps cooked leftovers — rice included — at 4 days refrigerated, so day 5 is past the line. The hazard is not spoilage you can smell: Bacillus cereus can leave toxin in rice without changing its look, smell, or taste, and that toxin survives reheating. If you will not finish the rice by day 4, freeze it before then."
+      }
+    },
+    "faq_g_how_long_does_rice_last_in_the_fridge_03": {
+      "en": {
+        "q": "Does reheating rice kill Bacillus cereus?",
+        "a": "Reheating to 165°F (74°C), checked with a food thermometer, kills bacteria — but it may not save you. The vomiting-type toxin, cereulide, stays stable after 30 minutes at 121°C (about 250°F), far beyond any microwave reheat. Reheating is fine for rice that was cooled and stored promptly; it is not a fix for rice that sat out too long."
+      }
+    },
+    "faq_g_how_long_does_rice_last_in_the_fridge_04": {
+      "en": {
+        "q": "How long can cooked rice sit out before it goes bad?",
+        "a": "Two hours maximum at room temperature, and just one hour when the temperature is above 90°F, according to the USDA. B. cereus spores survive cooking, and once rice sits in the 40°F–140°F danger zone they germinate and multiply — doubling in as little as 20 minutes — while producing a heat-proof toxin. After the limit, throw the rice out no matter how it looks or smells."
+      }
+    },
+    "faq_g_how_long_does_a_rotisserie_chicken_last_01": {
+      "en": {
+        "q": "How long does a rotisserie chicken last in the fridge?",
+        "a": "Three to four days, stored at 40°F (4°C) or below. The USDA's chicken storage chart gives take-out convenience chicken (rotisserie, fried, etc.) 3 to 4 days in the refrigerator, counting from the day it was cooked and purchased. If you will not finish it in that window, freeze it instead."
+      }
+    },
+    "faq_g_how_long_does_a_rotisserie_chicken_last_02": {
+      "en": {
+        "q": "Can you eat rotisserie chicken after 5 days?",
+        "a": "No. The USDA limit for cooked take-out chicken is 3 to 4 days of refrigeration, so chicken on day five is past the window even if it smells fine. The FDA warns that food can make you sick without looking, smelling, or tasting spoiled, so do not taste it to check. When in doubt, throw it out."
+      }
+    },
+    "faq_g_how_long_does_a_rotisserie_chicken_last_03": {
+      "en": {
+        "q": "Can you freeze a whole rotisserie chicken?",
+        "a": "Yes. The USDA says it is safe to freeze ready-prepared chicken, where it stays safe indefinitely but holds best quality for about 4 months. Carve it into pieces and freeze in shallow, airtight containers, then thaw in the refrigerator (about 24 hours for every 5 pounds) and use within 3 to 4 days."
+      }
+    },
+    "faq_g_how_long_does_a_rotisserie_chicken_last_04": {
+      "en": {
+        "q": "How can you tell if a rotisserie chicken has gone bad?",
+        "a": "Trust the FDA rule: throw out anything that looks or smells suspicious, and discard anything with visible mold, which can grow even under refrigeration. The USDA describes spoilage as an off odor, off flavor, or off texture. Remember the reverse is also true, though: contaminated chicken can look, smell, and taste normal, which is why the 3-to-4-day limit and reheating to 74°C (165°F) matter more than your senses."
+      }
+    },
+    "faq_g_how_long_does_cheesecake_last_01": {
+      "en": {
+        "q": "How long does cheesecake last in the fridge?",
+        "a": "Homemade or bakery cheesecake keeps for 5 to 7 days in the refrigerator — StillTasty allows up to 1 week — as long as your fridge holds at 40°F or below and the cake went in within two hours of baking or serving. Store-bought refrigerated cheesecake often lasts a bit longer thanks to stabilizers and preservatives. Cover it loosely with foil or plastic wrap so it does not dry out."
+      }
+    },
+    "faq_g_how_long_does_cheesecake_last_02": {
+      "en": {
+        "q": "How can you tell if cheesecake has gone bad?",
+        "a": "Look for a sour or off smell, a weeping or watery surface, discoloration, dried cracks, or an off taste — discard the cake if any of these appear. Mold means toss the whole thing: the USDA says soft cheeses (including cream cheese) and baked goods must be discarded, never trimmed, because mold's root threads invade beyond what you can see. And if the cake sat out longer than 2 hours, or 1 hour above 90°F, throw it away no matter how it looks."
+      }
+    },
+    "faq_g_how_long_does_cheesecake_last_03": {
+      "en": {
+        "q": "How long can cheesecake sit out at room temperature?",
+        "a": "No more than 2 hours, or just 1 hour if the temperature is above 90°F, per the USDA's Danger Zone rule — between 40°F and 140°F bacteria double in number in as little as 20 minutes. Discard cheesecake left out beyond those limits. At parties, keep the cake refrigerated and set out only what will be eaten within two hours."
+      }
+    },
+    "faq_g_how_long_does_cheesecake_last_04": {
+      "en": {
+        "q": "Can you freeze cheesecake, and how long does it last in the freezer?",
+        "a": "Yes. Wrap it tightly in aluminum foil or plastic freezer wrap, or use a heavy-duty freezer bag, and hold the freezer at 0°F: StillTasty gives homemade cheesecake 2 to 3 months for best quality (Tasting Table suggests up to two months), and store-bought cheesecake sold frozen holds best quality for about 6 months. It stays safe indefinitely while kept continuously frozen, though thawing may bring a slight texture change and freezer burn can dull the taste."
+      }
+    },
+    "faq_g_how_long_does_flour_last_01": {
+      "en": {
+        "q": "How long does flour last before it goes bad?",
+        "a": "White, all-purpose flour lasts about 1 year in the pantry for best quality, while whole wheat and other whole-grain flours last just 1 to 3 months on the shelf — or 2 to 6 months in the freezer. Whole-grain flours age faster because the oils in the wheat germ oxidize and turn rancid. Refined flour rarely becomes unsafe with age; it simply loses quality."
+      }
+    },
+    "faq_g_how_long_does_flour_last_02": {
+      "en": {
+        "q": "Can you use flour after its expiration date?",
+        "a": "Usually, yes. According to the USDA's Food Safety and Inspection Service, except for infant formula, product dating is not required by federal regulations, and dates reflect best quality rather than safety. If the flour was stored properly and shows no spoilage — no musty or sour smell, no bugs, no color change — a bag a few weeks past its date is fine to bake with."
+      }
+    },
+    "faq_g_how_long_does_flour_last_03": {
+      "en": {
+        "q": "What is the best way to store flour for a long shelf life?",
+        "a": "Keep refined flour in an airtight container in a cool, dark, dry pantry, where it holds its best quality for about a year. Store whole wheat, stone-ground, and almond flours in the freezer in an airtight container, since their oils go rancid quickly at room temperature. Glass, metal, or heavy plastic containers also keep pantry pests out — they can chew into paper bags and thin cardboard."
+      }
+    },
+    "faq_g_how_long_does_flour_last_04": {
+      "en": {
+        "q": "How do you know if flour has gone rancid?",
+        "a": "Smell it: rancid flour has a musty, sour, or otherwise off odor that differs from how it smelled when you bought it, and that flavor carries into your baking. Also discard the bag if you see weevils or other insects, a color change in white flour, or any dampness or mold. And remember that flour is a raw ingredient — King Arthur Baking Company warns it should never be eaten without being cooked or baked first, so no raw dough or batter."
+      }
+    },
+    "faq_g_how_long_does_honey_last_01": {
+      "en": {
+        "q": "Does honey ever expire or go bad?",
+        "a": "No — honey stored in a sealed container stays good indefinitely, and the National Honey Board notes it can remain stable for decades and even centuries. Honey's low moisture, natural acidity and trace hydrogen peroxide keep spoilage organisms in check. The only realistic way honey goes bad is if water gets in and allows yeasts to ferment it."
+      }
+    },
+    "faq_g_how_long_does_honey_last_02": {
+      "en": {
+        "q": "My honey turned solid and grainy — is crystallized honey still good?",
+        "a": "Yes. Crystallization is the natural process of glucose precipitating out of the honey, not spoilage, and the National Honey Board confirms crystallized honey is still good. You can scoop it straight from the jar and spread it on toast or stir it into tea. To return it to liquid, warm it gently."
+      }
+    },
+    "faq_g_how_long_does_honey_last_03": {
+      "en": {
+        "q": "How do I decrystallize honey without ruining it?",
+        "a": "Place the honey jar in warm water and stir until the crystals dissolve, or put the container (cap open) into near-boiling water that has been removed from the heat. You can also microwave the honey in a microwave-safe container with the lid off, stirring every 30 seconds until the crystals dissolve. Do not boil or scorch it — heating above about 140 degrees Fahrenheit (60 C) degrades honey's natural enzymes."
+      }
+    },
+    "faq_g_how_long_does_honey_last_04": {
+      "en": {
+        "q": "Why can't babies under 1 year old eat honey?",
+        "a": "The CDC warns that honey can contain the bacteria that cause botulism, and in infants the spores can get into the intestines, grow, and produce the toxin that causes illness. For that reason, never give honey — or products made with it, including honey pacifiers — to a child younger than 1 year old. Children and adults can eat honey safely."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_run_a_5k_01": {
+      "en": {
+        "q": "How long does it take a beginner to run a 5K?",
+        "a": "Most first-timers finish between 30 and 45 minutes. Running Level's beginner tier — faster than 5% of recorded runners — sits at 31:29 for men and 35:27 for women, and the NHS Couch to 5K plan builds you up to 30 minutes of continuous running over nine weeks. A debut anywhere around 30–40 minutes is completely normal."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_run_a_5k_02": {
+      "en": {
+        "q": "What is a good average 5K time?",
+        "a": "Running Level's data puts the all-ages average at 23:58 — about 22:31 for men and 26:07 for women. Beating 30 minutes (6:00 per kilometer, 9:39 per mile) is the classic first milestone, and going under 25 minutes means holding 5:00 per kilometer for the full distance."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_run_a_5k_03": {
+      "en": {
+        "q": "How long does it take to walk a 5K?",
+        "a": "At the NHS brisk-walking pace of about 3 miles per hour, a 5K takes roughly 62 minutes — about an hour. A slower stroll of 2½–3 miles per hour takes closer to 65–75 minutes, while a fast fitness walker at 4 miles per hour finishes in about 47 minutes."
+      }
+    },
+    "faq_g_how_long_does_it_take_to_run_a_5k_04": {
+      "en": {
+        "q": "How many miles is a 5K, and how many laps is that?",
+        "a": "A 5K is 5,000 meters — 3.1 miles, or 12½ laps of a standard 400-meter outdoor track. Because the distance is a round metric number, your finish time is simply your per-kilometer pace multiplied by five: 6:00 per km gives a 30-minute 5K."
+      }
+    },
+    "faq_g_how_long_can_you_live_without_food_01": {
+      "en": {
+        "q": "How long can you survive without food?",
+        "a": "There is no single confirmed number, because no ethical trial can ever be run. Records of people trapped without food or drink span 8 to 21 days, the 1981 Maze Prison hunger strikers died after 46 to 73 days each, and one medically supervised patient fasted for 382 days. Hydration, body fat, age, and baseline health move the timeline by weeks."
+      }
+    },
+    "faq_g_how_long_can_you_live_without_food_02": {
+      "en": {
+        "q": "How long can you live without food and water?",
+        "a": "With no food and no water, the maximum time the body can survive is thought to be about one week. Kidney function diminishes within a few days without proper hydration. In any survival situation, securing water comes before everything else."
+      }
+    },
+    "faq_g_how_long_can_you_live_without_food_03": {
+      "en": {
+        "q": "What happens to your body when you stop eating?",
+        "a": "It takes about 24 hours without eating for your body to change how it produces energy. It drains glycogen, manufactures glucose from protein (gluconeogenesis), then shifts to fat-derived ketones that fuel the brain and spare muscle. Weight loss averages 0.9 kg per day in the first week, slowing to 0.3 kg per day by the third week, and much of the early drop is water lost through sodium excretion."
+      }
+    },
+    "faq_g_how_long_can_you_live_without_food_04": {
+      "en": {
+        "q": "Is it dangerous to start eating again after days without food?",
+        "a": "Yes. Refeeding syndrome — potentially fatal shifts in fluids and electrolytes — can occur when a malnourished person is fed again, and any patient with negligible food intake for more than five days is at risk. Its hallmark is hypophosphatemia, because insulin drives phosphate, potassium, and magnesium into cells with water following. Food should be reintroduced gradually, ideally under medical monitoring."
+      }
+    },
+    "faq_g_how_long_can_you_live_without_water_01": {
+      "en": {
+        "q": "How long can you live without drinking water?",
+        "a": "As a general rule of thumb, a healthy adult can survive without water for about 3 days, though it is impossible to say precisely because the window depends on the person, the temperature, and their activity level. Medically reviewed references describe going from thirsty and slightly sluggish on day one to organ failure by day three. Treat 3 days as a planning figure, not a challenge."
+      }
+    },
+    "faq_g_how_long_can_you_live_without_water_02": {
+      "en": {
+        "q": "Can you survive a week without water?",
+        "a": "Almost certainly not. No ethical study has measured human survival without water, but the rule of thumb is about 3 days in mild conditions, and extreme heat, heavy sweating, or illness with vomiting and diarrhea shrink that window further. People can survive far longer without food, which is why water, not food, is the first thing to plan for in an emergency kit."
+      }
+    },
+    "faq_g_how_long_can_you_live_without_water_03": {
+      "en": {
+        "q": "How long can you survive without water in hot weather?",
+        "a": "Heat shortens the window fast: water losses through skin can reach 2.0 liters per hour during high activity in the heat, and emergency planners note that water needs can double in very hot temperatures. Medically reviewed references say changes in the body can appear after just a few hours in extreme conditions. Never leave children or pets in parked vehicles — the NWS reports children can die in a hot car within 10 minutes, and 31 children died in hot cars in 2025."
+      }
+    },
+    "faq_g_how_long_can_you_live_without_water_04": {
+      "en": {
+        "q": "What are the first signs of dehydration?",
+        "a": "In adults, the first signs are extreme thirst, urinating less, dark-colored urine, and tiredness; losing as little as 3% of body weight through water loss may already lead to dehydration. Do not rely on thirst alone — many people, mainly older adults, do not feel thirsty until they are already dehydrated. As losses deepen, dizziness, confusion, sunken eyes or cheeks, and skin that does not flatten back after being pinched appear, and severe dehydration needs medical treatment right away."
+      }
+    },
+    "faq_g_best_time_to_visit_norway_01": {
+      "en": {
+        "q": "What is the best month to visit Norway?",
+        "a": "For most travellers, July is the peak of the peak: 25–30°C days are possible in the south and inland valleys, sea and lake water usually reaches 18°C or higher, and nights never get really dark. June and August offer nearly the same conditions with marginally fewer people, so any month in the June–August window works for fjords, islands and midnight sun."
+      }
+    },
+    "faq_g_best_time_to_visit_norway_02": {
+      "en": {
+        "q": "When can you see the midnight sun in Norway?",
+        "a": "The midnight sun shines above the Arctic Circle, and the window shrinks as you move south: Svalbard 20 April–22 August, North Cape 14 May–29 July, Tromsø 20 May–22 July, Lofoten 28 May–14 July and Bodø 4 June–8 July. Northern Norway as a whole logs 76 days of midnight sun between May and July, and the further north you go, the more midnight-sun nights you get."
+      }
+    },
+    "faq_g_best_time_to_visit_norway_03": {
+      "en": {
+        "q": "When is the best time to see the northern lights in Norway?",
+        "a": "The northern lights season in Norway runs from September to April, and statistics show the highest activity levels in spring (March/April) and autumn (September/October). You need clear, dark skies away from light pollution, with Tromsø, Lofoten, Senja, the North Cape and Kirkenes all under the aurora band. Visit Norway also expects activity to reach its highest levels in 11 years between 2024 and 2026, making the next few seasons an unusually good time to go."
+      }
+    },
+    "faq_g_best_time_to_visit_norway_04": {
+      "en": {
+        "q": "Is May or September a good time to visit Norway?",
+        "a": "Yes — both are shoulder months with fewer tourists and better deals than the July high season. May brings fruit-tree blossoms and waterfalls swollen by melting snow, and the midnight sun reaches Northern Norway from mid-May. September adds autumn colours and the first northern lights of the season."
+      }
+    },
+    "faq_g_best_time_to_visit_australia_01": {
+      "en": {
+        "q": "What is the best month to visit Australia?",
+        "a": "There is no single best month for the whole continent, but the shoulder seasons — September to November and March to May — suit most travellers. Flights cost less than in summer, average daily temperatures sit at a comfortable 17–35°C, and the tropical north is in its May–October dry season. If you have to pick one month, October is the safest all-rounder."
+      }
+    },
+    "faq_g_best_time_to_visit_australia_02": {
+      "en": {
+        "q": "When is the cheapest time to visit Australia?",
+        "a": "Summer (December–February) is the most expensive time to travel in Australia, with high demand pushing up the price of flights and accommodation. Winter (June–August) brings fewer tourists, cheaper flights and accommodation deals in the southern capitals — though Cairns and the Great Barrier Reef hit peak pricing then. The March–May and September–November shoulder months also undercut summer fares."
+      }
+    },
+    "faq_g_best_time_to_visit_australia_03": {
+      "en": {
+        "q": "When is stinger season in Australia?",
+        "a": "Dangerous marine stingers, including box jellyfish and Irukandji, are present in tropical Queensland waters all year round, but the risk is higher during marine stinger season from November to May. Swim in the stinger nets where provided and wear a full-body lycra suit. If someone is stung, dial Triple Zero (000) and pour vinegar onto the sting while waiting for the ambulance."
+      }
+    },
+    "faq_g_best_time_to_visit_australia_04": {
+      "en": {
+        "q": "When is the best time to visit the Great Barrier Reef?",
+        "a": "June to August is peak season in Cairns and the Great Barrier Reef region, delivering an abundance of sunshine and moderate temperatures inside the May–October dry season. It also falls outside the November–May stinger season, so swimming is simpler. The trade-off is peak pricing and busy reef tours, so book ahead."
+      }
     }
   },
   "quickUseIdeas": {

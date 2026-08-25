@@ -312,6 +312,11 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                     <h3>Battery &amp; Charge Times</h3>
                     <p>AirPods battery life and charge times, iPhone battery cycles, Nintendo Switch charging &mdash; both clocks covered.</p>
                 </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/food-storage')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#129372;</div>
+                    <h3>Food Storage &amp; Shelf Life</h3>
+                    <p>How long eggs, cooked chicken, rice, cheesecake and flour last &mdash; USDA-cited fridge and pantry times.</p>
+                </a>
                 <a class="card usecase-card" href="<?php echo esc_url(home_url('/auto')); ?>" style="text-decoration:none;">
                     <div class="usecase-card-icon">&#128663;</div>
                     <h3>Car &amp; Auto Timers</h3>

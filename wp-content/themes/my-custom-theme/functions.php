@@ -1121,6 +1121,7 @@ function blogtimer_indexable_page_slugs()
         'sports',
         'entertainment',
         'tech',
+        'food-storage',
     ];
 }
 
@@ -1206,6 +1207,7 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "Allow: /sports\n";
     $robots .= "Allow: /entertainment\n";
     $robots .= "Allow: /tech\n";
+    $robots .= "Allow: /food-storage\n";
     $robots .= "Allow: /chess-clock\n";
     $robots .= "Allow: /egg-timer\n";
     $robots .= "Allow: /interval-timer\n";
