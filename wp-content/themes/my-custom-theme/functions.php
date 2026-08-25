@@ -1164,7 +1164,10 @@ add_filter('robots_txt', function ($output, $public) {
 
     // Sitemap location — sitemap-fresh.xml ONLY. WP core sitemaps are disabled
     // (see wp_sitemaps_enabled below); advertising both confused Google.
-    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml') . "\n\n";
+    // The ?v= version matches the static /robots.txt: the platform page-cache
+    // can hold the bare sitemap URL for weeks; a versioned URL always serves
+    // the freshly-built sitemap. Bump the version on content deploys.
+    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml?v=2026-08-25') . "\n\n";
 
     // Allow all legitimate bots to crawl whitelisted content
     $robots .= "User-agent: *\n";
