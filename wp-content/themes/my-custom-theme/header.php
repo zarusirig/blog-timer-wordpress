@@ -264,6 +264,9 @@
                         </ul>
                     </li>
 
+                    <!-- Silo 8: Blog (guest articles) -->
+                    <li><a href="<?php echo esc_url(home_url('/blog')); ?>" <?php echo (is_page('blog') || is_singular('post') || is_category()) ? 'class="active"' : ''; ?>>Blog</a></li>
+
                     <li><a href="<?php echo esc_url(home_url('/faq')); ?>" <?php echo is_page('faq') ? 'class="active"' : ''; ?>>FAQ</a></li>
 
                 </ul>

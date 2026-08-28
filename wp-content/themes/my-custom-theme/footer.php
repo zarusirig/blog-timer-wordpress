@@ -87,6 +87,8 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
                 <p class="footer-heading">Resources</p>
                 <ul>
                     <li><a href="<?php echo esc_url(home_url('/about')); ?>">About Us</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/blog')); ?>">Blog &amp; Guest Articles</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/write-for-us')); ?>">Write for Us</a></li>
                     <li><a href="<?php echo esc_url(home_url('/guides')); ?>">Guides</a></li>
                     <li><a href="<?php echo esc_url(home_url('/focus-timer')); ?>">Deep Work &amp; Focus Timer</a></li>
                     <li><a href="<?php echo esc_url(home_url('/study-timer')); ?>">Study Timer</a></li>

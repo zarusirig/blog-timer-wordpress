@@ -1130,6 +1130,8 @@ function blogtimer_indexable_page_slugs()
         'emom-timer',
         'hour-timers',
         'site-index',
+        'blog',
+        'write-for-us',
         'animals',
         'travel',
         'auto',
@@ -1154,6 +1156,87 @@ function blogtimer_indexable_taxonomies()
 }
 
 /**
+ * Guest-blog category slugs that are allowed to be indexed.
+ *
+ * Category archives live under /topics/{slug}/ (category_base = 'topics').
+ * Only these slugs get index signals; any other category (e.g. injected spam
+ * terms) stays noindexed, matching the strict page-slug whitelist above.
+ */
+function blogtimer_indexable_category_slugs()
+{
+    return [
+        'business',
+        'technology',
+        'seo-digital-marketing',
+        'travel',
+        'education',
+        'home-garden',
+        'career',
+        'lifestyle',
+        'ai-tools',
+    ];
+}
+
+/**
+ * Estimated read time in minutes for a post (200 wpm, minimum 1).
+ */
+function blogtimer_read_time($post_id)
+{
+    $words = str_word_count(wp_strip_all_tags((string) get_post_field('post_content', $post_id)));
+    return max(1, (int) ceil($words / 200));
+}
+
+/**
+ * Count outbound EXTERNAL links (<a href> to another host) in a post's content.
+ * Used by the admin column so editors can police the guest-post link policy.
+ */
+function blogtimer_count_external_links($post_id)
+{
+    $post = get_post($post_id);
+    if (!$post) {
+        return 0;
+    }
+    if (!preg_match_all('/<a\b[^>]*href=["\']([^"\']+)["\'][^>]*>/i', (string) $post->post_content, $matches)) {
+        return 0;
+    }
+    $home_host = strtolower((string) wp_parse_url(home_url(), PHP_URL_HOST));
+    $home_host = preg_replace('/^www\./', '', $home_host);
+    $external = 0;
+    foreach ($matches[1] as $href) {
+        $host = strtolower((string) wp_parse_url($href, PHP_URL_HOST));
+        if ($host === '' ) {
+            continue; // relative or anchor link = internal
+        }
+        $host = preg_replace('/^www\./', '', $host);
+        if ($host !== $home_host) {
+            $external++;
+        }
+    }
+    return $external;
+}
+
+// Admin column: external-link count on the Posts list.
+add_filter('manage_post_posts_columns', function ($columns) {
+    $columns['bt_external_links'] = 'Ext. Links';
+    return $columns;
+});
+add_action('manage_post_posts_custom_column', function ($column, $post_id) {
+    if ($column !== 'bt_external_links') {
+        return;
+    }
+    $count = blogtimer_count_external_links($post_id);
+    // Color signal: green = within policy, red = review (guest posts should
+    // stay at a handful of genuinely relevant external links).
+    if ($count === 0) {
+        echo '<span style="color:#5b6478;">0</span>';
+    } elseif ($count <= 5) {
+        echo '<span style="color:#22c55e;font-weight:600;">' . (int) $count . '</span>';
+    } else {
+        echo '<span style="color:#ef4444;font-weight:700;">' . (int) $count . ' — review</span>';
+    }
+}, 10, 2);
+
+/**
  * Override WordPress default robots.txt with strict version
  * This tells Google and all crawlers to ONLY index known-good URL patterns
  */
@@ -1167,7 +1250,7 @@ add_filter('robots_txt', function ($output, $public) {
     // The ?v= version matches the static /robots.txt: the platform page-cache
     // can hold the bare sitemap URL for weeks; a versioned URL always serves
     // the freshly-built sitemap. Bump the version on content deploys.
-    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml?v=2026-08-25') . "\n\n";
+    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml?v=2026-08-27') . "\n\n";
 
     // Allow all legitimate bots to crawl whitelisted content
     $robots .= "User-agent: *\n";
@@ -1215,6 +1298,10 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "# Allowed paths (legitimate content only)\n";
     $robots .= "Allow: /timer/*\n";
     $robots .= "Allow: /guides/*\n";
+    // Guest blog: posts at /blog/{slug}, category hubs at /topics/{slug}
+    $robots .= "Allow: /blog/*\n";
+    $robots .= "Allow: /topics/*\n";
+    $robots .= "Allow: /write-for-us\n";
     $robots .= "Allow: /minute-timers\n";
     $robots .= "Allow: /second-timers\n";
     $robots .= "Allow: /pomodoro\n";
@@ -1273,6 +1360,13 @@ add_action('wp_head', function () {
         return;
     }
 
+    // Guest-blog posts (/blog/*) and the approved /topics/* category archives.
+    // Same early-pass logic: posts publish by trusted editors, categories are
+    // gated by the slug list so injected terms stay noindexed.
+    if (is_singular('post') || is_category(blogtimer_indexable_category_slugs())) {
+        return;
+    }
+
     // The guide CPT archive (/guides/) and the legitimate custom taxonomies are
     // indexable programmatic-SEO hubs — must NOT be noindexed.
     if (is_post_type_archive('guide') || is_tax(blogtimer_indexable_taxonomies())) {
@@ -1312,6 +1406,11 @@ add_action('send_headers', function () {
     // Timer (/timer/*) and guide (/guides/*) CPT pages must ALWAYS be indexable.
     // Post-type check runs BEFORE the slug whitelist for the same reason as above.
     if (is_singular(['timer', 'guide'])) {
+        return;
+    }
+
+    // Guest-blog posts (/blog/*) and the approved /topics/* category archives.
+    if (is_singular('post') || is_category(blogtimer_indexable_category_slugs())) {
         return;
     }
 
@@ -1507,6 +1606,23 @@ add_action('parse_request', function ($wp) {
         $sitemap_url(get_permalink($guide_post->ID), $guide_post->post_modified_gmt);
     }
 
+    // Guest-blog category archives (/topics/{slug}/) — approved slugs only.
+    foreach (blogtimer_indexable_category_slugs() as $cat_slug) {
+        $cat_term = get_term_by('slug', $cat_slug, 'category');
+        if ($cat_term && !is_wp_error($cat_term)) {
+            $term_url = get_term_link($cat_term);
+            if (!is_wp_error($term_url)) {
+                echo '  <url><loc>' . esc_url($term_url) . '</loc></url>' . "\n";
+            }
+        }
+    }
+
+    // All published guest-blog posts (/blog/{slug}/)
+    $blog_posts = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => -1]);
+    foreach ($blog_posts as $blog_post) {
+        $sitemap_url(get_permalink($blog_post->ID), $blog_post->post_modified_gmt);
+    }
+
     echo '</urlset>' . "\n";
     exit;
 });
@@ -1614,6 +1730,32 @@ add_action('wp_head', function () {
     echo '<meta name="twitter:description" content="' . esc_attr($og_desc) . '">' . "\n";
     echo '<meta name="twitter:image" content="' . esc_url($og_image) . '">' . "\n";
 }, 2);
+
+/**
+ * Meta description for guest-blog surfaces (posts + /topics/ category archives).
+ * The rest of the site relies on og:description and snippet generation; the new
+ * blog pages get an explicit description because they target search directly.
+ */
+add_action('wp_head', function () {
+    $desc = '';
+
+    if (is_singular('post')) {
+        $post_obj = get_queried_object();
+        if ($post_obj) {
+            $desc = $post_obj->post_excerpt ?: wp_trim_words(wp_strip_all_tags($post_obj->post_content), 24, '…');
+        }
+    } elseif (is_category()) {
+        $term = get_queried_object();
+        if ($term && !empty($term->description)) {
+            $desc = wp_trim_words(wp_strip_all_tags($term->description), 24, '…');
+        }
+    }
+
+    $desc = trim((string) $desc);
+    if ($desc !== '') {
+        echo '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";
+    }
+}, 3);
 
 // ==========================================
 // JSON-LD SCHEMA MARKUP
@@ -1935,6 +2077,31 @@ add_action('wp_head', function () {
                 'position' => $position++,
                 'name' => get_the_title(),
             ];
+        } elseif (is_singular('post')) {
+            // Guest-blog posts: Home › Blog › {Category} › {Post}.
+            $breadcrumb_items[] = [
+                '@type' => 'ListItem',
+                'position' => $position++,
+                'name' => 'Blog',
+                'item' => blogtimer_untrailingslashit_url(home_url('/blog')),
+            ];
+            $post_cats = get_the_category(get_the_ID());
+            if (!empty($post_cats)) {
+                $cat_url = get_term_link($post_cats[0]);
+                if (!is_wp_error($cat_url)) {
+                    $breadcrumb_items[] = [
+                        '@type' => 'ListItem',
+                        'position' => $position++,
+                        'name' => $post_cats[0]->name,
+                        'item' => blogtimer_untrailingslashit_url($cat_url),
+                    ];
+                }
+            }
+            $breadcrumb_items[] = [
+                '@type' => 'ListItem',
+                'position' => $position++,
+                'name' => get_the_title(),
+            ];
         } elseif (is_page()) {
             $breadcrumb_items[] = [
                 '@type' => 'ListItem',
@@ -1942,6 +2109,15 @@ add_action('wp_head', function () {
                 'name' => get_the_title(),
             ];
         } elseif (is_tax() || is_category() || is_tag()) {
+            if (is_category()) {
+                // Category archives live under the Blog section: Home › Blog › {Category}.
+                $breadcrumb_items[] = [
+                    '@type' => 'ListItem',
+                    'position' => $position++,
+                    'name' => 'Blog',
+                    'item' => blogtimer_untrailingslashit_url(home_url('/blog')),
+                ];
+            }
             $term = get_queried_object();
             if ($term) {
                 $breadcrumb_items[] = [
@@ -1966,6 +2142,68 @@ add_action('wp_head', function () {
         $taxonomy_schema = blogtimer_get_timer_taxonomy_archive_schema(get_queried_object(), $org_id, $website_id, $breadcrumb_id);
         if (!empty($taxonomy_schema)) {
             $schemas[] = $taxonomy_schema;
+        }
+    }
+
+    // Guest-blog Article schema — single post pages (/blog/{slug}/).
+    // Author is a Person node (guest writers), publisher references the shared
+    // Organization @id so the entity consolidates with the rest of the site.
+    if (is_singular('post')) {
+        $post_obj = get_queried_object();
+        if ($post_obj) {
+            $guest_author_name = get_the_author_meta('display_name', $post_obj->post_author);
+            $guest_author_url  = get_the_author_meta('user_url', $post_obj->post_author);
+            $author_node = [
+                '@type' => 'Person',
+                'name'  => $guest_author_name !== '' ? $guest_author_name : 'Guest Author',
+            ];
+            if ($guest_author_url) {
+                $author_node['url'] = $guest_author_url;
+            }
+            $guest_desc = $post_obj->post_excerpt ?: wp_trim_words(wp_strip_all_tags($post_obj->post_content), 24, '…');
+            $guest_image = has_post_thumbnail($post_obj->ID)
+                ? get_the_post_thumbnail_url($post_obj->ID, 'large')
+                : get_theme_file_uri('images/og-default.png');
+            $schemas[] = [
+                '@context' => 'https://schema.org',
+                '@type' => 'Article',
+                '@id' => blogtimer_untrailingslashit_url(get_permalink($post_obj)) . '#article',
+                'headline' => get_the_title($post_obj),
+                'description' => $guest_desc,
+                'image' => [$guest_image],
+                'datePublished' => get_the_date('c', $post_obj),
+                'dateModified' => get_the_modified_date('c', $post_obj),
+                'author' => $author_node,
+                'publisher' => ['@id' => $org_id],
+                'isPartOf' => ['@id' => $website_id],
+                'mainEntityOfPage' => blogtimer_untrailingslashit_url(get_permalink($post_obj)),
+                'inLanguage' => 'en-US',
+            ];
+        }
+    }
+
+    // Guest-blog category archive schema (/topics/{slug}/).
+    if (is_category()) {
+        $cat_term = get_queried_object();
+        if ($cat_term instanceof WP_Term) {
+            $cat_url = get_term_link($cat_term);
+            if (!is_wp_error($cat_url)) {
+                $cat_url = blogtimer_untrailingslashit_url($cat_url);
+                $cat_desc = !empty($cat_term->description)
+                    ? wp_trim_words(wp_strip_all_tags($cat_term->description), 30, '…')
+                    : 'Guest articles from The Blog Timer.';
+                $schemas[] = [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'CollectionPage',
+                    '@id' => $cat_url . '#webpage',
+                    'name' => $cat_term->name . ' Articles',
+                    'description' => $cat_desc,
+                    'url' => $cat_url,
+                    'isPartOf' => ['@id' => $website_id],
+                    'publisher' => ['@id' => $org_id],
+                    'inLanguage' => 'en-US',
+                ];
+            }
         }
     }
 
