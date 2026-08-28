@@ -5311,6 +5311,342 @@
         "q": "When is the best time to visit the Great Barrier Reef?",
         "a": "June to August is peak season in Cairns and the Great Barrier Reef region, delivering an abundance of sunshine and moderate temperatures inside the May–October dry season. It also falls outside the November–May stinger season, so swimming is simpler. The trade-off is peak pricing and busy reef tours, so book ahead."
       }
+    },
+    "faq_g_how_long_does_a_roof_last_01": {
+      "en": {
+        "q": "How long does an asphalt shingle roof last?",
+        "a": "An asphalt shingle roof lasts 20 to 30 years. Three-tab shingles, the thinner budget type, tap out near 20 years. Architectural shingles, the thicker laminated type, run closer to 25 to 30, and premium laminated lines carry ratings up to 50. Hot climates and poor ventilation cut that by years."
+      }
+    },
+    "faq_g_how_long_does_a_roof_last_02": {
+      "en": {
+        "q": "How long does a metal roof last?",
+        "a": "A metal roof lasts 40 to 70 years, and thick-gauge steel or aluminum can reach 80. State Farm cites 40 to 80 years for metal versus about 20 for typical asphalt. Forbes Home notes 22 to 24 gauge panels deliver 50-plus years while thinner 25 to 29 gauge panels last 20 to 25. Copper roofs can top 70 years and zinc can top 100."
+      }
+    },
+    "faq_g_how_long_does_a_roof_last_03": {
+      "en": {
+        "q": "What roof material lasts the longest?",
+        "a": "Slate lasts longest. The National Park Service says properly installed slate roofs last 60 to 125 years or longer, and some slates have lasted over 200 years. Clay and concrete tile follow at 50 to 100 years, then zinc and copper at 70 to 100-plus. These materials cost far more upfront than asphalt and often need reinforced framing."
+      }
+    },
+    "faq_g_how_long_does_a_roof_last_04": {
+      "en": {
+        "q": "How do I know when to replace my roof?",
+        "a": "Replace the roof when repairs stack up and it nears its material lifespan: granules filling gutters, curling or brittle shingles, shingles blowing off in storms, multiple leaks, or sagging between rafters. According to Angi, roof repairs run $150 to $7,800, while replacement can reach $46,000. An annual professional inspection catches the crossover point early."
+      }
+    },
+    "faq_g_how_long_does_a_dishwasher_last_01": {
+      "en": {
+        "q": "How long does a dishwasher last on average?",
+        "a": "Most dishwashers last 9 to 13 years. Consumer Reports sets the benchmark at about 10 years based on a survey of more than 20 manufacturers, Angi says 10 to 12 years with proper care, and Bob Vila reports an average of 12 years across a 9-to-16-year range. Quality models that are well maintained can reach 15 years or more."
+      }
+    },
+    "faq_g_how_long_does_a_dishwasher_last_02": {
+      "en": {
+        "q": "Is it worth repairing a dishwasher that is 10 years old?",
+        "a": "Usually not. Apply the 50 percent rule: if the repair costs half or more of a new machine's price, replace it. At 10 years old the unit is at the end of its expected life, and Angi flags machines past that age as replacement candidates. A failing motor costs $600 or more, which tops half the price of many new models."
+      }
+    },
+    "faq_g_how_long_does_a_dishwasher_last_03": {
+      "en": {
+        "q": "What shortens a dishwasher's life the most?",
+        "a": "Hard water and heavy use. Mineral scale from hard water clogs spray arms and coats the heating element, so Consumer Reports recommends a monthly citric-acid cleaner. Running it once or twice every day also wears the parts down faster, according to Bob Vila. A clogged filter makes the pump strain on every cycle, which is why monthly cleaning matters."
+      }
+    },
+    "faq_g_how_long_does_a_dishwasher_last_04": {
+      "en": {
+        "q": "How often should you clean a dishwasher filter?",
+        "a": "Clean the filter about once a month. Consumer Reports recommends monthly rinsing of the plastic cylinder under the bottom rack, while Angi suggests every two to four weeks. Homes with hard water should also run a citric-acid-based cleaner monthly to remove scale. This two-minute habit prevents the clogs and pump strain that kill machines early."
+      }
+    },
+    "faq_g_how_long_does_a_furnace_last_01": {
+      "en": {
+        "q": "Can a furnace last 30 years?",
+        "a": "Yes, but it is rare. Carrier says high-quality systems installed by professionals and given regular care can often perform reliably for up to 30 years. Most furnaces hit the 15-to-20-year mark even with good care. Past 20 years, efficiency losses and repair frequency usually make replacement cheaper than keeping the old unit alive."
+      }
+    },
+    "faq_g_how_long_does_a_furnace_last_02": {
+      "en": {
+        "q": "How often should a furnace be inspected?",
+        "a": "Once a year, ideally in early fall before heating season starts. The ENERGY STAR checklist has the technician inspect gas or oil connections, gas pressure, burner combustion, and the heat exchanger. Check the filter yourself every month and replace it when it looks dirty, since clogged filters strain the blower motor."
+      }
+    },
+    "faq_g_how_long_does_a_furnace_last_03": {
+      "en": {
+        "q": "Should I repair a 20-year-old furnace?",
+        "a": "Usually no. At 20 years a gas furnace is at or past its full life expectancy. If the repair costs more than half the price of a new unit, or you have already paid for repairs this season, replacement is the better investment. A new ENERGY STAR qualified furnace also runs about 15 percent more efficiently than a conventional one."
+      }
+    },
+    "faq_g_how_long_does_a_furnace_last_04": {
+      "en": {
+        "q": "What is the most common cause of early furnace failure?",
+        "a": "Skipped maintenance, especially dirty filters. ENERGY STAR warns that a dirty filter increases energy costs and damages equipment, leading to early failure. Restricted airflow forces the blower to work harder and can overheat the heat exchanger. Monthly filter checks plus an annual tune-up are the cheapest life insurance a furnace can get."
+      }
+    },
+    "faq_g_how_long_does_a_fridge_last_01": {
+      "en": {
+        "q": "How long does a fridge last on average?",
+        "a": "Most refrigerators last 10 to 15 years. Consumer Reports members expect about 10 years from a new fridge, Department of Energy data shows an average of about 12 years, and the Association of Home Appliance Manufacturers counts roughly 13 years of useful life. Simple top-freezer models often outlast that average, while feature-heavy French-door units can fall short of it."
+      }
+    },
+    "faq_g_how_long_does_a_fridge_last_02": {
+      "en": {
+        "q": "Which fridge style lasts the longest?",
+        "a": "Standard top-freezer and bottom-freezer refrigerators usually last the longest, often 13 to 17 years, and well-maintained bottom-freezer units can reach 20. Side-by-side and French-door models typically run closer to 10 to 15 years because extra doors, dispensers, and ice makers add failure points. Built-in models can exceed 15 years, while compact mini fridges average only about 8 years."
+      }
+    },
+    "faq_g_how_long_does_a_fridge_last_03": {
+      "en": {
+        "q": "Is it worth replacing a compressor on an old fridge?",
+        "a": "Usually not. Compressor and other sealed-system repairs often cost $400 to $700 or more, which can approach the price of a new refrigerator. A common guideline says to replace the fridge when a repair costs more than half the replacement price or the unit is past 10 years old. When the sealed system fails on an older unit, shop rather than repair."
+      }
+    },
+    "faq_g_how_long_does_a_fridge_last_04": {
+      "en": {
+        "q": "How often should you clean refrigerator condenser coils?",
+        "a": "Consumer Reports recommends vacuuming the condenser coils every six months, and the Department of Energy says at least once a year. If your kitchen is greasy or dusty or you have pets, Whirlpool advises cleaning the coils every two to three months. Dirty coils trap heat, cut efficiency, and can eventually cause a breakdown."
+      }
+    },
+    "faq_g_how_long_does_a_water_heater_last_01": {
+      "en": {
+        "q": "How long does a water heater last on average?",
+        "a": "Most tank water heaters last 8 to 12 years. Rheem says gas units average about 10 years and electric units often last slightly longer. Tankless models run far longer, at 15 to 20-plus years, and Rinnai reports two decades or more of service. Water hardness and maintenance move every one of these numbers, so the care a unit receives matters as much as the brand."
+      }
+    },
+    "faq_g_how_long_does_a_water_heater_last_02": {
+      "en": {
+        "q": "How long does a tankless water heater last?",
+        "a": "A tankless water heater typically lasts 15 to 20-plus years, roughly double a tank unit. Rheem puts tankless life at 15 to 20-plus years with proper care, and Rinnai says its customers see two decades plus of service while most tanks get replaced at 10 to 15 years. Annual descaling in hard-water homes protects the heat exchanger, the part that usually decides the timeline."
+      }
+    },
+    "faq_g_how_long_does_a_water_heater_last_03": {
+      "en": {
+        "q": "Can a water heater last 20 years?",
+        "a": "Yes, but only with help. A tank unit that reaches 20 years almost certainly had its anode rod replaced on schedule and was flushed every year. The anode rod controls the clock: This Old House calls replacing it a simple, effective way to extend the life of the heater. Tankless units reach 20-plus years much more routinely, since they store no water to corrode."
+      }
+    },
+    "faq_g_how_long_does_a_water_heater_last_04": {
+      "en": {
+        "q": "What are the signs a water heater needs replacing?",
+        "a": "Rusty or discolored hot water, rumbling or popping sounds from hardened sediment, and water leaking at the base of the tank are the clearest signs. A leak at the base means the tank itself is failing, so replacement is urgent. Rheem also flags a unit that is 10 to 15 or more years old with recurring problems, repeated repairs in a short stretch, and any repair costing more than half the price of a new unit, as replace-now cases."
+      }
+    },
+    "faq_g_how_long_does_butter_last_01": {
+      "en": {
+        "q": "How long does butter last in the fridge?",
+        "a": "Salted butter keeps its best quality for 1 to 3 months in the refrigerator, and MSU Extension relays USDA guidance to use it within 1 to 2 months of purchase. Unsalted butter is best used sooner than salted because it lacks salt as a preservative. Producer Minerva Dairy stretches salted butter to 3 to 5 months, but that figure comes from a brand, not the USDA or a university."
+      }
+    },
+    "faq_g_how_long_does_butter_last_02": {
+      "en": {
+        "q": "How long does butter last on the counter?",
+        "a": "USDA guidance, relayed by MSU Extension, rates room-temperature storage at just 1 to 2 days, and University of Maine Extension allows 1 to 2 days for salted butter below 70°F in a covered dish. Healthline says salted butter can last several days to a couple of weeks, but quality drops fast. Never keep unsalted butter on the counter."
+      }
+    },
+    "faq_g_how_long_does_butter_last_03": {
+      "en": {
+        "q": "How long does butter last in the freezer?",
+        "a": "Frozen butter keeps for 6 to 9 months per USDA FoodKeeper guidance. Healthline reports that quarter-pound sticks last up to 12 months at 0°F (8 months at 14°F), and bulk blocks up to 18 months. Wrap it in foil, plastic wrap, or a freezer bag rather than wax paper, and thaw it overnight in the fridge."
+      }
+    },
+    "faq_g_how_long_does_butter_last_04": {
+      "en": {
+        "q": "How can you tell if butter has gone rancid?",
+        "a": "Rancid butter smells sour, stale, or paint-like and tastes sour or off. The surface may turn a darker yellow or take on a brownish tint, which University of Maine Extension ties to fat oxidizing. Rancidity is a flavor problem more than a safety one, but it ruins whatever you make, so discard it. Any mold means throw the stick away."
+      }
+    },
+    "faq_g_how_long_does_coffee_last_01": {
+      "en": {
+        "q": "How long does ground coffee last after opening?",
+        "a": "An opened bag or canister of ground coffee holds peak flavor for about one to two weeks at room temperature, according to the National Coffee Association. Unopened, sealed ground coffee stays tasty for roughly three to five months. Ground coffee stales fast because grinding exposes far more surface area to air, so buy small amounts and grind whole beans right before brewing when you can."
+      }
+    },
+    "faq_g_how_long_does_coffee_last_02": {
+      "en": {
+        "q": "How long does brewed coffee last in the fridge?",
+        "a": "Plain black coffee stored in a sealed container in the refrigerator is generally safe to drink for three to four days, though the flavor drops long before that. Coffee with milk or creamer should sit out no more than two hours and is best finished the same day. If refrigerated coffee smells sour, looks cloudy, or shows any film, pour it out."
+      }
+    },
+    "faq_g_how_long_does_coffee_last_03": {
+      "en": {
+        "q": "Can old coffee make you sick?",
+        "a": "Dry coffee, whether beans, grounds, or instant, almost never makes you sick, because its low moisture keeps bacteria and mold from growing. It just tastes stale, flat, or papery. The exceptions are brewed coffee kept too long and damp used grounds, which can grow mold. If you see mold, smell rancidity or sourness, or find wet clumped grounds, throw the coffee out."
+      }
+    },
+    "faq_g_how_long_does_coffee_last_04": {
+      "en": {
+        "q": "Is it better to freeze or refrigerate coffee beans?",
+        "a": "Neither, for beans you brew daily. The fridge exposes coffee to moisture and food odors, which it absorbs eagerly, and the National Coffee Association finds beans last only about two weeks refrigerated. The freezer suits long-term storage better, roughly three to four months. Freeze unopened bags in portions, keep them tightly sealed, and never return thawed coffee to the freezer, because condensation speeds staling."
+      }
+    },
+    "faq_g_how_long_does_peanut_butter_last_01": {
+      "en": {
+        "q": "How long does peanut butter last after opening?",
+        "a": "Conventional peanut butter lasts 2 to 3 months in the pantry after opening, or 6 to 9 months refrigerated. Natural peanut butter keeps about 1 month at room temperature and is best refrigerated, where it lasts around 6 months. Always check for a rancid smell or bitter taste before using an older jar."
+      }
+    },
+    "faq_g_how_long_does_peanut_butter_last_02": {
+      "en": {
+        "q": "Can you eat peanut butter after the best-by date?",
+        "a": "Usually, yes. Dates on peanut butter are quality guides, not safety deadlines. Because peanut butter is low in moisture, bacteria cannot grow in it; the real risk is rancid oil. If a jar past its date still smells sweet and nutty and tastes normal, it is safe to eat. Mold, however, means toss it."
+      }
+    },
+    "faq_g_how_long_does_peanut_butter_last_03": {
+      "en": {
+        "q": "Why is there oil on top of my peanut butter?",
+        "a": "Oil separation is completely normal, especially in natural peanut butter, which contains no stabilizers. The peanut oil rises because it is lighter than the solids. Stir it back in thoroughly — do not pour it off — then refrigerate the jar. Separation is not a sign that the peanut butter has spoiled."
+      }
+    },
+    "faq_g_how_long_does_peanut_butter_last_04": {
+      "en": {
+        "q": "Do you have to refrigerate peanut butter?",
+        "a": "Conventional peanut butter with stabilizers does not need refrigeration; the pantry works for a few months after opening. Natural peanut butter is different. Its oils separate and oxidize faster at room temperature, so Colorado State University Extension recommends refrigerating it after opening to extend shelf life and prevent separation."
+      }
+    },
+    "faq_g_how_long_is_a_day_in_minecraft_01": {
+      "en": {
+        "q": "How long is a full day in Minecraft?",
+        "a": "A day in Minecraft lasts 20 minutes of real time from sunrise to sunrise. The game runs at 20 ticks per second, so a full day-night cycle is 24,000 game ticks. The length is the same in Java Edition and Bedrock Edition, on every platform, and in every world type."
+      }
+    },
+    "faq_g_how_long_is_a_day_in_minecraft_02": {
+      "en": {
+        "q": "How long is night in Minecraft?",
+        "a": "The night segment runs from tick 13,000 to tick 23,000, which is 8 minutes 20 seconds of real time. Sunset and sunrise add about 50 seconds each. In clear weather, hostile mobs can spawn outdoors from tick 13,188 to tick 22,812 in Java Edition (22,813 in Bedrock), so almost the whole night is dangerous."
+      }
+    },
+    "faq_g_how_long_is_a_day_in_minecraft_03": {
+      "en": {
+        "q": "Does sleeping skip the whole night in Minecraft?",
+        "a": "Yes. When every player in the Overworld is in a bed, the game skips the rest of the night after about 5 seconds and jumps the clock to sunrise at tick 0. You can sleep only at night or during thunderstorms. Sleeping also clears stormy weather and resets your phantom timer."
+      }
+    },
+    "faq_g_how_long_is_a_day_in_minecraft_04": {
+      "en": {
+        "q": "How long is a full moon phase cycle in Minecraft?",
+        "a": "A full lunar cycle takes 8 Minecraft days, or 2 hours 40 minutes of real playtime. The moon moves to its next phase at every sunrise, and the game calculates the phase as the day count modulo 8. Swamp slimes spawn most often under a full moon and never under a new moon."
+      }
+    },
+    "faq_g_how_long_is_a_fortnite_match_01": {
+      "en": {
+        "q": "How long is a full Fortnite Battle Royale match?",
+        "a": "A full match runs about 20 to 23 minutes in both Build and Zero Build. The storm's complete phase schedule, waits and shrinks included, totals 22 minutes 38 seconds under the current v41.20 numbers, and the last players standing usually win just before that clock runs out. Die early, though, and your personal match can end within two or three minutes of landing."
+      }
+    },
+    "faq_g_how_long_is_a_fortnite_match_02": {
+      "en": {
+        "q": "How long is a season in Fortnite?",
+        "a": "A Fortnite season usually lasts 10 to 12 weeks, or about 70 to 85 days. Chapter 7 Season 4 runs from August 20 to November 1, 2026, which is 73 days, or roughly ten and a half weeks. The two before it ran 75 and 78 days. Mini seasons occasionally compress to about a month, and some extended seasons pass 100 days before the next chapter arrives."
+      }
+    },
+    "faq_g_how_long_is_a_fortnite_match_03": {
+      "en": {
+        "q": "How long do Team Rumble and Respawn Rumble matches last?",
+        "a": "Team Rumble, the old 16v16 respawn mode, was removed on June 18, 2025 and replaced by Respawn Rumble. Respawn Rumble is an 8v8 Zero Build team deathmatch where the first team to 40 eliminations wins, and matches typically run 15 to 20 minutes. Because respawns stay on the entire time, you play until the score target instead of watching after one death."
+      }
+    },
+    "faq_g_how_long_is_a_fortnite_match_04": {
+      "en": {
+        "q": "Why do my Fortnite matches feel shorter than 20 minutes?",
+        "a": "Because elimination ends your run, most players never see the final circle. The 20 to 23 minute figure only applies if you survive that long. Fall in an early fight and the match is over for you within a few minutes, while the lobby plays on without you. Queueing, loading, and the bus ride add about two more minutes of overhead to every session."
+      }
+    },
+    "faq_g_how_long_is_a_valorant_match_01": {
+      "en": {
+        "q": "How long is a Valorant Competitive match with overtime?",
+        "a": "A Competitive match runs 30-40 minutes in regulation. At 12-12 it enters overtime pairs: two rounds, one on each side, and a team must win both to close the match. Each pair adds roughly 4 minutes, or 6-7 when both rounds run the full clock, so one overtime lands near 45-50 minutes and five or more pairs push the game past an hour. A draw vote can end it early."
+      }
+    },
+    "faq_g_how_long_is_a_valorant_match_02": {
+      "en": {
+        "q": "How long is one round in Valorant?",
+        "a": "Each round starts with a 30-second buy phase, which stretches to 45 seconds for the opening round of each half. The action phase then runs up to 100 seconds, or 1:40. If the Spike gets planted, the clock resets to a 45-second spike timer, and a defuse takes 7 seconds. A typical round, buy phase included, takes about one and a half to two minutes."
+      }
+    },
+    "faq_g_how_long_is_a_valorant_match_03": {
+      "en": {
+        "q": "What is the shortest Valorant mode?",
+        "a": "Deathmatch and Escalation are the shortest, at roughly 7-9 minutes each. Deathmatch is a 12-player free-for-all that ends at 40 kills or when its 9-minute timer expires. Escalation is a 5v5 race through 12 weapon levels, capped at 10 minutes. Spike Rush sits just behind at 8-12 minutes, played as a first-to-4 with a Spike in every attacker's hands."
+      }
+    },
+    "faq_g_how_long_is_a_valorant_match_04": {
+      "en": {
+        "q": "Can a Valorant match last longer than an hour?",
+        "a": "Yes, but only in Competitive. Unrated caps a 12-12 tie with a single sudden-death Endgame round, so even its worst case is 25 rounds, usually 40-50 minutes. Competitive repeats two-round overtime pairs until one team sweeps both, and each pair adds roughly 4 minutes. Matches that trade five or more overtime pairs routinely run 60 minutes or more."
+      }
+    },
+    "faq_g_best_time_to_visit_cancun_01": {
+      "en": {
+        "q": "What is the best month to visit Cancun?",
+        "a": "For most travelers, late November or early December. The dry season has just started, rain stays light, daytime highs sit in the low to mid 80s Fahrenheit, sargassum has cleared, and high-season crowds and prices have not fully arrived. January and February are equally dry but noticeably busier."
+      }
+    },
+    "faq_g_best_time_to_visit_cancun_02": {
+      "en": {
+        "q": "What months should you avoid in Cancun?",
+        "a": "September and early October are the riskiest window: they are the wettest months of the year and fall inside the mid-August to mid-October peak of Atlantic hurricane activity that NOAA identifies. They are also the cheapest. March is the month to avoid for a different reason: spring break crowds and the highest prices of the year."
+      }
+    },
+    "faq_g_best_time_to_visit_cancun_03": {
+      "en": {
+        "q": "When can you swim with whale sharks in Cancun?",
+        "a": "The season runs from about June 15 to September 15, with dates set each year by CONANP, Mexico's protected areas agency. The sharks gather north of Isla Mujeres and Holbox in the largest known aggregation of the species. Book between mid-July and mid-August for the highest sighting odds. Tours are snorkel-only."
+      }
+    },
+    "faq_g_best_time_to_visit_cancun_04": {
+      "en": {
+        "q": "What is the cheapest time to visit Cancun?",
+        "a": "Late August through October, with September usually the cheapest month of the year. It is the low season, when the official Visit Mexico site promotes unbeatable prices and special offers. You trade lower rates for the wettest weather, the peak of hurricane season, and summer seaweed. November keeps many discounts while the rain tapers off."
+      }
+    },
+    "faq_g_best_time_to_visit_banff_01": {
+      "en": {
+        "q": "What is the single best month to visit Banff?",
+        "a": "For most travellers it is July: every trail is snow-free, the lakes are at full turquoise, and daytime highs average 22°C in the townsite. If you would trade some warmth for solitude and colour, late September wins instead, with golden larches, mild 10-18°C afternoons and far fewer people on the same trails."
+      }
+    },
+    "faq_g_best_time_to_visit_banff_02": {
+      "en": {
+        "q": "When do Lake Louise and Moraine Lake thaw?",
+        "a": "High-elevation lakes in Banff, including Lake Louise, Moraine Lake and Peyto Lake, usually start to thaw in early June and reach full turquoise through the month. Lower lakes such as Two Jack and Vermilion open earlier, in mid-to-late May. From December through May, expect Louise and Moraine to be frozen; Lake Louise typically freezes over in late November."
+      }
+    },
+    "faq_g_best_time_to_visit_banff_03": {
+      "en": {
+        "q": "Can I drive my own car to Moraine Lake?",
+        "a": "No. Moraine Lake Road has been closed to personal vehicles year-round since 2023. You must reserve a seat on the Parks Canada shuttle (2026 season June 1 to October 12), ride a licensed commercial shuttle, or stay at Moraine Lake Lodge. Reservations for 2026 opened April 15 at 8 a.m. MDT."
+      }
+    },
+    "faq_g_best_time_to_visit_banff_04": {
+      "en": {
+        "q": "When is Banff cheapest and least crowded?",
+        "a": "Late April through May and late October through November combine the lowest hotel rates with the thinnest crowds. The trade-off is snowy high trails, frozen lakes and reduced services. September after the larch peak is the best-value compromise: prime hiking weather, dropping prices and much quieter trailheads than July and August."
+      }
+    },
+    "faq_g_how_long_is_a_rugby_match_01": {
+      "en": {
+        "q": "How long is a rugby union match in total?",
+        "a": "A rugby union match is 80 minutes of playing time, split into two 40-minute halves, under World Rugby Law 5. Add a half-time break of up to 15 minutes plus injuries, TMO reviews and other stoppages, and a typical match runs about 100 to 110 minutes from kick-off to final whistle. Stoppage-heavy games can push toward two hours, since play continues until the ball goes dead."
+      }
+    },
+    "faq_g_how_long_is_a_rugby_match_02": {
+      "en": {
+        "q": "How long is half-time in rugby?",
+        "a": "In rugby union, Law 5 caps the half-time interval at 15 minutes, and top competitions such as the Six Nations use close to the full break. Rugby league's laws set a five-minute interval that can be extended or reduced, so professional games often take longer than the minimum. Rugby sevens has the shortest break: no more than two minutes between its seven-minute halves."
+      }
+    },
+    "faq_g_how_long_is_a_rugby_match_03": {
+      "en": {
+        "q": "How long is a rugby sevens match?",
+        "a": "A sevens match is 14 minutes of playing time — two halves of seven minutes each — with a half-time break of no more than two minutes, per the World Rugby sevens variations. Competition finals may be extended to 20 minutes, with two halves of up to 10 minutes. Knockout ties that end level go to extra-time periods of no more than five minutes after a one-minute break; in US competition, USA Rugby describes a five-minute overtime in which the first team to score wins."
+      }
+    },
+    "faq_g_how_long_is_a_rugby_match_04": {
+      "en": {
+        "q": "What happens if a rugby match is tied?",
+        "a": "In most competitions the draw simply stands — the Six Nations awards two points to each team. In knockout rugby, Rugby World Cup rules call for extra time of 10 minutes each way after a five-minute interval. If still tied, teams play sudden death of up to 10 minutes, where the first score wins. If that separates nobody, a kicking competition from the 22-metre line decides it."
+      }
     }
   },
   "quickUseIdeas": {

@@ -117,6 +117,7 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
                     <li><a href="<?php echo esc_url(home_url('/sports')); ?>">Sports Game Timers</a></li>
                     <li><a href="<?php echo esc_url(home_url('/entertainment')); ?>">Concerts, Movies &amp; Shows</a></li>
                     <li><a href="<?php echo esc_url(home_url('/tech')); ?>">Battery &amp; Charge Times</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/gaming')); ?>">Gaming Match Lengths</a></li>
                     <li><a href="<?php echo esc_url(home_url('/food-storage')); ?>">Food Storage &amp; Shelf Life</a></li>
                 </ul>
             </div>

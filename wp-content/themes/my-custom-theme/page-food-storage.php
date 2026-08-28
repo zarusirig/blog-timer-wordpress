@@ -5,12 +5,12 @@ get_header(); ?>
   <div class="container container--narrow">
     <?php blogtimer_render_breadcrumb_nav([['label'=>'Home','url'=>home_url('/')],['label'=>'Food Storage Timers','url'=>null]]); ?>
     <h1 class="page-h1">How Long Does Food Last? Fridge &amp; Pantry Shelf Life</h1>
-    <p class="page-intro">USDA-cited storage times for the foods people actually google: hard-boiled eggs, raw eggs, cooked chicken, rice, cheesecake, rotisserie chicken, flour and honey &mdash; plus the spoilage signs and food-safety rules that decide toss-versus-eat.</p>
+    <p class="page-intro">USDA-cited storage times for the foods people actually google: hard-boiled eggs, raw eggs, cooked chicken, rice, cheesecake, rotisserie chicken, flour, honey, butter, coffee and peanut butter &mdash; plus the spoilage signs and food-safety rules that decide toss-versus-eat.</p>
     <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
       <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);flex-shrink:0;">FS</div>
       <div style="flex:1;min-width:240px;">
         <div style="font-size:var(--text-sm);color:var(--color-text-secondary);">By <a href="/author-suraj-giri" style="color:var(--color-accent);text-decoration:none;font-weight:600;">Suraj Giri</a></div>
-        <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-08-25 &middot; Curated food-storage hub</div>
+        <div style="font-size:0.8125rem;color:var(--color-text-muted,#7c87a8);margin-top:2px;">Last updated: 2026-08-28 &middot; Curated food-storage hub</div>
       </div>
     </div>
     <div class="card" style="padding:var(--space-5);border-left:3px solid var(--color-accent);margin-top:var(--space-5);">
@@ -30,6 +30,9 @@ get_header(); ?>
       <a class="card usecase-card" href="/guides/how-long-does-cheesecake-last" style="text-decoration:none;"><div class="usecase-card-icon">CK</div><h3>Cheesecake</h3><p>5&ndash;7 days refrigerated; freeze for 2&ndash;3 months.</p></a>
       <a class="card usecase-card" href="/guides/how-long-does-flour-last" style="text-decoration:none;"><div class="usecase-card-icon">FL</div><h3>Flour</h3><p>White 1&ndash;2 years; whole wheat just 3&ndash;6 months.</p></a>
       <a class="card usecase-card" href="/guides/how-long-does-honey-last" style="text-decoration:none;"><div class="usecase-card-icon">HN</div><h3>Honey</h3><p>Indefinite &mdash; crystallization is not spoilage.</p></a>
+      <a class="card usecase-card" href="/guides/how-long-does-butter-last" style="text-decoration:none;"><div class="usecase-card-icon">BU</div><h3>Butter</h3><p>1&ndash;3 months in the fridge; up to a year frozen.</p></a>
+      <a class="card usecase-card" href="/guides/how-long-does-coffee-last" style="text-decoration:none;"><div class="usecase-card-icon">CO</div><h3>Coffee</h3><p>Beans peak 2&ndash;4 weeks post-roast; ground fades faster.</p></a>
+      <a class="card usecase-card" href="/guides/how-long-does-peanut-butter-last" style="text-decoration:none;"><div class="usecase-card-icon">PB</div><h3>Peanut Butter</h3><p>Opened jar 2&ndash;3 months in the pantry; natural needs the fridge.</p></a>
     </div>
   </div></section>
 

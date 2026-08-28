@@ -562,6 +562,7 @@ class Timer_Engine
                 'sports' => 'How long is a soccer, baseball, basketball, hockey or football game? Regulation playing time vs. real broadcast length, plus halftime, quarter and period clocks for every major sport.',
                 'entertainment' => 'How long is Hamilton, a concert, a movie, or a Broadway show? Runtimes, intermissions and openers — so you know the full door-to-door commitment before you buy the ticket.',
                 'tech' => 'How long do AirPods last and take to charge? iPhone battery lifespan and cycles, Nintendo Switch charge times — the battery and charging numbers for everyday devices.',
+                'gaming' => 'How long is a Fortnite match, a Valorant game, or a full Minecraft day? Real-world session lengths by game and mode, with official-rule verification — so you play on a clock, not past bedtime.',
                 'food-storage' => 'How long do hard-boiled eggs, raw eggs, cooked chicken, rice, cheesecake and flour last? USDA-cited fridge and pantry storage times, spoilage signs and the 2-hour rule.',
                 'workout-timers' => 'Free online workout timers for HIIT, Tabata, EMOM, circuits, and rounds. Customizable work and rest intervals with loud beeps to keep your training on pace.',
                 'sleep-meditation-timers' => 'Free online sleep and meditation timers for rest, breathwork, and mindfulness. Gentle fade-outs and quiet bells help you unwind, meditate, and fall asleep.',

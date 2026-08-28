@@ -31,6 +31,7 @@ get_header(); ?>
       <a class="card usecase-card" href="/guides/how-long-is-a-boxing-match" style="text-decoration:none;"><div class="usecase-card-icon">BX</div><h3>Boxing</h3><p>3-minute rounds; a 12-round championship bout runs about an hour.</p></a>
       <a class="card usecase-card" href="/guides/how-long-does-a-marathon-take" style="text-decoration:none;"><div class="usecase-card-icon">M</div><h3>Marathon</h3><p>Elites finish near 2 hours; the average finisher takes 4+.</p></a>
       <a class="card usecase-card" href="/guides/how-long-is-a-nascar-race" style="text-decoration:none;"><div class="usecase-card-icon">NA</div><h3>NASCAR</h3><p>300&ndash;600 miles, typically 3&ndash;3.5 hours; cautions stretch it.</p></a>
+      <a class="card usecase-card" href="/guides/how-long-is-a-rugby-match" style="text-decoration:none;"><div class="usecase-card-icon">RU</div><h3>Rugby</h3><p>80 minutes (2&times;40) of running clock &mdash; about 1 hour 45 door-to-door.</p></a>
     </div>
   </div></section>
 

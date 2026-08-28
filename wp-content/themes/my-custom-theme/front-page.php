@@ -455,6 +455,11 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                     <h3>Battery &amp; Charge Times</h3>
                     <p>AirPods battery life and charge times, iPhone battery cycles, Nintendo Switch charging &mdash; both clocks covered.</p>
                 </a>
+                <a class="card usecase-card" href="<?php echo esc_url(home_url('/gaming')); ?>" style="text-decoration:none;">
+                    <div class="usecase-card-icon">&#127918;</div>
+                    <h3>Gaming Match Lengths</h3>
+                    <p>How long a Fortnite match runs, a Valorant game takes, and a full Minecraft day lasts &mdash; by mode, with the clock math.</p>
+                </a>
                 <a class="card usecase-card" href="<?php echo esc_url(home_url('/food-storage')); ?>" style="text-decoration:none;">
                     <div class="usecase-card-icon">&#129372;</div>
                     <h3>Food Storage &amp; Shelf Life</h3>
@@ -498,7 +503,7 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                 <a class="card usecase-card" href="<?php echo esc_url(home_url('/household')); ?>" style="text-decoration:none;">
                     <div class="usecase-card-icon">&#127968;</div>
                     <h3>Household Timers</h3>
-                    <p>How often to wash sheets and towels, and how long mattresses and pillows last before replacing.</p>
+                    <p>How often to wash sheets and towels &mdash; and how long roofs, fridges, dishwashers, water heaters and furnaces last.</p>
                 </a>
                 <a class="card usecase-card" href="<?php echo esc_url(home_url('/parenting')); ?>" style="text-decoration:none;">
                     <div class="usecase-card-icon">&#128118;</div>

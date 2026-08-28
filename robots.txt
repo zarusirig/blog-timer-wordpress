@@ -6,7 +6,7 @@
 # rules in the theme's `robots_txt` filter. Keep both in sync if you edit either.
 # sitemap-fresh.xml is the ONLY sitemap (WP core sitemaps are disabled).
 
-Sitemap: https://theblogtimer.com/sitemap-fresh.xml?v=2026-08-27
+Sitemap: https://theblogtimer.com/sitemap-fresh.xml?v=2026-08-28
 # v= versioned on purpose: the platform page-cache can hold the bare URL for
 # weeks; a versioned URL always serves the freshly-built sitemap. Bump the
 # version whenever a content deploy adds URLs.
@@ -63,6 +63,7 @@ Allow: /science
 Allow: /sports
 Allow: /entertainment
 Allow: /tech
+Allow: /gaming
 Allow: /food-storage
 Allow: /chess-clock
 Allow: /egg-timer

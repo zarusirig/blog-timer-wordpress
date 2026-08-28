@@ -31,6 +31,8 @@ get_header(); ?>
       <a class="card usecase-card" href="/guides/best-time-to-visit-puerto-rico" style="text-decoration:none;"><div class="usecase-card-icon">PR</div><h3>Puerto Rico</h3><p>Mid-December&ndash;April for dry warmth; hurricane risk peaks in September.</p></a>
       <a class="card usecase-card" href="/guides/best-time-to-visit-alaska" style="text-decoration:none;"><div class="usecase-card-icon">A</div><h3>Alaska</h3><p>Mid-June&ndash;August for long days and wildlife; September for fall color and aurora.</p></a>
       <a class="card usecase-card" href="/guides/best-time-to-visit-hawaii" style="text-decoration:none;"><div class="usecase-card-icon">H</div><h3>Hawaii</h3><p>Mid-April&ndash;early June and September&ndash;October: great weather, fewer crowds.</p></a>
+      <a class="card usecase-card" href="/guides/best-time-to-visit-cancun" style="text-decoration:none;"><div class="usecase-card-icon">CA</div><h3>Cancun</h3><p>December&ndash;April dry and busy; late August&ndash;October cheapest, hurricane watch.</p></a>
+      <a class="card usecase-card" href="/guides/best-time-to-visit-banff" style="text-decoration:none;"><div class="usecase-card-icon">BA</div><h3>Banff</h3><p>June&ndash;August for hiking; late September for golden larches and thin crowds.</p></a>
       <a class="card usecase-card" href="/guides/best-time-to-book-flights" style="text-decoration:none;"><div class="usecase-card-icon">F</div><h3>Booking Flights</h3><p>Domestic 1&ndash;3 months out, international 2&ndash;6; midweek travel is cheapest.</p></a>
     </div>
   </div></section>

@@ -58,6 +58,7 @@ $hubs = [
     'hub_sports' => ['url' => '/sports/', 'label' => 'Sports Timers'],
     'hub_entertainment' => ['url' => '/entertainment/', 'label' => 'Entertainment Timers'],
     'hub_tech' => ['url' => '/tech/', 'label' => 'Tech Timers'],
+    'hub_gaming' => ['url' => '/gaming/', 'label' => 'Gaming Timers'],
     'hub_foodstorage' => ['url' => '/food-storage/', 'label' => 'Food Storage Timers'],
     'hub_guides' => ['url' => '/guides/', 'label' => 'All Guides'],
 ];

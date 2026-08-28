@@ -1146,6 +1146,7 @@ function blogtimer_indexable_page_slugs()
         'sports',
         'entertainment',
         'tech',
+        'gaming',
         'food-storage',
     ];
 }
@@ -1250,7 +1251,7 @@ add_filter('robots_txt', function ($output, $public) {
     // The ?v= version matches the static /robots.txt: the platform page-cache
     // can hold the bare sitemap URL for weeks; a versioned URL always serves
     // the freshly-built sitemap. Bump the version on content deploys.
-    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml?v=2026-08-27') . "\n\n";
+    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml?v=2026-08-28') . "\n\n";
 
     // Allow all legitimate bots to crawl whitelisted content
     $robots .= "User-agent: *\n";
@@ -1320,6 +1321,7 @@ add_filter('robots_txt', function ($output, $public) {
     $robots .= "Allow: /sports\n";
     $robots .= "Allow: /entertainment\n";
     $robots .= "Allow: /tech\n";
+    $robots .= "Allow: /gaming\n";
     $robots .= "Allow: /food-storage\n";
     $robots .= "Allow: /chess-clock\n";
     $robots .= "Allow: /egg-timer\n";
