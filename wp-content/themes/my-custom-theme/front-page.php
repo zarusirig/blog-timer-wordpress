@@ -14,6 +14,149 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
 ?>
 
 <main id="main" tabindex="-1" class="site-main">
+
+    <!-- GUEST BLOG: news-style latest-articles block, directly below the menu.
+         Renders nothing until the first guest post is published, so the homepage
+         stays byte-identical for timer-only traffic. -->
+    <?php
+    $gp_news = new WP_Query([
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'posts_per_page' => 10,
+        'no_found_rows' => true,
+        'ignore_sticky_posts' => true,
+    ]);
+    ?>
+    <section class="gp-news-section" aria-label="Latest articles">
+        <div class="container">
+            <header class="gp-news-head">
+                <h2 class="gp-news-title"><span class="gp-news-dot" aria-hidden="true"></span>Latest Articles</h2>
+                <a class="gp-news-viewall" href="<?php echo esc_url(home_url('/blog')); ?>">View all &rarr;</a>
+            </header>
+
+            <?php if ($gp_news->have_posts()) :
+                $gp_all = $gp_news->posts;
+                $gp_featured = array_shift($gp_all);
+                $gp_latest = array_slice($gp_all, 0, 4);
+                $gp_picks = array_slice($gp_all, 4, 3);
+                $gp_cols = !empty($gp_picks) ? 'gp-news--three' : (!empty($gp_latest) ? 'gp-news--two' : 'gp-news--single');
+                $gp_cat_of = static function ($p) {
+                    $c = get_the_category($p->ID);
+                    return $c ? $c[0] : null;
+                };
+                ?>
+
+                <div class="gp-news-grid <?php echo esc_attr($gp_cols); ?>">
+
+                    <!-- FEATURED -->
+                    <article class="gp-news-feature">
+                        <a class="gp-news-feature__media" href="<?php echo esc_url(get_permalink($gp_featured->ID)); ?>" tabindex="-1" aria-hidden="true">
+                            <?php
+                            if (has_post_thumbnail($gp_featured->ID)) {
+                                echo get_the_post_thumbnail($gp_featured->ID, 'large', ['loading' => 'lazy']);
+                            } else {
+                                echo '<span class="gp-news-placeholder"></span>';
+                            }
+                            ?>
+                        </a>
+                        <div class="gp-news-feature__body">
+                            <?php $gp_fc = $gp_cat_of($gp_featured); ?>
+                            <?php if ($gp_fc): ?>
+                                <a class="gp-kicker" href="<?php echo esc_url(get_term_link($gp_fc)); ?>"><?php echo esc_html($gp_fc->name); ?></a>
+                            <?php endif; ?>
+                            <h3 class="gp-news-feature__title">
+                                <a href="<?php echo esc_url(get_permalink($gp_featured->ID)); ?>"><?php echo esc_html(get_the_title($gp_featured->ID)); ?></a>
+                            </h3>
+                            <p class="gp-news-feature__deck">
+                                <?php echo esc_html(wp_trim_words(wp_strip_all_tags($gp_featured->post_excerpt ?: $gp_featured->post_content), 26, '…')); ?>
+                            </p>
+                            <p class="gp-card-meta">
+                                By <?php echo esc_html(get_the_author_meta('display_name', $gp_featured->post_author)); ?>
+                                &middot; <?php echo esc_html(get_the_date('M j, Y', $gp_featured->ID)); ?>
+                                &middot; <?php echo esc_html((string) blogtimer_read_time($gp_featured->ID)); ?> min read
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- THE LATEST (text rail) -->
+                    <?php if (!empty($gp_latest)): ?>
+                        <div class="gp-news-latest">
+                            <h3 class="gp-news-rail-title">The Latest</h3>
+                            <ul>
+                                <?php foreach ($gp_latest as $gp_item): $gp_lc = $gp_cat_of($gp_item); ?>
+                                    <li class="gp-news-latest__item">
+                                        <span class="gp-news-dot" aria-hidden="true"></span>
+                                        <a href="<?php echo esc_url(get_permalink($gp_item->ID)); ?>"><?php echo esc_html(get_the_title($gp_item->ID)); ?></a>
+                                        <p class="gp-card-meta">
+                                            <?php echo esc_html(get_the_date('M j, Y', $gp_item->ID)); ?>
+                                            <?php if ($gp_lc): ?> / <?php echo esc_html($gp_lc->name); ?><?php endif; ?>
+                                        </p>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- EDITOR'S PICKS (thumbnail rail) -->
+                    <?php if (!empty($gp_picks)): ?>
+                        <aside class="gp-news-picks">
+                            <h3 class="gp-news-rail-title"><span class="gp-kicker">Curated</span> Editor&rsquo;s Picks</h3>
+                            <ul>
+                                <?php foreach ($gp_picks as $gp_item): $gp_pc = $gp_cat_of($gp_item); ?>
+                                    <li class="gp-news-pick">
+                                        <a class="gp-news-pick__media" href="<?php echo esc_url(get_permalink($gp_item->ID)); ?>" tabindex="-1" aria-hidden="true">
+                                            <?php
+                                            if (has_post_thumbnail($gp_item->ID)) {
+                                                echo get_the_post_thumbnail($gp_item->ID, 'thumbnail', ['loading' => 'lazy']);
+                                            } else {
+                                                echo '<span class="gp-news-placeholder"></span>';
+                                            }
+                                            ?>
+                                        </a>
+                                        <div class="gp-news-pick__body">
+                                            <?php if ($gp_pc): ?>
+                                                <a class="gp-kicker" href="<?php echo esc_url(get_term_link($gp_pc)); ?>"><?php echo esc_html($gp_pc->name); ?></a>
+                                            <?php endif; ?>
+                                            <h4><a href="<?php echo esc_url(get_permalink($gp_item->ID)); ?>"><?php echo esc_html(get_the_title($gp_item->ID)); ?></a></h4>
+                                            <p class="gp-card-meta">
+                                                <?php echo esc_html(get_the_date('M j, Y', $gp_item->ID)); ?>
+                                                / <?php echo esc_html((string) blogtimer_read_time($gp_item->ID)); ?> min
+                                            </p>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </aside>
+                    <?php endif; ?>
+
+                </div>
+            <?php
+            else :
+                // No posts published yet: show the topic hubs instead, so the
+                // section is always present and the 9 archives get homepage links.
+                ?>
+                <div class="gp-topics-inline">
+                    <?php
+                    foreach (blogtimer_indexable_category_slugs() as $gp_topic_slug) {
+                        $gp_topic_term = get_term_by('slug', $gp_topic_slug, 'category');
+                        if ($gp_topic_term && !is_wp_error($gp_topic_term)) {
+                            printf(
+                                '<a class="gp-topic-chip" href="%s">%s</a>',
+                                esc_url(get_term_link($gp_topic_term)),
+                                esc_html($gp_topic_term->name)
+                            );
+                        }
+                    }
+                    ?>
+                </div>
+                <p class="gp-news-empty">Guest articles go live here as our contributors publish. Want to write for us? <a href="<?php echo esc_url(home_url('/write-for-us')); ?>">See the guidelines</a>.</p>
+            <?php
+            endif;
+            wp_reset_postdata();
+            ?>
+        </div>
+    </section>
+
     <!-- HERO -->
     <section class="hero">
         <div class="container">
@@ -561,7 +704,7 @@ $guide_cluster_terms = blogtimer_get_taxonomy_terms('guide_cluster', ['pomodoro'
                 <!-- Study spotlight: timed exam rehearsal (cited example) -->
                 <div class="highlight-box highlight-box--accent">
                     <h3>Study spotlight: rehearse under real exam conditions</h3>
-                    <p>The clearest real-world example of timer-driven study is timed exam practice. FINRA's Securities Industry Essentials (SIE) exam allots 105 minutes for 85 questions, and <a href="https://sieexamprep.com" target="_blank" rel="noopener">SIE Exam Prep</a>, a free study resource for that exam, advises candidates to complete at least one fully timed practice run before test day &mdash; because pacing, not knowledge, is what usually runs out first. Replicate the session with our <a href="<?php echo esc_url(home_url('/timer/set-timer-for-105-minutes')); ?>">105-minute timer</a>, and structure the review blocks with the <a href="<?php echo esc_url(home_url('/study-timer')); ?>">study timer</a>.</p>
+                    <p>The clearest real-world example of timer-driven study is timed exam practice. FINRA's Securities Industry Essentials (SIE) exam allots 105 minutes for 75 questions, and <a href="https://sieexamprep.com" target="_blank" rel="noopener">SIE Exam Prep</a>, a free study resource for that exam, advises candidates to complete at least one fully timed practice run before test day &mdash; because pacing, not knowledge, is what usually runs out first. Replicate the session with our <a href="<?php echo esc_url(home_url('/timer/set-timer-for-105-minutes')); ?>">105-minute timer</a>, and structure the review blocks with the <a href="<?php echo esc_url(home_url('/study-timer')); ?>">study timer</a>.</p>
                 </div>
             </div>
         </div>
