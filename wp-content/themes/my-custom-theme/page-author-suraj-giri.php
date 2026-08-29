@@ -107,6 +107,10 @@ get_header();
     "email": "suraj@theblogtimer.com",
     "url": "<?php echo esc_url(home_url('/author-suraj-giri')); ?>",
     "jobTitle": "Productivity researcher and software engineer",
+    "sameAs": [
+      "https://www.linkedin.com/in/girisuraj/",
+      "https://seoexpertinnepal.com"
+    ],
     "description": "Founder and editor of The Blog Timer. Background in web development and cognitive psychology research, focused on attention and time perception. Built The Blog Timer to solve browser timer accuracy issues.",
     "knowsAbout": [
       "Web performance",

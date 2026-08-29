@@ -5647,6 +5647,270 @@
         "q": "What happens if a rugby match is tied?",
         "a": "In most competitions the draw simply stands — the Six Nations awards two points to each team. In knockout rugby, Rugby World Cup rules call for extra time of 10 minutes each way after a five-minute interval. If still tied, teams play sudden death of up to 10 minutes, where the first score wins. If that separates nobody, a kicking competition from the 22-metre line decides it."
       }
+    },
+    "faq_g_best_time_to_water_grass_01": {
+      "en": {
+        "q": "What is the best time of day to water grass?",
+        "a": "Early morning. Iowa State University Extension sets the window at 5 a.m. to 9 a.m., and University of Missouri Extension calls 6 to 8 a.m. the best time from an agronomic standpoint. Wind is low, evaporation loss is negligible, and the blades dry quickly once the sun rises, which keeps turfgrass diseases in check."
+      }
+    },
+    "faq_g_best_time_to_water_grass_02": {
+      "en": {
+        "q": "Is it bad to water grass at night?",
+        "a": "Yes, as a routine. Iowa State Extension warns that watering in the late afternoon or evening may increase disease problems, because many turfgrass diseases need an extended period of leaf moisture to infect the plant. Night watering can leave blades wet for ten hours or more once overnight dew is added. Watering a badly wilting lawn at night still beats not watering it at all."
+      }
+    },
+    "faq_g_best_time_to_water_grass_03": {
+      "en": {
+        "q": "Why should you not water grass in the middle of the day?",
+        "a": "Two reasons, both from Missouri Extension. Evaporation is rapid in midday heat, so less water reaches the root zone. And strong midday winds distort the sprinkler pattern and can carry a considerable amount of water onto driveways, sidewalks and streets. Midday watering is not harmful to the grass, it is simply wasteful."
+      }
+    },
+    "faq_g_best_time_to_water_grass_04": {
+      "en": {
+        "q": "How do you know when your lawn needs water?",
+        "a": "Missouri Extension lists three early signs: blades turn bluish-purple, footprints stay pressed into the lawn for several hours instead of springing back, and leaves fold or roll lengthwise. Water within a day of seeing them. If the soil is already wet and the grass still looks curled, that is wet wilt, and adding water makes it worse."
+      }
+    },
+    "faq_g_how_long_to_water_grass_01": {
+      "en": {
+        "q": "How long should you water grass each week?",
+        "a": "Long enough to apply 1 to 1.5 inches of water, per Iowa State University Extension, delivered in one soaking or two applications 3 or 4 days apart. The minutes depend on your sprinkler. A Missouri Extension worked example puts a common sprinkler at 0.33 inch per hour, which needs about three hours per location to lay down 1 inch."
+      }
+    },
+    "faq_g_how_long_to_water_grass_02": {
+      "en": {
+        "q": "How do you measure how much water a sprinkler puts out?",
+        "a": "Place shallow straight-sided containers such as tuna cans, or rain gauges, in a grid inside the spray pattern. Run the sprinkler for a set time, then measure the depth with a ruler and convert to inches per hour. A quarter inch in 45 minutes is 0.33 inch per hour. Missouri Extension also gives a meter method: 624 gallons applies 1 inch to 1,000 square feet."
+      }
+    },
+    "faq_g_how_long_to_water_grass_03": {
+      "en": {
+        "q": "Why does water run off instead of soaking into my lawn?",
+        "a": "Your sprinkler is putting water down faster than the soil can take it. Missouri Extension notes most Missouri soils absorb only about half an inch per hour. Stop when puddles or runoff appear, wait until the surface water is gone and the ground feels moist and firm, then run another cycle. Automatic controllers can be set for several short cycles to do this for you."
+      }
+    },
+    "faq_g_how_long_to_water_grass_04": {
+      "en": {
+        "q": "How deep should lawn watering reach?",
+        "a": "Adequate soil moisture 6 to 8 inches deep is enough to maintain grasses through summer, according to Missouri Extension. Check it a day after watering by pushing a long screwdriver into the soil, or by cutting a slender 2-inch wedge 6 to 8 inches deep. Soil that holds together and looks moist is right; soil you can squeeze water from means you are overwatering."
+      }
+    },
+    "faq_g_how_often_to_mow_the_lawn_01": {
+      "en": {
+        "q": "How often should you mow the lawn?",
+        "a": "Mow when the grass is about a third taller than your target height, which usually falls near weekly in peak season. University of Wisconsin-Madison Extension advises mowing based on growth rate rather than the calendar: more than once a week in cool, wet spring weather, and possibly every two weeks or longer during dry summer weather."
+      }
+    },
+    "faq_g_how_often_to_mow_the_lawn_02": {
+      "en": {
+        "q": "What is the one-third rule for mowing?",
+        "a": "Never remove more than one-third of the grass height in a single mowing. Clemson Extension gives the example of a 2-inch centipedegrass lawn mowed at 3 inches. University of Minnesota Extension gives the cool-season version: to keep a 3-inch lawn, mow before it reaches 4.5 inches. Cutting more than a third can stop root growth."
+      }
+    },
+    "faq_g_how_often_to_mow_the_lawn_03": {
+      "en": {
+        "q": "How tall should you keep your grass?",
+        "a": "For a typical Midwest residential lawn, Minnesota and Wisconsin Extension both recommend 3 inches or higher. Missouri Extension says never below 2.5 inches after mowing, and that 3 to 3.5 inches survives drought better. Warm-season grasses run shorter: Clemson lists common bermudagrass at 1 to 2 inches and St. Augustinegrass at 2.5 to 4 inches."
+      }
+    },
+    "faq_g_how_often_to_mow_the_lawn_04": {
+      "en": {
+        "q": "Should you bag grass clippings or leave them?",
+        "a": "Leave them. Wisconsin Extension says that if you follow the rule of one-third there is no need to collect clippings, and returned clippings do not cause thatch. Clemson measures clippings at roughly a 4-1-3 fertilizer, and Minnesota Extension estimates they add the equivalent of one fertilizer application per year. Rake only if the clippings are too long, or mow again to mulch them."
+      }
+    },
+    "faq_g_how_long_does_olive_oil_last_01": {
+      "en": {
+        "q": "How long does olive oil last once opened?",
+        "a": "Use it within about 3 months, according to the North American Olive Oil Association, and store it in a cool dark cupboard with a tightly sealed cap. Once the seal is broken, oxygen reaches the oil every time you pour, and oxidation is what turns olive oil rancid. A half-empty bottle degrades faster than a full one."
+      }
+    },
+    "faq_g_how_long_does_olive_oil_last_02": {
+      "en": {
+        "q": "How long does unopened olive oil last?",
+        "a": "Michigan State University Extension says you get the best quality and flavor by using olive oil within one year of purchase. The North American Olive Oil Association notes there is no single definitive answer, because harvest date, olive variety, processing and packaging all matter, and recommends following the manufacturer's best-by date instead."
+      }
+    },
+    "faq_g_how_long_does_olive_oil_last_03": {
+      "en": {
+        "q": "Should you refrigerate olive oil?",
+        "a": "MSU Extension says refrigeration is best for long-term storage of all olive oils except premium extra virgin ones. Refrigerated oil solidifies and turns cloudy, but that does not alter the health benefits or nutritional value, and it returns to liquid at room temperature. Keep a small working bottle at room temperature so you are not melting the whole supply."
+      }
+    },
+    "faq_g_how_long_does_olive_oil_last_04": {
+      "en": {
+        "q": "How can you tell if olive oil has gone bad?",
+        "a": "The North American Olive Oil Association says olive oil develops off flavors and odors when it is past its prime. Rancid oil smells like crayons, putty or old nuts and tastes stale or waxy, and the peppery catch of a fresh extra virgin oil disappears. It will not make you ill, but it carries that flavor into whatever you cook."
+      }
+    },
+    "faq_g_how_long_does_vinegar_last_01": {
+      "en": {
+        "q": "Does vinegar ever go bad?",
+        "a": "Practically speaking, no. The Vinegar Institute, quoted by Iowa State University Extension, says vinegar has an almost indefinite shelf life because its acid nature makes it self-preserving, and it does not need refrigeration. White distilled vinegar remains virtually unchanged over an extended period. Other vinegars may change color or haze, but that is an aesthetic change only."
+      }
+    },
+    "faq_g_how_long_does_vinegar_last_02": {
+      "en": {
+        "q": "Why is my vinegar cloudy or full of sediment?",
+        "a": "Both are normal. Iowa State Extension explains that once a bottle is opened and exposed to air, harmless vinegar bacteria can grow and cloud the liquid without affecting quality or flavor. Less-filtered vinegars form sediment as particles settle. Strain either through a coffee filter set inside a fine-mesh strainer if the look bothers you."
+      }
+    },
+    "faq_g_how_long_does_vinegar_last_03": {
+      "en": {
+        "q": "Is the slimy blob in my vinegar safe?",
+        "a": "Yes. That is a vinegar mother. Penn State Extension describes it as a mass of yeast and bacterial cells grown naturally during fermentation, appearing as gelatinous strings or sheets, and says there is no harm in eating it. Iowa State Extension adds that it forms when pasteurization was incomplete or the bottle picked up vinegar bacteria from the air. Filter it out if you prefer."
+      }
+    },
+    "faq_g_how_long_does_vinegar_last_04": {
+      "en": {
+        "q": "Can you use old vinegar for canning and pickling?",
+        "a": "Usually yes. Iowa State Extension says acetic acid is relatively stable, so any vinegar at 5 percent acidity is safe for canning regardless of age. Two exceptions: do not can with vinegar showing cloudiness, sediment or color change, because it can darken or cloud the product, and do not use vinegar from a container that has condensation in it or was left open, because the acidity may have dropped below 5 percent."
+      }
+    },
+    "faq_g_how_often_to_wash_pillows_01": {
+      "en": {
+        "q": "How often should you wash pillows?",
+        "a": "Wash the pillow itself at least twice a year, per Sleep Foundation. Cleveland Clinic agrees, advising that pillows and blankets be cleaned at least every few months and naming every six months as a workable default. Wash more often if you sweat heavily, sleep with pets, have allergies, or are recovering from an illness. Pillowcases go in weekly with the sheets."
+      }
+    },
+    "faq_g_how_often_to_wash_pillows_02": {
+      "en": {
+        "q": "Can you put memory foam pillows in the washing machine?",
+        "a": "Solid memory foam and latex pillows are not machine washable. Spot clean the surface, wash the removable cover, and let the pillow air out every few months. Shredded memory foam and polyester fills can go in the machine. Sleep Foundation recommends warm water and drying on the lowest heat over multiple cycles."
+      }
+    },
+    "faq_g_how_often_to_wash_pillows_03": {
+      "en": {
+        "q": "How do you wash down and feather pillows?",
+        "a": "Machine wash them on a delicate setting in cool or warm water with a mild or low-sudsing detergent made for down and feathers, and wash them at least every six months, per Sleep Foundation. Drying is the slow part: air-drying can take 24 to 48 hours and machine-drying takes several cycles on low heat. Dryer balls help break up clumped fill."
+      }
+    },
+    "faq_g_how_often_to_wash_pillows_04": {
+      "en": {
+        "q": "How often should you replace a pillow?",
+        "a": "Every 1 to 2 years, according to Sleep Foundation. Washing extends the useful life but does not reset it. If you have dust mite allergies, the American Lung Association recommends covering pillows and mattresses with allergen encasements and keeping the home below 50 percent humidity, since humidity is the biggest factor in dust mite levels."
+      }
+    },
+    "faq_g_how_often_to_wash_blankets_01": {
+      "en": {
+        "q": "How often should you wash blankets?",
+        "a": "About once a month for a blanket you sleep under, per Sleep Foundation. Every few months is enough for one you rarely use, and once a week is better if the blanket is in daily use or shared with a pet. Cleveland Clinic sets the floor at every few months for pillows and blankets."
+      }
+    },
+    "faq_g_how_often_to_wash_blankets_02": {
+      "en": {
+        "q": "How often should you wash a comforter or duvet?",
+        "a": "Every six months or as needed, according to Cleveland Clinic. The duvet cover is different: it touches you directly, so it washes weekly with the sheets. Wash the comforter itself sooner after an illness, an allergy flare, or during hot months, and more often if a pet sleeps on the bed."
+      }
+    },
+    "faq_g_how_often_to_wash_blankets_03": {
+      "en": {
+        "q": "How do you wash a wool or fleece blanket?",
+        "a": "For wool, Sleep Foundation advises soaking in cold water for about 15 minutes, then a gentle cycle with wool-safe detergent, and air drying away from direct sunlight. For fleece, use cold water on a gentle cycle and skip bleach and fabric softener, which flatten the pile. Air dry, or tumble dry only if the care label allows."
+      }
+    },
+    "faq_g_how_often_to_wash_blankets_04": {
+      "en": {
+        "q": "Can you wash a big comforter in a normal washing machine?",
+        "a": "Often not well. Sleep Foundation recommends a front-load or oversized machine for larger blankets. A crowded drum cannot agitate the blanket properly, so detergent stays in the fibers and the blanket comes out no cleaner. Washing it alone, or taking it to a laundromat twice a year, is the reliable option."
+      }
+    },
+    "faq_g_how_often_to_wash_mattress_pad_01": {
+      "en": {
+        "q": "How often should you wash a mattress pad?",
+        "a": "Every 1 to 2 months, according to Sleep Foundation. Wash it sooner after a spill, after anyone in the bed has been ill, during an allergy flare, or if a pet sleeps on the bed. Heavy night sweating pushes the interval toward monthly."
+      }
+    },
+    "faq_g_how_often_to_wash_mattress_pad_02": {
+      "en": {
+        "q": "What is the difference between a mattress pad and a mattress protector?",
+        "a": "Sleep Foundation puts it simply: a mattress pad is there for comfort and support, while a mattress protector is there to shield the mattress against spills and allergens. Many products do both jobs. Either way, the washing schedule is the same, and both should be washed every 1 to 2 months."
+      }
+    },
+    "faq_g_how_often_to_wash_mattress_pad_03": {
+      "en": {
+        "q": "Can you put a waterproof mattress protector in the dryer?",
+        "a": "Only on low heat, or air dry it. Sleep Foundation warns that high heat can shrink the material and damage waterproof layers. Also skip bleach and other harsh cleaners, which degrade waterproof materials, and skip fabric softener, which can reduce how well the waterproof layer works. Once that layer fails, liquid reaches the mattress."
+      }
+    },
+    "faq_g_how_often_to_wash_mattress_pad_04": {
+      "en": {
+        "q": "How often should you clean the mattress itself?",
+        "a": "About every six months, per Cleveland Clinic. Vacuum the whole surface to remove debris, dust mites and dead skin cells, then spot-clean stains with a mild detergent. The American Lung Association also recommends allergen encasements for mattresses and pillows, and keeping the home below 50 percent humidity, since dust mites absorb moisture from the air."
+      }
+    },
+    "faq_g_4_month_old_sleep_schedule_01": {
+      "en": {
+        "q": "How much sleep does a 4 month old need?",
+        "a": "About 14 to 16 hours in 24 hours, according to Cleveland Clinic's figures for the 3-to-4-month band. Sleep Foundation gives 12 to 16 hours per day across the wider 4-to-11-month range. That total is split between night sleep and roughly three naps. AAP notes that different babies have different sleep needs, so healthy babies vary."
+      }
+    },
+    "faq_g_4_month_old_sleep_schedule_02": {
+      "en": {
+        "q": "How long should a 4 month old be awake between naps?",
+        "a": "Cleveland Clinic puts the wake window for a 3-to-4-month-old at 1.25 to 2.5 hours. Watch the cues rather than the clock: yawning, rubbing eyes, blinking more often, staring off, and a drop in activity level all mean it is time. Missing the window leads to crying, fussiness and harder settling, not easier."
+      }
+    },
+    "faq_g_4_month_old_sleep_schedule_03": {
+      "en": {
+        "q": "How many naps does a 4 month old take?",
+        "a": "About three, per Cleveland Clinic's wake-window guidance for the 3-to-4-month band. The third nap is often short and late in the afternoon. Keeping it short matters, because a long late nap pushes bedtime later and usually costs more sleep overall than it adds."
+      }
+    },
+    "faq_g_4_month_old_sleep_schedule_04": {
+      "en": {
+        "q": "Should you put a 4 month old down drowsy or asleep?",
+        "a": "Drowsy. From 4 months and older, the American Academy of Pediatrics advises putting babies to bed when they are drowsy and not waiting until they are asleep, because it helps them learn to fall asleep on their own in their own bed. If a baby is always rocked all the way to sleep, they may struggle to resettle after a normal night waking."
+      }
+    },
+    "faq_g_9_month_old_sleep_schedule_01": {
+      "en": {
+        "q": "How much sleep does a 9 month old need?",
+        "a": "About 12 to 14 hours in 24 hours, per Cleveland Clinic's figures for the 7-to-10-month band, usually as a long night plus two naps. Sleep Foundation's wider guidance for infants aged 4 to 11 months is 12 to 16 hours per day. Healthy babies vary, so treat the range as a guide rather than a target."
+      }
+    },
+    "faq_g_9_month_old_sleep_schedule_02": {
+      "en": {
+        "q": "How long should a 9 month old be awake between naps?",
+        "a": "Cleveland Clinic gives a wake window of 2.5 to 4.5 hours for the 7-to-10-month band. A typical day runs about 2.5 to 3 hours before the first nap and 3 to 3.5 hours before the second and before bedtime. Watch for yawning, eye rubbing, staring off and a drop in activity rather than fixing nap times to the clock."
+      }
+    },
+    "faq_g_9_month_old_sleep_schedule_03": {
+      "en": {
+        "q": "How many naps should a 9 month old take?",
+        "a": "Two. Cleveland Clinic's wake-window guidance puts the 7-to-10-month band at two naps, and most babies do not move to a single nap until closer to 15 to 18 months. Dropping to one nap at 9 months usually produces an overtired evening and a harder bedtime."
+      }
+    },
+    "faq_g_9_month_old_sleep_schedule_04": {
+      "en": {
+        "q": "Is it normal for a 9 month old to still wake at night?",
+        "a": "Yes. A study in Pediatrics reported by Sleep Foundation found that even at 12 months, 27.9 percent of babies were not sleeping 6 or more consecutive hours and 43.4 percent were not sleeping 8 or more. AAP also notes it is normal for a 6-month-old to wake and resettle after a few minutes. Crawling, pulling to stand and separation anxiety all peak around 9 months and disturb nights."
+      }
+    },
+    "faq_g_when_do_babies_sleep_through_the_night_01": {
+      "en": {
+        "q": "At what age do babies sleep through the night?",
+        "a": "Stanford Medicine Children's Health says most babies do not start sleeping through the night, defined as 6 to 8 hours without waking, until about 3 months old. Sleep Foundation puts real consolidation of night sleep nearer 5 or 6 months. Both are ranges, and healthy babies vary widely."
+      }
+    },
+    "faq_g_when_do_babies_sleep_through_the_night_02": {
+      "en": {
+        "q": "How many hours counts as sleeping through the night?",
+        "a": "Six to eight hours, according to Stanford Children's Health, not the ten or twelve hours an adult would picture. A baby who goes down at 7 p.m. and wakes at 1 a.m. technically slept through the night. That is why the phrase causes so much confusion between parents."
+      }
+    },
+    "faq_g_when_do_babies_sleep_through_the_night_03": {
+      "en": {
+        "q": "Is it normal for a 1 year old to still wake at night?",
+        "a": "Yes, and it is common. A study in Pediatrics reported by Sleep Foundation found that at 12 months, 27.9 percent of babies were still not sleeping 6 or more consecutive hours and 43.4 percent were not sleeping 8 or more. The same study found no detectable impacts on physical or mental development in those babies."
+      }
+    },
+    "faq_g_when_do_babies_sleep_through_the_night_04": {
+      "en": {
+        "q": "How can you help a baby sleep longer at night?",
+        "a": "The American Academy of Pediatrics advises keeping nights calm and quiet, not stimulating or waking babies during night feeds and changes, and making daytime playtime so babies are awake longer during the day. From 4 months, AAP adds putting babies to bed drowsy rather than asleep, and giving them time to put themselves back to sleep rather than rushing in."
+      }
     }
   },
   "quickUseIdeas": {

@@ -14,7 +14,7 @@
     <link rel="icon" type="image/svg+xml" href="<?php echo esc_url(get_template_directory_uri()); ?>/images/favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url(get_template_directory_uri()); ?>/images/apple-touch-icon.png">
     <link rel="shortcut icon" href="<?php echo esc_url(home_url('/favicon.ico')); ?>">
-    <meta name="theme-color" content="#6366f1">
+    <meta name="theme-color" content="#4f46e5">
     <?php wp_head(); ?>
     <style id="megamenu-css">
         /* ===========================================================
@@ -90,7 +90,7 @@
         }
 
         .mega-panel a.mega-hub-link:hover {
-            color: var(--color-accent, #6366f1);
+            color: var(--color-accent, #4f46e5);
         }
 
         /* Tighten link rows inside the mega panel */

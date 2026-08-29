@@ -62,8 +62,8 @@
             // Set initial remaining
             this.remainingAtPause = this.durationSeconds;
 
-            // Pre-load audio
-            this.initAudio();
+            // Audio is created lazily on the first Start click so the alert
+            // file is never downloaded during page load.
 
             // Bind events
             this.bindEvents();
@@ -81,6 +81,7 @@
          * Initialize audio element.
          */
         initAudio: function() {
+            if (this.audio) return;
             var audioUrl = (typeof blogTimerData !== 'undefined' && blogTimerData.audioUrl)
                 ? blogTimerData.audioUrl
                 : '';
@@ -188,6 +189,8 @@
          */
         start: function() {
             var self = this;
+            // First real user gesture: safe (and cheap) to fetch the alert now.
+            this.initAudio();
             var remaining = this.remainingAtPause || this.durationSeconds;
             this.endTimestamp = Date.now() + (remaining * 1000);
             this.isRunning = true;
@@ -317,6 +320,7 @@
          */
         playSound: function() {
             var self = this;
+            this.initAudio();
             if (this.audio) {
                 this.audio.currentTime = 0;
                 this.audio.play().catch(function() {
