@@ -1579,17 +1579,39 @@ add_action('parse_request', function ($wp) {
     header('X-Robots-Tag: noindex');
 
     echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-    echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+    // The image namespace is what lets each <url> carry its hero. Without it
+    // Google discovers page images only by crawling the HTML; declared here, the
+    // 346 hero illustrations are announced for Google Images directly.
+    echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'
+        . ' xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">' . "\n";
 
     // Accurate <lastmod> tells Google which URLs actually changed so re-crawl
     // budget goes to fresh content first. Only emit dates we genuinely track
     // (post_modified_gmt) — fabricated lastmod values teach Google to ignore them.
-    $sitemap_url = static function ($loc, $modified_gmt = '') {
+    // $hero_slug is the hero file key for this URL (post_name, or the shared hub
+    // slug for numeric-slug timers). When a file exists for it the URL carries an
+    // <image:image> block, including the authored caption as <image:title> when
+    // datasets/hero-alt.json has one. Nothing is emitted for a missing file.
+    $sitemap_url = static function ($loc, $modified_gmt = '', $hero_slug = '') {
         $lastmod = '';
         if ($modified_gmt && $modified_gmt !== '0000-00-00 00:00:00') {
             $lastmod = '<lastmod>' . esc_html(gmdate('Y-m-d', strtotime($modified_gmt))) . '</lastmod>';
         }
-        echo '  <url><loc>' . esc_url($loc) . '</loc>' . $lastmod . '</url>' . "\n";
+
+        $image = '';
+        if ($hero_slug) {
+            $hero_url = btt_hero_url($hero_slug);
+            if ($hero_url) {
+                $image = '<image:image><image:loc>' . esc_url($hero_url) . '</image:loc>';
+                $caption = btt_hero_caption($hero_slug);
+                if ($caption !== '') {
+                    $image .= '<image:title>' . esc_html($caption) . '</image:title>';
+                }
+                $image .= '</image:image>';
+            }
+        }
+
+        echo '  <url><loc>' . esc_url($loc) . '</loc>' . $lastmod . $image . '</url>' . "\n";
     };
 
     // Homepage: lastmod = most recently modified content anywhere on the site.
@@ -1606,7 +1628,7 @@ add_action('parse_request', function ($wp) {
     foreach (blogtimer_indexable_page_slugs() as $slug) {
         $page = get_page_by_path($slug);
         if ($page && $page->post_status === 'publish') {
-            $sitemap_url(get_permalink($page->ID), $page->post_modified_gmt);
+            $sitemap_url(get_permalink($page->ID), $page->post_modified_gmt, $page->post_name);
         }
     }
 
@@ -1634,13 +1656,15 @@ add_action('parse_request', function ($wp) {
     // All timer posts
     $timers = get_posts(['post_type' => 'timer', 'post_status' => 'publish', 'posts_per_page' => -1]);
     foreach ($timers as $timer_post) {
-        $sitemap_url(get_permalink($timer_post->ID), $timer_post->post_modified_gmt);
+        // Timer posts have numeric slugs and no art of their own — they share the
+        // illustration of their timer_usecase hub, the same one the page renders.
+        $sitemap_url(get_permalink($timer_post->ID), $timer_post->post_modified_gmt, btt_timer_hero_slug($timer_post->ID));
     }
 
     // All guide posts
     $guides = get_posts(['post_type' => 'guide', 'post_status' => 'publish', 'posts_per_page' => -1]);
     foreach ($guides as $guide_post) {
-        $sitemap_url(get_permalink($guide_post->ID), $guide_post->post_modified_gmt);
+        $sitemap_url(get_permalink($guide_post->ID), $guide_post->post_modified_gmt, $guide_post->post_name);
     }
 
     // Guest-blog category archives (/topics/{slug}/) — approved slugs only.
@@ -1773,6 +1797,28 @@ add_action('wp_head', function () {
         echo '<meta property="og:image:width" content="1344">' . "\n";
         echo '<meta property="og:image:height" content="768">' . "\n";
     }
+    // og:image:alt — the same sentence the on-page <img alt> uses, so the share
+    // card, the image itself and the page all describe one subject. Social and
+    // crawler previews read this; without it the card is an image with no meaning.
+    if ($og_image) {
+        $og_image_alt = '';
+        if (is_singular()) {
+            $og_alt_obj = get_queried_object();
+            if ($og_alt_obj instanceof WP_Post) {
+                $og_alt_slug = $og_alt_obj->post_type === 'timer'
+                    ? btt_timer_hero_slug($og_alt_obj->ID)
+                    : $og_alt_obj->post_name;
+                $og_image_alt = btt_hero_alt($og_alt_slug, get_the_title($og_alt_obj));
+            }
+        } elseif (is_page()) {
+            $og_image_alt = btt_hero_alt(get_post_field('post_name', get_the_ID()), wp_get_document_title());
+        }
+        if ($og_image_alt === '') {
+            $og_image_alt = $og_title;
+        }
+        echo '<meta property="og:image:alt" content="' . esc_attr($og_image_alt) . '">' . "\n";
+        echo '<meta name="twitter:image:alt" content="' . esc_attr($og_image_alt) . '">' . "\n";
+    }
     echo '<meta property="og:site_name" content="The Blog Timer">' . "\n";
     echo '<meta property="og:locale" content="en_US">' . "\n";
 
@@ -1836,17 +1882,93 @@ function btt_hero_url($slug) {
  * Echo the hero figure. $eager for above-the-fold heroes (avoids a lazy-load
  * delay on the LCP element); everything else stays lazy.
  */
+/**
+ * Per-image alt text and captions, keyed on the same slug as the hero file.
+ *
+ * Alt text is what the image *depicts*; it is not a second copy of the H1. Every
+ * hero used to render alt="{post title} — illustration", which is the same
+ * sentence on all 346 images and tells Google Images and a screen reader nothing
+ * the <h1> has not already said. Real per-image copy lives in
+ * datasets/hero-alt.json so it can be regenerated without touching templates:
+ *
+ *   { "{slug}": { "alt": "...", "caption": "..." } }
+ *
+ * Both keys are optional. A slug with no entry falls back to the alt the template
+ * passes in, and renders no <figcaption> — so a partially filled file is safe.
+ */
+function btt_hero_alt_path()
+{
+    static $path = null;
+    static $looked = false;
+    if (!$looked) {
+        $looked = true;
+        $candidates = [
+            ABSPATH . '../datasets/hero-alt.json',       // Docker: repo root above wp/
+            ABSPATH . 'datasets/hero-alt.json',          // datasets inside WP root
+            '/var/www/datasets/hero-alt.json',           // Cloudways production layout
+            WP_CONTENT_DIR . '/../datasets/hero-alt.json',
+        ];
+        foreach ($candidates as $c) {
+            if (is_file($c)) {
+                $path = $c;
+                break;
+            }
+        }
+    }
+    return $path;
+}
+
+function btt_hero_meta($slug)
+{
+    static $data = null;
+    if ($data === null) {
+        $data = [];
+        $path = btt_hero_alt_path();
+        if ($path) {
+            $decoded = json_decode((string) file_get_contents($path), true);
+            if (is_array($decoded)) {
+                $data = $decoded;
+            }
+        }
+    }
+    $slug = sanitize_title((string) $slug);
+    return ($slug && isset($data[$slug]) && is_array($data[$slug])) ? $data[$slug] : [];
+}
+
+/**
+ * Alt text for a hero. $fallback is what the calling template would have used.
+ */
+function btt_hero_alt($slug, $fallback = '')
+{
+    $meta = btt_hero_meta($slug);
+    $alt = isset($meta['alt']) ? trim((string) $meta['alt']) : '';
+    return $alt !== '' ? $alt : (string) $fallback;
+}
+
+/**
+ * Caption for a hero, or '' when none is authored. Google's image documentation
+ * counts the caption and the text immediately around an image as context for it,
+ * so this is a real ranking surface and not decoration.
+ */
+function btt_hero_caption($slug)
+{
+    $meta = btt_hero_meta($slug);
+    return isset($meta['caption']) ? trim((string) $meta['caption']) : '';
+}
+
 function btt_hero_image($slug, $alt = '', $eager = false) {
     $rel = btt_hero_rel($slug);
     if (!$rel) {
         return;
     }
+    $caption = btt_hero_caption($slug);
     printf(
-        '<figure class="btt-hero"><img src="%s" alt="%s" width="1344" height="768" decoding="async" loading="%s" fetchpriority="%s"></figure>',
+        '<figure class="btt-hero"><img src="%s" alt="%s" width="1344" height="768" decoding="async" loading="%s" fetchpriority="%s">%s</figure>',
         esc_url(get_template_directory_uri() . $rel),
-        esc_attr($alt),
+        esc_attr(btt_hero_alt($slug, $alt)),
         $eager ? 'eager' : 'lazy',
-        $eager ? 'high' : 'auto'
+        $eager ? 'high' : 'auto',
+        $caption !== '' ? '<figcaption class="btt-hero-caption">' . esc_html($caption) . '</figcaption>' : ''
     );
 }
 

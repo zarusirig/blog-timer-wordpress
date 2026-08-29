@@ -1041,7 +1041,36 @@ class Timer_Engine
             $image = get_site_icon_url(512);
         }
         if ($image) {
-            $article['image'] = [$image];
+            // An ImageObject rather than a bare URL string. Both are valid, but the
+            // typed node lets the width/height travel with the URL, which is how
+            // Google confirms the image clears the 1200px Discover threshold without
+            // fetching it first, and it carries the same caption and alt text the
+            // page renders — one subject described identically in markup and schema.
+            $img_node = [
+                '@type' => 'ImageObject',
+                'url' => $image,
+                'contentUrl' => $image,
+            ];
+            // Dimensions are known only for the hero convention; og-default.png and
+            // the site icon are different sizes, so only claim them for a real hero.
+            if (strpos($image, '/images/hero/') !== false) {
+                $img_node['width'] = 1344;
+                $img_node['height'] = 768;
+            }
+            if ($slug && function_exists('btt_hero_caption')) {
+                $caption = btt_hero_caption($slug);
+                if ($caption !== '') {
+                    $img_node['caption'] = $caption;
+                }
+            }
+            if ($slug && function_exists('btt_hero_alt')) {
+                $alt = btt_hero_alt($slug, '');
+                if ($alt !== '') {
+                    // Schema.org's accessibility text for the image, mirroring <img alt>.
+                    $img_node['name'] = $alt;
+                }
+            }
+            $article['image'] = [$img_node];
         }
 
         // Entity layer: `about` (primary topic) + `mentions` (secondary topics), each

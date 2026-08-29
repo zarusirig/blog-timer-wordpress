@@ -3166,3 +3166,18 @@ kbd {
         margin-bottom: 1.25rem;
     }
 }
+
+
+/* Hero caption. Google treats the caption and the text immediately around an
+   image as context for that image, so this is content, not decoration — it is
+   rendered whenever datasets/hero-alt.json authors one for the slug. */
+.btt-hero figcaption.btt-hero-caption {
+    /* .btt-hero sets line-height:0 so the img leaves no descender gap; the caption
+       has to restore a real line box or it collapses. Padding, not margin, because
+       the figure is a bordered card and the image runs edge to edge. */
+    padding: var(--space-3) var(--space-4) var(--space-4);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    border-top: 1px solid var(--color-border-light);
+}
