@@ -939,7 +939,12 @@ class Timer_Engine
 
         // SHARED CONTRACT @ids — must match the theme's consolidated Organization/WebSite/Person nodes.
         $org_id = home_url('/#organization');
-        $person_id = home_url('/author-suraj-giri/') . '#person';
+        // Source-consistency only, NOT a live bug fix: this literal used to carry a
+        // trailing slash while all 60+ other call sites omit it. The rendered @id was
+        // already identical because the theme's blogtimer_filter_home_url_no_trailing_slash
+        // filter (functions.php:437) strips it. Written without the slash so the source
+        // matches the output, and so the @id survives if that filter is ever removed.
+        $person_id = home_url('/author-suraj-giri') . '#person';
 
         // Pull optional trust fields from the guides dataset (may be absent — use safe fallbacks).
         $slug = get_post_field('post_name', $post_id);
@@ -1014,7 +1019,27 @@ class Timer_Engine
             }
         }
 
-        $image = get_site_icon_url(512);
+        // Discover / rich-result image. Priority: this guide's 1344x768 hero
+        // illustration (>1200px wide, the Discover large-image threshold), then the
+        // 1200x630 site-wide OG fallback. This previously used get_site_icon_url(512),
+        // which returns '' on this install (no site icon is configured) — so the guard
+        // below skipped the field and all 286 guides shipped an Article node with NO
+        // image at all (verified live on /guides/pomodoro-technique/ 2026-08-29), even
+        // though the same pages already served the hero as og:image. A site icon would
+        // have been no better: a 512px square LOGO is under Google's Discover width
+        // minimum and is exactly what Google tells publishers not to use here.
+        // btt_hero_url() lives in the theme, so guard it: the plugin loads first, but
+        // this runs on wp_head, by which point the theme is loaded.
+        $image = '';
+        if ($slug && function_exists('btt_hero_url')) {
+            $image = btt_hero_url($slug);
+        }
+        if (!$image) {
+            $image = get_theme_file_uri('images/og-default.png');
+        }
+        if (!$image) {
+            $image = get_site_icon_url(512);
+        }
         if ($image) {
             $article['image'] = [$image];
         }

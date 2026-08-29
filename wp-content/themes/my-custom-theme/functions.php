@@ -1148,6 +1148,11 @@ function blogtimer_indexable_page_slugs()
         'tech',
         'gaming',
         'food-storage',
+        // Calculators — planning tools that answer a duration question, as opposed
+        // to the timer pages that count one down. Bound to page-{slug}.php by slug.
+        'sleep-calculator',
+        'reading-time-calculator',
+        'pomodoro-planner',
     ];
 }
 
@@ -1251,7 +1256,7 @@ add_filter('robots_txt', function ($output, $public) {
     // The ?v= version matches the static /robots.txt: the platform page-cache
     // can hold the bare sitemap URL for weeks; a versioned URL always serves
     // the freshly-built sitemap. Bump the version on content deploys.
-    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml?v=2026-08-28') . "\n\n";
+    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml?v=2026-08-29') . "\n\n";
 
     // Allow all legitimate bots to crawl whitelisted content
     $robots .= "User-agent: *\n";
