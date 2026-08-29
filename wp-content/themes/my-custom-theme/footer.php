@@ -140,6 +140,7 @@ $terms_url = $terms_page ? get_permalink($terms_page->ID) : home_url('/terms-of-
             <p class="footer-copy">&copy; <?php echo date('Y'); ?>
                 <?php echo esc_html(Timer_Content_Loader::get_instance()->get_string('brand.name') ?: 'The Blog Timer'); ?>.
                 All rights reserved.
+                <span class="footer-credit">Made with <span aria-hidden="true">&hearts;</span><span class="sr-only">love</span> by <a href="https://seoexpertinnepal.com" rel="me">Suraj Giri</a></span>
             </p>
             <div class="footer-bottom-links">
                 <a href="<?php echo esc_url(home_url('/site-index')); ?>">Site Index</a>

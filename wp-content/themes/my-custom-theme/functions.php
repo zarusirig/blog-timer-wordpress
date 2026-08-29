@@ -52,8 +52,16 @@ function blogtimer_enqueue_assets()
     // the old render-blocking fonts.googleapis.com stylesheet and both Google
     // origins are gone from the critical path entirely.
 
-    // Main stylesheet
-    wp_enqueue_style('blogtimer-style', get_stylesheet_uri(), [], filemtime(get_stylesheet_directory() . '/style.css'));
+    // Main stylesheet. style.min.css is built by tools/build-css.py; it is only
+    // served when it is at least as new as style.css, so an out-of-date build is
+    // silently ignored instead of shipping stale styles.
+    $blogtimer_css_src  = get_stylesheet_directory() . '/style.css';
+    $blogtimer_css_min  = get_stylesheet_directory() . '/style.min.css';
+    if (file_exists($blogtimer_css_min) && filemtime($blogtimer_css_min) >= filemtime($blogtimer_css_src)) {
+        wp_enqueue_style('blogtimer-style', get_stylesheet_directory_uri() . '/style.min.css', [], filemtime($blogtimer_css_min));
+    } else {
+        wp_enqueue_style('blogtimer-style', get_stylesheet_uri(), [], filemtime($blogtimer_css_src));
+    }
 
     // Mobile navigation
     wp_enqueue_script('blogtimer-mobile-nav', get_template_directory_uri() . '/js/mobile-nav.js', [], '2.0.0', [
@@ -80,7 +88,7 @@ function blogtimer_enqueue_assets()
 
         // Pass localized data to JS
         $timer_data = [
-            'audioUrl' => get_template_directory_uri() . '/audio/timer-alert.wav',
+            'audioUrl' => get_template_directory_uri() . '/audio/timer-alert.mp3',
         ];
 
         // If on a single timer page, pass timer-specific data
@@ -114,7 +122,7 @@ function blogtimer_enqueue_assets()
             'strategy' => 'defer',
         ]);
         wp_localize_script('blogtimer-hub-timer', 'blogTimerData', [
-            'audioUrl' => get_template_directory_uri() . '/audio/timer-alert.wav',
+            'audioUrl' => get_template_directory_uri() . '/audio/timer-alert.mp3',
         ]);
     }
 
@@ -762,6 +770,235 @@ function blogtimer_render_ads_txt_route()
 }
 add_action('template_redirect', 'blogtimer_render_ads_txt_route');
 
+// ==========================================
+// /llms.txt — SITE INDEX FOR AI CRAWLERS
+// ==========================================
+
+/**
+ * Curated /llms.txt index (https://llmstxt.org).
+ *
+ * Structure: section heading => [page slug => one-line description].
+ *
+ * Slugs are printed only if they are also in blogtimer_indexable_page_slugs(),
+ * which is the site's single source of truth for indexable pages. Retire a page
+ * there and it drops out of llms.txt automatically instead of becoming a 404
+ * that AI crawlers keep fetching.
+ *
+ * URLs are built from the slug (home_url('/{slug}')) rather than get_permalink()
+ * because every whitelisted page is served at that path, including ones whose
+ * database slug differs (privacy-policy).
+ *
+ * Labels and descriptions are curated here rather than read from post_title:
+ * several titles in the database are lowercase or clipped ("world clock", "Faq")
+ * and would produce a scruffy index.
+ */
+function blogtimer_llms_txt_map()
+{
+    return [
+        'Timers and clocks' => [
+            'countdown-timer' => 'Set any duration and count it down in the browser. Keeps time while the tab is in the background.',
+            'stopwatch' => 'Count up from zero, with lap times.',
+            'online-alarm-clock' => 'Alarm that fires at a set clock time.',
+            'pomodoro' => 'Pomodoro cycles: work blocks with short and long breaks.',
+            'focus-timer' => 'Single-task focus sessions.',
+            'study-timer' => 'Study sessions with breaks.',
+            'interval-timer' => 'Repeating work and rest intervals.',
+            'tabata-timer' => 'Tabata protocol: 20 seconds on, 10 seconds off.',
+            'sleep-timer' => 'Countdown for winding down or napping.',
+            'world-clock' => 'Current time across time zones.',
+            'chess-clock' => 'Two-player game clock.',
+            'minute-timers' => 'Index of preset minute-length timers.',
+            'second-timers' => 'Index of preset second-length timers.',
+            'hour-timers' => 'Index of preset hour-length timers.',
+        ],
+        'Calculators' => [
+            'sleep-calculator' => 'Work out bedtimes and wake times from sleep cycles.',
+            'reading-time-calculator' => 'Estimate reading time from word count and reading speed.',
+            'pomodoro-planner' => 'Plan how many pomodoro cycles a task needs.',
+        ],
+        'Kitchen timers' => [
+            'cooking-timers' => 'Index of every kitchen timer on the site.',
+            'egg-timer' => 'Egg timings by doneness.',
+            'pasta-timer' => 'Pasta timings by shape.',
+            'rice-timer' => 'Rice timings by variety.',
+            'tea-timer' => 'Steeping times by tea type.',
+            'coffee-timer' => 'Brew times by coffee method.',
+            'steak-timer' => 'Steak timings by thickness and doneness.',
+            'turkey-timer' => 'Turkey roasting times by weight.',
+            'bread-baking-timer' => 'Proof and bake timings for bread.',
+            'microwave-popcorn-timer' => 'Popcorn timing without burning it.',
+            'sous-vide-timer' => 'Sous vide times by food and thickness.',
+            'bbq-timer' => 'Grill and smoke timings.',
+            'baby-bottle-timer' => 'Bottle warming and feed timings.',
+        ],
+        'Workout timers' => [
+            'workout-timers' => 'Index of every workout timer on the site.',
+            'hiit-timer' => 'High-intensity interval training rounds.',
+            'emom-timer' => 'Every minute on the minute.',
+            'crossfit-amrap-timer' => 'AMRAP: as many rounds as possible.',
+            'boxing-round-timer' => 'Boxing rounds with rest between them.',
+            'jump-rope-timer' => 'Jump rope intervals.',
+            'running-interval-timer' => 'Run and recovery intervals.',
+            'plank-timer' => 'Plank holds.',
+            'stretching-timer' => 'Timed stretch holds.',
+            'yoga-timer' => 'Timed yoga holds and sequences.',
+            'sprint-timer' => 'Sprint efforts and recovery.',
+        ],
+        'Everyday timers' => [
+            'nap-timer' => 'Nap lengths and when to use each one.',
+            'presentation-timer' => 'Keep a talk to its slot.',
+            'timer-for-kids' => 'Simple visual timers for children.',
+            'timer-for-remote-workers' => 'Timers for working from home.',
+            'timer-for' => 'Browse timers by task.',
+            'use-cases' => 'Browse timers by situation.',
+            'sleep-meditation-timers' => 'Sleep and meditation timer index.',
+            'study-work-timers' => 'Study and work timer index.',
+            'stopwatch-clock-tools' => 'Stopwatch and clock tool index.',
+        ],
+        'Duration guides by topic' => [
+            'animals' => 'How long animals live, sleep, gestate and grow.',
+            'auto' => 'How long car parts, fluids and repairs last.',
+            'beauty' => 'How long beauty and grooming steps take or last.',
+            'body' => 'How long body processes take.',
+            'craft' => 'Drying, curing and setting times for craft materials.',
+            'entertainment' => 'How long films, shows, games and events run.',
+            'food-storage' => 'How long food keeps, by storage method.',
+            'gaming' => 'How long games and matches take.',
+            'gardening' => 'Growing, germination and harvest timings.',
+            'health' => 'How long symptoms, recovery and treatments take.',
+            'household' => 'How long chores, appliances and materials take or last.',
+            'parenting' => 'Child development and routine timings.',
+            'science' => 'Physical and natural process durations.',
+            'sports' => 'How long games, matches and seasons run.',
+            'tech' => 'How long devices, batteries and downloads last or take.',
+            'travel' => 'Journey, transit and processing times.',
+        ],
+        'How this site works' => [
+            'about' => 'What The Blog Timer is and who runs it.',
+            'methodology' => 'How durations are researched and verified.',
+            'sources' => 'The reference works and datasets cited across the site.',
+            'editorial-policy' => 'Editorial standards, corrections and review process.',
+            'author-suraj-giri' => 'Profile of Suraj Giri, the author and editor.',
+            'changelog' => 'Dated record of site and content changes.',
+            'faq' => 'Common questions about the timers and the guides.',
+            'contact' => 'How to reach the site.',
+        ],
+    ];
+}
+
+/**
+ * Secondary links, printed under "## Optional" per the llms.txt convention:
+ * useful for a crawler that wants everything, skippable for one that wants the
+ * shortest useful context.
+ */
+function blogtimer_llms_txt_optional()
+{
+    return [
+        'site-index' => 'Every public URL on the site, in one list.',
+        'blog' => 'Guest-written articles.',
+        'write-for-us' => 'Guest post guidelines.',
+        'accessibility' => 'Accessibility statement.',
+        'privacy-policy' => 'Privacy policy.',
+        'terms-of-service' => 'Terms of service.',
+        'disclaimer' => 'Disclaimer.',
+        'dmca' => 'DMCA policy.',
+    ];
+}
+
+/**
+ * Build the /llms.txt body as Markdown.
+ */
+function blogtimer_llms_txt_body()
+{
+    $allowed = array_flip(blogtimer_indexable_page_slugs());
+
+    // Slug -> display label. ucwords() alone produces "Bbq Timer" and "Terms Of
+    // Service", so acronyms are cased explicitly and small words stay lowercase
+    // unless they lead the label.
+    $acronyms = [
+        'bbq' => 'BBQ', 'dmca' => 'DMCA', 'faq' => 'FAQ', 'hiit' => 'HIIT',
+        'emom' => 'EMOM', 'amrap' => 'AMRAP', 'crossfit' => 'CrossFit',
+        'xml' => 'XML',
+    ];
+    $small = ['of', 'for', 'and', 'the', 'to', 'in', 'on', 'a'];
+
+    $label_for = static function ($slug) use ($acronyms, $small) {
+        $words = explode('-', $slug);
+        foreach ($words as $i => $word) {
+            if (isset($acronyms[$word])) {
+                $words[$i] = $acronyms[$word];
+            } elseif ($i > 0 && in_array($word, $small, true)) {
+                $words[$i] = $word;
+            } else {
+                $words[$i] = ucfirst($word);
+            }
+        }
+        return implode(' ', $words);
+    };
+
+    $line = static function ($slug, $description) use ($allowed, $label_for) {
+        if (!isset($allowed[$slug])) {
+            return '';
+        }
+        $url = blogtimer_untrailingslashit_url(home_url('/' . $slug));
+        return '- [' . $label_for($slug) . '](' . $url . '): ' . $description . "\n";
+    };
+
+    $out  = "# The Blog Timer\n\n";
+    $out .= "> Free browser timers, countdowns and stopwatches, plus evidence-based \"how long does it take / how long does it last\" guides. Every duration in a guide is attributed to a named source.\n\n";
+    $out .= "The timers run in the browser with no sign-up and no install. They correct for background-tab throttling, so a 25-minute timer still ends after 25 real minutes. The guides are separate from the tools: each one answers a duration question and cites where the number comes from (government data, manufacturer specification, or published research). Site and content are maintained by Suraj Giri.\n\n";
+
+    foreach (blogtimer_llms_txt_map() as $heading => $entries) {
+        $body = '';
+        foreach ($entries as $slug => $description) {
+            $body .= $line($slug, $description);
+        }
+        if ($body !== '') {
+            $out .= '## ' . $heading . "\n\n" . $body . "\n";
+        }
+    }
+
+    $guides_archive = get_post_type_archive_link('guide');
+    if ($guides_archive) {
+        $out .= "## All guides\n\n";
+        $out .= '- [Guides archive](' . blogtimer_untrailingslashit_url($guides_archive) . "): Every duration guide on the site. The topic pages above are the curated entry points into it.\n\n";
+    }
+
+    $optional = '';
+    foreach (blogtimer_llms_txt_optional() as $slug => $description) {
+        $optional .= $line($slug, $description);
+    }
+    $optional .= '- [XML sitemap](' . home_url('/sitemap-fresh.xml') . "): Machine-readable list of every indexable URL, with last-modified dates.\n";
+    $out .= "## Optional\n\n" . $optional;
+
+    return $out;
+}
+
+/**
+ * Serve /llms.txt.
+ *
+ * Handled at parse_request for the same reason as sitemap-fresh.xml: it runs
+ * before WordPress's canonical-redirect machinery, which otherwise 301s unknown
+ * dot-suffixed paths. Cached for an hour so an AI crawler fetching it repeatedly
+ * does not boot WordPress every time.
+ */
+add_action('parse_request', function () {
+    if (!isset($_SERVER['REQUEST_URI'])) {
+        return;
+    }
+    $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    if ($path !== '/llms.txt') {
+        return;
+    }
+
+    header('Content-Type: text/plain; charset=utf-8');
+    header('Cache-Control: public, max-age=3600');
+    header('X-Accel-Expires: 3600');
+
+    echo blogtimer_llms_txt_body();
+    exit;
+}, 1);
+
 /**
  * Helper: render FAQ accordion
  */
@@ -1256,7 +1493,11 @@ add_filter('robots_txt', function ($output, $public) {
     // The ?v= version matches the static /robots.txt: the platform page-cache
     // can hold the bare sitemap URL for weeks; a versioned URL always serves
     // the freshly-built sitemap. Bump the version on content deploys.
-    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml?v=2026-08-29') . "\n\n";
+    $robots .= "Sitemap: " . home_url('/sitemap-fresh.xml?v=2026-08-29') . "\n";
+    // Comment, not a directive: llms.txt has no robots.txt field of its own, and
+    // an unknown field name is skipped by parsers anyway. Kept here so anyone
+    // (or anything) reading robots.txt finds the AI-facing index.
+    $robots .= "# llms.txt: " . home_url('/llms.txt') . "\n\n";
 
     // Allow all legitimate bots to crawl whitelisted content
     $robots .= "User-agent: *\n";
@@ -2791,29 +3032,49 @@ function blogtimer_render_see_also($context = 'timer')
  */
 add_action('wp_footer', function () {
     ?>
-    <div id="cookie-consent-banner" class="cookie-consent" style="display:none;" role="dialog" aria-label="Cookie consent">
+    <div id="cookie-consent-banner" class="cookie-consent" role="dialog" aria-label="Cookie consent" aria-hidden="true">
         <div class="cookie-consent__inner">
             <div class="cookie-consent__text">
-                <p><strong>Cookie Notice:</strong> We use cookies to improve your experience and serve relevant ads through Google AdSense. Essential cookies are required for site functionality. Advertising cookies help us show you relevant ads and keep this site free.</p>
-                <p>By clicking "Accept All," you consent to the use of all cookies. You can manage your preferences or learn more in our <a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy Policy</a>.</p>
+                <p><strong>Cookie Notice:</strong> We use cookies for site features and Google AdSense ads. See our <a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy Policy</a>.</p>
             </div>
             <div class="cookie-consent__actions">
-                <button id="cookie-accept-all" class="btn btn--primary">Accept All</button>
-                <button id="cookie-essential-only" class="btn btn--secondary">Essential Only</button>
+                <button id="cookie-accept-all" class="btn btn--primary" type="button">Accept All</button>
+                <button id="cookie-essential-only" class="btn btn--secondary" type="button">Essential Only</button>
             </div>
         </div>
     </div>
     <style>
+        /* CLS-safe banner.
+           It is laid out from first paint (never display:none -> block), stays out
+           of document flow (position:fixed), and is revealed with transform +
+           visibility only. Transforms and visibility changes are not layout
+           shifts, so the reveal scores 0 CLS even though it happens after JS runs. */
         .cookie-consent {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
             z-index: 99999;
-            background: var(--color-surface, #1a1a2e);
-            border-top: 2px solid var(--color-primary, #6c63ff);
-            padding: 1rem 0 calc(1rem + env(safe-area-inset-bottom));
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+            background: var(--color-bg-elevated, #ffffff);
+            border-top: 2px solid var(--color-accent, #4f46e5);
+            padding: 0.875rem 0 calc(0.875rem + env(safe-area-inset-bottom));
+            box-shadow: 0 -4px 20px rgba(20, 24, 42, 0.18);
+            contain: layout paint;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(110%);
+            transition: transform 0.25s ease, opacity 0.25s ease, visibility 0s linear 0.25s;
+        }
+        .cookie-consent.is-visible {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 0.25s ease, opacity 0.25s ease, visibility 0s;
+        }
+        /* Once a choice is stored the node costs nothing at all. */
+        .cookie-consent.is-dismissed { display: none; }
+        @media (prefers-reduced-motion: reduce) {
+            .cookie-consent { transition: none; }
         }
         .cookie-consent__inner {
             max-width: 1200px;
@@ -2829,14 +3090,13 @@ add_action('wp_footer', function () {
             min-width: 280px;
         }
         .cookie-consent__text p {
-            margin: 0 0 0.5rem;
+            margin: 0;
             font-size: 0.875rem;
             line-height: 1.5;
-            color: var(--color-text-secondary, #b0b0c0);
+            color: var(--color-text-secondary, #444c63);
         }
-        .cookie-consent__text p:last-child { margin-bottom: 0; }
         .cookie-consent__text a {
-            color: var(--color-primary, #6c63ff);
+            color: var(--color-accent, #4f46e5);
             text-decoration: underline;
         }
         .cookie-consent__actions {
@@ -2845,7 +3105,7 @@ add_action('wp_footer', function () {
             flex-shrink: 0;
         }
         @media (max-width: 640px) {
-            .cookie-consent__inner { flex-direction: column; text-align: left; align-items: stretch; gap: 1rem; padding: 0 1rem; }
+            .cookie-consent__inner { flex-direction: column; text-align: left; align-items: stretch; gap: 0.75rem; padding: 0 1rem; }
             .cookie-consent__text { min-width: 0; text-align: left; }
             /* Stack the buttons full-width so "Accept All" is large and always fully visible. */
             .cookie-consent__actions { width: 100%; flex-direction: column; gap: 0.5rem; }
@@ -2858,18 +3118,22 @@ add_action('wp_footer', function () {
         var banner = document.getElementById('cookie-consent-banner');
         if (!banner) return;
 
-        var stored = localStorage.getItem(CONSENT_KEY);
+        var stored = null;
+        try { stored = localStorage.getItem(CONSENT_KEY); } catch (e) {}
         if (stored) {
-            // Consent already given — do not show banner
+            // Consent already given — drop the node from rendering entirely.
+            banner.classList.add('is-dismissed');
             return;
         }
 
-        // Show the banner
-        banner.style.display = 'block';
+        function hide(choice) {
+            try { localStorage.setItem(CONSENT_KEY, choice); } catch (e) {}
+            banner.classList.remove('is-visible');
+            banner.setAttribute('aria-hidden', 'true');
+        }
 
         document.getElementById('cookie-accept-all').addEventListener('click', function() {
-            localStorage.setItem(CONSENT_KEY, 'all');
-            banner.style.display = 'none';
+            hide('all');
             // Tell GA4 Consent Mode immediately (no reload needed).
             if (typeof gtag === 'function') {
                 gtag('consent', 'update', {
@@ -2882,9 +3146,32 @@ add_action('wp_footer', function () {
         });
 
         document.getElementById('cookie-essential-only').addEventListener('click', function() {
-            localStorage.setItem(CONSENT_KEY, 'essential');
-            banner.style.display = 'none';
+            hide('essential');
         });
+
+        // Reveal only after the page has settled: fonts swapped, load event done.
+        // This keeps the banner out of the LCP/CLS measurement window.
+        function reveal() {
+            banner.classList.add('is-visible');
+            banner.setAttribute('aria-hidden', 'false');
+        }
+        function schedule() {
+            var fontsReady = (document.fonts && document.fonts.ready)
+                ? document.fonts.ready
+                : Promise.resolve();
+            fontsReady.then(function() {
+                if (window.requestIdleCallback) {
+                    requestIdleCallback(reveal, { timeout: 2000 });
+                } else {
+                    setTimeout(reveal, 600);
+                }
+            });
+        }
+        if (document.readyState === 'complete') {
+            schedule();
+        } else {
+            window.addEventListener('load', schedule);
+        }
     })();
     </script>
     <?php

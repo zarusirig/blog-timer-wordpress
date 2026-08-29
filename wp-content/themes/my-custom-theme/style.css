@@ -32,8 +32,8 @@ Text Domain: my-custom-theme
     --color-text-muted: #5b6478;
     --color-text-inverse: #ffffff;
 
-    --color-accent: #6366f1;
-    --color-accent-hover: #818cf8;
+    --color-accent: #4f46e5;
+    --color-accent-hover: #4338ca;
     --color-accent-glow: rgba(99, 102, 241, 0.3);
     --color-accent-soft: rgba(99, 102, 241, 0.1);
     --color-accent-subtle: rgba(99, 102, 241, 0.06);
@@ -2505,6 +2505,21 @@ kbd {
 *:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
+}
+
+.footer-credit {
+    display: block;
+    margin-top: 0.35rem;
+}
+
+.footer-credit a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-credit a:hover {
+    text-decoration: underline;
 }
 
 .sr-only {
