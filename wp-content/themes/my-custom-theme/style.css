@@ -361,12 +361,30 @@ strong {
 }
 
 @media (max-width: 1320px) {
+    /* Push the burger to the right edge of the header.
+       .header-inner is justify-content:space-between with THREE flex children:
+       .site-brand, .mobile-toggle and the <nav> wrapper. At this breakpoint the
+       nav's <ul> is display:none and absolutely positioned, so <nav> collapses
+       to 0px but is STILL a flex item pinned to the right edge. space-between
+       therefore distributed the burger into the gap between the brand and that
+       0px item — i.e. the middle of the header. Measured at 390px: toggle sat
+       at 253-297px when the content box ends at 370px. An auto left margin
+       absorbs that free space so the burger ends flush right at every width.
+       gap:0 drops the inherited 16px column-gap that otherwise sat between the
+       burger and that 0px nav item and held the burger 16px off the edge; the
+       auto margin already does all the separating here, and at this breakpoint
+       the row only ever renders two visible children. */
+    .header-inner {
+        gap: 0;
+    }
+
     .mobile-toggle {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         min-width: 44px;
         min-height: 44px;
+        margin-left: auto;
     }
 
     /* ---- Off-canvas dropdown panel ---- */
@@ -3195,4 +3213,76 @@ kbd {
     line-height: 1.5;
     color: var(--color-text-secondary);
     border-top: 1px solid var(--color-border-light);
+}
+
+/* ===========================================================
+   AUTHOR BOX (E-E-A-T trust block on guide pages)
+   Reuses the guest-post .gp-author-box shell so guides and blog
+   posts present the author identically; these rules only add the
+   parts the guest-post box does not have: a real portrait, a role
+   line, and a row of verification links.
+   =========================================================== */
+
+.author-box-section .gp-author-box {
+    align-items: center;
+}
+
+/* Portrait replaces the initials circle when images/author-suraj-giri.*
+   exists. Fixed box + object-fit so a non-square upload cannot stretch
+   the layout or shift it while loading. */
+.author-box-photo {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--color-surface);
+}
+
+.author-box-body {
+    min-width: 0;
+}
+
+.author-box-role {
+    margin: 0 0 0.45rem;
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.author-box-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    margin: 0.6rem 0 0;
+}
+
+.author-box-links .gp-author-link {
+    text-decoration: none;
+}
+
+.author-box-links .gp-author-link:hover,
+.author-box-links .gp-author-link:focus-visible {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .author-box-section .gp-author-box {
+        align-items: flex-start;
+    }
+}
+
+/* Visually hidden but available to screen readers. Standard WordPress
+   utility — the theme did not have one, and the author box needs it to
+   announce that the LinkedIn link opens in a new tab. */
+.screen-reader-text {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

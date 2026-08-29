@@ -409,6 +409,94 @@ function blogtimer_get_bucket_slugs_for_unit($unit)
 /**
  * Normalize frontend URLs to no trailing slash (except static file paths).
  */
+/**
+ * The Blog Timer brand mark (stopwatch with an open book in the dial).
+ *
+ * Single source of truth for the inline logo used by the header and the footer
+ * so the two can never drift apart. Same artwork as images/favicon.svg and the
+ * favicon PNG set, so the tab icon, the Organization schema logo and the
+ * on-page wordmark are all one mark.
+ *
+ * Inlined rather than <img src="favicon.svg"> because the header is above the
+ * fold: the path is ~1.1 KB (well under a gzipped KB) and inlining avoids a
+ * blocking round trip for the LCP region. Decorative — callers wrap it in an
+ * aria-hidden span and the accessible name comes from the adjacent site name.
+ *
+ * @param int $size Rendered square size in CSS pixels.
+ */
+function blogtimer_brand_mark($size = 22)
+{
+    $size = (int) $size;
+    printf(
+        '<svg width="%1$d" height="%1$d" viewBox="416 419 1220 1220" fill="#4f46e5" aria-hidden="true" focusable="false"><path d="%2$s"/></svg>',
+        $size,
+        'M955 514 C962 514 970 514 977 514 C1018 515 1059 512 1100 515 C1105 515 1111 519 1115 522 C1122 528 1126 537 1126 545 C1127 575 1099 580 1077 580 L1077 653 C1147 662 1214 688 1271 729 C1367 797 1433 901 1453 1017 C1473 1132 1447 1251 1380 1346 C1312 1444 1207 1510 1089 1530 C1087 1530 1085 1530 1083 1531 C970 1546 856 1515 766 1445 C673 1373 612 1267 595 1150 C580 1033 611 915 684 822 C755 729 860 668 975 654 C976 629 976 605 975 580 C965 580 950 581 942 575 C911 555 923 522 955 514 zM1341 1229 C1325 1229 1308 1230 1291 1231 C1198 1237 1097 1233 1032 1312 C1024 1301 1016 1291 1006 1282 C970 1249 920 1238 873 1232 C857 1230 842 1228 826 1227 L826 922 C878 924 976 933 1013 973 C1019 980 1026 992 1031 999 C1032 970 1031 939 1031 910 L1031 742 L1020 742 C928 745 840 785 778 853 C714 921 680 1012 684 1105 C688 1199 729 1288 798 1351 C863 1410 950 1446 1037 1442 C1125 1438 1207 1401 1268 1339 C1299 1307 1325 1270 1341 1229 zM1034 1270 L1039 1262 C1080 1190 1154 1170 1231 1166 L1231 1021 C1231 987 1232 950 1231 916 L1221 916 C1170 921 1052 942 1036 1005 C1034 1013 1034 1035 1034 1044 L1034 1099 C1034 1155 1033 1216 1034 1270 z'
+    );
+}
+
+/**
+ * Author box for guide pages (E-E-A-T trust block).
+ *
+ * Copy is the site's own author-page bio, not scraped from anywhere else, so
+ * this block and /author-suraj-giri stay consistent. The LinkedIn entry is a
+ * plain outbound link for readers who want to verify the person; no profile
+ * details are restated here.
+ *
+ * The portrait is optional: drop a square image at images/author-suraj-giri.jpg
+ * (or .webp/.png) and it is picked up automatically. Until then the block falls
+ * back to the same initials avatar the guest-post box uses, so the layout never
+ * renders a broken image.
+ */
+function blogtimer_author_box()
+{
+    $name        = 'Suraj Giri';
+    $profile_url = home_url('/author-suraj-giri');
+    $policy_url  = blogtimer_untrailingslashit_url(home_url('/editorial-policy'));
+    $linkedin    = 'https://www.linkedin.com/in/girisuraj/';
+
+    // First readable portrait wins; all are optional.
+    $portrait = '';
+    foreach (['author-suraj-giri.webp', 'author-suraj-giri.jpg', 'author-suraj-giri.png'] as $file) {
+        if (file_exists(get_theme_file_path('images/' . $file))) {
+            $portrait = get_theme_file_uri('images/' . $file);
+            break;
+        }
+    }
+    ?>
+    <section class="section author-box-section">
+        <h2 class="section-title">About the author</h2>
+        <div class="gp-author-box author-box">
+            <?php if ($portrait !== ''): ?>
+                <img class="gp-author-avatar author-box-photo"
+                     src="<?php echo esc_url($portrait); ?>"
+                     width="72" height="72" loading="lazy" decoding="async"
+                     alt="<?php echo esc_attr($name); ?>">
+            <?php else: ?>
+                <span class="gp-author-avatar" aria-hidden="true">SG</span>
+            <?php endif; ?>
+
+            <div class="author-box-body">
+                <p class="gp-author-name">
+                    <a href="<?php echo esc_url($profile_url); ?>" rel="author"><?php echo esc_html($name); ?></a>
+                </p>
+                <p class="author-box-role">Productivity researcher, software engineer, and founder of The Blog Timer</p>
+                <p class="gp-author-bio">
+                    Web developer by trade and productivity researcher by obsession, with a background in
+                    frontend systems and web performance and undergraduate research in attention and time
+                    perception. Daily Pomodoro user since 2014. Where his expertise is thin he says so and
+                    cites people who are credentialed.
+                </p>
+                <p class="author-box-links">
+                    <a class="gp-author-link" href="<?php echo esc_url($profile_url); ?>">Full profile</a>
+                    <a class="gp-author-link" href="<?php echo esc_url($policy_url); ?>">Editorial policy</a>
+                    <a class="gp-author-link" href="<?php echo esc_url($linkedin); ?>" rel="me noopener nofollow" target="_blank">LinkedIn<span class="screen-reader-text"> (opens in a new tab)</span></a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <?php
+}
+
 function blogtimer_untrailingslashit_url($url)
 {
     $parts = wp_parse_url($url);
@@ -2415,8 +2503,15 @@ add_action('wp_head', function () {
         'founder' => [
             '@id' => $person_id,
         ],
-        // TODO: orchestrator populates real social/Wikidata/Crunchbase URLs — do NOT invent
-        'sameAs' => [],
+        // Verified owned profiles only — never invent one. Both confirmed live and
+        // confirmed to belong to this site (2026-08-29): the Facebook page is titled
+        // "The Blog Timer", is typed Product/service, and lists theblogtimer.com as
+        // its website; the LinkedIn profile is the founder's and is the same entity
+        // referenced by the Person node's sameAs.
+        'sameAs' => [
+            'https://www.facebook.com/profile.php?id=61593265421211',
+            'https://www.linkedin.com/in/girisuraj/',
+        ],
         // Topical-authority claim, anchored to Knowledge Graph entities.
         // All Wikipedia URLs verified live (HTTP 200, 2026-07-10).
         'knowsAbout' => [
