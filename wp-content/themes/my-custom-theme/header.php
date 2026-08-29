@@ -139,7 +139,7 @@
     <header class="site-header">
         <div class="container header-inner">
             <a href="<?php echo esc_url(home_url('')); ?>" class="site-brand">
-                <span class="brand-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/><path d="M12 5V2"/></svg></span>
+                <span class="brand-icon" aria-hidden="true"><?php blogtimer_brand_mark(22); ?></span>
                 <span><?php echo esc_html(Timer_Content_Loader::get_instance()->get_string('brand.name') ?: 'The Blog Timer'); ?></span>
             </a>
 

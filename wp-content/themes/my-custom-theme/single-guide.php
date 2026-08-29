@@ -247,6 +247,9 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
             </section>
         <?php endif; ?>
 
+        <!-- ABOUT THE AUTHOR (E-E-A-T) -->
+        <?php blogtimer_author_box(); ?>
+
         <!-- RECOMMENDED TIMERS -->
         <?php if (!empty($recommended_timers)): ?>
             <section class="section related-section">
