@@ -31,6 +31,7 @@ $hour_timers = $related->get_all_by_unit('hours');
         <h1 class="page-h1">
             <?php echo esc_html($loader->get_string('hub.hours.h1') ?: 'Online Hour Timers'); ?>
         </h1>
+        <?php btt_hero_image(get_post_field('post_name', get_the_ID()), get_the_title() . ' — illustration', true); ?>
         <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>

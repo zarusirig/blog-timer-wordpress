@@ -42,6 +42,7 @@ foreach (['productivity', 'cooking', 'exercise', 'meditation', 'studying'] as $u
         <h1 class="page-h1">
             <?php echo esc_html($loader->get_string('hub.usecases.h1')); ?>
         </h1>
+        <?php btt_hero_image(get_post_field('post_name', get_the_ID()), get_the_title() . ' — illustration', true); ?>
         <p class="page-intro">
             <?php echo esc_html($loader->get_string('hub.usecases.intro')); ?>
         </p>

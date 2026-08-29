@@ -1348,6 +1348,31 @@ add_filter('robots_txt', function ($output, $public) {
 }, 10, 2);
 
 /**
+ * Widen the preview directives on indexable surfaces.
+ *
+ * WordPress core already emits `max-image-preview:large` through wp_robots, so
+ * this only adds what core leaves out: an explicit index/follow plus uncapped
+ * snippet and video previews. It runs through the same wp_robots filter rather
+ * than echoing a second <meta name="robots">, which would leave two competing
+ * robots tags in the head.
+ */
+function blogtimer_index_robots() {
+    add_filter('wp_robots', 'blogtimer_wp_robots_indexable');
+}
+
+function blogtimer_wp_robots_indexable(array $robots) {
+    $robots['index'] = true;
+    $robots['follow'] = true;
+    $robots['max-image-preview'] = 'large';
+    // wp_robots renders a bare directive for `true` and `key:value` otherwise;
+    // pass the caps as strings so the -1 survives into the tag.
+    $robots['max-snippet'] = '-1';
+    $robots['max-video-preview'] = '-1';
+    unset($robots['noindex'], $robots['nofollow']);
+    return $robots;
+}
+
+/**
  * Add meta noindex to non-legitimate pages
  * This is the most authoritative way to tell Google to de-index a page
  * Google treats meta robots as a DIRECTIVE (must obey), not a suggestion
@@ -1359,6 +1384,7 @@ add_action('wp_head', function () {
     // This post-type check runs BEFORE any slug whitelist so a newly published
     // timer/guide can never be accidentally noindexed by an out-of-date list.
     if (is_singular(['timer', 'guide'])) {
+        blogtimer_index_robots();
         return;
     }
 
@@ -1366,28 +1392,32 @@ add_action('wp_head', function () {
     // Same early-pass logic: posts publish by trusted editors, categories are
     // gated by the slug list so injected terms stay noindexed.
     if (is_singular('post') || is_category(blogtimer_indexable_category_slugs())) {
+        blogtimer_index_robots();
         return;
     }
 
     // The guide CPT archive (/guides/) and the legitimate custom taxonomies are
     // indexable programmatic-SEO hubs — must NOT be noindexed.
     if (is_post_type_archive('guide') || is_tax(blogtimer_indexable_taxonomies())) {
+        blogtimer_index_robots();
         return;
     }
 
     // Allow the front page
     if (is_front_page() || is_home()) {
+        blogtimer_index_robots();
         return;
     }
 
     // Allow known legitimate pages by slug
     if (is_page($allowed_pages)) {
+        blogtimer_index_robots();
         return;
     }
 
     // Everything else gets noindex, nofollow - this covers any injected spam
     echo '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">' . "\n";
-}, 1);
+}, 0);
 
 /**
  * Send X-Robots-Tag HTTP header for noindex on non-legitimate pages
@@ -1712,6 +1742,14 @@ add_action('wp_head', function () {
             }
             if (has_post_thumbnail($post_obj->ID)) {
                 $og_image = get_the_post_thumbnail_url($post_obj->ID, 'large');
+            } elseif ($hero = btt_hero_url(
+                $post_obj->post_type === 'timer'
+                    ? btt_timer_hero_slug($post_obj->ID)
+                    : $post_obj->post_name
+            )) {
+                // Dataset-generated guides/timers/hubs carry no featured image;
+                // their hero illustration is the share card.
+                $og_image = $hero;
             }
             echo '<meta property="article:modified_time" content="' . esc_attr(get_the_modified_date('c', $post_obj)) . '">' . "\n";
             echo '<meta property="article:published_time" content="' . esc_attr(get_the_date('c', $post_obj)) . '">' . "\n";
@@ -1723,6 +1761,13 @@ add_action('wp_head', function () {
     echo '<meta property="og:type" content="' . esc_attr($og_type) . '">' . "\n";
     echo '<meta property="og:url" content="' . esc_url($canonical ?: home_url('/')) . '">' . "\n";
     echo '<meta property="og:image" content="' . esc_url($og_image) . '">' . "\n";
+    // Explicit dimensions let crawlers pick the large card without fetching the
+    // file first. Hero illustrations render at 1344x768 (>1200px wide, the
+    // Discover large-image threshold).
+    if (strpos($og_image, '/images/hero/') !== false) {
+        echo '<meta property="og:image:width" content="1344">' . "\n";
+        echo '<meta property="og:image:height" content="768">' . "\n";
+    }
     echo '<meta property="og:site_name" content="The Blog Timer">' . "\n";
     echo '<meta property="og:locale" content="en_US">' . "\n";
 
@@ -1732,6 +1777,73 @@ add_action('wp_head', function () {
     echo '<meta name="twitter:description" content="' . esc_attr($og_desc) . '">' . "\n";
     echo '<meta name="twitter:image" content="' . esc_url($og_image) . '">' . "\n";
 }, 2);
+
+/**
+ * ---------------------------------------------------------------------------
+ * Hero illustrations (file-convention, no media library)
+ * ---------------------------------------------------------------------------
+ * Art lives at  wp-content/themes/my-custom-theme/images/hero/{slug}.webp
+ * Keyed on post_name, so dataset-generated guides/timers get art from an rsync
+ * alone — no wp media import, no attachment rows, nothing to re-run after
+ * `wp guide generate`. A missing file simply renders nothing.
+ */
+/**
+ * Hero slug for a timer post.
+ *
+ * The 221 timer posts have numeric slugs (set-timer-for-25-minutes), so there is
+ * no per-post artwork. They borrow the hub illustration for their use-case
+ * taxonomy instead — same brand set, still topical, no extra files.
+ */
+function btt_timer_hero_slug($post_id) {
+    static $map = [
+        'productivity' => 'focus-timer',
+        'cooking'      => 'cooking-timers',
+        'exercise'     => 'workout-timers',
+        'meditation'   => 'sleep-meditation-timers',
+        'studying'     => 'study-work-timers',
+    ];
+    $terms = get_the_terms($post_id, 'timer_usecase');
+    if (is_array($terms)) {
+        foreach ($terms as $t) {
+            if (isset($map[$t->slug])) {
+                return $map[$t->slug];
+            }
+        }
+    }
+    return 'use-cases';
+}
+
+function btt_hero_rel($slug) {
+    $slug = sanitize_title((string) $slug);
+    if (!$slug) {
+        return '';
+    }
+    $rel = '/images/hero/' . $slug . '.webp';
+    return file_exists(get_template_directory() . $rel) ? $rel : '';
+}
+
+function btt_hero_url($slug) {
+    $rel = btt_hero_rel($slug);
+    return $rel ? get_template_directory_uri() . $rel : '';
+}
+
+/**
+ * Echo the hero figure. $eager for above-the-fold heroes (avoids a lazy-load
+ * delay on the LCP element); everything else stays lazy.
+ */
+function btt_hero_image($slug, $alt = '', $eager = false) {
+    $rel = btt_hero_rel($slug);
+    if (!$rel) {
+        return;
+    }
+    printf(
+        '<figure class="btt-hero"><img src="%s" alt="%s" width="1344" height="768" decoding="async" loading="%s" fetchpriority="%s"></figure>',
+        esc_url(get_template_directory_uri() . $rel),
+        esc_attr($alt),
+        $eager ? 'eager' : 'lazy',
+        $eager ? 'high' : 'auto'
+    );
+}
 
 /**
  * Meta description for guest-blog surfaces (posts + /topics/ category archives).

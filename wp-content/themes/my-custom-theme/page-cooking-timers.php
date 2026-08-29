@@ -13,6 +13,7 @@ get_header();
             ['label' => 'Cooking Timers', 'url' => null],
         ]); ?>
         <h1 class="page-h1">Cooking Timers &mdash; Every Kitchen and Food Timer in One Place</h1>
+        <?php btt_hero_image(get_post_field('post_name', get_the_ID()), get_the_title() . ' — illustration', true); ?>
         <p class="page-intro">Specialized timers for eggs, pasta, tea, coffee, steak, rice, turkey, bread, popcorn, sous vide, BBQ, and baby bottles &mdash; plus the science of why timing matters so much in cooking.</p>
 
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">

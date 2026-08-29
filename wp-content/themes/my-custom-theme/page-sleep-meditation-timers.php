@@ -13,6 +13,7 @@ get_header();
             ['label' => 'Sleep & Meditation Timers', 'url' => null],
         ]); ?>
         <h1 class="page-h1">Sleep &amp; Meditation Timers &mdash; Tools for Rest, Recovery, and Stillness</h1>
+        <?php btt_hero_image(get_post_field('post_name', get_the_ID()), get_the_title() . ' — illustration', true); ?>
         <p class="page-intro">Specialized timers for sleep, naps, meditation, breathing, and white noise &mdash; built around sleep science and contemplative traditions.</p>
 
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">

@@ -171,6 +171,8 @@ if (!empty($faq_keys) && is_array($faq_keys)) {
             <?php endif; ?>
         </header>
 
+        <?php btt_hero_image(get_post_field('post_name', $post_id), get_the_title() . ' — illustration', true); ?>
+
         <!-- MAIN CONTENT — F-04: <article> marks the main-content block for
              vision-based page segmentation (mirrors single-timer.php). -->
         <article class="guide-content content-page">

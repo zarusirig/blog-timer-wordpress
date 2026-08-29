@@ -5,6 +5,7 @@ get_header(); ?>
   <div class="container container--narrow">
     <?php blogtimer_render_breadcrumb_nav([['label'=>'Home','url'=>home_url('/')],['label'=>'Entertainment Timers','url'=>null]]); ?>
     <h1 class="page-h1">How Long Is It? Concerts, Movies &amp; Shows</h1>
+        <?php btt_hero_image(get_post_field('post_name', get_the_ID()), get_the_title() . ' — illustration', true); ?>
     <p class="page-intro">Runtime intelligence before you buy the ticket: how long Hamilton runs, what a typical concert set lasts, average movie lengths by genre, and how long a Broadway show keeps you in your seat &mdash; with intermissions, encores and credits accounted for.</p>
     <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
       <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);flex-shrink:0;">EN</div>

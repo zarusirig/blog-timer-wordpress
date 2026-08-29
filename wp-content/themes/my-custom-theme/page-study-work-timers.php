@@ -13,6 +13,7 @@ get_header();
             ['label' => 'Study & Work Timers', 'url' => null],
         ]); ?>
         <h1 class="page-h1">Study &amp; Work Timers &mdash; Every Productivity Timer on the Site</h1>
+        <?php btt_hero_image(get_post_field('post_name', get_the_ID()), get_the_title() . ' — illustration', true); ?>
         <p class="page-intro">Specialized timers for Pomodoro, focus blocks, study sessions, sprints, deep work, and reading &mdash; built around what cognitive science actually says about attention and learning.</p>
 
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">

@@ -9,6 +9,7 @@ get_header();
 <main id="main" tabindex="-1" class="site-main content-page">
     <div class="container container--narrow">
         <h1 class="page-h1">World Clock &mdash; Live Time in Any City, Any Timezone</h1>
+        <?php btt_hero_image(get_post_field('post_name', get_the_ID()), get_the_title() . ' — illustration', true); ?>
         <p class="page-intro">A live world clock showing current time in any IANA timezone. Six default cities, add your own, every clock updates every second. Uses <code>Intl.DateTimeFormat</code> with the official tz database &mdash; no API key, no signup.</p>
 
         <!-- AUTHOR BYLINE -->

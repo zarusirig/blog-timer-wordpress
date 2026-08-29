@@ -171,6 +171,9 @@ $duration_label = $value . '-' . $duration_unit_singular;
                The single H1 above remains inside <main>, adjacent to <article>. */ ?>
         <article class="single-timer-content">
 
+        <?php btt_hero_image(btt_timer_hero_slug($post_id), get_the_title() . ' — illustration'); ?>
+
+
             <!-- ABOUT THIS DURATION -->
             <?php
             // F-content: deterministic, per-duration arithmetic facts. Every

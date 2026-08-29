@@ -5,6 +5,7 @@ get_header(); ?>
   <div class="container container--narrow">
     <?php blogtimer_render_breadcrumb_nav([['label'=>'Home','url'=>home_url('/')],['label'=>'Gaming Timers','url'=>null]]); ?>
     <h1 class="page-h1">Game Session Lengths &mdash; Match and Day Clocks</h1>
+        <?php btt_hero_image(get_post_field('post_name', get_the_ID()), get_the_title() . ' — illustration', true); ?>
     <p class="page-intro">How long a Fortnite match runs, how long a Valorant game takes with overtimes, and how long a full day-night cycle lasts in Minecraft &mdash; the real-world time commitments of popular games, with the numbers verified against official rules and wikis.</p>
     <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
       <div style="width:56px;height:56px;border-radius:50%;background:var(--color-accent-soft);border:1px solid rgba(99,102,241,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-accent);flex-shrink:0;">GV</div>

@@ -13,6 +13,7 @@ get_header();
             ['label' => 'Stopwatch & Clock Tools', 'url' => null],
         ]); ?>
         <h1 class="page-h1">Stopwatch &amp; Clock Tools &mdash; Stopwatches, Alarms, World Clocks, and Countdowns</h1>
+        <?php btt_hero_image(get_post_field('post_name', get_the_ID()), get_the_title() . ' — illustration', true); ?>
         <p class="page-intro">Specialized timing tools beyond the standard timer: stopwatches for measuring elapsed time, alarm clocks for triggering events, world clocks for cross-timezone reference, and countdown timers for future-event tracking.</p>
 
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">

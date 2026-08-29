@@ -16,6 +16,7 @@ $usecase_terms = blogtimer_get_taxonomy_terms('timer_usecase', ['productivity', 
         <h1 class="page-h1">
             <?php echo esc_html($loader->get_string('hub.minutes.h1')); ?>
         </h1>
+        <?php btt_hero_image(get_post_field('post_name', get_the_ID()), get_the_title() . ' — illustration', true); ?>
         <p class="byline">
             By <a href="<?php echo esc_url(home_url('/author-suraj-giri')); ?>" rel="author">Suraj Giri</a>
             &middot; Productivity researcher &middot; <em>Last updated: 2026-05-27</em>

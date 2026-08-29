@@ -13,6 +13,7 @@ get_header();
             ['label' => 'Animal Timers', 'url' => null],
         ]); ?>
         <h1 class="page-h1">Animal Timers &mdash; Lifespans, Gestation &amp; Pregnancy Countdowns</h1>
+        <?php btt_hero_image(get_post_field('post_name', get_the_ID()), get_the_title() . ' — illustration', true); ?>
         <p class="page-intro">How long do cats, dogs, horses, rabbits, and fish live &mdash; and how long are they pregnant? Vet-cited lifespans and gestation timelines for every common pet and animal, plus a pregnancy countdown you can set to your own mating or breeding date.</p>
 
         <div class="card" style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-5);margin-top:var(--space-6);">
