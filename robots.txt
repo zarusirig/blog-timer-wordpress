@@ -7,6 +7,7 @@
 # sitemap-fresh.xml is the ONLY sitemap (WP core sitemaps are disabled).
 
 Sitemap: https://theblogtimer.com/sitemap-fresh.xml?v=2026-08-29
+# llms.txt: https://theblogtimer.com/llms.txt
 # v= versioned on purpose: the platform page-cache can hold the bare URL for
 # weeks; a versioned URL always serves the freshly-built sitemap. Bump the
 # version whenever a content deploy adds URLs.
