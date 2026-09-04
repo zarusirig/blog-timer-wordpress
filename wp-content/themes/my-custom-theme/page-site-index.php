@@ -144,6 +144,13 @@ $silos = [
         'Chess Clock'         => home_url('/chess-clock'),
         'Countdown Timer'     => home_url('/countdown-timer'),
     ],
+    'Software &amp; Rendering' => [
+        'SFM Compile (Source Filmmaker export and asset compiling)' => home_url('/sfm-compile'),
+    ],
+    'Social Platform Tools' => [
+        'IGAnony (anonymous Instagram story viewers, and the 24-hour clock)' => home_url('/iganony'),
+        'Picuki (what happened to it, and the official routes to your data)' => home_url('/picuki'),
+    ],
 ];
 
 // ----------------------------------------------------------------------------

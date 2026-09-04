@@ -961,6 +961,13 @@ function blogtimer_llms_txt_map()
             'tech' => 'How long devices, batteries and downloads last or take.',
             'travel' => 'Journey, transit and processing times.',
         ],
+        'Software and rendering' => [
+            'sfm-compile' => 'SFM compile explained: exporting a movie from Source Filmmaker, compiling models, textures and maps, and how long a render takes.',
+        ],
+        'Social platform tools' => [
+            'iganony' => 'IGAnony reviewed: a dated check of whether the tool still resolves, what a proxy story viewer can and cannot hide, and how long Instagram content lasts.',
+            'picuki' => 'Picuki reviewed: what happened to the original site, the unrelated look-alike domains using the name, and the official routes to your own Instagram data.',
+        ],
         'How this site works' => [
             'about' => 'What The Blog Timer is and who runs it.',
             'methodology' => 'How durations are researched and verified.',
@@ -1472,12 +1479,20 @@ function blogtimer_indexable_page_slugs()
         'entertainment',
         'tech',
         'gaming',
+        'money',
         'food-storage',
         // Calculators — planning tools that answer a duration question, as opposed
         // to the timer pages that count one down. Bound to page-{slug}.php by slug.
         'sleep-calculator',
         'reading-time-calculator',
         'pomodoro-planner',
+        // Reference page. Bound to page-sfm-compile.php by slug.
+        'sfm-compile',
+        // Social-platform reference pages. Bound to page-{slug}.php by slug.
+        // Both carry a dated, first-hand status check; re-verify before each
+        // re-publish, because the domains they describe change often.
+        'iganony',
+        'picuki',
     ];
 }
 

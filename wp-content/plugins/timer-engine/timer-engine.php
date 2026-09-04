@@ -369,6 +369,11 @@ class Timer_Engine
             'timer-for' => 'Timer For Every Task, Person & Activity',
             'timer-for-kids' => 'Timer for Kids — Visual Countdowns for Children',
             'timer-for-remote-workers' => 'Timer for Remote Workers — Focus & Break Blocks',
+            // Social-platform reference pages. Both are dated status checks, so the
+            // year is load-bearing rather than decorative — update it here in the
+            // same pass that re-verifies the domains named on the pages.
+            'iganony' => 'IGAnony Review — Does It Still Work in 2026?',
+            'picuki' => 'Picuki Review — What Happened, and What Works Now',
         ];
 
         return $page_title_overrides[$slug] ?? '';
@@ -589,6 +594,8 @@ class Timer_Engine
                 'crossfit-amrap-timer' => 'Free online CrossFit AMRAP timer to count down your WOD and track rounds. Set the clock, hear the buzzer, and push for as many rounds as possible, every workout.',
                 'emom-timer' => 'Free online EMOM timer for Every Minute on the Minute workouts. Customize round length and total duration, then hear the bell at the top of every minute.',
                 'site-index' => 'A complete, human-readable directory of every timer, guide, and hub on The Blog Timer, grouped by topic and duration for easy one-click browsing.',
+                'iganony' => 'IGAnony reviewed with a dated, first-hand domain check: what an anonymous story viewer can actually hide, why private accounts are impossible, and how long Instagram stories last.',
+                'picuki' => 'Picuki reviewed with a dated, first-hand check: the original address no longer runs an Instagram viewer, unrelated sites now use the name, and the official ways to get your data.',
             ];
 
             if (isset($core_page_meta[$slug])) {

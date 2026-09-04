@@ -1382,5 +1382,13 @@
  "yoga-timer": {
   "alt": "A person folded forward in a downward-facing pose on a rolled mat, with a lit candle nearby and a large stopwatch behind them",
   "caption": "A simple stopwatch running in the background is often all a yoga session needs to keep poses and pacing consistent."
+ },
+ "iganony": {
+  "alt": "A story circle emptying like an hourglass beside a relay server that passes a request on to a padlocked private profile it cannot open",
+  "caption": "An anonymous viewer hides you from the person who posted — not from Instagram, and not from whoever runs the viewer. The 24-hour clock is why the category exists at all."
+ },
+ "picuki": {
+  "alt": "A signpost reading Picuki with one weathered arm pointing at a closed door and three newer arms pointing to separate unrelated buildings",
+  "caption": "One name, several destinations. The original address stopped serving an Instagram viewer, and unrelated operators picked the name up — which is the real lesson about tools like this."
  }
 }
